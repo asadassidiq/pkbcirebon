@@ -5,26 +5,22 @@
       :class="{
         'login-signin-on': this.state == 'signin',
         'login-signup-on': this.state == 'signup',
-        'login-forgot-on': this.state == 'forgot'
+        'login-forgot-on': this.state == 'forgot',
       }"
       id="kt_login"
     >
       <!--begin::Aside-->
       <div
         class="login-aside d-flex flex-column flex-row-auto"
-        style="background-color: #0000CD;"
+        style="background-color: #0000cd"
       >
         <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
           <a href="#" class="text-center mb-10">
-            <img
-              src="media/logos/logo-light.png"
-              class="max-h-70px"
-              alt=""
-            />
+            <img src="media/logos/logo-light.png" class="max-h-70px" alt="" />
           </a>
           <h3
             class="font-weight-bolder text-center font-size-h4 font-size-h1-lg"
-            style="color: #FFFFFF;"
+            style="color: #ffffff"
           >
             Fast Service, Trustworthy, <br />Transparent
           </h3>
@@ -79,7 +75,7 @@
                   >
                 </div>
                 <div class="position-relative">
-                    <div
+                  <div
                     id="example-input-group-2"
                     label=""
                     label-for="example-input-2"
@@ -97,14 +93,27 @@
                     type="button"
                     @click="togglePassword"
                     class="btn btn-sm btn-light position-absolute"
-                    style="top: 50%; right: 10px; transform: translateY(-50%); z-index: 2;"
+                    style="
+                      top: 50%;
+                      right: 10px;
+                      transform: translateY(-50%);
+                      z-index: 2;
+                    "
                   >
-                    <i :class="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+                    <i
+                      :class="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"
+                    ></i>
                   </button>
                 </div>
               </div>
               <div class="form-group">
-                <vue-recaptcha ref="recaptcha" type="invisible" :sitekey="recaptchaSitekey" @verify="onCaptchaVerified" @expired="onCaptchaExpired"/>
+                <vue-recaptcha
+                  ref="recaptcha"
+                  type="invisible"
+                  :sitekey="recaptchaSitekey"
+                  @verify="onCaptchaVerified"
+                  @expired="onCaptchaExpired"
+                />
               </div>
               <div class="form-group">
                 <div class="g-recaptcha" :data-sitekey="recaptchaSitekey"></div>
@@ -125,10 +134,16 @@
         <div
           class="d-flex justify-content-lg-start justify-content-center align-items-end py-1 py-lg-0"
         >
-        <div style="display: flex; gap: 20px; align-items: center;">
-          <img src="img/kota.png" style="width: 70px; height: auto; object-fit: contain;">
-          <img src="img/dishub.jpg" style="width: 70px; height: auto; object-fit: contain;">
-        </div>
+          <div style="display: flex; gap: 20px; align-items: center">
+            <img
+              src="img/kota.png"
+              style="width: 70px; height: auto; object-fit: contain"
+            />
+            <img
+              src="img/dishub.jpg"
+              style="width: 70px; height: auto; object-fit: contain"
+            />
+          </div>
         </div>
         <!--end::Content footer-->
       </div>
@@ -151,49 +166,44 @@ import Bootstrap from "@/assets/plugins/formvalidation/dist/es6/plugins/Bootstra
 import SubmitButton from "@/assets/plugins/formvalidation/dist/es6/plugins/SubmitButton";
 
 import KTUtil from "@/assets/js/components/util";
-import { mapGetters, mapState,mapMutations } from "vuex";
+import { mapGetters, mapState, mapMutations } from "vuex";
 import { LOGIN, LOGOUT, REGISTER } from "@/core/services/store/auth.module";
 import Swal from "sweetalert2";
-import { VueRecaptcha } from 'vue-recaptcha';
+import { VueRecaptcha } from "vue-recaptcha";
 
 export default {
   name: "login-1",
   data() {
     return {
       state: "signin",
-      loadingpage:false,
+      loadingpage: false,
       showPassword: false,
-      recaptchaSitekey:"",
-      // siteKey:import.meta.env.RECAPTCHA_SITE_KEY,
-      // Remove this dummy login info
+      recaptchaSitekey: process.env.MIX_RECAPTCHA_SITE_KEY ?? "",
       form: {
         username: "",
-        password: ""
-      }
+        password: "",
+      },
     };
   },
   components: { VueRecaptcha },
   computed: {
     ...mapState({
-      errors: state => state.auth.errors,
-      user: state =>state.auth.user
+      errors: (state) => state.auth.errors,
+      user: (state) => state.auth.user,
     }),
     ...mapGetters(["currentUser"]),
 
     backgroundImage() {
-      return (
-        '' + "media/svg/illustrations/login-visual-4.svg"
-      );
-    }
+      return "" + "media/svg/illustrations/login-visual-4.svg";
+    },
   },
   mounted() {
-    
     const meta = document.querySelector('meta[name="recaptcha-sitekey"]');
     if (meta) {
-      this.recaptchaSitekey = meta.getAttribute('content');
+      this.recaptchaSitekey = meta.getAttribute("content");
     }
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
     document.head.appendChild(script);
 
     const signin_form = KTUtil.getById("kt_login_signin_form");
@@ -203,23 +213,23 @@ export default {
         username: {
           validators: {
             notEmpty: {
-              message: "Username is required"
-            }
-          }
+              message: "Username is required",
+            },
+          },
         },
         password: {
           validators: {
             notEmpty: {
-              message: "Password is required"
-            }
-          }
-        }
+              message: "Password is required",
+            },
+          },
+        },
       },
       plugins: {
         trigger: new Trigger(),
         submitButton: new SubmitButton(),
-        bootstrap: new Bootstrap()
-      }
+        bootstrap: new Bootstrap(),
+      },
     });
 
     this.fv.on("core.form.valid", () => {
@@ -229,20 +239,20 @@ export default {
       // clear existing errors
       this.$store.dispatch(LOGOUT);
       if (!recaptcha) {
-            Swal.fire({
-              title: "",
-              text: "Please complete the CAPTCHA",
-              icon: "error",
-              showConfirmButton: false,
-              timer: 1500,
-              heightAuto: false
-            });
+        Swal.fire({
+          title: "",
+          text: "Please complete the CAPTCHA",
+          icon: "error",
+          showConfirmButton: false,
+          timer: 1500,
+          heightAuto: false,
+        });
         return;
       }
       // set spinner to submit button
       const submitButton = this.$refs["kt_login_signin_submit"];
       submitButton.classList.add("spinner", "spinner-light", "spinner-right");
-      
+
       // dummy delay
       setTimeout(() => {
         // send login request
@@ -250,63 +260,65 @@ export default {
           .dispatch(LOGIN, { username, password, recaptcha })
           // go to which page after successfully login
           .then(() => {
-              if(this.errors == 'Unauthorized'){
-                Swal.fire({
-                  title: "",
-                  text: "Username atau Password Salah",
-                  icon: "error",
-                  showConfirmButton: false,
-                  timer: 1500,
-                  heightAuto: false
-                });
-              }else if(this.user.jabatan == 'KEPALA UPT PKB' && this.user.ct == true){
-                  this.$router.push({ name: "monitoring.data" })
-              }else if(this.user.v1 == true){
-                  this.$router.push({ name: "verif.data" })
-              }else if(this.user.pf == true){
-                  this.$router.push({ name: "pendaftaran.data" })
-              }else if(this.user.p1 == true){
-                  this.$router.push({ name: "pos1.data" })
-              }else if(this.user.p2 == true){
-                  this.$router.push({ name: "pos2.data" })
-              }else if(this.user.p3 == true){
-                  this.$router.push({ name: "pos3.data" })
-              }else if(this.user.p4 == true){
-                  this.$router.push({ name: "pos4.data" })
-              }else if(this.user.p5 == true){
-                  this.$router.push({ name: "pos5.data" })
-              }else if(this.user.p6 == true){
-                  this.$router.push({ name: "pos6.data" })
-              }else if(this.user.p7 == true){
-                  this.$router.push({ name: "pos7.data" })
-              }else if(this.user.p8 == true){
-                  this.$router.push({ name: "pos8.data" })
-              }else if(this.user.ct == true){
-                  this.$router.push({ name: "datapengujian.data" })
-              }else{
-                  this.$router.push({ name: "login" })
-              }
-          })
-
-        .catch(() => {
-            if(this.errors == 'Unauthorized'){
+            if (this.errors == "Unauthorized") {
               Swal.fire({
                 title: "",
                 text: "Username atau Password Salah",
                 icon: "error",
                 showConfirmButton: false,
-          timer: 1500,
-                heightAuto: false
+                timer: 1500,
+                heightAuto: false,
+              });
+            } else if (
+              this.user.jabatan == "KEPALA UPT PKB" &&
+              this.user.ct == true
+            ) {
+              this.$router.push({ name: "monitoring.data" });
+            } else if (this.user.v1 == true) {
+              this.$router.push({ name: "verif.data" });
+            } else if (this.user.pf == true) {
+              this.$router.push({ name: "pendaftaran.data" });
+            } else if (this.user.p1 == true) {
+              this.$router.push({ name: "pos1.data" });
+            } else if (this.user.p2 == true) {
+              this.$router.push({ name: "pos2.data" });
+            } else if (this.user.p3 == true) {
+              this.$router.push({ name: "pos3.data" });
+            } else if (this.user.p4 == true) {
+              this.$router.push({ name: "pos4.data" });
+            } else if (this.user.p5 == true) {
+              this.$router.push({ name: "pos5.data" });
+            } else if (this.user.p6 == true) {
+              this.$router.push({ name: "pos6.data" });
+            } else if (this.user.p7 == true) {
+              this.$router.push({ name: "pos7.data" });
+            } else if (this.user.p8 == true) {
+              this.$router.push({ name: "pos8.data" });
+            } else if (this.user.ct == true) {
+              this.$router.push({ name: "datapengujian.data" });
+            } else {
+              this.$router.push({ name: "login" });
+            }
+          })
+
+          .catch(() => {
+            if (this.errors == "Unauthorized") {
+              Swal.fire({
+                title: "",
+                text: "Username atau Password Salah",
+                icon: "error",
+                showConfirmButton: false,
+                timer: 1500,
+                heightAuto: false,
               });
             }
-        });
+          });
         submitButton.classList.remove(
           "spinner",
           "spinner-light",
-          "spinner-right"
+          "spinner-right",
         );
       }, 2000);
-
     });
 
     this.fv.on("core.form.invalid", () => {
@@ -315,30 +327,29 @@ export default {
         text: "Please, provide correct data!",
         icon: "error",
         showConfirmButton: false,
-          timer: 1500,
-        heightAuto: false
+        timer: 1500,
+        heightAuto: false,
       });
     });
   },
   methods: {
-
     showForm(form) {
       this.state = form;
       var form_name = "kt_login_" + form + "_form";
       KTUtil.animateClass(
         KTUtil.getById(form_name),
-        "animate__animated animate__backInUp"
+        "animate__animated animate__backInUp",
       );
     },
     togglePassword() {
       this.showPassword = !this.showPassword;
     },
     onCaptchaVerified: function (recaptchaToken) {
-      this.loadingpage = true
+      this.loadingpage = true;
     },
     onCaptchaExpired: function () {
       this.$refs.recaptcha.reset();
     },
-  }
+  },
 };
 </script>

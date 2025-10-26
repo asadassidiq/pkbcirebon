@@ -2,6 +2,11 @@ import Vue from "vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import JwtService from "@/core/services/jwt.service";
+import Swal from "sweetalert2";
+
+const backEndDomain = process.env.MIX_APP_URL;
+const baseURL = `${backEndDomain}/api` ?? "";
+const hasBaseURL = baseURL.length > 0;
 
 /**
  * Service to call HTTP request via Axios
@@ -9,13 +14,27 @@ import JwtService from "@/core/services/jwt.service";
 const ApiService = {
   init() {
     Vue.use(VueAxios, axios);
-    // Vue.axios.defaults.baseURL = "https://pkbmimika.stindo.tech/api";
-    const appUrlMeta = document.querySelector('meta[name="app-url"]');
-    if (appUrlMeta) {
-      Vue.axios.defaults.baseURL = appUrlMeta.getAttribute('content')+"/api";
-    }else{
-      console.log('App Url not found');
+    if (!hasBaseURL) {
+      Swal.fire({
+        title: "",
+        text: "Invalid App URL!\nPlease provide correct App URL",
+        icon: "error",
+        showConfirmButton: false,
+        timer: 1500,
+        heightAuto: false,
+      });
+      return;
     }
+
+    Vue.axios.defaults.baseURL = baseURL;
+
+    // Vue.axios.defaults.baseURL = "https://pkbmimika.stindo.tech/api";
+    // const appUrlMeta = document.querySelector('meta[name="app-url"]');
+    // if (appUrlMeta) {
+    //   Vue.axios.defaults.baseURL = appUrlMeta.getAttribute('content')+"/api";
+    // }else{
+    //   console.log('App Url not found');
+    // }
   },
 
   /**
@@ -23,21 +42,22 @@ const ApiService = {
    */
   setHeader() {
     const csrfToken = document.head.querySelector('meta[name="csrf-token"]');
-    
+
     if (csrfToken) {
-      Vue.axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken.content;
+      Vue.axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken.content;
       // console.log(csrfToken.content);
     } else {
-      console.log('CSRF token not found');
+      console.log("CSRF token not found");
     }
-  
-    Vue.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-    
-    Vue.axios.defaults.headers.common['Authorization'] = `Bearer ${JwtService.getToken()}`;
+
+    Vue.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+
+    Vue.axios.defaults.headers.common["Authorization"] =
+      `Bearer ${JwtService.getToken()}`;
   },
 
   query(resource, params) {
-    return Vue.axios.get(resource, params).catch(error => {
+    return Vue.axios.get(resource, params).catch((error) => {
       // console.log(error);
       throw new Error(`[KT] ApiService ${error}`);
     });
@@ -45,12 +65,12 @@ const ApiService = {
 
   /**
    * Send the GET HTTP request
-   * @param resource 
+   * @param resource
    * @param slug
    * @returns {*}
    */
   get(resource, slug = "") {
-    return Vue.axios.get(`${resource}/${slug}`).catch(error => {
+    return Vue.axios.get(`${resource}/${slug}`).catch((error) => {
       throw new Error(`[KTs] ApiService ${error}`);
     });
   },
@@ -92,11 +112,11 @@ const ApiService = {
    * @returns {*}
    */
   delete(resource) {
-    return Vue.axios.delete(resource).catch(error => {
+    return Vue.axios.delete(resource).catch((error) => {
       // console.log(error);
       throw new Error(`[RWV] ApiService ${error}`);
     });
-  }
+  },
 };
 
 export default ApiService;

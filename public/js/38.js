@@ -1,1 +1,1120 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[38],{31:function(t,r,e){"use strict";var i=e(0),n=e(12),o=e(14);function a(t){return(a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function u(t,r){var e=Object.keys(t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(t);r&&(i=i.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),e.push.apply(e,i)}return e}function c(t){for(var r=1;r<arguments.length;r++){var e=null!=arguments[r]?arguments[r]:{};r%2?u(Object(e),!0).forEach((function(r){s(t,r,e[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(e)):u(Object(e)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(e,r))}))}return t}function s(t,r,e){return(r=function(t){var r=function(t,r){if("object"!==a(t)||null===t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var i=e.call(t,r||"default");if("object"!==a(i))return i;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(t,"string");return"symbol"===a(r)?r:String(r)}(r))in t?Object.defineProperty(t,r,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[r]=e,t}var l={data:function(){return{id:o.id}},computed:c(c({},Object(i.e)(["errors"])),Object(i.e)("harilibur",{harilibur:function(t){return t.harilibur}})),methods:c({},Object(i.d)("harilibur",["CLEAR_FORM"])),destroyed:function(){this.CLEAR_FORM()},created:function(){this.CLEAR_FORM()},components:{datepicker:n.a}},b=e(1),f=Object(b.a)(l,(function(){var t=this,r=t._self._c;return r("div",[r("div",{staticClass:"form-group"},[r("label",{attrs:{for:""}},[t._v("Tanggal")]),t._v(" "),r("datepicker",{attrs:{"input-class":"form-control",language:t.id},model:{value:t.harilibur.tanggal,callback:function(r){t.$set(t.harilibur,"tanggal",r)},expression:"harilibur.tanggal"}})],1),t._v(" "),r("div",{staticClass:"form-group"},[r("label",{attrs:{for:""}},[t._v("Hari Libur")]),t._v(" "),r("input",{directives:[{name:"model",rawName:"v-model",value:t.harilibur.nama,expression:"harilibur.nama"}],staticClass:"form-control",attrs:{type:"text"},domProps:{value:t.harilibur.nama},on:{input:function(r){r.target.composing||t.$set(t.harilibur,"nama",r.target.value)}}})])])}),[],!1,null,null,null);r.a=f.exports},482:function(t,r,e){"use strict";e.r(r);var i=e(0),n=e(3),o=e.n(n),a=e(31);function u(t){return(u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function c(t,r){var e=Object.keys(t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(t);r&&(i=i.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),e.push.apply(e,i)}return e}function s(t){for(var r=1;r<arguments.length;r++){var e=null!=arguments[r]?arguments[r]:{};r%2?c(Object(e),!0).forEach((function(r){l(t,r,e[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(e)):c(Object(e)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(e,r))}))}return t}function l(t,r,e){return(r=function(t){var r=function(t,r){if("object"!==u(t)||null===t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var i=e.call(t,r||"default");if("object"!==u(i))return i;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(t,"string");return"symbol"===u(r)?r:String(r)}(r))in t?Object.defineProperty(t,r,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[r]=e,t}var b={created:function(){this.editHariLibur(this.$route.params.id)},methods:s(s({},Object(i.b)("harilibur",["editHariLibur","updateHariLibur"])),{},{submit:function(){var t=this;this.updateHariLibur(this.$route.params.id).then((function(){o.a.fire({title:"",text:"The application has been successfully edit!",icon:"success",showConfirmButton:!1,timer:1500}),t.$router.push({name:"harilibur.data"})}))}}),components:{"edit-form":a.a}},f=e(1),p=Object(f.a)(b,(function(){var t=this,r=t._self._c;return r("div",{staticClass:"col-md-12"},[r("div",{staticClass:"card"},[r("div",{staticClass:"card-body"},[t._m(0),t._v(" "),r("div",{staticClass:"panel-body"},[r("edit-form"),t._v(" "),r("div",{staticClass:"form-group"},[r("button",{staticClass:"btn btn-primary btn-sm",on:{click:function(r){return r.preventDefault(),t.submit.apply(null,arguments)}}},[r("i",{staticClass:"fa fa-save"}),t._v(" Update\n          ")])])],1)])])])}),[function(){var t=this._self._c;return t("div",{staticClass:"card-heading"},[t("h3",{staticClass:"panel-title"},[this._v("Edit Hari Libur")])])}],!1,null,null,null);r.default=p.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[38],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/Builder.vue?vue&type=script&lang=js":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/Builder.vue?vue&type=script&lang=js ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/core/services/store/breadcrumbs.module */ "./resources/js/core/services/store/breadcrumbs.module.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "builder",
+  components: {},
+  data: function data() {
+    return {
+      tabIndex: 0
+    };
+  },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(["layoutConfig"])), {}, {
+    config: function config() {
+      return this.layoutConfig();
+    }
+  }),
+  mounted: function mounted() {
+    var _this = this;
+    // set the tab from previous
+    this.setActivePreviousTab();
+    this.$store.dispatch(_core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_1__["SET_BREADCRUMB"], [{
+      title: "Layout Builder"
+    }]);
+    this.$nextTick(function () {
+      var hljs = _this.$el.querySelectorAll(".hljs");
+      hljs.forEach(function (hl) {
+        hl.classList.remove("hljs");
+        hl.classList.add("language-".concat(hl.classList[1]));
+      });
+    });
+  },
+  destroyed: function destroyed() {
+    localStorage.removeItem("builderTab");
+  },
+  methods: {
+    /**
+     * Reset config
+     */
+    reset: function reset(event) {
+      event.preventDefault();
+      // remove existing saved config
+      localStorage.removeItem("config");
+      window.location.reload();
+    },
+    /**
+     * Set previous tab active
+     */
+    setActivePreviousTab: function setActivePreviousTab() {
+      this.tabIndex = parseInt(localStorage.getItem("builderTab")) || 0;
+      var links = this.$refs["builder-tab"].querySelectorAll(".nav-link");
+      // remove active tab links
+      for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+      }
+      this.$refs["builder-tab"].querySelector("[data-tab=\"".concat(this.tabIndex, "\"]")).classList.add("active");
+    },
+    /**
+     * Set current active on click
+     * @param event
+     */
+    setActiveTab: function setActiveTab(event) {
+      var tab = event.target.closest('[role="tablist"]');
+      var links = tab.querySelectorAll(".nav-link");
+      // remove active tab links
+      for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+      }
+
+      // set clicked tab index to bootstrap tab
+      this.tabIndex = parseInt(event.target.getAttribute("data-tab"));
+
+      // set current active tab
+      event.target.classList.add("active");
+
+      // keep active tab
+      localStorage.setItem("builderTab", this.tabIndex);
+    },
+    /**
+     * Submit form
+     * @param event
+     */
+    submit: function submit(event) {
+      event.preventDefault();
+      // save new config to localStorage
+      localStorage.setItem("config", JSON.stringify(this.config));
+      window.location.reload();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/Builder.vue?vue&type=template&id=56302b78":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/Builder.vue?vue&type=template&id=56302b78 ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('div', [_c('div', {
+    staticClass: "alert alert-custom alert-white alert-shadow gutter-b",
+    attrs: {
+      "role": "alert"
+    }
+  }, [_c('div', {
+    staticClass: "alert-icon alert-icon-top"
+  }, [_c('span', {
+    staticClass: "svg-icon svg-icon-3x svg-icon-primary mt-4"
+  }, [_c('inline-svg', {
+    attrs: {
+      "src": "media/svg/icons/Tools/Tools.svg"
+    }
+  })], 1)]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c('div', {
+    staticClass: "card card-custom gutter-b"
+  }, [_c('div', {
+    staticClass: "card-header card-header-tabs-line"
+  }, [_c('ul', {
+    ref: "builder-tab",
+    staticClass: "nav nav-dark nav-bold nav-tabs nav-tabs-line",
+    attrs: {
+      "role": "tablist"
+    }
+  }, [_c('li', {
+    staticClass: "nav-item"
+  }, [_c('a', {
+    staticClass: "nav-link active",
+    attrs: {
+      "data-tab": "0",
+      "data-toggle": "tab",
+      "href": "#",
+      "role": "tab"
+    },
+    on: {
+      "click": _vm.setActiveTab
+    }
+  }, [_vm._v("\n            Page\n          ")])]), _vm._v(" "), _c('li', {
+    staticClass: "nav-item"
+  }, [_c('a', {
+    staticClass: "nav-link",
+    attrs: {
+      "data-tab": "1",
+      "data-toggle": "tab",
+      "href": "#",
+      "role": "tab"
+    },
+    on: {
+      "click": _vm.setActiveTab
+    }
+  }, [_vm._v("\n            Header\n          ")])]), _vm._v(" "), _c('li', {
+    staticClass: "nav-item"
+  }, [_c('a', {
+    staticClass: "nav-link",
+    attrs: {
+      "data-tab": "2",
+      "data-toggle": "tab",
+      "href": "#",
+      "role": "tab"
+    },
+    on: {
+      "click": _vm.setActiveTab
+    }
+  }, [_vm._v("\n            Subheader\n          ")])]), _vm._v(" "), _c('li', {
+    staticClass: "nav-item"
+  }, [_c('a', {
+    staticClass: "nav-link",
+    attrs: {
+      "data-tab": "3",
+      "data-toggle": "tab",
+      "href": "#",
+      "role": "tab"
+    },
+    on: {
+      "click": _vm.setActiveTab
+    }
+  }, [_vm._v("\n            Content\n          ")])]), _vm._v(" "), _c('li', {
+    staticClass: "nav-item"
+  }, [_c('a', {
+    staticClass: "nav-link",
+    attrs: {
+      "data-tab": "4",
+      "data-toggle": "tab",
+      "href": "#",
+      "role": "tab"
+    },
+    on: {
+      "click": _vm.setActiveTab
+    }
+  }, [_vm._v("\n            Aside\n          ")])]), _vm._v(" "), _c('li', {
+    staticClass: "nav-item"
+  }, [_c('a', {
+    staticClass: "nav-link",
+    attrs: {
+      "data-tab": "5",
+      "data-toggle": "tab",
+      "href": "#",
+      "role": "tab"
+    },
+    on: {
+      "click": _vm.setActiveTab
+    }
+  }, [_vm._v("\n            Footer\n          ")])])])]), _vm._v(" "), _c('form', {
+    staticClass: "form",
+    on: {
+      "submit": function submit($event) {
+        return _vm.submit($event);
+      }
+    }
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_c('b-tabs', {
+    staticClass: "hide-tabs",
+    model: {
+      value: _vm.tabIndex,
+      callback: function callback($$v) {
+        _vm.tabIndex = $$v;
+      },
+      expression: "tabIndex"
+    }
+  }, [_c('b-tab', {
+    attrs: {
+      "active": ""
+    }
+  }, [_c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("\n                Page Loader:\n              ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.loader.type,
+      expression: "config.loader.type"
+    }],
+    staticClass: "form-control",
+    on: {
+      "change": function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.config.loader, "type", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "false"
+    }
+  }, [_vm._v("\n                    Disabled\n                  ")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "spinner-logo",
+      "selected": "selected"
+    }
+  }, [_vm._v("\n                    Spinner & Logo\n                  ")])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Select page loading indicator.\n                ")])])])]), _vm._v(" "), _c('b-tab', [_c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("\n                Desktop Fixed Header:\n              ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.header.self.fixed.desktop,
+      expression: "config.header.self.fixed.desktop"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true",
+      "checked": ""
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.header.self.fixed.desktop) ? _vm._i(_vm.config.header.self.fixed.desktop, "true") > -1 : _vm.config.header.self.fixed.desktop
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.header.self.fixed.desktop,
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.header.self.fixed, "desktop", $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.header.self.fixed, "desktop", $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.header.self.fixed, "desktop", $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Enable fixed header for desktop mode\n                ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("\n                Mobile Fixed Header:\n              ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.header.self.fixed.mobile,
+      expression: "config.header.self.fixed.mobile"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true",
+      "checked": ""
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.header.self.fixed.mobile) ? _vm._i(_vm.config.header.self.fixed.mobile, "true") > -1 : _vm.config.header.self.fixed.mobile
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.header.self.fixed.mobile,
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.header.self.fixed, "mobile", $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.header.self.fixed, "mobile", $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.header.self.fixed, "mobile", $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Enable fixed header for mobile mode\n                ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("\n                Display Header Menu:\n              ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.header.menu.self.display,
+      expression: "config.header.menu.self.display"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true",
+      "checked": ""
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.header.menu.self.display) ? _vm._i(_vm.config.header.menu.self.display, "true") > -1 : _vm.config.header.menu.self.display
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.header.menu.self.display,
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.header.menu.self, "display", $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.header.menu.self, "display", $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.header.menu.self, "display", $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Display header menu\n                ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("\n                Header Menu Layout:\n              ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.header.menu.self.layout,
+      expression: "config.header.menu.self.layout"
+    }],
+    staticClass: "form-control",
+    on: {
+      "change": function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.config.header.menu.self, "layout", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "default",
+      "selected": ""
+    }
+  }, [_vm._v("Default")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "tab"
+    }
+  }, [_vm._v("Tab")])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Select header menu layout style\n                ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("\n                Header Menu Arrows:\n              ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.header.menu.self['root-arrow'],
+      expression: "config.header.menu.self['root-arrow']"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true"
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.header.menu.self['root-arrow']) ? _vm._i(_vm.config.header.menu.self['root-arrow'], "true") > -1 : _vm.config.header.menu.self['root-arrow']
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.header.menu.self['root-arrow'],
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.header.menu.self, 'root-arrow', $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.header.menu.self, 'root-arrow', $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.header.menu.self, 'root-arrow', $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Enable header menu root link arrows\n                ")])])])]), _vm._v(" "), _c('b-tab', [_c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("\n                Display Subheader:\n              ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.subheader.display,
+      expression: "config.subheader.display"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true",
+      "checked": ""
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.subheader.display) ? _vm._i(_vm.config.subheader.display, "true") > -1 : _vm.config.subheader.display
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.subheader.display,
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.subheader, "display", $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.subheader, "display", $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.subheader, "display", $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("Display subheader")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("\n                Fixed Subheader:\n              ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.subheader.fixed,
+      expression: "config.subheader.fixed"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true",
+      "checked": ""
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.subheader.fixed) ? _vm._i(_vm.config.subheader.fixed, "true") > -1 : _vm.config.subheader.fixed
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.subheader.fixed,
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.subheader, "fixed", $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.subheader, "fixed", $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.subheader, "fixed", $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Enable fixed(sticky) subheader. Requires\n                  "), _c('code', [_vm._v("Solid")]), _vm._v(" subheader style.\n                ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("Width:")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.subheader.width,
+      expression: "config.subheader.width"
+    }],
+    staticClass: "form-control",
+    on: {
+      "change": function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.config.subheader, "width", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "fluid",
+      "selected": ""
+    }
+  }, [_vm._v("Fluid")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "fixed"
+    }
+  }, [_vm._v("Fixed")])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Select layout width type.\n                ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("Subheader Style:")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.subheader.style,
+      expression: "config.subheader.style"
+    }],
+    staticClass: "form-control",
+    on: {
+      "change": function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.config.subheader, "style", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "transparent"
+    }
+  }, [_vm._v("Transparent")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "solid",
+      "selected": ""
+    }
+  }, [_vm._v("Solid")])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Select subheader style\n                ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("Subheader Layout:")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.subheader.layout,
+      expression: "config.subheader.layout"
+    }],
+    staticClass: "form-control",
+    on: {
+      "change": function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.config.subheader, "layout", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "subheader-v1",
+      "selected": ""
+    }
+  }, [_vm._v("\n                    Subheader v1\n                  ")])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Select subheader layout\n                ")])])])]), _vm._v(" "), _c('b-tab', [_c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("Width:")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.content.width,
+      expression: "config.content.width"
+    }],
+    staticClass: "form-control",
+    on: {
+      "change": function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.config.content, "width", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "fluid"
+    }
+  }, [_vm._v("Fluid")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "fixed",
+      "selected": ""
+    }
+  }, [_vm._v("Fixed")])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Select layout width type.\n                ")])])])]), _vm._v(" "), _c('b-tab', [_c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("Display:")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.aside.self.display,
+      expression: "config.aside.self.display"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true",
+      "checked": ""
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.aside.self.display) ? _vm._i(_vm.config.aside.self.display, "true") > -1 : _vm.config.aside.self.display
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.aside.self.display,
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.aside.self, "display", $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.aside.self, "display", $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.aside.self, "display", $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("Display aside")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("Fixed:")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.aside.self.fixed,
+      expression: "config.aside.self.fixed"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true",
+      "checked": ""
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.aside.self.fixed) ? _vm._i(_vm.config.aside.self.fixed, "true") > -1 : _vm.config.aside.self.fixed
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.aside.self.fixed,
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.aside.self, "fixed", $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.aside.self, "fixed", $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.aside.self, "fixed", $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Set fixed aside layout\n                ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("Minimize:")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.aside.self.minimize.toggle,
+      expression: "config.aside.self.minimize.toggle"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true",
+      "checked": ""
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.aside.self.minimize.toggle) ? _vm._i(_vm.config.aside.self.minimize.toggle, "true") > -1 : _vm.config.aside.self.minimize.toggle
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.aside.self.minimize.toggle,
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.aside.self.minimize, "toggle", $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.aside.self.minimize, "toggle", $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.aside.self.minimize, "toggle", $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Allow aside minimizing\n                ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("\n                Default Minimize:\n              ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.aside.self.minimize["default"],
+      expression: "config.aside.self.minimize.default"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true"
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.aside.self.minimize["default"]) ? _vm._i(_vm.config.aside.self.minimize["default"], "true") > -1 : _vm.config.aside.self.minimize["default"]
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.aside.self.minimize["default"],
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.aside.self.minimize, "default", $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.aside.self.minimize, "default", $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.aside.self.minimize, "default", $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Set aside minimized by default\n                ")])])])]), _vm._v(" "), _c('b-tab', [_c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("Fixed Footer:")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('span', {
+    staticClass: "switch switch-icon"
+  }, [_c('label', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.footer.fixed,
+      expression: "config.footer.fixed"
+    }],
+    attrs: {
+      "type": "checkbox",
+      "value": "true"
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.config.footer.fixed) ? _vm._i(_vm.config.footer.fixed, "true") > -1 : _vm.config.footer.fixed
+    },
+    on: {
+      "change": function change($event) {
+        var $$a = _vm.config.footer.fixed,
+          $$el = $event.target,
+          $$c = $$el.checked ? true : false;
+        if (Array.isArray($$a)) {
+          var $$v = "true",
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && _vm.$set(_vm.config.footer, "fixed", $$a.concat([$$v]));
+          } else {
+            $$i > -1 && _vm.$set(_vm.config.footer, "fixed", $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.$set(_vm.config.footer, "fixed", $$c);
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("Set fixed footer")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group row"
+  }, [_c('label', {
+    staticClass: "col-lg-3 col-form-label"
+  }, [_vm._v("Width:")]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9 col-xl-4"
+  }, [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.config.footer.width,
+      expression: "config.footer.width"
+    }],
+    staticClass: "form-control",
+    on: {
+      "change": function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.config.footer, "width", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "fluid",
+      "selected": ""
+    }
+  }, [_vm._v("Fluid")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "fixed"
+    }
+  }, [_vm._v("Fixed")])]), _vm._v(" "), _c('div', {
+    staticClass: "form-text text-muted"
+  }, [_vm._v("\n                  Select layout width type.\n                ")])])])])], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "card-footer"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-lg-3"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-9"
+  }, [_vm._m(1), _vm._v("\n             \n            "), _c('button', {
+    staticClass: "btn btn-clean font-weight-bold",
+    on: {
+      "click": function click($event) {
+        return _vm.reset($event);
+      }
+    }
+  }, [_c('i', {
+    staticClass: "la la-recycle"
+  }), _vm._v("\n              Reset\n            ")])])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "card card-custom gutter-b"
+  }, [_vm._m(2), _vm._v(" "), _c('div', {
+    staticClass: "card-body"
+  }, [_c('div', {
+    staticClass: "example mb-10"
+  }, [_vm._m(3), _vm._v(" "), _c('div', {
+    staticClass: "example-code"
+  }, [_c('div', {
+    staticClass: "example-code"
+  }, [_c('span', {
+    directives: [{
+      name: "b-tooltip",
+      rawName: "v-b-tooltip.hover.top",
+      value: 'Copy code',
+      expression: "'Copy code'",
+      modifiers: {
+        "hover": true,
+        "top": true
+      }
+    }],
+    staticClass: "example-copy"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "example-highlight"
+  }, [_c('highlight-code', {
+    staticClass: "language-json",
+    attrs: {
+      "lang": "json"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.config) + "\n              ")])], 1)])])])])])]);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('div', {
+    staticClass: "alert-text"
+  }, [_c('p', [_vm._v("\n        The layout builder helps to configure the layout with preferred\n        options and preview it in real time. The configured layout options\n        will be saved until you change or reset them. To use the layout\n        builder choose the layout options and click the\n        "), _c('code', [_vm._v("Preview")]), _vm._v(" button to preview the changes.\n      ")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('button', {
+    staticClass: "btn btn-primary font-weight-bold",
+    attrs: {
+      "type": "submit"
+    }
+  }, [_c('i', {
+    staticClass: "la la-eye"
+  }), _vm._v("\n              Preview\n            ")]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('div', {
+    staticClass: "card-header"
+  }, [_c('div', {
+    staticClass: "card-title"
+  }, [_c('h3', {
+    staticClass: "card-label"
+  }, [_vm._v("Generated Config")])])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('p', [_vm._v("\n          Use for layout config in\n          "), _c('code', [_vm._v("/src/core/config/layout.config.json")])]);
+}];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/Builder.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/view/pages/Builder.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Builder_vue_vue_type_template_id_56302b78__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Builder.vue?vue&type=template&id=56302b78 */ "./resources/js/view/pages/Builder.vue?vue&type=template&id=56302b78");
+/* harmony import */ var _Builder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Builder.vue?vue&type=script&lang=js */ "./resources/js/view/pages/Builder.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Builder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Builder_vue_vue_type_template_id_56302b78__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Builder_vue_vue_type_template_id_56302b78__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/view/pages/Builder.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/Builder.vue?vue&type=script&lang=js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/view/pages/Builder.vue?vue&type=script&lang=js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Builder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Builder.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/Builder.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Builder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/Builder.vue?vue&type=template&id=56302b78":
+/*!***************************************************************************!*\
+  !*** ./resources/js/view/pages/Builder.vue?vue&type=template&id=56302b78 ***!
+  \***************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Builder_vue_vue_type_template_id_56302b78__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../node_modules/vue-loader/lib??vue-loader-options!./Builder.vue?vue&type=template&id=56302b78 */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/Builder.vue?vue&type=template&id=56302b78");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Builder_vue_vue_type_template_id_56302b78__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Builder_vue_vue_type_template_id_56302b78__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

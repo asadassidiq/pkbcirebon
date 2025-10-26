@@ -1,1 +1,51 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[93],{445:function(t,a,e){"use strict";e.r(a);var r=e(6),n=e(0);function s(t){return(s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function i(t,a){var e=Object.keys(t);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(t);a&&(r=r.filter((function(a){return Object.getOwnPropertyDescriptor(t,a).enumerable}))),e.push.apply(e,r)}return e}function o(t){for(var a=1;a<arguments.length;a++){var e=null!=arguments[a]?arguments[a]:{};a%2?i(Object(e),!0).forEach((function(a){c(t,a,e[a])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(e)):i(Object(e)).forEach((function(a){Object.defineProperty(t,a,Object.getOwnPropertyDescriptor(e,a))}))}return t}function c(t,a,e){return(a=function(t){var a=function(t,a){if("object"!==s(t)||null===t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var r=e.call(t,a||"default");if("object"!==s(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===a?String:Number)(t)}(t,"string");return"symbol"===s(a)?a:String(a)}(a))in t?Object.defineProperty(t,a,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[a]=e,t}var l={created:function(){var t=new Date,a=String(t.getDate()).padStart(2,"0"),e=String(t.getMonth()+1).padStart(2,"0"),r=t.getFullYear();t=r+"-"+e+"-"+a,this.tgl=t},data:function(){return{search:"",tgl:""}},mounted:function(){this.$store.dispatch(r.a,[{title:"Pendaftaran"},{title:"Data"}])},computed:o(o({},Object(n.e)(["pos5"])),{},{page:{get:function(){return this.$store.state.pos5.page},set:function(t){this.$store.commit("pos5/SET_PAGE",t)}}}),watch:{page:function(){this.getPendaftarans()},search:function(){this.getPendaftarans(this.search)},tgl:function(){this.$store.commit("pos5/SET_TGL",this.customFormatter(this.tgl)),this.getPendaftarans(this.search)}},methods:o(o({},Object(n.b)("pos5",["getPendaftarans"])),{},{customFormatter:function(t){return t},reload:function(){this.getPendaftarans(this.search)}}),components:{}},u=e(1),d=Object(u.a)(l,(function(){var t=this,a=t._self._c;return a("div",{staticClass:"card card-custom"},[a("div",{staticClass:"card-header"},[t._m(0),t._v(" "),a("div",{staticClass:"card-toolbar"},[a("div",{staticClass:"row"},[a("div",{staticClass:"col-6"},[a("b-form-datepicker",{attrs:{id:"example-datepicker",locale:"id"},model:{value:t.tgl,callback:function(a){t.tgl=a},expression:"tgl"}})],1),t._v(" "),a("div",{staticClass:"col-4"},[a("input",{directives:[{name:"model",rawName:"v-model",value:t.search,expression:"search"}],staticClass:"form-control",attrs:{type:"text",placeholder:"serach"},domProps:{value:t.search},on:{input:function(a){a.target.composing||(t.search=a.target.value)}}})]),t._v(" "),a("div",{staticClass:"col-2"},[a("a",{staticClass:"btn btn-sm btn-icon btn-light-info mr-2",attrs:{title:"reload data"},on:{click:function(a){return a.preventDefault(),t.reload.apply(null,arguments)}}},[a("i",{staticClass:"flaticon2-reload"})])])])])]),t._v(" "),a("div",{staticClass:"card-body"},[a("div",{staticClass:"row table-responsive"},[a("div",{staticClass:"col-md-12"},[a("table",{staticClass:"table"},[t._m(1),t._v(" "),a("tbody",t._l(t.pos5.pendaftarans.data,(function(e,r){return a("tr",{key:e.uuid},[a("td",[t._v(t._s(r+1))]),t._v(" "),a("td",[t._v(t._s(e.keterangan))]),t._v(" "),a("td",[t._v(t._s(e.nouji))]),t._v(" "),a("td",[t._v(t._s(e.noregistrasikendaraan))]),t._v(" "),a("td",[a("router-link",{attrs:{to:{name:"pos5.pengujian",params:{id:e.uuid}}}},[a("i",{staticClass:"fa fa-edit text-success"})])],1)])})),0)])])])]),t._v(" "),a("div",{staticClass:"card-footer"},[a("div",{staticClass:"pull-right"},[a("div",{staticClass:"overflow-auto"},[t.pos5.pendaftarans.data&&t.pos5.pendaftarans.data.length>0?a("b-pagination",{attrs:{"total-rows":t.pos5.pendaftarans.total,"per-page":t.pos5.pendaftarans.per_page,"aria-controls":"pendaftarans"},model:{value:t.page,callback:function(a){t.page=a},expression:"page"}}):t._e()],1)])])])}),[function(){var t=this._self._c;return t("div",{staticClass:"card-title"},[t("span",{staticClass:"card-icon"},[t("i",{staticClass:"flaticon2-lorry text-primary"})]),this._v(" "),t("h3",{staticClass:"card-label"},[this._v("Pengujian POS 4")])])},function(){var t=this,a=t._self._c;return a("thead",[a("tr",[a("th",[t._v("No.")]),t._v(" "),a("th",[t._v("Jenis Pendaftaran")]),t._v(" "),a("th",[t._v("No Uji")]),t._v(" "),a("th",[t._v("No Kendaraan")]),t._v(" "),a("th",[t._v("Modify")])])])}],!1,null,null,null);a.default=d.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[93],{
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/assets/sass/themes/layout/brand/light.scss":
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/assets/sass/themes/layout/brand/light.scss ***!
+  \****************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "@media (min-width: 992px) {\n  .brand {\n    background-color: #ffffff;\n    box-shadow: none;\n  }\n  .brand .btn i {\n    color: #b4b8ce;\n  }\n  .brand .btn .svg-icon svg g [fill] {\n    transition: fill 0.3s ease;\n    fill: #b4b8ce;\n  }\n  .brand .btn .svg-icon svg:hover g [fill] {\n    transition: fill 0.3s ease;\n  }\n  .brand .btn:hover .svg-icon svg g [fill] {\n    transition: fill 0.3s ease;\n    fill: #3699FF;\n  }\n  .brand .btn:hover .svg-icon svg:hover g [fill] {\n    transition: fill 0.3s ease;\n  }\n  .brand .btn:hover i {\n    color: #3699FF;\n  }\n}\n@media (max-width: 991.98px) {\n  .header-mobile {\n    background-color: #ffffff;\n    box-shadow: 0px 1px 9px -3px rgba(0, 0, 0, 0.1);\n  }\n  .header-mobile .burger-icon span {\n    background-color: #b4b8ce;\n  }\n  .header-mobile .burger-icon span::before, .header-mobile .burger-icon span::after {\n    background-color: #b4b8ce;\n  }\n  .header-mobile .burger-icon:hover span {\n    background-color: #3699FF;\n  }\n  .header-mobile .burger-icon:hover span::before, .header-mobile .burger-icon:hover span::after {\n    background-color: #3699FF;\n  }\n  .header-mobile .burger-icon-active span {\n    background-color: #3699FF;\n  }\n  .header-mobile .burger-icon-active span::before, .header-mobile .burger-icon-active span::after {\n    background-color: #3699FF;\n  }\n  .header-mobile .btn i {\n    color: #b4b8ce;\n  }\n  .header-mobile .btn .svg-icon svg g [fill] {\n    transition: fill 0.3s ease;\n    fill: #b4b8ce;\n  }\n  .header-mobile .btn .svg-icon svg:hover g [fill] {\n    transition: fill 0.3s ease;\n  }\n  .header-mobile .btn:hover .svg-icon svg g [fill] {\n    transition: fill 0.3s ease;\n    fill: #3699FF;\n  }\n  .header-mobile .btn:hover .svg-icon svg:hover g [fill] {\n    transition: fill 0.3s ease;\n  }\n  .header-mobile .btn:hover i {\n    color: #3699FF;\n  }\n}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./resources/js/assets/sass/themes/layout/brand/light.scss":
+/*!*****************************************************************!*\
+  !*** ./resources/js/assets/sass/themes/layout/brand/light.scss ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./light.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/assets/sass/themes/layout/brand/light.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ })
+
+}]);

@@ -1,10 +1,10 @@
 <template>
   <div class="card card-custom">
-    <div class="card-header">
-      <div class="card-title">
-        <span class="card-icon">
-          <i class="flaticon2-lorry text-primary"></i>
-        </span>
+    <div class="card-title">
+      <span class="card-icon">
+        <i class="flaticon2-lorry text-primary"></i>
+      </span>
+      <div class="card-header">
         <h3 class="card-label">Pengujian POS 1</h3>
       </div>
       <div class="card-toolbar">
@@ -39,7 +39,7 @@
             <tbody>
               <tr v-for="(pendaftaran, index) in pos1.pendaftarans
                 .data" :key="pendaftaran.uuid">
-                <td>{{ index+1 }}</td>
+                <td>{{ index + 1 }}</td>
                 <td>{{ pendaftaran.keterangan }}</td>
                 <td>{{ pendaftaran.nouji }}</td>
                 <td>{{ pendaftaran.noregistrasikendaraan }}</td>

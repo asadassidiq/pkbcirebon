@@ -25,52 +25,54 @@ import regonline from "./regonline.module";
 import monitoring from "./monitoring.module";
 import tandatangan from "./tandatangan.module";
 import penyerahan from "./penyerahan.module";
+import approvals from "./datakendaraan_approval.module";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-    modules: {
-        auth,
-        htmlClass,
-        config,
-        breadcrumbs,
-        profile,
-        pendaftaran,
-        pendaftaranonline,
-        surat,
-        foto,
-        pos1,
-        pos2,
-        pos3,
-        pos4,
-        verif,
-        penyerahan,
-        kuota,
-        harilibur,
-        user,
-        datapengujian,
-        datakendaraan,
-        antrian,
-        regonline,
-        monitoring,
-        tandatangan,
+  modules: {
+    auth,
+    htmlClass,
+    config,
+    breadcrumbs,
+    profile,
+    pendaftaran,
+    pendaftaranonline,
+    surat,
+    foto,
+    pos1,
+    pos2,
+    pos3,
+    pos4,
+    verif,
+    penyerahan,
+    kuota,
+    harilibur,
+    user,
+    datapengujian,
+    datakendaraan,
+    approvals,
+    antrian,
+    regonline,
+    monitoring,
+    tandatangan,
+  },
+  state: {
+    errors: [],
+    message: "",
+  },
+  mutations: {
+    SET_ERRORS(state, payload) {
+      state.errors = payload;
     },
-    state: {
-        errors: [],
-        message: "",
+    CLEAR_ERRORS(state) {
+      state.errors = [];
     },
-    mutations: {
-        SET_ERRORS(state, payload) {
-            state.errors = payload;
-        },
-        CLEAR_ERRORS(state) {
-            state.errors = [];
-        },
-        SET_MESSAGE(state, payload) {
-            state.message = payload;
-        },
-        CLEAR_MESSAGE(state) {
-            state.message = "";
-        },
+    SET_MESSAGE(state, payload) {
+      state.message = payload;
     },
+    CLEAR_MESSAGE(state) {
+      state.message = "";
+    },
+  },
 });

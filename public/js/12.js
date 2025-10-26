@@ -1,1 +1,1260 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{197:function(a,t,e){var n=e(262);"string"==typeof n&&(n=[[a.i,n,""]]);var r={hmr:!0,transform:void 0,insertInto:void 0};e(13)(n,r);n.locals&&(a.exports=n.locals)},261:function(a,t,e){"use strict";e(197)},262:function(a,t,e){(t=e(8)(!1)).push([a.i,".wizard.wizard-1 .wizard-nav .wizard-steps {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step {\n  display: flex;\n  align-items: center;\n  text-align: center;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label {\n  margin-left: 3.5rem;\n  margin-right: 3.5rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon {\n  color: #B5B5C3;\n  font-size: 3.75rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon svg g [fill] {\n  transition: fill 0.3s ease;\n  fill: #B5B5C3;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon svg:hover g [fill] {\n  transition: fill 0.3s ease;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-title {\n  color: #7E8299;\n  font-size: 1.1rem;\n  font-weight: 500;\n  margin-top: 0.75rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow {\n  color: #7E8299;\n  font-size: 1.25rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow.last {\n  display: none;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-label .wizard-icon, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-label .wizard-icon {\n  color: #3699FF;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-label .wizard-icon svg g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-label .wizard-icon svg g [fill] {\n  transition: fill 0.3s ease;\n  fill: #3699FF;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-label .wizard-icon svg:hover g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-label .wizard-icon svg:hover g [fill] {\n  transition: fill 0.3s ease;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-label .wizard-title, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-label .wizard-title {\n  color: #3699FF;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-arrow, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-arrow {\n  color: #3699FF;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-arrow svg g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-arrow svg g [fill] {\n  transition: fill 0.3s ease;\n  fill: #3699FF;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-arrow svg:hover g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-arrow svg:hover g [fill] {\n  transition: fill 0.3s ease;\n}\n@media (min-width: 768px) and (max-width: 1199.98px) {\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label {\n    margin-left: 1.5rem;\n    margin-right: 1.5rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon {\n    font-size: 3.75rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-title {\n    margin-top: 0.75rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow {\n    font-size: 1.1rem;\n}\n}\n@media (max-width: 767.98px) {\n.wizard.wizard-1 .wizard-nav .wizard-steps {\n    flex-direction: column;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step {\n    width: 100%;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-bottom: 0.5rem;\n    margin-top: 0.5rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label {\n    flex-direction: row;\n    display: flex;\n    align-items: center;\n    margin-left: 0;\n    margin-right: 0;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon {\n    font-size: 1.5rem;\n    margin-right: 1.25rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow {\n    font-size: 1rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow.last {\n    display: block;\n}\n}\n.image-input {\n  position: relative;\n  display: inline-block;\n  border-radius: 0.42rem;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.image-input .image-input-wrapper {\n  width: 120px;\n  height: 120px;\n  border-radius: 0.42rem;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.image-input [data-action=change] {\n  cursor: pointer;\n  position: absolute;\n  right: -10px;\n  top: -10px;\n}\n.image-input [data-action=change] input {\n  width: 0 !important;\n  height: 0 !important;\n  overflow: hidden;\n  opacity: 0;\n}\n.image-input [data-action=cancel],\n.image-input [data-action=remove] {\n  position: absolute;\n  right: -10px;\n  bottom: -5px;\n}\n.image-input [data-action=cancel] {\n  display: none;\n}\n.image-input.image-input-changed [data-action=cancel] {\n  display: flex;\n}\n.image-input.image-input-changed [data-action=remove] {\n  display: none;\n}\n.image-input.image-input-empty [data-action=remove],\n.image-input.image-input-empty [data-action=cancel] {\n  display: none;\n}\n.image-input.image-input-circle {\n  border-radius: 50%;\n}\n.image-input.image-input-circle .image-input-wrapper {\n  border-radius: 50%;\n}\n.image-input.image-input-circle [data-action=change] {\n  right: 5px;\n  top: 5px;\n}\n.image-input.image-input-circle [data-action=cancel],\n.image-input.image-input-circle [data-action=remove] {\n  right: 5px;\n  bottom: 5px;\n}\n.image-input.image-input-outline .image-input-wrapper {\n  border: 3px solid #ffffff;\n  box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);\n}",""]),a.exports=t},472:function(a,t,e){"use strict";e.r(t);var n=e(6),r=e(2),s=e(16),i=e(3),o=e.n(i),d=e(0),l=e(15),u=e.n(l);e(18);function m(a){return(m="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?"symbol":typeof a})(a)}function c(a,t){var e=Object.keys(a);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(a);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(a,t).enumerable}))),e.push.apply(e,n)}return e}function v(a){for(var t=1;t<arguments.length;t++){var e=null!=arguments[t]?arguments[t]:{};t%2?c(Object(e),!0).forEach((function(t){p(a,t,e[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(e)):c(Object(e)).forEach((function(t){Object.defineProperty(a,t,Object.getOwnPropertyDescriptor(e,t))}))}return a}function p(a,t,e){return(t=function(a){var t=function(a,t){if("object"!==m(a)||null===a)return a;var e=a[Symbol.toPrimitive];if(void 0!==e){var n=e.call(a,t||"default");if("object"!==m(n))return n;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(a)}(a,"string");return"symbol"===m(t)?t:String(t)}(t))in a?Object.defineProperty(a,t,{value:e,enumerable:!0,configurable:!0,writable:!0}):a[t]=e,a}var g={data:function(){return{disabled1:1,disabled2:1,isActive:!0,isActiveRiwayat:!1,selectedUuid:null}},name:"Wizard-1",mounted:function(){this.$store.dispatch(n.a,[{title:"Datakendaraan"},{title:"Add"}]);var a=new s.a("kt_wizard_v1",{startStep:1,clickableSteps:!0});a.on("beforeNext",(function(){})),a.on("change",(function(){setTimeout((function(){r.a.scrollTop()}),500)}))},created:function(){this.CLEAR_FORM(),this.getKodewilayahs(),this.getMereks(),this.getTipes(),this.getVarians(),this.getJenis(),this.getSubJenis(),this.getFuels(),this.getKotas(),this.getKelasJalans(),"datakendaraan.edit"==this.$route.name&&this.editDatakendaraan(this.$route.params.id).then((function(){}));var a=new Date,t=String(a.getDate()).padStart(2,"0"),e=String(a.getMonth()+1).padStart(2,"0"),n=a.getFullYear();a=n+"-"+e+"-"+t,this.datakendaraan.tglsertifikatreg=a},methods:v(v(v({},Object(d.d)("datakendaraan",["CLEAR_FORM"])),Object(d.b)("datakendaraan",["updateDatakendaraan","editDatakendaraan","getMereks","getTipes","getVarians","getJenis","getSubJenis","getJeniskendaraan","getFuels","getKelasJalans","getKodewilayahs","getKotas","getKecamatans","getKelurahans","getVTA","getRiwayatUji","getDetailRiwayatUji"])),{},{submit:function(){var a=this;this.updateDatakendaraan(this.$route.params.id).then((function(){o.a.fire({icon:"success",title:"Saved",showConfirmButton:!1,timer:1500}),a.$router.go(-1)}))},totalBeratSumbu:function(){this.datakendaraan.beratkosong=parseInt(this.datakendaraan.beratsumbu1)+parseInt(this.datakendaraan.beratsumbu2)+parseInt(this.datakendaraan.beratsumbu3)+parseInt(this.datakendaraan.beratsumbu4),this.setJBI()},setJBI:function(){this.datakendaraan.jbi=parseInt(this.datakendaraan.beratkosong)+parseInt(this.datakendaraan.dayaangkutbarang)+60*parseInt(this.datakendaraan.dayaangkutorang)},caridata:function(){var a=this;this.getIdentitaskendaraanNouji().then((function(){if(1==a.carinouji?o.a.fire({icon:"success",title:"Data ditemukan",showConfirmButton:!1,timer:1500}):o.a.fire({icon:"warning",title:"Data Tidak ditemukan",showConfirmButton:!1,timer:1500}),null===a.datakendaraan.tglsertifikatreg||""==a.datakendaraan.tglsertifikatreg){var t=moment().format("YYYY-MM-DD");a.datakendaraan.tglsertifikatreg=t}}))},setKota:function(a){this.datakendaraan.kota=a.nama,this.getKecamatans(a.nama),this.disabled1=0},setKecamatan:function(a){this.datakendaraan.kecamatan=a.nama,this.getKelurahans(a.nama),this.disabled2=0},setKelurahan:function(a){this.datakendaraan.kelurahan=a.nama},setType:function(a){this.datakendaraan.merek=a.vehicle_brand_name,this.datakendaraan.idmerek=a.vehicle_brand_id,this.getTipes(a.vehicle_brand_id)},setVarian:function(a){this.datakendaraan.tipe=a.vehicle_varian_type_name,this.datakendaraan.idtipe=a.vehicle_varian_type_id,this.getVarians(a.vehicle_varian_type_id)},setVarianid:function(a){this.datakendaraan.varian=a.vehicle_varian_name,this.datakendaraan.idvarian=a.vehicle_varian_id},setSubVehicle:function(a){this.datakendaraan.jenis=a.vehicle_type_name,this.datakendaraan.idjenis=a.vehicle_type_id,this.getSubJenis(a.vehicle_type_id)},setSubVehicleid:function(a){this.datakendaraan.subjenis=a.vehicle_sub_name,this.datakendaraan.idsubjenis=a.vehicle_sub_id},setArea:function(a){this.datakendaraan.wilayah=a.area_name,this.datakendaraan.kodewilayah=a.area_code,this.datakendaraan.idkodewilayah=a.area_id},setFuel:function(a){this.datakendaraan.bahanbakar=a.fuel_name,this.datakendaraan.idbahanbakar=a.fuel_id},setKelasJalan:function(a){this.datakendaraan.kelasjalanterendah=a.kelasjalan_name,this.datakendaraan.idkelasjalanterendah=a.kelasjalan_id},setAreaFrom:function(a){this.datakendaraan.wilayahasal=a.area_name,this.datakendaraan.kodewilayahasal=a.area_code,this.datakendaraan.idkodewilayahasal=a.area_id},customFormatter:function(a){return a},showModalVTA:function(){this.$refs.modalVTA.show()},getDataVTA:function(a){var t=this;""===this.dataSearch?(this.$refs.nouji.focus(),o.a.fire({icon:"warning",title:"No Uji/No Rangka Tidak Boleh Kosong",showConfirmButton:!1,timer:750})):this.getVTA(a).then((function(){t.responeBlue.status?(o.a.fire({icon:"success",title:"Berhasil Data",showConfirmButton:!1,timer:1500}),t.showModalVTA()):o.a.fire({icon:"warning",title:t.responeBlue.message,showConfirmButton:!1,timer:2e3})}))},handleFocus:function(a){0!==this.datakendaraan[a]&&"0"!==this.datakendaraan[a]||(this.datakendaraan[a]="")},toggleDetail:function(a){this.selectedUuid=this.selectedUuid===a?null:a},relodaRiwayatUji:function(){this.getRiwayatUji(this.$route.params.id)},formatTanggalIndonesia:function(a){var t=a.slice(0,2),e=a.slice(2,4),n=a.slice(4);return new Date("".concat(n,"-").concat(e,"-").concat(t)).toLocaleDateString("id-ID",{day:"2-digit",month:"long",year:"numeric"})},formatTanggalIndo:function(a){return new Date(a).toLocaleDateString("id-ID",{day:"2-digit",month:"long",year:"numeric"})}}),destroyed:function(){this.CLEAR_FORM()},computed:v(v(v(v({},Object(d.e)(["errors"])),Object(d.e)("datakendaraan",{datakendaraan:function(a){return a.datakendaraan},riwayatuji:function(a){return a.riwayatuji},carinouji:function(a){return a.carinouji},datavta:function(a){return a.datavta}})),Object(d.e)("datakendaraan",{kodewilayahs:function(a){return a.kodewilayahs}})),Object(d.e)("datakendaraan",{mereks:function(a){return a.mereks},tipes:function(a){return a.tipes},varians:function(a){return a.varians},jenis:function(a){return a.jenis},subjenis:function(a){return a.subjenis},jeniskendaraan:function(a){return a.jeniskendaraan},fuels:function(a){return a.fuels},kelasjalans:function(a){return a.kelasjalans},kotas:function(a){return a.kotas},kecamatans:function(a){return a.kecamatans},kelurahans:function(a){return a.kelurahans},responeBlue:function(a){return a.responeBlue}})),components:{vSelect:u.a}},b=(e(261),e(1)),k=Object(b.a)(g,(function(){var a=this,t=a._self._c;return t("div",{staticClass:"card card-custom"},[t("div",{staticClass:"card-body p-0"},[t("div",{staticClass:"wizard wizard-1",attrs:{id:"kt_wizard_v1","data-wizard-state":"step-first","data-wizard-clickable":"true"}},[a._m(0),a._v(" "),t("div",{staticClass:"row justify-content-center my-10 px-8 my-lg-15 px-lg-10"},[t("div",{staticClass:"col-sm-12 col-xsm-7"},[t("form",{staticClass:"form",attrs:{id:"kt_form"}},[t("div",{staticClass:"pb-5",attrs:{"data-wizard-type":"step-content"}},[t("div",{staticClass:"row"},[t("div",{staticClass:"col-sm-6"},[t("div",{staticClass:"form-group"},[t("label",[a._v(" No Uji")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.nouji,expression:"datakendaraan.nouji"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"nouji",placeholder:"No Uji"},domProps:{value:a.datakendaraan.nouji},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"nouji",t.target.value)}}}),a._v(" "),a.errors.nouji?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.nouji[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-6"},[t("div",{staticClass:"form-group"},[t("label",[a._v("No Kendaraan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.noregistrasikendaraan,expression:"datakendaraan.noregistrasikendaraan"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"noregistrasikendaraan",placeholder:" No Kendaraan"},domProps:{value:a.datakendaraan.noregistrasikendaraan},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"noregistrasikendaraan",t.target.value)}}}),a._v(" "),a.errors.noregistrasikendaraan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.noregistrasikendaraan[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v(" Nama")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.nama,expression:"datakendaraan.nama"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"nama",placeholder:" nama"},domProps:{value:a.datakendaraan.nama},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"nama",t.target.value)}}}),a._v(" "),a.errors.nama?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.nama[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v(" No Identitas")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.noidentitaspemilik,expression:"datakendaraan.noidentitaspemilik"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"noidentitaspemilik",placeholder:" No Identitas"},domProps:{value:a.datakendaraan.noidentitaspemilik},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"noidentitaspemilik",t.target.value)}}}),a._v(" "),a.errors.noidentitaspemilik?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.noidentitaspemilik[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v(" Alamat")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.alamat,expression:"datakendaraan.alamat"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"alamat",placeholder:" Alamat"},domProps:{value:a.datakendaraan.alamat},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"alamat",t.target.value)}}}),a._v(" "),a.errors.alamat?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.alamat[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Kabupaten")]),a._v(" "),t("vSelect",{attrs:{label:"nama",options:a.kotas},on:{input:a.setKota},model:{value:a.datakendaraan.kota,callback:function(t){a.$set(a.datakendaraan,"kota",t)},expression:"datakendaraan.kota"}}),a._v(" "),a.errors.kota?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.kota[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Kecamatan")]),a._v(" "),t("vSelect",{attrs:{label:"nama",options:a.kecamatans,disabled:1==a.disabled1},on:{input:a.setKecamatan},model:{value:a.datakendaraan.kecamatan,callback:function(t){a.$set(a.datakendaraan,"kecamatan",t)},expression:"datakendaraan.kecamatan"}}),a._v(" "),a.errors.kecamatan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.kecamatan[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Kelurahan")]),a._v(" "),t("vSelect",{attrs:{label:"nama",options:a.kelurahans,disabled:1==a.disabled2},on:{input:a.setKelurahan},model:{value:a.datakendaraan.kelurahan,callback:function(t){a.$set(a.datakendaraan,"kelurahan",t)},expression:"datakendaraan.kelurahan"}}),a._v(" "),a.errors.Kelurahan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.Kelurahan[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("No SRUT")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.nosertifikatreg,expression:"datakendaraan.nosertifikatreg"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"nosertifikatreg",placeholder:" No SRUT"},domProps:{value:a.datakendaraan.nosertifikatreg},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"nosertifikatreg",t.target.value)}}}),a._v(" "),a.errors.nosertifikatreg?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.nosertifikatreg[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tanggal SRUT")]),a._v(" "),t("b-form-datepicker",{attrs:{id:"tglsertifikatreg",locale:"id"},model:{value:a.datakendaraan.tglsertifikatreg,callback:function(t){a.$set(a.datakendaraan,"tglsertifikatreg",t)},expression:"datakendaraan.tglsertifikatreg"}}),a._v(" "),a.errors.tglsertifikatreg?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.tglsertifikatreg[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tanggal STNK terbit")]),a._v(" "),t("b-form-datepicker",{attrs:{id:"tgl_registrasikendaraan",locale:"id"},model:{value:a.datakendaraan.tgl_registrasikendaraan,callback:function(t){a.$set(a.datakendaraan,"tgl_registrasikendaraan",t)},expression:"datakendaraan.tgl_registrasikendaraan"}}),a._v(" "),a.errors.tgl_registrasikendaraan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.tgl_registrasikendaraan[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("SK Rancang Bangun")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.rancang,expression:"datakendaraan.rancang"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"rancang",placeholder:"SK Rancang Bangun"},domProps:{value:a.datakendaraan.rancang},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"rancang",t.target.value)}}}),a._v(" "),a.errors.rancang?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.rancang[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tahun Pembuatan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.thpembuatan,expression:"datakendaraan.thpembuatan"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"thpembuatan",placeholder:"Tahun Pembuatan"},domProps:{value:a.datakendaraan.thpembuatan},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"thpembuatan",t.target.value)}}}),a._v(" "),a.errors.thpembuatan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.thpembuatan[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Merek "),a.datakendaraan.mereklama?t("span",{staticClass:"text-danger"},[a._v(a._s(a.datakendaraan.mereklama))]):a._e()]),a._v(" "),t("vSelect",{ref:"merek",attrs:{label:"vehicle_brand_name",options:a.mereks},on:{input:a.setType},model:{value:a.datakendaraan.merek,callback:function(t){a.$set(a.datakendaraan,"merek",t)},expression:"datakendaraan.merek"}})],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tipe "),a.datakendaraan.tipelama?t("span",{staticClass:"text-danger"},[a._v(a._s(a.datakendaraan.tipelama))]):a._e()]),a._v(" "),t("vSelect",{ref:"tipes",attrs:{label:"vehicle_varian_type_name",options:a.tipes,disabled:!a.tipes.length},on:{input:a.setVarian},model:{value:a.datakendaraan.tipe,callback:function(t){a.$set(a.datakendaraan,"tipe",t)},expression:"datakendaraan.tipe"}})],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group row"},[t("div",{staticClass:"col-sm-12"},[t("label",{staticClass:"text-danger"},[a._v("Varian")]),a._v(" "),t("vSelect",{ref:"varian",attrs:{label:"vehicle_varian_name",options:a.varians,disabled:!a.varians.length},on:{input:a.setVarianid},model:{value:a.datakendaraan.varian,callback:function(t){a.$set(a.datakendaraan,"varian",t)},expression:"datakendaraan.varian"}})],1),a._v(" "),a.errors.varian?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.varian[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jenis "),a.datakendaraan.jenislama?t("span",{staticClass:"text-danger"},[a._v(a._s(a.datakendaraan.jenislama))]):a._e()]),a._v(" "),t("vSelect",{ref:"jenis",attrs:{label:"vehicle_type_name",options:a.jenis,disabled:!a.jenis.length},on:{input:a.setSubVehicle},model:{value:a.datakendaraan.jenis,callback:function(t){a.$set(a.datakendaraan,"jenis",t)},expression:"datakendaraan.jenis"}})],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Model "),a.datakendaraan.model?t("span",{staticClass:"text-danger"},[a._v(a._s(a.datakendaraan.model))]):a._e()]),a._v(" "),t("vSelect",{ref:"subjenis",attrs:{label:"vehicle_sub_name",options:a.subjenis,disabled:!a.subjenis.length},on:{input:a.setSubVehicleid},model:{value:a.datakendaraan.subjenis,callback:function(t){a.$set(a.datakendaraan,"subjenis",t)},expression:"datakendaraan.subjenis"}})],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Isi Silinder")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.isisilinder,expression:"datakendaraan.isisilinder"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"isisilinder",placeholder:" Isi Silinder"},domProps:{value:a.datakendaraan.isisilinder},on:{focus:function(t){return a.handleFocus("isisilinder")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"isisilinder",t.target.value)}}}),a._v(" "),a.errors.isisilinder?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.isisilinder[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Daya Motor Penggerak")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.dayamotorpenggerak,expression:"datakendaraan.dayamotorpenggerak"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"dayamotorpenggerak",placeholder:" Daya Motor Penggerak"},domProps:{value:a.datakendaraan.dayamotorpenggerak},on:{focus:function(t){return a.handleFocus("dayamotorpenggerak")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"dayamotorpenggerak",t.target.value)}}}),a._v(" "),a.errors.dayamotorpenggerak?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.dayamotorpenggerak[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-6"},[t("div",{staticClass:"form-group"},[t("label",[a._v("No Mesin")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.nomesin,expression:"datakendaraan.nomesin"}],staticClass:"form-control form-control-lg",staticStyle:{"text-transform":"uppercase"},attrs:{type:"text",name:"nomesin",placeholder:"No Mesin"},domProps:{value:a.datakendaraan.nomesin},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"nomesin",t.target.value)}}}),a._v(" "),a.errors.nomesin?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.nomesin[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-6"},[t("label",[a._v("No Rangka")]),a._v(" "),t("div",{staticClass:"input-group"},[t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.norangka,expression:"datakendaraan.norangka"}],ref:"norangka",staticClass:"form-control form-control-lg",staticStyle:{"text-transform":"uppercase"},attrs:{type:"text",name:"norangka",placeholder:" No Rangka"},domProps:{value:a.datakendaraan.norangka},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"norangka",t.target.value)}}}),a._v(" "),t("span",{staticClass:"input-group-text",attrs:{id:"basic-addon2"}},[t("a",{staticClass:"btn btn-sm btn-light-success font-weight-bold",attrs:{href:"javascript:void(0)"},on:{click:function(t){return a.getDataVTA(a.datakendaraan.norangka)}}},[t("i",{staticClass:"flaticon2-search"}),a._v(" Cek Data\n                      ")])])])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Bahan Bakar")]),a._v(" "),t("vSelect",{ref:"bahanbakar",attrs:{label:"fuel_name",options:a.fuels},on:{input:a.setFuel},model:{value:a.datakendaraan.bahanbakar,callback:function(t){a.$set(a.datakendaraan,"bahanbakar",t)},expression:"datakendaraan.bahanbakar"}}),a._v(" "),a.errors.bahanbakar?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.bahanbakar[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Penggunaan")]),a._v(" "),t("select",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.peruntukan,expression:"datakendaraan.peruntukan"}],staticClass:"form-control",on:{change:function(t){var e=Array.prototype.filter.call(t.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.datakendaraan,"peruntukan",t.target.multiple?e:e[0])}}},[t("option",{attrs:{value:"UMUM",selected:"selected"}},[a._v("UMUM")]),a._v(" "),t("option",{attrs:{value:"TIDAK UMUM"}},[a._v("TIDAK UMUM")]),a._v(" "),t("option",{attrs:{value:"PEMERINTAH"}},[a._v("PEMERINTAH")])]),a._v(" "),a.errors.peruntukan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.peruntukan[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Daerah Asal")]),a._v(" "),t("vSelect",{ref:"kodewilayahasal",attrs:{label:"area_name",options:a.kodewilayahs},on:{input:a.setAreaFrom},model:{value:a.datakendaraan.wilayahasal,callback:function(t){a.$set(a.datakendaraan,"wilayahasal",t)},expression:"datakendaraan.wilayahasal"}}),a._v(" "),a.errors.kodewilayah?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.kodewilayah[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Warna")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.warna,expression:"datakendaraan.warna"}],staticClass:"form-control form-control-lg",staticStyle:{"text-transform":"uppercase"},attrs:{type:"text",name:"warna",placeholder:"Warna"},domProps:{value:a.datakendaraan.warna},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"warna",t.target.value)}}})])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v(" No TMK")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.tmk,expression:"datakendaraan.tmk"}],staticClass:"form-control form-control-lg",attrs:{type:"number",min:"1",placeholder:"No TMK "},domProps:{value:a.datakendaraan.tmk},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"tmk",t.target.value)}}})])])])]),a._v(" "),t("div",{staticClass:"pb-5",attrs:{"data-wizard-type":"step-content"}},[t("div",{staticClass:"accordion",attrs:{role:"tablist"}},[t("b-card",{staticClass:"mb-1",attrs:{"no-body":""}},[t("b-card-header",{staticClass:"p-1 d-flex flex-row justify-content-center gap-2 mb-4",attrs:{"header-tag":"header",role:"tab"}},[t("b-button",{directives:[{name:"b-toggle",rawName:"v-b-toggle.accordion-1",modifiers:{"accordion-1":!0}}],staticClass:"mr-2",class:{active:a.isActive},attrs:{variant:"outline-primary"}},[a._v("Ukuran Utama")]),a._v(" "),t("b-button",{directives:[{name:"b-toggle",rawName:"v-b-toggle.accordion-2",modifiers:{"accordion-2":!0}}],staticClass:"mr-2",attrs:{variant:"outline-primary"}},[a._v("Dimensi Bak / Tangki")]),a._v(" "),t("b-button",{directives:[{name:"b-toggle",rawName:"v-b-toggle.accordion-3",modifiers:{"accordion-3":!0}}],staticClass:"mr-2",attrs:{variant:"outline-primary"}},[a._v("Jarak Sumbu")]),a._v(" "),t("b-button",{directives:[{name:"b-toggle",rawName:"v-b-toggle.accordion-4",modifiers:{"accordion-4":!0}}],staticClass:"mr-2",attrs:{variant:"outline-primary"}},[a._v("Berat Kosong")]),a._v(" "),t("b-button",{directives:[{name:"b-toggle",rawName:"v-b-toggle.accordion-5",modifiers:{"accordion-5":!0}}],staticClass:"mr-2",attrs:{variant:"outline-primary"}},[a._v("Daya Angkut")]),a._v(" "),t("b-button",{directives:[{name:"b-toggle",rawName:"v-b-toggle.accordion-6",modifiers:{"accordion-6":!0}}],staticClass:"mr-2",attrs:{variant:"outline-primary"}},[a._v("Catatan Rubah Bentuk")]),a._v(" "),t("b-button",{directives:[{name:"b-toggle",rawName:"v-b-toggle.accordion-7",modifiers:{"accordion-7":!0}}],staticClass:"mr-2",attrs:{variant:"outline-primary"},on:{click:a.relodaRiwayatUji}},[a._v("Riwayat Uji")])],1),a._v(" "),t("b-collapse",{attrs:{id:"accordion-1",visible:"",accordion:"my-accordion",role:"tabpanel"},on:{show:function(t){a.isActive=!0},hide:function(t){a.isActive=!1}}},[t("b-card-body",[t("div",{staticClass:"row"},[t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Panjang Kendaraan (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.panjangkendaraan,expression:"datakendaraan.panjangkendaraan"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"panjangkendaraan",min:"0",placeholder:"Panjang Kendaraan"},domProps:{value:a.datakendaraan.panjangkendaraan},on:{focus:function(t){return a.handleFocus("panjangkendaraan")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"panjangkendaraan",t.target.value)}}}),a._v(" "),a.errors.panjangkendaraan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.panjangkendaraan[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Lebar Kendaraan (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.lebarkendaraan,expression:"datakendaraan.lebarkendaraan"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"lebarkendaraan",min:"0",placeholder:"Lebar Kendaraan"},domProps:{value:a.datakendaraan.lebarkendaraan},on:{focus:function(t){return a.handleFocus("lebarkendaraan")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"lebarkendaraan",t.target.value)}}}),a._v(" "),a.errors.lebarkendaraan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.lebarkendaraan[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tinggi Kendaraan (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.tinggikendaraan,expression:"datakendaraan.tinggikendaraan"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"tinggikendaraan",min:"0",placeholder:"Tinggi Kendaraan"},domProps:{value:a.datakendaraan.tinggikendaraan},on:{focus:function(t){return a.handleFocus("tinggikendaraan")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"tinggikendaraan",t.target.value)}}}),a._v(" "),a.errors.tinggikendaraan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.tinggikendaraan[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Julur Belakang(mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.julurbelakang,expression:"datakendaraan.julurbelakang"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"julurbelakang",min:"0"},domProps:{value:a.datakendaraan.julurbelakang},on:{focus:function(t){return a.handleFocus("julurbelakang")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"julurbelakang",t.target.value)}}}),a._v(" "),a.errors.julurbelakang?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.julurbelakang[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Julur Depan(mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.julurdepan,expression:"datakendaraan.julurdepan"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"julurdepan",min:"0"},domProps:{value:a.datakendaraan.julurdepan},on:{focus:function(t){return a.handleFocus("julurdepan")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"julurdepan",t.target.value)}}}),a._v(" "),a.errors.julurdepan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.julurdepan[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jenis Rumah-rumah")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.bahan,expression:"datakendaraan.bahan"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"bahan"},domProps:{value:a.datakendaraan.bahan},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"bahan",t.target.value)}}}),a._v(" "),a.errors.bahan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.bahan[0]))]):a._e()])])])])],1),a._v(" "),t("b-collapse",{attrs:{id:"accordion-2",accordion:"my-accordion",role:"tabpanel"}},[t("b-card-body",[t("div",{staticClass:"row"},[t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Panjang Bak atau Tangki Muatan (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.panjangbakatautangki,expression:"datakendaraan.panjangbakatautangki"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"panjangbakatautangki",min:"0",placeholder:"Panjang Bak atau Tangki Muatan"},domProps:{value:a.datakendaraan.panjangbakatautangki},on:{focus:function(t){return a.handleFocus("panjangbakatautangki")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"panjangbakatautangki",t.target.value)}}}),a._v(" "),a.errors.panjangbakatautangki?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.panjangbakatautangki[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Lebar Bak atau Tangki Muatan (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.lebarbakatautangki,expression:"datakendaraan.lebarbakatautangki"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"lebarbakatautangki",min:"0",placeholder:"Lebar Bak atau Tangki Muatan"},domProps:{value:a.datakendaraan.lebarbakatautangki},on:{focus:function(t){return a.handleFocus("lebarbakatautangki")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"lebarbakatautangki",t.target.value)}}}),a._v(" "),a.errors.lebarbakatautangki?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.lebarbakatautangki[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tinggi Bak atau Tangki Muatan (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.tinggibakatautangki,expression:"datakendaraan.tinggibakatautangki"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"tinggibakatautangki",min:"0",placeholder:"Tinggi Bak atau Tangki Muatan"},domProps:{value:a.datakendaraan.tinggibakatautangki},on:{focus:function(t){return a.handleFocus("tinggibakatautangki")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"tinggibakatautangki",t.target.value)}}}),a._v(" "),a.errors.tinggibakatautangki?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.tinggibakatautangki[0]))]):a._e()])])])])],1),a._v(" "),t("b-collapse",{attrs:{id:"accordion-3",accordion:"my-accordion",role:"tabpanel"}},[t("b-card-body",[t("div",{staticClass:"row"},[t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",{staticClass:"text-danger"},[a._v("Jumlah Sumbu")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jumlah_sumbu,expression:"datakendaraan.jumlah_sumbu"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jumlah_sumbu",min:"2",placeholder:"Jumlah Sumbu"},domProps:{value:a.datakendaraan.jumlah_sumbu},on:{focus:function(t){return a.handleFocus("jumlah_sumbu")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jumlah_sumbu",t.target.value)}}}),a._v(" "),a.errors.jumlah_sumbu?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jumlah_sumbu[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu I-II (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu1_2,expression:"datakendaraan.jaraksumbu1_2"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jaraksumbu1_2",min:"0",placeholder:"Jarak Sumbu I-II (mm)"},domProps:{value:a.datakendaraan.jaraksumbu1_2},on:{focus:function(t){return a.handleFocus("jaraksumbu1_2")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu1_2",t.target.value)}}}),a._v(" "),a.errors.jaraksumbu1_2?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jaraksumbu1_2[0]))]):a._e()])]),a._v(" "),a.datakendaraan.jumlah_sumbu>2?t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu II-III (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu2_3,expression:"datakendaraan.jaraksumbu2_3"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"height",placeholder:"Jarak Sumbu II-III (mm)",min:"0"},domProps:{value:a.datakendaraan.jaraksumbu2_3},on:{focus:function(t){return a.handleFocus("jaraksumbu2_3")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu2_3",t.target.value)}}}),a._v(" "),a.errors.jaraksumbu2_3?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jaraksumbu2_3[0]))]):a._e()])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>3?t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu III-IV (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu3_4,expression:"datakendaraan.jaraksumbu3_4"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"length",placeholder:"Jarak Sumbu III-IV (mm)",min:"0"},domProps:{value:a.datakendaraan.jaraksumbu3_4},on:{focus:function(t){return a.handleFocus("jaraksumbu3_4")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu3_4",t.target.value)}}}),a._v(" "),a.errors.jaraksumbu3_4?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jaraksumbu3_4[0]))]):a._e()])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>4?t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu IV-V (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu4_5,expression:"datakendaraan.jaraksumbu4_5"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jaraksumbu4_5",placeholder:"Jarak Sumbu IV-V (mm)",min:"0"},domProps:{value:a.datakendaraan.jaraksumbu4_5},on:{focus:function(t){return a.handleFocus("jaraksumbu4_5")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu4_5",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>5?t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu V-VI (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu5_6,expression:"datakendaraan.jaraksumbu5_6"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jaraksumbu5_6",placeholder:"Jarak Sumbu V-VI (mm)",min:"0"},domProps:{value:a.datakendaraan.jaraksumbu5_6},on:{focus:function(t){return a.handleFocus("jaraksumbu5_6")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu5_6",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>6?t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu VI-VII (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu6_7,expression:"datakendaraan.jaraksumbu6_7"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jaraksumbu6_7",placeholder:"Jarak Sumbu VI-VII (mm)",min:"0"},domProps:{value:a.datakendaraan.jaraksumbu6_7},on:{focus:function(t){return a.handleFocus("jaraksumbu6_7")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu6_7",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>7?t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu VII-VIII (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu7_8,expression:"datakendaraan.jaraksumbu7_8"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jaraksumbu7_8",placeholder:"Jarak Sumbu VII-VIII (mm)",min:"0"},domProps:{value:a.datakendaraan.jaraksumbu7_8},on:{focus:function(t){return a.handleFocus("jaraksumbu7_8")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu7_8",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>8?t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu VIII-IX (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu8_9,expression:"datakendaraan.jaraksumbu8_9"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jaraksumbu8_9",placeholder:"Jarak Sumbu VIII-IX (mm)",min:"0"},domProps:{value:a.datakendaraan.jaraksumbu8_9},on:{focus:function(t){return a.handleFocus("jaraksumbu8_9")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu8_9",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>9?t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu IX-X (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu9_10,expression:"datakendaraan.jaraksumbu9_10"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jaraksumbu9_10",placeholder:"Jarak Sumbu IX-X (mm)",min:"0"},domProps:{value:a.datakendaraan.jaraksumbu9_10},on:{focus:function(t){return a.handleFocus("jaraksumbu9_10")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu9_10",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>10?t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu X-XI (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu10_11,expression:"datakendaraan.jaraksumbu10_11"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jaraksumbu10_11",min:"0",placeholder:"Jarak Sumbu X-XI (mm)"},domProps:{value:a.datakendaraan.jaraksumbu10_11},on:{focus:function(t){return a.handleFocus("jaraksumbu10_11")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu10_11",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>11?t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu XI-XII (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu11_12,expression:"datakendaraan.jaraksumbu11_12"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jaraksumbu11_12",min:"0",placeholder:"Jarak Sumbu XI-XII (mm)"},domProps:{value:a.datakendaraan.jaraksumbu11_12},on:{focus:function(t){return a.handleFocus("jaraksumbu11_12")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu11_12",t.target.value)}}})])]):a._e(),a._v(" "),t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Wheelbase (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.a,expression:"datakendaraan.a"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"a",placeholder:"Wheelbase (mm)"},domProps:{value:a.datakendaraan.a},on:{focus:function(t){return a.handleFocus("a")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"a",t.target.value)}}}),a._v(" "),a.errors.a?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.a[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("P (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.p,expression:"datakendaraan.p"}],staticClass:"form-control form-control-lg",attrs:{type:"number",placeholder:"P (mm)",name:"p",min:"0"},domProps:{value:a.datakendaraan.p},on:{focus:function(t){return a.handleFocus("p")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"p",t.target.value)}}}),a._v(" "),a.errors.p?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.p[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Q(mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.q,expression:"datakendaraan.q"}],staticClass:"form-control form-control-lg",attrs:{type:"number",placeholder:"Q (mm)",name:"q",min:"0"},domProps:{value:a.datakendaraan.q},on:{focus:function(t){return a.handleFocus("q")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"q",t.target.value)}}}),a._v(" "),a.errors.q?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.q[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("R(mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.r,expression:"datakendaraan.r"}],staticClass:"form-control form-control-lg",attrs:{type:"number",placeholder:"R (mm)",name:"r",min:"0"},domProps:{value:a.datakendaraan.r},on:{focus:function(t){return a.handleFocus("r")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"r",t.target.value)}}}),a._v(" "),a.errors.r?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.r[0]))]):a._e()])])])])],1),a._v(" "),t("b-collapse",{attrs:{id:"accordion-4",accordion:"my-accordion",role:"tabpanel"}},[t("b-card-body",[t("div",{staticClass:"row"},[t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 1(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu1,expression:"datakendaraan.beratsumbu1"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu1",min:"0"},domProps:{value:a.datakendaraan.beratsumbu1},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu1")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu1",t.target.value)}}}),a._v(" "),a.errors.beratsumbu1?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.beratsumbu1[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 2(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu2,expression:"datakendaraan.beratsumbu2"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu2",min:"0"},domProps:{value:a.datakendaraan.beratsumbu2},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu2")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu2",t.target.value)}}}),a._v(" "),a.errors.beratsumbu2?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.beratsumbu2[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 3(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu3,expression:"datakendaraan.beratsumbu3"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu3",min:"0"},domProps:{value:a.datakendaraan.beratsumbu3},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu3")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu3",t.target.value)}}}),a._v(" "),a.errors.beratsumbu3?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.beratsumbu3[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 4(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu4,expression:"datakendaraan.beratsumbu4"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu4",min:"0"},domProps:{value:a.datakendaraan.beratsumbu4},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu4")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu4",t.target.value)}}}),a._v(" "),a.errors.beratsumbu4?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.beratsumbu4[0]))]):a._e()])]),a._v(" "),a.datakendaraan.jumlah_sumbu>4?t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 5(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu5,expression:"datakendaraan.beratsumbu5"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu5",min:"0"},domProps:{value:a.datakendaraan.beratsumbu5},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu5")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu5",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>5?t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 6(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu6,expression:"datakendaraan.beratsumbu6"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu6",min:"0"},domProps:{value:a.datakendaraan.beratsumbu6},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu6")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu6",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>6?t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 7(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu7,expression:"datakendaraan.beratsumbu7"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu7",min:"0"},domProps:{value:a.datakendaraan.beratsumbu7},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu7")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu7",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>7?t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 8(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu8,expression:"datakendaraan.beratsumbu8"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu8",min:"0"},domProps:{value:a.datakendaraan.beratsumbu8},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu8")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu8",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>8?t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 9(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu9,expression:"datakendaraan.beratsumbu9"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu9",min:"0"},domProps:{value:a.datakendaraan.beratsumbu9},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu9")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu9",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>9?t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 10(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu10,expression:"datakendaraan.beratsumbu10"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu10",min:"0"},domProps:{value:a.datakendaraan.beratsumbu10},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu10")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu10",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>10?t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 11(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu11,expression:"datakendaraan.beratsumbu11"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu11",min:"0"},domProps:{value:a.datakendaraan.beratsumbu11},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu11")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu11",t.target.value)}}})])]):a._e(),a._v(" "),a.datakendaraan.jumlah_sumbu>11?t("div",{staticClass:"col-sm-2"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Berat Sumbu 12(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratsumbu12,expression:"datakendaraan.beratsumbu12"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratsumbu12",min:"0"},domProps:{value:a.datakendaraan.beratsumbu12},on:{change:function(t){a.totalBeratSumbu(),a.setJBI()},focus:function(t){return a.handleFocus("beratsumbu12")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratsumbu12",t.target.value)}}})])]):a._e(),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Total Berat Sumbu(Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.beratkosong,expression:"datakendaraan.beratkosong"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"beratkosong"},domProps:{value:a.datakendaraan.beratkosong},on:{change:function(t){return a.setJBI()},focus:function(t){return a.handleFocus("beratkosong")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"beratkosong",t.target.value)}}}),a._v(" "),a.errors.beratsumbu4?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.beratsumbu4[0]))]):a._e()])])])])],1),a._v(" "),t("b-collapse",{attrs:{id:"accordion-5",accordion:"my-accordion",role:"tabpanel"}},[t("b-card-body",[t("div",{staticClass:"row"},[t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Daya Angkut Orang (orang)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.dayaangkutorang,expression:"datakendaraan.dayaangkutorang"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"dayaangkutorang",min:"0",placeholder:"Daya Angkut Orang (mm)"},domProps:{value:a.datakendaraan.dayaangkutorang},on:{change:function(t){return a.setJBI()},focus:function(t){return a.handleFocus("dayaangkutorang")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"dayaangkutorang",t.target.value)}}}),a._v(" "),a.errors.dayaangkutorang?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.dayaangkutorang[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Daya Angkut Barang (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.dayaangkutbarang,expression:"datakendaraan.dayaangkutbarang"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"dayaangkutbarang",min:"0",placeholder:"Daya Angkut Barang"},domProps:{value:a.datakendaraan.dayaangkutbarang},on:{focus:function(t){return a.handleFocus("dayaangkutbarang")},change:function(t){return a.setJBI()},input:function(t){t.target.composing||a.$set(a.datakendaraan,"dayaangkutbarang",t.target.value)}}}),a._v(" "),a.errors.dayaangkutbarang?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.dayaangkutbarang[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("JBB (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jbb,expression:"datakendaraan.jbb"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jbb",min:"0",placeholder:"JBB"},domProps:{value:a.datakendaraan.jbb},on:{focus:function(t){return a.handleFocus("jbb")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jbb",t.target.value)}}}),a._v(" "),a.errors.jbb?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jbb[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("JBKB (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jbkb,expression:"datakendaraan.jbkb"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jbkb",min:"0",placeholder:"JBKB (Kg)"},domProps:{value:a.datakendaraan.jbkb},on:{focus:function(t){return a.handleFocus("jbkb")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jbkb",t.target.value)}}}),a._v(" "),a.errors.jbkb?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jbkb[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("JBI (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jbi,expression:"datakendaraan.jbi"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jbi",min:"0",placeholder:"JBI (Kg)"},domProps:{value:a.datakendaraan.jbi},on:{focus:function(t){return a.handleFocus("jbi")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jbi",t.target.value)}}}),a._v(" "),a.errors.jbi?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jbi[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("JBKI (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jbki,expression:"datakendaraan.jbki"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"jbki",min:"0",placeholder:"JBKI (Kg)"},domProps:{value:a.datakendaraan.jbki},on:{focus:function(t){return a.handleFocus("jbki")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"jbki",t.target.value)}}}),a._v(" "),a.errors.jbki?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jbki[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("MST (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.mst,expression:"datakendaraan.mst"}],staticClass:"form-control form-control-lg",attrs:{type:"number",name:"mst",min:"0",placeholder:"MST"},domProps:{value:a.datakendaraan.mst},on:{focus:function(t){return a.handleFocus("mst")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"mst",t.target.value)}}}),a._v(" "),a.errors.mst?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.mst[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Kelas Jalan Terendah")]),a._v(" "),t("vSelect",{ref:"kelasjalanterendah",attrs:{label:"kelasjalan_name",options:a.kelasjalans},on:{input:a.setKelasJalan},model:{value:a.datakendaraan.kelasjalanterendah,callback:function(t){a.$set(a.datakendaraan,"kelasjalanterendah",t)},expression:"datakendaraan.kelasjalanterendah"}}),a._v(" "),a.errors.kelasjalanterendah?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.kelasjalanterendah[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Konfigurasi Sumbu Roda")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.konfigurasisumburoda,expression:"datakendaraan.konfigurasisumburoda"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"konfigurasisumburoda",min:"0",placeholder:"Konfigurasi Sumbu Roda"},domProps:{value:a.datakendaraan.konfigurasisumburoda},on:{focus:function(t){return a.handleFocus("konfigurasisumburoda")},input:function(t){t.target.composing||a.$set(a.datakendaraan,"konfigurasisumburoda",t.target.value)}}}),a._v(" "),a.errors.konfigurasisumburoda?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.konfigurasisumburoda[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Ukuran Ban")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.ukuranban,expression:"datakendaraan.ukuranban"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"ukuranban",placeholder:"Ukuran Ban"},domProps:{value:a.datakendaraan.ukuranban},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"ukuranban",t.target.value)}}}),a._v(" "),a.errors.ukuranban?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.ukuranban[0]))]):a._e()])])])])],1),a._v(" "),t("b-collapse",{attrs:{id:"accordion-6",accordion:"my-accordion",role:"tabpanel"}},[t("b-card-body",[t("div",{staticClass:"row"},[t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Catatan Rubah Bentuk")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.catatanrubahbentuk,expression:"datakendaraan.catatanrubahbentuk"}],staticClass:"form-control form-control-lg",attrs:{type:"text",placeholder:"Catatan Rubah Bentuk",name:"catatanrubahbentuk"},domProps:{value:a.datakendaraan.catatanrubahbentuk},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"catatanrubahbentuk",t.target.value)}}}),a._v(" "),a.errors.catatanrubahbentuk?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.catatanrubahbentuk[0]))]):a._e()])])])])],1),a._v(" "),t("b-collapse",{attrs:{id:"accordion-7",accordion:"my-accordion",role:"tabpanel"},on:{show:function(t){a.isActiveRiwayat=!0},hide:function(t){a.isActiveRiwayat=!1}}},[t("b-card-body",[t("div",{staticClass:"table-responsive"},[t("table",{staticClass:"table"},[t("thead",[t("tr",[t("th",[a._v("Tanggal")]),a._v(" "),t("th",[a._v("Jenis Uji")]),a._v(" "),t("th",[a._v("Masa Berlaku Uji")]),a._v(" "),t("th",[a._v("POS 1")]),a._v(" "),t("th",[a._v("POS 2")]),a._v(" "),t("th",[a._v("POS 3")]),a._v(" "),t("th",[a._v("Verif 1")]),a._v(" "),t("th",[a._v("Verif 2")]),a._v(" "),t("th",[a._v("Modify")])])]),a._v(" "),t("tbody",[a._l(a.riwayatuji,(function(e){return t("tr",{key:e.uuid},[t("td",[a._v(a._s(a.formatTanggalIndo(e.tglpendaftaran)))]),a._v(" "),t("td",[a._v(a._s(e.keterangan))]),a._v(" "),t("td",[a._v("\n                                        "+a._s(a.formatTanggalIndonesia(e.masaberlakuuji))+"\n                                    ")]),a._v(" "),0==e.pos1?t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon-circle text-danger"})])]):1==e.pos1?t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon2-correct text-success"})])]):t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon2-line text-dark"})])]),a._v(" "),0==e.pos2?t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon-circle text-danger"})])]):1==e.pos2?t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon2-correct text-success"})])]):t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon2-line text-dark"})])]),a._v(" "),0==e.pos3?t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon-circle text-danger"})])]):1==e.pos3?t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon2-correct text-success"})])]):t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon2-line text-dark"})])]),a._v(" "),0==e.posverif?t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon-circle text-danger"})])]):1==e.posverif?t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon2-correct text-success"})])]):a._e(),a._v(" "),0==e.posverif2?t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon-circle text-danger"})])]):1==e.posverif2?t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon2-correct text-success"})])]):t("td",[t("a",{attrs:{href:"javascript:void(0)"}},[t("i",{staticClass:"flaticon2-line text-dark"})])]),a._v(" "),t("td",[t("b-button",{attrs:{size:"sm"},on:{click:function(t){return a.toggleDetail(e.uuid)}}},[a._v("\n                                        Detail\n                                      ")])],1)])})),a._v(" "),a.selectedUuid?t("tr",[t("td",{staticClass:"p-0",attrs:{colspan:"8"}},[t("iframe",{staticStyle:{border:"none"},attrs:{src:"/cetak/".concat(a.selectedUuid,"/lhp"),width:"100%",height:"500"}})])]):a._e()],2)])])])],1)],1)],1)]),a._v(" "),t("div",{staticClass:"d-flex justify-content-between border-top pt-10"},[a._m(1),a._v(" "),t("div",[t("button",{staticClass:"btn btn-success font-weight-bold text-uppercase px-9 py-4",attrs:{"data-wizard-type":"action-submit"},on:{click:a.submit}},[a._v("\n                  Submit\n                ")]),a._v(" "),t("button",{staticClass:"btn btn-primary font-weight-bold text-uppercase px-9 py-4",attrs:{"data-wizard-type":"action-next"}},[a._v("\n                  Next Step\n                ")])])])])])])])]),a._v(" "),t("b-modal",{ref:"modalRiwayat",staticClass:"modal",attrs:{id:"modalRiwayat",title:"Detail Riwayat"}}),a._v(" "),t("b-modal",{ref:"modalVTA",staticClass:"modal",attrs:{id:"modalVTA",title:"Cek Data"},on:{ok:a.resetCheck,hidden:a.resetCheck}},[t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("No SRUT")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.nosertifikatreg,expression:"datavta.nosertifikatreg"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.nosertifikatreg},on:{input:function(t){t.target.composing||a.$set(a.datavta,"nosertifikatreg",t.target.value)}}})]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("No SK Drijen")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.noskdrijen,expression:"datavta.noskdrijen"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.noskdrijen},on:{input:function(t){t.target.composing||a.$set(a.datavta,"noskdrijen",t.target.value)}}})]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("Merek")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.merek,expression:"datavta.merek"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.merek},on:{input:function(t){t.target.composing||a.$set(a.datavta,"merek",t.target.value)}}})]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("Tipe Varian")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.tipe,expression:"datavta.tipe"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.tipe},on:{input:function(t){t.target.composing||a.$set(a.datavta,"tipe",t.target.value)}}})]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("Jenis")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.jenis,expression:"datavta.jenis"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.jenis},on:{input:function(t){t.target.composing||a.$set(a.datavta,"jenis",t.target.value)}}})]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("Peruntukan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.peruntukan,expression:"datavta.peruntukan"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.peruntukan},on:{input:function(t){t.target.composing||a.$set(a.datavta,"peruntukan",t.target.value)}}})]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("No Rangka")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.norangka,expression:"datavta.norangka"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.norangka},on:{input:function(t){t.target.composing||a.$set(a.datavta,"norangka",t.target.value)}}})]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("No Mesin")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.nomesin,expression:"datavta.nomesin"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.nomesin},on:{input:function(t){t.target.composing||a.$set(a.datavta,"nomesin",t.target.value)}}})]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("Nama Perusahaan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.namaperusahaan,expression:"datavta.namaperusahaan"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.namaperusahaan},on:{input:function(t){t.target.composing||a.$set(a.datavta,"namaperusahaan",t.target.value)}}})]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("Alamat Perusahaan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.alamatperusahaan,expression:"datavta.alamatperusahaan"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.alamatperusahaan},on:{input:function(t){t.target.composing||a.$set(a.datavta,"alamatperusahaan",t.target.value)}}})]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:""}},[a._v("Penanggung Jawab")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datavta.penanggungjawab,expression:"datavta.penanggungjawab"}],staticClass:"form-control",attrs:{type:"text",disabled:""},domProps:{value:a.datavta.penanggungjawab},on:{input:function(t){t.target.composing||a.$set(a.datavta,"penanggungjawab",t.target.value)}}})])])],1)}),[function(){var a=this._self._c;return a("div",{staticClass:"wizard-nav border-bottom"},[a("div",{staticClass:"wizard-steps p-8 p-lg-10"},[a("div",{staticClass:"wizard-step",attrs:{"data-wizard-type":"step","data-wizard-state":"current"}},[a("div",{staticClass:"wizard-label"},[a("i",{staticClass:"wizard-icon flaticon-list"}),this._v(" "),a("h3",{staticClass:"wizard-title"},[this._v("1. Identitas")])]),this._v(" "),a("i",{staticClass:"wizard-arrow flaticon2-next"})]),this._v(" "),a("div",{staticClass:"wizard-step",attrs:{"data-wizard-type":"step"}},[a("div",{staticClass:"wizard-label"},[a("i",{staticClass:"wizard-icon flaticon2-lorry"}),this._v(" "),a("h3",{staticClass:"wizard-title"},[this._v("2. Data Kendaraan")])])])])])},function(){var a=this._self._c;return a("div",{staticClass:"mr-2"},[a("button",{staticClass:"btn btn-light-primary font-weight-bold text-uppercase px-9 py-4",attrs:{"data-wizard-type":"action-prev"}},[this._v("\n                  Previous\n                ")])])}],!1,null,null,null);t.default=k.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[12],{
+
+/***/ "./node_modules/vuex/dist/vuex.common.js":
+/*!***********************************************!*\
+  !*** ./node_modules/vuex/dist/vuex.common.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {/*!
+ * vuex v3.6.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */
+
+
+function applyMixin (Vue) {
+  var version = Number(Vue.version.split('.')[0]);
+
+  if (version >= 2) {
+    Vue.mixin({ beforeCreate: vuexInit });
+  } else {
+    // override init and inject vuex init procedure
+    // for 1.x backwards compatibility.
+    var _init = Vue.prototype._init;
+    Vue.prototype._init = function (options) {
+      if ( options === void 0 ) options = {};
+
+      options.init = options.init
+        ? [vuexInit].concat(options.init)
+        : vuexInit;
+      _init.call(this, options);
+    };
+  }
+
+  /**
+   * Vuex init hook, injected into each instances init hooks list.
+   */
+
+  function vuexInit () {
+    var options = this.$options;
+    // store injection
+    if (options.store) {
+      this.$store = typeof options.store === 'function'
+        ? options.store()
+        : options.store;
+    } else if (options.parent && options.parent.$store) {
+      this.$store = options.parent.$store;
+    }
+  }
+}
+
+var target = typeof window !== 'undefined'
+  ? window
+  : typeof global !== 'undefined'
+    ? global
+    : {};
+var devtoolHook = target.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+
+function devtoolPlugin (store) {
+  if (!devtoolHook) { return }
+
+  store._devtoolHook = devtoolHook;
+
+  devtoolHook.emit('vuex:init', store);
+
+  devtoolHook.on('vuex:travel-to-state', function (targetState) {
+    store.replaceState(targetState);
+  });
+
+  store.subscribe(function (mutation, state) {
+    devtoolHook.emit('vuex:mutation', mutation, state);
+  }, { prepend: true });
+
+  store.subscribeAction(function (action, state) {
+    devtoolHook.emit('vuex:action', action, state);
+  }, { prepend: true });
+}
+
+/**
+ * Get the first item that pass the test
+ * by second argument function
+ *
+ * @param {Array} list
+ * @param {Function} f
+ * @return {*}
+ */
+function find (list, f) {
+  return list.filter(f)[0]
+}
+
+/**
+ * Deep copy the given object considering circular structure.
+ * This function caches all nested objects and its copies.
+ * If it detects circular structure, use cached copy to avoid infinite loop.
+ *
+ * @param {*} obj
+ * @param {Array<Object>} cache
+ * @return {*}
+ */
+function deepCopy (obj, cache) {
+  if ( cache === void 0 ) cache = [];
+
+  // just return if obj is immutable value
+  if (obj === null || typeof obj !== 'object') {
+    return obj
+  }
+
+  // if obj is hit, it is in circular structure
+  var hit = find(cache, function (c) { return c.original === obj; });
+  if (hit) {
+    return hit.copy
+  }
+
+  var copy = Array.isArray(obj) ? [] : {};
+  // put the copy into cache at first
+  // because we want to refer it in recursive deepCopy
+  cache.push({
+    original: obj,
+    copy: copy
+  });
+
+  Object.keys(obj).forEach(function (key) {
+    copy[key] = deepCopy(obj[key], cache);
+  });
+
+  return copy
+}
+
+/**
+ * forEach for object
+ */
+function forEachValue (obj, fn) {
+  Object.keys(obj).forEach(function (key) { return fn(obj[key], key); });
+}
+
+function isObject (obj) {
+  return obj !== null && typeof obj === 'object'
+}
+
+function isPromise (val) {
+  return val && typeof val.then === 'function'
+}
+
+function assert (condition, msg) {
+  if (!condition) { throw new Error(("[vuex] " + msg)) }
+}
+
+function partial (fn, arg) {
+  return function () {
+    return fn(arg)
+  }
+}
+
+// Base data struct for store's module, package with some attribute and method
+var Module = function Module (rawModule, runtime) {
+  this.runtime = runtime;
+  // Store some children item
+  this._children = Object.create(null);
+  // Store the origin module object which passed by programmer
+  this._rawModule = rawModule;
+  var rawState = rawModule.state;
+
+  // Store the origin module's state
+  this.state = (typeof rawState === 'function' ? rawState() : rawState) || {};
+};
+
+var prototypeAccessors = { namespaced: { configurable: true } };
+
+prototypeAccessors.namespaced.get = function () {
+  return !!this._rawModule.namespaced
+};
+
+Module.prototype.addChild = function addChild (key, module) {
+  this._children[key] = module;
+};
+
+Module.prototype.removeChild = function removeChild (key) {
+  delete this._children[key];
+};
+
+Module.prototype.getChild = function getChild (key) {
+  return this._children[key]
+};
+
+Module.prototype.hasChild = function hasChild (key) {
+  return key in this._children
+};
+
+Module.prototype.update = function update (rawModule) {
+  this._rawModule.namespaced = rawModule.namespaced;
+  if (rawModule.actions) {
+    this._rawModule.actions = rawModule.actions;
+  }
+  if (rawModule.mutations) {
+    this._rawModule.mutations = rawModule.mutations;
+  }
+  if (rawModule.getters) {
+    this._rawModule.getters = rawModule.getters;
+  }
+};
+
+Module.prototype.forEachChild = function forEachChild (fn) {
+  forEachValue(this._children, fn);
+};
+
+Module.prototype.forEachGetter = function forEachGetter (fn) {
+  if (this._rawModule.getters) {
+    forEachValue(this._rawModule.getters, fn);
+  }
+};
+
+Module.prototype.forEachAction = function forEachAction (fn) {
+  if (this._rawModule.actions) {
+    forEachValue(this._rawModule.actions, fn);
+  }
+};
+
+Module.prototype.forEachMutation = function forEachMutation (fn) {
+  if (this._rawModule.mutations) {
+    forEachValue(this._rawModule.mutations, fn);
+  }
+};
+
+Object.defineProperties( Module.prototype, prototypeAccessors );
+
+var ModuleCollection = function ModuleCollection (rawRootModule) {
+  // register root module (Vuex.Store options)
+  this.register([], rawRootModule, false);
+};
+
+ModuleCollection.prototype.get = function get (path) {
+  return path.reduce(function (module, key) {
+    return module.getChild(key)
+  }, this.root)
+};
+
+ModuleCollection.prototype.getNamespace = function getNamespace (path) {
+  var module = this.root;
+  return path.reduce(function (namespace, key) {
+    module = module.getChild(key);
+    return namespace + (module.namespaced ? key + '/' : '')
+  }, '')
+};
+
+ModuleCollection.prototype.update = function update$1 (rawRootModule) {
+  update([], this.root, rawRootModule);
+};
+
+ModuleCollection.prototype.register = function register (path, rawModule, runtime) {
+    var this$1 = this;
+    if ( runtime === void 0 ) runtime = true;
+
+  if ((true)) {
+    assertRawModule(path, rawModule);
+  }
+
+  var newModule = new Module(rawModule, runtime);
+  if (path.length === 0) {
+    this.root = newModule;
+  } else {
+    var parent = this.get(path.slice(0, -1));
+    parent.addChild(path[path.length - 1], newModule);
+  }
+
+  // register nested modules
+  if (rawModule.modules) {
+    forEachValue(rawModule.modules, function (rawChildModule, key) {
+      this$1.register(path.concat(key), rawChildModule, runtime);
+    });
+  }
+};
+
+ModuleCollection.prototype.unregister = function unregister (path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+  var child = parent.getChild(key);
+
+  if (!child) {
+    if ((true)) {
+      console.warn(
+        "[vuex] trying to unregister module '" + key + "', which is " +
+        "not registered"
+      );
+    }
+    return
+  }
+
+  if (!child.runtime) {
+    return
+  }
+
+  parent.removeChild(key);
+};
+
+ModuleCollection.prototype.isRegistered = function isRegistered (path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+
+  if (parent) {
+    return parent.hasChild(key)
+  }
+
+  return false
+};
+
+function update (path, targetModule, newModule) {
+  if ((true)) {
+    assertRawModule(path, newModule);
+  }
+
+  // update target module
+  targetModule.update(newModule);
+
+  // update nested modules
+  if (newModule.modules) {
+    for (var key in newModule.modules) {
+      if (!targetModule.getChild(key)) {
+        if ((true)) {
+          console.warn(
+            "[vuex] trying to add a new module '" + key + "' on hot reloading, " +
+            'manual reload is needed'
+          );
+        }
+        return
+      }
+      update(
+        path.concat(key),
+        targetModule.getChild(key),
+        newModule.modules[key]
+      );
+    }
+  }
+}
+
+var functionAssert = {
+  assert: function (value) { return typeof value === 'function'; },
+  expected: 'function'
+};
+
+var objectAssert = {
+  assert: function (value) { return typeof value === 'function' ||
+    (typeof value === 'object' && typeof value.handler === 'function'); },
+  expected: 'function or object with "handler" function'
+};
+
+var assertTypes = {
+  getters: functionAssert,
+  mutations: functionAssert,
+  actions: objectAssert
+};
+
+function assertRawModule (path, rawModule) {
+  Object.keys(assertTypes).forEach(function (key) {
+    if (!rawModule[key]) { return }
+
+    var assertOptions = assertTypes[key];
+
+    forEachValue(rawModule[key], function (value, type) {
+      assert(
+        assertOptions.assert(value),
+        makeAssertionMessage(path, key, type, value, assertOptions.expected)
+      );
+    });
+  });
+}
+
+function makeAssertionMessage (path, key, type, value, expected) {
+  var buf = key + " should be " + expected + " but \"" + key + "." + type + "\"";
+  if (path.length > 0) {
+    buf += " in module \"" + (path.join('.')) + "\"";
+  }
+  buf += " is " + (JSON.stringify(value)) + ".";
+  return buf
+}
+
+var Vue; // bind on install
+
+var Store = function Store (options) {
+  var this$1 = this;
+  if ( options === void 0 ) options = {};
+
+  // Auto install if it is not done yet and `window` has `Vue`.
+  // To allow users to avoid auto-installation in some cases,
+  // this code should be placed here. See #731
+  if (!Vue && typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue);
+  }
+
+  if ((true)) {
+    assert(Vue, "must call Vue.use(Vuex) before creating a store instance.");
+    assert(typeof Promise !== 'undefined', "vuex requires a Promise polyfill in this browser.");
+    assert(this instanceof Store, "store must be called with the new operator.");
+  }
+
+  var plugins = options.plugins; if ( plugins === void 0 ) plugins = [];
+  var strict = options.strict; if ( strict === void 0 ) strict = false;
+
+  // store internal state
+  this._committing = false;
+  this._actions = Object.create(null);
+  this._actionSubscribers = [];
+  this._mutations = Object.create(null);
+  this._wrappedGetters = Object.create(null);
+  this._modules = new ModuleCollection(options);
+  this._modulesNamespaceMap = Object.create(null);
+  this._subscribers = [];
+  this._watcherVM = new Vue();
+  this._makeLocalGettersCache = Object.create(null);
+
+  // bind commit and dispatch to self
+  var store = this;
+  var ref = this;
+  var dispatch = ref.dispatch;
+  var commit = ref.commit;
+  this.dispatch = function boundDispatch (type, payload) {
+    return dispatch.call(store, type, payload)
+  };
+  this.commit = function boundCommit (type, payload, options) {
+    return commit.call(store, type, payload, options)
+  };
+
+  // strict mode
+  this.strict = strict;
+
+  var state = this._modules.root.state;
+
+  // init root module.
+  // this also recursively registers all sub-modules
+  // and collects all module getters inside this._wrappedGetters
+  installModule(this, state, [], this._modules.root);
+
+  // initialize the store vm, which is responsible for the reactivity
+  // (also registers _wrappedGetters as computed properties)
+  resetStoreVM(this, state);
+
+  // apply plugins
+  plugins.forEach(function (plugin) { return plugin(this$1); });
+
+  var useDevtools = options.devtools !== undefined ? options.devtools : Vue.config.devtools;
+  if (useDevtools) {
+    devtoolPlugin(this);
+  }
+};
+
+var prototypeAccessors$1 = { state: { configurable: true } };
+
+prototypeAccessors$1.state.get = function () {
+  return this._vm._data.$$state
+};
+
+prototypeAccessors$1.state.set = function (v) {
+  if ((true)) {
+    assert(false, "use store.replaceState() to explicit replace store state.");
+  }
+};
+
+Store.prototype.commit = function commit (_type, _payload, _options) {
+    var this$1 = this;
+
+  // check object-style commit
+  var ref = unifyObjectStyle(_type, _payload, _options);
+    var type = ref.type;
+    var payload = ref.payload;
+    var options = ref.options;
+
+  var mutation = { type: type, payload: payload };
+  var entry = this._mutations[type];
+  if (!entry) {
+    if ((true)) {
+      console.error(("[vuex] unknown mutation type: " + type));
+    }
+    return
+  }
+  this._withCommit(function () {
+    entry.forEach(function commitIterator (handler) {
+      handler(payload);
+    });
+  });
+
+  this._subscribers
+    .slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
+    .forEach(function (sub) { return sub(mutation, this$1.state); });
+
+  if (
+    ( true) &&
+    options && options.silent
+  ) {
+    console.warn(
+      "[vuex] mutation type: " + type + ". Silent option has been removed. " +
+      'Use the filter functionality in the vue-devtools'
+    );
+  }
+};
+
+Store.prototype.dispatch = function dispatch (_type, _payload) {
+    var this$1 = this;
+
+  // check object-style dispatch
+  var ref = unifyObjectStyle(_type, _payload);
+    var type = ref.type;
+    var payload = ref.payload;
+
+  var action = { type: type, payload: payload };
+  var entry = this._actions[type];
+  if (!entry) {
+    if ((true)) {
+      console.error(("[vuex] unknown action type: " + type));
+    }
+    return
+  }
+
+  try {
+    this._actionSubscribers
+      .slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
+      .filter(function (sub) { return sub.before; })
+      .forEach(function (sub) { return sub.before(action, this$1.state); });
+  } catch (e) {
+    if ((true)) {
+      console.warn("[vuex] error in before action subscribers: ");
+      console.error(e);
+    }
+  }
+
+  var result = entry.length > 1
+    ? Promise.all(entry.map(function (handler) { return handler(payload); }))
+    : entry[0](payload);
+
+  return new Promise(function (resolve, reject) {
+    result.then(function (res) {
+      try {
+        this$1._actionSubscribers
+          .filter(function (sub) { return sub.after; })
+          .forEach(function (sub) { return sub.after(action, this$1.state); });
+      } catch (e) {
+        if ((true)) {
+          console.warn("[vuex] error in after action subscribers: ");
+          console.error(e);
+        }
+      }
+      resolve(res);
+    }, function (error) {
+      try {
+        this$1._actionSubscribers
+          .filter(function (sub) { return sub.error; })
+          .forEach(function (sub) { return sub.error(action, this$1.state, error); });
+      } catch (e) {
+        if ((true)) {
+          console.warn("[vuex] error in error action subscribers: ");
+          console.error(e);
+        }
+      }
+      reject(error);
+    });
+  })
+};
+
+Store.prototype.subscribe = function subscribe (fn, options) {
+  return genericSubscribe(fn, this._subscribers, options)
+};
+
+Store.prototype.subscribeAction = function subscribeAction (fn, options) {
+  var subs = typeof fn === 'function' ? { before: fn } : fn;
+  return genericSubscribe(subs, this._actionSubscribers, options)
+};
+
+Store.prototype.watch = function watch (getter, cb, options) {
+    var this$1 = this;
+
+  if ((true)) {
+    assert(typeof getter === 'function', "store.watch only accepts a function.");
+  }
+  return this._watcherVM.$watch(function () { return getter(this$1.state, this$1.getters); }, cb, options)
+};
+
+Store.prototype.replaceState = function replaceState (state) {
+    var this$1 = this;
+
+  this._withCommit(function () {
+    this$1._vm._data.$$state = state;
+  });
+};
+
+Store.prototype.registerModule = function registerModule (path, rawModule, options) {
+    if ( options === void 0 ) options = {};
+
+  if (typeof path === 'string') { path = [path]; }
+
+  if ((true)) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+    assert(path.length > 0, 'cannot register the root module by using registerModule.');
+  }
+
+  this._modules.register(path, rawModule);
+  installModule(this, this.state, path, this._modules.get(path), options.preserveState);
+  // reset store to update getters...
+  resetStoreVM(this, this.state);
+};
+
+Store.prototype.unregisterModule = function unregisterModule (path) {
+    var this$1 = this;
+
+  if (typeof path === 'string') { path = [path]; }
+
+  if ((true)) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+  }
+
+  this._modules.unregister(path);
+  this._withCommit(function () {
+    var parentState = getNestedState(this$1.state, path.slice(0, -1));
+    Vue.delete(parentState, path[path.length - 1]);
+  });
+  resetStore(this);
+};
+
+Store.prototype.hasModule = function hasModule (path) {
+  if (typeof path === 'string') { path = [path]; }
+
+  if ((true)) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+  }
+
+  return this._modules.isRegistered(path)
+};
+
+Store.prototype.hotUpdate = function hotUpdate (newOptions) {
+  this._modules.update(newOptions);
+  resetStore(this, true);
+};
+
+Store.prototype._withCommit = function _withCommit (fn) {
+  var committing = this._committing;
+  this._committing = true;
+  fn();
+  this._committing = committing;
+};
+
+Object.defineProperties( Store.prototype, prototypeAccessors$1 );
+
+function genericSubscribe (fn, subs, options) {
+  if (subs.indexOf(fn) < 0) {
+    options && options.prepend
+      ? subs.unshift(fn)
+      : subs.push(fn);
+  }
+  return function () {
+    var i = subs.indexOf(fn);
+    if (i > -1) {
+      subs.splice(i, 1);
+    }
+  }
+}
+
+function resetStore (store, hot) {
+  store._actions = Object.create(null);
+  store._mutations = Object.create(null);
+  store._wrappedGetters = Object.create(null);
+  store._modulesNamespaceMap = Object.create(null);
+  var state = store.state;
+  // init all modules
+  installModule(store, state, [], store._modules.root, true);
+  // reset vm
+  resetStoreVM(store, state, hot);
+}
+
+function resetStoreVM (store, state, hot) {
+  var oldVm = store._vm;
+
+  // bind store public getters
+  store.getters = {};
+  // reset local getters cache
+  store._makeLocalGettersCache = Object.create(null);
+  var wrappedGetters = store._wrappedGetters;
+  var computed = {};
+  forEachValue(wrappedGetters, function (fn, key) {
+    // use computed to leverage its lazy-caching mechanism
+    // direct inline function use will lead to closure preserving oldVm.
+    // using partial to return function with only arguments preserved in closure environment.
+    computed[key] = partial(fn, store);
+    Object.defineProperty(store.getters, key, {
+      get: function () { return store._vm[key]; },
+      enumerable: true // for local getters
+    });
+  });
+
+  // use a Vue instance to store the state tree
+  // suppress warnings just in case the user has added
+  // some funky global mixins
+  var silent = Vue.config.silent;
+  Vue.config.silent = true;
+  store._vm = new Vue({
+    data: {
+      $$state: state
+    },
+    computed: computed
+  });
+  Vue.config.silent = silent;
+
+  // enable strict mode for new vm
+  if (store.strict) {
+    enableStrictMode(store);
+  }
+
+  if (oldVm) {
+    if (hot) {
+      // dispatch changes in all subscribed watchers
+      // to force getter re-evaluation for hot reloading.
+      store._withCommit(function () {
+        oldVm._data.$$state = null;
+      });
+    }
+    Vue.nextTick(function () { return oldVm.$destroy(); });
+  }
+}
+
+function installModule (store, rootState, path, module, hot) {
+  var isRoot = !path.length;
+  var namespace = store._modules.getNamespace(path);
+
+  // register in namespace map
+  if (module.namespaced) {
+    if (store._modulesNamespaceMap[namespace] && ("development" !== 'production')) {
+      console.error(("[vuex] duplicate namespace " + namespace + " for the namespaced module " + (path.join('/'))));
+    }
+    store._modulesNamespaceMap[namespace] = module;
+  }
+
+  // set state
+  if (!isRoot && !hot) {
+    var parentState = getNestedState(rootState, path.slice(0, -1));
+    var moduleName = path[path.length - 1];
+    store._withCommit(function () {
+      if ((true)) {
+        if (moduleName in parentState) {
+          console.warn(
+            ("[vuex] state field \"" + moduleName + "\" was overridden by a module with the same name at \"" + (path.join('.')) + "\"")
+          );
+        }
+      }
+      Vue.set(parentState, moduleName, module.state);
+    });
+  }
+
+  var local = module.context = makeLocalContext(store, namespace, path);
+
+  module.forEachMutation(function (mutation, key) {
+    var namespacedType = namespace + key;
+    registerMutation(store, namespacedType, mutation, local);
+  });
+
+  module.forEachAction(function (action, key) {
+    var type = action.root ? key : namespace + key;
+    var handler = action.handler || action;
+    registerAction(store, type, handler, local);
+  });
+
+  module.forEachGetter(function (getter, key) {
+    var namespacedType = namespace + key;
+    registerGetter(store, namespacedType, getter, local);
+  });
+
+  module.forEachChild(function (child, key) {
+    installModule(store, rootState, path.concat(key), child, hot);
+  });
+}
+
+/**
+ * make localized dispatch, commit, getters and state
+ * if there is no namespace, just use root ones
+ */
+function makeLocalContext (store, namespace, path) {
+  var noNamespace = namespace === '';
+
+  var local = {
+    dispatch: noNamespace ? store.dispatch : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+
+      if (!options || !options.root) {
+        type = namespace + type;
+        if (( true) && !store._actions[type]) {
+          console.error(("[vuex] unknown local action type: " + (args.type) + ", global type: " + type));
+          return
+        }
+      }
+
+      return store.dispatch(type, payload)
+    },
+
+    commit: noNamespace ? store.commit : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+
+      if (!options || !options.root) {
+        type = namespace + type;
+        if (( true) && !store._mutations[type]) {
+          console.error(("[vuex] unknown local mutation type: " + (args.type) + ", global type: " + type));
+          return
+        }
+      }
+
+      store.commit(type, payload, options);
+    }
+  };
+
+  // getters and state object must be gotten lazily
+  // because they will be changed by vm update
+  Object.defineProperties(local, {
+    getters: {
+      get: noNamespace
+        ? function () { return store.getters; }
+        : function () { return makeLocalGetters(store, namespace); }
+    },
+    state: {
+      get: function () { return getNestedState(store.state, path); }
+    }
+  });
+
+  return local
+}
+
+function makeLocalGetters (store, namespace) {
+  if (!store._makeLocalGettersCache[namespace]) {
+    var gettersProxy = {};
+    var splitPos = namespace.length;
+    Object.keys(store.getters).forEach(function (type) {
+      // skip if the target getter is not match this namespace
+      if (type.slice(0, splitPos) !== namespace) { return }
+
+      // extract local getter type
+      var localType = type.slice(splitPos);
+
+      // Add a port to the getters proxy.
+      // Define as getter property because
+      // we do not want to evaluate the getters in this time.
+      Object.defineProperty(gettersProxy, localType, {
+        get: function () { return store.getters[type]; },
+        enumerable: true
+      });
+    });
+    store._makeLocalGettersCache[namespace] = gettersProxy;
+  }
+
+  return store._makeLocalGettersCache[namespace]
+}
+
+function registerMutation (store, type, handler, local) {
+  var entry = store._mutations[type] || (store._mutations[type] = []);
+  entry.push(function wrappedMutationHandler (payload) {
+    handler.call(store, local.state, payload);
+  });
+}
+
+function registerAction (store, type, handler, local) {
+  var entry = store._actions[type] || (store._actions[type] = []);
+  entry.push(function wrappedActionHandler (payload) {
+    var res = handler.call(store, {
+      dispatch: local.dispatch,
+      commit: local.commit,
+      getters: local.getters,
+      state: local.state,
+      rootGetters: store.getters,
+      rootState: store.state
+    }, payload);
+    if (!isPromise(res)) {
+      res = Promise.resolve(res);
+    }
+    if (store._devtoolHook) {
+      return res.catch(function (err) {
+        store._devtoolHook.emit('vuex:error', err);
+        throw err
+      })
+    } else {
+      return res
+    }
+  });
+}
+
+function registerGetter (store, type, rawGetter, local) {
+  if (store._wrappedGetters[type]) {
+    if ((true)) {
+      console.error(("[vuex] duplicate getter key: " + type));
+    }
+    return
+  }
+  store._wrappedGetters[type] = function wrappedGetter (store) {
+    return rawGetter(
+      local.state, // local state
+      local.getters, // local getters
+      store.state, // root state
+      store.getters // root getters
+    )
+  };
+}
+
+function enableStrictMode (store) {
+  store._vm.$watch(function () { return this._data.$$state }, function () {
+    if ((true)) {
+      assert(store._committing, "do not mutate vuex store state outside mutation handlers.");
+    }
+  }, { deep: true, sync: true });
+}
+
+function getNestedState (state, path) {
+  return path.reduce(function (state, key) { return state[key]; }, state)
+}
+
+function unifyObjectStyle (type, payload, options) {
+  if (isObject(type) && type.type) {
+    options = payload;
+    payload = type;
+    type = type.type;
+  }
+
+  if ((true)) {
+    assert(typeof type === 'string', ("expects string as the type, but found " + (typeof type) + "."));
+  }
+
+  return { type: type, payload: payload, options: options }
+}
+
+function install (_Vue) {
+  if (Vue && _Vue === Vue) {
+    if ((true)) {
+      console.error(
+        '[vuex] already installed. Vue.use(Vuex) should be called only once.'
+      );
+    }
+    return
+  }
+  Vue = _Vue;
+  applyMixin(Vue);
+}
+
+/**
+ * Reduce the code which written in Vue.js for getting the state.
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} states # Object's item can be a function which accept state and getters for param, you can do something for state and getters in it.
+ * @param {Object}
+ */
+var mapState = normalizeNamespace(function (namespace, states) {
+  var res = {};
+  if (( true) && !isValidMap(states)) {
+    console.error('[vuex] mapState: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(states).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedState () {
+      var state = this.$store.state;
+      var getters = this.$store.getters;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapState', namespace);
+        if (!module) {
+          return
+        }
+        state = module.context.state;
+        getters = module.context.getters;
+      }
+      return typeof val === 'function'
+        ? val.call(this, state, getters)
+        : state[val]
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res
+});
+
+/**
+ * Reduce the code which written in Vue.js for committing the mutation
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} mutations # Object's item can be a function which accept `commit` function as the first param, it can accept another params. You can commit mutation and do any other things in this function. specially, You need to pass anthor params from the mapped function.
+ * @return {Object}
+ */
+var mapMutations = normalizeNamespace(function (namespace, mutations) {
+  var res = {};
+  if (( true) && !isValidMap(mutations)) {
+    console.error('[vuex] mapMutations: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(mutations).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedMutation () {
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
+
+      // Get the commit method from store
+      var commit = this.$store.commit;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapMutations', namespace);
+        if (!module) {
+          return
+        }
+        commit = module.context.commit;
+      }
+      return typeof val === 'function'
+        ? val.apply(this, [commit].concat(args))
+        : commit.apply(this.$store, [val].concat(args))
+    };
+  });
+  return res
+});
+
+/**
+ * Reduce the code which written in Vue.js for getting the getters
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} getters
+ * @return {Object}
+ */
+var mapGetters = normalizeNamespace(function (namespace, getters) {
+  var res = {};
+  if (( true) && !isValidMap(getters)) {
+    console.error('[vuex] mapGetters: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(getters).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    // The namespace has been mutated by normalizeNamespace
+    val = namespace + val;
+    res[key] = function mappedGetter () {
+      if (namespace && !getModuleByNamespace(this.$store, 'mapGetters', namespace)) {
+        return
+      }
+      if (( true) && !(val in this.$store.getters)) {
+        console.error(("[vuex] unknown getter: " + val));
+        return
+      }
+      return this.$store.getters[val]
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res
+});
+
+/**
+ * Reduce the code which written in Vue.js for dispatch the action
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} actions # Object's item can be a function which accept `dispatch` function as the first param, it can accept anthor params. You can dispatch action and do any other things in this function. specially, You need to pass anthor params from the mapped function.
+ * @return {Object}
+ */
+var mapActions = normalizeNamespace(function (namespace, actions) {
+  var res = {};
+  if (( true) && !isValidMap(actions)) {
+    console.error('[vuex] mapActions: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(actions).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedAction () {
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
+
+      // get dispatch function from store
+      var dispatch = this.$store.dispatch;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapActions', namespace);
+        if (!module) {
+          return
+        }
+        dispatch = module.context.dispatch;
+      }
+      return typeof val === 'function'
+        ? val.apply(this, [dispatch].concat(args))
+        : dispatch.apply(this.$store, [val].concat(args))
+    };
+  });
+  return res
+});
+
+/**
+ * Rebinding namespace param for mapXXX function in special scoped, and return them by simple object
+ * @param {String} namespace
+ * @return {Object}
+ */
+var createNamespacedHelpers = function (namespace) { return ({
+  mapState: mapState.bind(null, namespace),
+  mapGetters: mapGetters.bind(null, namespace),
+  mapMutations: mapMutations.bind(null, namespace),
+  mapActions: mapActions.bind(null, namespace)
+}); };
+
+/**
+ * Normalize the map
+ * normalizeMap([1, 2, 3]) => [ { key: 1, val: 1 }, { key: 2, val: 2 }, { key: 3, val: 3 } ]
+ * normalizeMap({a: 1, b: 2, c: 3}) => [ { key: 'a', val: 1 }, { key: 'b', val: 2 }, { key: 'c', val: 3 } ]
+ * @param {Array|Object} map
+ * @return {Object}
+ */
+function normalizeMap (map) {
+  if (!isValidMap(map)) {
+    return []
+  }
+  return Array.isArray(map)
+    ? map.map(function (key) { return ({ key: key, val: key }); })
+    : Object.keys(map).map(function (key) { return ({ key: key, val: map[key] }); })
+}
+
+/**
+ * Validate whether given map is valid or not
+ * @param {*} map
+ * @return {Boolean}
+ */
+function isValidMap (map) {
+  return Array.isArray(map) || isObject(map)
+}
+
+/**
+ * Return a function expect two param contains namespace and map. it will normalize the namespace and then the param's function will handle the new namespace and the map.
+ * @param {Function} fn
+ * @return {Function}
+ */
+function normalizeNamespace (fn) {
+  return function (namespace, map) {
+    if (typeof namespace !== 'string') {
+      map = namespace;
+      namespace = '';
+    } else if (namespace.charAt(namespace.length - 1) !== '/') {
+      namespace += '/';
+    }
+    return fn(namespace, map)
+  }
+}
+
+/**
+ * Search a special module from store by namespace. if module not exist, print error message.
+ * @param {Object} store
+ * @param {String} helper
+ * @param {String} namespace
+ * @return {Object}
+ */
+function getModuleByNamespace (store, helper, namespace) {
+  var module = store._modulesNamespaceMap[namespace];
+  if (( true) && !module) {
+    console.error(("[vuex] module namespace not found in " + helper + "(): " + namespace));
+  }
+  return module
+}
+
+// Credits: borrowed code from fcomb/redux-logger
+
+function createLogger (ref) {
+  if ( ref === void 0 ) ref = {};
+  var collapsed = ref.collapsed; if ( collapsed === void 0 ) collapsed = true;
+  var filter = ref.filter; if ( filter === void 0 ) filter = function (mutation, stateBefore, stateAfter) { return true; };
+  var transformer = ref.transformer; if ( transformer === void 0 ) transformer = function (state) { return state; };
+  var mutationTransformer = ref.mutationTransformer; if ( mutationTransformer === void 0 ) mutationTransformer = function (mut) { return mut; };
+  var actionFilter = ref.actionFilter; if ( actionFilter === void 0 ) actionFilter = function (action, state) { return true; };
+  var actionTransformer = ref.actionTransformer; if ( actionTransformer === void 0 ) actionTransformer = function (act) { return act; };
+  var logMutations = ref.logMutations; if ( logMutations === void 0 ) logMutations = true;
+  var logActions = ref.logActions; if ( logActions === void 0 ) logActions = true;
+  var logger = ref.logger; if ( logger === void 0 ) logger = console;
+
+  return function (store) {
+    var prevState = deepCopy(store.state);
+
+    if (typeof logger === 'undefined') {
+      return
+    }
+
+    if (logMutations) {
+      store.subscribe(function (mutation, state) {
+        var nextState = deepCopy(state);
+
+        if (filter(mutation, prevState, nextState)) {
+          var formattedTime = getFormattedTime();
+          var formattedMutation = mutationTransformer(mutation);
+          var message = "mutation " + (mutation.type) + formattedTime;
+
+          startMessage(logger, message, collapsed);
+          logger.log('%c prev state', 'color: #9E9E9E; font-weight: bold', transformer(prevState));
+          logger.log('%c mutation', 'color: #03A9F4; font-weight: bold', formattedMutation);
+          logger.log('%c next state', 'color: #4CAF50; font-weight: bold', transformer(nextState));
+          endMessage(logger);
+        }
+
+        prevState = nextState;
+      });
+    }
+
+    if (logActions) {
+      store.subscribeAction(function (action, state) {
+        if (actionFilter(action, state)) {
+          var formattedTime = getFormattedTime();
+          var formattedAction = actionTransformer(action);
+          var message = "action " + (action.type) + formattedTime;
+
+          startMessage(logger, message, collapsed);
+          logger.log('%c action', 'color: #03A9F4; font-weight: bold', formattedAction);
+          endMessage(logger);
+        }
+      });
+    }
+  }
+}
+
+function startMessage (logger, message, collapsed) {
+  var startMessage = collapsed
+    ? logger.groupCollapsed
+    : logger.group;
+
+  // render
+  try {
+    startMessage.call(logger, message);
+  } catch (e) {
+    logger.log(message);
+  }
+}
+
+function endMessage (logger) {
+  try {
+    logger.groupEnd();
+  } catch (e) {
+    logger.log('—— log end ——');
+  }
+}
+
+function getFormattedTime () {
+  var time = new Date();
+  return (" @ " + (pad(time.getHours(), 2)) + ":" + (pad(time.getMinutes(), 2)) + ":" + (pad(time.getSeconds(), 2)) + "." + (pad(time.getMilliseconds(), 3)))
+}
+
+function repeat (str, times) {
+  return (new Array(times + 1)).join(str)
+}
+
+function pad (num, maxLength) {
+  return repeat('0', maxLength - num.toString().length) + num
+}
+
+var index_cjs = {
+  Store: Store,
+  install: install,
+  version: '3.6.2',
+  mapState: mapState,
+  mapMutations: mapMutations,
+  mapGetters: mapGetters,
+  mapActions: mapActions,
+  createNamespacedHelpers: createNamespacedHelpers,
+  createLogger: createLogger
+};
+
+module.exports = index_cjs;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ })
+
+}]);

@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "MariaDB_Server": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/home/tereza/Packages/mcp/src/",
+        "run",
+        "server.py"
+      ],
+      "envFile": "/home/tereza/Codes/kerjaan/pkbcirebon/.env",
+      "disabled": false,
+      "alwaysAllow": []
+    },
+    "dbhub-local": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@bytebase/dbhub"
+      ],
+      "env": {
+        "ID": "local",
+        "DSN": "mysql://root:PKBCirebon2025@localhost:3306/pkbcirebon"
+      }
+    }
+  }
+}

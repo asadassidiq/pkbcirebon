@@ -137,7 +137,7 @@
                     </div>
                 </b-collapse>
             </div>
-            
+
             <div class="card card-custom">
                 <div class="card-header">
                     <div class="card-title">
@@ -240,7 +240,12 @@ import FormRem from "../formPengujian/FormRem.vue";
 
 export default {
     data() {
-        return {};
+        return {
+            size: {
+                width: 200,
+                height: 200,
+            },
+        };
     },
     mounted() {
         this.$store.dispatch(SET_BREADCRUMB, [
@@ -256,7 +261,7 @@ export default {
         });
     },
     methods: {
-        ...mapMutations("pos4", ["CLEAR_FORM", "CLEAR_CATATAN","CHECK_HASILUJI"]),
+        ...mapMutations("pos4", ["CLEAR_FORM", "CLEAR_CATATAN", "CHECK_HASILUJI"]),
         ...mapActions("pos4", ["submitPos", "getIdentitaskendaraan", "editPos"]),
         submit() {
             this.submitPos(this.$route.params.id).then(() => {

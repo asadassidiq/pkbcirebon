@@ -1,0 +1,8 @@
+/node_modules
+/vendor
+/public
+
+.env
+.env.production
+.env.local
+.env.development

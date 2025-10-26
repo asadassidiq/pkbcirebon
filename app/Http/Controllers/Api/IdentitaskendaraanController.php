@@ -11,14 +11,16 @@ use App\Services\IdentitasKendaraanService;
 // use App\Services\TipeService;
 use App\Http\Requests\Identitaskendaraan\IdentitaskendaraanStoreRequest;
 use App\Http\Requests\Identitaskendaraan\IdentitaskendaraanUpdateRequest;
+use App\Utils;
 
 class IdentitaskendaraanController extends Controller
 {
     use apiJsonReturnTrait;
     protected $identitaskendaraanService;
 
-    public function __construct(IdentitasKendaraanService $identitaskendaraanService)
-    {
+    public function __construct(
+        IdentitasKendaraanService $identitaskendaraanService,
+    ) {
         $this->identitaskendaraanService = $identitaskendaraanService;
         // $this->merekService = $merekService;
         // $this->tipeService = $tipeService;
@@ -32,6 +34,7 @@ class IdentitaskendaraanController extends Controller
     public function getIdentitaskendaraan($id)
     {
         $data = $this->identitaskendaraanService->getIdentitaskendaraan($id);
+
         return $this->returnJson($data);
     }
 
@@ -118,7 +121,7 @@ class IdentitaskendaraanController extends Controller
         // elseif(strpos($request->model,"{") == 0){
         //     $model = $request->model['jenis'];
         // }
-         else {
+        else {
             $model = $request->model;
         }
 
@@ -187,7 +190,7 @@ class IdentitaskendaraanController extends Controller
 
         if (is_array($request->model)) {
             $model = $request->model['jenis'];
-        }else {
+        } else {
             $model = $request->model;
         }
 
@@ -198,7 +201,7 @@ class IdentitaskendaraanController extends Controller
         // $data = $request->id;
         // $check = $this->identitaskendaraanService->getIdentitaskendaraanid($id);
         // if($check){
-            $data = $this->identitaskendaraanService->update($request, $id);
+        $data = $this->identitaskendaraanService->update($request, $id);
         // }
         // $data = $this->identitaskendaraanService->update($request, $request->id);
 

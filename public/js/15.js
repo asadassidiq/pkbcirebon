@@ -1,1 +1,370 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[15],{199:function(a,t,e){var r=e(266);"string"==typeof r&&(r=[[a.i,r,""]]);var n={hmr:!0,transform:void 0,insertInto:void 0};e(13)(r,n);r.locals&&(a.exports=r.locals)},265:function(a,t,e){"use strict";e(199)},266:function(a,t,e){(t=e(8)(!1)).push([a.i,".wizard.wizard-1 .wizard-nav .wizard-steps {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step {\n  display: flex;\n  align-items: center;\n  text-align: center;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label {\n  margin-left: 3.5rem;\n  margin-right: 3.5rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon {\n  color: #B5B5C3;\n  font-size: 3.75rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon svg g [fill] {\n  transition: fill 0.3s ease;\n  fill: #B5B5C3;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon svg:hover g [fill] {\n  transition: fill 0.3s ease;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-title {\n  color: #7E8299;\n  font-size: 1.1rem;\n  font-weight: 500;\n  margin-top: 0.75rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow {\n  color: #7E8299;\n  font-size: 1.25rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow.last {\n  display: none;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-label .wizard-icon, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-label .wizard-icon {\n  color: #3699FF;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-label .wizard-icon svg g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-label .wizard-icon svg g [fill] {\n  transition: fill 0.3s ease;\n  fill: #3699FF;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-label .wizard-icon svg:hover g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-label .wizard-icon svg:hover g [fill] {\n  transition: fill 0.3s ease;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-label .wizard-title, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-label .wizard-title {\n  color: #3699FF;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-arrow, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-arrow {\n  color: #3699FF;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-arrow svg g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-arrow svg g [fill] {\n  transition: fill 0.3s ease;\n  fill: #3699FF;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=done] .wizard-arrow svg:hover g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current] .wizard-arrow svg:hover g [fill] {\n  transition: fill 0.3s ease;\n}\n@media (min-width: 768px) and (max-width: 1199.98px) {\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label {\n    margin-left: 1.5rem;\n    margin-right: 1.5rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon {\n    font-size: 3.75rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-title {\n    margin-top: 0.75rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow {\n    font-size: 1.1rem;\n}\n}\n@media (max-width: 767.98px) {\n.wizard.wizard-1 .wizard-nav .wizard-steps {\n    flex-direction: column;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step {\n    width: 100%;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-bottom: 0.5rem;\n    margin-top: 0.5rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label {\n    flex-direction: row;\n    display: flex;\n    align-items: center;\n    margin-left: 0;\n    margin-right: 0;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon {\n    font-size: 1.5rem;\n    margin-right: 1.25rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow {\n    font-size: 1rem;\n}\n.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow.last {\n    display: block;\n}\n}\n.image-input {\n  position: relative;\n  display: inline-block;\n  border-radius: 0.42rem;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.image-input .image-input-wrapper {\n  width: 120px;\n  height: 120px;\n  border-radius: 0.42rem;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.image-input [data-action=change] {\n  cursor: pointer;\n  position: absolute;\n  right: -10px;\n  top: -10px;\n}\n.image-input [data-action=change] input {\n  width: 0 !important;\n  height: 0 !important;\n  overflow: hidden;\n  opacity: 0;\n}\n.image-input [data-action=cancel],\n.image-input [data-action=remove] {\n  position: absolute;\n  right: -10px;\n  bottom: -5px;\n}\n.image-input [data-action=cancel] {\n  display: none;\n}\n.image-input.image-input-changed [data-action=cancel] {\n  display: flex;\n}\n.image-input.image-input-changed [data-action=remove] {\n  display: none;\n}\n.image-input.image-input-empty [data-action=remove],\n.image-input.image-input-empty [data-action=cancel] {\n  display: none;\n}\n.image-input.image-input-circle {\n  border-radius: 50%;\n}\n.image-input.image-input-circle .image-input-wrapper {\n  border-radius: 50%;\n}\n.image-input.image-input-circle [data-action=change] {\n  right: 5px;\n  top: 5px;\n}\n.image-input.image-input-circle [data-action=cancel],\n.image-input.image-input-circle [data-action=remove] {\n  right: 5px;\n  bottom: 5px;\n}\n.image-input.image-input-outline .image-input-wrapper {\n  border: 3px solid #ffffff;\n  box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);\n}",""]),a.exports=t},476:function(a,t,e){"use strict";e.r(t);var r=e(6),n=e(2),i=(e(34),e(16)),s=e(3),o=e.n(s),d=e(0),l=e(12),c=e(14);function p(a){return(p="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?"symbol":typeof a})(a)}function u(a,t){var e=Object.keys(a);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(a);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(a,t).enumerable}))),e.push.apply(e,r)}return e}function v(a){for(var t=1;t<arguments.length;t++){var e=null!=arguments[t]?arguments[t]:{};t%2?u(Object(e),!0).forEach((function(t){m(a,t,e[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(e)):u(Object(e)).forEach((function(t){Object.defineProperty(a,t,Object.getOwnPropertyDescriptor(e,t))}))}return a}function m(a,t,e){return(t=function(a){var t=function(a,t){if("object"!==p(a)||null===a)return a;var e=a[Symbol.toPrimitive];if(void 0!==e){var r=e.call(a,t||"default");if("object"!==p(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(a)}(a,"string");return"symbol"===p(t)?t:String(t)}(t))in a?Object.defineProperty(a,t,{value:e,enumerable:!0,configurable:!0,writable:!0}):a[t]=e,a}var g={data:function(){return{id:c.id}},name:"Wizard-1",mounted:function(){this.$store.dispatch(r.a,[{title:"Pendaftaran"},{title:"Add"}]);var a=new i.a("kt_wizard_v1",{startStep:1,clickableSteps:!0});a.on("beforeNext",(function(){})),a.on("change",(function(){setTimeout((function(){n.a.scrollTop()}),500)}))},created:function(){this.CLEAR_FORM(),this.getKodewilayahs(),this.getMereks(),this.getTipes(),this.getJenis(),this.getKodewilayahs(),this.caridata(),"pengujian.edit"==this.$route.name&&this.editPendaftaran(this.$route.params.id)},methods:v(v(v({},Object(d.d)("pendaftaran",["CLEAR_FORM"])),Object(d.b)("pendaftaran",["updateIdentitaskendaraan","getKodewilayahs","getMereks","getTipes","getJenis","getKodewilayahs","getIdentitaskendaraanNouji","editPendaftaran","updatePendaftaran","updateDatakendaraan"])),{},{submitidentitas:function(){console.log(this.$route.params.id),this.updateIdentitaskendaraan(this.$route.params.id).then((function(){o.a.fire({icon:"success",title:"Saved",showConfirmButton:!1,timer:1500})}))},submitdatakendaraan:function(){this.updateDatakendaraan(this.$route.params.id).then((function(){o.a.fire({icon:"success",title:"Saved",showConfirmButton:!1,timer:1500})}))},submit:function(){var a=this;this.updatePendaftaran(this.$route.params.id).then((function(){o.a.fire({icon:"success",title:"Saved",showConfirmButton:!1,timer:1500}),a.$router.push({name:"pendaftaran.data"})}))},submitUpdate:function(){},caridata:function(){this.getIdentitaskendaraanNouji()}}),destroyed:function(){this.CLEAR_FORM()},computed:v(v(v(v({},Object(d.e)(["errors"])),Object(d.e)("pendaftaran",{identitaskendaraan:function(a){return a.identitaskendaraan},datakendaraan:function(a){return a.datakendaraan},pendaftaran:function(a){return a.pendaftaran}})),Object(d.e)("pendaftaran",{kodewilayahs:function(a){return a.kodewilayahs}})),Object(d.e)("pendaftaran",{mereks:function(a){return a.mereks},tipes:function(a){return a.tipes},jenis:function(a){return a.jenis}})),components:{datepicker:l.a}},f=(e(265),e(1)),_=Object(f.a)(g,(function(){var a=this,t=a._self._c;return t("div",{staticClass:"card card-custom"},[t("div",{staticClass:"card-body p-0"},[t("div",{staticClass:"wizard wizard-1",attrs:{id:"kt_wizard_v1","data-wizard-state":"step-first","data-wizard-clickable":"true"}},[a._m(0),a._v(" "),t("div",{staticClass:"row justify-content-center my-10 px-8 my-lg-15 px-lg-10"},[t("div",{staticClass:"col-xl-12 col-xxl-7"},[t("form",{staticClass:"form",attrs:{id:"kt_form"}},[t("div",{staticClass:"pb-5",attrs:{"data-wizard-type":"step-content","data-wizard-state":"current"}},[t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-6"},[t("div",{staticClass:"form-group"},[t("label",[a._v(" No Uji")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.nouji,expression:"identitaskendaraan.nouji"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:"No Uji"},domProps:{value:a.identitaskendaraan.nouji},on:{change:function(t){return a.caridata()},input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"nouji",t.target.value)}}}),a._v(" "),a.errors.nouji?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.nouji[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-6"},[t("div",{staticClass:"form-group"},[t("label",[a._v("No Kendaraan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.noregistrasikendaraan,expression:"identitaskendaraan.noregistrasikendaraan"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"height",placeholder:" No Kendaraan"},domProps:{value:a.identitaskendaraan.noregistrasikendaraan},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"noregistrasikendaraan",t.target.value)}}}),a._v(" "),a.errors.noregistrasikendaraan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.noregistrasikendaraan[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v(" Nama")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.nama,expression:"identitaskendaraan.nama"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:" nama"},domProps:{value:a.identitaskendaraan.nama},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"nama",t.target.value)}}}),a._v(" "),a.errors.nama?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.nama[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v(" No Identitas")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.noidentitaspemilik,expression:"identitaskendaraan.noidentitaspemilik"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"height",placeholder:" No Identitas"},domProps:{value:a.identitaskendaraan.noidentitaspemilik},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"noidentitaspemilik",t.target.value)}}}),a._v(" "),a.errors.noidentitaspemilik?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.noidentitaspemilik[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v(" Alamat")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.alamat,expression:"identitaskendaraan.alamat"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:" Alamat"},domProps:{value:a.identitaskendaraan.alamat},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"alamat",t.target.value)}}}),a._v(" "),a.errors.alamat?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.alamat[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("No SRUT")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.nosertifikatreg,expression:"identitaskendaraan.nosertifikatreg"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:" No SRUT"},domProps:{value:a.identitaskendaraan.nosertifikatreg},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"nosertifikatreg",t.target.value)}}}),a._v(" "),a.errors.nosertifikatreg?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.nosertifikatreg[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tgl SRUT")]),a._v(" "),t("datepicker",{attrs:{"input-class":"form-control",value:a.identitaskendaraan.tglsertifikatreg,language:a.id},model:{value:a.identitaskendaraan.tglsertifikatreg,callback:function(t){a.$set(a.identitaskendaraan,"tglsertifikatreg",t)},expression:"identitaskendaraan.tglsertifikatreg"}}),a._v(" "),a.errors.tglsertifikatreg?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.tglsertifikatreg[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tahun Pembuatan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.thpembuatan,expression:"identitaskendaraan.thpembuatan"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:"Tahun Pembuatan"},domProps:{value:a.identitaskendaraan.thpembuatan},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"thpembuatan",t.target.value)}}}),a._v(" "),a.errors.thpembuatan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.thpembuatan[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Merek")]),a._v(" "),t("select",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.merek,expression:"identitaskendaraan.merek"}],staticClass:"form-control",staticStyle:{width:"100%"},on:{change:function(t){var e=Array.prototype.filter.call(t.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.identitaskendaraan,"merek",t.target.multiple?e:e[0])}}},a._l(a.mereks,(function(e){return t("option",{key:e.id,domProps:{value:e.merek}},[a._v(a._s(e.merek))])})),0),a._v(" "),a.errors.merek?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.merek[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tipe")]),a._v(" "),t("select",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.tipe,expression:"identitaskendaraan.tipe"}],staticClass:"form-control",staticStyle:{width:"100%"},on:{change:function(t){var e=Array.prototype.filter.call(t.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.identitaskendaraan,"tipe",t.target.multiple?e:e[0])}}},a._l(a.tipes,(function(e){return t("option",{key:e.id,domProps:{value:e.tipe}},[a._v(a._s(e.tipe))])})),0),a._v(" "),a.errors.tipe?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.tipe[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jenis")]),a._v(" "),t("select",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.jenis,expression:"identitaskendaraan.jenis"}],staticClass:"form-control",staticStyle:{width:"100%"},on:{change:function(t){var e=Array.prototype.filter.call(t.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.identitaskendaraan,"jenis",t.target.multiple?e:e[0])}}},a._l(a.jenis,(function(e){return t("option",{key:e.id,domProps:{value:e.jenis}},[a._v(a._s(e.jenis))])})),0),a._v(" "),a.errors.jenis?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jenis[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Isi Silinder")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.isisilinder,expression:"identitaskendaraan.isisilinder"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"height",placeholder:" Isi Silinder"},domProps:{value:a.identitaskendaraan.isisilinder},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"isisilinder",t.target.value)}}}),a._v(" "),a.errors.isisilinder?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.isisilinder[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Daya Motor Penggerak")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.dayamotorpenggerak,expression:"identitaskendaraan.dayamotorpenggerak"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:" Daya Motor Penggerak"},domProps:{value:a.identitaskendaraan.dayamotorpenggerak},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"dayamotorpenggerak",t.target.value)}}}),a._v(" "),a.errors.dayamotorpenggerak?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.dayamotorpenggerak[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Nomer Mesin")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.nomesin,expression:"identitaskendaraan.nomesin"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:"Nomer Mesin"},domProps:{value:a.identitaskendaraan.nomesin},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"nomesin",t.target.value)}}}),a._v(" "),a.errors.nomesin?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.nomesin[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Nomer Rangka")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.norangka,expression:"identitaskendaraan.norangka"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:"Nomer Rangka"},domProps:{value:a.identitaskendaraan.norangka},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"norangka",t.target.value)}}}),a._v(" "),a.errors.norangka?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.norangka[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Bahan Bakar")]),a._v(" "),t("select",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.bahanbakar,expression:"identitaskendaraan.bahanbakar"}],staticClass:"form-control",on:{change:function(t){var e=Array.prototype.filter.call(t.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.identitaskendaraan,"bahanbakar",t.target.multiple?e:e[0])}}},[t("option",{attrs:{selected:"selected"}},[a._v("Bensin")]),a._v(" "),t("option",[a._v("Solar")]),a._v(" "),t("option",[a._v("Gas")])]),a._v(" "),a.errors.bahanbakar?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.bahanbakar[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Peruntukan")]),a._v(" "),t("select",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.peruntukan,expression:"identitaskendaraan.peruntukan"}],staticClass:"form-control",on:{change:function(t){var e=Array.prototype.filter.call(t.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.identitaskendaraan,"peruntukan",t.target.multiple?e:e[0])}}},[t("option",{attrs:{value:"UMUM",selected:"selected"}},[a._v("UMUM")]),a._v(" "),t("option",{attrs:{value:"TIDAK UMUM"}},[a._v("TIDAK UMUM")]),a._v(" "),t("option",{attrs:{value:"PEMERINTAH"}},[a._v("PEMERINTAH")])]),a._v(" "),a.errors.peruntukan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.peruntukan[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Daerah")]),a._v(" "),t("select",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.kodewilayah,expression:"identitaskendaraan.kodewilayah"}],staticClass:"form-control",staticStyle:{width:"100%"},on:{change:function(t){var e=Array.prototype.filter.call(t.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.identitaskendaraan,"kodewilayah",t.target.multiple?e:e[0])}}},a._l(a.kodewilayahs,(function(e){return t("option",{key:e.kodewilayah,domProps:{value:e.kodewilayah}},[a._v(a._s(e.area_name))])})),0),a._v(" "),a.errors.kodewilayah?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.kodewilayah[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Daerah")]),a._v(" "),t("select",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.kodewilayahasal,expression:"identitaskendaraan.kodewilayahasal"}],staticClass:"form-control",staticStyle:{width:"100%"},on:{change:function(t){var e=Array.prototype.filter.call(t.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.identitaskendaraan,"kodewilayahasal",t.target.multiple?e:e[0])}}},a._l(a.kodewilayahs,(function(e){return t("option",{key:e.kodewilayah,domProps:{value:e.kodewilayah}},[a._v(a._s(e.area_name))])})),0),a._v(" "),a.errors.kodewilayah?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.kodewilayah[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("br"),a._v(" "),t("button",{staticClass:"btn btn-primary btn-xl",on:{click:function(t){return t.preventDefault(),a.submitidentitas.apply(null,arguments)}}},[t("i",{staticClass:"fa fa-save"}),a._v(" Save\n                      ")])])])])]),a._v(" "),t("div",{staticClass:"pb-5",attrs:{"data-wizard-type":"step-content"}},[t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("JBB (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jbb,expression:"datakendaraan.jbb"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:"JBB"},domProps:{value:a.datakendaraan.jbb},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"jbb",t.target.value)}}}),a._v(" "),a.errors.jbb?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jbb[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("JBKB (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jbkb,expression:"datakendaraan.jbkb"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"height",placeholder:"JBKB (Kg)"},domProps:{value:a.datakendaraan.jbkb},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"jbkb",t.target.value)}}}),a._v(" "),a.errors.jbkb?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jbkb[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("JBI (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jbi,expression:"datakendaraan.jbi"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:"JBI (Kg)"},domProps:{value:a.datakendaraan.jbi},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"jbi",t.target.value)}}}),a._v(" "),a.errors.jbi?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jbi[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("JBKI (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jbKi,expression:"datakendaraan.jbKi"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:"JBKI (Kg)"},domProps:{value:a.datakendaraan.jbKi},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"jbKi",t.target.value)}}}),a._v(" "),a.errors.jbki?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jbki[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("MST (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.mst,expression:"datakendaraan.mst"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:"MST"},domProps:{value:a.datakendaraan.mst},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"mst",t.target.value)}}}),a._v(" "),a.errors.mst?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.mst[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Kelas Jalan Terendah")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.kelasjalanterendah,expression:"datakendaraan.kelasjalanterendah"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"height",placeholder:"Kelas Jalan Ternendah"},domProps:{value:a.datakendaraan.kelasjalanterendah},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"kelasjalanterendah",t.target.value)}}}),a._v(" "),a.errors.kelasjalanterendah?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.kelasjalanterendah[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Konfigurasi Sumbu Roda")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.konfigurasisumburoda,expression:"datakendaraan.konfigurasisumburoda"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:"Konfigurasi Sumbu Roda"},domProps:{value:a.datakendaraan.konfigurasisumburoda},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"konfigurasisumburoda",t.target.value)}}}),a._v(" "),a.errors.konfigurasisumburoda?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.konfigurasisumburoda[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Ukuran Ban")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.ukuranban,expression:"datakendaraan.ukuranban"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:"Ukuran Ban"},domProps:{value:a.datakendaraan.ukuranban},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"ukuranban",t.target.value)}}}),a._v(" "),a.errors.ukuranban?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.ukuranban[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu I-II (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu1_2,expression:"datakendaraan.jaraksumbu1_2"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:"Jarak Sumbu I-II (mm)"},domProps:{value:a.datakendaraan.jaraksumbu1_2},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu1_2",t.target.value)}}}),a._v(" "),a.errors.jaraksumbu1_2?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jaraksumbu1_2[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu II-III (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu2_3,expression:"datakendaraan.jaraksumbu2_3"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"height",placeholder:"Jarak Sumbu II-III (mm)"},domProps:{value:a.datakendaraan.jaraksumbu2_3},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu2_3",t.target.value)}}}),a._v(" "),a.errors.jaraksumbu2_3?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jaraksumbu2_3[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jarak Sumbu III-IV (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.jaraksumbu3_4,expression:"datakendaraan.jaraksumbu3_4"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:"Jarak Sumbu III-IV (mm)"},domProps:{value:a.datakendaraan.jaraksumbu3_4},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"jaraksumbu3_4",t.target.value)}}}),a._v(" "),a.errors.jaraksumbu3_4?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jaraksumbu3_4[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("P (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.p,expression:"datakendaraan.p"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:"P (mm)"},domProps:{value:a.datakendaraan.p},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"p",t.target.value)}}}),a._v(" "),a.errors.p?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.p[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Q(mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.p,expression:"datakendaraan.p"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"height",placeholder:"Q (mm)"},domProps:{value:a.datakendaraan.p},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"p",t.target.value)}}}),a._v(" "),a.errors.q?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.q[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Daya Angkut Orang (orang)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.dayaangkutorang,expression:"datakendaraan.dayaangkutorang"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:"Daya Angkut Orang (mm)"},domProps:{value:a.datakendaraan.dayaangkutorang},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"dayaangkutorang",t.target.value)}}}),a._v(" "),a.errors.dayaangkutorang?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.dayaangkutorang[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-3"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Daya Angkut Barang (Kg)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.dayaangkutbarang,expression:"datakendaraan.dayaangkutbarang"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:"Daya Angkut Barang"},domProps:{value:a.datakendaraan.dayaangkutbarang},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"dayaangkutbarang",t.target.value)}}}),a._v(" "),a.errors.dayaangkutbarang?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.dayaangkutbarang[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Panjang Kendaraan (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.panjangkendaraan,expression:"datakendaraan.panjangkendaraan"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:"Panjang Kendaraan"},domProps:{value:a.datakendaraan.panjangkendaraan},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"panjangkendaraan",t.target.value)}}}),a._v(" "),a.errors.panjangkendaraan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.panjangkendaraan[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Lebar Kendaraan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.lebarkendaraan,expression:"datakendaraan.lebarkendaraan"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"height",placeholder:"Lebar Kendaraan"},domProps:{value:a.datakendaraan.lebarkendaraan},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"lebarkendaraan",t.target.value)}}}),a._v(" "),a.errors.lebarkendaraan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.lebarkendaraan[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tinggi Kendaraan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.tinggikendaraan,expression:"datakendaraan.tinggikendaraan"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:"Tinggi Kendaraan"},domProps:{value:a.datakendaraan.tinggikendaraan},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"tinggikendaraan",t.target.value)}}}),a._v(" "),a.errors.tinggikendaraan?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.tinggikendaraan[0]))]):a._e()])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Panjang Bak atau Tangki Muatan (mm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.panjangbakatautangki,expression:"datakendaraan.panjangbakatautangki"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"width",placeholder:"Panjang Bak atau Tangki Muatan"},domProps:{value:a.datakendaraan.panjangbakatautangki},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"panjangbakatautangki",t.target.value)}}}),a._v(" "),a.errors.panjangbakatautangki?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.panjangbakatautangki[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Lebar Bak atau Tangki Muatan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.lebarbakatautangki,expression:"datakendaraan.lebarbakatautangki"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"height",placeholder:"Lebar Bak atau Tangki Muatan"},domProps:{value:a.datakendaraan.lebarbakatautangki},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"lebarbakatautangki",t.target.value)}}}),a._v(" "),a.errors.lebarbakatautangki?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.lebarbakatautangki[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tinggi Bak atau Tangki Muatan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.datakendaraan.tinggibakatautangki,expression:"datakendaraan.tinggibakatautangki"}],staticClass:"form-control form-control-solid form-control-lg",attrs:{type:"text",name:"length",placeholder:"Tinggi Bak atau Tangki Muatan"},domProps:{value:a.datakendaraan.tinggibakatautangki},on:{input:function(t){t.target.composing||a.$set(a.datakendaraan,"tinggibakatautangki",t.target.value)}}}),a._v(" "),a.errors.tinggibakatautangki?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.tinggibakatautangki[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("button",{staticClass:"btn btn-primary btn-sm",on:{click:function(t){return t.preventDefault(),a.submitdatakendaraan.apply(null,arguments)}}},[t("i",{staticClass:"fa fa-save"}),a._v(" Save\n                      ")])])])])]),a._v(" "),t("div",{staticClass:"pb-5",attrs:{"data-wizard-type":"step-content"}},[t("div",{staticClass:"row"},[t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tanggal Pendaftaran")]),a._v(" "),t("datepicker",{attrs:{"input-class":"form-control",value:a.pendaftaran.tglpendaftaran,language:a.id},model:{value:a.pendaftaran.tglpendaftaran,callback:function(t){a.$set(a.pendaftaran,"tglpendaftaran",t)},expression:"pendaftaran.tglpendaftaran"}}),a._v(" "),a.errors.tglpendaftaran?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.tglpendaftaran[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Tanggal Transaksi")]),a._v(" "),t("datepicker",{attrs:{"input-class":"form-control",value:a.pendaftaran.tglbayar,language:a.id},model:{value:a.pendaftaran.tglbayar,callback:function(t){a.$set(a.pendaftaran,"tglbayar",t)},expression:"pendaftaran.tglbayar"}}),a._v(" "),a.errors.tglbayar?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.tglbayar[0]))]):a._e()],1)]),a._v(" "),t("div",{staticClass:"col-xl-4"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jenis Pendaftaran")]),a._v(" "),t("select",{directives:[{name:"model",rawName:"v-model",value:a.pendaftaran.kodepenerbitans_id,expression:"pendaftaran.kodepenerbitans_id "}],staticClass:"form-control",on:{change:function(t){var e=Array.prototype.filter.call(t.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.pendaftaran,"kodepenerbitans_id",t.target.multiple?e:e[0])}}},[t("option",{attrs:{selected:"selected",value:"1"}},[a._v("Daftar Baru")]),a._v(" "),t("option",{attrs:{value:"2"}},[a._v("Perpanjangan")]),a._v(" "),t("option",{attrs:{value:"3"}},[a._v("Rusak")]),a._v(" "),t("option",{attrs:{value:"4"}},[a._v("Hilang")]),a._v(" "),t("option",{attrs:{value:"5"}},[a._v("Numpang Uji Masuk")]),a._v(" "),t("option",{attrs:{value:"9"}},[a._v("Numpang Uji Keluar")]),a._v(" "),t("option",{attrs:{value:"6"}},[a._v("Mutasi Masuk")]),a._v(" "),t("option",{attrs:{value:"10"}},[a._v("Mutasi Keluar")]),a._v(" "),t("option",{attrs:{value:"7"}},[a._v("Uji Ulang")])]),a._v(" "),a.errors.kodepenerbitans_id?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.kodepenerbitans_id[0]))]):a._e()])])])]),a._v(" "),t("div",{staticClass:"d-flex justify-content-between border-top pt-10"},[a._m(1),a._v(" "),t("div",[t("button",{staticClass:"btn btn-success font-weight-bold text-uppercase px-9 py-4",attrs:{"data-wizard-type":"action-submit"},on:{click:a.submit}},[a._v("\n                  Submit\n                ")]),a._v(" "),t("button",{staticClass:"btn btn-primary font-weight-bold text-uppercase px-9 py-4",attrs:{"data-wizard-type":"action-next"}},[a._v("\n                  Next Step\n                ")])])])])])])])])])}),[function(){var a=this,t=a._self._c;return t("div",{staticClass:"wizard-nav border-bottom"},[t("div",{staticClass:"wizard-steps p-8 p-lg-10"},[t("div",{staticClass:"wizard-step",attrs:{"data-wizard-type":"step","data-wizard-state":"current"}},[t("div",{staticClass:"wizard-label"},[t("i",{staticClass:"wizard-icon flaticon-list"}),a._v(" "),t("h3",{staticClass:"wizard-title"},[a._v("1. Identitas")])]),a._v(" "),t("i",{staticClass:"wizard-arrow flaticon2-next"})]),a._v(" "),t("div",{staticClass:"wizard-step",attrs:{"data-wizard-type":"step"}},[t("div",{staticClass:"wizard-label"},[t("i",{staticClass:"wizard-icon flaticon2-lorry"}),a._v(" "),t("h3",{staticClass:"wizard-title"},[a._v("2. Data Kendaraan")])]),a._v(" "),t("i",{staticClass:"wizard-arrow flaticon2-next"})]),a._v(" "),t("div",{staticClass:"wizard-step",attrs:{"data-wizard-type":"step"}},[t("div",{staticClass:"wizard-label"},[t("i",{staticClass:"wizard-icon flaticon2-position"}),a._v(" "),t("h3",{staticClass:"wizard-title"},[a._v("3. Pendaftaran")])])])])])},function(){var a=this._self._c;return a("div",{staticClass:"mr-2"},[a("button",{staticClass:"btn btn-light-primary font-weight-bold text-uppercase px-9 py-4",attrs:{"data-wizard-type":"action-prev"}},[this._v("\n                  Previous\n                ")])])}],!1,null,null,null);t.default=_.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[15],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/harilibur/Add.vue?vue&type=script&lang=js":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/harilibur/Add.vue?vue&type=script&lang=js ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/core/services/store/breadcrumbs.module */ "./resources/js/core/services/store/breadcrumbs.module.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _Form_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Form.vue */ "./resources/js/view/pages/harilibur/Form.vue");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {
+    this.$store.dispatch(_core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_0__["SET_BREADCRUMB"], [{
+      title: "HariLibur"
+    }, {
+      title: "Add"
+    }]);
+  },
+  created: function created() {},
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapActions"])("harilibur", ["submitHariLibur", "CLEAR_FORM"])), {}, {
+    submit: function submit() {
+      var _this = this;
+      this.submitHariLibur().then(function () {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default.a.fire({
+          title: "",
+          text: "The application has been successfully submitted!",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        _this.$router.push({
+          name: "harilibur.data"
+        });
+      });
+    }
+  }),
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapState"])(["errors"])), Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapState"])({
+    harilibur: function harilibur(state) {
+      return state.harilibur.harilibur;
+    }
+  })),
+  components: {
+    "add-form": _Form_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/harilibur/Form.vue?vue&type=script&lang=js":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/harilibur/Form.vue?vue&type=script&lang=js ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
+/* harmony import */ var vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuejs-datepicker/dist/locale */ "./node_modules/vuejs-datepicker/dist/locale/index.js");
+/* harmony import */ var vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      id: vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_2__["id"]
+    };
+  },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])(["errors"])), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])("harilibur", {
+    harilibur: function harilibur(state) {
+      return state.harilibur;
+    }
+  })),
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])("harilibur", ["CLEAR_FORM"])),
+  destroyed: function destroyed() {
+    this.CLEAR_FORM();
+  },
+  created: function created() {
+    this.CLEAR_FORM();
+  },
+  components: {
+    datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/harilibur/Add.vue?vue&type=template&id=34114b6d":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/harilibur/Add.vue?vue&type=template&id=34114b6d ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('div', {
+    staticClass: "card card-custom",
+    attrs: {
+      "id": "kt_card_3"
+    }
+  }, [_c('div', {
+    staticClass: "card-header"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "card-toolbar"
+  }, [_c('button', {
+    staticClass: "btn btn-primary btn-sm",
+    on: {
+      "click": function click($event) {
+        $event.preventDefault();
+        return _vm.submit.apply(null, arguments);
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-save"
+  }), _vm._v(" Save\n    ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "card-body"
+  }, [_c('add-form')], 1)]);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('div', {
+    staticClass: "card-title"
+  }, [_c('h3', {
+    staticClass: "card-label"
+  }, [_vm._v("Kendaraan")])]);
+}];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/harilibur/Form.vue?vue&type=template&id=92c509b0":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/harilibur/Form.vue?vue&type=template&id=92c509b0 ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('div', [_c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": ""
+    }
+  }, [_vm._v("Tanggal")]), _vm._v(" "), _c('datepicker', {
+    attrs: {
+      "input-class": "form-control",
+      "language": _vm.id
+    },
+    model: {
+      value: _vm.harilibur.tanggal,
+      callback: function callback($$v) {
+        _vm.$set(_vm.harilibur, "tanggal", $$v);
+      },
+      expression: "harilibur.tanggal"
+    }
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": ""
+    }
+  }, [_vm._v("Hari Libur")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.harilibur.nama,
+      expression: "harilibur.nama"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": _vm.harilibur.nama
+    },
+    on: {
+      "input": function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.harilibur, "nama", $event.target.value);
+      }
+    }
+  })])]);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/harilibur/Add.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/view/pages/harilibur/Add.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Add_vue_vue_type_template_id_34114b6d__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Add.vue?vue&type=template&id=34114b6d */ "./resources/js/view/pages/harilibur/Add.vue?vue&type=template&id=34114b6d");
+/* harmony import */ var _Add_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Add.vue?vue&type=script&lang=js */ "./resources/js/view/pages/harilibur/Add.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Add_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Add_vue_vue_type_template_id_34114b6d__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Add_vue_vue_type_template_id_34114b6d__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/view/pages/harilibur/Add.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/harilibur/Add.vue?vue&type=script&lang=js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/view/pages/harilibur/Add.vue?vue&type=script&lang=js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Add.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/harilibur/Add.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/harilibur/Add.vue?vue&type=template&id=34114b6d":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/view/pages/harilibur/Add.vue?vue&type=template&id=34114b6d ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_template_id_34114b6d__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Add.vue?vue&type=template&id=34114b6d */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/harilibur/Add.vue?vue&type=template&id=34114b6d");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_template_id_34114b6d__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_template_id_34114b6d__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/harilibur/Form.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/view/pages/harilibur/Form.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Form_vue_vue_type_template_id_92c509b0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Form.vue?vue&type=template&id=92c509b0 */ "./resources/js/view/pages/harilibur/Form.vue?vue&type=template&id=92c509b0");
+/* harmony import */ var _Form_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form.vue?vue&type=script&lang=js */ "./resources/js/view/pages/harilibur/Form.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Form_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Form_vue_vue_type_template_id_92c509b0__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Form_vue_vue_type_template_id_92c509b0__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/view/pages/harilibur/Form.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/harilibur/Form.vue?vue&type=script&lang=js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/view/pages/harilibur/Form.vue?vue&type=script&lang=js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Form_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Form.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/harilibur/Form.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Form_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/harilibur/Form.vue?vue&type=template&id=92c509b0":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/view/pages/harilibur/Form.vue?vue&type=template&id=92c509b0 ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Form_vue_vue_type_template_id_92c509b0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Form.vue?vue&type=template&id=92c509b0 */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/harilibur/Form.vue?vue&type=template&id=92c509b0");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Form_vue_vue_type_template_id_92c509b0__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Form_vue_vue_type_template_id_92c509b0__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

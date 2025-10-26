@@ -1,1 +1,109 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[58],{405:function(t,e,r){"use strict";r.r(e);var o=r(6),a=r(3),n=r.n(a),i=r(0);function u(t){return(u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function s(t,e){var r=Object.keys(t);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(t);e&&(o=o.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),r.push.apply(r,o)}return r}function c(t){for(var e=1;e<arguments.length;e++){var r=null!=arguments[e]?arguments[e]:{};e%2?s(Object(r),!0).forEach((function(e){l(t,e,r[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(r)):s(Object(r)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(r,e))}))}return t}function l(t,e,r){return(e=function(t){var e=function(t,e){if("object"!==u(t)||null===t)return t;var r=t[Symbol.toPrimitive];if(void 0!==r){var o=r.call(t,e||"default");if("object"!==u(o))return o;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===e?String:Number)(t)}(t,"string");return"symbol"===u(e)?e:String(e)}(e))in t?Object.defineProperty(t,e,{value:r,enumerable:!0,configurable:!0,writable:!0}):t[e]=r,t}var m={computed:c(c({},Object(i.e)(["errors"])),Object(i.e)("kuota",{setkuota:function(t){return t.setkuota}})),methods:c({},Object(i.d)("kuota",["CLEAR_FORM"])),destroyed:function(){this.CLEAR_FORM()},created:function(){this.CLEAR_FORM()}},f=r(1),p=Object(f.a)(m,(function(){var t=this,e=t._self._c;return e("div",{staticClass:"row"},[e("div",{staticClass:"col-sm-6"},[e("div",{staticClass:"form-group"},[e("label",{attrs:{for:""}},[t._v("Kuota Hari Normal Pagi")]),t._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:t.setkuota.kuotapaginormal,expression:"setkuota.kuotapaginormal"}],staticClass:"form-control",attrs:{type:"number",min:"0"},domProps:{value:t.setkuota.kuotapaginormal},on:{input:function(e){e.target.composing||t.$set(t.setkuota,"kuotapaginormal",e.target.value)}}})])]),t._v(" "),e("div",{staticClass:"col-sm-6"},[e("div",{staticClass:"form-group"},[e("label",{attrs:{for:""}},[t._v("Kuota Hari Normal Siang")]),t._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:t.setkuota.kuotasiangnormal,expression:"setkuota.kuotasiangnormal"}],staticClass:"form-control",attrs:{type:"number",min:"0"},domProps:{value:t.setkuota.kuotasiangnormal},on:{input:function(e){e.target.composing||t.$set(t.setkuota,"kuotasiangnormal",e.target.value)}}})])]),t._v(" "),e("div",{staticClass:"col-sm-6"},[e("div",{staticClass:"form-group"},[e("label",{attrs:{for:""}},[t._v("Kuota Hari Jumat Pagi")]),t._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:t.setkuota.kuotapagijumat,expression:"setkuota.kuotapagijumat"}],staticClass:"form-control",attrs:{type:"number",min:"0"},domProps:{value:t.setkuota.kuotapagijumat},on:{input:function(e){e.target.composing||t.$set(t.setkuota,"kuotapagijumat",e.target.value)}}})])]),t._v(" "),e("div",{staticClass:"col-sm-6"},[e("div",{staticClass:"form-group"},[e("label",{attrs:{for:""}},[t._v("Kuota Hari Jumat Siang")]),t._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:t.setkuota.kuotasiangjumat,expression:"setkuota.kuotasiangjumat"}],staticClass:"form-control",attrs:{type:"number",min:"0"},domProps:{value:t.setkuota.kuotasiangjumat},on:{input:function(e){e.target.composing||t.$set(t.setkuota,"kuotasiangjumat",e.target.value)}}})])])])}),[],!1,null,null,null).exports;function b(t){return(b="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function v(t,e){var r=Object.keys(t);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(t);e&&(o=o.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),r.push.apply(r,o)}return r}function d(t){for(var e=1;e<arguments.length;e++){var r=null!=arguments[e]?arguments[e]:{};e%2?v(Object(r),!0).forEach((function(e){y(t,e,r[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(r)):v(Object(r)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(r,e))}))}return t}function y(t,e,r){return(e=function(t){var e=function(t,e){if("object"!==b(t)||null===t)return t;var r=t[Symbol.toPrimitive];if(void 0!==r){var o=r.call(t,e||"default");if("object"!==b(o))return o;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===e?String:Number)(t)}(t,"string");return"symbol"===b(e)?e:String(e)}(e))in t?Object.defineProperty(t,e,{value:r,enumerable:!0,configurable:!0,writable:!0}):t[e]=r,t}var g={data:function(){return{}},mounted:function(){this.$store.dispatch(o.a,[{title:"Kuota"},{title:"Add"}])},created:function(){},methods:d(d({},Object(i.b)("kuota",["submitKuota","CLEAR_FORM"])),{},{submit:function(){var t=this;this.submitKuota().then((function(){n.a.fire({title:"",text:"The application has been successfully submitted!",icon:"success",showConfirmButton:!1,timer:1500}),t.$router.push({name:"kuota.data"})}))}}),computed:d(d({},Object(i.e)(["errors"])),Object(i.e)({kuota:function(t){return t.kuota.kuota}})),components:{"add-form":p}},O=Object(f.a)(g,(function(){var t=this,e=t._self._c;return e("div",{staticClass:"card card-custom",attrs:{id:"kt_card_3"}},[e("div",{staticClass:"card-header"},[t._m(0),t._v(" "),e("div",{staticClass:"card-toolbar"},[e("button",{staticClass:"btn btn-primary btn-sm",on:{click:function(e){return e.preventDefault(),t.submit.apply(null,arguments)}}},[e("i",{staticClass:"fa fa-save"}),t._v(" Save\n      ")])])]),t._v(" "),e("div",{staticClass:"card-body"},[e("add-form")],1)])}),[function(){var t=this._self._c;return t("div",{staticClass:"card-title"},[t("h3",{staticClass:"card-label"},[this._v("Kendaraan")])])}],!1,null,null,null);e.default=O.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[58],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=script&lang=js":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=script&lang=js ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=template&id=c783cbfe":
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=template&id=c783cbfe ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('router-view');
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/pendaftaranonline/Index.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/view/pages/pendaftaranonline/Index.vue ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Index_vue_vue_type_template_id_c783cbfe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Index.vue?vue&type=template&id=c783cbfe */ "./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=template&id=c783cbfe");
+/* harmony import */ var _Index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Index.vue?vue&type=script&lang=js */ "./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Index_vue_vue_type_template_id_c783cbfe__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Index_vue_vue_type_template_id_c783cbfe__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/view/pages/pendaftaranonline/Index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=script&lang=js":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=template&id=c783cbfe":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=template&id=c783cbfe ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_c783cbfe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=template&id=c783cbfe */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaranonline/Index.vue?vue&type=template&id=c783cbfe");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_c783cbfe__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_c783cbfe__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);
