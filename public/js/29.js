@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[29],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=script&lang=js":
-/*!*******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=script&lang=js ***!
-  \*******************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=script&lang=js":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=script&lang=js ***!
+  \*****************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -46,22 +46,22 @@ __webpack_require__.r(__webpack_exports__);
     this.$store.dispatch(_core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_1__["SET_BREADCRUMB"], [{
       title: "Cetak"
     }, {
-      title: "Laporan Bulanan"
+      title: "Laporan Harian"
     }]);
   },
   computed: {},
   watch: {},
   methods: {
     printLaporan: function printLaporan() {
-      this.tgl = moment__WEBPACK_IMPORTED_MODULE_4___default()(this.tgl).format("YYYY-MM");
+      this.tgl = moment__WEBPACK_IMPORTED_MODULE_4___default()(this.tgl).format("YYYY-MM-DD");
       window.open("/cetak/" + this.tgl + '/' + this.dataLaporan, "_blank");
     },
     exportLaporan: function exportLaporan() {
-      this.tgl = moment__WEBPACK_IMPORTED_MODULE_4___default()(this.tgl).format("YYYY-MM");
+      this.tgl = moment__WEBPACK_IMPORTED_MODULE_4___default()(this.tgl).format("YYYY-MM-DD");
       window.open("/export/" + this.tgl + '/' + this.dataLaporan, "_blank");
     },
     customFormatter: function customFormatter(date) {
-      return moment__WEBPACK_IMPORTED_MODULE_4___default()(date).format("YYYY-MM");
+      return moment__WEBPACK_IMPORTED_MODULE_4___default()(date).format("YYYY-MM-DD");
     }
   },
   components: {
@@ -72,10 +72,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=template&id=3e061abf":
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=template&id=3e061abf ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=template&id=691e614b":
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=template&id=691e614b ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -86,23 +86,23 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c('div', {
+  return _c("div", {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-12"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "card card-custom gutter-b"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "card-body"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "row"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "col-4"
-  }, [_c('label', [_vm._v("Pilih Tanggal")]), _vm._v(" "), _c('datepicker', {
+  }, [_c("label", [_vm._v("Pilih Tanggal")]), _vm._v(" "), _c("datepicker", {
     attrs: {
       "input-class": "form-control",
-      "language": _vm.id,
-      "format": _vm.customFormatter
+      language: _vm.id,
+      format: _vm.customFormatter
     },
     model: {
       value: _vm.tgl,
@@ -111,9 +111,9 @@ var render = function render() {
       },
       expression: "tgl"
     }
-  })], 1), _vm._v(" "), _c('div', {
+  })], 1), _vm._v(" "), _c("div", {
     staticClass: "col-4"
-  }, [_c('label', [_vm._v("Pilih Jenis Laporan")]), _vm._v(" "), _c('select', {
+  }, [_c("label", [_vm._v("Pilih Jenis Laporan")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -122,7 +122,7 @@ var render = function render() {
     }],
     staticClass: "form-control",
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
           return o.selected;
         }).map(function (o) {
@@ -132,65 +132,57 @@ var render = function render() {
         _vm.dataLaporan = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
       }
     }
-  }, [_c('option', {
+  }, [_c("option", {
     attrs: {
-      "selected": "selected",
-      "value": ""
+      selected: "selected",
+      value: ""
     }
-  }), _vm._v(" "), _c('option', {
+  }), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "kwbubulanan"
+      value: "laporanharian"
     }
-  }, [_vm._v("KWBU")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "jenisbulanan"
-    }
-  }, [_vm._v("Jenis Kendaraan")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "pelayananbulanan"
-    }
-  }, [_vm._v("Pelayanan")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Harian")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4"
-  }, [_c('label', [_vm._v("Pilih Aksi")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('a', {
+  }, [_c("label", [_vm._v("Pilih Aksi")]), _vm._v(" "), _c("br"), _vm._v(" "), _c("a", {
     staticClass: "btn btn-icon btn-info",
     attrs: {
-      "href": "javascript:void(0)"
+      href: "javascript:void(0)"
     },
     on: {
-      "click": function click($event) {
+      click: function click($event) {
         $event.preventDefault();
         return _vm.printLaporan.apply(null, arguments);
       }
     }
-  }, [_c('i', {
+  }, [_c("i", {
     staticClass: "flaticon2-printer"
-  })]), _vm._v(" "), _c('a', {
+  })]), _vm._v(" "), _c("a", {
     staticClass: "btn btn-icon btn-success",
     attrs: {
-      "href": "javascript:void(0)"
+      href: "javascript:void(0)"
     },
     on: {
-      "click": function click($event) {
+      click: function click($event) {
         $event.preventDefault();
         return _vm.exportLaporan.apply(null, arguments);
       }
     }
-  }, [_c('i', {
+  }, [_c("i", {
     staticClass: "far fa-file-excel"
-  })])])])])])]), _vm._v(" "), _c('div', {
+  })])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-12"
-  }, [_vm.loading && _vm.dataLaporan == 'kwbubulanan' || _vm.loading && _vm.dataLaporan == 'jenisbulanan' || _vm.loading && _vm.dataLaporan == 'pelayananbulanan' ? _c('div', {
+  }, [_vm.loading && _vm.dataLaporan == "printlaporanharian" ? _c("div", {
     staticClass: "loading-overlay"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "spinner"
   }, [_vm._v("Loading Laporan...")])]) : _vm._e()])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c('div', {
+  return _c("div", {
     staticClass: "col-12"
-  }, [_c('h4', [_vm._v("Bulanan")])]);
+  }, [_c("h4", [_vm._v("Harian")])]);
 }];
 render._withStripped = true;
 
@@ -216,6 +208,8 @@ var map = {
 	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
 	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
 	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ps": "./node_modules/moment/locale/ar-ps.js",
+	"./ar-ps.js": "./node_modules/moment/locale/ar-ps.js",
 	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
 	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
 	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
@@ -350,6 +344,8 @@ var map = {
 	"./ko": "./node_modules/moment/locale/ko.js",
 	"./ko.js": "./node_modules/moment/locale/ko.js",
 	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku-kmr": "./node_modules/moment/locale/ku-kmr.js",
+	"./ku-kmr.js": "./node_modules/moment/locale/ku-kmr.js",
 	"./ku.js": "./node_modules/moment/locale/ku.js",
 	"./ky": "./node_modules/moment/locale/ky.js",
 	"./ky.js": "./node_modules/moment/locale/ky.js",
@@ -499,17 +495,17 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./resources/js/view/pages/cetak/laporan/Monthly.vue":
-/*!***********************************************************!*\
-  !*** ./resources/js/view/pages/cetak/laporan/Monthly.vue ***!
-  \***********************************************************/
+/***/ "./resources/js/view/pages/cetak/laporan/Daily.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/view/pages/cetak/laporan/Daily.vue ***!
+  \*********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Monthly_vue_vue_type_template_id_3e061abf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Monthly.vue?vue&type=template&id=3e061abf */ "./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=template&id=3e061abf");
-/* harmony import */ var _Monthly_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Monthly.vue?vue&type=script&lang=js */ "./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=script&lang=js");
+/* harmony import */ var _Daily_vue_vue_type_template_id_691e614b__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Daily.vue?vue&type=template&id=691e614b */ "./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=template&id=691e614b");
+/* harmony import */ var _Daily_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Daily.vue?vue&type=script&lang=js */ "./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=script&lang=js");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -519,9 +515,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Monthly_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Monthly_vue_vue_type_template_id_3e061abf__WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Monthly_vue_vue_type_template_id_3e061abf__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Daily_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Daily_vue_vue_type_template_id_691e614b__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Daily_vue_vue_type_template_id_691e614b__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -531,38 +527,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/view/pages/cetak/laporan/Monthly.vue"
+component.options.__file = "resources/js/view/pages/cetak/laporan/Daily.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=script&lang=js":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=script&lang=js ***!
-  \***********************************************************************************/
+/***/ "./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=script&lang=js":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=script&lang=js ***!
+  \*********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Monthly_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Monthly.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=script&lang=js");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Monthly_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Daily_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Daily.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Daily_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=template&id=3e061abf":
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=template&id=3e061abf ***!
-  \*****************************************************************************************/
+/***/ "./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=template&id=691e614b":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=template&id=691e614b ***!
+  \***************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Monthly_vue_vue_type_template_id_3e061abf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Monthly.vue?vue&type=template&id=3e061abf */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Monthly.vue?vue&type=template&id=3e061abf");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Monthly_vue_vue_type_template_id_3e061abf__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Daily_vue_vue_type_template_id_691e614b__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Daily.vue?vue&type=template&id=691e614b */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Daily.vue?vue&type=template&id=691e614b");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Daily_vue_vue_type_template_id_691e614b__WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Monthly_vue_vue_type_template_id_3e061abf__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Daily_vue_vue_type_template_id_691e614b__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

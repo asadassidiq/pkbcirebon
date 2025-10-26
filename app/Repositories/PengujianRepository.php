@@ -764,6 +764,8 @@ class PengujianRepository
                 }
             }
         }
+        // dd($request, $nmField, $data);
+        // dd($request[$nmField]);
         $data->{$nmField}    = $request[$nmField];
         $data->{$usrnmField} = $user['id'];
         $data->posisi        = $posisi;

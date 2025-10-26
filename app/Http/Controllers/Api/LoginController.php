@@ -6,6 +6,7 @@ use App\Models\UserPKB;
 use App\Models\Pendaftaran;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\DatakendaraanApprovalRequest;
 use Illuminate\Support\Facades\Hash;
 use App\Traits\apiJsonReturnTrait;
 use Illuminate\Support\Facades\Http;
@@ -109,16 +110,18 @@ class LoginController extends Controller
 
   public function checkSession(Request $request)
   {
+    $approvalsNotifications = DatakendaraanApprovalRequest::where('status', 'pending')->where('created_at', '>=', date("Y-m-d", strtotime("-1 day")))->count();
     $antrianDataPos1 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '1')->count();
     $antrianDataPos2 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '2')->count();
     $antrianDataPos3 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '3')->count();
     $antrianDataPos4 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '4')->count();
-    $antrianDataVerif1 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '9')->count();
+    $antrianDataVerif1 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '5')->count();
     $antrianDataFoto = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['1', '2', '3', '4', '5', '6', '7'])->where('foto', '0')->count();
-    $antrianDataCetak = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['1', '2', '3', '4', '5', '6', '7'])->where('posisi', '10')->count();
+    $antrianDataCetak = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['1', '2', '3', '4', '5', '6', '7'])->where('posisi', '5')->count();
     $antrianDataSurat = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['9', '10', '11', '12'])->where('posisi', '10')->count();
     $antrianDataPenyerahan = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '11')->count();
     $data  = [
+      'approvals'   => $approvalsNotifications,
       'pos1'   => $antrianDataPos1,
       'pos2'   => $antrianDataPos2,
       'pos3'   => $antrianDataPos3,
@@ -155,4 +158,3 @@ class LoginController extends Controller
     ], 200);
   }
 }
-

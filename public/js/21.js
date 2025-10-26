@@ -1,34 +1,47 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[21],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=script&lang=js":
-/*!*************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=script&lang=js ***!
-  \*************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/core/services/store/breadcrumbs.module */ "./resources/js/core/services/store/breadcrumbs.module.js");
-/* harmony import */ var _assets_js_components_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/assets/js/components/util */ "./resources/js/assets/js/components/util.js");
-/* harmony import */ var _assets_js_components_wizard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/assets/js/components/wizard */ "./resources/js/assets/js/components/wizard.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
-/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var vue_uuid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue-uuid */ "./node_modules/vue-uuid/dist/index.js");
-/* harmony import */ var vue_uuid__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vue_uuid__WEBPACK_IMPORTED_MODULE_8__);
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/core/services/store/breadcrumbs.module */ "./resources/js/core/services/store/breadcrumbs.module.js");
+/* harmony import */ var _assets_js_components_util__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/assets/js/components/util */ "./resources/js/assets/js/components/util.js");
+/* harmony import */ var _assets_js_components_wizard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/assets/js/components/wizard */ "./resources/js/assets/js/components/wizard.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
+/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var vue_uuid__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vue-uuid */ "./node_modules/vue-uuid/dist/index.esm.js");
+
+
+
+
+
+
+function ownKeys(e, r) { var t = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(e); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default.a) { var o = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default()(e); r && (o = o.filter(function (r) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default()(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4___default()(e, r, t[r]); }) : _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default.a ? Object.defineProperties(e, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default()(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default()(t, r)); }); } return e; }
 
 
 
@@ -49,14 +62,14 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
   },
   name: "Wizard-1",
   mounted: function mounted() {
-    this.$store.dispatch(_core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_0__["SET_BREADCRUMB"], [{
+    this.$store.dispatch(_core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_6__["SET_BREADCRUMB"], [{
       title: "Pendaftaran"
     }, {
       title: "Add"
     }]);
 
     // Initialize form wizard
-    var wizard = new _assets_js_components_wizard__WEBPACK_IMPORTED_MODULE_2__["default"]("kt_wizard_v1", {
+    var wizard = new _assets_js_components_wizard__WEBPACK_IMPORTED_MODULE_8__["default"]("kt_wizard_v1", {
       startStep: 1,
       // initial active step number
       clickableSteps: true // allow step clicking
@@ -73,11 +86,12 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     wizard.on("change", function /*wizardObj*/
     () {
       setTimeout(function () {
-        _assets_js_components_util__WEBPACK_IMPORTED_MODULE_1__["default"].scrollTop();
+        _assets_js_components_util__WEBPACK_IMPORTED_MODULE_7__["default"].scrollTop();
       }, 500);
     });
   },
   created: function created() {
+    var _this = this;
     this.CLEAR_FORM();
     this.getKodewilayahs();
     this.getMereks();
@@ -87,50 +101,28 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     this.getSubJenis();
     this.getFuels();
     this.getKotas();
-    this.getKelasJalans();
-    if (this.$route.name == 'pendaftaran.edit') {
-      this.editPendaftaran(this.$route.params.id);
-    }
-    var CurrentDate = moment__WEBPACK_IMPORTED_MODULE_3___default()().format("YYYY-MM-DD");
-    this.pendaftaran.tglpendaftaran = CurrentDate;
+    // this.getJeniskendaraan();
+    this.getKelasJalans().then(function () {
+      if (_this.$route.name == "pendaftaran.edit") {
+        _this.editPendaftaran(_this.$route.params.id).then(function () {
+          setTimeout(function () {}, 2000);
+        });
+      }
+    });
   },
-  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_5__["mapMutations"])("pendaftaran", ["CLEAR_FORM"])), Object(vuex__WEBPACK_IMPORTED_MODULE_5__["mapActions"])("pendaftaran", ["getMereks", "getTipes", "getVarians", "getJenis", "getSubJenis", "getJeniskendaraan", "getFuels", "getKelasJalans", "getKodewilayahs", "getIdentitaskendaraanNouji", "editPendaftaran", "submitPendaftaran", "submitPendaftaran2", "setNoSurat", "getNouji", "getKotas", "getKecamatans", "getKelurahans", "getVTA", "checkNU", "checkMU"])), {}, {
+  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_10__["mapMutations"])("pendaftaran", ["CLEAR_FORM"])), Object(vuex__WEBPACK_IMPORTED_MODULE_10__["mapActions"])("pendaftaran", ["updateIdentitaskendaraan", "getMereks", "getTipes", "getVarians", "getJenis", "getSubJenis", "getJeniskendaraan", "getFuels", "getKelasJalans", "getKodewilayahs", "getKotas", "getKecamatans", "getKelurahans", "getIdentitaskendaraanNouji", "editPendaftaran", "updatePendaftaran", "submitPendaftaran2", "getVTA", "checkNU", "checkMU", "setNoSurat"])), {}, {
+    canEditDataKendaraan: function canEditDataKendaraan() {
+      if (this.pendaftaran.kodepenerbitans_id == 1) {
+        return false;
+      } else {
+        return true;
+      }
+    },
     isLocked: function isLocked(field) {
       return this.pendaftaran[field] !== undefined || this.pendaftaran[field] !== "" || this.pendaftaran[field] !== null;
     },
-    submit: function submit() {
-      var _this = this;
-      if (this.pendaftaran.kodepenerbitans_id == '11' || this.pendaftaran.kodepenerbitans_id == '12') {
-        this.submitPendaftaran2().then(function () {
-          sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-            icon: 'success',
-            title: 'Saved',
-            showConfirmButton: false,
-            timer: 1500
-          });
-          _this.$router.push({
-            name: "pendaftaran.data"
-          });
-        });
-      } else {
-        this.submitPendaftaran().then(function () {
-          sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-            icon: 'success',
-            title: 'Saved',
-            showConfirmButton: false,
-            timer: 1500
-          });
-          _this.$router.push({
-            name: "pendaftaran.data"
-          });
-        });
-      }
-    },
     totalBeratSumbu: function totalBeratSumbu() {
-      this.pendaftaran.beratkosong = parseInt(this.pendaftaran.beratsumbu1) + parseInt(this.pendaftaran.beratsumbu2) + parseInt(this.pendaftaran.beratsumbu3) + parseInt(this.pendaftaran.beratsumbu4);
-    },
-    setSurat: function setSurat() {
-      this.setNoSurat();
+      this.pendaftaran.beratkosong = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_5___default()(this.pendaftaran.beratsumbu1) + _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_5___default()(this.pendaftaran.beratsumbu2) + _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_5___default()(this.pendaftaran.beratsumbu3) + _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_5___default()(this.pendaftaran.beratsumbu4);
     },
     setKotaTujuan: function setKotaTujuan(value) {
       this.pendaftaran.tujuan = value.nama;
@@ -149,71 +141,44 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       this.pendaftaran.kelurahan = value.nama;
     },
     setJBI: function setJBI() {
-      this.pendaftaran.jbi = parseInt(this.pendaftaran.beratkosong) + parseInt(this.pendaftaran.dayaangkutbarang) + parseInt(this.pendaftaran.dayaangkutorang) * 60;
+      this.pendaftaran.jbi = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_5___default()(this.pendaftaran.beratkosong) + _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_5___default()(this.pendaftaran.dayaangkutbarang) + _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_5___default()(this.pendaftaran.dayaangkutorang) * 60;
     },
-    setDefaultZero: function setDefaultZero() {
-      if (this.pendaftaran.kodepenerbitans_id == 1) {
-        this.pendaftaran.jbb = "0";
-        this.pendaftaran.jbkb = "0";
-        this.pendaftaran.jbi = "0";
-        this.pendaftaran.jbki = "0";
-        this.pendaftaran.mst = "0";
-        this.pendaftaran.panjangkendaraan = "0";
-        this.pendaftaran.lebarkendaraan = "0";
-        this.pendaftaran.tinggikendaraan = "0";
-        this.pendaftaran.panjangbakatautangki = "0";
-        this.pendaftaran.lebarbakatautangki = "0";
-        this.pendaftaran.tinggibakatautangki = "0";
-        this.pendaftaran.julurdepan = "0";
-        this.pendaftaran.julurbelakang = "0";
-        this.pendaftaran.jaraksumbu1_2 = "0";
-        this.pendaftaran.jaraksumbu2_3 = "0";
-        this.pendaftaran.jaraksumbu3_4 = "0";
-        this.pendaftaran.q = "0";
-        this.pendaftaran.p = "0";
-        this.pendaftaran.r = "0";
-        this.pendaftaran.dayaangkutorang = "0";
-        this.pendaftaran.dayaangkutbarang = "0";
-        this.pendaftaran.beratsumbu1 = "0";
-        this.pendaftaran.beratsumbu2 = "0";
-        this.pendaftaran.beratsumbu3 = "0";
-        this.pendaftaran.beratsumbu4 = "0";
-        this.pendaftaran.beratkosong = "0";
+    submit: function submit() {
+      var _this2 = this;
+      if (this.pendaftaran.kodepenerbitans_id == "11" || this.pendaftaran.kodepenerbitans_id == "12") {
+        this.submitPendaftaran2().then(function () {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+            icon: "success",
+            title: "Saved",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          _this2.$router.push({
+            name: "pendaftaran.data"
+          });
+        });
+      } else {
+        this.updatePendaftaran(this.$route.params.id).then(function () {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+            icon: "success",
+            title: "Saved",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          _this2.$router.go(-1);
+        });
       }
     },
-    caridata: function caridata() {
-      var _this2 = this;
-      this.getIdentitaskendaraanNouji().then(function () {
-        if (_this2.carinouji == 1) {
-          sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-            icon: 'success',
-            title: 'Data ditemukan',
-            showConfirmButton: false,
-            timer: 1500
-          });
-        } else {
-          sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-            icon: 'warning',
-            title: 'Data Tidak ditemukan',
-            showConfirmButton: false,
-            timer: 1500
-          });
-        }
-        if (_this2.pendaftaran.tglsertifikatreg === null || _this2.pendaftaran.tglsertifikatreg == '') {
-          var CurrentDate = moment__WEBPACK_IMPORTED_MODULE_3___default()().format("YYYY-MM-DD");
-          _this2.pendaftaran.tglsertifikatreg = CurrentDate;
-        }
-      });
-    },
-    customFormatter: function customFormatter(today) {
-      return today;
+    setSurat: function setSurat() {
+      this.setNoSurat();
     },
     setType: function setType(value) {
       this.pendaftaran.merek = value.vehicle_brand_name;
       this.pendaftaran.idmerek = value.vehicle_brand_id;
-      this.getTipes(value.vehicle_brand_id);
+      // this.getTipes(value.vehicle_brand_id);
     },
     setVarian: function setVarian(value) {
+      // console.log(value);
       this.pendaftaran.tipe = value.vehicle_varian_type_name;
       this.pendaftaran.idtipe = value.vehicle_varian_type_id;
       this.getVarians(value.vehicle_varian_type_id);
@@ -232,8 +197,8 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       this.pendaftaran.idsubjenis = value.vehicle_sub_id;
     },
     setArea: function setArea(value) {
-      this.pendaftaran.kodewilayah = value.area_code;
       this.pendaftaran.wilayah = value.area_name;
+      this.pendaftaran.kodewilayah = value.area_code;
       this.pendaftaran.idkodewilayah = value.area_id;
     },
     setFuel: function setFuel(value) {
@@ -245,41 +210,50 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       this.pendaftaran.idkelasjalanterendah = value.kelasjalan_id;
     },
     setAreaFrom: function setAreaFrom(value) {
-      this.pendaftaran.kodewilayahasal = value.area_code;
       this.pendaftaran.wilayahasal = value.area_name;
+      this.pendaftaran.kodewilayahasal = value.area_code;
       this.pendaftaran.idkodewilayahasal = value.area_id;
+    },
+    caridata: function caridata() {
+      this.getIdentitaskendaraanNouji();
+    },
+    disabled: function disabled() {
+      return this.state === "disabled";
+    },
+    readonly: function readonly() {
+      return this.state === "readonly";
     },
     handleFocus: function handleFocus(field) {
       if (this.pendaftaran[field] === 0 || this.pendaftaran[field] === "0") {
-        this.pendaftaran[field] = '';
+        this.pendaftaran[field] = "";
       }
     },
     showModalVTA: function showModalVTA() {
-      this.$refs['modalVTA'].show();
+      this.$refs["modalVTA"].show();
     },
     getDataVTA: function getDataVTA(dataSearch) {
       var _this3 = this;
       if (this.dataSearch === "") {
-        this.$refs.nouji.focus();
-        sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-          icon: 'warning',
-          title: 'No Uji/No Rangka Tidak Boleh Kosong',
+        this.$refs.norangka.focus();
+        sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+          icon: "warning",
+          title: "No Uji/No Rangka Tidak Boleh Kosong",
           showConfirmButton: false,
           timer: 750
         });
       } else {
         this.getVTA(dataSearch).then(function () {
           if (_this3.responeBlue.status) {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-              icon: 'success',
-              title: 'Berhasil',
+            sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+              icon: "success",
+              title: "Berhasil",
               showConfirmButton: false,
               timer: 1500
             });
             _this3.showModalVTA();
           } else {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-              icon: 'warning',
+            sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+              icon: "warning",
               title: _this3.responeBlue.message,
               showConfirmButton: false,
               timer: 2000
@@ -292,34 +266,34 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       var _this4 = this;
       if (this.pendaftaran.nouji === "") {
         this.$refs.nouji.focus();
-        sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-          icon: 'warning',
-          title: 'Nouji Tidak Boleh Kosong',
+        sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+          icon: "warning",
+          title: "Nouji Tidak Boleh Kosong",
           showConfirmButton: false,
           timer: 750
         });
       } else {
-        if (this.pendaftaran.kodepenerbitans_id == '6') {
+        if (this.pendaftaran.kodepenerbitans_id == "6") {
           this.checkMU(this.pendaftaran.nouji).then(function () {
             if (_this4.responeBlue.status) {
-              sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-                icon: 'success',
-                title: 'Berhasil Data',
+              sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+                icon: "success",
+                title: "Berhasil Data",
                 showConfirmButton: false,
                 timer: 1500
               });
               _this4.showModal();
             } else {
               if (_this4.responeBlue.message != "") {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-                  icon: 'warning',
+                sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+                  icon: "warning",
                   title: "Data tidak ditemukan",
                   showConfirmButton: false,
                   timer: 2000
                 });
               } else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-                  icon: 'warning',
+                sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+                  icon: "warning",
                   title: _this4.responeBlue.message,
                   showConfirmButton: false,
                   timer: 2000
@@ -330,24 +304,24 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         } else {
           this.checkNU(this.pendaftaran.nouji).then(function () {
             if (_this4.responeBlue.status) {
-              sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-                icon: 'success',
-                title: 'Berhasil Data',
+              sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+                icon: "success",
+                title: "Berhasil Data",
                 showConfirmButton: false,
                 timer: 1500
               });
               _this4.showModal();
             } else {
               if (_this4.responeBlue.message != "") {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-                  icon: 'warning',
+                sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+                  icon: "warning",
                   title: "Data tidak ditemukan",
                   showConfirmButton: false,
                   timer: 2000
                 });
               } else {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
-                  icon: 'warning',
+                sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+                  icon: "warning",
                   title: _this4.responeBlue.message,
                   showConfirmButton: false,
                   timer: 2000
@@ -362,33 +336,27 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
   destroyed: function destroyed() {
     this.CLEAR_FORM();
   },
-  computed: _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_5__["mapState"])(["errors"])), Object(vuex__WEBPACK_IMPORTED_MODULE_5__["mapState"])("pendaftaran", {
+  computed: _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_10__["mapState"])(["errors"])), Object(vuex__WEBPACK_IMPORTED_MODULE_10__["mapState"])("pendaftaran", {
     pendaftaran: function pendaftaran(state) {
       return state.pendaftaran;
     },
-    carinouji: function carinouji(state) {
-      return state.carinouji;
+    uuid: function uuid(state) {
+      return state.uuid;
     },
-    carinokendaraan: function carinokendaraan(state) {
-      return state.carinokendaraan;
-    },
-    carinorangka: function carinorangka(state) {
-      return state.carinorangka;
+    notif: function notif(state) {
+      return state.notif;
     },
     responeBlue: function responeBlue(state) {
       return state.responeBlue;
     },
     datavta: function datavta(state) {
       return state.datavta;
-    },
-    uuid: function uuid(state) {
-      return state.uuid;
     }
-  })), Object(vuex__WEBPACK_IMPORTED_MODULE_5__["mapState"])("pendaftaran", {
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_10__["mapState"])("pendaftaran", {
     kodewilayahs: function kodewilayahs(state) {
       return state.kodewilayahs;
     }
-  })), Object(vuex__WEBPACK_IMPORTED_MODULE_5__["mapState"])("pendaftaran", {
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_10__["mapState"])("pendaftaran", {
     mereks: function mereks(state) {
       return state.mereks;
     },
@@ -422,25 +390,18 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     kelurahans: function kelurahans(state) {
       return state.kelurahans;
     }
-  })), {}, {
-    disabled: function disabled() {
-      return this.state === 'disabled';
-    },
-    readonly: function readonly() {
-      return this.state === 'readonly';
-    }
-  }),
+  })),
   components: {
-    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_6___default.a
+    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_11___default.a
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=template&id=57a3d2fd":
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=template&id=57a3d2fd ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=template&id=489d33de":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=template&id=489d33de ***!
+  \************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -451,66 +412,58 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c('div', {
+  return _c("div", {
     staticClass: "card card-custom"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "card-body p-0"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "wizard wizard-1",
     attrs: {
-      "id": "kt_wizard_v1",
+      id: "kt_wizard_v1",
       "data-wizard-state": "step-first",
       "data-wizard-clickable": "true"
     }
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "wizard-nav border-bottom"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "wizard-steps p-8 p-lg-10"
-  }, [_c('div', {
-    staticClass: "wizard-step",
-    attrs: {
-      "data-wizard-type": "step",
-      "data-wizard-state": "current"
-    }
-  }, [_vm._m(0), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c('i', {
-    staticClass: "wizard-arrow flaticon2-next"
-  }) : _vm._e()]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c('div', {
+  }, [_vm._m(0), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c("div", {
     staticClass: "wizard-step",
     attrs: {
       "data-wizard-type": "step"
     }
-  }, [_vm._m(1), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c('i', {
+  }, [_vm._m(1), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c("i", {
     staticClass: "wizard-arrow flaticon2-next"
-  }) : _vm._e()]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c('div', {
+  }) : _vm._e()]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c("div", {
     staticClass: "wizard-step",
     attrs: {
       "data-wizard-type": "step"
     }
-  }, [_vm._m(2)]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._m(2)]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "row justify-content-center my-10 px-8 my-lg-15 px-lg-10"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-sm-12 col-xsm-7"
-  }, [_c('form', {
+  }, [_c("form", {
     staticClass: "form",
     attrs: {
-      "id": "kt_form"
+      id: "kt_form"
     }
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "pb-5",
     attrs: {
       "data-wizard-type": "step-content",
       "data-wizard-state": "current"
     }
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Tanggal Pendaftaran")]), _vm._v(" "), _c('b-form-datepicker', {
+  }, [_c("label", [_vm._v("Tanggal Pendaftaran")]), _vm._v(" "), _c("b-form-datepicker", {
     attrs: {
-      "id": "tglpendaftaran",
-      "locale": "id"
+      id: "tglpendaftaran",
+      locale: "id"
     },
     model: {
       value: _vm.pendaftaran.tglpendaftaran,
@@ -519,13 +472,13 @@ var render = function render() {
       },
       expression: "pendaftaran.tglpendaftaran"
     }
-  }), _vm._v(" "), _vm.errors.tglpendaftaran ? _c('p', {
+  }), _vm._v(" "), _vm.errors.tglpendaftaran ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.tglpendaftaran[0]))]) : _vm._e()], 1)]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.tglpendaftaran[0]) + "\n                    ")]) : _vm._e()], 1)]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jenis Pendaftaran")]), _vm._v(" "), _c('select', {
+  }, [_c("label", [_vm._v("Jenis Pendaftaran")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -534,7 +487,7 @@ var render = function render() {
     }],
     staticClass: "form-control",
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
           return o.selected;
         }).map(function (o) {
@@ -544,54 +497,50 @@ var render = function render() {
         _vm.$set(_vm.pendaftaran, "kodepenerbitans_id", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
       }
     }
-  }, [_c('option', {
+  }, [_c("option", {
     attrs: {
-      "selected": "selected",
-      "value": "1"
+      selected: "selected",
+      value: "1"
     }
-  }, [_vm._v("Uji Pertama")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("\n                        Uji Pertama\n                      ")]), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "2"
+      value: "2"
     }
-  }, [_vm._v("Uji Berkala")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("Uji Berkala")]), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "3"
+      value: "3"
     }
-  }, [_vm._v("Rusak")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("Rusak")]), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "4"
+      value: "4"
     }
-  }, [_vm._v("Hilang")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("Hilang")]), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "5"
+      value: "5"
     }
-  }, [_vm._v("Numpang Uji Masuk")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("Numpang Uji Masuk")]), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "9"
+      value: "9"
     }
-  }, [_vm._v("Numpang Uji Keluar")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("Numpang Uji Keluar")]), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "6"
+      value: "6"
     }
-  }, [_vm._v("Mutasi Masuk")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("Mutasi Masuk")]), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "10"
+      value: "10"
     }
-  }, [_vm._v("Mutasi Keluar")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("Mutasi Keluar")]), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "7"
+      value: "7"
     }
-  }, [_vm._v("Uji Ulang")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "8"
-    }
-  }, [_vm._v("Rubah Bentuk")])]), _vm._v(" "), _vm.errors.kodepenerbitans_id ? _c('p', {
+  }, [_vm._v("Uji Ulang")])]), _vm._v(" "), _vm.errors.kodepenerbitans_id ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.kodepenerbitans_id[0]))]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.kodepenerbitans_id[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Seri")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" No Seri")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -600,24 +549,24 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "min": "1",
-      "placeholder": "No Seri "
+      type: "number",
+      min: "1",
+      placeholder: "No Seri "
     },
     domProps: {
-      "value": _vm.pendaftaran.noantrian
+      value: _vm.pendaftaran.noantrian
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "noantrian", $event.target.value);
       }
     }
-  })])]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '4' ? _c('div', {
+  })])]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "4" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Surat Kehilangan")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" No Surat Kehilangan")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -627,26 +576,26 @@ var render = function render() {
     ref: "nosuratkehilangan",
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "name": "nosuratkehilangan",
-      "placeholder": " No Surat Kehilangan"
+      type: "text",
+      name: "nosuratkehilangan",
+      placeholder: " No Surat Kehilangan"
     },
     domProps: {
-      "value": _vm.pendaftaran.nosuratkehilangan
+      value: _vm.pendaftaran.nosuratkehilangan
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nosuratkehilangan", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.nosuratkehilangan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.nosuratkehilangan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.nosuratkehilangan[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '9' || _vm.pendaftaran.kodepenerbitans_id == '10' || _vm.pendaftaran.kodepenerbitans_id == '11' || _vm.pendaftaran.kodepenerbitans_id == '12' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.nosuratkehilangan[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "9" || _vm.pendaftaran.kodepenerbitans_id == "10" || _vm.pendaftaran.kodepenerbitans_id == "11" || _vm.pendaftaran.kodepenerbitans_id == "12" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Surat")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" No Surat")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -655,25 +604,25 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "placeholder": "No Surat"
+      type: "text",
+      placeholder: "No Surat"
     },
     domProps: {
-      "value": _vm.pendaftaran.nosurat
+      value: _vm.pendaftaran.nosurat
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nosurat", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.nosurat ? _c('p', {
+  }), _vm._v(" "), _vm.errors.nosurat ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.nosurat[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '2' || _vm.pendaftaran.kodepenerbitans_id == '3' || _vm.pendaftaran.kodepenerbitans_id == '4' || _vm.pendaftaran.kodepenerbitans_id == '5' || _vm.pendaftaran.kodepenerbitans_id == '7' || _vm.pendaftaran.kodepenerbitans_id == '9' || _vm.pendaftaran.kodepenerbitans_id == '10' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.nosurat[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "2" || _vm.pendaftaran.kodepenerbitans_id == "3" || _vm.pendaftaran.kodepenerbitans_id == "4" || _vm.pendaftaran.kodepenerbitans_id == "5" || _vm.pendaftaran.kodepenerbitans_id == "7" || _vm.pendaftaran.kodepenerbitans_id == "9" || _vm.pendaftaran.kodepenerbitans_id == "10" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Uji")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" No Uji")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -682,53 +631,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg text-uppercase",
     attrs: {
-      "type": "text",
-      "name": "nouji",
-      "placeholder": "No Uji"
+      type: "text",
+      name: "nouji",
+      placeholder: "No Uji"
     },
     domProps: {
-      "value": _vm.pendaftaran.nouji
+      value: _vm.pendaftaran.nouji
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         return _vm.caridata();
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nouji", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.nouji ? _c('p', {
+  }), _vm._v(" "), _vm.errors.nouji ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.nouji[0]))]) : _vm._e()]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '6' ? _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Uji")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.pendaftaran.nouji,
-      expression: "pendaftaran.nouji"
-    }],
-    staticClass: "form-control form-control-lg text-uppercase",
-    attrs: {
-      "type": "text",
-      "name": "nouji",
-      "placeholder": "No Uji"
-    },
-    domProps: {
-      "value": _vm.pendaftaran.nouji
-    },
-    on: {
-      "input": function input($event) {
-        if ($event.target.composing) return;
-        _vm.$set(_vm.pendaftaran, "nouji", $event.target.value);
-      }
-    }
-  })]) : _vm._e()]) : _vm._e(), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.nouji[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Nama Pemohon")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" Nama Pemohon")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -737,25 +662,25 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "placeholder": "Nama Pemohon"
+      type: "text",
+      placeholder: "Nama Pemohon"
     },
     domProps: {
-      "value": _vm.pendaftaran.namapemohon
+      value: _vm.pendaftaran.namapemohon
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "namapemohon", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.namapemohon ? _c('p', {
+  }), _vm._v(" "), _vm.errors.namapemohon ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.namapemohon[0]))]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.namapemohon[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Alamat Pemohon")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" Alamat Pemohon")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -764,25 +689,25 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "placeholder": "Alamat Pemohon"
+      type: "text",
+      placeholder: "Alamat Pemohon"
     },
     domProps: {
-      "value": _vm.pendaftaran.alamatpemohon
+      value: _vm.pendaftaran.alamatpemohon
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "alamatpemohon", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.alamatpemohon ? _c('p', {
+  }), _vm._v(" "), _vm.errors.alamatpemohon ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.alamatpemohon[0]))]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.alamatpemohon[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Telp Pemohon")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" No Telp Pemohon")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -791,25 +716,25 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "placeholder": "No Telp Pemohon"
+      type: "text",
+      placeholder: "No Telp Pemohon"
     },
     domProps: {
-      "value": _vm.pendaftaran.notelp
+      value: _vm.pendaftaran.notelp
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "notelp", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.notelp ? _c('p', {
+  }), _vm._v(" "), _vm.errors.notelp ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.notelp[0]))]) : _vm._e()])]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '9' || _vm.pendaftaran.kodepenerbitans_id == '10' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.notelp[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "9" || _vm.pendaftaran.kodepenerbitans_id == "10" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Kepada")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" Kepada")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -818,31 +743,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "placeholder": "Kepada"
+      type: "text",
+      placeholder: "Kepada"
     },
     domProps: {
-      "value": _vm.pendaftaran.kepada
+      value: _vm.pendaftaran.kepada
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "kepada", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.kepada ? _c('p', {
+  }), _vm._v(" "), _vm.errors.kepada ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.kepada[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '9' || _vm.pendaftaran.kodepenerbitans_id == '10' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.kepada[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "9" || _vm.pendaftaran.kodepenerbitans_id == "10" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Tujuan")]), _vm._v(" "), _c('vSelect', {
+  }, [_c("label", [_vm._v(" Tujuan")]), _vm._v(" "), _c("vSelect", {
     attrs: {
-      "label": "nama",
-      "options": _vm.kotas
+      label: "nama",
+      options: _vm.kotas
     },
     on: {
-      "input": _vm.setKotaTujuan
+      input: _vm.setKotaTujuan
     },
     model: {
       value: _vm.pendaftaran.tujuan,
@@ -851,13 +776,13 @@ var render = function render() {
       },
       expression: "pendaftaran.tujuan"
     }
-  }), _vm._v(" "), _vm.errors.tujuan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.tujuan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.tujuan[0]))]) : _vm._e()], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '10' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.tujuan[0]) + "\n                    ")]) : _vm._e()], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "10" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Kendaraan Baru")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" No Kendaraan Baru")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -866,25 +791,25 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg text-uppercase",
     attrs: {
-      "type": "text",
-      "placeholder": "No Kendaraan Baru"
+      type: "text",
+      placeholder: "No Kendaraan Baru"
     },
     domProps: {
-      "value": _vm.pendaftaran.nokendaraanbaru
+      value: _vm.pendaftaran.nokendaraanbaru
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nokendaraanbaru", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.nokendaraanbaru ? _c('p', {
+  }), _vm._v(" "), _vm.errors.nokendaraanbaru ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.nokendaraanbaru[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '10' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.nokendaraanbaru[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "10" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Nama Pemilik Baru")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" Nama Pemilik Baru")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -893,25 +818,25 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "placeholder": "Nama Pemilik Baru "
+      type: "text",
+      placeholder: "Nama Pemilik Baru "
     },
     domProps: {
-      "value": _vm.pendaftaran.namapemilikbaru
+      value: _vm.pendaftaran.namapemilikbaru
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "namapemilikbaru", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.namapemilikbaru ? _c('p', {
+  }), _vm._v(" "), _vm.errors.namapemilikbaru ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.namapemilikbaru[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '10' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.namapemilikbaru[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "10" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Alamat Pemilik Baru")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" Alamat Pemilik Baru")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -920,29 +845,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "placeholder": "Alamat Pemilik Baru "
+      type: "text",
+      placeholder: "Alamat Pemilik Baru "
     },
     domProps: {
-      "value": _vm.pendaftaran.alamatpemilikbaru
+      value: _vm.pendaftaran.alamatpemilikbaru
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "alamatpemilikbaru", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.alamatpemilikbaru ? _c('p', {
+  }), _vm._v(" "), _vm.errors.alamatpemilikbaru ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.alamatpemilikbaru[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == 2 || _vm.pendaftaran.kodepenerbitans_id == 3 || _vm.pendaftaran.kodepenerbitans_id == 4 || _vm.pendaftaran.kodepenerbitans_id == 7 || _vm.pendaftaran.kodepenerbitans_id == 9 || _vm.pendaftaran.kodepenerbitans_id == 10 ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.alamatpemilikbaru[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == 2 || _vm.pendaftaran.kodepenerbitans_id == 3 || _vm.pendaftaran.kodepenerbitans_id == 4 || _vm.pendaftaran.kodepenerbitans_id == 7 || _vm.pendaftaran.kodepenerbitans_id == 9 || _vm.pendaftaran.kodepenerbitans_id == 10 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Tanggal Habis Uji")]), _vm._v(" "), _c('b-form-datepicker', {
+  }, [_c("label", [_vm._v("Tanggal Habis Uji")]), _vm._v(" "), _c("b-form-datepicker", {
     attrs: {
-      "id": "tglhbsuji",
-      "locale": "id",
-      "disabled": true
+      id: "tglhbsuji",
+      locale: "id",
+      disabled: true
     },
     model: {
       value: _vm.pendaftaran.tglhbsuji,
@@ -951,15 +876,15 @@ var render = function render() {
       },
       expression: "pendaftaran.tglhbsuji"
     }
-  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == 2 || _vm.pendaftaran.kodepenerbitans_id == 3 || _vm.pendaftaran.kodepenerbitans_id == 4 || _vm.pendaftaran.kodepenerbitans_id == 7 || _vm.pendaftaran.kodepenerbitans_id == 9 || _vm.pendaftaran.kodepenerbitans_id == 10 ? _c('div', {
+  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == 2 || _vm.pendaftaran.kodepenerbitans_id == 3 || _vm.pendaftaran.kodepenerbitans_id == 4 || _vm.pendaftaran.kodepenerbitans_id == 7 || _vm.pendaftaran.kodepenerbitans_id == 9 || _vm.pendaftaran.kodepenerbitans_id == 10 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Tanggal Terakhir Uji")]), _vm._v(" "), _c('b-form-datepicker', {
+  }, [_c("label", [_vm._v("Tanggal Terakhir Uji")]), _vm._v(" "), _c("b-form-datepicker", {
     attrs: {
-      "id": "tglterakhiruji",
-      "locale": "id",
-      "disabled": true
+      id: "tglterakhiruji",
+      locale: "id",
+      disabled: true
     },
     model: {
       value: _vm.pendaftaran.tglterakhiruji,
@@ -968,13 +893,15 @@ var render = function render() {
       },
       expression: "pendaftaran.tglterakhiruji"
     }
-  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '12' ? _c('div', {
+  }), _vm._v(" "), _vm.errors.tglterakhiruji ? _c("p", {
+    staticClass: "text-danger"
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.tglterakhiruji[0]) + "\n                    ")]) : _vm._e()], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "12" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Surat dari Pemohon")]), _vm._v(" "), _c('div', {
+  }, [_c("label", [_vm._v(" No Surat dari Pemohon")]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('input', {
+  }, [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -983,23 +910,23 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "placeholder": "No Surat Dari"
+      type: "text",
+      placeholder: "No Surat Dari"
     },
     domProps: {
-      "value": _vm.pendaftaran.nosuratdari
+      value: _vm.pendaftaran.nosuratdari
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nosuratdari", $event.target.value);
       }
     }
-  })])])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id > 10 ? _c('div', {
+  })])])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id > 10 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Uji")]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == 12 ? _c('input', {
+  }, [_c("label", [_vm._v(" No Uji")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1008,51 +935,26 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg text-uppercase",
     attrs: {
-      "type": "text",
-      "name": "nouji",
-      "placeholder": "No Uji"
+      type: "text",
+      name: "nouji",
+      placeholder: "No Uji"
     },
     domProps: {
-      "value": _vm.pendaftaran.nouji
+      value: _vm.pendaftaran.nouji
     },
     on: {
-      "change": function change($event) {
-        return _vm.caridata();
-      },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nouji", $event.target.value);
       }
     }
-  }) : _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.pendaftaran.nouji,
-      expression: "pendaftaran.nouji"
-    }],
-    staticClass: "form-control form-control-lg text-uppercase",
-    attrs: {
-      "type": "text",
-      "name": "nouji",
-      "placeholder": "No Uji"
-    },
-    domProps: {
-      "value": _vm.pendaftaran.nouji
-    },
-    on: {
-      "input": function input($event) {
-        if ($event.target.composing) return;
-        _vm.$set(_vm.pendaftaran, "nouji", $event.target.value);
-      }
-    }
-  }), _vm._v(" "), _vm.errors.nouji ? _c('p', {
+  }), _vm._v(" "), _vm.errors.nouji ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.nouji[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '12' || _vm.pendaftaran.kodepenerbitans_id == '11' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.nouji[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "12" || _vm.pendaftaran.kodepenerbitans_id == "11" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("No Kendaraan")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("No Kendaraan")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1061,24 +963,24 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg text-uppercase",
     attrs: {
-      "type": "text",
-      "name": "noregistrasikendaraan",
-      "placeholder": " No Kendaraan"
+      type: "text",
+      name: "noregistrasikendaraan",
+      placeholder: " No Kendaraan"
     },
     domProps: {
-      "value": _vm.pendaftaran.noregistrasikendaraan
+      value: _vm.pendaftaran.noregistrasikendaraan
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "noregistrasikendaraan", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '11' || _vm.pendaftaran.kodepenerbitans_id == '12' ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "11" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Nama")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" Nama")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1087,136 +989,34 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "name": "nama",
-      "placeholder": "nama"
+      type: "text",
+      name: "nama",
+      placeholder: " nama"
     },
     domProps: {
-      "value": _vm.pendaftaran.nama
+      value: _vm.pendaftaran.nama
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nama", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '12' ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "11" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Alamat")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.pendaftaran.alamat,
-      expression: "pendaftaran.alamat"
-    }],
-    staticClass: "form-control form-control-lg",
-    attrs: {
-      "type": "text",
-      "name": "alamat",
-      "placeholder": "alamat"
-    },
-    domProps: {
-      "value": _vm.pendaftaran.alamat
-    },
-    on: {
-      "input": function input($event) {
-        if ($event.target.composing) return;
-        _vm.$set(_vm.pendaftaran, "alamat", $event.target.value);
-      }
-    }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '12' ? _c('div', {
-    staticClass: "col-sm-4"
-  }, [_c('div', {
-    staticClass: "form-group"
-  }, [_c('label', [_vm._v("No Mesin")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.pendaftaran.nomesin,
-      expression: "pendaftaran.nomesin"
-    }],
-    staticClass: "form-control form-control-lg",
-    staticStyle: {
-      "text-transform": "uppercase"
-    },
-    attrs: {
-      "type": "text",
-      "name": "nomesin",
-      "placeholder": "No Mesin"
-    },
-    domProps: {
-      "value": _vm.pendaftaran.nomesin
-    },
-    on: {
-      "input": function input($event) {
-        if ($event.target.composing) return;
-        _vm.$set(_vm.pendaftaran, "nomesin", $event.target.value);
-      }
-    }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '12' ? _c('div', {
-    staticClass: "col-sm-4"
-  }, [_c('label', [_vm._v("No Rangka")]), _vm._v(" "), _c('div', {
-    staticClass: "input-group"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.pendaftaran.norangka,
-      expression: "pendaftaran.norangka"
-    }],
-    ref: "norangka",
-    staticClass: "form-control form-control-lg",
-    staticStyle: {
-      "text-transform": "uppercase"
-    },
-    attrs: {
-      "type": "text",
-      "name": "norangka",
-      "placeholder": " No Rangka"
-    },
-    domProps: {
-      "value": _vm.pendaftaran.norangka
-    },
-    on: {
-      "input": function input($event) {
-        if ($event.target.composing) return;
-        _vm.$set(_vm.pendaftaran, "norangka", $event.target.value);
-      }
-    }
-  }), _vm._v(" "), _c('span', {
-    staticClass: "input-group-text",
-    attrs: {
-      "id": "basic-addon2"
-    }
-  }, [_c('a', {
-    staticClass: "btn btn-sm btn-light-success font-weight-bold",
-    attrs: {
-      "href": "javascript:void(0)"
-    },
-    on: {
-      "click": function click($event) {
-        return _vm.getDataVTA(_vm.pendaftaran.norangka);
-      }
-    }
-  }, [_c('i', {
-    staticClass: "flaticon2-search"
-  }), _vm._v(" Cek Data\n                      ")])])])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '11' ? _c('div', {
-    staticClass: "col-sm-4"
-  }, [_c('div', {
-    staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jenis "), _vm.pendaftaran.jenislama ? _c('span', {
+  }, [_c("label", [_vm._v("Jenis\n                      "), _vm.pendaftaran.jenislama ? _c("span", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.pendaftaran.jenislama))]) : _vm._e()]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v(_vm._s(_vm.pendaftaran.jenislama))]) : _vm._e()]), _vm._v(" "), _c("vSelect", {
     ref: "jenis",
     attrs: {
-      "label": "vehicle_type_name",
-      "options": _vm.jenis,
-      "disabled": !_vm.jenis.length
+      label: "vehicle_type_name",
+      options: _vm.jenis,
+      disabled: !_vm.jenis.length
     },
     on: {
-      "input": _vm.setSubVehicle
+      input: _vm.setSubVehicle
     },
     model: {
       value: _vm.pendaftaran.jenis,
@@ -1225,21 +1025,21 @@ var render = function render() {
       },
       expression: "pendaftaran.jenis"
     }
-  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '11' ? _c('div', {
+  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "11" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Model "), _vm.pendaftaran.model ? _c('span', {
+  }, [_c("label", [_vm._v("Model\n                      "), _vm.pendaftaran.model ? _c("span", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.pendaftaran.model))]) : _vm._e()]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v(_vm._s(_vm.pendaftaran.model))]) : _vm._e()]), _vm._v(" "), _c("vSelect", {
     ref: "subjenis",
     attrs: {
-      "label": "vehicle_sub_name",
-      "options": _vm.subjenis,
-      "disabled": !_vm.subjenis.length
+      label: "vehicle_sub_name",
+      options: _vm.subjenis,
+      disabled: !_vm.subjenis.length
     },
     on: {
-      "input": _vm.setSubVehicleid
+      input: _vm.setSubVehicleid
     },
     model: {
       value: _vm.pendaftaran.subjenis,
@@ -1248,23 +1048,23 @@ var render = function render() {
       },
       expression: "pendaftaran.subjenis"
     }
-  }), _vm._v(" "), _vm.errors.model ? _c('p', {
+  }), _vm._v(" "), _vm.errors.model ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.model[0]))]) : _vm._e()], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '11' || _vm.pendaftaran.kodepenerbitans_id == '12' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.model[0]) + "\n                    ")]) : _vm._e()], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "11" || _vm.pendaftaran.kodepenerbitans_id == "12" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Merek"), _vm.pendaftaran.mereklama ? _c('span', {
+  }, [_c("label", [_vm._v("Merek"), _vm.pendaftaran.mereklama ? _c("span", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.pendaftaran.mereklama))]) : _vm._e()]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v(_vm._s(_vm.pendaftaran.mereklama))]) : _vm._e()]), _vm._v(" "), _c("vSelect", {
     ref: "merek",
     attrs: {
-      "label": "vehicle_brand_name",
-      "options": _vm.mereks,
-      "disabled": !_vm.mereks.length
+      label: "vehicle_brand_name",
+      options: _vm.mereks,
+      disabled: !_vm.mereks.length
     },
     on: {
-      "input": _vm.setType
+      input: _vm.setType
     },
     model: {
       value: _vm.pendaftaran.merek,
@@ -1273,21 +1073,21 @@ var render = function render() {
       },
       expression: "pendaftaran.merek"
     }
-  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '11' || _vm.pendaftaran.kodepenerbitans_id == '12' ? _c('div', {
+  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "11" || _vm.pendaftaran.kodepenerbitans_id == "12" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Tipe "), _vm.pendaftaran.tipelama ? _c('span', {
+  }, [_c("label", [_vm._v("Tipe\n                      "), _vm.pendaftaran.tipelama ? _c("span", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.pendaftaran.tipelama))]) : _vm._e()]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v(_vm._s(_vm.pendaftaran.tipelama))]) : _vm._e()]), _vm._v(" "), _c("vSelect", {
     ref: "tipes",
     attrs: {
-      "label": "vehicle_varian_type_name",
-      "options": _vm.tipes,
-      "disabled": !_vm.tipes.length
+      label: "vehicle_varian_type_name",
+      options: _vm.tipes,
+      disabled: !_vm.tipes.length
     },
     on: {
-      "input": _vm.setVarian
+      input: _vm.setVarian
     },
     model: {
       value: _vm.pendaftaran.tipe,
@@ -1296,11 +1096,11 @@ var render = function render() {
       },
       expression: "pendaftaran.tipe"
     }
-  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '11' || _vm.pendaftaran.kodepenerbitans_id == '12' ? _c('div', {
+  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "11" || _vm.pendaftaran.kodepenerbitans_id == "12" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Kepada")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" Kepada")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1309,31 +1109,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "placeholder": "Kepada"
+      type: "text",
+      placeholder: "Kepada"
     },
     domProps: {
-      "value": _vm.pendaftaran.kepada
+      value: _vm.pendaftaran.kepada
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "kepada", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.kepada ? _c('p', {
+  }), _vm._v(" "), _vm.errors.kepada ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.kepada[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '12' || _vm.pendaftaran.kodepenerbitans_id == '11' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.kepada[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "12" || _vm.pendaftaran.kodepenerbitans_id == "11" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_vm.pendaftaran.kodepenerbitans_id == '11' ? _c('label', [_vm._v("Tujuan Kab/Kota")]) : _c('label', [_vm._v("Kab/Kota")]), _vm._v(" "), _c('vSelect', {
+  }, [_vm.pendaftaran.kodepenerbitans_id == "11" ? _c("label", [_vm._v("Tujuan Kab/Kota")]) : _c("label", [_vm._v("Kab/Kota")]), _vm._v(" "), _c("vSelect", {
     attrs: {
-      "label": "nama",
-      "options": _vm.kotas
+      label: "nama",
+      options: _vm.kotas
     },
     on: {
-      "input": _vm.setKotaTujuan
+      input: _vm.setKotaTujuan
     },
     model: {
       value: _vm.pendaftaran.tujuan,
@@ -1342,33 +1142,33 @@ var render = function render() {
       },
       expression: "pendaftaran.tujuan"
     }
-  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '5' || _vm.pendaftaran.kodepenerbitans_id == '6' ? _c('div', {
+  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "5" || _vm.pendaftaran.kodepenerbitans_id == "6" ? _c("div", {
     staticClass: "col-sm-12"
-  }, [_c('a', {
+  }, [_c("a", {
     staticClass: "btn btn-sm btn-light-success font-weight-bold",
     staticStyle: {
-      "width": "100%"
+      width: "100%"
     },
     attrs: {
-      "href": "javascript:void(0)"
+      href: "javascript:void(0)"
     },
     on: {
-      "click": _vm.getCheckUji
+      click: _vm.getCheckUji
     }
-  }, [_c('i', {
+  }, [_c("i", {
     staticClass: "flaticon2-search"
-  }), _vm._v(" Cek Data\n                  ")])]) : _vm._e()])]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c('div', {
+  }), _vm._v(" Cek Data\n                  ")])]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "pb-5",
     attrs: {
       "data-wizard-type": "step-content"
     }
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "row"
-  }, [_vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c('div', {
+  }, [_vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "col-sm-6"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Uji")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" No Uji")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1377,26 +1177,26 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg text-uppercase",
     attrs: {
-      "type": "text",
-      "name": "nouji",
-      "placeholder": "No Uji"
+      type: "text",
+      name: "nouji",
+      placeholder: "No Uji"
     },
     domProps: {
-      "value": _vm.pendaftaran.nouji
+      value: _vm.pendaftaran.nouji
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nouji", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.nouji ? _c('p', {
+  }), _vm._v(" "), _vm.errors.nouji ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.nouji[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.nouji[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-sm-6"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("No Kendaraan")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("No Kendaraan")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1405,28 +1205,28 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg text-uppercase",
     attrs: {
-      "type": "text",
-      "name": "noregistrasikendaraan",
-      "placeholder": " No Kendaraan"
+      type: "text",
+      name: "noregistrasikendaraan",
+      placeholder: " No Kendaraan"
     },
     domProps: {
-      "value": _vm.pendaftaran.noregistrasikendaraan
+      value: _vm.pendaftaran.noregistrasikendaraan
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "noregistrasikendaraan", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.noregistrasikendaraan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.noregistrasikendaraan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.noregistrasikendaraan[0]) + "\n                    ")]) : _vm._e()])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.noregistrasikendaraan[0]) + "\n                    ")]) : _vm._e()])])]), _vm._v(" "), _c("div", {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Nama")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" Nama")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1435,26 +1235,26 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "name": "nama",
-      "placeholder": " nama"
+      type: "text",
+      name: "nama",
+      placeholder: " nama"
     },
     domProps: {
-      "value": _vm.pendaftaran.nama
+      value: _vm.pendaftaran.nama
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nama", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.nama ? _c('p', {
+  }), _vm._v(" "), _vm.errors.nama ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.nama[0]))]) : _vm._e()])]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.nama[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No Identitas")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" No Identitas")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1463,26 +1263,26 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "name": "noidentitaspemilik",
-      "placeholder": " No Identitas"
+      type: "text",
+      name: "noidentitaspemilik",
+      placeholder: " No Identitas"
     },
     domProps: {
-      "value": _vm.pendaftaran.noidentitaspemilik
+      value: _vm.pendaftaran.noidentitaspemilik
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "noidentitaspemilik", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.noidentitaspemilik ? _c('p', {
+  }), _vm._v(" "), _vm.errors.noidentitaspemilik ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.noidentitaspemilik[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.noidentitaspemilik[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" Alamat")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" Alamat")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1491,32 +1291,32 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "name": "alamat",
-      "placeholder": " Alamat"
+      type: "text",
+      name: "alamat",
+      placeholder: " Alamat"
     },
     domProps: {
-      "value": _vm.pendaftaran.alamat
+      value: _vm.pendaftaran.alamat
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "alamat", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.alamat ? _c('p', {
+  }), _vm._v(" "), _vm.errors.alamat ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.alamat[0]))]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.alamat[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Kabupaten")]), _vm._v(" "), _c('vSelect', {
+  }, [_c("label", [_vm._v("Kabupaten")]), _vm._v(" "), _c("vSelect", {
     attrs: {
-      "label": "nama",
-      "options": _vm.kotas
+      label: "nama",
+      options: _vm.kotas
     },
     on: {
-      "input": _vm.setKota
+      input: _vm.setKota
     },
     model: {
       value: _vm.pendaftaran.kota,
@@ -1525,20 +1325,20 @@ var render = function render() {
       },
       expression: "pendaftaran.kota"
     }
-  }), _vm._v(" "), _vm.errors.kota ? _c('p', {
+  }), _vm._v(" "), _vm.errors.kota ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.kota[0]))]) : _vm._e()], 1)]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.kota[0]) + "\n                    ")]) : _vm._e()], 1)]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Kecamatan")]), _vm._v(" "), _c('vSelect', {
+  }, [_c("label", [_vm._v("Kecamatan")]), _vm._v(" "), _c("vSelect", {
     attrs: {
-      "label": "nama",
-      "options": _vm.kecamatans,
-      "disabled": _vm.disabled1 == 1
+      label: "nama",
+      options: _vm.kecamatans,
+      disabled: _vm.disabled1 == 1
     },
     on: {
-      "input": _vm.setKecamatan
+      input: _vm.setKecamatan
     },
     model: {
       value: _vm.pendaftaran.kecamatan,
@@ -1547,20 +1347,20 @@ var render = function render() {
       },
       expression: "pendaftaran.kecamatan"
     }
-  }), _vm._v(" "), _vm.errors.kecamatan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.kecamatan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.kecamatan[0]))]) : _vm._e()], 1)]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.kecamatan[0]) + "\n                    ")]) : _vm._e()], 1)]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Kelurahan")]), _vm._v(" "), _c('vSelect', {
+  }, [_c("label", [_vm._v("Kelurahan")]), _vm._v(" "), _c("vSelect", {
     attrs: {
-      "label": "nama",
-      "options": _vm.kelurahans,
-      "disabled": _vm.disabled2 == 1
+      label: "nama",
+      options: _vm.kelurahans,
+      disabled: _vm.disabled2 == 1
     },
     on: {
-      "input": _vm.setKelurahan
+      input: _vm.setKelurahan
     },
     model: {
       value: _vm.pendaftaran.kelurahan,
@@ -1569,13 +1369,13 @@ var render = function render() {
       },
       expression: "pendaftaran.kelurahan"
     }
-  }), _vm._v(" "), _vm.errors.Kelurahan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.Kelurahan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.Kelurahan[0]))]) : _vm._e()], 1)]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.Kelurahan[0]) + "\n                    ")]) : _vm._e()], 1)]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("No SRUT")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("No SRUT")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1584,29 +1384,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "name": "nosertifikatreg",
-      "placeholder": " No SRUT"
+      type: "text",
+      name: "nosertifikatreg",
+      placeholder: " No SRUT"
     },
     domProps: {
-      "value": _vm.pendaftaran.nosertifikatreg
+      value: _vm.pendaftaran.nosertifikatreg
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nosertifikatreg", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.nosertifikatreg ? _c('p', {
+  }), _vm._v(" "), _vm.errors.nosertifikatreg ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.nosertifikatreg[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.nosertifikatreg[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Tanggal SRUT")]), _vm._v(" "), _c('b-form-datepicker', {
+  }, [_c("label", [_vm._v("Tgl SRUT")]), _vm._v(" "), _c("b-form-datepicker", {
     attrs: {
-      "id": "tglsertifikatreg",
-      "locale": "id"
+      id: "tglsertifikatreg",
+      locale: "id"
     },
     model: {
       value: _vm.pendaftaran.tglsertifikatreg,
@@ -1615,16 +1415,16 @@ var render = function render() {
       },
       expression: "pendaftaran.tglsertifikatreg"
     }
-  }), _vm._v(" "), _vm.errors.tglsertifikatreg ? _c('p', {
+  }), _vm._v(" "), _vm.errors.tglsertifikatreg ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.tglsertifikatreg[0]))]) : _vm._e()], 1)]) : _vm._e(), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.tglsertifikatreg[0]) + "\n                    ")]) : _vm._e()], 1)]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Tanggal STNK terbit")]), _vm._v(" "), _c('b-form-datepicker', {
+  }, [_c("label", [_vm._v("Tanggal STNK terbit")]), _vm._v(" "), _c("b-form-datepicker", {
     attrs: {
-      "id": "tgl_registrasikendaraan",
-      "locale": "id"
+      id: "tgl_registrasikendaraan",
+      locale: "id"
     },
     model: {
       value: _vm.pendaftaran.tgl_registrasikendaraan,
@@ -1633,13 +1433,13 @@ var render = function render() {
       },
       expression: "pendaftaran.tgl_registrasikendaraan"
     }
-  }), _vm._v(" "), _vm.errors.tgl_registrasikendaraan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.tgl_registrasikendaraan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.tgl_registrasikendaraan[0]))]) : _vm._e()], 1)]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.tgl_registrasikendaraan[0]) + "\n                    ")]) : _vm._e()], 1)]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("SK Rancang Bangun")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("SK Rancang Bangun")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1648,26 +1448,26 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "name": "rancang",
-      "placeholder": "SK Rancang Bangun"
+      type: "text",
+      name: "rancang",
+      placeholder: "SK Rancang Bangun"
     },
     domProps: {
-      "value": _vm.pendaftaran.rancang
+      value: _vm.pendaftaran.rancang
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "rancang", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.rancang ? _c('p', {
+  }), _vm._v(" "), _vm.errors.rancang ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.rancang[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.rancang[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Tahun Pembuatan")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Tahun Pembuatan")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1676,42 +1476,42 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "min": "0",
-      "name": "thpembuatan",
-      "placeholder": "Tahun Pembuatan"
+      type: "number",
+      name: "thpembuatan",
+      placeholder: "Tahun Pembuatan"
     },
     domProps: {
-      "value": _vm.pendaftaran.thpembuatan
+      value: _vm.pendaftaran.thpembuatan
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('julurdepan');
+      focus: function focus($event) {
+        ;
+        "julurdepan";
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "thpembuatan", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.thpembuatan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.thpembuatan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.thpembuatan[0]))]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.thpembuatan[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     staticClass: "text-danger"
-  }, [_vm._v("Merek"), _vm.pendaftaran.mereklama ? _c('span', {
+  }, [_vm._v("Merek"), _vm.pendaftaran.mereklama ? _c("span", {
     staticClass: "text-success"
-  }, [_vm._v(_vm._s(_vm.pendaftaran.mereklama))]) : _vm._e()]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v(_vm._s(_vm.pendaftaran.mereklama))]) : _vm._e()]), _vm._v(" "), _c("vSelect", {
     ref: "merek",
     attrs: {
-      "label": "vehicle_brand_name",
-      "options": _vm.mereks,
-      "disabled": !_vm.mereks.length
+      label: "vehicle_brand_name",
+      options: _vm.mereks,
+      disabled: !_vm.mereks.length
     },
     on: {
-      "input": _vm.setType
+      input: _vm.setType
     },
     model: {
       value: _vm.pendaftaran.merek,
@@ -1720,23 +1520,23 @@ var render = function render() {
       },
       expression: "pendaftaran.merek"
     }
-  })], 1)]), _vm._v(" "), _c('div', {
+  })], 1)]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     staticClass: "text-danger"
-  }, [_vm._v("Tipe "), _vm.pendaftaran.tipelama ? _c('span', {
+  }, [_vm._v("Tipe\n                      "), _vm.pendaftaran.tipelama ? _c("span", {
     staticClass: "text-success"
-  }, [_vm._v(_vm._s(_vm.pendaftaran.tipelama))]) : _vm._e()]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v(_vm._s(_vm.pendaftaran.tipelama))]) : _vm._e()]), _vm._v(" "), _c("vSelect", {
     ref: "tipes",
     attrs: {
-      "label": "vehicle_varian_type_name",
-      "options": _vm.tipes,
-      "disabled": !_vm.tipes.length
+      label: "vehicle_varian_type_name",
+      options: _vm.tipes,
+      disabled: !_vm.tipes.length
     },
     on: {
-      "input": _vm.setVarian
+      input: _vm.setVarian
     },
     model: {
       value: _vm.pendaftaran.tipe,
@@ -1745,25 +1545,25 @@ var render = function render() {
       },
       expression: "pendaftaran.tipe"
     }
-  }), _vm._v(" "), _vm.errors.tipe ? _c('p', {
+  }), _vm._v(" "), _vm.errors.tipe ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.tipe[0]))]) : _vm._e()], 1)]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.tipe[0]) + "\n                    ")]) : _vm._e()], 1)]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-sm-12"
-  }, [_c('label', {
+  }, [_c("label", {
     staticClass: "text-danger"
-  }, [_vm._v("Varian")]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v("Varian")]), _vm._v(" "), _c("vSelect", {
     ref: "varian",
     attrs: {
-      "label": "vehicle_varian_name",
-      "options": _vm.varians,
-      "disabled": !_vm.varians.length
+      label: "vehicle_varian_name",
+      options: _vm.varians,
+      disabled: !_vm.varians.length
     },
     on: {
-      "input": _vm.setVarianid
+      input: _vm.setVarianid
     },
     model: {
       value: _vm.pendaftaran.varian,
@@ -1772,25 +1572,25 @@ var render = function render() {
       },
       expression: "pendaftaran.varian"
     }
-  })], 1), _vm._v(" "), _vm.errors.varian ? _c('p', {
+  })], 1), _vm._v(" "), _vm.errors.varian ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.varian[0]))]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.varian[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     staticClass: "text-danger"
-  }, [_vm._v("Jenis "), _vm.pendaftaran.jenislama ? _c('span', {
+  }, [_vm._v("Jenis\n                      "), _vm.pendaftaran.jenislama ? _c("span", {
     staticClass: "text-success"
-  }, [_vm._v(_vm._s(_vm.pendaftaran.jenislama))]) : _vm._e()]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v(_vm._s(_vm.pendaftaran.jenislama))]) : _vm._e()]), _vm._v(" "), _c("vSelect", {
     ref: "jenis",
     attrs: {
-      "label": "vehicle_type_name",
-      "options": _vm.jenis,
-      "disabled": !_vm.jenis.length
+      label: "vehicle_type_name",
+      options: _vm.jenis,
+      disabled: !_vm.jenis.length
     },
     on: {
-      "input": _vm.setSubVehicle
+      input: _vm.setSubVehicle
     },
     model: {
       value: _vm.pendaftaran.jenis,
@@ -1799,23 +1599,23 @@ var render = function render() {
       },
       expression: "pendaftaran.jenis"
     }
-  }), _vm._v(" "), _vm.errors.jenis ? _c('p', {
+  }), _vm._v(" "), _vm.errors.jenis ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.jenis[0]))]) : _vm._e()], 1)]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.jenis[0]) + "\n                    ")]) : _vm._e()], 1)]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Model "), _vm.pendaftaran.model ? _c('span', {
+  }, [_c("label", [_vm._v("Model\n                      "), _vm.pendaftaran.model ? _c("span", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.pendaftaran.model))]) : _vm._e()]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v(_vm._s(_vm.pendaftaran.model))]) : _vm._e()]), _vm._v(" "), _c("vSelect", {
     ref: "subjenis",
     attrs: {
-      "label": "vehicle_sub_name",
-      "options": _vm.subjenis,
-      "disabled": !_vm.subjenis.length
+      label: "vehicle_sub_name",
+      options: _vm.subjenis,
+      disabled: !_vm.subjenis.length
     },
     on: {
-      "input": _vm.setSubVehicleid
+      input: _vm.setSubVehicleid
     },
     model: {
       value: _vm.pendaftaran.subjenis,
@@ -1824,13 +1624,13 @@ var render = function render() {
       },
       expression: "pendaftaran.subjenis"
     }
-  }), _vm._v(" "), _vm.errors.model ? _c('p', {
+  }), _vm._v(" "), _vm.errors.model ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.model[0]))]) : _vm._e()], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.model[0]) + "\n                    ")]) : _vm._e()], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Isi Silinder")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Isi Silinder")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1839,30 +1639,26 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "min": "0",
-      "name": "isisilinder",
-      "placeholder": " Isi Silinder"
+      type: "number",
+      name: "isisilinder",
+      placeholder: " Isi Silinder"
     },
     domProps: {
-      "value": _vm.pendaftaran.isisilinder
+      value: _vm.pendaftaran.isisilinder
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('isisilinder');
-      },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "isisilinder", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.isisilinder ? _c('p', {
+  }), _vm._v(" "), _vm.errors.isisilinder ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.isisilinder[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.isisilinder[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Daya Motor Penggerak")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Daya Motor Penggerak")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1871,30 +1667,26 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "min": "0",
-      "name": "dayamotorpenggerak",
-      "placeholder": " Daya Motor Penggerak"
+      type: "number",
+      name: "dayamotorpenggerak",
+      placeholder: " Daya Motor Penggerak"
     },
     domProps: {
-      "value": _vm.pendaftaran.dayamotorpenggerak
+      value: _vm.pendaftaran.dayamotorpenggerak
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('dayamotorpenggerak');
-      },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "dayamotorpenggerak", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.dayamotorpenggerak ? _c('p', {
+  }), _vm._v(" "), _vm.errors.dayamotorpenggerak ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.dayamotorpenggerak[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.dayamotorpenggerak[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-sm-6"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Nomer Mesin")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("No Mesin")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1906,26 +1698,26 @@ var render = function render() {
       "text-transform": "uppercase"
     },
     attrs: {
-      "type": "text",
-      "name": "nomesin",
-      "placeholder": "Nomer Mesin"
+      type: "text",
+      name: "nomesin",
+      placeholder: "No Mesin"
     },
     domProps: {
-      "value": _vm.pendaftaran.nomesin
+      value: _vm.pendaftaran.nomesin
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "nomesin", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.nomesin ? _c('p', {
+  }), _vm._v(" "), _vm.errors.nomesin ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.nomesin[0]))]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.nomesin[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-6"
-  }, [_c('label', [_vm._v("Nomer Rangka")]), _vm._v(" "), _c('div', {
+  }, [_c("label", [_vm._v("Nomer Rangka")]), _vm._v(" "), _c("div", {
     staticClass: "input-group"
-  }, [_c('input', {
+  }, [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1938,50 +1730,50 @@ var render = function render() {
       "text-transform": "uppercase"
     },
     attrs: {
-      "type": "text",
-      "name": "norangka",
-      "placeholder": " No Rangka"
+      type: "text",
+      name: "norangka",
+      placeholder: " No Rangka"
     },
     domProps: {
-      "value": _vm.pendaftaran.norangka
+      value: _vm.pendaftaran.norangka
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "norangka", $event.target.value);
       }
     }
-  }), _vm._v(" "), _c('span', {
+  }), _vm._v(" "), _c("span", {
     staticClass: "input-group-text",
     attrs: {
-      "id": "basic-addon2"
+      id: "basic-addon2"
     }
-  }, [_c('a', {
+  }, [_c("a", {
     staticClass: "btn btn-sm btn-light-success font-weight-bold",
     attrs: {
-      "href": "javascript:void(0)"
+      href: "javascript:void(0)"
     },
     on: {
-      "click": function click($event) {
+      click: function click($event) {
         return _vm.getDataVTA(_vm.pendaftaran.norangka);
       }
     }
-  }, [_c('i', {
+  }, [_c("i", {
     staticClass: "flaticon2-search"
-  }), _vm._v(" Cek Data\n                      ")])])])]), _vm._v(" "), _c('div', {
+  }), _vm._v(" Cek Data\n                      ")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     staticClass: "text-danger"
-  }, [_vm._v("Bahan Bakar")]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v("Bahan Bakar")]), _vm._v(" "), _c("vSelect", {
     ref: "bahanbakar",
     attrs: {
-      "label": "fuel_name",
-      "options": _vm.fuels
+      label: "fuel_name",
+      options: _vm.fuels
     },
     on: {
-      "input": _vm.setFuel
+      input: _vm.setFuel
     },
     model: {
       value: _vm.pendaftaran.bahanbakar,
@@ -1990,13 +1782,13 @@ var render = function render() {
       },
       expression: "pendaftaran.bahanbakar"
     }
-  }), _vm._v(" "), _vm.errors.bahanbakar ? _c('p', {
+  }), _vm._v(" "), _vm.errors.bahanbakar ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.bahanbakar[0]))]) : _vm._e()], 1)]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.bahanbakar[0]) + "\n                    ")]) : _vm._e()], 1)]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Penggunaan")]), _vm._v(" "), _c('select', {
+  }, [_c("label", [_vm._v("Penggunaan")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2005,7 +1797,7 @@ var render = function render() {
     }],
     staticClass: "form-control",
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
           return o.selected;
         }).map(function (o) {
@@ -2015,33 +1807,33 @@ var render = function render() {
         _vm.$set(_vm.pendaftaran, "peruntukan", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
       }
     }
-  }, [_c('option', {
+  }, [_c("option", {
     attrs: {
-      "value": "UMUM",
-      "selected": "selected"
+      value: "UMUM",
+      selected: "selected"
     }
-  }, [_vm._v("UMUM")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("UMUM")]), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "TIDAK UMUM"
+      value: "TIDAK UMUM"
     }
-  }, [_vm._v("TIDAK UMUM")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("TIDAK UMUM")]), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "PEMERINTAH"
+      value: "PEMERINTAH"
     }
-  }, [_vm._v("PEMERINTAH")])]), _vm._v(" "), _vm.errors.peruntukan ? _c('p', {
+  }, [_vm._v("PEMERINTAH")])]), _vm._v(" "), _vm.errors.peruntukan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.peruntukan[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == '5' || _vm.pendaftaran.kodepenerbitans_id == '6' ? _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.peruntukan[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id == "5" || _vm.pendaftaran.kodepenerbitans_id == "6" ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Daerah Asal")]), _vm._v(" "), _c('vSelect', {
+  }, [_c("label", [_vm._v("Daerah Asal")]), _vm._v(" "), _c("vSelect", {
     ref: "kodewilayahasal",
     attrs: {
-      "label": "area_name",
-      "options": _vm.kodewilayahs
+      label: "area_name",
+      options: _vm.kodewilayahs
     },
     on: {
-      "input": _vm.setAreaFrom
+      input: _vm.setAreaFrom
     },
     model: {
       value: _vm.pendaftaran.wilayahasal,
@@ -2050,11 +1842,13 @@ var render = function render() {
       },
       expression: "pendaftaran.wilayahasal"
     }
-  })], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c('div', {
+  }), _vm._v(" "), _vm.errors.kodewilayah ? _c("p", {
+    staticClass: "text-danger"
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.kodewilayah[0]) + "\n                    ")]) : _vm._e()], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Warna")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Warna")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2066,26 +1860,26 @@ var render = function render() {
       "text-transform": "uppercase"
     },
     attrs: {
-      "type": "text",
-      "name": "warna",
-      "placeholder": "Warna"
+      type: "text",
+      name: "warna",
+      placeholder: "Warna"
     },
     domProps: {
-      "value": _vm.pendaftaran.warna
+      value: _vm.pendaftaran.warna
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "warna", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.warna ? _c('p', {
+  }), _vm._v(" "), _vm.errors.warna ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v(_vm._s(_vm.errors.warna[0]))]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                      " + _vm._s(_vm.errors.warna[0]) + "\n                    ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v(" No TMK")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v(" No TMK")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2094,41 +1888,41 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "min": "1",
-      "placeholder": "No TMK "
+      type: "number",
+      min: "1",
+      placeholder: "No TMK "
     },
     domProps: {
-      "value": _vm.pendaftaran.tmk
+      value: _vm.pendaftaran.tmk
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "tmk", $event.target.value);
       }
     }
-  })])])])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c('div', {
+  })])])])]), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 12 || _vm.pendaftaran.kodepenerbitans_id > 12 ? _c("div", {
     staticClass: "pb-5",
     attrs: {
       "data-wizard-type": "step-content"
     }
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "accordion",
     attrs: {
-      "role": "tablist"
+      role: "tablist"
     }
-  }, [_c('b-card', {
+  }, [_c("b-card", {
     staticClass: "mb-1",
     attrs: {
       "no-body": ""
     }
-  }, [_c('b-card-header', {
+  }, [_c("b-card-header", {
     staticClass: "p-1 d-flex flex-row justify-content-center gap-2 mb-4",
     attrs: {
       "header-tag": "header",
-      "role": "tab"
+      role: "tab"
     }
-  }, [_c('b-button', {
+  }, [_c("b-button", {
     directives: [{
       name: "b-toggle",
       rawName: "v-b-toggle.accordion-1",
@@ -2137,13 +1931,13 @@ var render = function render() {
       }
     }],
     staticClass: "mr-2",
-    "class": {
-      'active': _vm.isActive
+    class: {
+      active: _vm.isActive
     },
     attrs: {
-      "variant": "outline-primary"
+      variant: "outline-primary"
     }
-  }, [_vm._v("Ukuran Utama")]), _vm._v(" "), _c('b-button', {
+  }, [_vm._v("Ukuran Utama")]), _vm._v(" "), _c("b-button", {
     directives: [{
       name: "b-toggle",
       rawName: "v-b-toggle.accordion-2",
@@ -2153,9 +1947,9 @@ var render = function render() {
     }],
     staticClass: "mr-2",
     attrs: {
-      "variant": "outline-primary"
+      variant: "outline-primary"
     }
-  }, [_vm._v("Dimensi Bak /\n                      Tangki")]), _vm._v(" "), _c('b-button', {
+  }, [_vm._v("Dimensi Bak / Tangki")]), _vm._v(" "), _c("b-button", {
     directives: [{
       name: "b-toggle",
       rawName: "v-b-toggle.accordion-3",
@@ -2165,9 +1959,9 @@ var render = function render() {
     }],
     staticClass: "mr-2",
     attrs: {
-      "variant": "outline-primary"
+      variant: "outline-primary"
     }
-  }, [_vm._v("Jarak Sumbu")]), _vm._v(" "), _c('b-button', {
+  }, [_vm._v("Jarak Sumbu")]), _vm._v(" "), _c("b-button", {
     directives: [{
       name: "b-toggle",
       rawName: "v-b-toggle.accordion-4",
@@ -2177,9 +1971,9 @@ var render = function render() {
     }],
     staticClass: "mr-2",
     attrs: {
-      "variant": "outline-primary"
+      variant: "outline-primary"
     }
-  }, [_vm._v("Berat Kosong")]), _vm._v(" "), _c('b-button', {
+  }, [_vm._v("Berat Kosong")]), _vm._v(" "), _c("b-button", {
     directives: [{
       name: "b-toggle",
       rawName: "v-b-toggle.accordion-5",
@@ -2189,9 +1983,9 @@ var render = function render() {
     }],
     staticClass: "mr-2",
     attrs: {
-      "variant": "outline-primary"
+      variant: "outline-primary"
     }
-  }, [_vm._v("Daya Angkut")]), _vm._v(" "), _c('b-button', {
+  }, [_vm._v("Daya Angkut")]), _vm._v(" "), _c("b-button", {
     directives: [{
       name: "b-toggle",
       rawName: "v-b-toggle.accordion-6",
@@ -2201,30 +1995,30 @@ var render = function render() {
     }],
     staticClass: "mr-2",
     attrs: {
-      "variant": "outline-primary"
+      variant: "outline-primary"
     }
-  }, [_vm._v("Catatan Rubah\n                      Bentuk")])], 1), _vm._v(" "), _c('b-collapse', {
+  }, [_vm._v("Catatan Rubah Bentuk")])], 1), _vm._v(" "), _c("b-collapse", {
     attrs: {
-      "id": "accordion-1",
-      "visible": "",
-      "accordion": "my-accordion",
-      "role": "tabpanel"
+      id: "accordion-1",
+      visible: "",
+      accordion: "my-accordion",
+      role: "tabpanel"
     },
     on: {
-      "show": function show($event) {
+      show: function show($event) {
         _vm.isActive = true;
       },
-      "hide": function hide($event) {
+      hide: function hide($event) {
         _vm.isActive = false;
       }
     }
-  }, [_c('b-card-body', [_c('div', {
+  }, [_c("b-card-body", [_c("div", {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Panjang Kendaraan (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Panjang Kendaraan (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2233,31 +2027,32 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "panjangkendaraan",
-      "min": "0",
-      "placeholder": "Panjang Kendaraan",
-      "readonly": _vm.isLocked('panjangkendaraan')
+      type: "number",
+      name: "panjangkendaraan",
+      min: "0",
+      placeholder: "Panjang Kendaraan",
+      readonly: _vm.isLocked("panjangkendaraan")
     },
     domProps: {
-      "value": _vm.pendaftaran.panjangkendaraan
+      value: _vm.pendaftaran.panjangkendaraan
     },
     on: {
-      "focus": function focus($event) {
-        'panjangkendaraan';
+      focus: function focus($event) {
+        ;
+        "panjangkendaraan";
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "panjangkendaraan", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.panjangkendaraan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.panjangkendaraan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.panjangkendaraan[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.panjangkendaraan[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Lebar Kendaraan (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Lebar Kendaraan (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2266,31 +2061,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "lebarkendaraan",
-      "min": "0",
-      "placeholder": "Lebar Kendaraan",
-      "readonly": _vm.isLocked('lebarkendaraan')
+      type: "number",
+      name: "lebarkendaraan",
+      min: "0",
+      placeholder: "Lebar Kendaraan",
+      readonly: _vm.isLocked("lebarkendaraan")
     },
     domProps: {
-      "value": _vm.pendaftaran.lebarkendaraan
+      value: _vm.pendaftaran.lebarkendaraan
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('lebarkendaraan');
+      focus: function focus($event) {
+        return _vm.handleFocus("lebarkendaraan");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "lebarkendaraan", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.lebarkendaraan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.lebarkendaraan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.lebarkendaraan[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.lebarkendaraan[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Tinggi Kendaraan (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Tinggi Kendaraan (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2299,31 +2094,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "tinggikendaraan",
-      "min": "0",
-      "placeholder": "Tinggi Kendaraan",
-      "readonly": _vm.isLocked('tinggikendaraan')
+      type: "number",
+      name: "tinggikendaraan",
+      min: "0",
+      placeholder: "Tinggi Kendaraan",
+      readonly: _vm.isLocked("tinggikendaraan")
     },
     domProps: {
-      "value": _vm.pendaftaran.tinggikendaraan
+      value: _vm.pendaftaran.tinggikendaraan
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('tinggikendaraan');
+      focus: function focus($event) {
+        return _vm.handleFocus("tinggikendaraan");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "tinggikendaraan", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.tinggikendaraan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.tinggikendaraan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.tinggikendaraan[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.tinggikendaraan[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Julur Belakang(mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Julur Belakang(mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2332,30 +2127,30 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "julurbelakang",
-      "min": "0",
-      "readonly": _vm.isLocked('julurbelakang')
+      type: "number",
+      name: "julurbelakang",
+      min: "0",
+      readonly: _vm.isLocked("julurbelakang")
     },
     domProps: {
-      "value": _vm.pendaftaran.julurbelakang
+      value: _vm.pendaftaran.julurbelakang
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('julurbelakang');
+      focus: function focus($event) {
+        return _vm.handleFocus("julurbelakang");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "julurbelakang", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.julurbelakang ? _c('p', {
+  }), _vm._v(" "), _vm.errors.julurbelakang ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.julurbelakang[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.julurbelakang[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Julur Depan(mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Julur Depan(mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2364,30 +2159,30 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "julurdepan",
-      "min": "0",
-      "readonly": _vm.isLocked('julurdepan')
+      type: "number",
+      name: "julurdepan",
+      min: "0",
+      readonly: _vm.isLocked("julurdepan")
     },
     domProps: {
-      "value": _vm.pendaftaran.julurdepan
+      value: _vm.pendaftaran.julurdepan
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('julurdepan');
+      focus: function focus($event) {
+        return _vm.handleFocus("julurdepan");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "julurdepan", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.julurdepan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.julurdepan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.julurdepan[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.julurdepan[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jenis Rumah-rumah")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jenis Rumah-rumah")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2396,34 +2191,34 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "name": "bahan",
-      "readonly": _vm.isLocked('bahan')
+      type: "text",
+      name: "bahan",
+      readonly: _vm.isLocked("bahan")
     },
     domProps: {
-      "value": _vm.pendaftaran.bahan
+      value: _vm.pendaftaran.bahan
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "bahan", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.bahan ? _c('p', {
+  }), _vm._v(" "), _vm.errors.bahan ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.bahan[0]) + "\n                            ")]) : _vm._e()])])])])], 1), _vm._v(" "), _c('b-collapse', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.bahan[0]) + "\n                            ")]) : _vm._e()])])])])], 1), _vm._v(" "), _c("b-collapse", {
     attrs: {
-      "id": "accordion-2",
-      "accordion": "my-accordion",
-      "role": "tabpanel"
+      id: "accordion-2",
+      accordion: "my-accordion",
+      role: "tabpanel"
     }
-  }, [_c('b-card-body', [_c('div', {
+  }, [_c("b-card-body", [_c("div", {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Panjang Bak atau Tangki Muatan (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Panjang Bak atau Tangki Muatan (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2432,31 +2227,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "panjangbakatautangki",
-      "min": "0",
-      "placeholder": "Panjang Bak atau Tangki Muatan",
-      "readonly": _vm.isLocked('panjangbakatautangki')
+      type: "number",
+      name: "panjangbakatautangki",
+      min: "0",
+      placeholder: "Panjang Bak atau Tangki Muatan",
+      readonly: _vm.isLocked("panjangbakatautangki")
     },
     domProps: {
-      "value": _vm.pendaftaran.panjangbakatautangki
+      value: _vm.pendaftaran.panjangbakatautangki
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('panjangbakatautangki');
+      focus: function focus($event) {
+        return _vm.handleFocus("panjangbakatautangki");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "panjangbakatautangki", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.panjangbakatautangki ? _c('p', {
+  }), _vm._v(" "), _vm.errors.panjangbakatautangki ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.panjangbakatautangki[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.panjangbakatautangki[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Lebar Bak atau Tangki Muatan (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Lebar Bak atau Tangki Muatan (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2465,31 +2260,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "lebarbakatautangki",
-      "min": "0",
-      "placeholder": "Lebar Bak atau Tangki Muatan",
-      "readonly": _vm.isLocked('lebarbakatautangki')
+      type: "number",
+      name: "lebarbakatautangki",
+      min: "0",
+      placeholder: "Lebar Bak atau Tangki Muatan",
+      readonly: _vm.isLocked("lebarbakatautangki")
     },
     domProps: {
-      "value": _vm.pendaftaran.lebarbakatautangki
+      value: _vm.pendaftaran.lebarbakatautangki
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('lebarbakatautangki');
+      focus: function focus($event) {
+        return _vm.handleFocus("lebarbakatautangki");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "lebarbakatautangki", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.lebarbakatautangki ? _c('p', {
+  }), _vm._v(" "), _vm.errors.lebarbakatautangki ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.lebarbakatautangki[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.lebarbakatautangki[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Tinggi Bak atau Tangki Muatan (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Tinggi Bak atau Tangki Muatan (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2498,41 +2293,41 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "tinggibakatautangki",
-      "min": "0",
-      "placeholder": "Tinggi Bak atau Tangki Muatan",
-      "readonly": _vm.isLocked('tinggibakatautangki')
+      type: "number",
+      name: "tinggibakatautangki",
+      min: "0",
+      placeholder: "Tinggi Bak atau Tangki Muatan",
+      readonly: _vm.isLocked("tinggibakatautangki")
     },
     domProps: {
-      "value": _vm.pendaftaran.tinggibakatautangki
+      value: _vm.pendaftaran.tinggibakatautangki
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('tinggibakatautangki');
+      focus: function focus($event) {
+        return _vm.handleFocus("tinggibakatautangki");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "tinggibakatautangki", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.tinggibakatautangki ? _c('p', {
+  }), _vm._v(" "), _vm.errors.tinggibakatautangki ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.tinggibakatautangki[0]) + "\n                            ")]) : _vm._e()])])])])], 1), _vm._v(" "), _c('b-collapse', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.tinggibakatautangki[0]) + "\n                            ")]) : _vm._e()])])])])], 1), _vm._v(" "), _c("b-collapse", {
     attrs: {
-      "id": "accordion-3",
-      "accordion": "my-accordion",
-      "role": "tabpanel"
+      id: "accordion-3",
+      accordion: "my-accordion",
+      role: "tabpanel"
     }
-  }, [_c('b-card-body', [_c('div', {
+  }, [_c("b-card-body", [_c("div", {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     staticClass: "text-danger"
-  }, [_vm._v("Jumlah Sumbu")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("Jumlah Sumbu")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2541,31 +2336,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jumlah_sumbu",
-      "min": "2",
-      "placeholder": "Jumlah Sumbu",
-      "readonly": _vm.isLocked('jumlah_sumbu')
+      type: "number",
+      name: "jumlah_sumbu",
+      min: "2",
+      placeholder: "Jumlah Sumbu",
+      readonly: _vm.isLocked("jumlah_sumbu")
     },
     domProps: {
-      "value": _vm.pendaftaran.jumlah_sumbu
+      value: _vm.pendaftaran.jumlah_sumbu
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jumlah_sumbu');
+      focus: function focus($event) {
+        return _vm.handleFocus("jumlah_sumbu");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jumlah_sumbu", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.jumlah_sumbu ? _c('p', {
+  }), _vm._v(" "), _vm.errors.jumlah_sumbu ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jumlah_sumbu[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jumlah_sumbu[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu I-II (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu I-II (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2574,31 +2369,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jaraksumbu1_2",
-      "min": "0",
-      "placeholder": "Jarak Sumbu I-II (mm)",
-      "readonly": _vm.isLocked('jaraksumbu1_2')
+      type: "number",
+      name: "jaraksumbu1_2",
+      min: "0",
+      placeholder: "Jarak Sumbu I-II (mm)",
+      readonly: _vm.isLocked("jaraksumbu1_2")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu1_2
+      value: _vm.pendaftaran.jaraksumbu1_2
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu1_2');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu1_2");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu1_2", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.jaraksumbu1_2 ? _c('p', {
+  }), _vm._v(" "), _vm.errors.jaraksumbu1_2 ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jaraksumbu1_2[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 2 ? _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jaraksumbu1_2[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 2 ? _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu II-III (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu II-III (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2607,31 +2402,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "height",
-      "placeholder": "Jarak Sumbu II-III (mm)",
-      "min": "0",
-      "readonly": _vm.isLocked('jaraksumbu2_3')
+      type: "number",
+      name: "height",
+      placeholder: "Jarak Sumbu II-III (mm)",
+      min: "0",
+      readonly: _vm.isLocked("jaraksumbu2_3")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu2_3
+      value: _vm.pendaftaran.jaraksumbu2_3
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu2_3');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu2_3");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu2_3", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.jaraksumbu2_3 ? _c('p', {
+  }), _vm._v(" "), _vm.errors.jaraksumbu2_3 ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jaraksumbu2_3[0]) + "\n                            ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 3 ? _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jaraksumbu2_3[0]) + "\n                            ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 3 ? _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu III-IV (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu III-IV (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2640,31 +2435,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "length",
-      "placeholder": "Jarak Sumbu III-IV (mm)",
-      "min": "0",
-      "readonly": _vm.isLocked('jaraksumbu3_4')
+      type: "number",
+      name: "length",
+      placeholder: "Jarak Sumbu III-IV (mm)",
+      min: "0",
+      readonly: _vm.isLocked("jaraksumbu3_4")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu3_4
+      value: _vm.pendaftaran.jaraksumbu3_4
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu3_4');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu3_4");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu3_4", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.jaraksumbu3_4 ? _c('p', {
+  }), _vm._v(" "), _vm.errors.jaraksumbu3_4 ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jaraksumbu3_4[0]) + "\n                            ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 4 ? _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jaraksumbu3_4[0]) + "\n                            ")]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 4 ? _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu IV-V (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu IV-V (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2673,29 +2468,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jaraksumbu4_5",
-      "placeholder": "Jarak Sumbu IV-V (mm)",
-      "min": "0",
-      "readonly": _vm.isLocked('jaraksumbu4_5')
+      type: "number",
+      name: "jaraksumbu4_5",
+      placeholder: "Jarak Sumbu IV-V (mm)",
+      min: "0",
+      readonly: _vm.isLocked("jaraksumbu4_5")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu4_5
+      value: _vm.pendaftaran.jaraksumbu4_5
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu4_5');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu4_5");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu4_5", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 5 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 5 ? _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu V-VI (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu V-VI (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2704,29 +2499,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jaraksumbu5_6",
-      "placeholder": "Jarak Sumbu V-VI (mm)",
-      "min": "0",
-      "readonly": _vm.isLocked('jaraksumbu5_6')
+      type: "number",
+      name: "jaraksumbu5_6",
+      placeholder: "Jarak Sumbu V-VI (mm)",
+      min: "0",
+      readonly: _vm.isLocked("jaraksumbu5_6")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu5_6
+      value: _vm.pendaftaran.jaraksumbu5_6
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu5_6');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu5_6");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu5_6", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 6 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 6 ? _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu VI-VII (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu VI-VII (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2735,29 +2530,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jaraksumbu6_7",
-      "placeholder": "Jarak Sumbu VI-VII (mm)",
-      "min": "0",
-      "readonly": _vm.isLocked('jaraksumbu6_7')
+      type: "number",
+      name: "jaraksumbu6_7",
+      placeholder: "Jarak Sumbu VI-VII (mm)",
+      min: "0",
+      readonly: _vm.isLocked("jaraksumbu6_7")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu6_7
+      value: _vm.pendaftaran.jaraksumbu6_7
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu6_7');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu6_7");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu6_7", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 7 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 7 ? _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu VII-VIII (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu VII-VIII (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2766,29 +2561,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jaraksumbu7_8",
-      "placeholder": "Jarak Sumbu VII-VIII (mm)",
-      "min": "0",
-      "readonly": _vm.isLocked('jaraksumbu7_8')
+      type: "number",
+      name: "jaraksumbu7_8",
+      placeholder: "Jarak Sumbu VII-VIII (mm)",
+      min: "0",
+      readonly: _vm.isLocked("jaraksumbu7_8")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu7_8
+      value: _vm.pendaftaran.jaraksumbu7_8
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu7_8');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu7_8");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu7_8", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 8 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 8 ? _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu VIII-IX (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu VIII-IX (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2797,29 +2592,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jaraksumbu8_9",
-      "placeholder": "Jarak Sumbu VIII-IX (mm)",
-      "min": "0",
-      "readonly": _vm.isLocked('jaraksumbu8_9')
+      type: "number",
+      name: "jaraksumbu8_9",
+      placeholder: "Jarak Sumbu VIII-IX (mm)",
+      min: "0",
+      readonly: _vm.isLocked("jaraksumbu8_9")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu8_9
+      value: _vm.pendaftaran.jaraksumbu8_9
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu8_9');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu8_9");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu8_9", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 9 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 9 ? _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu IX-X (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu IX-X (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2828,29 +2623,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jaraksumbu9_10",
-      "placeholder": "Jarak Sumbu IX-X (mm)",
-      "min": "0",
-      "readonly": _vm.isLocked('jaraksumbu9_10')
+      type: "number",
+      name: "jaraksumbu9_10",
+      placeholder: "Jarak Sumbu IX-X (mm)",
+      min: "0",
+      readonly: _vm.isLocked("jaraksumbu9_10")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu9_10
+      value: _vm.pendaftaran.jaraksumbu9_10
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu9_10');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu9_10");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu9_10", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 10 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 10 ? _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu X-XI (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu X-XI (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2859,29 +2654,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jaraksumbu10_11",
-      "min": "0",
-      "placeholder": "Jarak Sumbu X-XI (mm)",
-      "readonly": _vm.isLocked('jaraksumbu10_11')
+      type: "number",
+      name: "jaraksumbu10_11",
+      min: "0",
+      placeholder: "Jarak Sumbu X-XI (mm)",
+      readonly: _vm.isLocked("jaraksumbu10_11")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu10_11
+      value: _vm.pendaftaran.jaraksumbu10_11
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu10_11');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu10_11");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu10_11", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 11 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 11 ? _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Jarak Sumbu XI-XII (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Jarak Sumbu XI-XII (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2890,29 +2685,29 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jaraksumbu11_12",
-      "min": "0",
-      "placeholder": "Jarak Sumbu XI-XII (mm)",
-      "readonly": _vm.isLocked('jaraksumbu11_12')
+      type: "number",
+      name: "jaraksumbu11_12",
+      min: "0",
+      placeholder: "Jarak Sumbu XI-XII (mm)",
+      readonly: _vm.isLocked("jaraksumbu11_12")
     },
     domProps: {
-      "value": _vm.pendaftaran.jaraksumbu11_12
+      value: _vm.pendaftaran.jaraksumbu11_12
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jaraksumbu11_12');
+      focus: function focus($event) {
+        return _vm.handleFocus("jaraksumbu11_12");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jaraksumbu11_12", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Wheelbase (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Wheelbase (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2921,30 +2716,30 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "a",
-      "placeholder": "Wheelbase (mm)",
-      "readonly": _vm.isLocked('a')
+      type: "number",
+      name: "a",
+      placeholder: "Wheelbase (mm)",
+      readonly: _vm.isLocked("a")
     },
     domProps: {
-      "value": _vm.pendaftaran.a
+      value: _vm.pendaftaran.a
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('a');
+      focus: function focus($event) {
+        return _vm.handleFocus("a");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "a", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.a ? _c('p', {
+  }), _vm._v(" "), _vm.errors.a ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.a[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.a[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("P (mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("P (mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2953,31 +2748,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "placeholder": "P (mm)",
-      "name": "p",
-      "min": "0",
-      "readonly": _vm.isLocked('p')
+      type: "number",
+      placeholder: "P (mm)",
+      name: "p",
+      min: "0",
+      readonly: _vm.isLocked("p")
     },
     domProps: {
-      "value": _vm.pendaftaran.p
+      value: _vm.pendaftaran.p
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('p');
+      focus: function focus($event) {
+        return _vm.handleFocus("p");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "p", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.p ? _c('p', {
+  }), _vm._v(" "), _vm.errors.p ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.p[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.p[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Q(mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Q(mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2986,31 +2781,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "placeholder": "Q (mm)",
-      "name": "q",
-      "min": "0",
-      "readonly": _vm.isLocked('q')
+      type: "number",
+      placeholder: "Q (mm)",
+      name: "q",
+      min: "0",
+      readonly: _vm.isLocked("q")
     },
     domProps: {
-      "value": _vm.pendaftaran.q
+      value: _vm.pendaftaran.q
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('q');
+      focus: function focus($event) {
+        return _vm.handleFocus("q");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "q", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.q ? _c('p', {
+  }), _vm._v(" "), _vm.errors.q ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.q[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.q[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("R(mm)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("R(mm)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3019,39 +2814,39 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "placeholder": "R (mm)",
-      "name": "r",
-      "min": "0",
-      "readonly": _vm.isLocked('r')
+      type: "number",
+      placeholder: "R (mm)",
+      name: "r",
+      min: "0",
+      readonly: _vm.isLocked("r")
     },
     domProps: {
-      "value": _vm.pendaftaran.r
+      value: _vm.pendaftaran.r
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('r');
+      focus: function focus($event) {
+        return _vm.handleFocus("r");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "r", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.r ? _c('p', {
+  }), _vm._v(" "), _vm.errors.r ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.r[0]) + "\n                            ")]) : _vm._e()])])])])], 1), _vm._v(" "), _c('b-collapse', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.r[0]) + "\n                            ")]) : _vm._e()])])])])], 1), _vm._v(" "), _c("b-collapse", {
     attrs: {
-      "id": "accordion-4",
-      "accordion": "my-accordion",
-      "role": "tabpanel"
+      id: "accordion-4",
+      accordion: "my-accordion",
+      role: "tabpanel"
     }
-  }, [_c('b-card-body', [_c('div', {
+  }, [_c("b-card-body", [_c("div", {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 1(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 1(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3060,34 +2855,34 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu1",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu1')
+      type: "number",
+      name: "beratsumbu1",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu1")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu1
+      value: _vm.pendaftaran.beratsumbu1
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu1');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu1");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu1", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.beratsumbu1 ? _c('p', {
+  }), _vm._v(" "), _vm.errors.beratsumbu1 ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.beratsumbu1[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.beratsumbu1[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 2(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 2(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3096,34 +2891,34 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu2",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu2')
+      type: "number",
+      name: "beratsumbu2",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu2")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu2
+      value: _vm.pendaftaran.beratsumbu2
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu2');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu2");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu2", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.beratsumbu2 ? _c('p', {
+  }), _vm._v(" "), _vm.errors.beratsumbu2 ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.beratsumbu2[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.beratsumbu2[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 3(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 3(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3132,34 +2927,34 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu3",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu3')
+      type: "number",
+      name: "beratsumbu3",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu3")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu3
+      value: _vm.pendaftaran.beratsumbu3
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu3');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu3");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu3", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.beratsumbu3 ? _c('p', {
+  }), _vm._v(" "), _vm.errors.beratsumbu3 ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.beratsumbu3[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.beratsumbu3[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 4(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 4(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3168,34 +2963,34 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu4",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu4')
+      type: "number",
+      name: "beratsumbu4",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu4")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu4
+      value: _vm.pendaftaran.beratsumbu4
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu4');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu4");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu4", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.beratsumbu4 ? _c('p', {
+  }), _vm._v(" "), _vm.errors.beratsumbu4 ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.beratsumbu4[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 4 ? _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.beratsumbu4[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 4 ? _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 5(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 5(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3204,32 +2999,32 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu5",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu5')
+      type: "number",
+      name: "beratsumbu5",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu5")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu5
+      value: _vm.pendaftaran.beratsumbu5
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu5');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu5");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu5", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 5 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 5 ? _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 6(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 6(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3238,32 +3033,32 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu6",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu6')
+      type: "number",
+      name: "beratsumbu6",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu6")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu6
+      value: _vm.pendaftaran.beratsumbu6
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu6');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu6");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu6", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 6 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 6 ? _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 7(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 7(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3272,32 +3067,32 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu7",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu7')
+      type: "number",
+      name: "beratsumbu7",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu7")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu7
+      value: _vm.pendaftaran.beratsumbu7
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu7');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu7");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu7", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 7 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 7 ? _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 8(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 8(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3306,32 +3101,32 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu8",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu8')
+      type: "number",
+      name: "beratsumbu8",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu8")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu8
+      value: _vm.pendaftaran.beratsumbu8
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu8');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu8");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu8", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 8 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 8 ? _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 9(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 9(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3340,32 +3135,32 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu9",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu9')
+      type: "number",
+      name: "beratsumbu9",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu9")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu9
+      value: _vm.pendaftaran.beratsumbu9
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu9');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu9");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu9", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 9 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 9 ? _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 10(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 10(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3374,32 +3169,32 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu10",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu10')
+      type: "number",
+      name: "beratsumbu10",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu10")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu10
+      value: _vm.pendaftaran.beratsumbu10
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu10');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu10");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu10", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 10 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 10 ? _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 11(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 11(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3408,32 +3203,32 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu11",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu11')
+      type: "number",
+      name: "beratsumbu11",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu11")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu11
+      value: _vm.pendaftaran.beratsumbu11
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu11');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu11");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu11", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 11 ? _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.jumlah_sumbu > 11 ? _c("div", {
     staticClass: "col-sm-2"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Berat Sumbu 12(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Berat Sumbu 12(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3442,32 +3237,32 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratsumbu12",
-      "min": "0",
-      "readonly": _vm.isLocked('beratsumbu12')
+      type: "number",
+      name: "beratsumbu12",
+      min: "0",
+      readonly: _vm.isLocked("beratsumbu12")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratsumbu12
+      value: _vm.pendaftaran.beratsumbu12
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         _vm.totalBeratSumbu();
         _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratsumbu12');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratsumbu12");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratsumbu12", $event.target.value);
       }
     }
-  })])]) : _vm._e(), _vm._v(" "), _c('div', {
+  })])]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Total Berat Sumbu(Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Total Berat Sumbu(Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3476,40 +3271,40 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "beratkosong",
-      "readonly": _vm.isLocked('beratkosong')
+      type: "number",
+      name: "beratkosong",
+      readonly: _vm.isLocked("beratkosong")
     },
     domProps: {
-      "value": _vm.pendaftaran.beratkosong
+      value: _vm.pendaftaran.beratkosong
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         return _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('beratkosong');
+      focus: function focus($event) {
+        return _vm.handleFocus("beratkosong");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "beratkosong", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.beratsumbu4 ? _c('p', {
+  }), _vm._v(" "), _vm.errors.beratsumbu4 ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.beratsumbu4[0]) + "\n                            ")]) : _vm._e()])])])])], 1), _vm._v(" "), _c('b-collapse', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.beratsumbu4[0]) + "\n                            ")]) : _vm._e()])])])])], 1), _vm._v(" "), _c("b-collapse", {
     attrs: {
-      "id": "accordion-5",
-      "accordion": "my-accordion",
-      "role": "tabpanel"
+      id: "accordion-5",
+      accordion: "my-accordion",
+      role: "tabpanel"
     }
-  }, [_c('b-card-body', [_c('div', {
+  }, [_c("b-card-body", [_c("div", {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Daya Angkut Orang (orang)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Daya Angkut Orang (orang)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3518,34 +3313,34 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "dayaangkutorang",
-      "min": "0",
-      "placeholder": "Daya Angkut Orang (mm)",
-      "readonly": _vm.isLocked('dayaangkutorang')
+      type: "number",
+      name: "dayaangkutorang",
+      min: "0",
+      placeholder: "Daya Angkut Orang (mm)",
+      readonly: _vm.isLocked("dayaangkutorang")
     },
     domProps: {
-      "value": _vm.pendaftaran.dayaangkutorang
+      value: _vm.pendaftaran.dayaangkutorang
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         return _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('dayaangkutorang');
+      focus: function focus($event) {
+        return _vm.handleFocus("dayaangkutorang");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "dayaangkutorang", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.dayaangkutorang ? _c('p', {
+  }), _vm._v(" "), _vm.errors.dayaangkutorang ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.dayaangkutorang[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.dayaangkutorang[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Daya Angkut Barang (Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Daya Angkut Barang (Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3554,34 +3349,34 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "dayaangkutbarang",
-      "min": "0",
-      "placeholder": "Daya Angkut Barang",
-      "readonly": _vm.isLocked('dayaangkutbarang')
+      type: "number",
+      name: "dayaangkutbarang",
+      min: "0",
+      placeholder: "Daya Angkut Barang",
+      readonly: _vm.isLocked("dayaangkutbarang")
     },
     domProps: {
-      "value": _vm.pendaftaran.dayaangkutbarang
+      value: _vm.pendaftaran.dayaangkutbarang
     },
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         return _vm.setJBI();
       },
-      "focus": function focus($event) {
-        return _vm.handleFocus('dayaangkutbarang');
+      focus: function focus($event) {
+        return _vm.handleFocus("dayaangkutbarang");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "dayaangkutbarang", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.dayaangkutbarang ? _c('p', {
+  }), _vm._v(" "), _vm.errors.dayaangkutbarang ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.dayaangkutbarang[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.dayaangkutbarang[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("JBB (Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("JBB (Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3590,31 +3385,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jbb",
-      "min": "0",
-      "placeholder": "JBB",
-      "readonly": _vm.isLocked('jbb')
+      type: "number",
+      name: "jbb",
+      min: "0",
+      placeholder: "JBB",
+      readonly: _vm.isLocked("jbb")
     },
     domProps: {
-      "value": _vm.pendaftaran.jbb
+      value: _vm.pendaftaran.jbb
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jbb');
+      focus: function focus($event) {
+        return _vm.handleFocus("jbb");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jbb", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.jbb ? _c('p', {
+  }), _vm._v(" "), _vm.errors.jbb ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jbb[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jbb[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("JBKB (Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("JBKB (Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3623,31 +3418,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jbkb",
-      "min": "0",
-      "placeholder": "JBKB (Kg)",
-      "readonly": _vm.isLocked('jbkb')
+      type: "number",
+      name: "jbkb",
+      min: "0",
+      placeholder: "JBKB (Kg)",
+      readonly: _vm.isLocked("jbkb")
     },
     domProps: {
-      "value": _vm.pendaftaran.jbkb
+      value: _vm.pendaftaran.jbkb
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jbkb');
+      focus: function focus($event) {
+        return _vm.handleFocus("jbkb");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jbkb", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.jbkb ? _c('p', {
+  }), _vm._v(" "), _vm.errors.jbkb ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jbkb[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jbkb[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("JBI (Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("JBI (Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3656,31 +3451,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jbi",
-      "min": "0",
-      "placeholder": "JBI (Kg)",
-      "readonly": _vm.isLocked('jbi')
+      type: "number",
+      name: "jbi",
+      min: "0",
+      placeholder: "JBI (Kg)",
+      readonly: _vm.isLocked("jbi")
     },
     domProps: {
-      "value": _vm.pendaftaran.jbi
+      value: _vm.pendaftaran.jbi
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jbi');
+      focus: function focus($event) {
+        return _vm.handleFocus("jbi");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jbi", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.jbi ? _c('p', {
+  }), _vm._v(" "), _vm.errors.jbi ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jbi[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jbi[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("JBKI (Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("JBKI (Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3689,31 +3484,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "jbki",
-      "min": "0",
-      "placeholder": "JBKI (Kg)",
-      "readonly": _vm.isLocked('jbki')
+      type: "number",
+      name: "jbki",
+      min: "0",
+      placeholder: "JBKI (Kg)",
+      readonly: _vm.isLocked("jbki")
     },
     domProps: {
-      "value": _vm.pendaftaran.jbki
+      value: _vm.pendaftaran.jbki
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('jbki');
+      focus: function focus($event) {
+        return _vm.handleFocus("jbki");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "jbki", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.jbki ? _c('p', {
+  }), _vm._v(" "), _vm.errors.jbki ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jbki[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.jbki[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("MST (Kg)")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("MST (Kg)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3722,42 +3517,42 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "number",
-      "name": "mst",
-      "min": "0",
-      "placeholder": "MST",
-      "readonly": _vm.isLocked('mst')
+      type: "number",
+      name: "mst",
+      min: "0",
+      placeholder: "MST",
+      readonly: _vm.isLocked("mst")
     },
     domProps: {
-      "value": _vm.pendaftaran.mst
+      value: _vm.pendaftaran.mst
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('mst');
+      focus: function focus($event) {
+        return _vm.handleFocus("mst");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "mst", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.mst ? _c('p', {
+  }), _vm._v(" "), _vm.errors.mst ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.mst[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.mst[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     staticClass: "text-danger"
-  }, [_vm._v("Kelas Jalan Terendah")]), _vm._v(" "), _c('vSelect', {
+  }, [_vm._v("Kelas Jalan Terendah")]), _vm._v(" "), _c("vSelect", {
     ref: "kelasjalanterendah",
     attrs: {
-      "label": "kelasjalan_name",
-      "options": _vm.kelasjalans,
-      "noDrop": _vm.isLocked('kelasjalanterendah'),
-      "clearable": !_vm.isLocked('kelasjalanterendah')
+      label: "kelasjalan_name",
+      options: _vm.kelasjalans,
+      noDrop: _vm.isLocked("kelasjalanterendah"),
+      clearable: !_vm.isLocked("kelasjalanterendah")
     },
     on: {
-      "input": _vm.setKelasJalan
+      input: _vm.setKelasJalan
     },
     model: {
       value: _vm.pendaftaran.kelasjalanterendah,
@@ -3766,13 +3561,13 @@ var render = function render() {
       },
       expression: "pendaftaran.kelasjalanterendah"
     }
-  }), _vm._v(" "), _vm.errors.kelasjalanterendah ? _c('p', {
+  }), _vm._v(" "), _vm.errors.kelasjalanterendah ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.kelasjalanterendah[0]) + "\n                            ")]) : _vm._e()], 1)]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.kelasjalanterendah[0]) + "\n                            ")]) : _vm._e()], 1)]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Konfigurasi Sumbu Roda")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Konfigurasi Sumbu Roda")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3781,31 +3576,31 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "name": "konfigurasisumburoda",
-      "min": "0",
-      "placeholder": "Konfigurasi Sumbu Roda",
-      "readonly": _vm.isLocked('konfigurasisumburoda')
+      type: "text",
+      name: "konfigurasisumburoda",
+      min: "0",
+      placeholder: "Konfigurasi Sumbu Roda",
+      readonly: _vm.isLocked("konfigurasisumburoda")
     },
     domProps: {
-      "value": _vm.pendaftaran.konfigurasisumburoda
+      value: _vm.pendaftaran.konfigurasisumburoda
     },
     on: {
-      "focus": function focus($event) {
-        return _vm.handleFocus('konfigurasisumburoda');
+      focus: function focus($event) {
+        return _vm.handleFocus("konfigurasisumburoda");
       },
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "konfigurasisumburoda", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.konfigurasisumburoda ? _c('p', {
+  }), _vm._v(" "), _vm.errors.konfigurasisumburoda ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.konfigurasisumburoda[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.konfigurasisumburoda[0]) + "\n                            ")]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-3"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Ukuran Ban")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Ukuran Ban")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3814,35 +3609,35 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "name": "ukuranban",
-      "placeholder": "Ukuran Ban",
-      "readonly": _vm.isLocked('ukuranban')
+      type: "text",
+      name: "ukuranban",
+      placeholder: "Ukuran Ban",
+      readonly: _vm.isLocked("ukuranban")
     },
     domProps: {
-      "value": _vm.pendaftaran.ukuranban
+      value: _vm.pendaftaran.ukuranban
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "ukuranban", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.ukuranban ? _c('p', {
+  }), _vm._v(" "), _vm.errors.ukuranban ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.ukuranban[0]) + "\n                            ")]) : _vm._e()])])])])], 1), _vm._v(" "), _c('b-collapse', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.ukuranban[0]) + "\n                            ")]) : _vm._e()])])])])], 1), _vm._v(" "), _c("b-collapse", {
     attrs: {
-      "id": "accordion-6",
-      "accordion": "my-accordion",
-      "role": "tabpanel"
+      id: "accordion-6",
+      accordion: "my-accordion",
+      role: "tabpanel"
     }
-  }, [_c('b-card-body', [_c('div', {
+  }, [_c("b-card-body", [_c("div", {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', [_vm._v("Catatan Rubah Bentuk")]), _vm._v(" "), _c('input', {
+  }, [_c("label", [_vm._v("Catatan Rubah Bentuk")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3851,58 +3646,58 @@ var render = function render() {
     }],
     staticClass: "form-control form-control-lg",
     attrs: {
-      "type": "text",
-      "placeholder": "Catatan Rubah Bentuk",
-      "name": "catatanrubahbentuk",
-      "readonly": _vm.isLocked('catatanrubahbentuk')
+      type: "text",
+      placeholder: "Catatan Rubah Bentuk",
+      name: "catatanrubahbentuk",
+      readonly: _vm.isLocked("catatanrubahbentuk")
     },
     domProps: {
-      "value": _vm.pendaftaran.catatanrubahbentuk
+      value: _vm.pendaftaran.catatanrubahbentuk
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.pendaftaran, "catatanrubahbentuk", $event.target.value);
       }
     }
-  }), _vm._v(" "), _vm.errors.catatanrubahbentuk ? _c('p', {
+  }), _vm._v(" "), _vm.errors.catatanrubahbentuk ? _c("p", {
     staticClass: "text-danger"
-  }, [_vm._v("\n                              " + _vm._s(_vm.errors.catatanrubahbentuk[0]) + "\n                            ")]) : _vm._e()])])])])], 1)], 1)], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c('div', {
+  }, [_vm._v("\n                              " + _vm._s(_vm.errors.catatanrubahbentuk[0]) + "\n                            ")]) : _vm._e()])])])])], 1)], 1)], 1)]) : _vm._e(), _vm._v(" "), _vm.pendaftaran.kodepenerbitans_id < 11 ? _c("div", {
     staticClass: "d-flex justify-content-between border-top pt-10"
-  }, [_vm._m(3), _vm._v(" "), _c('div', [_c('button', {
+  }, [_vm._m(3), _vm._v(" "), _c("div", [_c("button", {
     staticClass: "btn btn-success font-weight-bold text-uppercase px-9 py-4",
     attrs: {
       "data-wizard-type": "action-submit"
     },
     on: {
-      "click": _vm.submit
+      click: _vm.submit
     }
-  }, [_vm._v("\n                  Submit\n                ")]), _vm._v(" "), _c('button', {
+  }, [_vm._v("\n                  Submit\n                ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary font-weight-bold text-uppercase px-9 py-4",
     attrs: {
       "data-wizard-type": "action-next"
     }
-  }, [_vm._v("\n                  Next Step\n                ")])])]) : _c('div', {
+  }, [_vm._v("\n                  Next Step\n                ")])])]) : _c("div", {
     staticClass: "d-flex justify-content-end border-top pt-10"
-  }, [_c('div', [_c('button', {
+  }, [_c("div", [_c("button", {
     staticClass: "btn btn-success font-weight-bold text-uppercase px-9 py-4",
     on: {
-      "click": _vm.submit
+      click: _vm.submit
     }
-  }, [_vm._v("\n                  Submit\n                ")])])])])])])])]), _vm._v(" "), _c('b-modal', {
+  }, [_vm._v("\n                  Submit\n                ")])])])])])])])]), _vm._v(" "), _c("b-modal", {
     ref: "modalVTA",
     staticClass: "modal",
     attrs: {
-      "id": "modalVTA",
-      "title": "Cek Data"
+      id: "modalVTA",
+      title: "Cek Data"
     }
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("No SRUT")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("No SRUT")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3911,25 +3706,25 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.nosertifikatreg
+      value: _vm.datavta.nosertifikatreg
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "nosertifikatreg", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("No SK Drijen")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("No SK Drijen")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3938,25 +3733,25 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.noskdrijen
+      value: _vm.datavta.noskdrijen
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "noskdrijen", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("Merek")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("Merek")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3965,25 +3760,25 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.merek
+      value: _vm.datavta.merek
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "merek", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("Tipe Varian")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("Tipe Varian")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3992,25 +3787,25 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.tipe
+      value: _vm.datavta.tipe
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "tipe", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("Jenis")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("Jenis")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -4019,25 +3814,25 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.jenis
+      value: _vm.datavta.jenis
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "jenis", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("Peruntukan")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("Peruntukan")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -4046,25 +3841,25 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.peruntukan
+      value: _vm.datavta.peruntukan
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "peruntukan", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("No Rangka")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("No Rangka")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -4073,25 +3868,25 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.norangka
+      value: _vm.datavta.norangka
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "norangka", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("No Mesin")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("No Mesin")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -4100,25 +3895,25 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.nomesin
+      value: _vm.datavta.nomesin
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "nomesin", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("Nama Perusahaan")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("Nama Perusahaan")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -4127,25 +3922,25 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.namaperusahaan
+      value: _vm.datavta.namaperusahaan
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "namaperusahaan", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("Alamat Perusahaan")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("Alamat Perusahaan")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -4154,25 +3949,25 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.alamatperusahaan
+      value: _vm.datavta.alamatperusahaan
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "alamatperusahaan", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c('label', {
+  }, [_c("label", {
     attrs: {
-      "for": ""
+      for: ""
     }
-  }, [_vm._v("Penanggung Jawab")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("Penanggung Jawab")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -4181,14 +3976,14 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      "type": "text",
-      "disabled": ""
+      type: "text",
+      disabled: ""
     },
     domProps: {
-      "value": _vm.datavta.penanggungjawab
+      value: _vm.datavta.penanggungjawab
     },
     on: {
-      "input": function input($event) {
+      input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.datavta, "penanggungjawab", $event.target.value);
       }
@@ -4198,39 +3993,47 @@ var render = function render() {
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c('div', {
+  return _c("div", {
+    staticClass: "wizard-step",
+    attrs: {
+      "data-wizard-type": "step",
+      "data-wizard-state": "current"
+    }
+  }, [_c("div", {
     staticClass: "wizard-label"
-  }, [_c('i', {
+  }, [_c("i", {
     staticClass: "wizard-icon flaticon-list"
-  }), _vm._v(" "), _c('h3', {
+  }), _vm._v(" "), _c("h3", {
     staticClass: "wizard-title"
-  }, [_vm._v("1. Pendaftaran")])]);
+  }, [_vm._v("1. Pendaftaran")])]), _vm._v(" "), _c("i", {
+    staticClass: "wizard-arrow flaticon2-next"
+  })]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c('div', {
+  return _c("div", {
     staticClass: "wizard-label"
-  }, [_c('i', {
+  }, [_c("i", {
     staticClass: "wizard-icon flaticon2-lorry"
-  }), _vm._v(" "), _c('h3', {
+  }), _vm._v(" "), _c("h3", {
     staticClass: "wizard-title"
   }, [_vm._v("2. Identitas")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c('div', {
+  return _c("div", {
     staticClass: "wizard-label"
-  }, [_c('i', {
+  }, [_c("i", {
     staticClass: "wizard-icon flaticon2-position"
-  }), _vm._v(" "), _c('h3', {
+  }), _vm._v(" "), _c("h3", {
     staticClass: "wizard-title"
   }, [_vm._v("3. Data Kendaraan")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c('div', {
+  return _c("div", {
     staticClass: "mr-2"
-  }, [_c('button', {
+  }, [_c("button", {
     staticClass: "btn btn-light-primary font-weight-bold text-uppercase px-9 py-4",
     attrs: {
       "data-wizard-type": "action-prev"
@@ -4242,10 +4045,10 @@ render._withStripped = true;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4279,6 +4082,8 @@ var map = {
 	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
 	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
 	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ps": "./node_modules/moment/locale/ar-ps.js",
+	"./ar-ps.js": "./node_modules/moment/locale/ar-ps.js",
 	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
 	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
 	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
@@ -4413,6 +4218,8 @@ var map = {
 	"./ko": "./node_modules/moment/locale/ko.js",
 	"./ko.js": "./node_modules/moment/locale/ko.js",
 	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku-kmr": "./node_modules/moment/locale/ku-kmr.js",
+	"./ku-kmr.js": "./node_modules/moment/locale/ku-kmr.js",
 	"./ku.js": "./node_modules/moment/locale/ku.js",
 	"./ky": "./node_modules/moment/locale/ky.js",
 	"./ky.js": "./node_modules/moment/locale/ky.js",
@@ -4562,15 +4369,15 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss":
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -4592,18 +4399,78 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./resources/js/view/pages/pendaftaran/Add.vue":
-/*!*****************************************************!*\
-  !*** ./resources/js/view/pages/pendaftaran/Add.vue ***!
-  \*****************************************************/
+/***/ "./node_modules/vue-uuid/dist/index.esm.js":
+/*!*************************************************!*\
+  !*** ./node_modules/vue-uuid/dist/index.esm.js ***!
+  \*************************************************/
+/*! exports provided: default, uuid */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return install; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uuid", function() { return uuid; });
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uuid */ "./node_modules/vue-uuid/node_modules/uuid/dist/esm-browser/index.js");
+
+
+/**
+ * @typedef {Object} UUID
+ * @property {typeof v1} v1
+ * @property {typeof v3} v3
+ * @property {typeof v4} v4
+ * @property {typeof v5} v5
+ */
+
+/**
+ * An object with uuid's v1, v3, v4 and v5 functions.
+ * @type {UUID}
+ */
+
+var uuid = {
+  v1: uuid__WEBPACK_IMPORTED_MODULE_0__["v1"],
+  v3: uuid__WEBPACK_IMPORTED_MODULE_0__["v3"],
+  v4: uuid__WEBPACK_IMPORTED_MODULE_0__["v4"],
+  v5: uuid__WEBPACK_IMPORTED_MODULE_0__["v5"]
+};
+/**
+ * Installs UUID on Vue instance. It creates a property on Vue instance to
+ * expose an object with uuid's v1, v3, v4 and v5 functions.
+ * @example ```js
+ * import Vue from 'vue';
+ * import VueUUID from 'vue-uuid';
+ *
+ * Vue.use(VueUUID);
+ *
+ * new Vue({
+ *   mounted () {
+ *     console.log(this.$uuid.v1());
+ *   }
+ * });
+ * ```
+ * @param {import('vue').default} Vue Vue constructor.
+ */
+
+function install(Vue) {
+  Vue.prototype.$uuid = uuid;
+}
+
+
+
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/pendaftaran/Edit.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/view/pages/pendaftaran/Edit.vue ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Add_vue_vue_type_template_id_57a3d2fd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Add.vue?vue&type=template&id=57a3d2fd */ "./resources/js/view/pages/pendaftaran/Add.vue?vue&type=template&id=57a3d2fd");
-/* harmony import */ var _Add_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Add.vue?vue&type=script&lang=js */ "./resources/js/view/pages/pendaftaran/Add.vue?vue&type=script&lang=js");
-/* empty/unused harmony star reexport *//* harmony import */ var _Add_vue_vue_type_style_index_0_id_57a3d2fd_lang_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss */ "./resources/js/view/pages/pendaftaran/Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss");
+/* harmony import */ var _Edit_vue_vue_type_template_id_489d33de__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Edit.vue?vue&type=template&id=489d33de */ "./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=template&id=489d33de");
+/* harmony import */ var _Edit_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Edit.vue?vue&type=script&lang=js */ "./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport *//* harmony import */ var _Edit_vue_vue_type_style_index_0_id_489d33de_lang_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss */ "./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -4614,9 +4481,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _Add_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Add_vue_vue_type_template_id_57a3d2fd__WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Add_vue_vue_type_template_id_57a3d2fd__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Edit_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Edit_vue_vue_type_template_id_489d33de__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Edit_vue_vue_type_template_id_489d33de__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -4626,54 +4493,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/view/pages/pendaftaran/Add.vue"
+component.options.__file = "resources/js/view/pages/pendaftaran/Edit.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/view/pages/pendaftaran/Add.vue?vue&type=script&lang=js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/view/pages/pendaftaran/Add.vue?vue&type=script&lang=js ***!
-  \*****************************************************************************/
+/***/ "./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=script&lang=js":
+/*!******************************************************************************!*\
+  !*** ./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=script&lang=js ***!
+  \******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Add.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=script&lang=js");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Edit.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/view/pages/pendaftaran/Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss":
-/*!**************************************************************************************************!*\
-  !*** ./resources/js/view/pages/pendaftaran/Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss ***!
-  \**************************************************************************************************/
+/***/ "./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_style_index_0_id_57a3d2fd_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader/dist/cjs.js!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=style&index=0&id=57a3d2fd&lang=scss");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_style_index_0_id_57a3d2fd_lang_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_style_index_0_id_57a3d2fd_lang_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_style_index_0_id_57a3d2fd_lang_scss__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_style_index_0_id_57a3d2fd_lang_scss__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_style_index_0_id_489d33de_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader/dist/cjs.js!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=style&index=0&id=489d33de&lang=scss");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_style_index_0_id_489d33de_lang_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_style_index_0_id_489d33de_lang_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_style_index_0_id_489d33de_lang_scss__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_style_index_0_id_489d33de_lang_scss__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/view/pages/pendaftaran/Add.vue?vue&type=template&id=57a3d2fd":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/view/pages/pendaftaran/Add.vue?vue&type=template&id=57a3d2fd ***!
-  \***********************************************************************************/
+/***/ "./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=template&id=489d33de":
+/*!************************************************************************************!*\
+  !*** ./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=template&id=489d33de ***!
+  \************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_template_id_57a3d2fd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Add.vue?vue&type=template&id=57a3d2fd */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Add.vue?vue&type=template&id=57a3d2fd");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_template_id_57a3d2fd__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_template_id_489d33de__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Edit.vue?vue&type=template&id=489d33de */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pendaftaran/Edit.vue?vue&type=template&id=489d33de");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_template_id_489d33de__WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Add_vue_vue_type_template_id_57a3d2fd__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_template_id_489d33de__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

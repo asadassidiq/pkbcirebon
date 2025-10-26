@@ -1,25 +1,42 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[30],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=script&lang=js":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=script&lang=js":
 /*!******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=script&lang=js ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=script&lang=js ***!
   \******************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/core/services/store/breadcrumbs.module */ "./resources/js/core/services/store/breadcrumbs.module.js");
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-/* harmony import */ var vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuejs-datepicker/dist/locale */ "./node_modules/vuejs-datepicker/dist/locale/index.js");
-/* harmony import */ var vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
-/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/core/services/store/breadcrumbs.module */ "./resources/js/core/services/store/breadcrumbs.module.js");
+/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
+/* harmony import */ var vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuejs-datepicker/dist/locale */ "./node_modules/vuejs-datepicker/dist/locale/index.js");
+/* harmony import */ var vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
+/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_11__);
+
+
+
+
+
+function ownKeys(e, r) { var t = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(e); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default.a) { var o = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default()(e); r && (o = o.filter(function (r) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default()(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4___default()(e, r, t[r]); }) : _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default.a ? Object.defineProperties(e, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default()(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default()(t, r)); }); } return e; }
 
 
 
@@ -34,47 +51,283 @@ __webpack_require__.r(__webpack_exports__);
     var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
     var yyyy = today.getFullYear();
     this.tgl = yyyy + "-" + mm + "-" + dd;
+    this.bulan = yyyy + "-" + mm;
+    this.bulan1 = yyyy + "-" + mm;
+    this.bulan2 = yyyy + "-" + mm;
+    this.tahun = "2024";
+    this.tahun1 = "2024";
+    this.tahun2 = "2024";
+    this.getJenis().then(function () {});
+    this.getKotas();
+    this.$store.commit("pendaftaran/SET_KOTA", "Kabupaten Sragen");
+    this.getKecamatans("Kabupaten Sragen");
   },
   data: function data() {
     return {
-      loading: true,
-      dataLaporan: "",
-      tgl: ""
+      // users: {}
+      search: "",
+      dataHarian: "",
+      tgl: "",
+      tgl1: "",
+      bulan: "",
+      bulan1: "",
+      bulan2: "",
+      tahun: "",
+      tahun1: "",
+      tahun2: "",
+      id: vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_8__["id"],
+      jenispendaftaran: "",
+      jeniskendaraan: "",
+      peruntukan: "",
+      jbb: "",
+      kota: "Kabupaten Sragen",
+      disabled1: 1,
+      disabled2: 1,
+      kecamatan: "",
+      kelurahan: "",
+      tglrange1: "",
+      tglrange2: ""
     };
   },
   mounted: function mounted() {
-    this.$store.dispatch(_core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_1__["SET_BREADCRUMB"], [{
+    this.$store.dispatch(_core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_6__["SET_BREADCRUMB"], [{
       title: "Cetak"
     }, {
-      title: "Laporan Tahunan"
+      title: "Laporan Kendaraan"
     }]);
   },
-  computed: {},
-  watch: {},
-  methods: {
-    printLaporan: function printLaporan() {
-      this.tgl = moment__WEBPACK_IMPORTED_MODULE_4___default()(this.tgl).format("YYYY");
-      window.open("/cetak/" + this.tgl + '/' + this.dataLaporan, "_blank");
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_5__["mapState"])("pendaftaran", {
+    jenis: function jenis(state) {
+      return state.jenis;
     },
-    exportLaporan: function exportLaporan() {
-      this.tgl = moment__WEBPACK_IMPORTED_MODULE_4___default()(this.tgl).format("YYYY");
-      window.open("/export/" + this.tgl + '/' + this.dataLaporan, "_blank");
+    kotas: function kotas(state) {
+      return state.kotas;
+    },
+    kecamatans: function kecamatans(state) {
+      return state.kecamatans;
+    },
+    kelurahans: function kelurahans(state) {
+      return state.kelurahans;
+    },
+    identitaskendaraan: function identitaskendaraan(state) {
+      return state.identitaskendaraan;
+    }
+  })),
+  watch: {},
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_5__["mapActions"])("pendaftaran", ["getKotas", "getKecamatans", "getKelurahans2", "getJenis"])), {}, {
+    setKota: function setKota(value) {
+      this.kota = value.nama;
+      this.getKecamatans(value.nama);
+      this.$store.commit("pendaftaran/SET_KOTA", value.nama);
+      this.disabled1 = 0;
+    },
+    setKecamatan: function setKecamatan(value) {
+      this.kecamatan = value.nama;
+      this.getKelurahans2(value.nama);
+      this.disabled2 = 0;
+    },
+    setKelurahan: function setKelurahan(value) {
+      this.kelurahan = value.nama;
+    },
+    printharian: function printharian() {
+      this.tgl = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tgl).format("YYYY-MM-DD");
+      window.open("/cetak/" + this.tgl + '/' + this.dataHarian, "_blank");
+    },
+    exportharian: function exportharian() {
+      this.tgl = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tgl).format("YYYY-MM-DD");
+      window.open("/export/" + this.tgl + "/laporanharian", "_blank");
     },
     customFormatter: function customFormatter(date) {
-      return moment__WEBPACK_IMPORTED_MODULE_4___default()(date).format("YYYY");
+      return moment__WEBPACK_IMPORTED_MODULE_9___default()(date).format("YYYY-MM-DD");
+    },
+    customFormatter2: function customFormatter2(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_9___default()(date).format("YYYY-MM");
+    },
+    customFormatter3: function customFormatter3(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_9___default()(date).format("YYYY");
+    },
+    printbulanan: function printbulanan() {
+      this.bulan = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.bulan).format("YYYY-MM");
+      window.open("/cetak/" + this.bulan + "/printlaporanbulanan", "_blank");
+    },
+    exportbulanan: function exportbulanan() {
+      this.bulan = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.bulan).format("YYYY-MM");
+      window.open("/export/" + this.bulan + "/kwbubulanan", "_blank");
+    },
+    printtahunan: function printtahunan() {
+      this.tahun = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tahun).format("YYYY-MM");
+      window.open("/cetak/" + this.tahun + "/printlaporantahunan", "_blank");
+    },
+    exporttahunan: function exporttahunan() {
+      this.bulan = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.bulan).format("YYYY-MM");
+      window.open("/export/" + this.bulan + "/kwbutahunan", "_blank");
+    },
+    printtahunanBapperida: function printtahunanBapperida() {
+      this.tahun = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tahun).format("YYYY");
+      window.open("/cetak/" + this.tahun + "/printtamankendaraantahunan", "_blank");
+    },
+    exporttahunanBapperida: function exporttahunanBapperida() {
+      this.tahun = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tahun).format("YYYY");
+      window.open("/export/" + this.tahun + "/tamankendaraantahunan", "_blank");
+    },
+    printtahunanrange: function printtahunanrange() {
+      this.tahun1 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tahun1).format("YYYY-MM");
+      this.tahun2 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tahun2).format("YYYY-MM");
+      window.open("/cetak/" + this.tahun1 + "/" + this.tahun2 + "/printlaporantahunanrange", "_blank");
+    },
+    printbulananjenis: function printbulananjenis() {
+      this.bulan1 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.bulan1).format("YYYY-MM");
+      window.open("/cetak/" + this.bulan1 + "/printlaporanjeniskendaraanbulanan", "_blank");
+    },
+    exportbulananjenis: function exportbulananjenis() {
+      this.bulan1 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.bulan1).format("YYYY-MM");
+      window.open("/export/" + this.bulan1 + "/jenisbulanan", "_blank");
+    },
+    printtahunanjenis: function printtahunanjenis() {
+      this.tahun1 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tahun1).format("YYYY");
+      window.open("/cetak/" + this.tahun1 + "/printlaporanjeniskendaraantahunan", "_blank");
+    },
+    exporttahunanjenis: function exporttahunanjenis() {
+      this.tahun1 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tahun1).format("YYYY-MM");
+      window.open("/export/" + this.tahun1 + "/jenistahunan", "_blank");
+    },
+    printbulananpelayanan: function printbulananpelayanan() {
+      this.bulan2 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.bulan2).format("YYYY-MM");
+      window.open("/cetak/" + this.bulan2 + "/printlaporanjenispelayananbulanan", "_blank");
+    },
+    exportbulananpelayanan: function exportbulananpelayanan() {
+      this.bulan2 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.bulan2).format("YYYY-MM");
+      window.open("/export/" + this.bulan2 + "/pelayananbulanan", "_blank");
+    },
+    printtahunanpelayanan: function printtahunanpelayanan() {
+      this.tahun2 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tahun2).format("YYYY");
+      window.open("/cetak/" + this.tahun2 + "/printlaporanjenispelayanantahunan", "_blank");
+    },
+    exporttahunanpelayanan: function exporttahunanpelayanan() {
+      this.tahun2 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tahun2).format("YYYY");
+      window.open("/export/" + this.tahun2 + "/pelayanantahunan", "_blank");
+    },
+    printcustom1: function printcustom1() {
+      if (this.jeniskendaraan.length === 0) {
+        var jenis = '';
+      } else {
+        var jenis = this.jeniskendaraan.jenis;
+      }
+      if (this.tglrange1.length === 0) {} else {
+        this.tglrange1 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tglrange1).format("YYYY-MM-DD");
+      }
+      if (this.tglrange2.length === 0) {} else {
+        this.tglrange2 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tglrange2).format("YYYY-MM-DD");
+      }
+      if (this.kota.length === 0) {
+        var kota = '';
+      } else {
+        var kota = this.kota;
+      }
+      if (this.kecamatan.length === 0) {
+        var kecamatan = '';
+      } else {
+        var kecamatan = this.kecamatan;
+      }
+      if (this.kelurahan.length === 0) {
+        var kelurahan = '';
+      } else {
+        var kelurahan = this.kelurahan;
+      }
+      window.open("/cetak/printcustom1?tgl1=".concat(this.tglrange1, "&tgl2=").concat(this.tglrange2, "&jenispendaftaran=").concat(this.jenispendaftaran, "&jeniskendaraan=").concat(jenis, "&peruntukan=").concat(this.peruntukan, "&jbb=").concat(this.jbb, "&kota=").concat(kota, "&kec=").concat(kecamatan, "&kel=").concat(kelurahan), "_blank");
+    },
+    exportcustom1: function exportcustom1() {
+      if (this.jeniskendaraan.length === 0) {
+        var jenis = '';
+      } else {
+        var jenis = this.jeniskendaraan.jenis;
+      }
+      if (this.tglrange1.length === 0) {} else {
+        this.tglrange1 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tglrange1).format("YYYY-MM-DD");
+      }
+      if (this.tglrange2.length === 0) {} else {
+        this.tglrange2 = moment__WEBPACK_IMPORTED_MODULE_9___default()(this.tglrange2).format("YYYY-MM-DD");
+      }
+      if (this.jeniskendaraan.length === 0) {
+        var jenis = '';
+      } else {
+        var jenis = this.jeniskendaraan.jenis;
+      }
+      if (this.kota.length === 0) {
+        var kota = '';
+      } else {
+        var kota = this.kota;
+      }
+      if (this.kecamatan.length === 0) {
+        var kecamatan = '';
+      } else {
+        var kecamatan = this.kecamatan;
+      }
+      if (this.kelurahan.length === 0) {
+        var kelurahan = '';
+      } else {
+        var kelurahan = this.kelurahan;
+      }
+      window.open("/export/custom1?tgl1=".concat(this.tglrange1, "&tgl2=").concat(this.tglrange2, "&jenispendaftaran=").concat(this.jenispendaftaran, "&jeniskendaraan=").concat(jenis, "&peruntukan=").concat(this.peruntukan, "&jbb=").concat(this.jbb, "&kota=").concat(kota, "&kec=").concat(kecamatan, "&kel=").concat(kelurahan), "_blank");
+    },
+    printcustom2: function printcustom2() {
+      if (this.jeniskendaraan.length === 0) {
+        var jenis = '';
+      } else {
+        var jenis = this.jeniskendaraan.jenis;
+      }
+      if (this.kota.length === 0) {
+        var kota = '';
+      } else {
+        var kota = this.kota;
+      }
+      if (this.kecamatan.length === 0) {
+        var kecamatan = '';
+      } else {
+        var kecamatan = this.kecamatan;
+      }
+      if (this.kelurahan.length === 0) {
+        var kelurahan = '';
+      } else {
+        var kelurahan = this.kelurahan;
+      }
+      window.open("/cetak/printcustom2?jeniskendaraan=".concat(jenis, "&peruntukan=").concat(this.peruntukan, "&jbb=").concat(this.jbb, "&kota=").concat(kota, "&kec=").concat(kecamatan, "&kel=").concat(kelurahan), "_blank");
+    },
+    exportcustom2: function exportcustom2() {
+      if (this.jeniskendaraan.length === 0) {
+        var jenis = '';
+      } else {
+        var jenis = this.jeniskendaraan.jenis;
+      }
+      if (this.kota.length === 0) {
+        var kota = '';
+      } else {
+        var kota = this.kota;
+      }
+      if (this.kecamatan.length === 0) {
+        var kecamatan = '';
+      } else {
+        var kecamatan = this.kecamatan;
+      }
+      if (this.kelurahan.length === 0) {
+        var kelurahan = '';
+      } else {
+        var kelurahan = this.kelurahan;
+      }
+      window.open("/export/custom2?jeniskendaraan=".concat(jenis, "&peruntukan=").concat(this.peruntukan, "&jbb=").concat(this.jbb, "&kota=").concat(kota, "&kec=").concat(kecamatan, "&kel=").concat(kelurahan), "_blank");
     }
-  },
+  }),
   components: {
-    datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_2__["default"],
-    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_5___default.a
+    datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_7__["default"],
+    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_10___default.a
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=template&id=01f2f648":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=template&id=f4956a12":
 /*!****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=template&id=01f2f648 ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=template&id=f4956a12 ***!
   \****************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -86,23 +339,23 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c('div', {
+  return _c("div", {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "col-12"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "card card-custom gutter-b"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "card-body"
-  }, [_c('div', {
+  }, [_c("div", {
     staticClass: "row"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "col-4"
-  }, [_c('label', [_vm._v("Pilih Tanggal")]), _vm._v(" "), _c('datepicker', {
+  }, [_c("label", [_vm._v("Pilih Tanggal")]), _vm._v(" "), _c("datepicker", {
     attrs: {
       "input-class": "form-control",
-      "language": _vm.id,
-      "format": _vm.customFormatter
+      language: _vm.id,
+      format: _vm.customFormatter
     },
     model: {
       value: _vm.tgl,
@@ -111,86 +364,906 @@ var render = function render() {
       },
       expression: "tgl"
     }
-  })], 1), _vm._v(" "), _c('div', {
+  })], 1), _vm._v(" "), _c("div", {
     staticClass: "col-4"
-  }, [_c('label', [_vm._v("Pilih Jenis Laporan")]), _vm._v(" "), _c('select', {
+  }, [_c("label", [_vm._v("Pilih Jenis Laporan")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.dataLaporan,
-      expression: "dataLaporan"
+      value: _vm.dataHarian,
+      expression: "dataHarian"
     }],
     staticClass: "form-control",
     on: {
-      "change": function change($event) {
+      change: function change($event) {
         var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
           return o.selected;
         }).map(function (o) {
           var val = "_value" in o ? o._value : o.value;
           return val;
         });
-        _vm.dataLaporan = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+        _vm.dataHarian = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
       }
     }
-  }, [_c('option', {
+  }, [_c("option", {
     attrs: {
-      "selected": "selected",
-      "value": ""
+      selected: "selected",
+      value: ""
     }
-  }), _vm._v(" "), _c('option', {
+  }), _vm._v(" "), _c("option", {
     attrs: {
-      "value": "kwbutahunan"
+      value: "printlaporanharian"
     }
-  }, [_vm._v("KWBU")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "jenistahunan"
-    }
-  }, [_vm._v("Jenis Kendaraan")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "pelayanantahunan"
-    }
-  }, [_vm._v("Pelayanan")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Laporan Harian")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4"
-  }, [_c('label', [_vm._v("Pilih Aksi")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('a', {
+  }, [_c("label", [_vm._v("Pilih Aksi")]), _vm._v(" "), _c("br"), _vm._v(" "), _c("a", {
     staticClass: "btn btn-icon btn-info",
     attrs: {
-      "href": "javascript:void(0)"
+      href: "javascript:void(0)"
     },
     on: {
-      "click": function click($event) {
+      click: function click($event) {
         $event.preventDefault();
-        return _vm.printLaporan.apply(null, arguments);
+        return _vm.printharian.apply(null, arguments);
       }
     }
-  }, [_c('i', {
+  }, [_c("i", {
     staticClass: "flaticon2-printer"
-  })]), _vm._v(" "), _c('a', {
+  })]), _vm._v(" "), _c("a", {
     staticClass: "btn btn-icon btn-success",
     attrs: {
-      "href": "javascript:void(0)"
+      href: "javascript:void(0)"
     },
     on: {
-      "click": function click($event) {
+      click: function click($event) {
         $event.preventDefault();
-        return _vm.exportLaporan.apply(null, arguments);
+        return _vm.exportharian.apply(null, arguments);
       }
     }
-  }, [_c('i', {
+  }, [_c("i", {
     staticClass: "far fa-file-excel"
-  })])])])])])]), _vm._v(" "), _c('div', {
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-4"
+  }, [_c("div", {
+    staticClass: "card card-custom gutter-b"
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-6"
+  }, [_c("label", [_vm._v("Bulanan KBWU")]), _vm._v(" "), _c("datepicker", {
+    attrs: {
+      "input-class": "form-control",
+      language: _vm.id,
+      format: _vm.customFormatter2,
+      "minimum-view": "month"
+    },
+    model: {
+      value: _vm.bulan,
+      callback: function callback($$v) {
+        _vm.bulan = $$v;
+      },
+      expression: "bulan"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("br"), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-info",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.printbulanan.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-printer"
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-success",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.exportbulanan.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "far fa-file-excel"
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-4"
+  }, [_c("div", {
+    staticClass: "card card-custom gutter-b"
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-6"
+  }, [_c("label", [_vm._v("Tahunan KBWU")]), _vm._v(" "), _c("datepicker", {
+    attrs: {
+      "input-class": "form-control",
+      language: _vm.id,
+      format: _vm.customFormatter3,
+      "minimum-view": "year"
+    },
+    model: {
+      value: _vm.tahun,
+      callback: function callback($$v) {
+        _vm.tahun = $$v;
+      },
+      expression: "tahun"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("br"), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-info",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.printtahunan.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-printer"
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-success",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.exporttahunan.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "far fa-file-excel"
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("div", {
+    staticClass: "card card-custom gutter-b"
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-6"
+  }, [_c("label", [_vm._v("Bulanan Jenis Kendaraan")]), _vm._v(" "), _c("datepicker", {
+    attrs: {
+      "input-class": "form-control",
+      language: _vm.id,
+      format: _vm.customFormatter2,
+      "minimum-view": "month"
+    },
+    model: {
+      value: _vm.bulan1,
+      callback: function callback($$v) {
+        _vm.bulan1 = $$v;
+      },
+      expression: "bulan1"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("br"), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-info",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.printbulananjenis.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-printer"
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-success",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.exportbulananjenis.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "far fa-file-excel"
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("div", {
+    staticClass: "card card-custom gutter-b"
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-6"
+  }, [_c("label", [_vm._v("Tahunan Jenis Kendaraan")]), _vm._v(" "), _c("datepicker", {
+    attrs: {
+      "input-class": "form-control",
+      language: _vm.id,
+      format: _vm.customFormatter3,
+      "minimum-view": "year"
+    },
+    model: {
+      value: _vm.tahun1,
+      callback: function callback($$v) {
+        _vm.tahun1 = $$v;
+      },
+      expression: "tahun1"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("br"), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-info",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.printtahunanjenis.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-printer"
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-success",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.exporttahunanjenis.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "far fa-file-excel"
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("div", {
+    staticClass: "card card-custom gutter-b"
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-6"
+  }, [_c("label", [_vm._v("Bulanan Jenis Pelayanan")]), _vm._v(" "), _c("datepicker", {
+    attrs: {
+      "input-class": "form-control",
+      language: _vm.id,
+      format: _vm.customFormatter2,
+      "minimum-view": "month"
+    },
+    model: {
+      value: _vm.bulan2,
+      callback: function callback($$v) {
+        _vm.bulan2 = $$v;
+      },
+      expression: "bulan2"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("br"), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-info",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.printbulananpelayanan.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-printer"
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-success",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.exportbulananpelayanan.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "far fa-file-excel"
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("div", {
+    staticClass: "card card-custom gutter-b"
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-6"
+  }, [_c("label", [_vm._v("Tahunan Jenis Pelayanan")]), _vm._v(" "), _c("datepicker", {
+    attrs: {
+      "input-class": "form-control",
+      language: _vm.id,
+      format: _vm.customFormatter3,
+      "minimum-view": "year"
+    },
+    model: {
+      value: _vm.tahun2,
+      callback: function callback($$v) {
+        _vm.tahun2 = $$v;
+      },
+      expression: "tahun2"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("br"), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-info",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.printtahunanpelayanan.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-printer"
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-success",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.exporttahunanpelayanan.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "far fa-file-excel"
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("div", {
+    staticClass: "card card-custom gutter-b"
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-6"
+  }, [_c("label", [_vm._v("Tahunan Bapperida")]), _vm._v(" "), _c("datepicker", {
+    attrs: {
+      "input-class": "form-control",
+      language: _vm.id,
+      format: _vm.customFormatter3,
+      "minimum-view": "year"
+    },
+    model: {
+      value: _vm.tahun,
+      callback: function callback($$v) {
+        _vm.tahun = $$v;
+      },
+      expression: "tahun"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }, [_c("br"), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-info",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.printtahunanBapperida.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-printer"
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-success",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.exporttahunanBapperida.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "far fa-file-excel"
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
+  }), _vm._v(" "), _c("div", {
     staticClass: "col-12"
-  }, [_vm.loading && _vm.dataLaporan == 'printlaporanharian' ? _c('div', {
-    staticClass: "loading-overlay"
-  }, [_c('div', {
-    staticClass: "spinner"
-  }, [_vm._v("Loading Laporan...")])]) : _vm._e()])]);
+  }, [_c("div", {
+    staticClass: "card card-custom gutter-b"
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-2"
+  }, [_c("label", [_vm._v("Jenis Pendaftaran")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.jenispendaftaran,
+      expression: "jenispendaftaran"
+    }],
+    staticClass: "form-control",
+    on: {
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.jenispendaftaran = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      selected: "selected",
+      value: ""
+    }
+  }), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "1"
+    }
+  }, [_vm._v("Daftar Baru")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "2"
+    }
+  }, [_vm._v("Perpanjangan")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "3"
+    }
+  }, [_vm._v("Rusak")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "4"
+    }
+  }, [_vm._v("Hilang")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "5"
+    }
+  }, [_vm._v("Numpang Uji Masuk")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "9"
+    }
+  }, [_vm._v("Numpang Uji Keluar")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "6"
+    }
+  }, [_vm._v("Mutasi Masuk")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "10"
+    }
+  }, [_vm._v("Mutasi Keluar")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "7"
+    }
+  }, [_vm._v("Uji Ulang")])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-2"
+  }, [_c("label", [_vm._v("Jenis Kendaraan")]), _vm._v(" "), _c("vSelect", {
+    ref: "jenis",
+    attrs: {
+      label: "jenis",
+      options: _vm.jenis
+    },
+    model: {
+      value: _vm.jeniskendaraan,
+      callback: function callback($$v) {
+        _vm.jeniskendaraan = $$v;
+      },
+      expression: "jeniskendaraan"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-2"
+  }, [_c("label", [_vm._v("Umum/Tidak Umum")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.peruntukan,
+      expression: "peruntukan"
+    }],
+    staticClass: "form-control",
+    on: {
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.peruntukan = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      selected: "selected",
+      value: ""
+    }
+  }), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "Umum"
+    }
+  }, [_vm._v("Umum")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "Tidak Umum"
+    }
+  }, [_vm._v("Tidak Umum")])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-2"
+  }, [_c("label", [_vm._v("JBB")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.jbb,
+      expression: "jbb"
+    }],
+    staticClass: "form-control",
+    on: {
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.jbb = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      selected: "selected",
+      value: ""
+    }
+  }), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "1"
+    }
+  }, [_vm._v("(JBB) s/d 3000")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "2"
+    }
+  }, [_vm._v("(JBB) 3001 s/d 9000")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "3"
+    }
+  }, [_vm._v("(JBB) 9001 s/d 15000")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "4"
+    }
+  }, [_vm._v("(JBB) 15001 s/d 21000")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "5"
+    }
+  }, [_vm._v("(JBB) >= 21000")])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-2"
+  }, [_c("label", [_vm._v("Tanggal")]), _vm._v(" "), _c("datepicker", {
+    attrs: {
+      "input-class": "form-control",
+      language: _vm.id,
+      format: _vm.customFormatter
+    },
+    model: {
+      value: _vm.tglrange1,
+      callback: function callback($$v) {
+        _vm.tglrange1 = $$v;
+      },
+      expression: "tglrange1"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-2"
+  }, [_c("label", [_vm._v(":")]), _vm._v(" "), _c("datepicker", {
+    attrs: {
+      "input-class": "form-control",
+      language: _vm.id,
+      format: _vm.customFormatter
+    },
+    model: {
+      value: _vm.tglrange2,
+      callback: function callback($$v) {
+        _vm.tglrange2 = $$v;
+      },
+      expression: "tglrange2"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-4"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", [_vm._v("Kabupaten")]), _vm._v(" "), _c("vSelect", {
+    attrs: {
+      label: "nama",
+      options: _vm.kotas
+    },
+    on: {
+      input: _vm.setKota
+    },
+    model: {
+      value: _vm.kota,
+      callback: function callback($$v) {
+        _vm.kota = $$v;
+      },
+      expression: "kota"
+    }
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-4"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", [_vm._v("Kecamatan")]), _vm._v(" "), _c("vSelect", {
+    attrs: {
+      label: "nama",
+      options: _vm.kecamatans
+    },
+    on: {
+      input: _vm.setKecamatan
+    },
+    model: {
+      value: _vm.kecamatan,
+      callback: function callback($$v) {
+        _vm.kecamatan = $$v;
+      },
+      expression: "kecamatan"
+    }
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-4"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", [_vm._v("Kelurahan")]), _vm._v(" "), _c("vSelect", {
+    attrs: {
+      label: "nama",
+      options: _vm.kelurahans
+    },
+    on: {
+      input: _vm.setKelurahan
+    },
+    model: {
+      value: _vm.kelurahan,
+      callback: function callback($$v) {
+        _vm.kelurahan = $$v;
+      },
+      expression: "kelurahan"
+    }
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "col-2"
+  }, [_c("br"), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-info",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.printcustom1.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-printer"
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-success",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.exportcustom1.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "far fa-file-excel"
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }, [_c("div", {
+    staticClass: "card card-custom gutter-b"
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-4"
+  }, [_c("label", [_vm._v("Jenis Kendaraan")]), _vm._v(" "), _c("vSelect", {
+    ref: "jenis",
+    attrs: {
+      label: "jenis",
+      options: _vm.jenis
+    },
+    model: {
+      value: _vm.jeniskendaraan,
+      callback: function callback($$v) {
+        _vm.jeniskendaraan = $$v;
+      },
+      expression: "jeniskendaraan"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-4"
+  }, [_c("label", [_vm._v("Umum/Tidak Umum")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.peruntukan,
+      expression: "peruntukan"
+    }],
+    staticClass: "form-control",
+    on: {
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.peruntukan = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      selected: "selected",
+      value: ""
+    }
+  }), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "Umum"
+    }
+  }, [_vm._v("Umum")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "Tidak Umum"
+    }
+  }, [_vm._v("Tidak Umum")])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-4"
+  }, [_c("label", [_vm._v("JBB")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.jbb,
+      expression: "jbb"
+    }],
+    staticClass: "form-control",
+    on: {
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.jbb = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      selected: "selected",
+      value: ""
+    }
+  }), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "1"
+    }
+  }, [_vm._v("(JBB) s/d 3000")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "2"
+    }
+  }, [_vm._v("(JBB) 3001 s/d 9000")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "3"
+    }
+  }, [_vm._v("(JBB) 9001 s/d 15000")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "4"
+    }
+  }, [_vm._v("(JBB) 15001 s/d 21000")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "5"
+    }
+  }, [_vm._v("(JBB) >= 21000")])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-4"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", [_vm._v("Kabupaten")]), _vm._v(" "), _c("vSelect", {
+    attrs: {
+      label: "nama",
+      options: _vm.kotas
+    },
+    on: {
+      input: _vm.setKota
+    },
+    model: {
+      value: _vm.kota,
+      callback: function callback($$v) {
+        _vm.kota = $$v;
+      },
+      expression: "kota"
+    }
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-4"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", [_vm._v("Kecamatan")]), _vm._v(" "), _c("vSelect", {
+    attrs: {
+      label: "nama",
+      options: _vm.kecamatans
+    },
+    on: {
+      input: _vm.setKecamatan
+    },
+    model: {
+      value: _vm.kecamatan,
+      callback: function callback($$v) {
+        _vm.kecamatan = $$v;
+      },
+      expression: "kecamatan"
+    }
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-4"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", [_vm._v("Kelurahan")]), _vm._v(" "), _c("vSelect", {
+    attrs: {
+      label: "nama",
+      options: _vm.kelurahans
+    },
+    on: {
+      input: _vm.setKelurahan
+    },
+    model: {
+      value: _vm.kelurahan,
+      callback: function callback($$v) {
+        _vm.kelurahan = $$v;
+      },
+      expression: "kelurahan"
+    }
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "col-2"
+  }, [_c("br"), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-info",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.printcustom2.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-printer"
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-icon btn-success",
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.exportcustom2.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "far fa-file-excel"
+  })])])])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c('div', {
+  return _c("div", {
     staticClass: "col-12"
-  }, [_c('h4', [_vm._v("Tahunan")])]);
+  }, [_c("h4", [_vm._v("Harian")])]);
 }];
 render._withStripped = true;
 
@@ -216,6 +1289,8 @@ var map = {
 	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
 	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
 	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ps": "./node_modules/moment/locale/ar-ps.js",
+	"./ar-ps.js": "./node_modules/moment/locale/ar-ps.js",
 	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
 	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
 	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
@@ -350,6 +1425,8 @@ var map = {
 	"./ko": "./node_modules/moment/locale/ko.js",
 	"./ko.js": "./node_modules/moment/locale/ko.js",
 	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku-kmr": "./node_modules/moment/locale/ku-kmr.js",
+	"./ku-kmr.js": "./node_modules/moment/locale/ku-kmr.js",
 	"./ku.js": "./node_modules/moment/locale/ku.js",
 	"./ky": "./node_modules/moment/locale/ky.js",
 	"./ky.js": "./node_modules/moment/locale/ky.js",
@@ -499,17 +1576,17 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./resources/js/view/pages/cetak/laporan/Yearly.vue":
+/***/ "./resources/js/view/pages/cetak/laporan/Fields.vue":
 /*!**********************************************************!*\
-  !*** ./resources/js/view/pages/cetak/laporan/Yearly.vue ***!
+  !*** ./resources/js/view/pages/cetak/laporan/Fields.vue ***!
   \**********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Yearly_vue_vue_type_template_id_01f2f648__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Yearly.vue?vue&type=template&id=01f2f648 */ "./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=template&id=01f2f648");
-/* harmony import */ var _Yearly_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Yearly.vue?vue&type=script&lang=js */ "./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=script&lang=js");
+/* harmony import */ var _Fields_vue_vue_type_template_id_f4956a12__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Fields.vue?vue&type=template&id=f4956a12 */ "./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=template&id=f4956a12");
+/* harmony import */ var _Fields_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Fields.vue?vue&type=script&lang=js */ "./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=script&lang=js");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -519,9 +1596,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Yearly_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Yearly_vue_vue_type_template_id_01f2f648__WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Yearly_vue_vue_type_template_id_01f2f648__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Fields_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Fields_vue_vue_type_template_id_f4956a12__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Fields_vue_vue_type_template_id_f4956a12__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -531,38 +1608,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/view/pages/cetak/laporan/Yearly.vue"
+component.options.__file = "resources/js/view/pages/cetak/laporan/Fields.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=script&lang=js":
+/***/ "./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=script&lang=js":
 /*!**********************************************************************************!*\
-  !*** ./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=script&lang=js ***!
+  !*** ./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=script&lang=js ***!
   \**********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Yearly_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Yearly.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=script&lang=js");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Yearly_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Fields_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Fields.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Fields_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=template&id=01f2f648":
+/***/ "./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=template&id=f4956a12":
 /*!****************************************************************************************!*\
-  !*** ./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=template&id=01f2f648 ***!
+  !*** ./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=template&id=f4956a12 ***!
   \****************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Yearly_vue_vue_type_template_id_01f2f648__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Yearly.vue?vue&type=template&id=01f2f648 */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Yearly.vue?vue&type=template&id=01f2f648");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Yearly_vue_vue_type_template_id_01f2f648__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Fields_vue_vue_type_template_id_f4956a12__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Fields.vue?vue&type=template&id=f4956a12 */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/cetak/laporan/Fields.vue?vue&type=template&id=f4956a12");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Fields_vue_vue_type_template_id_f4956a12__WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Yearly_vue_vue_type_template_id_01f2f648__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Fields_vue_vue_type_template_id_f4956a12__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

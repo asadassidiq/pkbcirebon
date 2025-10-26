@@ -19,6 +19,7 @@ export const SET_ERROR = "setError";
 const state = {
   errors: null,
   notif: {
+    approvals: "0",
     foto: "0",
     pos1: "0",
     pos2: "0",

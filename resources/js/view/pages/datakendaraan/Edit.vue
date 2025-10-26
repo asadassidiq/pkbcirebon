@@ -144,7 +144,7 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Merek <span class="text-danger" v-if="datakendaraan.mereklama">{{ datakendaraan.mereklama
-                          }}</span></label>
+                      }}</span></label>
                       <vSelect label="vehicle_brand_name" ref="merek" :options="mereks" v-model="datakendaraan.merek"
                         @input="setType"></vSelect>
 
@@ -153,7 +153,7 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Tipe <span class="text-danger" v-if="datakendaraan.tipelama">{{ datakendaraan.tipelama
-                          }}</span></label>
+                      }}</span></label>
                       <vSelect label="vehicle_varian_type_name" ref="tipes" :options="tipes"
                         v-model="datakendaraan.tipe" @input="setVarian" :disabled="!tipes.length"></vSelect>
 
@@ -172,7 +172,7 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Jenis <span class="text-danger" v-if="datakendaraan.jenislama">{{ datakendaraan.jenislama
-                          }}</span></label>
+                      }}</span></label>
                       <vSelect label="vehicle_type_name" ref="jenis" :options="jenis" v-model="datakendaraan.jenis"
                         @input="setSubVehicle" :disabled="!jenis.length"></vSelect>
                     </div>
@@ -180,7 +180,7 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Model <span class="text-danger" v-if="datakendaraan.model">{{ datakendaraan.model
-                          }}</span></label>
+                      }}</span></label>
                       <vSelect label="vehicle_sub_name" ref="subjenis" :options="subjenis"
                         v-model="datakendaraan.subjenis" @input="setSubVehicleid" :disabled="!subjenis.length">
                       </vSelect>
@@ -966,6 +966,9 @@ export default {
       startStep: 1, // initial active step number
       clickableSteps: true // allow step clicking
     });
+
+    if (!wizard)
+      return;
 
     // Validation before going to next page
     wizard.on("beforeNext", function (/*wizardObj*/) {

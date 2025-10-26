@@ -55,14 +55,19 @@
     </router-link> -->
 
     <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item menu-item-submenu" v-bind:class="{
-      'menu-item-open': hasActiveChildren('/foto')
+      'menu-item-open': hasActiveChildren('/datakendaraan')
     }" v-if="user.ft == true">
       <a href="#" class="menu-link menu-toggle">
         <i class="menu-icon flaticon2-lorry"></i>
         <span class="menu-text">Datakendaraan
-          <div class="blink" v-if="notif.foto > 0">
-            <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.foto
-            }}</span></span>
+          <div class="blink" v-if="notif.approvals > 0">
+            <span>
+              <span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">
+                {{
+                  notif.approvals
+                }}
+              </span>
+            </span>
           </div>
         </span>
         <i class="menu-arrow"></i>
@@ -99,7 +104,18 @@
                 <i class="menu-bullet menu-bullet-dot">
                   <span></span>
                 </i>
-                <span class="menu-text">Perubahan Datakendaraan</span>
+                <span class="menu-text">
+                  Perubahan Datakendaraan
+                  <div class="blink" v-if="notif.approvals > 0">
+                    <span>
+                      <span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">
+                        {{
+                          notif.approvals
+                        }}
+                      </span>
+                    </span>
+                  </div>
+                </span>
               </a>
             </li>
           </router-link>
@@ -186,7 +202,7 @@
           <span class="menu-text">Persuratan
             <div class="blink" v-if="notif.surat > 0">
               <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.surat
-              }}</span></span>
+                  }}</span></span>
             </div>
           </span>
         </a>
@@ -203,7 +219,7 @@
           <span class="menu-text">Blue Cetak
             <div class="blink" v-if="notif.cetak > 0">
               <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.cetak
-              }}</span></span>
+                  }}</span></span>
             </div>
           </span>
         </a>
@@ -218,7 +234,7 @@
         <span class="menu-text">Foto Kendaraan
           <div class="blink" v-if="notif.foto > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.foto
-            }}</span></span>
+                }}</span></span>
           </div>
         </span>
         <i class="menu-arrow"></i>
@@ -271,7 +287,7 @@
         <span class="menu-text">Uji Visual
           <div class="blink" v-if="notif.pos1 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos1
-            }}</span></span>
+                }}</span></span>
           </div>
         </span>
         <i class="menu-arrow"></i>
@@ -338,7 +354,7 @@
         <span class="menu-text">Kebisingan
           <div class="blink" v-if="notif.pos2 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos2
-            }}</span></span>
+                }}</span></span>
           </div>
         </span>
         <i class="menu-arrow"></i>
@@ -405,7 +421,7 @@
         <span class="menu-text">Emisi
           <div class="blink" v-if="notif.pos3 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos3
-            }}</span></span>
+                }}</span></span>
           </div>
         </span>
         <i class="menu-arrow"></i>
@@ -472,7 +488,7 @@
         <span class="menu-text">Lampu
           <div class="blink" v-if="notif.pos4 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos4
-            }}</span></span>
+                }}</span></span>
           </div>
         </span>
         <i class="menu-arrow"></i>
@@ -539,7 +555,7 @@
         <span class="menu-text">Sideslip
           <div class="blink" v-if="notif.pos5 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos5
-            }}</span></span>
+                }}</span></span>
           </div>
         </span>
         <i class="menu-arrow"></i>
@@ -606,7 +622,7 @@
         <span class="menu-text">Timbangan
           <div class="blink" v-if="notif.pos6 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos6
-            }}</span></span>
+                }}</span></span>
           </div>
         </span>
         <i class="menu-arrow"></i>
@@ -673,7 +689,7 @@
         <span class="menu-text">Rem
           <div class="blink" v-if="notif.pos7 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos7
-            }}</span></span>
+                }}</span></span>
           </div>
         </span>
         <i class="menu-arrow"></i>
@@ -740,7 +756,7 @@
         <span class="menu-text">Speedometer
           <div class="blink" v-if="notif.pos8 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos8
-            }}</span></span>
+                }}</span></span>
           </div>
         </span>
         <i class="menu-arrow"></i>
@@ -820,7 +836,7 @@
         <span class="menu-text">Verif
           <div class="blink" v-if="notif.verif1 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.verif1
-            }}</span></span>
+                }}</span></span>
           </div>
         </span>
         <i class="menu-arrow"></i>

@@ -31,19 +31,20 @@ mix.webpackConfig({
   module: {
     rules: [
       {
-        // Regex to find all JS files
         test: /\.js$/,
-        // This rule only applies to files in the marked directory
-        include: [
-          path.resolve(__dirname, "node_modules/marked"),
-          // You can add other packages here that need transpiling, like 'zod'
-          // path.resolve(__dirname, 'node_modules/zod'),
-        ],
-        // Use the babel-loader to transpile the files
+        include: [path.resolve(__dirname, "node_modules/vue-markdown")],
         use: {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
+            plugins: [
+              [
+                "@babel/plugin-transform-runtime",
+                {
+                  corejs: 2, // Use corejs 2 as required by the old package
+                },
+              ],
+            ],
           },
         },
       },

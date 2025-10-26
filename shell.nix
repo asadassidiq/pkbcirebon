@@ -1,10 +1,11 @@
 let
   nixpkgs-commit = "b95255df2360a45ddbb03817a68869d5cb01bf96";
   nixpkgs-nodejs_17-commit = "d1c3fea7ecbed758168787fe4e4a3157e52bc808";
+  nixpkgs-nodejs_20-commit = "e6f23dc08d3624daab7094b701aa3954923c6bbb";
   # sha256 = "1w2i388q1c8sqf4g683kflz8s92n4ws9i2nrrq7wgd52qj9ifjzw";
 
   pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/${nixpkgs-commit}.tar.gz") {};
-  node_pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/${nixpkgs-nodejs_17-commit}.tar.gz") {};
+  node_pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/${nixpkgs-nodejs_20-commit}.tar.gz") {};
 
   php = pkgs.php83.withExtensions ({ enabled, all }: [
     all.imagick
@@ -50,7 +51,8 @@ pkgs.mkShell {
   nativeBuildInputs = [
     php
     composer
-    node_pkgs.nodejs-17_x
+    #node_pkgs.nodejs-17_x
+    node_pkgs.nodejs_20
 
     pkgs.autoconf
     pkgs.re2c

@@ -42,7 +42,7 @@
         .content {
             padding-top: 1cm;
         }
-        
+
         .line-wrapper {
             margin: 0 0px;
         }
@@ -53,14 +53,15 @@
 
         .line-thick {
             border-top: 5px solid black;
-            margin-top: 3px; /* Ini memberi jarak antara garis tipis dan tebal */
+            margin-top: 3px;
+            /* Ini memberi jarak antara garis tipis dan tebal */
         }
 
         .page-break {
             page-break-after: always;
         }
 
-        .p{
+        .p {
             /* font-size: 12px; */
         }
 
@@ -73,9 +74,17 @@
             border: 1px solid #dee2e6;
         }
 
-        .text-center { text-align: center; }
-        .text-right { text-align: right; }
-        .text-left { text-align: left; }
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-left {
+            text-align: left;
+        }
 
     </style>
 </head>
@@ -101,7 +110,7 @@
     }
     @endphp
     @include('cetak.layouts.header')
-<div class="content">
+    <div class="content">
         <h3 class="text-center"><u>SURAT KETERANGAN TIDAK LULUS UJI</u></h3>
         <p>Pada tanggal {{ tgl_indo($data->tglpendaftaran) }} tempat UPT Pengujian Kendaraan Bermotor Dinas Perhubungan {{ ucwords(strtolower(env('APP_KAB').' '.env('APP_WILAYAH'))) }} yang bertanda tangan di bawah ini :</p>
 
@@ -141,7 +150,7 @@
             </tr>
             <tr>
                 <td style="width: 28%">
-                    Menyatakan bahwa kendaraan bermotor :
+                    Menyatakan bahwa kendaraan bermotor
                 </td>
                 <td style="width: 2%">
                     :
@@ -259,48 +268,48 @@
                 <th>Rekomendasi Perbaikan</th>
             </thead>
             @php
-                $no = 0;
+            $no = 0;
             @endphp
             <tbody>
                 @foreach ($catatan as $catatan)
-                    @php
-                        $no++;
-                    @endphp
-                    <tr>
-                        <td scope="row">{{ $no }}</td>
-                        <td>{{ $catatan->nama }}</td>
-                        <td>{{ $catatan->hasiluji }}</td>
-                        <td>{{ $catatan->alasan }}</td>
-                        <td>{{ $catatan->rekomendasi }}</td>
-                    </tr>
+                @php
+                $no++;
+                @endphp
+                <tr>
+                    <td scope="row">{{ $no }}</td>
+                    <td>{{ $catatan->nama }}</td>
+                    <td>{{ $catatan->hasiluji }}</td>
+                    <td>{{ $catatan->alasan }}</td>
+                    <td>{{ $catatan->rekomendasi }}</td>
+                </tr>
                 @endforeach
                 @if($no == 0)
-                    <tr class="text-center">
-                        <td colspan="5"> <i>- Tidak ada catatan -</i> </td>
-                    </tr>
+                <tr class="text-center">
+                    <td colspan="5"> <i>- Tidak ada catatan -</i> </td>
+                </tr>
                 @endif
             </tbody>
         </table>
-        <p>Berdasarkan data hasil pemeriksaan teknis dan persyaratan teknis laik jalan di atas maka kendaraan tersebut dinyatakan <b>TIDAK LULUS UJI</b> 
-        <p>Demikian keterangan ini dibuat, selanjutnya kepada pemilik kendaraan agar memperbaiki komponen tersebut dan melakukan uji ulang pada tanggal <span><b>{{ tgl_indo(date_format(date_create($data->tglujiulang),"d-m-Y")) }}</b></span></span>.</p>
+        <p>Berdasarkan data hasil pemeriksaan teknis dan persyaratan teknis laik jalan di atas maka kendaraan tersebut dinyatakan <b>TIDAK LULUS UJI</b>
+            <p>Demikian keterangan ini dibuat, selanjutnya kepada pemilik kendaraan agar memperbaiki komponen tersebut dan melakukan uji ulang pada tanggal <span><b>{{ tgl_indo(date_format(date_create($data->tglujiulang),"d-m-Y")) }}</b></span></span>.</p>
 
 
-		<p>Demikian permohonan ini kami buat untuk dapat diproses lebih lanjut.</p>
+            <p>Demikian permohonan ini kami buat untuk dapat diproses lebih lanjut.</p>
 
-        <table style="width: 100%;">
-            <tr>
-                <td style="width: 60%"></td>
-                <td style="width: 40%" class="text-center">
-                    <p>{{ ucwords(strtolower(env('APP_WILAYAH'))) }}, {{ tgl_indo($data->tglpendaftaran) }}</p>
-                    <p>Yang membuat keterangan</p>
-                    <p>{{ $ttd->jabatan }}</p>
-                    <br><br><br><br><br><br>
-                    <p style="margin:0px;padding:0px;"><u><b>{{ $ttd['name'] }}</u></b></p>
-                </td>
-            </tr>
-        </table>
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 60%"></td>
+                    <td style="width: 40%" class="text-center">
+                        <p>{{ ucwords(strtolower(env('APP_WILAYAH'))) }}, {{ tgl_indo($data->tglpendaftaran) }}</p>
+                        <p>Yang membuat keterangan</p>
+                        <p>{{ $ttd->jabatan }}</p>
+                        <br><br><br><br><br><br>
+                        <p style="margin:0px;padding:0px;"><u><b>{{ $ttd['name'] }}</u></b></p>
+                    </td>
+                </tr>
+            </table>
     </div>
-</div>
+    </div>
 
 </body>
 </html>

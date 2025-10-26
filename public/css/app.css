@@ -1,11 +1,11 @@
 var map = {
 	"./dark.scss": [
 		"./resources/js/assets/sass/themes/layout/header/base/dark.scss",
-		94
+		96
 	],
 	"./light.scss": [
 		"./resources/js/assets/sass/themes/layout/header/base/light.scss",
-		95
+		97
 	]
 };
 function webpackAsyncContext(req) {
@@ -29,11 +29,11 @@ webpackAsyncContext.id = "./resources/js/assets/sass/themes/layout/header/base l
 module.exports = webpackAsyncContext;var map = {
 	"./dark.scss": [
 		"./resources/js/assets/sass/themes/layout/header/menu/dark.scss",
-		96
+		98
 	],
 	"./light.scss": [
 		"./resources/js/assets/sass/themes/layout/header/menu/light.scss",
-		97
+		99
 	]
 };
 function webpackAsyncContext(req) {
@@ -57,11 +57,11 @@ webpackAsyncContext.id = "./resources/js/assets/sass/themes/layout/header/menu l
 module.exports = webpackAsyncContext;var map = {
 	"./dark.scss": [
 		"./resources/js/assets/sass/themes/layout/brand/dark.scss",
-		92
+		94
 	],
 	"./light.scss": [
 		"./resources/js/assets/sass/themes/layout/brand/light.scss",
-		93
+		95
 	]
 };
 function webpackAsyncContext(req) {
@@ -85,11 +85,11 @@ webpackAsyncContext.id = "./resources/js/assets/sass/themes/layout/brand lazy re
 module.exports = webpackAsyncContext;var map = {
 	"./dark.scss": [
 		"./resources/js/assets/sass/themes/layout/aside/dark.scss",
-		90
+		92
 	],
 	"./light.scss": [
 		"./resources/js/assets/sass/themes/layout/aside/light.scss",
-		91
+		93
 	]
 };
 function webpackAsyncContext(req) {
@@ -122,6 +122,8 @@ module.exports = webpackAsyncContext;var map = {
 	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
 	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
 	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ps": "./node_modules/moment/locale/ar-ps.js",
+	"./ar-ps.js": "./node_modules/moment/locale/ar-ps.js",
 	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
 	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
 	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
@@ -256,6 +258,8 @@ module.exports = webpackAsyncContext;var map = {
 	"./ko": "./node_modules/moment/locale/ko.js",
 	"./ko.js": "./node_modules/moment/locale/ko.js",
 	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku-kmr": "./node_modules/moment/locale/ku-kmr.js",
+	"./ku-kmr.js": "./node_modules/moment/locale/ku-kmr.js",
 	"./ku.js": "./node_modules/moment/locale/ku.js",
 	"./ky": "./node_modules/moment/locale/ky.js",
 	"./ky.js": "./node_modules/moment/locale/ky.js",

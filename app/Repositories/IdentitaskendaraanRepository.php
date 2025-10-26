@@ -119,18 +119,8 @@ class IdentitaskendaraanRepository
         }
     }
 
-    protected function getCoreAndRepair($id)
-    {
-        $data = $this->model1->select('identitaskendaraan_id')->where('pendaftarans.id', $id)->first();
-        // ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id');
-        $data = $this->utils->repairMissingUUID($data);
-        return $data;
-    }
-
     public function getIdentitaskendaraanPos($id)
     {
-        $core = $this->getCoreAndRepair($id);
-
         $data = $this->model1
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
