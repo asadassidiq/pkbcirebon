@@ -9,8 +9,11 @@ use App\Models\Datakendaraan;
 use App\Models\Pendaftaran;
 use App\Models\Datalama;
 use App\Models\LaikJalan;
-use DB;
+use App\Utils;
 use DateTime;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -18,13 +21,15 @@ class IdentitaskendaraanRepository
 {
     use RepositoryTrait;
 
-    protected $model, $model1, $model2;
-
-    public function __construct(Identitaskendaraan $model, Pendaftaran $model1, Datakendaraan $model2)
-    {
-        $this->model = $model;
-        $this->model1 = $model1;
-        $this->model2 = $model2;
+    public function __construct(
+        protected Identitaskendaraan $model,
+        protected Pendaftaran $model1,
+        protected Datakendaraan $model2,
+        protected Utils $utils,
+    ) {
+        // $this->model = $model;
+        // $this->model1 = $model1;
+        // $this->model2 = $model2;
     }
 
     public function getAll()
@@ -48,7 +53,8 @@ class IdentitaskendaraanRepository
             // ->Leftjoin('jenis', 'jenis.jenis', '=', 'identitaskendaraans.jenis')
             ->LeftJoin('datakendaraans', 'datakendaraans.identitaskendaraan_id', '=', 'identitaskendaraans.id');
         // $data = $data->find($id);
-        $data = $data->where('identitaskendaraans.uuid',$id)->first();
+        $data = $data->where('identitaskendaraans.uuid', $id)->first();
+
         return $data;
     }
 
@@ -58,6 +64,59 @@ class IdentitaskendaraanRepository
         // ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id');
 
         return $data;
+    }
+
+    /**
+     * Filter data with missing UUID
+     *
+     * @return Collection<int, Pendaftaran>
+     */
+    public function filterMissingUUID(): Collection
+    {
+        return $this->model
+            ->select('id', 'nouji', 'uuid')
+            ->whereNull('uuid')
+            ->get();
+    }
+
+    public function repairUUID()
+    {
+        try {
+            $data = $this->filterMissingUUID();
+            $data->makeVisible('id');
+
+            foreach ($data as $dt) {
+                $uuid = $this->utils->generateUUID();
+                DB::table('identitaskendaraans')->where('id', $dt->id)->update(['uuid' => $uuid]);
+
+                Log::info(json_encode([
+                    'type' => 'info',
+                    'context' => 'IdentitasKendaraanService::repairUUID',
+                    'message' => 'Repair UUID Identitas Kendaraan',
+                    'data' => [
+                        'uuid' => $uuid,
+                        'id' => $dt->id,
+                        'status' => 'updated',
+                        'current' => $dt,
+                    ],
+                ]));
+            }
+
+            return true;
+        } catch (\Exception $e) {
+            Log::error(json_encode([
+                'type' => 'error',
+                'context' => 'IdentitasKendaraanService::repairUUID',
+                'message' => $e->getMessage(),
+                'data' => [],
+                'details' => [
+                    'line' => $e->getLine(),
+                    'file' => $e->getFile(),
+                    'trace' => $e->getTraceAsString(),
+                ],
+            ]));
+            return false;
+        }
     }
 
     public function getIdentitaskendaraanPos($id)
@@ -95,16 +154,16 @@ class IdentitaskendaraanRepository
         }
     }
 
-    public function getNorangka($norangka,$id)
+    public function getNorangka($norangka, $id)
     {
-        $pend = $this->model1->select('identitaskendaraan_id')->where('pendaftarans.id',$id)->first();
+        $pend = $this->model1->select('identitaskendaraan_id')->where('pendaftarans.id', $id)->first();
         $data = $this->model->select('identitaskendaraans.id', 'norangka')
             ->LeftJoin('pendaftarans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id');
-        if(isEmpty($norangka)){
+        if (isEmpty($norangka)) {
             $norangka = str_replace("/", "", request()->norangka);
         }
-        if(isEmpty($id)){
-            $data->where('identitaskendaraan_id','!=', $pend->identitaskendaraan_id);
+        if (isEmpty($id)) {
+            $data->where('identitaskendaraan_id', '!=', $pend->identitaskendaraan_id);
         }
         $data = $data->where('norangka', $norangka)->first();
         if (!is_null($data)) {
@@ -123,41 +182,41 @@ class IdentitaskendaraanRepository
 
     public function checkNouji($nouji)
     {
-        $data = $this->model->select('identitaskendaraans.id', 'nouji','uuid')->where('nouji', $nouji)->first();
+        $data = $this->model->select('identitaskendaraans.id', 'nouji', 'uuid')->where('nouji', $nouji)->first();
         if (!is_null($data)) {
             return true;
-        } 
+        }
         return false;
     }
 
     public function getUUID($nouji)
     {
-        $data = $this->model->select('identitaskendaraans.id', 'nouji','uuid')->where('nouji', $nouji)->first();
+        $data = $this->model->select('identitaskendaraans.id', 'nouji', 'uuid')->where('nouji', $nouji)->first();
         if (!is_null($data)) {
             return $data;
-        } 
+        }
         return $data;
     }
 
-    public function checkNorangka($nouji,$norangka)
+    public function checkNorangka($nouji, $norangka)
     {
-        $data = $this->model->select('identitaskendaraans.id', 'nouji','uuid')->where('norangka',$norangka)->where('nouji','!=', $nouji)->first();
+        $data = $this->model->select('identitaskendaraans.id', 'nouji', 'uuid')->where('norangka', $norangka)->where('nouji', '!=', $nouji)->first();
         if (!is_null($data)) {
             return true;
-        } 
+        }
         return false;
     }
 
-    public function getNouji($nouji,$id)
+    public function getNouji($nouji, $id)
     {
-        $pend = $this->model1->select('identitaskendaraan_id')->where('pendaftarans.id',$id)->first();
+        $pend = $this->model1->select('identitaskendaraan_id')->where('pendaftarans.id', $id)->first();
         $data = $this->model->select('identitaskendaraans.id', 'nouji')
             ->LeftJoin('pendaftarans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id');
-        if(isEmpty($nouji)){
+        if (isEmpty($nouji)) {
             $nouji = str_replace("/", "", request()->nouji);
         }
-        if(isEmpty($id)){
-            $data->where('identitaskendaraan_id','!=', $pend->identitaskendaraan_id);
+        if (isEmpty($id)) {
+            $data->where('identitaskendaraan_id', '!=', $pend->identitaskendaraan_id);
         }
         $data = $data->where('nouji', $nouji)->first();
         if (!is_null($data)) {
@@ -247,7 +306,7 @@ class IdentitaskendaraanRepository
             return false;
         }
     }
-    
+
     public function getCheckNouji($request)
     {
         $data = $this->model;
@@ -269,9 +328,9 @@ class IdentitaskendaraanRepository
             // $kend = Datakendaraan::create([
             //     'identitaskendaraan_id'     => $data->id,
             // ]);
-            try{
+            try {
                 $this->upStatusKendaraan($data->id);
-            }catch(\Exception $e){
+            } catch (\Exception $e) {
             }
         }
         return $data;
@@ -279,7 +338,7 @@ class IdentitaskendaraanRepository
 
     public function updateIdentitaskendaraan($request, $id)
     {
-        $update = $this->model->where('uuid',$id)->first();
+        $update = $this->model->where('uuid', $id)->first();
         $update->update($request->all());
 
         if ($update->save()) {
@@ -290,9 +349,9 @@ class IdentitaskendaraanRepository
                         'identitaskendaraan_id'     => $update->id,
                     ]);
                 }
-                try{
+                try {
                     $this->upStatusKendaraan($update->id);
-                }catch(\Exception $e){
+                } catch (\Exception $e) {
                 }
             }
             return $update;
@@ -312,74 +371,74 @@ class IdentitaskendaraanRepository
         $stskend = null;
         $inkend = null;
         $outkend = null;
-        $stsPend = $this->model2->select('id','kodepenerbitans_id','tglpendaftaran')->where('identitaskendaraan_id',$id)->orderBy('tglpendaftaran','DESC')->first();
-        $inPend = $this->model2->select('id','kodepenerbitans_id','tglpendaftaran')->where('identitaskendaraan_id',$id)->where('kodepenerbitans_id','1')->orderBy('tglpendaftaran','ASC')->first();
-        $outPend = $this->model2->select('id','kodepenerbitans_id','tglpendaftaran')->where('identitaskendaraan_id',$id)->where('kodepenerbitans_id','10')->orderBy('tglpendaftaran','ASC')->first();
-        if($outPend){
+        $stsPend = $this->model2->select('id', 'kodepenerbitans_id', 'tglpendaftaran')->where('identitaskendaraan_id', $id)->orderBy('tglpendaftaran', 'DESC')->first();
+        $inPend = $this->model2->select('id', 'kodepenerbitans_id', 'tglpendaftaran')->where('identitaskendaraan_id', $id)->where('kodepenerbitans_id', '1')->orderBy('tglpendaftaran', 'ASC')->first();
+        $outPend = $this->model2->select('id', 'kodepenerbitans_id', 'tglpendaftaran')->where('identitaskendaraan_id', $id)->where('kodepenerbitans_id', '10')->orderBy('tglpendaftaran', 'ASC')->first();
+        if ($outPend) {
             $outkend = $outPend->tglpendaftaran;
         }
-        if($inPend){
+        if ($inPend) {
             $inkend = $inPend->tglpendaftaran;
-        }else{
-            $inPend2 = $this->model2->select('id','kodepenerbitans_id','tglpendaftaran','idx')->where('identitaskendaraan_id',$id)->orderBy('tglpendaftaran','ASC')->first();
-            if($inPend2){
+        } else {
+            $inPend2 = $this->model2->select('id', 'kodepenerbitans_id', 'tglpendaftaran', 'idx')->where('identitaskendaraan_id', $id)->orderBy('tglpendaftaran', 'ASC')->first();
+            if ($inPend2) {
                 $inkend = $inPend2->tglpendaftaran;
             }
         }
-        if($stsPend){
-            $chckuji = LaikJalan::select('pendaftaran_id','tgluji','masaberlakuuji','statuslulusuji')->where('pendaftaran_id',$stsPend->id)->first();
-            if($chckuji){
-                if(strlen($chckuji->masaberlakuuji) == 8 && $chckuji->statuslulusuji == 1){
-                    $d = substr($chckuji->masaberlakuuji,0,2);
-                    $m = substr($chckuji->masaberlakuuji,2,2);
-                    $y = substr($chckuji->masaberlakuuji,4,4);
-                    $masaberlakuuji = $y.'-'.$m.'-'.$d;
+        if ($stsPend) {
+            $chckuji = LaikJalan::select('pendaftaran_id', 'tgluji', 'masaberlakuuji', 'statuslulusuji')->where('pendaftaran_id', $stsPend->id)->first();
+            if ($chckuji) {
+                if (strlen($chckuji->masaberlakuuji) == 8 && $chckuji->statuslulusuji == 1) {
+                    $d = substr($chckuji->masaberlakuuji, 0, 2);
+                    $m = substr($chckuji->masaberlakuuji, 2, 2);
+                    $y = substr($chckuji->masaberlakuuji, 4, 4);
+                    $masaberlakuuji = $y . '-' . $m . '-' . $d;
                     $now = date('Y-m-d');
-                    if($masaberlakuuji <= $now){
+                    if ($masaberlakuuji <= $now) {
                         $stskend = '0';
-                    }elseif($masaberlakuuji >= $now){
+                    } elseif ($masaberlakuuji >= $now) {
                         $stskend = '1';
                     }
-                }else{
-                    $stsPend2 = $this->model2->select('pendaftaran_id','tgluji','masaberlakuuji','statuslulusuji')->join('laikjalan','laikjalan.pendaftaran_id','=','pendaftarans.id')->where('statuslulusuji','1')->where('identitaskendaraan_id',$id)->orderBy('tglpendaftaran','DESC')->first();
-                    if($stsPend2){
-                        $d = substr($chckuji->masaberlakuuji,0,2);
-                        $m = substr($chckuji->masaberlakuuji,2,2);
-                        $y = substr($chckuji->masaberlakuuji,4,4);
-                        $masaberlakuuji = $y.'-'.$m.'-'.$d;
+                } else {
+                    $stsPend2 = $this->model2->select('pendaftaran_id', 'tgluji', 'masaberlakuuji', 'statuslulusuji')->join('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')->where('statuslulusuji', '1')->where('identitaskendaraan_id', $id)->orderBy('tglpendaftaran', 'DESC')->first();
+                    if ($stsPend2) {
+                        $d = substr($chckuji->masaberlakuuji, 0, 2);
+                        $m = substr($chckuji->masaberlakuuji, 2, 2);
+                        $y = substr($chckuji->masaberlakuuji, 4, 4);
+                        $masaberlakuuji = $y . '-' . $m . '-' . $d;
                         $now = date('Y-m-d');
-                        if($masaberlakuuji <= $now){
+                        if ($masaberlakuuji <= $now) {
                             $stskend = '0';
-                        }elseif($masaberlakuuji >= $now){
+                        } elseif ($masaberlakuuji >= $now) {
                             $stskend = '1';
                         }
-                    }else{
+                    } else {
                         // $stskend = '0';
                     }
                 }
-            }else{
-                if($stsPend->kodepenerbitans_id == 9){
+            } else {
+                if ($stsPend->kodepenerbitans_id == 9) {
                     $masaberlakuuji = $stsPend->tglpendaftaran;
                     $now = date('Y-m-d');
                     $date1 = new DateTime($masaberlakuuji);
                     $date2 = new DateTime($now);
                     $interval = $date1->diff($date2);
-                    if($interval->m > 6  || $interval->y >= 1){
+                    if ($interval->m > 6  || $interval->y >= 1) {
                         $stskend = '0';
-                    }else{
+                    } else {
                         $stskend = '1';
                     }
-                }elseif($stsPend->kodepenerbitans_id == 10){
+                } elseif ($stsPend->kodepenerbitans_id == 10) {
                     $stskend = '5';
-                }elseif($stsPend->kodepenerbitans_id == 5){
+                } elseif ($stsPend->kodepenerbitans_id == 5) {
                     $stskend = '2';
-                }else{
+                } else {
                     $stskend = '7';
                 }
             }
-        } 
+        }
 
-        $update = $this->model->where('id',$id)->first();
+        $update = $this->model->where('id', $id)->first();
         $update->statuskendaraan = $stskend;
         $update->tglterdaftar = $inkend;
         $update->tglout = $outkend;
@@ -435,80 +494,79 @@ class IdentitaskendaraanRepository
             'tglberlakuuji'           => null,
             'tglout'                  => null,
         ]);
-        if($dataIden)
-        {
+        if ($dataIden) {
             $kend = Datakendaraan::create([
-                        'identitaskendaraan_id'     => $dataIden->id,
-                        'jbb'                   => '0',
-                        'jbkb'                  => '0',
-                        'jbi'                   => '0',
-                        'jbki'                  => '0',
-                        'mst'                   => '0',
-                        'konfigurasisumburoda' => null,
-                        'ukuranban'             => null,
-                        'panjangkendaraan'      => '0',
-                        'lebarkendaraan'        => '0',
-                        'tinggikendaraan'       => '0',
-                        'panjangbakatautangki'  => '0',
-                        'lebarbakatautangki'    => '0',
-                        'tinggibakatautangki'   => '0',
-                        'julurdepan'            => '0',
-                        'julurbelakang'         => '0',
-                        'groundclearance'       => '0',
-                        'jumlah_sumbu'          => 2,
-                        'jaraksumbu1_2'         => '0',
-                        'jaraksumbu2_3'         => '0',
-                        'jaraksumbu3_4'         => '0',
-                        'jaraksumbu4_5'         => '0',
-                        'jaraksumbu5_6'         => '0',
-                        'jaraksumbu6_7'         => '0',
-                        'jaraksumbu7_8'         => '0',
-                        'jaraksumbu8_9'         => '0',
-                        'jaraksumbu9_10'        => '0',
-                        'jaraksumbu10_11'       => '0',
-                        'jaraksumbu11_12'       => '0',
-                        'q'                     => '0',
-                        'a'                     => '0',
-                        'r'                     => '0',
-                        'b'                     => '0',
-                        'p'                     => '0',
-                        'dayaangkutorang'       => 0,
-                        'dayaangkutbarang'      => 0,
-                        'kelasjalanterendah'    => null,
-                        'idkelasjalanterendah'  => null,
-                        'beratkosong'           => 0,
-                        'beratsumbu1'           => 0,
-                        'beratsumbu2'           => 0,
-                        'beratsumbu3'           => 0,
-                        'beratsumbu4'           => 0,
-                        'beratsumbu5'           => 0,
-                        'beratsumbu6'           => 0,
-                        'beratsumbu7'           => 0,
-                        'beratsumbu8'           => 0,
-                        'beratsumbu9'           => 0,
-                        'beratsumbu10'          => 0,
-                        'beratsumbu11'          => 0,
-                        'beratsumbu12'          => 0,
-                        'lebarpintu'            => '0',
-                        'tinggipintu'           => '0',
-                        'tinggianaktangga'      => '0',
-                        'lebaranaktangga'       => '0',
-                        'lebarlorong'           => '0',
-                        'tinggitempatberdiri'   => '0',
-                        'lebartempatduduk'      => '0',
-                        'jaraktempatduduk'      => '0',
-                        'lebarpintudarurat'     => '0',
-                        'panjangakseskeluar'    => '0',
-                        'lebarakseskeluar'      => '0',
-                        'jarakantarbumper'      => '0',
-                        'volume'                => '0',
-                        'jenismuatan'           => null,
-                        'beratjenismuatan'      => '0',
-                        'posisinomeruji'        => null,
-                        'catatanrubahbentuk'    => null,
-                        'bahan'                 => null,
-                        'rumahrumah'            => null,
-                    ]);
+                'identitaskendaraan_id'     => $dataIden->id,
+                'jbb'                   => '0',
+                'jbkb'                  => '0',
+                'jbi'                   => '0',
+                'jbki'                  => '0',
+                'mst'                   => '0',
+                'konfigurasisumburoda' => null,
+                'ukuranban'             => null,
+                'panjangkendaraan'      => '0',
+                'lebarkendaraan'        => '0',
+                'tinggikendaraan'       => '0',
+                'panjangbakatautangki'  => '0',
+                'lebarbakatautangki'    => '0',
+                'tinggibakatautangki'   => '0',
+                'julurdepan'            => '0',
+                'julurbelakang'         => '0',
+                'groundclearance'       => '0',
+                'jumlah_sumbu'          => 2,
+                'jaraksumbu1_2'         => '0',
+                'jaraksumbu2_3'         => '0',
+                'jaraksumbu3_4'         => '0',
+                'jaraksumbu4_5'         => '0',
+                'jaraksumbu5_6'         => '0',
+                'jaraksumbu6_7'         => '0',
+                'jaraksumbu7_8'         => '0',
+                'jaraksumbu8_9'         => '0',
+                'jaraksumbu9_10'        => '0',
+                'jaraksumbu10_11'       => '0',
+                'jaraksumbu11_12'       => '0',
+                'q'                     => '0',
+                'a'                     => '0',
+                'r'                     => '0',
+                'b'                     => '0',
+                'p'                     => '0',
+                'dayaangkutorang'       => 0,
+                'dayaangkutbarang'      => 0,
+                'kelasjalanterendah'    => null,
+                'idkelasjalanterendah'  => null,
+                'beratkosong'           => 0,
+                'beratsumbu1'           => 0,
+                'beratsumbu2'           => 0,
+                'beratsumbu3'           => 0,
+                'beratsumbu4'           => 0,
+                'beratsumbu5'           => 0,
+                'beratsumbu6'           => 0,
+                'beratsumbu7'           => 0,
+                'beratsumbu8'           => 0,
+                'beratsumbu9'           => 0,
+                'beratsumbu10'          => 0,
+                'beratsumbu11'          => 0,
+                'beratsumbu12'          => 0,
+                'lebarpintu'            => '0',
+                'tinggipintu'           => '0',
+                'tinggianaktangga'      => '0',
+                'lebaranaktangga'       => '0',
+                'lebarlorong'           => '0',
+                'tinggitempatberdiri'   => '0',
+                'lebartempatduduk'      => '0',
+                'jaraktempatduduk'      => '0',
+                'lebarpintudarurat'     => '0',
+                'panjangakseskeluar'    => '0',
+                'lebarakseskeluar'      => '0',
+                'jarakantarbumper'      => '0',
+                'volume'                => '0',
+                'jenismuatan'           => null,
+                'beratjenismuatan'      => '0',
+                'posisinomeruji'        => null,
+                'catatanrubahbentuk'    => null,
+                'bahan'                 => null,
+                'rumahrumah'            => null,
+            ]);
         }
 
         return $dataIden->id;

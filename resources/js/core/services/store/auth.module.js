@@ -18,23 +18,24 @@ export const SET_ERROR = "setError";
 
 const state = {
   errors: null,
-  notif :{
-    foto:"0",
-    pos1:"0",
-    pos2:"0",
-    pos3:"0",
-    pos4:"0",
-    pos5:"0",
-    pos6:"0",
-    pos7:"0",
-    pos8:"0",
-    verif1:"0",
-    cetak:"0",
-    surat:"0",
-    penyerahan:"0",
+  notif: {
+    approvals: "0",
+    foto: "0",
+    pos1: "0",
+    pos2: "0",
+    pos3: "0",
+    pos4: "0",
+    pos5: "0",
+    pos6: "0",
+    pos7: "0",
+    pos8: "0",
+    verif1: "0",
+    cetak: "0",
+    surat: "0",
+    penyerahan: "0",
   },
   user: {},
-  isAuthenticated: !!JwtService.getToken()
+  isAuthenticated: !!JwtService.getToken(),
 };
 
 const getters = {
@@ -46,27 +47,27 @@ const getters = {
   },
   isAuthenticated(state) {
     return state.isAuthenticated;
-  }
+  },
 };
 
 const actions = {
   [LOGIN](context, credentials) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       ApiService.post("login", credentials)
         .then(({ data }) => {
-          if(data){
-            if(data.message == 'Username atau Password tidak sesuai!.'){
+          if (data) {
+            if (data.message == "Username atau Password tidak sesuai!.") {
               context.commit(SET_ERROR, data.message);
               Swal.fire({
-                  title: "",
-                  text: data.message,
-                  icon: "warning",
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    location.reload();
-                  }
-                });
-            }else{
+                title: "",
+                text: data.message,
+                icon: "warning",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  location.reload();
+                }
+              });
+            } else {
               context.commit(SET_AUTH, data);
             }
           }
@@ -79,7 +80,7 @@ const actions = {
             icon: "error",
             showConfirmButton: false,
             timer: 1500,
-            heightAuto: false
+            heightAuto: false,
           });
           // context.commit(SET_ERROR, response.data.message);
         });
@@ -89,7 +90,7 @@ const actions = {
     context.commit(PURGE_AUTH);
   },
   [REGISTER](context, credentials) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       ApiService.post("register", credentials)
         .then(({ data }) => {
           context.commit(SET_AUTH, data);
@@ -105,24 +106,27 @@ const actions = {
       ApiService.setHeader();
       ApiService.get("verify")
         .then(({ data }) => {
-            if(data.status == "Not authenticated" && state.isAuthenticated == true){
-              context.commit(PURGE_AUTH);
-              Swal.fire({
-                  title: "",
-                  text: "Harap Login Ulang, Session telah berakhir!!",
-                  icon: "warning",
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    location.reload();
-                  }
-                });
-            }else{
-              context.commit(SET_NOTIF, data);
-            }
+          if (
+            data.status == "Not authenticated" &&
+            state.isAuthenticated == true
+          ) {
+            context.commit(PURGE_AUTH);
+            Swal.fire({
+              title: "",
+              text: "Harap Login Ulang, Session telah berakhir!!",
+              icon: "warning",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                location.reload();
+              }
+            });
+          } else {
+            context.commit(SET_NOTIF, data);
+          }
         })
         .catch(({ response }) => {
           context.commit(SET_ERROR, response.data.errors);
-          });
+        });
     } else {
       context.commit(PURGE_AUTH);
     }
@@ -134,7 +138,7 @@ const actions = {
       context.commit(SET_PASSWORD, data);
       return data;
     });
-  }
+  },
 };
 
 const mutations = {
@@ -160,12 +164,12 @@ const mutations = {
     state.user = {};
     state.errors = {};
     JwtService.destroyToken();
-  }
+  },
 };
 
 export default {
   state,
   actions,
   mutations,
-  getters
+  getters,
 };

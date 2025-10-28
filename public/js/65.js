@@ -1,1 +1,300 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[65],{416:function(a,e,t){"use strict";t.r(e);var r=t(6),o=t(3),s=t.n(o),n=t(0);function i(a){return(i="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?"symbol":typeof a})(a)}function l(a,e){var t=Object.keys(a);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(a);e&&(r=r.filter((function(e){return Object.getOwnPropertyDescriptor(a,e).enumerable}))),t.push.apply(t,r)}return t}function p(a){for(var e=1;e<arguments.length;e++){var t=null!=arguments[e]?arguments[e]:{};e%2?l(Object(t),!0).forEach((function(e){v(a,e,t[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(t)):l(Object(t)).forEach((function(e){Object.defineProperty(a,e,Object.getOwnPropertyDescriptor(t,e))}))}return a}function v(a,e,t){return(e=function(a){var e=function(a,e){if("object"!==i(a)||null===a)return a;var t=a[Symbol.toPrimitive];if(void 0!==t){var r=t.call(a,e||"default");if("object"!==i(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===e?String:Number)(a)}(a,"string");return"symbol"===i(e)?e:String(e)}(e))in a?Object.defineProperty(a,e,{value:t,enumerable:!0,configurable:!0,writable:!0}):a[e]=t,a}var c={data:function(){return{}},mounted:function(){this.$store.dispatch(r.a,[{title:"Verifikasi Kendaraan"},{title:"Pendaftaran Online"}])},created:function(){this.editPendaftaranOnline(this.$route.params.id)},methods:p(p({},Object(n.b)("pendaftaranonline",["editPendaftaranOnline","submitApprove"])),{},{submit:function(){var a=this;this.submitApprove().then((function(){s.a.fire({icon:"success",title:"Saved",showConfirmButton:!1,timer:1500}),console.log(a.uuid),a.$router.push({name:"pendaftaran.edit",params:{id:a.uuid}})}))},goBack:function(){this.$router.go(-1)}}),computed:p(p({},Object(n.e)(["errors"])),Object(n.e)({pendaftaranonline:function(a){return a.pendaftaranonline.pendaftaranonline},approve:function(a){return a.pendaftaranonline.approve},uuid:function(a){return a.pendaftaranonline.uuid}})),components:{}},u=t(1),m=Object(u.a)(c,(function(){var a=this,e=a._self._c;return e("div",{staticClass:"card card-custom card-sticky",attrs:{id:"kt_page_sticky_card"}},[a._m(0),a._v(" "),e("b-collapse",{attrs:{visible:"",id:"collapse-3"}},[e("div",{staticClass:"card-body"},[e("div",{staticClass:"row"},[e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Tanggal Pendaftaran")]),a._v(" "),e("b-form-datepicker",{attrs:{id:"tglpendaftaranonline",locale:"id",disabled:!0},model:{value:a.approve.tglpendaftaran,callback:function(e){a.$set(a.approve,"tglpendaftaran",e)},expression:"approve.tglpendaftaran"}})],1)]),a._v(" "),e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Jenis Pendaftaran")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.keterangan,expression:"approve.keterangan"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"keterangan",readonly:""},domProps:{value:a.approve.keterangan},on:{input:function(e){e.target.composing||a.$set(a.approve,"keterangan",e.target.value)}}})])]),a._v(" "),e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Waktu")]),a._v(" "),e("select",{directives:[{name:"model",rawName:"v-model",value:a.approve.waktu,expression:"approve.waktu"}],staticClass:"form-control",attrs:{disabled:!0},on:{change:function(e){var t=Array.prototype.filter.call(e.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.approve,"waktu",e.target.multiple?t:t[0])}}},[e("option",{attrs:{value:"1"}},[a._v("Pagi")]),a._v(" "),e("option",{attrs:{value:"2"}},[a._v("Siang")])])])]),a._v(" "),e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v(" No Uji")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.nouji,expression:"approve.nouji"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"nouji",readonly:"",placeholder:"No Uji"},domProps:{value:a.approve.nouji},on:{input:function(e){e.target.composing||a.$set(a.approve,"nouji",e.target.value)}}})])]),a._v(" "),e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("No Kendaraan")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.noregistrasikendaraan,expression:"approve.noregistrasikendaraan"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"noregistrasikendaraan",readonly:"",placeholder:" No Kendaraan",disabled:!0},domProps:{value:a.approve.noregistrasikendaraan},on:{input:function(e){e.target.composing||a.$set(a.approve,"noregistrasikendaraan",e.target.value)}}})])]),a._v(" "),e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Nama Pemohon")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.namapemohon,expression:"approve.namapemohon"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"namapemohon",readonly:"",placeholder:"Nama Pemohon",disabled:!0},domProps:{value:a.approve.namapemohon},on:{input:function(e){e.target.composing||a.$set(a.approve,"namapemohon",e.target.value)}}})])]),a._v(" "),"1"==a.approve.status_data?e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Nama Pemilik")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.nama,expression:"approve.nama"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"nama",readonly:"",placeholder:"Nama",disabled:!0},domProps:{value:a.approve.nama},on:{input:function(e){e.target.composing||a.$set(a.approve,"nama",e.target.value)}}})])]):a._e(),a._v(" "),"1"==a.approve.status_data?e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Alamat")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.alamat,expression:"approve.alamat"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"alamat",readonly:"",placeholder:"Alamat",disabled:!0},domProps:{value:a.approve.alamat},on:{input:function(e){e.target.composing||a.$set(a.approve,"alamat",e.target.value)}}})])]):a._e(),a._v(" "),e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("No Telp")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.notelp,expression:"approve.notelp"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"notelp",readonly:"",placeholder:"No Telp",disabled:!0},domProps:{value:a.approve.notelp},on:{input:function(e){e.target.composing||a.$set(a.approve,"notelp",e.target.value)}}})])]),a._v(" "),"1"==a.approve.status_data?e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Merek")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.merek,expression:"approve.merek"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"merek",readonly:""},domProps:{value:a.approve.merek},on:{input:function(e){e.target.composing||a.$set(a.approve,"merek",e.target.value)}}})])]):a._e(),a._v(" "),"1"==a.approve.status_data?e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Tipe")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.tipe,expression:"approve.tipe"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"tipe",readonly:""},domProps:{value:a.approve.tipe},on:{input:function(e){e.target.composing||a.$set(a.approve,"tipe",e.target.value)}}})])]):a._e(),a._v(" "),"1"==a.approve.status_data?e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Jenis")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.jenis,expression:"approve.jenis"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"jenis",readonly:""},domProps:{value:a.approve.jenis},on:{input:function(e){e.target.composing||a.$set(a.approve,"jenis",e.target.value)}}})])]):a._e(),a._v(" "),"1"==a.approve.status_data?e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Model")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.jenis,expression:"approve.jenis"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"subjenis",readonly:""},domProps:{value:a.approve.jenis},on:{input:function(e){e.target.composing||a.$set(a.approve,"jenis",e.target.value)}}})])]):a._e(),a._v(" "),"1"==a.approve.status_data?e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("No Rangka")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.norangka,expression:"approve.norangka"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"norangka",readonly:""},domProps:{value:a.approve.norangka},on:{input:function(e){e.target.composing||a.$set(a.approve,"norangka",e.target.value)}}})])]):a._e(),a._v(" "),"1"==a.approve.status_data?e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("No Mesin")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.nomesin,expression:"approve.nomesin"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"nomesin",readonly:""},domProps:{value:a.approve.nomesin},on:{input:function(e){e.target.composing||a.$set(a.approve,"nomesin",e.target.value)}}})])]):a._e(),a._v(" "),"1"==a.approve.status_data?e("div",{staticClass:"col-sm-4"},[e("div",{staticClass:"form-group"},[e("label",[a._v("Tahun Pembuatan")]),a._v(" "),e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.thpembuatan,expression:"approve.thpembuatan"}],staticClass:"form-control form-control-lg",attrs:{type:"text",name:"thpembuatan",readonly:""},domProps:{value:a.approve.thpembuatan},on:{input:function(e){e.target.composing||a.$set(a.approve,"thpembuatan",e.target.value)}}})])]):a._e(),a._v(" "),e("div",{staticClass:"col-sm-12 text-center"},["0"==a.approve.status_data?e("h3",{staticClass:"text-danger"},[a._v("Data Kendaraan Belum terdata di Database")]):a._e(),a._v(" "),"1"==a.approve.status_data?e("h3",{staticClass:"text-success"},[a._v("Data Kendaraan terdata di Database")]):a._e()])])]),a._v(" "),e("div",{staticClass:"hr-with-text"},[e("span",[a._v("Verifikasi Kelengkapan Berkas")])]),a._v(" "),e("div",{staticClass:"card-body"},[e("div",{staticClass:"row"},[e("div",{staticClass:"col-4"},[e("div",{staticClass:"checkbox-list"},[e("label",{staticClass:"checkbox"},[e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.v_stnk,expression:"approve.v_stnk"}],attrs:{type:"checkbox",name:"v_stnk","true-value":1,"false-value":0,disabled:!0},domProps:{checked:Array.isArray(a.approve.v_stnk)?a._i(a.approve.v_stnk,null)>-1:a._q(a.approve.v_stnk,1)},on:{change:function(e){var t=a.approve.v_stnk,r=e.target,o=r.checked?1:0;if(Array.isArray(t)){var s=a._i(t,null);r.checked?s<0&&a.$set(a.approve,"v_stnk",t.concat([null])):s>-1&&a.$set(a.approve,"v_stnk",t.slice(0,s).concat(t.slice(s+1)))}else a.$set(a.approve,"v_stnk",o)}}}),a._v(" "),e("span"),a._v("\n                            STNK asli dan masih berlaku\n                        ")])])]),a._v(" "),"Numpang Uji Keluar"==a.approve.keterangan||"Uji Berkala"==a.approve.keterangan||"Rusak"==a.approve.keterangan||"Mutasi Masuk"==a.approve.keterangan?e("div",{staticClass:"col-4"},[e("div",{staticClass:"checkbox-list"},[e("label",{staticClass:"checkbox"},[e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.v_smartcard,expression:"approve.v_smartcard"}],attrs:{type:"checkbox",name:"v_smartcard","true-value":1,"false-value":0},domProps:{checked:Array.isArray(a.approve.v_smartcard)?a._i(a.approve.v_smartcard,null)>-1:a._q(a.approve.v_smartcard,1)},on:{change:function(e){var t=a.approve.v_smartcard,r=e.target,o=r.checked?1:0;if(Array.isArray(t)){var s=a._i(t,null);r.checked?s<0&&a.$set(a.approve,"v_smartcard",t.concat([null])):s>-1&&a.$set(a.approve,"v_smartcard",t.slice(0,s).concat(t.slice(s+1)))}else a.$set(a.approve,"v_smartcard",o)}}}),a._v(" "),e("span"),a._v("\n                            Kartu Uji\n                        ")])])]):a._e(),a._v(" "),"Uji Pertama"==a.approve.keterangan?e("div",{staticClass:"col-4"},[e("div",{staticClass:"checkbox-list"},[e("label",{staticClass:"checkbox"},[e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.v_srut,expression:"approve.v_srut"}],attrs:{type:"checkbox",name:"v_srut","true-value":1,"false-value":0},domProps:{checked:Array.isArray(a.approve.v_srut)?a._i(a.approve.v_srut,null)>-1:a._q(a.approve.v_srut,1)},on:{change:function(e){var t=a.approve.v_srut,r=e.target,o=r.checked?1:0;if(Array.isArray(t)){var s=a._i(t,null);r.checked?s<0&&a.$set(a.approve,"v_srut",t.concat([null])):s>-1&&a.$set(a.approve,"v_srut",t.slice(0,s).concat(t.slice(s+1)))}else a.$set(a.approve,"v_srut",o)}}}),a._v(" "),e("span"),a._v("\n                            SRUT\n                        ")])])]):a._e(),a._v(" "),"Mutasi Masuk"==a.approve.keterangan?e("div",{staticClass:"col-4"},[e("div",{staticClass:"checkbox-list"},[e("label",{staticClass:"checkbox"},[e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.v_suratketerangan,expression:"approve.v_suratketerangan"}],attrs:{type:"checkbox",name:"v_riwayat","true-value":1,"false-value":0},domProps:{checked:Array.isArray(a.approve.v_suratketerangan)?a._i(a.approve.v_suratketerangan,null)>-1:a._q(a.approve.v_suratketerangan,1)},on:{change:function(e){var t=a.approve.v_suratketerangan,r=e.target,o=r.checked?1:0;if(Array.isArray(t)){var s=a._i(t,null);r.checked?s<0&&a.$set(a.approve,"v_suratketerangan",t.concat([null])):s>-1&&a.$set(a.approve,"v_suratketerangan",t.slice(0,s).concat(t.slice(s+1)))}else a.$set(a.approve,"v_suratketerangan",o)}}}),a._v(" "),e("span"),a._v("\n                            Surat keterangan / persetujuan mutasi dari daerah asal dan kelengkapannya\n                        ")])])]):a._e(),a._v(" "),"Numpang Uji Masuk"==a.approve.keterangan?e("div",{staticClass:"col-4"},[e("div",{staticClass:"checkbox-list"},[e("label",{staticClass:"checkbox"},[e("input",{directives:[{name:"model",rawName:"v-model",value:a.approve.v_suratketerangan,expression:"approve.v_suratketerangan"}],attrs:{type:"checkbox",name:"v_riwayat","true-value":1,"false-value":0},domProps:{checked:Array.isArray(a.approve.v_suratketerangan)?a._i(a.approve.v_suratketerangan,null)>-1:a._q(a.approve.v_suratketerangan,1)},on:{change:function(e){var t=a.approve.v_suratketerangan,r=e.target,o=r.checked?1:0;if(Array.isArray(t)){var s=a._i(t,null);r.checked?s<0&&a.$set(a.approve,"v_suratketerangan",t.concat([null])):s>-1&&a.$set(a.approve,"v_suratketerangan",t.slice(0,s).concat(t.slice(s+1)))}else a.$set(a.approve,"v_suratketerangan",o)}}}),a._v(" "),e("span"),a._v("\n                            Surat keterangan / persetujuan Numpang uji dari daerah asal \n                        ")])])]):a._e(),a._v(" "),e("div",{staticClass:"col-12 text-right"},[e("button",{staticClass:"btn btn-sm btn-light-warning mr-2",on:{click:a.goBack}},[a._v("Close")]),a._v(" "),e("button",{staticClass:"btn btn-primary btn-sm",on:{click:function(e){return e.preventDefault(),a.submit.apply(null,arguments)}}},[e("i",{staticClass:"fa fa-save"}),a._v(" Submit\n                    ")])])])])])],1)}),[function(){var a=this._self._c;return a("div",{staticClass:"card-header"},[a("div",{staticClass:"card-title"},[a("h3",{staticClass:"card-label"},[this._v("Data Kendaraan")])])])}],!1,null,null,null);e.default=m.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[65],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pos1/TableLulus.vue?vue&type=script&lang=js":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pos1/TableLulus.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/core/services/store/breadcrumbs.module */ "./resources/js/core/services/store/breadcrumbs.module.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+
+
+
+function ownKeys(e, r) { var t = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(e); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default.a) { var o = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default()(e); r && (o = o.filter(function (r) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default()(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4___default()(e, r, t[r]); }) : _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default.a ? Object.defineProperties(e, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default()(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default()(t, r)); }); } return e; }
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  created: function created() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+    var yyyy = today.getFullYear();
+    today = yyyy + "-" + mm + "-" + dd;
+    this.tgl = today;
+  },
+  data: function data() {
+    return {
+      // users: {}
+      search: "",
+      tgl: ""
+    };
+  },
+  mounted: function mounted() {
+    this.$store.dispatch(_core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_5__["SET_BREADCRUMB"], [{
+      title: "Pendaftaran"
+    }, {
+      title: "Data"
+    }]);
+  },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_6__["mapState"])(["pos1"])), {}, {
+    page: {
+      get: function get() {
+        return this.$store.state.pos1.page;
+      },
+      set: function set(val) {
+        this.$store.commit("pos1/SET_PAGE", val);
+      }
+    }
+  }),
+  watch: {
+    page: function page() {
+      this.getPendaftaransLulus();
+    },
+    search: function search() {
+      this.getPendaftaransLulus(this.search);
+    },
+    tgl: function tgl() {
+      this.$store.commit("pos1/SET_TGL", this.customFormatter(this.tgl));
+      this.getPendaftaransLulus(this.search);
+    }
+  },
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_6__["mapActions"])("pos1", ["getPendaftaransLulus"])), {}, {
+    customFormatter: function customFormatter(today) {
+      return today;
+    },
+    reload: function reload() {
+      this.getPendaftaransLulus(this.search);
+    }
+  }),
+  components: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pos1/TableLulus.vue?vue&type=template&id=ce364ee4":
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pos1/TableLulus.vue?vue&type=template&id=ce364ee4 ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "card card-custom"
+  }, [_c("div", {
+    staticClass: "card-header"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "card-toolbar"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-6"
+  }, [_c("b-form-datepicker", {
+    attrs: {
+      id: "example-datepicker",
+      locale: "id"
+    },
+    model: {
+      value: _vm.tgl,
+      callback: function callback($$v) {
+        _vm.tgl = $$v;
+      },
+      expression: "tgl"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-4"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.search,
+      expression: "search"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "serach"
+    },
+    domProps: {
+      value: _vm.search
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.search = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col-2"
+  }, [_c("a", {
+    staticClass: "btn btn-sm btn-icon btn-light-info mr-2",
+    attrs: {
+      title: "reload data"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.reload.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-reload"
+  })])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row table-responsive"
+  }, [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("table", {
+    staticClass: "table"
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.pos1.pendaftaransLulus.data, function (pendaftaran, index) {
+    return _c("tr", {
+      key: pendaftaran.uuid
+    }, [_c("td", [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(pendaftaran.keterangan))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(pendaftaran.nouji))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(pendaftaran.noregistrasikendaraan))]), _vm._v(" "), _c("td", [_c("router-link", {
+      attrs: {
+        to: {
+          name: "pos1.pengujian",
+          params: {
+            id: pendaftaran.uuid
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit text-success"
+    })])], 1)]);
+  }), 0)])])])]), _vm._v(" "), _c("div", {
+    staticClass: "card-footer"
+  }, [_c("div", {
+    staticClass: "pull-right"
+  }, [_c("div", {
+    staticClass: "overflow-auto"
+  }, [_vm.pos1.pendaftaransLulus.data && _vm.pos1.pendaftaransLulus.data.length > 0 ? _c("b-pagination", {
+    attrs: {
+      "total-rows": _vm.pos1.pendaftaransLulus.total,
+      "per-page": _vm.pos1.pendaftaransLulus.per_page,
+      "aria-controls": "pendaftaransLulus"
+    },
+    model: {
+      value: _vm.page,
+      callback: function callback($$v) {
+        _vm.page = $$v;
+      },
+      expression: "page"
+    }
+  }) : _vm._e()], 1)])])]);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "card-title"
+  }, [_c("span", {
+    staticClass: "card-icon"
+  }, [_c("i", {
+    staticClass: "flaticon2-lorry text-primary"
+  })]), _vm._v(" "), _c("h3", {
+    staticClass: "card-label"
+  }, [_vm._v("Pengujian POS 1 Lulus")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("No.")]), _vm._v(" "), _c("th", [_vm._v("Jenis Pendaftaran")]), _vm._v(" "), _c("th", [_vm._v("No Uji")]), _vm._v(" "), _c("th", [_vm._v("No Kendaraan")]), _vm._v(" "), _c("th", [_vm._v("Modify")])])]);
+}];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/pos1/TableLulus.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/view/pages/pos1/TableLulus.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TableLulus_vue_vue_type_template_id_ce364ee4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TableLulus.vue?vue&type=template&id=ce364ee4 */ "./resources/js/view/pages/pos1/TableLulus.vue?vue&type=template&id=ce364ee4");
+/* harmony import */ var _TableLulus_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TableLulus.vue?vue&type=script&lang=js */ "./resources/js/view/pages/pos1/TableLulus.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TableLulus_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TableLulus_vue_vue_type_template_id_ce364ee4__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TableLulus_vue_vue_type_template_id_ce364ee4__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/view/pages/pos1/TableLulus.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/pos1/TableLulus.vue?vue&type=script&lang=js":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/view/pages/pos1/TableLulus.vue?vue&type=script&lang=js ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TableLulus_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TableLulus.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pos1/TableLulus.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TableLulus_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/pos1/TableLulus.vue?vue&type=template&id=ce364ee4":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/view/pages/pos1/TableLulus.vue?vue&type=template&id=ce364ee4 ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_TableLulus_vue_vue_type_template_id_ce364ee4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TableLulus.vue?vue&type=template&id=ce364ee4 */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pos1/TableLulus.vue?vue&type=template&id=ce364ee4");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_TableLulus_vue_vue_type_template_id_ce364ee4__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_TableLulus_vue_vue_type_template_id_ce364ee4__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

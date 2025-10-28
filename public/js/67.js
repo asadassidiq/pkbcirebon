@@ -1,1 +1,109 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[67],{414:function(t,a,e){"use strict";e.r(a);var n=e(6),r=e(0);function i(t){return(i="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function s(t,a){var e=Object.keys(t);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(t);a&&(n=n.filter((function(a){return Object.getOwnPropertyDescriptor(t,a).enumerable}))),e.push.apply(e,n)}return e}function o(t){for(var a=1;a<arguments.length;a++){var e=null!=arguments[a]?arguments[a]:{};a%2?s(Object(e),!0).forEach((function(a){l(t,a,e[a])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(e)):s(Object(e)).forEach((function(a){Object.defineProperty(t,a,Object.getOwnPropertyDescriptor(e,a))}))}return t}function l(t,a,e){return(a=function(t){var a=function(t,a){if("object"!==i(t)||null===t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var n=e.call(t,a||"default");if("object"!==i(n))return n;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===a?String:Number)(t)}(t,"string");return"symbol"===i(a)?a:String(a)}(a))in t?Object.defineProperty(t,a,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[a]=e,t}var c={data:function(){return{search:"",status:"3",tgl:""}},created:function(){var t=new Date,a=String(t.getDate()).padStart(2,"0"),e=String(t.getMonth()+1).padStart(2,"0"),n=t.getFullYear();t=n+"-"+e+"-"+a,this.tgl=t},mounted:function(){this.$store.dispatch(n.a,[{title:"Pendaftaran"},{title:"Online"}])},computed:o(o({},Object(r.e)(["pendaftaranonline"])),{},{page:{get:function(){return this.$store.state.pendaftaranonline.page},set:function(t){this.$store.commit("pendaftaranonline/SET_PAGE",t)}}}),watch:{page:function(){this.getPendaftaranOnlines()},search:function(){this.getPendaftarans(this.search)},tgl:function(){this.$store.commit("pendaftaranonline/SET_TGL",this.customFormatter(this.tgl)),this.getPendaftaranOnlines(this.search)},status:function(){this.$store.commit("pendaftaranonline/SET_STATUS",this.status),this.getPendaftaranOnlines(this.search)}},methods:o(o({},Object(r.b)("pendaftaranonline",["getPendaftaranOnlines"])),{},{deletePendaftaran:function(t){},customFormatter:function(t){return t},print:function(t){window.open("/cetak/"+t+"/pendaftaranonline","_blank")},reload:function(){this.getPendaftaranOnlines(this.search)}}),components:{}},u=e(1),d=Object(u.a)(c,(function(){var t=this,a=t._self._c;return a("div",{staticClass:"card card-custom"},[t._m(0),t._v(" "),a("div",{staticClass:"card-body"},[a("div",{staticClass:"row"},[a("div",{staticClass:"col-3"},[a("b-form-datepicker",{attrs:{id:"example-datepicker",locale:"id"},model:{value:t.tgl,callback:function(a){t.tgl=a},expression:"tgl"}})],1),t._v(" "),a("div",{staticClass:"col-3"},[a("select",{directives:[{name:"model",rawName:"v-model",value:t.status,expression:"status"}],staticClass:"form-control",on:{change:function(a){var e=Array.prototype.filter.call(a.target.options,(function(t){return t.selected})).map((function(t){return"_value"in t?t._value:t.value}));t.status=a.target.multiple?e:e[0]}}},[a("option",{attrs:{value:"1"}},[t._v("Belum Verifikasi")]),t._v(" "),a("option",{attrs:{value:"2"}},[t._v("Verifikasi")]),t._v(" "),a("option",{attrs:{value:"3"}},[t._v("Semua")])])]),t._v(" "),a("div",{staticClass:"col-4"},[a("input",{directives:[{name:"model",rawName:"v-model",value:t.search,expression:"search"}],staticClass:"form-control",attrs:{type:"text",placeholder:"serach"},domProps:{value:t.search},on:{input:function(a){a.target.composing||(t.search=a.target.value)}}})]),t._v(" "),a("div",{staticClass:"col-2"},[a("router-link",{staticClass:"btn btn-sm btn-icon btn-light-success mr-2",attrs:{to:{name:"pendaftaranonline.add"}}},[a("i",{staticClass:"flaticon2-add"})]),t._v(" "),a("a",{staticClass:"btn btn-sm btn-icon btn-light-info mr-2",attrs:{title:"reload data"},on:{click:function(a){return a.preventDefault(),t.reload.apply(null,arguments)}}},[a("i",{staticClass:"flaticon2-reload"})])],1)]),t._v(" "),a("div",{staticClass:"row table-responsive"},[a("div",{staticClass:"col-md-12"},[a("table",{staticClass:"table"},[t._m(1),t._v(" "),a("tbody",t._l(t.pendaftaranonline.pendaftaranonlines.data,(function(e,n){return a("tr",{key:e.uuid},[a("td",[t._v(t._s(n+1))]),t._v(" "),a("td",[t._v(t._s(e.keterangan))]),t._v(" "),a("td",[t._v(t._s(e.nouji))]),t._v(" "),a("td",[t._v(t._s(e.noregistrasikendaraan))]),t._v(" "),"1"==e.waktu?a("td",[t._v("Pagi")]):a("td",[t._v("Siang")]),t._v(" "),"1"==e.status?a("td",[t._v("terverifikasi")]):a("td",[t._v("belum diverifikasi")]),t._v(" "),a("td",["0"==e.status?a("router-link",{attrs:{to:{name:"pendaftaranonline.approving",params:{id:e.uuid}}}},[a("i",{staticClass:"far fa-check-square text-success"})]):t._e(),t._v(" "),a("a",{attrs:{href:"javascript:void(0)"},on:{click:function(a){return t.print(e.uuid)}}},[a("i",{staticClass:"fa fa-print text-info"})])],1)])})),0)])])])]),t._v(" "),a("div",{staticClass:"card-footer"},[a("div",{staticClass:"pull-right"},[a("div",{staticClass:"overflow-auto"},[t.pendaftaranonline.pendaftaranonlines.data&&t.pendaftaranonline.pendaftaranonlines.data.length>0?a("b-pagination",{attrs:{"total-rows":t.pendaftaranonline.pendaftaranonlines.total,"per-page":t.pendaftaranonline.pendaftaranonlines.per_page,"aria-controls":"pendaftaranonlines"},model:{value:t.page,callback:function(a){t.page=a},expression:"page"}}):t._e()],1)])])])}),[function(){var t=this._self._c;return t("div",{staticClass:"card-header"},[t("div",{staticClass:"card-title"},[t("span",{staticClass:"card-icon"},[t("i",{staticClass:"flaticon2-lorry text-primary"})]),this._v(" "),t("h3",{staticClass:"card-label"},[this._v("Pendaftaran Online")])]),this._v(" "),t("div",{staticClass:"card-toolbar"},[t("div",{staticClass:"row"})])])},function(){var t=this,a=t._self._c;return a("thead",[a("tr",[a("th",[t._v("No.")]),t._v(" "),a("th",[t._v("Jenis Pendaftaran")]),t._v(" "),a("th",[t._v("No Uji")]),t._v(" "),a("th",[t._v("No Kendaraan")]),t._v(" "),a("th",[t._v("Waktu")]),t._v(" "),a("th",[t._v("Status")]),t._v(" "),a("th",[t._v("Modify")])])])}],!1,null,null,null);a.default=d.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[67],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pos2/Index.vue?vue&type=script&lang=js":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pos2/Index.vue?vue&type=script&lang=js ***!
+  \********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pos2/Index.vue?vue&type=template&id=498ab288":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/pos2/Index.vue?vue&type=template&id=498ab288 ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("router-view");
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/pos2/Index.vue":
+/*!************************************************!*\
+  !*** ./resources/js/view/pages/pos2/Index.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Index_vue_vue_type_template_id_498ab288__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Index.vue?vue&type=template&id=498ab288 */ "./resources/js/view/pages/pos2/Index.vue?vue&type=template&id=498ab288");
+/* harmony import */ var _Index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Index.vue?vue&type=script&lang=js */ "./resources/js/view/pages/pos2/Index.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Index_vue_vue_type_template_id_498ab288__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Index_vue_vue_type_template_id_498ab288__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/view/pages/pos2/Index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/pos2/Index.vue?vue&type=script&lang=js":
+/*!************************************************************************!*\
+  !*** ./resources/js/view/pages/pos2/Index.vue?vue&type=script&lang=js ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pos2/Index.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/pos2/Index.vue?vue&type=template&id=498ab288":
+/*!******************************************************************************!*\
+  !*** ./resources/js/view/pages/pos2/Index.vue?vue&type=template&id=498ab288 ***!
+  \******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_498ab288__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=template&id=498ab288 */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/pos2/Index.vue?vue&type=template&id=498ab288");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_498ab288__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_498ab288__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

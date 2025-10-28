@@ -1,1 +1,422 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[82],{397:function(a,t,n){"use strict";n.r(t);var i=n(6),e=n(3),s=n.n(e),r=n(0);function l(a){return(l="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?"symbol":typeof a})(a)}function o(a,t){var n=Object.keys(a);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(a);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(a,t).enumerable}))),n.push.apply(n,i)}return n}function d(a){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?o(Object(n),!0).forEach((function(t){u(a,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(n)):o(Object(n)).forEach((function(t){Object.defineProperty(a,t,Object.getOwnPropertyDescriptor(n,t))}))}return a}function u(a,t,n){return(t=function(a){var t=function(a,t){if("object"!==l(a)||null===a)return a;var n=a[Symbol.toPrimitive];if(void 0!==n){var i=n.call(a,t||"default");if("object"!==l(i))return i;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(a)}(a,"string");return"symbol"===l(t)?t:String(t)}(t))in a?Object.defineProperty(a,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):a[t]=n,a}var c={data:function(){return{lainlain:!1}},computed:d(d({},Object(r.e)(["errors"])),Object(r.e)("pos3",{identifikasi:function(a){return a.identifikasi},dimensi:function(a){return a.dimensi},depan:function(a){return a.depan},kanan:function(a){return a.kanan},kiri:function(a){return a.kiri},belakang:function(a){return a.belakang},dalam:function(a){return a.dalam},laikjalan:function(a){return a.laikjalan},catatan:function(a){return a.catatan},pendaftaran:function(a){return a.pendaftaran},identitaskendaraan:function(a){return a.identitaskendaraan},alasan:function(a){return a.alasan}})),methods:d(d(d({},Object(r.d)("pos3",["CLEAR_FORM","CLEAR_CATATAN","SET_STATUS"])),Object(r.b)("pos3",["submitCatatan","getCatatan","getAlasan"])),{},{showModal:function(a,t){this.CLEAR_CATATAN(),this.catatan.nama=a,this.catatan.hasiluji=t,this.catatan.pos=3,this.catatan.status=1,this.getAlasan(),this.getCatatan(this.$route.params.id),this.$refs["my-modal"].show()},hideModal:function(){this.$refs["my-modal"].hide()},lain:function(){"Lain-lain"==this.catatan.rekomendasi?(this.lainlain=!0,this.catatan.rekomendasi=""):this.lainlain=!1},check:function(a,t){(this.identitaskendaraan.jbb<=3500&&this.identitaskendaraan.thpembuatan<2010&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>65||this.identitaskendaraan.jbb<=3500&&this.identitaskendaraan.thpembuatan>=2010&&this.identitaskendaraan.thpembuatan<=2021&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>40||this.identitaskendaraan.jbb<=3500&&this.identitaskendaraan.thpembuatan>2021&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>30||this.identitaskendaraan.jbb>3500&&this.identitaskendaraan.thpembuatan<2010&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>65||this.identitaskendaraan.jbb>3500&&this.identitaskendaraan.thpembuatan>=2010&&this.identitaskendaraan.thpembuatan<=2021&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>40||this.identitaskendaraan.jbb>3500&&this.identitaskendaraan.thpembuatan>2021&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>35||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan<2007&&this.laikjalan.alatuji_emisicobahanbakarbensin>4||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>=2007&&this.identitaskendaraan.thpembuatan<=2018&&this.laikjalan.alatuji_emisicobahanbakarbensin>1||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>2018&&this.laikjalan.alatuji_emisicobahanbakarbensin>.5||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan<2007&&this.laikjalan.alatuji_emisicobahanbakarbensin>4||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>=2007&&this.identitaskendaraan.thpembuatan<=2018&&this.laikjalan.alatuji_emisicobahanbakarbensin>1||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>2018&&this.laikjalan.alatuji_emisicobahanbakarbensin>.5||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan<2007&&this.laikjalan.alatuji_emisihcbahanbakarbensin>1e3||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>=2007&&this.identitaskendaraan.thpembuatan<=2018&&this.laikjalan.alatuji_emisihcbahanbakarbensin>150||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>2018&&this.laikjalan.alatuji_emisihcbahanbakarbensin>100||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan<2007&&this.laikjalan.alatuji_emisihcbahanbakarbensin>1100||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>=2007&&this.identitaskendaraan.thpembuatan<=2018&&this.laikjalan.alatuji_emisihcbahanbakarbensin>200||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>2018&&this.laikjalan.alatuji_emisihcbahanbakarbensin>150)&&(this.catatan.nama=a,this.catatan.hasiluji=t,this.getAlasan(),this.getCatatan(this.$route.params.id),this.$refs["my-modal"].show())},submit:function(){this.submitCatatan(this.$route.params.id).then((function(){s.a.fire({title:"",text:"The application has been successfully submitted!",icon:"success",showConfirmButton:!1,timer:1500})}))},hasiluji:function(){this.identitaskendaraan.jbb<=3500&&this.identitaskendaraan.thpembuatan<2010&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>65||this.identitaskendaraan.jbb<=3500&&this.identitaskendaraan.thpembuatan>=2010&&this.identitaskendaraan.thpembuatan<=2021&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>40||this.identitaskendaraan.jbb<=3500&&this.identitaskendaraan.thpembuatan>2021&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>30||this.identitaskendaraan.jbb>3500&&this.identitaskendaraan.thpembuatan<2010&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>65||this.identitaskendaraan.jbb>3500&&this.identitaskendaraan.thpembuatan>=2010&&this.identitaskendaraan.thpembuatan<=2021&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>40||this.identitaskendaraan.jbb>3500&&this.identitaskendaraan.thpembuatan>2021&&this.laikjalan.alatuji_emisiasapbahanbakarsolar>35?(this.laikjalan.status_emisisolar="0",this.pendaftaran.pos3=0):this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan<2007&&this.laikjalan.alatuji_emisicobahanbakarbensin>4||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>=2007&&this.identitaskendaraan.thpembuatan<=2018&&this.laikjalan.alatuji_emisicobahanbakarbensin>1||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>2018&&this.laikjalan.alatuji_emisicobahanbakarbensin>.5||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan<2007&&this.laikjalan.alatuji_emisicobahanbakarbensin>4||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>=2007&&this.identitaskendaraan.thpembuatan<=2018&&this.laikjalan.alatuji_emisicobahanbakarbensin>1||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>2018&&this.laikjalan.alatuji_emisicobahanbakarbensin>.5||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan<2007&&this.laikjalan.alatuji_emisihcbahanbakarbensin>1e3||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>=2007&&this.identitaskendaraan.thpembuatan<=2018&&this.laikjalan.alatuji_emisihcbahanbakarbensin>150||this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>2018&&this.laikjalan.alatuji_emisihcbahanbakarbensin>100||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan<2007&&this.laikjalan.alatuji_emisihcbahanbakarbensin>1100||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>=2007&&this.identitaskendaraan.thpembuatan<=2018&&this.laikjalan.alatuji_emisihcbahanbakarbensin>200||this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>2018&&this.laikjalan.alatuji_emisihcbahanbakarbensin>150?(this.laikjalan.status_emisibensin="0",this.pendaftaran.pos3=0):(this.pendaftaran.pos3=1,this.laikjalan.status_emisibensin="1",this.laikjalan.status_emisisolar="1")},isBarang:function(a){return"string"==typeof a&&(a.startsWith("MOBIL BARANG")||a.startsWith("KERETA")||a.startsWith("MOBIL TANGKI")||a.startsWith("MOBIL PENARIK")||a.startsWith("KENDARAAN BERMOTOR RODA TIGA"))},isPenumpang:function(a){return"string"==typeof a&&(a.startsWith("MOBIL PENUMPANG")||a.startsWith("MOBIL BUS")||a.startsWith("KENDARAAN KHUSUS"))},ambangBatas:function(){var a="";return this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan<2007?a="Co : 4% & HC : 1000 Ppm":this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>=2007&&this.identitaskendaraan.thpembuatan<=2018?a="Co : 1% & HC : 150 Ppm":this.isPenumpang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>2018?a="Co : 0.5% & HC : 100 Ppm":this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan<2007?a="Co : 4% & HC : 1100 Ppm":this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>=2007&&this.identitaskendaraan.thpembuatan<=2018?a="Co : 1% & HC : 200 Ppm":this.isBarang(this.identitaskendaraan.jenis)&&this.identitaskendaraan.thpembuatan>2018?a="Co : 0.5% & HC : 150 Ppm":this.identitaskendaraan.jbb<=3500&&this.identitaskendaraan.thpembuatan<2010?a="65% HSU":this.identitaskendaraan.jbb<=3500&&this.identitaskendaraan.thpembuatan>=2010&&this.identitaskendaraan.thpembuatan<=2021?a="40% HSU":this.identitaskendaraan.jbb<=3500&&this.identitaskendaraan.thpembuatan>2021?a="30% HSU":this.identitaskendaraan.jbb>3500&&this.identitaskendaraan.thpembuatan<2010?a="65% HSU":this.identitaskendaraan.jbb>3500&&this.identitaskendaraan.thpembuatan>=2010&&this.identitaskendaraan.thpembuatan<=2021?a="40% HSU":this.identitaskendaraan.jbb>3500&&this.identitaskendaraan.thpembuatan>2021&&(a="34% HSU"),a},handleFocus:function(a){0!==this.laikjalan[a]&&"0"!==this.laikjalan[a]||(this.laikjalan[a]="")}}),destroyed:function(){this.CLEAR_CATATAN(),this.CLEAR_FORM()},created:function(){this.CLEAR_CATATAN(),this.CLEAR_FORM()},components:{}},b=n(1),m=Object(b.a)(c,(function(){var a=this,t=a._self._c;return t("div",{staticClass:"row"},["SOLAR"==a.identitaskendaraan.bahanbakar||"Solar"==a.identitaskendaraan.bahanbakar?t("div",{staticClass:"col-sm-6"},[t("div",{staticClass:"form-group"},[t("label",[a._v("EMISI GAS BUANG ASAP (HSU)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.laikjalan.alatuji_emisiasapbahanbakarsolar,expression:"laikjalan.alatuji_emisiasapbahanbakarsolar"}],staticClass:"form-control form-control-lg",style:a.identitaskendaraan.jbb<=3500&&a.identitaskendaraan.thpembuatan<2010&&a.laikjalan.alatuji_emisiasapbahanbakarsolar>65||a.identitaskendaraan.jbb<=3500&&a.identitaskendaraan.thpembuatan>=2010&&a.identitaskendaraan.thpembuatan<=2021&&a.laikjalan.alatuji_emisiasapbahanbakarsolar>40||a.identitaskendaraan.jbb<=3500&&a.identitaskendaraan.thpembuatan>2021&&a.laikjalan.alatuji_emisiasapbahanbakarsolar>30||a.identitaskendaraan.jbb>3500&&a.identitaskendaraan.thpembuatan<2010&&a.laikjalan.alatuji_emisiasapbahanbakarsolar>65||a.identitaskendaraan.jbb>3500&&a.identitaskendaraan.thpembuatan>=2010&&a.identitaskendaraan.thpembuatan<=2021&&a.laikjalan.alatuji_emisiasapbahanbakarsolar>40||a.identitaskendaraan.jbb>3500&&a.identitaskendaraan.thpembuatan>2021&&a.laikjalan.alatuji_emisiasapbahanbakarsolar>35?"background-color: #DC143C;":"background-color: #F3F6F9;",attrs:{type:"number",name:"alatuji_emisiasapbahanbakarsolar"},domProps:{value:a.laikjalan.alatuji_emisiasapbahanbakarsolar},on:{focus:function(t){return a.handleFocus("alatuji_emisiasapbahanbakarsolar")},change:[function(t){a.check("Emisi Gas Buang Asap (Solar)",a.laikjalan.alatuji_emisiasapbahanbakarsolar+" HSU")},a.hasiluji],input:function(t){t.target.composing||a.$set(a.laikjalan,"alatuji_emisiasapbahanbakarsolar",t.target.value)}}})])]):a._e(),a._v(" "),"BENSIN"==a.identitaskendaraan.bahanbakar||"Bensin"==a.identitaskendaraan.bahanbakar?t("div",{staticClass:"col-sm-6"},[t("div",{staticClass:"form-group"},[t("label",[a._v("EMISI GAS BUANG CO (%)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.laikjalan.alatuji_emisicobahanbakarbensin,expression:"laikjalan.alatuji_emisicobahanbakarbensin"}],staticClass:"form-control form-control-lg",style:a.isPenumpang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan<2007&&a.laikjalan.alatuji_emisicobahanbakarbensin>4||a.isPenumpang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan>=2007&&a.identitaskendaraan.thpembuatan<=2018&&a.laikjalan.alatuji_emisicobahanbakarbensin>1||a.isPenumpang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan>2018&&a.laikjalan.alatuji_emisicobahanbakarbensin>.5||a.isBarang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan<2007&&a.laikjalan.alatuji_emisicobahanbakarbensin>4||a.isBarang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan>=2007&&a.identitaskendaraan.thpembuatan<=2018&&a.laikjalan.alatuji_emisicobahanbakarbensin>1||a.isBarang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan>2018&&a.laikjalan.alatuji_emisicobahanbakarbensin>.5?"background-color: #DC143C;":"background-color: #F3F6F9;",attrs:{type:"number",name:"alatuji_emisicobahanbakarbensin"},domProps:{value:a.laikjalan.alatuji_emisicobahanbakarbensin},on:{focus:function(t){return a.handleFocus("alatuji_emisicobahanbakarbensin")},change:[function(t){a.check("Emisi Gas Buang CO (Bensin)",a.laikjalan.alatuji_emisicobahanbakarbensin+" %")},a.hasiluji],input:function(t){t.target.composing||a.$set(a.laikjalan,"alatuji_emisicobahanbakarbensin",t.target.value)}}})])]):a._e(),a._v(" "),"BENSIN"==a.identitaskendaraan.bahanbakar||"Bensin"==a.identitaskendaraan.bahanbakar?t("div",{staticClass:"col-sm-6"},[t("div",{staticClass:"form-group"},[t("label",[a._v("EMISI GAS BUANG HC (Ppm)")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.laikjalan.alatuji_emisihcbahanbakarbensin,expression:"laikjalan.alatuji_emisihcbahanbakarbensin"}],staticClass:"form-control form-control-lg",style:a.isPenumpang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan<2007&&a.laikjalan.alatuji_emisihcbahanbakarbensin>1e3||a.isPenumpang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan>=2007&&a.identitaskendaraan.thpembuatan<=2018&&a.laikjalan.alatuji_emisihcbahanbakarbensin>150||a.isPenumpang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan>2018&&a.laikjalan.alatuji_emisihcbahanbakarbensin>100||a.isBarang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan<2007&&a.laikjalan.alatuji_emisihcbahanbakarbensin>1100||a.isBarang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan>=2007&&a.identitaskendaraan.thpembuatan<=2018&&a.laikjalan.alatuji_emisihcbahanbakarbensin>200||a.isBarang(a.identitaskendaraan.jenis)&&a.identitaskendaraan.thpembuatan>2018&&a.laikjalan.alatuji_emisihcbahanbakarbensin>150?"background-color: #DC143C;":"background-color: #F3F6F9;",attrs:{type:"number",name:"alatuji_emisihcbahanbakarbensin"},domProps:{value:a.laikjalan.alatuji_emisihcbahanbakarbensin},on:{focus:function(t){return a.handleFocus("alatuji_emisihcbahanbakarbensin")},change:[function(t){a.check("Emisi Gas Buang HC (Bensin)",a.laikjalan.alatuji_emisihcbahanbakarbensin+" PPM")},a.hasiluji],input:function(t){t.target.composing||a.$set(a.laikjalan,"alatuji_emisihcbahanbakarbensin",t.target.value)}}})])]):a._e(),a._v(" "),t("b-modal",{ref:"my-modal",attrs:{title:"Alasan Penolakan"},on:{ok:a.submit}},[t("div",{staticClass:"form-group"},[t("input",{directives:[{name:"model",rawName:"v-model",value:a.catatan.nama,expression:"catatan.nama"}],staticClass:"form-control form-control-lg",staticStyle:{"text-transform":"uppercase"},attrs:{type:"text",disabled:""},domProps:{value:a.catatan.nama},on:{input:function(t){t.target.composing||a.$set(a.catatan,"nama",t.target.value)}}}),a._v(" "),a.errors.nama?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.nama[0]))]):a._e()]),a._v(" "),t("div",{staticClass:"form-group row"},[t("div",{staticClass:"col-12 col-form-label"},[t("div",{staticClass:"checkbox-list"},a._l(a.alasan,(function(n){return t("label",{key:n.id,staticClass:"checkbox"},[t("input",{directives:[{name:"model",rawName:"v-model",value:a.catatan.alasan,expression:"catatan.alasan"}],attrs:{type:"checkbox",id:n.id},domProps:{value:n.alasanpenolakan,checked:Array.isArray(a.catatan.alasan)?a._i(a.catatan.alasan,n.alasanpenolakan)>-1:a.catatan.alasan},on:{change:function(t){var i=a.catatan.alasan,e=t.target,s=!!e.checked;if(Array.isArray(i)){var r=n.alasanpenolakan,l=a._i(i,r);e.checked?l<0&&a.$set(a.catatan,"alasan",i.concat([r])):l>-1&&a.$set(a.catatan,"alasan",i.slice(0,l).concat(i.slice(l+1)))}else a.$set(a.catatan,"alasan",s)}}}),a._v(" "),t("span"),a._v("\n                        "+a._s(n.alasanpenolakan)+"\n                    ")])})),0)])]),a._v(" "),t("div",{staticClass:"form-group"},[t("label",{attrs:{for:"exampleSelect1"}},[a._v("Rekomendasi Perbaikan "),t("span",{staticClass:"text-danger"},[a._v("*")])]),a._v(" "),t("select",{directives:[{name:"model",rawName:"v-model",value:a.catatan.rekomendasi,expression:"catatan.rekomendasi"}],staticClass:"form-control",attrs:{id:"exampleSelect1"},on:{change:[function(t){var n=Array.prototype.filter.call(t.target.options,(function(a){return a.selected})).map((function(a){return"_value"in a?a._value:a.value}));a.$set(a.catatan,"rekomendasi",t.target.multiple?n:n[0])},a.lain]}},[t("option",[a._v("Perbaikan")]),a._v(" "),t("option",[a._v("Penggantian")]),a._v(" "),t("option",[a._v("Penyetelan")]),a._v(" "),t("option",[a._v("Lain-lain")])]),a._v(" "),a.lainlain?t("input",{directives:[{name:"model",rawName:"v-model",value:a.catatan.rekomendasi,expression:"catatan.rekomendasi"}],staticClass:"form-control form-control-lg",staticStyle:{"text-transform":"uppercase"},attrs:{type:"text",placeholder:"Rekomendasi"},domProps:{value:a.catatan.rekomendasi},on:{input:function(t){t.target.composing||a.$set(a.catatan,"rekomendasi",t.target.value)}}}):a._e()])])],1)}),[],!1,null,null,null).exports;function h(a){return(h="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?"symbol":typeof a})(a)}function k(a,t){var n=Object.keys(a);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(a);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(a,t).enumerable}))),n.push.apply(n,i)}return n}function p(a){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?k(Object(n),!0).forEach((function(t){j(a,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(n)):k(Object(n)).forEach((function(t){Object.defineProperty(a,t,Object.getOwnPropertyDescriptor(n,t))}))}return a}function j(a,t,n){return(t=function(a){var t=function(a,t){if("object"!==h(a)||null===a)return a;var n=a[Symbol.toPrimitive];if(void 0!==n){var i=n.call(a,t||"default");if("object"!==h(i))return i;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(a)}(a,"string");return"symbol"===h(t)?t:String(t)}(t))in a?Object.defineProperty(a,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):a[t]=n,a}var v={data:function(){return{}},mounted:function(){this.$store.dispatch(i.a,[{title:"Pos"},{title:"Pengujian"}])},created:function(){var a=this;this.getIdentitaskendaraan(this.$route.params.id).then((function(){a.editPos(a.$route.params.id).then((function(){a.hasiluji()}))}))},methods:p(p({},Object(r.b)("pos3",["submitPos","getIdentitaskendaraan","editPos","CLEAR_FORM"])),{},{submit:function(){this.submitPos(this.$route.params.id).then((function(){s.a.fire({title:"",text:"The application has been successfully submitted!",icon:"success",showConfirmButton:!1,timer:1500})}))},hasiluji:function(){},close:function(){this.$router.go(-1)},back:function(){this.$router.push({name:"pos2.pengujian",params:{id:this.$route.params.id}})},next:function(){this.$router.push({name:"pos4.pengujian",params:{id:this.$route.params.id}})}}),computed:p(p(p({},Object(r.e)(["errors"])),Object(r.e)({identitaskendaraan:function(a){return a.pos3.identitaskendaraan},pendaftaran:function(a){return a.pos3.pendaftaran},laikjalan:function(a){return a.pos3.laikjalan}})),Object(r.c)(["currentUserPersonalInfo"])),components:{"emisi-form":m}},f=Object(b.a)(v,(function(){var a=this,t=a._self._c;return t("div",{staticClass:"card card-custom",attrs:{id:"kt_card_3"}},[t("div",{staticClass:"card-header"},[a._m(0),a._v(" "),t("div",{staticClass:"card-toolbar"},[t("b-button",{directives:[{name:"b-toggle",rawName:"v-b-toggle.collapse-3",modifiers:{"collapse-3":!0}}],staticClass:"btn btn-icon btn-circle btn-sm btn-light-primary mr-1"},[t("i",{staticClass:"ki ki-arrow-down icon-nm"})]),a._v(" "),t("button",{staticClass:"btn btn-info btn-sm mr-1",on:{click:function(t){return t.preventDefault(),a.back.apply(null,arguments)}}},[t("i",{staticClass:"fas fa-arrow-left"}),a._v(" Prev\n            ")]),a._v(" "),t("button",{staticClass:"btn btn-warning btn-sm mr-1",on:{click:function(t){return t.preventDefault(),a.next.apply(null,arguments)}}},[t("i",{staticClass:"fas fa-arrow-right"}),a._v(" Next\n            ")])],1)]),a._v(" "),t("b-collapse",{attrs:{visible:"",id:"collapse-3"}},[t("div",{staticClass:"card-body"},[t("div",{staticClass:"row"},[t("div",{staticClass:"col-sm-2 text-center"},[t("div",{staticClass:"form-group"},[t("label",[a._v(" No Uji")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.nouji,expression:"identitaskendaraan.nouji"}],staticClass:"form-control form-control-lg text-center",attrs:{type:"text",name:"nouji",readonly:"",placeholder:"No Uji"},domProps:{value:a.identitaskendaraan.nouji},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"nouji",t.target.value)}}})])]),a._v(" "),t("div",{staticClass:"col-sm-2 text-center"},[t("div",{staticClass:"form-group"},[t("label",[a._v("No Kendaraan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.noregistrasikendaraan,expression:"identitaskendaraan.noregistrasikendaraan"}],staticClass:"form-control form-control-lg text-center",attrs:{type:"text",name:"nokend",readonly:"",placeholder:" No Kendaraan"},domProps:{value:a.identitaskendaraan.noregistrasikendaraan},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"noregistrasikendaraan",t.target.value)}}})])]),a._v(" "),t("div",{staticClass:"col-sm-3 text-center"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Nama")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.nama,expression:"identitaskendaraan.nama"}],staticClass:"form-control form-control-lg text-center",attrs:{type:"text",name:"nama",readonly:"",placeholder:"nama"},domProps:{value:a.identitaskendaraan.nama},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"nama",t.target.value)}}})])]),a._v(" "),t("div",{staticClass:"col-sm-2 text-center"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Th. Pembuatan")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.thpembuatan,expression:"identitaskendaraan.thpembuatan"}],staticClass:"form-control form-control-lg text-center",attrs:{type:"number",name:"thpembuatan",placeholder:"Tahun Pembuatan"},domProps:{value:a.identitaskendaraan.thpembuatan},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"thpembuatan",t.target.value)}}})])]),a._v(" "),t("div",{staticClass:"col-sm-3 text-center"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Bahan Bakar")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.bahanbakar,expression:"identitaskendaraan.bahanbakar"}],staticClass:"form-control form-control-lg text-center",attrs:{type:"text",name:"bahanbakar",readonly:"",placeholder:"JBB"},domProps:{value:a.identitaskendaraan.bahanbakar},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"bahanbakar",t.target.value)}}})])])]),a._v(" "),t("div",{staticClass:"row"},[t("div",{staticClass:"col-sm-3 text-center"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Merek")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.merek,expression:"identitaskendaraan.merek"}],staticClass:"form-control form-control-lg text-center",attrs:{type:"text",name:"merek",readonly:"",placeholder:"Jenis"},domProps:{value:a.identitaskendaraan.merek},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"merek",t.target.value)}}})])]),a._v(" "),t("div",{staticClass:"col-sm-3 text-center"},[t("div",{staticClass:"form-group"},[t("label",[a._v("Jenis")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.jenis,expression:"identitaskendaraan.jenis"}],staticClass:"form-control form-control-lg text-center",attrs:{type:"text",name:"jenis",readonly:"",placeholder:"Jenis"},domProps:{value:a.identitaskendaraan.jenis},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"jenis",t.target.value)}}})])]),a._v(" "),t("div",{staticClass:"col-sm-3 text-center"},[t("div",{staticClass:"form-group"},[t("label",[a._v("No Mesin")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.nomesin,expression:"identitaskendaraan.nomesin"}],staticClass:"form-control form-control-lg text-center",attrs:{type:"text",name:"nomesin",placeholder:"No Mesin"},domProps:{value:a.identitaskendaraan.nomesin},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"nomesin",t.target.value)}}}),a._v(" "),a.errors.ukuranban?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.ukuranban[0]))]):a._e()])]),a._v(" "),t("div",{staticClass:"col-sm-3 text-center"},[t("div",{staticClass:"form-group"},[t("label",[a._v("JBB")]),a._v(" "),t("input",{directives:[{name:"model",rawName:"v-model",value:a.identitaskendaraan.jbb,expression:"identitaskendaraan.jbb"}],staticClass:"form-control form-control-lg text-center",attrs:{type:"text",name:"jbb",placeholder:"JBB"},domProps:{value:a.identitaskendaraan.jbb},on:{input:function(t){t.target.composing||a.$set(a.identitaskendaraan,"jbb",t.target.value)}}}),a._v(" "),a.errors.jbb?t("p",{staticClass:"text-danger"},[a._v(a._s(a.errors.jbb[0]))]):a._e()])])])])]),a._v(" "),t("hr"),a._v(" "),t("div",{staticClass:"card-body"},[t("div",{staticClass:"card card-custom"},[t("div",{staticClass:"card-header"},[t("div",{staticClass:"card-title"},[t("h3",{staticClass:"card-label",style:a.laikjalan.status_emisibensin<1||a.laikjalan.status_emisisolar<1?"background-color: #DC143C;":"background-color: #FFFFFF;"},[a._v("\n                        Emisi\n                    ")])]),a._v(" "),t("div",{staticClass:"card-toolbar"},[t("b-button",{directives:[{name:"b-toggle",rawName:"v-b-toggle.collapse-emisi",modifiers:{"collapse-emisi":!0}}],staticClass:"btn btn-icon btn-circle btn-sm btn-light-primary mr-1"},[t("i",{staticClass:"ki ki-arrow-down icon-nm"})])],1)]),a._v(" "),t("b-collapse",{attrs:{id:"collapse-emisi",visible:""}},[t("div",{staticClass:"card-body"},[t("emisi-form")],1)])],1),a._v(" "),a._m(1),a._v(" "),t("div",{staticClass:"col-sm-4"},[t("div",{staticClass:"form-group"},[t("br"),a._v(" "),t("div",{staticClass:"radio-inline"},[t("label",{staticClass:"radio radio-success"},[t("input",{directives:[{name:"model",rawName:"v-model",value:a.pendaftaran.pos3,expression:"pendaftaran.pos3"}],attrs:{type:"radio",disabled:"",value:"1"},domProps:{checked:a._q(a.pendaftaran.pos3,"1")},on:{change:function(t){return a.$set(a.pendaftaran,"pos3","1")}}}),a._v(" "),t("span"),a._v("\n                        Ya\n                    ")]),a._v(" "),t("label",{staticClass:"radio radio-danger"},[t("input",{directives:[{name:"model",rawName:"v-model",value:a.pendaftaran.pos3,expression:"pendaftaran.pos3"}],attrs:{type:"radio",disabled:"",value:"0"},domProps:{checked:a._q(a.pendaftaran.pos3,"0")},on:{change:function(t){return a.$set(a.pendaftaran,"pos3","0")}}}),a._v(" "),t("span"),a._v("\n                        Tidak\n                    ")])])])]),a._v(" "),t("div",{staticClass:"form-group row"},[t("div",{staticClass:"col-sm-6"},[t("button",{staticClass:"btn btn-primary",staticStyle:{width:"100%"},on:{click:function(t){return t.preventDefault(),a.submit.apply(null,arguments)}}},[t("i",{staticClass:"fa fa-save"}),a._v(" Save\n                ")])]),a._v(" "),t("div",{staticClass:"col-sm-6"},[t("button",{staticClass:"btn btn-warning",staticStyle:{width:"100%"},on:{click:function(t){return t.preventDefault(),a.close.apply(null,arguments)}}},[t("i",{staticClass:"fa fa-close"}),a._v(" Close\n                ")])])])])],1)}),[function(){var a=this._self._c;return a("div",{staticClass:"card-title"},[a("h3",{staticClass:"card-label"},[this._v("Kendaraan")])])},function(){var a=this._self._c;return a("div",{staticClass:"col-sm-12"},[a("h3",[this._v("HASIL PENGUJIAN")])])}],!1,null,null,null);t.default=f.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[82],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/surat/Table.vue?vue&type=script&lang=js":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/surat/Table.vue?vue&type=script&lang=js ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/core/services/store/breadcrumbs.module */ "./resources/js/core/services/store/breadcrumbs.module.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+
+
+
+function ownKeys(e, r) { var t = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(e); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default.a) { var o = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default()(e); r && (o = o.filter(function (r) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default()(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _babel_runtime_corejs2_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_4___default()(e, r, t[r]); }) : _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default.a ? Object.defineProperties(e, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_3___default()(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_2___default()(t, r)); }); } return e; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      user: [],
+      search: "",
+      status: "4",
+      jenis: "5",
+      tgl: ""
+    };
+  },
+  created: function created() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = yyyy + '-' + mm + '-' + dd;
+    this.tgl = today;
+    this.user = this.$store.state.profile.user_personal_info;
+  },
+  mounted: function mounted() {
+    this.$store.dispatch(_core_services_store_breadcrumbs_module__WEBPACK_IMPORTED_MODULE_5__["SET_BREADCRUMB"], [{
+      title: "Pendaftaran"
+    }, {
+      title: "Persuratan"
+    }]);
+  },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_7__["mapState"])(["surat"])), {}, {
+    page: {
+      get: function get() {
+        return this.$store.state.surat.page;
+      },
+      set: function set(val) {
+        this.$store.commit("surat/SET_PAGE", val);
+      }
+    }
+  }),
+  watch: {
+    page: function page() {
+      this.getPendaftarans();
+    },
+    search: function search() {
+      this.getPendaftarans(this.search);
+    },
+    tgl: function tgl() {
+      this.$store.commit("surat/SET_TGL", this.customFormatter(this.tgl));
+      this.getPendaftarans(this.search);
+    },
+    status: function status() {
+      this.$store.commit("surat/SET_STATUS", this.status);
+      this.getPendaftarans(this.search);
+    },
+    jenis: function jenis() {
+      this.$store.commit("surat/SET_JENIS", this.jenis);
+      this.getPendaftarans(this.search);
+    }
+  },
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_7__["mapActions"])("surat", ["getPendaftarans", "sendDataPendaftaran", "getTTE"])), {}, {
+    sendPendaftaran: function sendPendaftaran(id, nouji) {
+      var _this = this;
+      sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
+        title: "Kirim Pendaftaran?",
+        text: "Anda yakin mengirim data ini!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Iya, kirim ini!"
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          var payload = {
+            id: id,
+            nouji: nouji
+          };
+          _this.sendDataPendaftaran(payload).then(function () {
+            sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire("Sent!", "Pendaftaran sudah terkirim.", "success");
+            _this.getPendaftarans();
+          });
+        }
+      });
+    },
+    customFormatter: function customFormatter(today) {
+      return today;
+    },
+    print: function print(id) {
+      window.open('/cetak/' + id + '/surat', "_blank");
+    },
+    checkSurat: function checkSurat(id) {
+      if (id == null || id == '') {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
+          icon: "error",
+          title: "Status",
+          text: 'Dokumen TTE belum tersedia !!'
+        }).then(function (result) {
+          if (result.isConfirmed) {}
+          ;
+        });
+      } else {
+        this.getTTE(id);
+      }
+    },
+    reload: function reload() {
+      this.getPendaftarans(this.search);
+    }
+  }),
+  components: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/surat/Table.vue?vue&type=template&id=16fc4feb":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/pages/surat/Table.vue?vue&type=template&id=16fc4feb ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "card card-custom"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-4"
+  }, [_c("b-form-datepicker", {
+    attrs: {
+      id: "example-datepicker",
+      locale: "id"
+    },
+    model: {
+      value: _vm.tgl,
+      callback: function callback($$v) {
+        _vm.tgl = $$v;
+      },
+      expression: "tgl"
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-4"
+  }, [_c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.jenis,
+      expression: "jenis"
+    }],
+    staticClass: "form-control",
+    on: {
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.jenis = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      value: "1"
+    }
+  }, [_vm._v("Numpang Uji Keluar")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "2"
+    }
+  }, [_vm._v("Mutasi Keluar")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "5"
+    }
+  }, [_vm._v("Semua")])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-3"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.search,
+      expression: "search"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "serach"
+    },
+    domProps: {
+      value: _vm.search
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.search = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col-1"
+  }, [_c("a", {
+    staticClass: "btn btn-sm btn-icon btn-light-info mr-2",
+    attrs: {
+      title: "reload data"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.reload.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "flaticon2-reload"
+  })])])]), _vm._v(" "), _c("div", {
+    staticClass: "row table-responsive"
+  }, [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("table", {
+    staticClass: "table"
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.surat.pendaftarans.data, function (pendaftaran, index) {
+    return _c("tr", {
+      key: pendaftaran.uuid
+    }, [_c("td", [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(pendaftaran.keterangan))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(pendaftaran.nosurat))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(pendaftaran.nouji))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(pendaftaran.noregistrasikendaraan))]), _vm._v(" "), pendaftaran.status_cetak == 0 ? _c("td", [_vm._v("belum dikirim")]) : pendaftaran.status_cetak == "1" ? _c("td", [_vm._v("terkirim")]) : _c("td", [_vm._v("Menunggu")]), _vm._v(" "), _c("td", [_vm.user.role == "KEPALA" ? _c("div", [_c("router-link", {
+      attrs: {
+        to: {
+          name: "verif2.verifikasi",
+          params: {
+            id: pendaftaran.uuid
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit text-success"
+    })])], 1) : _c("div", [_c("router-link", {
+      attrs: {
+        to: {
+          name: "pendaftaran.edit",
+          params: {
+            id: pendaftaran.uuid
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit text-success"
+    })]), _vm._v(" "), _c("a", {
+      attrs: {
+        href: "javascript:void(0)"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.sendPendaftaran(pendaftaran.uuid, pendaftaran.nouji);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fas fa-paper-plane text-danger"
+    })]), _vm._v(" "), _c("a", {
+      attrs: {
+        href: "javascript:void(0)"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.print(pendaftaran.uuid);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-print text-info"
+    })])], 1)])]);
+  }), 0)])])])]), _vm._v(" "), _c("div", {
+    staticClass: "card-footer"
+  }, [_c("div", {
+    staticClass: "pull-right"
+  }, [_c("div", {
+    staticClass: "overflow-auto"
+  }, [_vm.surat.pendaftarans.data && _vm.surat.pendaftarans.data.length > 0 ? _c("b-pagination", {
+    attrs: {
+      "total-rows": _vm.surat.pendaftarans.total,
+      "per-page": _vm.surat.pendaftarans.per_page,
+      "aria-controls": "pendaftarans"
+    },
+    model: {
+      value: _vm.page,
+      callback: function callback($$v) {
+        _vm.page = $$v;
+      },
+      expression: "page"
+    }
+  }) : _vm._e()], 1)])])]);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "card-header"
+  }, [_c("div", {
+    staticClass: "card-title"
+  }, [_c("span", {
+    staticClass: "card-icon"
+  }, [_c("i", {
+    staticClass: "flaticon2-lorry text-primary"
+  })]), _vm._v(" "), _c("h3", {
+    staticClass: "card-label"
+  }, [_vm._v("Persuratan")])]), _vm._v(" "), _c("div", {
+    staticClass: "card-toolbar"
+  }, [_c("div", {
+    staticClass: "row"
+  })])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("No.")]), _vm._v(" "), _c("th", [_vm._v("No. Surat")]), _vm._v(" "), _c("th", [_vm._v("Jenis Surat")]), _vm._v(" "), _c("th", [_vm._v("No Uji")]), _vm._v(" "), _c("th", [_vm._v("No Kendaraan")]), _vm._v(" "), _c("th", [_vm._v("Status Kementrian")]), _vm._v(" "), _c("th", [_vm._v("Modify")])])]);
+}];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/surat/Table.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/view/pages/surat/Table.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Table_vue_vue_type_template_id_16fc4feb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Table.vue?vue&type=template&id=16fc4feb */ "./resources/js/view/pages/surat/Table.vue?vue&type=template&id=16fc4feb");
+/* harmony import */ var _Table_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Table.vue?vue&type=script&lang=js */ "./resources/js/view/pages/surat/Table.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Table_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Table_vue_vue_type_template_id_16fc4feb__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Table_vue_vue_type_template_id_16fc4feb__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/view/pages/surat/Table.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/surat/Table.vue?vue&type=script&lang=js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/view/pages/surat/Table.vue?vue&type=script&lang=js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Table_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Table.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/surat/Table.vue?vue&type=script&lang=js");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Table_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/view/pages/surat/Table.vue?vue&type=template&id=16fc4feb":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/view/pages/surat/Table.vue?vue&type=template&id=16fc4feb ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Table_vue_vue_type_template_id_16fc4feb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Table.vue?vue&type=template&id=16fc4feb */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/pages/surat/Table.vue?vue&type=template&id=16fc4feb");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Table_vue_vue_type_template_id_16fc4feb__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Table_vue_vue_type_template_id_16fc4feb__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

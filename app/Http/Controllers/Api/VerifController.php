@@ -22,15 +22,17 @@ use App\Models\User;
 use App\Models\FotoKendaraan;
 use DateTime;
 use App\Http\Requests\Surat\SuratUpdateRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 use function PHPUnit\Framework\isEmpty;
 
 class VerifController extends Controller
 {
     use apiJsonReturnTrait;
-    protected $verifService,$suratService;
+    protected $verifService, $suratService;
 
-    public function __construct(VerifService $verifService , SuratService $suratService)
+    public function __construct(VerifService $verifService, SuratService $suratService)
     {
         $this->verifService = $verifService;
         $this->suratService = $suratService;
@@ -90,9 +92,9 @@ class VerifController extends Controller
         $check = $this->verifService->checkid($request->pendaftaran_id);
         if ($check->kodepenerbitans_id <= 7) {
             $nouji = Pendaftaran::select('nouji')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('pendaftarans.id', $check['id'])->first()->nouji;
-            try{
-                $this->saveFoto($check['id'],$nouji);
-            }catch(\Exception $e){
+            try {
+                $this->saveFoto($check['id'], $nouji);
+            } catch (\Exception $e) {
             }
         } else {
             $nouji = 'sukses';
@@ -109,12 +111,12 @@ class VerifController extends Controller
                 $check->posisi = '6';
                 $check->save();
             } elseif ($request->verif == '1') {
-                $data = $this->verifService->setDatapengujian($check['id'],$request->jenis_cetak);
+                $data = $this->verifService->setDatapengujian($check['id'], $request->jenis_cetak);
                 $check->posverif2      = $request->verif;
                 $check->user_posverif2 = $user['id'];
                 $check->posisi = '6';
                 $check->save();
-            }elseif ($request->verif == '0') {
+            } elseif ($request->verif == '0') {
                 // $data = $this->verifService->setDatapengujian($check['id']);
                 $check->posverif2      = $request->verif;
                 $check->user_posverif2 = $user['id'];
@@ -132,27 +134,44 @@ class VerifController extends Controller
         $status_check = false;
         if ($check->kodepenerbitans_id <= 7) {
             $nouji = Pendaftaran::select('nouji')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('pendaftarans.id', $check['id'])->first()->nouji;
-            try{
-                $this->saveFoto($check['id'],$nouji);
-            }catch(\Exception $e){
+            try {
+                $this->saveFoto($check['id'], $nouji);
+            } catch (\Exception $e) {
+                Log::error(json_encode([
+                    'type' => 'error',
+                    'context' => 'DatakendaraanService::update',
+                    'message' => $e->getMessage(),
+                    'data' => $request->all(),
+                    'details' => [
+                        'line' => $e->getLine(),
+                        'file' => $e->getFile(),
+                        'trace' => $e->getTraceAsString(),
+                    ],
+                ]));
             }
         } else {
             $nouji = 'sukses';
         }
 
-        if($check){
-            if($check->idx > 0){
+        if ($check) {
+            if ($check->idx > 0) {
                 $status_check = true;
-            }else{
+            } else {
                 $status_check = false;
             }
         }
 
+        $request->merge([
+            'statuslulusuji' => $request->verif,
+            'idpenguji'    => $user['id'],
+        ]);
+
         if ($status_check) {
-            $request->merge([
-                'statuslulusuji' => $request->verif,
-                'idpenguji'    => $user['id'],
-            ]);
+            // $request->merge([
+            //     'statuslulusuji' => $request->verif,
+            //     'idpenguji'    => $user['id'],
+            // ]);
+
             $data = $this->verifService->update($request, $check->id);
             if ($data) {
                 if ($check->pos1 == 0) {
@@ -175,7 +194,7 @@ class VerifController extends Controller
                 $check->posisi = $ps;
                 $check->save();
             }
-            
+
             // try{
             //     $this->saveFoto($check['id'],$nouji);
             // }catch(\Exception $e){
@@ -183,10 +202,10 @@ class VerifController extends Controller
 
             return $this->returnJson(true, 'Verif Updated');
         } else {
-            $request->merge([
-                'statuslulusuji' => $request->verif,
-                'idpenguji'    => $user['id'],
-            ]);
+            // $request->merge([
+            //     'statuslulusuji' => $request->verif,
+            //     'idpenguji'    => $user['id'],
+            // ]);
 
             $data = $this->verifService->create($request->all());
             if ($data) {
@@ -216,7 +235,7 @@ class VerifController extends Controller
 
             // if ($data && $check->kodepenerbitans_id != '12') {
             //     $nouji = Pendaftaran::select('nouji')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('pendaftarans.id', $check['id'])->first()->nouji;
-                
+
             //     try{
             //         $this->saveFoto($check['id'],$nouji);
             //     }catch(\Exception $e){
@@ -237,7 +256,7 @@ class VerifController extends Controller
     public function approveSurat(SuratUpdateRequest $request, $id)
     {
         $data = $this->verifService->approveSurat($request, $id);
-        if($data){
+        if ($data) {
         }
         return $this->returnJson($data, 'approve Surat');
     }
@@ -327,17 +346,17 @@ class VerifController extends Controller
         $tgluji = $hari . ' ' . $bulan_ini . ' ' . $tahun;
         if ($data) {
             $path_logoKab = public_path() . '/img/kota.png';
-            $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
+            $logokab = 'data:image/png' . ';base64,' . base64_encode(file_get_contents($path_logoKab));
             $ttd = User::select('users.name', 'nip', 'nrp', 'jabatan')->where('id', $data->idpenguji)->first();
-        $data = [
-            'data' => $data,
-            'tgluji'   => $tgluji,
-            'ttd'       => $ttd,
-            'logokab'  => $logokab,
-        ];
-        $pdf = PDF::loadView('cetak.lhp-pdf', $data);
-        return $pdf->stream('LHP.pdf')->header('Content-Type','application/pdf');
-        // return view('cetak.lhp', ['tgluji' => $tgluji, 'data' => $data, 'ttd' => $ttd]);
+            $data = [
+                'data' => $data,
+                'tgluji'   => $tgluji,
+                'ttd'       => $ttd,
+                'logokab'  => $logokab,
+            ];
+            $pdf = PDF::loadView('cetak.lhp-pdf', $data);
+            return $pdf->stream('LHP.pdf')->header('Content-Type', 'application/pdf');
+            // return view('cetak.lhp', ['tgluji' => $tgluji, 'data' => $data, 'ttd' => $ttd]);
         }
     }
 
@@ -345,20 +364,20 @@ class VerifController extends Controller
     {
         $check = $this->verifService->checkid($id);
         $path_logoKab = public_path() . '/img/kota.png';
-        $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
-        if($check){
+        $logokab = 'data:image/png' . ';base64,' . base64_encode(file_get_contents($path_logoKab));
+        if ($check) {
             $data = $this->verifService->getData($check['id']);
             $catatan = $this->verifService->getCatatan($check['id']);
-            if($data){ 
-                $ttd = $this->verifService->getTTD($data['idpenguji']);
+            if ($data) {
+                $ttd = $this->verifService->getTTD($data->idpenguji);
                 $data = [
                     'data' => $data,
-                    'catatan' => $catatan, 
+                    'catatan' => $catatan,
                     'ttd'     => $ttd,
                     'logokab'  => $logokab,
                 ];
                 $pdf = PDF::loadView('cetak.sktl-pdf', $data);
-                return $pdf->stream('SKTL.pdf')->header('Content-Type','application/pdf');
+                return $pdf->stream('SKTL.pdf')->header('Content-Type', 'application/pdf');
             }
         }
     }
@@ -367,25 +386,25 @@ class VerifController extends Controller
     {
         $check = $this->verifService->checkid($id);
         $path_logoKab = public_path() . '/img/kota.png';
-        $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
-        if($check){
+        $logokab = 'data:image/png' . ';base64,' . base64_encode(file_get_contents($path_logoKab));
+        if ($check) {
             $data = $this->verifService->getData($check['id']);
             $catatan = $this->verifService->getCatatan($check['id']);
-            if($data){ 
-                $ttd = $this->verifService->getTTD($data['idpenguji']);
+            if ($data) {
+                $ttd = $this->verifService->getTTD(auth()->id());
                 $data = [
                     'data' => $data,
-                    'catatan' => $catatan, 
+                    'catatan' => $catatan,
                     'ttd'     => $ttd,
                     'logokab'  => $logokab,
                 ];
                 $pdf = PDF::loadView('cetak.penolakan-pdf', $data);
-                return $pdf->stream('Penolakan.pdf')->header('Content-Type','application/pdf');
+                return $pdf->stream('Penolakan.pdf')->header('Content-Type', 'application/pdf');
             }
         }
     }
 
-    public function saveFoto($id,$nouji)
+    public function saveFoto($id, $nouji)
     {
         $imagePaths = [
             'depan'    => public_path() . '/tmp_images/' . $nouji . '-tampakdepan.jpg',

@@ -1,4 +1,5 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
+const path = require("path");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,19 +12,42 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix
+  .js("resources/js/app.js", "public/js")
+  .postCss("resources/css/app.css", "public/css", [
+    //
+  ]);
 
 mix.webpackConfig({
-    output: {
-        chunkFilename: `js/[name].js?id=[chunkhash]`
+  output: {
+    chunkFilename: `js/[name].js?id=[chunkhash]`,
+  },
+  resolve: {
+    alias: {
+      vue$: "vue/dist/vue.runtime.esm.js",
+      "@": path.resolve(__dirname, "resources/js/"),
     },
-    resolve: {
-        alias: {
-            'vue$': 'vue/dist/vue.runtime.esm.js',
-            '@': path.resolve(__dirname, 'resources/js/')
-        }
-    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include: [path.resolve(__dirname, "node_modules/vue-markdown")],
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+            plugins: [
+              [
+                "@babel/plugin-transform-runtime",
+                {
+                  corejs: 2, // Use corejs 2 as required by the old package
+                },
+              ],
+            ],
+          },
+        },
+      },
+    ],
+  },
 });

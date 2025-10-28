@@ -64,7 +64,7 @@ class Datakendaraan extends Model
         'posisinomeruji',
         'catatanrubahbentuk',
         'bahan',
-        'rumahrumah',  
+        'rumahrumah',
         'lebarpintu',
         'tinggipintu',
         'tinggianaktangga',
@@ -81,4 +81,9 @@ class Datakendaraan extends Model
         'jenismuatan',
         'beratjenismuatan',
     ];
+
+    public function identityTaskendaraan()
+    {
+        return $this->belongsTo(Identitaskendaraan::class, 'identitaskendaraan_id', 'id');
+    }
 }

@@ -33,18 +33,18 @@ class PengujianService
         $checkident = $this->repoPengujian->checkid($request[0]);
         $statusInsert = true;
         $message = '';
-        
+
         if ($checkident) {
-            if($ps == '1')
-            {
-                $requestPend = $request[11];
+            if ($ps == '1') {
+                $requestPend = $request[10];
+                // dd($request);
                 try {
-                    $datakendaraan = $this->repoPengujian->Datakendaraan($request[1],$checkident['identitaskendaraan_id']);
+                    $datakendaraan = $this->repoPengujian->Datakendaraan($request[1], $checkident['identitaskendaraan_id']);
                 } catch (Exception $e) {
                     $statusInsert = false;
-                    if(strlen($message) > 0){
-                        $message = $message.', Datakendaraan';
-                    }else{
+                    if (strlen($message) > 0) {
+                        $message = $message . ', Datakendaraan';
+                    } else {
                         $message = 'Datakendaraan';
                     }
                 }
@@ -58,15 +58,13 @@ class PengujianService
                     'BagianDalamKendaraan' => [$request[8], 'Dalam'],
                     'LaikJalan' => [$request[9], 'Ban'],
                 ];
-            }elseif($ps == '2')
-            {
+            } elseif ($ps == '2') {
                 $requestPend = $request[1];
                 $insertMap = [
                     'LaikJalan' => [$request[2], 'Laik Jalan'],
                     'BagianBawahKendaraan' => [$request[3], 'Bawah'],
                 ];
-            }
-            else{
+            } else {
                 $requestPend = $request[1];
                 $insertMap = [
                     'LaikJalan' => [$request[2], 'Laik Jalan'],
@@ -78,7 +76,7 @@ class PengujianService
 
             foreach ($insertMap as $method => [$data, $label]) {
                 try {
-                    $this->repoPengujian->setPengujian($data, $checkident['id'],$method);
+                    $this->repoPengujian->setPengujian($data, $checkident['id'], $method);
                 } catch (Exception $e) {
                     $statusInsert = false;
                     $messageParts[] = $label;
@@ -86,13 +84,13 @@ class PengujianService
             }
 
             if ($statusInsert) {
-                $this->repoPengujian->setPosisiPos($checkident,$requestPend,$ps);
+                $this->repoPengujian->setPosisiPos($checkident, $requestPend, $ps);
                 return $this->success('', 'Success Insert', 200);
-            }else {
+            } else {
                 return $this->error(false, implode(', ', $messageParts), '', 200);
             }
         }
-        return $this->error(false,'Data Pendaftaran Kosong', '', 200);
+        return $this->error(false, 'Data Pendaftaran Kosong', '', 200);
     }
 
     public function setCopyPengujian($id)
@@ -104,5 +102,4 @@ class PengujianService
     {
         return $this->repoPengujian->destroy($this->repoPengujian->getPengujian($id));
     }
-
 }

@@ -20,7 +20,7 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Api'], function () {
 	Route::group(['prefix' => 'cetak'], function () {
 		Route::get('/{id}/permohonan', 'PendaftaranController@cetak');
 		Route::get('/{id}/surat', 'SuratController@cetak');
-		Route::get('/{id}/mutasi', 'MutasiController@cetak');
+		// Route::get('/{id}/mutasi', 'MutasiController@cetak');
 	});
 	Route::group(['prefix' => 'cetak'], function () {
 		Route::get('/{id}/lhp', 'VerifController@cetaklhp');
@@ -93,18 +93,18 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Api'], function () {
 // 	return view('app');
 // })->where('any', '.*');
 Route::get('{any}', function () {
-    if (request()->is('cetak/*')) {
-        // Bisa dibiarkan kosong agar Laravel cari route `cetak/*` lain di atasnya
-        // abort(404); // <-- jika mau blokir juga, tinggal aktifkan ini
-    } elseif (request()->is('arsip/*')) {
-        // abort(404); // Blokir akses langsung ke upload
-    } elseif (request()->is('upload/*')) {
-        // abort(404); // Blokir akses langsung ke upload
-    } elseif (request()->is('thumbnail_images/*')) {
-        // abort(404); // Blokir akses langsung ke upload
-    }  elseif (request()->is('normal_images/*')) {
-        // abort(404); // Blokir akses langsung ke upload
-    } else {
-		return view('app',['recaptcha_sitekey' => env('RECAPTCHA_SITE_KEY')]);
-    }
+	if (request()->is('cetak/*')) {
+		// Bisa dibiarkan kosong agar Laravel cari route `cetak/*` lain di atasnya
+		// abort(404); // <-- jika mau blokir juga, tinggal aktifkan ini
+	} elseif (request()->is('arsip/*')) {
+		// abort(404); // Blokir akses langsung ke upload
+	} elseif (request()->is('upload/*')) {
+		// abort(404); // Blokir akses langsung ke upload
+	} elseif (request()->is('thumbnail_images/*')) {
+		// abort(404); // Blokir akses langsung ke upload
+	} elseif (request()->is('normal_images/*')) {
+		// abort(404); // Blokir akses langsung ke upload
+	} else {
+		return view('app', ['recaptcha_sitekey' => env('RECAPTCHA_SITE_KEY')]);
+	}
 })->where('any', '.*');

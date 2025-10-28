@@ -24,9 +24,9 @@ class PengujianRepository
 {
     use RepositoryTrait;
 
-    protected $model,$modelDatakendaraan,$modelDimensiKendaraan,$modelIdentifikasiKendaraan,$modelBagianDepanKendaraan,$modelBagianBawahKendaraan,$modelBagianKananKendaraan,$modelBagianBelakangKendaraan,$modelBagianKiriKendaraan,$modelBagianDalamKendaraan,$modelLaikJalan,$modelCatatan;
+    protected $model, $modelDatakendaraan, $modelDimensiKendaraan, $modelIdentifikasiKendaraan, $modelBagianDepanKendaraan, $modelBagianBawahKendaraan, $modelBagianKananKendaraan, $modelBagianBelakangKendaraan, $modelBagianKiriKendaraan, $modelBagianDalamKendaraan, $modelLaikJalan, $modelCatatan;
 
-    public function __construct(Pendaftaran $model,Datakendaraan $modelDatakendaraan, IdentifikasiKendaraan $modelIdentifikasiKendaraan, DimensiKendaraan $modelDimensiKendaraan,BagianBawahKendaraan $modelBagianBawahKendaraan, BagianDepanKendaraan $modelBagianDepanKendaraan, BagianKananKendaraan $modelBagianKananKendaraan, BagianBelakangKendaraan $modelBagianBelakangKendaraan, BagianKiriKendaraan $modelBagianKiriKendaraan, BagianDalamKendaraan $modelBagianDalamKendaraan, LaikJalan $modelLaikJalan, Catatan $modelCatatan)
+    public function __construct(Pendaftaran $model, Datakendaraan $modelDatakendaraan, IdentifikasiKendaraan $modelIdentifikasiKendaraan, DimensiKendaraan $modelDimensiKendaraan, BagianBawahKendaraan $modelBagianBawahKendaraan, BagianDepanKendaraan $modelBagianDepanKendaraan, BagianKananKendaraan $modelBagianKananKendaraan, BagianBelakangKendaraan $modelBagianBelakangKendaraan, BagianKiriKendaraan $modelBagianKiriKendaraan, BagianDalamKendaraan $modelBagianDalamKendaraan, LaikJalan $modelLaikJalan, Catatan $modelCatatan)
     {
         $this->model = $model;
         $this->modelLaikJalan = $modelLaikJalan;
@@ -42,14 +42,15 @@ class PengujianRepository
         $this->modelBagianBawahKendaraan = $modelBagianBawahKendaraan;
         $this->modelCatatan = $modelCatatan;
     }
-    
+
     public function createPengujian($request)
     {
         return $this->model->create($request);
     }
 
-    public function checkPengujian($id){
-        $identitaskendaraan_id = Pendaftaran::select('identitaskendaraan_id','tglpendaftaran')->whereNotIn('kodepenerbitans_id',['3','4'])->where('identitaskendaraan_id',$id)->orderBy('pendaftarans.id','DESC')->first();
+    public function checkPengujian($id)
+    {
+        $identitaskendaraan_id = Pendaftaran::select('identitaskendaraan_id', 'tglpendaftaran')->whereNotIn('kodepenerbitans_id', ['3', '4'])->where('identitaskendaraan_id', $id)->orderBy('pendaftarans.id', 'DESC')->first();
         // $dataPend = Pendaftaran::where('pendaftarans.id',$id)->first();
         $tgl1 = date("Y-m-d", strtotime("-3 month", strtotime($identitaskendaraan_id->tglpendaftaran)));
         // $tgl2 = date("Y-m-d", strtotime("-1 day", strtotime($dataPend->tglpendaftaran)));
@@ -57,44 +58,44 @@ class PengujianRepository
         $sixMonthsAgo = (new DateTime())->sub(new DateInterval('P6M'));
 
         $tgl2 = $identitaskendaraan_id->tglpendaftaran;
-        if($tgl2 < $sixMonthsAgo){
+        if ($tgl2 < $sixMonthsAgo) {
             return 'Data uji terakhir tidak ditemukan atau sudah lebih dari 6 bulan, silahkan Uji Berkala!';
-        }elseif($tgl2 < $threeMonthsAgo){
+        } elseif ($tgl2 < $threeMonthsAgo) {
             return 'Data uji terakhir sudah lebih dari 3 bulan, silahkan Uji Berkala!';
         }
 
-        if($identitaskendaraan_id){
+        if ($identitaskendaraan_id) {
             $identitaskendaraan_id = $identitaskendaraan_id->identitaskendaraan_id;
         }
-        $data = $this->model->join('laikjalan','laikjalan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagianbawahkendaraan','bagianbawahkendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagianbelakangkendaraan','bagianbelakangkendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagiandalamkendaraan','bagiandalamkendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagiandepankendaraan','bagiandepankendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagiankanankendaraan','bagiankanankendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagiankirikendaraan','bagiankirikendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('dimensikendaaraan','dimensikendaaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('identifikasikendaraan','identifikasikendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->where('identitaskendaraan_id',$identitaskendaraan_id)
-                ->whereBetween('pendaftarans.tglpendaftaran', [$tgl1, $tgl2])
-                ->orderBy('pendaftarans.tglpendaftaran','DESC')->first();
-        if($data){
+        $data = $this->model->join('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagianbawahkendaraan', 'bagianbawahkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagianbelakangkendaraan', 'bagianbelakangkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagiandalamkendaraan', 'bagiandalamkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagiandepankendaraan', 'bagiandepankendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagiankanankendaraan', 'bagiankanankendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagiankirikendaraan', 'bagiankirikendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('dimensikendaaraan', 'dimensikendaaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('identifikasikendaraan', 'identifikasikendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->where('identitaskendaraan_id', $identitaskendaraan_id)
+            ->whereBetween('pendaftarans.tglpendaftaran', [$tgl1, $tgl2])
+            ->orderBy('pendaftarans.tglpendaftaran', 'DESC')->first();
+        if ($data) {
             return true;
         }
         $tgl1 = date("Y-m-d", strtotime("-6 month", strtotime($identitaskendaraan_id->tglpendaftaran)));
-        $data = $this->model->join('laikjalan','laikjalan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagianbawahkendaraan','bagianbawahkendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagianbelakangkendaraan','bagianbelakangkendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagiandalamkendaraan','bagiandalamkendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagiandepankendaraan','bagiandepankendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagiankanankendaraan','bagiankanankendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('bagiankirikendaraan','bagiankirikendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('dimensikendaaraan','dimensikendaaraan.pendaftaran_id','=','pendaftarans.id')
-                ->leftjoin('identifikasikendaraan','identifikasikendaraan.pendaftaran_id','=','pendaftarans.id')
-                ->where('identitaskendaraan_id',$identitaskendaraan_id)
-                ->whereBetween('pendaftarans.tglpendaftaran', [$tgl1, $tgl2])
-                ->orderBy('pendaftarans.id','DESC')->first();
-        if($data){
+        $data = $this->model->join('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagianbawahkendaraan', 'bagianbawahkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagianbelakangkendaraan', 'bagianbelakangkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagiandalamkendaraan', 'bagiandalamkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagiandepankendaraan', 'bagiandepankendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagiankanankendaraan', 'bagiankanankendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('bagiankirikendaraan', 'bagiankirikendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('dimensikendaaraan', 'dimensikendaaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->leftjoin('identifikasikendaraan', 'identifikasikendaraan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->where('identitaskendaraan_id', $identitaskendaraan_id)
+            ->whereBetween('pendaftarans.tglpendaftaran', [$tgl1, $tgl2])
+            ->orderBy('pendaftarans.id', 'DESC')->first();
+        if ($data) {
             return 'Data uji terakhir sudah lebih dari 3 bulan, silahkan Uji Berkala!';
         }
         return 'Data uji terakhir tidak ditemukan atau sudah lebih dari 6 bulan, silahkan Uji Berkala!';
@@ -102,20 +103,20 @@ class PengujianRepository
 
     public function setCopyPengujian($id)
     {
-        $identitaskendaraan_id = Pendaftaran::select('identitaskendaraan_id')->where('id',$id)->first();
-        $dataPend = Pendaftaran::where('pendaftarans.id',$id)->first();
+        $identitaskendaraan_id = Pendaftaran::select('identitaskendaraan_id')->where('id', $id)->first();
+        $dataPend = Pendaftaran::where('pendaftarans.id', $id)->first();
         $tgl1 = date("Y-m-d", strtotime("-3 month", strtotime($dataPend->tglpendaftaran)));
         $tgl2 = $dataPend->tglpendaftaran;
-        if($identitaskendaraan_id){
+        if ($identitaskendaraan_id) {
             $identitaskendaraan_id = $identitaskendaraan_id->identitaskendaraan_id;
         }
-        $data = $this->model->join('laikjalan','laikjalan.pendaftaran_id','=','pendaftarans.id')
-                ->where('identitaskendaraan_id',$identitaskendaraan_id)
-                ->whereBetween('pendaftarans.tglpendaftaran', [$tgl1, $tgl2])
-                ->orderBy('pendaftarans.tglpendaftaran','DESC')->first();
+        $data = $this->model->join('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')
+            ->where('identitaskendaraan_id', $identitaskendaraan_id)
+            ->whereBetween('pendaftarans.tglpendaftaran', [$tgl1, $tgl2])
+            ->orderBy('pendaftarans.tglpendaftaran', 'DESC')->first();
         if ($data) {
-            $catatan = Catatan::where('pendaftaran_id',$data->pendaftaran_id)->get();
-            if($catatan){
+            $catatan = Catatan::where('pendaftaran_id', $data->pendaftaran_id)->get();
+            if ($catatan) {
                 foreach ($catatan as $list) {
                     $inCatatan = Catatan::Create([
                         'pendaftaran_id'    => $id,
@@ -129,7 +130,7 @@ class PengujianRepository
                 }
             }
             $tgluji = date("dmY");
-            $bagianbawahkendaraan = BagianBawahKendaraan::where('pendaftaran_id',$data->pendaftaran_id)->first();
+            $bagianbawahkendaraan = BagianBawahKendaraan::where('pendaftaran_id', $data->pendaftaran_id)->first();
             $bagianbawahkendaraan = BagianBawahKendaraan::Create([
                 'pendaftaran_id'    => $id,
                 'sistemkemudi'      => $bagianbawahkendaraan->sistemkemudi,
@@ -140,7 +141,7 @@ class PengujianRepository
                 'sistempenerusdaya' => $bagianbawahkendaraan->sistempenerusdaya,
                 'motorpenggerak'    => $bagianbawahkendaraan->motorpenggerak,
             ]);
-            $bagianbelakangkendaraan = BagianBelakangKendaraan::where('pendaftaran_id',$data->pendaftaran_id)->first();
+            $bagianbelakangkendaraan = BagianBelakangKendaraan::where('pendaftaran_id', $data->pendaftaran_id)->first();
             $bagianbelakangkendaraan = BagianBelakangKendaraan::Create([
                 'pendaftaran_id'    => $id,
                 'apctbelakang'      => $bagianbelakangkendaraan->apctbelakang,
@@ -155,7 +156,7 @@ class PengujianRepository
                 'spakbor'    => $bagianbelakangkendaraan->spakbor,
                 'sistempembuangan'    => $bagianbelakangkendaraan->sistempembuangan,
             ]);
-            $bagiandalamkendaraan = BagianDalamKendaraan::where('pendaftaran_id',$data->pendaftaran_id)->first();
+            $bagiandalamkendaraan = BagianDalamKendaraan::where('pendaftaran_id', $data->pendaftaran_id)->first();
             $bagiandalamkendaraan = BagianDalamKendaraan::Create([
                 'pendaftaran_id'    => $id,
                 'ruangkemudi'       => $bagiandalamkendaraan->ruangkemudi,
@@ -175,7 +176,7 @@ class PengujianRepository
                 'remgasbuang'       => $bagiandalamkendaraan->remgasbuang,
                 'sistemhampa'       => $bagiandalamkendaraan->sistemhampa,
             ]);
-            $bagiandepankendaraan = BagianDepanKendaraan::where('pendaftaran_id',$data->pendaftaran_id)->first();
+            $bagiandepankendaraan = BagianDepanKendaraan::where('pendaftaran_id', $data->pendaftaran_id)->first();
             $bagiandepankendaraan = BagianDepanKendaraan::Create([
                 'pendaftaran_id'    => $id,
                 'kacadepan'         => $bagiandepankendaraan->kacadepan,
@@ -191,7 +192,7 @@ class PengujianRepository
                 'bumperdepan'       => $bagiandepankendaraan->bumperdepan,
                 'kondisitempatnkbdepan'        => $bagiandepankendaraan->kondisitempatnkbdepan,
             ]);
-            $bagiankanankendaraan = BagianKananKendaraan::where('pendaftaran_id',$data->pendaftaran_id)->first();
+            $bagiankanankendaraan = BagianKananKendaraan::where('pendaftaran_id', $data->pendaftaran_id)->first();
             $bagiankanankendaraan = BagianKananKendaraan::Create([
                 'pendaftaran_id'    => $id,
                 'kacasampingkanan'  => $bagiankanankendaraan->kacasampingkanan,
@@ -211,7 +212,7 @@ class PengujianRepository
                 'kakipenompangtempelan'        => $bagiankanankendaraan->kakipenompangtempelan,
                 'alatperangkaitempelan'        => $bagiankanankendaraan->alatperangkaitempelan,
             ]);
-            $bagiankirikendaraan = BagianKiriKendaraan::where('pendaftaran_id',$data->pendaftaran_id)->first();
+            $bagiankirikendaraan = BagianKiriKendaraan::where('pendaftaran_id', $data->pendaftaran_id)->first();
             $bagiankirikendaraan = BagianKiriKendaraan::Create([
                 'pendaftaran_id'    => $id,
                 'kacasampingkiri'  => $bagiankirikendaraan->kacasampingkiri,
@@ -230,7 +231,7 @@ class PengujianRepository
                 'kakipenompangtempelan'        => $bagiankirikendaraan->kakipenompangtempelan,
                 'alatperangkaitempelan'        => $bagiankirikendaraan->alatperangkaitempelan,
             ]);
-            $dimensikendaaraan = DimensiKendaraan::where('pendaftaran_id',$data->pendaftaran_id)->first();
+            $dimensikendaaraan = DimensiKendaraan::where('pendaftaran_id', $data->pendaftaran_id)->first();
             $dimensikendaaraan = DimensiKendaraan::Create([
                 'pendaftaran_id'    => $id,
                 'julurdepan'        => $dimensikendaaraan->julurdepan,
@@ -259,7 +260,7 @@ class PengujianRepository
                 'tinggitempatberdiri'      => $dimensikendaaraan->tinggitempatberdiri,
                 'lebartempatduduk' => $dimensikendaaraan->lebartempatduduk,
                 'jaraktempatduduk' => $dimensikendaaraan->jaraktempatduduk,
-                'lebarpintudarurat'=> $dimensikendaaraan->lebarpintudarurat,
+                'lebarpintudarurat' => $dimensikendaaraan->lebarpintudarurat,
                 'panjangakseskeluar'    => $dimensikendaaraan->panjangakseskeluar,
                 'lebarakseskeluar'      => $dimensikendaaraan->lebarakseskeluar,
                 'jarakantarbumper'      => $dimensikendaaraan->jarakantarbumper,
@@ -292,14 +293,14 @@ class PengujianRepository
                 'nilai_tinggitempatberdiri'      => $dimensikendaaraan->nilai_tinggitempatberdiri,
                 'nilai_lebartempatduduk' => $dimensikendaaraan->nilai_lebartempatduduk,
                 'nilai_jaraktempatduduk' => $dimensikendaaraan->nilai_jaraktempatduduk,
-                'nilai_lebarpintudarurat'=> $dimensikendaaraan->nilai_lebarpintudarurat,
+                'nilai_lebarpintudarurat' => $dimensikendaaraan->nilai_lebarpintudarurat,
                 'nilai_panjangakseskeluar'    => $dimensikendaaraan->nilai_panjangakseskeluar,
                 'nilai_lebarakseskeluar'      => $dimensikendaaraan->nilai_lebarakseskeluar,
                 'nilai_jarakantarbumper'      => $dimensikendaaraan->nilai_jarakantarbumper,
                 'nilai_volume'           => $dimensikendaaraan->nilai_volume,
                 'nilai_beratjenismuatan' => $dimensikendaaraan->nilai_beratjenismuatan,
             ]);
-            $identifikasikendaraan = IdentifikasiKendaraan::where('pendaftaran_id',$data->pendaftaran_id)->first();
+            $identifikasikendaraan = IdentifikasiKendaraan::where('pendaftaran_id', $data->pendaftaran_id)->first();
             $identifikasikendaraan = IdentifikasiKendaraan::Create([
                 'pendaftaran_id'    => $id,
                 'notnkb'            => $identifikasikendaraan->notnkb,
@@ -361,7 +362,7 @@ class PengujianRepository
                 'alatuji_remparkirtangan'  => $data->alatuji_remparkirtangan,
                 'alatuji_remparkirkaki'    => $data->alatuji_remparkirkaki,
                 'alatuji_kincuprodadepan'  => $data->alatuji_kincuprodadepan,
-                'alatuji_tingkatkebisingan'=> $data->alatuji_tingkatkebisingan,
+                'alatuji_tingkatkebisingan' => $data->alatuji_tingkatkebisingan,
                 'alatuji_lampuutamakekuatanpancarlampukanan'  => $data->alatuji_lampuutamakekuatanpancarlampukanan,
                 'alatuji_lampuutamakekuatanpancarlampukiri'  => $data->alatuji_lampuutamakekuatanpancarlampukiri,
                 'alatuji_lampuutamapenyimpanganlampukanan' => $data->alatuji_lampuutamapenyimpanganlampukanan,
@@ -390,23 +391,22 @@ class PengujianRepository
             ]);
 
             // $ps = '9';
-            if($dataPend->kodepenerbitans_id == '7')
-            {
-                if ($dataPend->pos1 == 0 ) {
+            if ($dataPend->kodepenerbitans_id == '7') {
+                if ($dataPend->pos1 == 0) {
                     $ps = 1;
-                }elseif ($dataPend->pos2 == 0 ) {
+                } elseif ($dataPend->pos2 == 0) {
                     $ps = 2;
-                }elseif ($dataPend->pos3 == 0 ) {
+                } elseif ($dataPend->pos3 == 0) {
                     $ps = 3;
-                }elseif ($dataPend->pos4 == 0 ) {
+                } elseif ($dataPend->pos4 == 0) {
                     $ps = 4;
-                }elseif ($dataPend->posverif == 0 ) {
+                } elseif ($dataPend->posverif == 0) {
                     $ps = 5;
                 }
-            }   
+            }
 
-            $pend = Pendaftaran::where('pendaftarans.id',$id)->first();
-            if($pend){
+            $pend = Pendaftaran::where('pendaftarans.id', $id)->first();
+            if ($pend) {
                 $pend->posisi               = $ps;
                 $pend->verif                 = '1';
                 $pend->pos1                  = $data->pos1;
@@ -421,7 +421,7 @@ class PengujianRepository
                 $pend->save();
             }
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -438,30 +438,30 @@ class PengujianRepository
         $ps = request()->ps;
         $status = request()->st;
         if ($status != '') {
-        $name = 'pos'.$ps;
-        $data = $this->model
-            ->select('pendaftarans.noantrian','pendaftarans.uuid','kodepenerbitans.keterangan','identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan')
-            ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
-            ->join('kodepenerbitans','pendaftarans.kodepenerbitans_id','=','kodepenerbitans.id')
-            ->where($name,$status)
-            ->where('pendaftarans.tglpendaftaran',request()->t)
-            ->orderBy('pendaftarans.noantrian','DESC');
-        }else{
-        $data = $this->model
-            ->select('pendaftarans.noantrian','pendaftarans.uuid','kodepenerbitans.keterangan','identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan')
-            ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
-            ->join('kodepenerbitans','pendaftarans.kodepenerbitans_id','=','kodepenerbitans.id')
-            ->where('pendaftarans.posisi',$ps)
-            ->where('pendaftarans.tglpendaftaran',request()->t)
-            ->orderBy('pendaftarans.noantrian','DESC');
+            $name = 'pos' . $ps;
+            $data = $this->model
+                ->select('pendaftarans.noantrian', 'pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan')
+                ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
+                ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
+                ->where($name, $status)
+                ->where('pendaftarans.tglpendaftaran', request()->t)
+                ->orderBy('pendaftarans.noantrian', 'DESC');
+        } else {
+            $data = $this->model
+                ->select('pendaftarans.noantrian', 'pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan')
+                ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
+                ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
+                ->where('pendaftarans.posisi', $ps)
+                ->where('pendaftarans.tglpendaftaran', request()->t)
+                ->orderBy('pendaftarans.noantrian', 'DESC');
         }
         $search = str_replace("/", "", request()->q);
-        
+
         if ($search != '') {
             $data = $data->where(function ($query) use ($search) {
                 $query->where('identitaskendaraans.noregistrasikendaraan', 'LIKE', '%' . $search . '%')
-                    ->orWhere('identitaskendaraans.nouji','LIKE','%'. $search . '%');
-                });
+                    ->orWhere('identitaskendaraans.nouji', 'LIKE', '%' . $search . '%');
+            });
         }
 
         return $data->paginate(10);
@@ -470,64 +470,281 @@ class PengujianRepository
     public function getPengujian($id)
     {
         $ps = str_replace("/", "", request()->ps);
-        if($ps == '1')
-        {
-            $select = ['pendaftarans.pos1', 'identifikasikendaraan.pendaftaran_id', 'notnkb', 'nouji', 'norangkalandasan', 'nomotorpenggerak', 'ukuranban', 'bahan','julurdepan', 'p', 'tinggikendaraan', 'a', 'jaraksumbu1_2', 'jaraksumbu2_3', 'jaraksumbu3_4', 'panjangbakatautangki', 'q', 'r', 'b', 'julurbelakang', 'panjangkendaraan', 'lebarkendaraan', 'lebarbakatautangki', 'tinggibakatautangki', 'jarakantaradindingterluar', 'groundclearance', 'lebarpintu', 'tinggipintu', 'tinggianaktangga', 'lebaranaktangga', 'lebarlorong', 'tinggitempatberdiri', 'lebartempatduduk', 'jaraktempatduduk', 'lebarpintudarurat', 'panjangakseskeluar', 'lebarakseskeluar', 'jarakantarbumper', 'volume', 'jenismuatan', 'beratjenismuatan', 'nilai_julurdepan', 'nilai_p', 'nilai_tinggikendaraan', 'nilai_a', 'nilai_jaraksumbu1_2', 'nilai_jaraksumbu2_3', 'nilai_jaraksumbu3_4', 'nilai_panjangbakatautangki', 'nilai_q', 'nilai_r', 'nilai_b', 'nilai_julurbelakang', 'nilai_panjangkendaraan', 'nilai_lebarkendaraan', 'nilai_lebarbakatautangki', 'nilai_tinggibakatautangki', 'nilai_jarakantaradindingterluar', 'nilai_groundclearance', 'nilai_lebarpintu', 'nilai_tinggipintu', 'nilai_tinggianaktangga', 'nilai_lebaranaktangga', 'nilai_lebarlorong', 'nilai_tinggitempatberdiri', 'nilai_lebartempatduduk', 'nilai_jaraktempatduduk', 'nilai_lebarpintudarurat', 'nilai_panjangakseskeluar', 'nilai_lebarakseskeluar', 'nilai_jarakantarbumper', 'nilai_volume', 'nilai_beratjenismuatan','bagiandepankendaraan.kacadepan', 'penyemprotair', 'penghapuskaca', 'bodidepan', 'bagiandepankendaraan.lamputandabatas', 'lampuutamadekat', 'lampuutamajauh', 'bagiandepankendaraan.lampupenunjukarah', 'lampuposisidepan', 'lampukabut', 'bumperdepan', 'kondisitempatnkbdepan', 'kacasampingkanan', 'kacaspion', 'pintusampingkanan', 'bodikanan', 'apctkanan', 'bagiankanankendaraan.kompresorudara', 'bagiankanankendaraan.bautdanmurroda', 'bagiankanankendaraan.kondisidanukuranban', 'bagiankanankendaraan.perisaikolong', 'bagiankanankendaraan.tutuptangki', 'bagiankanankendaraan.lamputandabatassamping', 'apar', 'bagiankanankendaraan.rodakelima', 'bagiankanankendaraan.kakipenompangtempelan', 'bagiankanankendaraan.alatperangkaitempelan', 'apctbelakang', 'lampuposisibelakang', 'bagianbelakangkendaraan.lampupenunjukarah', 'lampurem', 'lampumundur', 'lamputnkb', 'kondisitempatpemasangantnkb', 'bagianbelakangkendaraan.lamputandabatas', 'kondisirodacadangan', 'spakbor', 'sistempembuangan', 'kacasampingkiri', 'kacaspionkiri', 'pintusampingkiri', 'bodikiri', 'apctkiri', 'bagiankirikendaraan.kompresorudara', 'bagiankirikendaraan.bautdanmurroda', 'bagiankirikendaraan.kondisidanukuranban', 'bagiankirikendaraan.perisaikolong', 'bagiankirikendaraan.tutuptangki', 'bagiankirikendaraan.lamputandabatassamping', 'bagiankirikendaraan.rodakelima', 'bagiankirikendaraan.kakipenompangtempelan', 'bagiankirikendaraan.alatperangkaitempelan', 'ruangkemudi', 'tempatduduk', 'dashboard', 'speedometer', 'instrumenpanel', 'alatcontrollampu', 'tabirmatahari', 'pandangankedepan', 'rodakemudi', 'batangkemudi', 'sabukkeselamatan', 'perlengkapan', 'remparkir', 'pedalremkaki', 'remgasbuang', 'sistemhampa','alatuji_kedalamanalurban','status_alurban'];
-        }elseif($ps == '2')
-        {
-            $select = ['alatuji_emisiasapbahanbakarsolar', 'alatuji_emisicobahanbakarbensin','alatuji_emisihcbahanbakarbensin','status_emisisolar','status_emisibensin','rangkalandasan','motorpenggerak','sistempenerusdaya','sistemkemudi','sistemsuspensi','sistemroda','sistemrem','alatuji_tingkatkebisingan','status_kebisingan','pos'.$ps];
-        }elseif($ps == '3')
-        {
-            $select = ['alatuji_lampuutamakekuatanpancarlampukanan','alatuji_lampuutamakekuatanpancarlampukiri','alatuji_lampuutamapenyimpanganlampukanan','alatuji_lampuutamapenyimpanganlampukiri','alatuji_kincuprodadepan','status_kincuprodadepan','status_intensitaslampu','status_penyimpanganlampu','pos'.$ps];
-        }elseif($ps == '4')
-        {
-            $select = ['berats1','berats2','berats3','berats4','berats5','berats6','berats7','berats8','berats9','berats10','berats11','berats12','alatuji_remutamatotalgayapengereman','alatuji_remparkirtotalgayapengereman','gayaremkiri1','gayaremkiri2','gayaremkiri3','gayaremkiri4','gayaremkiri5','gayaremkiri6','gayaremkiri7','gayaremkiri8','gayaremkiri9','gayaremkiri10','gayaremkiri11','gayaremkiri12','gayaremkanan1','gayaremkanan2','gayaremkanan3','gayaremkanan4','gayaremkanan5','gayaremkanan6','gayaremkanan7','gayaremkanan8','gayaremkanan9','gayaremkanan10','gayaremkanan11','gayaremkanan12','alatuji_gayapengeremanparkirkanan','alatuji_gayapengeremanparkirkiri','alatuji_remutamaselisihgayapengeremanrodakirikanan1','alatuji_remutamaselisihgayapengeremanrodakirikanan2','alatuji_remutamaselisihgayapengeremanrodakirikanan3','alatuji_remutamaselisihgayapengeremanrodakirikanan4','alatuji_remparkirtangan','alatuji_remparkirkaki','alatuji_penunjukkecepatan','status_speedometer','status_remkanan','status_remkiri','status_remparkir','pos'.$ps];
-        }else{
+        if ($ps == '1') {
+            $select = [
+                'pendaftarans.pos1',
+                'identifikasikendaraan.pendaftaran_id',
+                'notnkb',
+                'nouji',
+                'norangkalandasan',
+                'nomotorpenggerak',
+                'ukuranban',
+                'bahan',
+                'julurdepan',
+                'p',
+                'tinggikendaraan',
+                'a',
+                'jaraksumbu1_2',
+                'jaraksumbu2_3',
+                'jaraksumbu3_4',
+                'panjangbakatautangki',
+                'q',
+                'r',
+                'b',
+                'julurbelakang',
+                'panjangkendaraan',
+                'lebarkendaraan',
+                'lebarbakatautangki',
+                'tinggibakatautangki',
+                'jarakantaradindingterluar',
+                'groundclearance',
+                'lebarpintu',
+                'tinggipintu',
+                'tinggianaktangga',
+                'lebaranaktangga',
+                'lebarlorong',
+                'tinggitempatberdiri',
+                'lebartempatduduk',
+                'jaraktempatduduk',
+                'lebarpintudarurat',
+                'panjangakseskeluar',
+                'lebarakseskeluar',
+                'jarakantarbumper',
+                'volume',
+                'jenismuatan',
+                'beratjenismuatan',
+                'nilai_julurdepan',
+                'nilai_p',
+                'nilai_tinggikendaraan',
+                'nilai_a',
+                'nilai_jaraksumbu1_2',
+                'nilai_jaraksumbu2_3',
+                'nilai_jaraksumbu3_4',
+                'nilai_panjangbakatautangki',
+                'nilai_q',
+                'nilai_r',
+                'nilai_b',
+                'nilai_julurbelakang',
+                'nilai_panjangkendaraan',
+                'nilai_lebarkendaraan',
+                'nilai_lebarbakatautangki',
+                'nilai_tinggibakatautangki',
+                'nilai_jarakantaradindingterluar',
+                'nilai_groundclearance',
+                'nilai_lebarpintu',
+                'nilai_tinggipintu',
+                'nilai_tinggianaktangga',
+                'nilai_lebaranaktangga',
+                'nilai_lebarlorong',
+                'nilai_tinggitempatberdiri',
+                'nilai_lebartempatduduk',
+                'nilai_jaraktempatduduk',
+                'nilai_lebarpintudarurat',
+                'nilai_panjangakseskeluar',
+                'nilai_lebarakseskeluar',
+                'nilai_jarakantarbumper',
+                'nilai_volume',
+                'nilai_beratjenismuatan',
+                'bagiandepankendaraan.kacadepan',
+                'penyemprotair',
+                'penghapuskaca',
+                'bodidepan',
+                'bagiandepankendaraan.lamputandabatas',
+                'lampuutamadekat',
+                'lampuutamajauh',
+                'bagiandepankendaraan.lampupenunjukarah',
+                'lampuposisidepan',
+                'lampukabut',
+                'bumperdepan',
+                'kondisitempatnkbdepan',
+                'kacasampingkanan',
+                'kacaspion',
+                'pintusampingkanan',
+                'bodikanan',
+                'apctkanan',
+                'bagiankanankendaraan.kompresorudara',
+                'bagiankanankendaraan.bautdanmurroda',
+                'bagiankanankendaraan.kondisidanukuranban',
+                'bagiankanankendaraan.perisaikolong',
+                'bagiankanankendaraan.tutuptangki',
+                'bagiankanankendaraan.lamputandabatassamping',
+                'apar',
+                'bagiankanankendaraan.rodakelima',
+                'bagiankanankendaraan.kakipenompangtempelan',
+                'bagiankanankendaraan.alatperangkaitempelan',
+                'apctbelakang',
+                'lampuposisibelakang',
+                'bagianbelakangkendaraan.lampupenunjukarah',
+                'lampurem',
+                'lampumundur',
+                'lamputnkb',
+                'kondisitempatpemasangantnkb',
+                'bagianbelakangkendaraan.lamputandabatas',
+                'kondisirodacadangan',
+                'spakbor',
+                'sistempembuangan',
+                'kacasampingkiri',
+                'kacaspionkiri',
+                'pintusampingkiri',
+                'bodikiri',
+                'apctkiri',
+                'bagiankirikendaraan.kompresorudara',
+                'bagiankirikendaraan.bautdanmurroda',
+                'bagiankirikendaraan.kondisidanukuranban',
+                'bagiankirikendaraan.perisaikolong',
+                'bagiankirikendaraan.tutuptangki',
+                'bagiankirikendaraan.lamputandabatassamping',
+                'bagiankirikendaraan.rodakelima',
+                'bagiankirikendaraan.kakipenompangtempelan',
+                'bagiankirikendaraan.alatperangkaitempelan',
+                'ruangkemudi',
+                'tempatduduk',
+                'dashboard',
+                'speedometer',
+                'instrumenpanel',
+                'alatcontrollampu',
+                'tabirmatahari',
+                'pandangankedepan',
+                'rodakemudi',
+                'batangkemudi',
+                'sabukkeselamatan',
+                'perlengkapan',
+                'remparkir',
+                'pedalremkaki',
+                'remgasbuang',
+                'sistemhampa',
+                'alatuji_kedalamanalurban',
+                'status_alurban'
+            ];
+        } elseif ($ps == '2') {
+            $select = [
+                'alatuji_emisiasapbahanbakarsolar',
+                'alatuji_emisicobahanbakarbensin',
+                'alatuji_emisihcbahanbakarbensin',
+                'status_emisisolar',
+                'status_emisibensin',
+                'rangkalandasan',
+                'motorpenggerak',
+                'sistempenerusdaya',
+                'sistemkemudi',
+                'sistemsuspensi',
+                'sistemroda',
+                'sistemrem',
+                'alatuji_tingkatkebisingan',
+                'status_kebisingan',
+                'pos' . $ps
+            ];
+        } elseif ($ps == '3') {
+            $select = [
+                'alatuji_lampuutamakekuatanpancarlampukanan',
+                'alatuji_lampuutamakekuatanpancarlampukiri',
+                'alatuji_lampuutamapenyimpanganlampukanan',
+                'alatuji_lampuutamapenyimpanganlampukiri',
+                'alatuji_kincuprodadepan',
+                'status_kincuprodadepan',
+                'status_intensitaslampu',
+                'status_penyimpanganlampu',
+                'pos' . $ps
+            ];
+        } elseif ($ps == '4') {
+            $select = [
+                'berats1',
+                'berats2',
+                'berats3',
+                'berats4',
+                'berats5',
+                'berats6',
+                'berats7',
+                'berats8',
+                'berats9',
+                'berats10',
+                'berats11',
+                'berats12',
+                'alatuji_remutamatotalgayapengereman',
+                'alatuji_remparkirtotalgayapengereman',
+                'gayaremkiri1',
+                'gayaremkiri2',
+                'gayaremkiri3',
+                'gayaremkiri4',
+                'gayaremkiri5',
+                'gayaremkiri6',
+                'gayaremkiri7',
+                'gayaremkiri8',
+                'gayaremkiri9',
+                'gayaremkiri10',
+                'gayaremkiri11',
+                'gayaremkiri12',
+                'gayaremkanan1',
+                'gayaremkanan2',
+                'gayaremkanan3',
+                'gayaremkanan4',
+                'gayaremkanan5',
+                'gayaremkanan6',
+                'gayaremkanan7',
+                'gayaremkanan8',
+                'gayaremkanan9',
+                'gayaremkanan10',
+                'gayaremkanan11',
+                'gayaremkanan12',
+                'alatuji_gayapengeremanparkirkanan',
+                'alatuji_gayapengeremanparkirkiri',
+                'alatuji_remutamaselisihgayapengeremanrodakirikanan1',
+                'alatuji_remutamaselisihgayapengeremanrodakirikanan2',
+                'alatuji_remutamaselisihgayapengeremanrodakirikanan3',
+                'alatuji_remutamaselisihgayapengeremanrodakirikanan4',
+                'alatuji_remparkirtangan',
+                'alatuji_remparkirkaki',
+                'alatuji_penunjukkecepatan',
+                'status_speedometer',
+                'status_remkanan',
+                'status_remkiri',
+                'status_remparkir',
+                'pos' . $ps
+            ];
+        } else {
             $select = [];
         }
 
         $data = $this->model
             ->select($select)->Leftjoin('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id');
-            
-        if($ps == '1')
-        {
-            $data = $data->leftjoin('identifikasikendaraan','identifikasikendaraan.pendaftaran_id','pendaftarans.id')
-                ->leftjoin('dimensikendaaraan','dimensikendaaraan.pendaftaran_id','pendaftarans.id')
-                ->leftjoin('bagiandepankendaraan','bagiandepankendaraan.pendaftaran_id','pendaftarans.id')
-                ->leftjoin('bagiankanankendaraan','bagiankanankendaraan.pendaftaran_id','pendaftarans.id')
-                ->leftjoin('bagianbelakangkendaraan','bagianbelakangkendaraan.pendaftaran_id','pendaftarans.id')
-                ->leftjoin('bagiankirikendaraan','bagiankirikendaraan.pendaftaran_id','pendaftarans.id')
-                ->leftjoin('bagiandalamkendaraan','bagiandalamkendaraan.pendaftaran_id','pendaftarans.id')
+
+        if ($ps == '1') {
+            $data = $data->leftjoin('identifikasikendaraan', 'identifikasikendaraan.pendaftaran_id', 'pendaftarans.id')
+                ->leftjoin('dimensikendaaraan', 'dimensikendaaraan.pendaftaran_id', 'pendaftarans.id')
+                ->leftjoin('bagiandepankendaraan', 'bagiandepankendaraan.pendaftaran_id', 'pendaftarans.id')
+                ->leftjoin('bagiankanankendaraan', 'bagiankanankendaraan.pendaftaran_id', 'pendaftarans.id')
+                ->leftjoin('bagianbelakangkendaraan', 'bagianbelakangkendaraan.pendaftaran_id', 'pendaftarans.id')
+                ->leftjoin('bagiankirikendaraan', 'bagiankirikendaraan.pendaftaran_id', 'pendaftarans.id')
+                ->leftjoin('bagiandalamkendaraan', 'bagiandalamkendaraan.pendaftaran_id', 'pendaftarans.id')
                 ->leftjoin('bagianbawahkendaraan', 'bagianbawahkendaraan.pendaftaran_id', '=', 'pendaftarans.id');
-        }elseif($ps == '2'){
+        } elseif ($ps == '2') {
             $data = $data->leftjoin('bagianbawahkendaraan', 'bagianbawahkendaraan.pendaftaran_id', '=', 'pendaftarans.id');
         }
         $data = $data->where('pendaftarans.uuid', $id)->first();
-        
+
         return $data;
     }
-    
-    public function checkid($id){
-        $data = $this->model->where('uuid',$id);
+
+    public function checkid($id)
+    {
+        $data = $this->model->where('uuid', $id);
         return $data->first();
     }
 
-    public function setPosisiPos($data,$request,$ps)
+    public function setPosisiPos($data, $request, $ps)
     {
         $user = auth()->user();
         $maxPs = '5';
         $posisi = $ps;
-        $nmField = 'pos'.$ps;
-        $usrnmField = 'user_pos'.$ps;
-        if($ps == '5')
-        {
+        $nmField = 'pos' . $ps;
+        $usrnmField = 'user_pos' . $ps;
+        if ($ps == '5') {
             $nmField = 'posverif';
             $usrnmField = 'user_verif';
         }
-        for($i = 1;$i<=$maxPs;$i++)
-        {
-            $ps= (int)$ps+1;
-            $field = 'pos'.$ps;
+        for ($i = 1; $i <= $maxPs; $i++) {
+            $ps = (int)$ps + 1;
+            $field = 'pos' . $ps;
             if (is_null($data->{$field})) {
                 $posisi = $ps;
                 break;
@@ -536,34 +753,35 @@ class PengujianRepository
                 $posisi = $ps;
                 break;
             }
-            
-            if($maxPs == 5)
-            {
+
+            if ($maxPs == 5) {
                 if (is_null($data->posverif)) {
                     $posisi = 5;
-                }elseif ($data->posverif == 0) {
+                } elseif ($data->posverif == 0) {
                     $posisi = 5;
-                }elseif ($data->posverif == 1) {
+                } elseif ($data->posverif == 1) {
                     $posisi = 6;
                 }
             }
         }
+        // dd($request, $nmField, $data);
+        // dd($request[$nmField]);
         $data->{$nmField}    = $request[$nmField];
         $data->{$usrnmField} = $user['id'];
         $data->posisi        = $posisi;
         $data->save();
     }
 
-    public function updatePos($request,$id)
+    public function updatePos($request, $id)
     {
         $request['pendaftaran_id'] = $id;
-        $update = $this->modelLaikJalan->where('pendaftaran_id',$id)->first();
-        if($update){
+        $update = $this->modelLaikJalan->where('pendaftaran_id', $id)->first();
+        if ($update) {
             $update->update($request);
 
             if ($update->save()) {
                 return true;
-            }    
+            }
         }
         return false;
     }
@@ -571,7 +789,7 @@ class PengujianRepository
     public function Datakendaraan($request, $id)
     {
         $data = $this->modelDatakendaraan->where('identitaskendaraan_id', $id)->first();
-        if($data){
+        if ($data) {
             $data->update($request);
             if ($data->save()) {
                 return true;
@@ -581,40 +799,40 @@ class PengujianRepository
         return false;
     }
 
-    public function setPengujian($request,$id,$bagian)
+    public function setPengujian($request, $id, $bagian)
     {
         $modelProperty = 'model' . ucfirst($bagian);
         if (!property_exists($this, $modelProperty)) {
             throw new \Exception("Model for bagian '$bagian' tidak ditemukan.");
         }
         $model = $this->{$modelProperty};
-        
+
         $data = $model->where('pendaftaran_id', $id)->first();
         $request['pendaftaran_id'] = $id;
-        if($data){
+        if ($data) {
             $data->update($request);
             if ($data->save()) {
                 return true;
             }
             return false;
-        }else{
+        } else {
             $data = $model->create($request);
-            if($data){
+            if ($data) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         }
     }
 
-    public function LaikJalanKendaraan($request,$id)
+    public function LaikJalanKendaraan($request, $id)
     {
         $data = $this->modelLaikJalan->where('pendaftaran_id', $id)->first();
-        if($data){
-            $masaberlakuuji=date("Y-m-d");
-            $masaberlakuuji=date_create($masaberlakuuji);
-            date_sub($masaberlakuuji,date_interval_create_from_date_string("-6 months"));
-            $masaberlakuuji= date_format($masaberlakuuji,"dmY");
+        if ($data) {
+            $masaberlakuuji = date("Y-m-d");
+            $masaberlakuuji = date_create($masaberlakuuji);
+            date_sub($masaberlakuuji, date_interval_create_from_date_string("-6 months"));
+            $masaberlakuuji = date_format($masaberlakuuji, "dmY");
             $tgluji = date("dmY");
             $request['pendaftaran_id'] = $id;
             $request['tgluji'] = $tgluji;
@@ -625,19 +843,19 @@ class PengujianRepository
                 return true;
             }
             return false;
-        }else{
-            $masaberlakuuji=date("Y-m-d");
-            $masaberlakuuji=date_create($masaberlakuuji);
-            date_sub($masaberlakuuji,date_interval_create_from_date_string("-6 months"));
-            $masaberlakuuji= date_format($masaberlakuuji,"dmY");
+        } else {
+            $masaberlakuuji = date("Y-m-d");
+            $masaberlakuuji = date_create($masaberlakuuji);
+            date_sub($masaberlakuuji, date_interval_create_from_date_string("-6 months"));
+            $masaberlakuuji = date_format($masaberlakuuji, "dmY");
             $tgluji = date("dmY");
             $request['pendaftaran_id'] = $id;
             $request['tgluji'] = $tgluji;
             $request['masaberlakuuji'] = $masaberlakuuji;
             $data = $this->modelLaikJalan->create($request);
-            if($data){
+            if ($data) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         }
@@ -646,7 +864,7 @@ class PengujianRepository
     public function setStatusCatatan($id)
     {
         $data = $this->modelCatatan->where('pendaftaran_id', $id)->first();
-        if($data){
+        if ($data) {
             $data->status = 0;
             $data->save();
             return true;
@@ -654,10 +872,10 @@ class PengujianRepository
         return false;
     }
 
-    public function upStatusCatatan($id,$ps)
+    public function upStatusCatatan($id, $ps)
     {
-        $data = $this->modelCatatan->where('pos',$ps)->where('pendaftaran_id', $id)->get();
-        if($data){
+        $data = $this->modelCatatan->where('pos', $ps)->where('pendaftaran_id', $id)->get();
+        if ($data) {
             $data->status = 0;
             $data->save();
             return true;

@@ -91,7 +91,7 @@
         </b-collapse>
         <hr />
         <div class="card-body">
-            
+
             <div class="card card-custom">
                 <div class="card-header">
                     <div class="card-title">
@@ -115,38 +115,14 @@
                     </div>
                 </b-collapse>
             </div>
-            
-            <div class="card card-custom">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h3 class="card-label" v-bind:style="laikjalan.status_kebisingan < 1
-                                ? 'background-color: #DC143C;'
-                                : 'background-color: #FFFFFF;'
-                            ">
-                            Kebisingan Suara
-                        </h3>
-                    </div>
-                    <div class="card-toolbar">
-                        <b-button v-b-toggle.collapse-emisi
-                            class="btn btn-icon btn-circle btn-sm btn-light-primary mr-1">
-                            <i class="ki ki-arrow-down icon-nm"></i>
-                        </b-button>
-                    </div>
-                </div>
-                <b-collapse id="collapse-emisi" visible>
-                    <div class="card-body">
-                        <pos-form></pos-form>
-                    </div>
-                </b-collapse>
-            </div>
 
             <div class="card card-custom">
                 <div class="card-header">
                     <div class="card-title">
                         <h3 class="card-label" v-bind:style="bawah.rangkalandasan < 1 || bawah.motorpenggerak < 1 || bawah.sistempenerusdaya < 1 || bawah.sistemkemudi < 1
-                                || bawah.sistemsuspensi < 1 || bawah.sistemroda < 1 || bawah.sistemrem < 1
-                                ? 'background-color: #DC143C;'
-                                : 'background-color: #FFFFFF;'
+                            || bawah.sistemsuspensi < 1 || bawah.sistemroda < 1 || bawah.sistemrem < 1
+                            ? 'background-color: #DC143C;'
+                            : 'background-color: #FFFFFF;'
                             ">
                             Bagian Bawah
                         </h3>
@@ -161,6 +137,30 @@
                 <b-collapse id="collapse-bawah">
                     <div class="card-body">
                         <bawah-form></bawah-form>
+                    </div>
+                </b-collapse>
+            </div>
+
+            <div class="card card-custom">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h3 class="card-label" v-bind:style="laikjalan.status_kebisingan < 1
+                            ? 'background-color: #DC143C;'
+                            : 'background-color: #FFFFFF;'
+                            ">
+                            Kebisingan Suara
+                        </h3>
+                    </div>
+                    <div class="card-toolbar">
+                        <b-button v-b-toggle.collapse-emisi
+                            class="btn btn-icon btn-circle btn-sm btn-light-primary mr-1">
+                            <i class="ki ki-arrow-down icon-nm"></i>
+                        </b-button>
+                    </div>
+                </div>
+                <b-collapse id="collapse-emisi" visible>
+                    <div class="card-body">
+                        <pos-form></pos-form>
                     </div>
                 </b-collapse>
             </div>
@@ -230,7 +230,7 @@ export default {
         });
     },
     methods: {
-        ...mapMutations("pos2", ["CLEAR_FORM", "CLEAR_CATATAN","CHECK_HASILUJI"]),
+        ...mapMutations("pos2", ["CLEAR_FORM", "CLEAR_CATATAN", "CHECK_HASILUJI"]),
         ...mapActions("pos2", ["submitPos", "getIdentitaskendaraan", "editPos", "CLEAR_FORM"]),
         submit() {
             this.submitPos(this.$route.params.id).then(() => {
