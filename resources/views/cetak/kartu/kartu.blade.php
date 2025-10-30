@@ -13,6 +13,9 @@
 	.small-text {
 		font-size: 12px;
 	}
+	.medium-text {
+		font-size: 14px;
+	}
 	.normal-text {
 		font-size: 16px;
 	}
@@ -93,15 +96,15 @@
 		<div class="col-1" style="text-align:center">
 			<img src="{{ $base64bg }}" width=30 height=40>
 		</div>
-		<div class="col-7">
+		<div class="col-6">
 			<h4 style="margin-top: 0px;margin-bottom: 0px;">UPT PENGUJIAN KENDARAAN BERMOTOR</h4>
 			<h6 style="margin-top: 0px;margin-bottom: 0px;">DINAS PERHUBUNGAN {{ env('APP_KAB'). ' '. env('APP_WILAYAH') }}</h6>
 		</div>
-		<div class="col-2" style="margin-left:-4%;width:20%">
+		<div class="col-2" style="width:20%">
 			<h4 style="margin-top: 0px;margin-bottom: 0px;">NO. UJI</h4>
 			<h4 style="margin-top: 0px;margin-bottom: 0px;">NO. KENDARAAN</h4>
 		</div>
-		<div class="col-2">
+		<div class="col-3">
 			<h4 style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['nouji'] }}</h4>
 			<h4 style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['noregistrasikendaraan'] }}</h4>
 		</div>
@@ -118,7 +121,7 @@
 		</div>
 		<div class="col-10">
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['nama'] }}</p>
-			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['alamat'] }}</p>
+			<p style="margin-top: 0px;margin-bottom: 0px;" class="{{ strlen($data['alamat']) > 63 ? 'medium-text' : 'normal-text' }}">: {{ $data['alamat'] }}</p>
 		</div>
 	</div>
 
@@ -144,8 +147,8 @@
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['norangka'] }}</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['nomesin'] }}</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['bahanbakar'] }}</p>
-			<p class="{{ strlen($data['subjenis']) > 20 ? 'small-text' : 'normal-text' }}" style="margin-top: 0px; margin-bottom: 0px;">
-				: {{ $data['subjenis'] }}
+			<p class="{{ strlen($data['jenis']) > 20 ? 'small-text' : 'normal-text' }}" style="margin-top: 0px; margin-bottom: 0px;">
+				: {{ $data['jenis'] }}
 			</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['isisilinder'] }}</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['dayamotorpenggerak'] }}</p>

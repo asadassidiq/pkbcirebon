@@ -556,7 +556,7 @@
             </tr>
             <tr class="allborder">
                 <td colspan="6" style="border-right: 2px white;">Jenis : <b>{{ $data->jenis }}</b></td>
-                <td colspan="8" class="noborder">Kartu Uji Kendaraan diberikan di : <b>Kabupaten Mimika</b></td>
+                <td colspan="8" class="noborder">Kartu Uji Kendaraan diberikan di : <b>{{ env('APP_KAB').' '.env('APP_WILAYAH') }}</b></td>
                 <td colspan="5" class="noborder">Pada Tanggal : <b>{{ $tglcetak }}</b></td>
                 <td colspan="10" rowspan="2" class="allborder">No. Uji Berkala : <b>{{ $data->nouji }}</b></td>
             </tr>
@@ -573,20 +573,38 @@
             </tr>
             @php 
                 $count  = count($pengujian);
+                function tgl_indo($tanggal){
+                    $bulan = array (
+                    1 => 'Januari',
+                    'Februari',
+                    'Maret',
+                    'April',
+                    'Mei',
+                    'Juni',
+                    'Juli',
+                    'Agustus',
+                    'September',
+                    'Oktober',
+                    'November',
+                    'Desember'
+                    );
+                    $pecahkan = explode('-', $tanggal);
+                    return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+                }
             @endphp
             @if($count > 0)
             <tr class="column-height">
-                <td colspan="3">{{ date_format(date_create($pengujian[0]['tglpendaftaran']),"d F Y") }}</td>
-                <td colspan="5">{{ date_format(date_create($pengujian[0]['masaberlakuuji']),"d F Y") }}</td>
+                <td colspan="3">{{ tgl_indo($pengujian[0]['tglpendaftaran']) }}</td>
+                <td colspan="5">{{ tgl_indo(substr($pengujian[0]['masaberlakuuji'],4,4).'-'.substr($pengujian[0]['masaberlakuuji'],2,2).'-'.substr($pengujian[0]['masaberlakuuji'],0,2)) }}</td>
                 @if($pengujian[0]['kodepenerbitans_id'] == '9')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('numpang','numpang.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[0]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[0]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Numpang Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -594,12 +612,12 @@
                 @elseif($pengujian[0]['kodepenerbitans_id'] == '10')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[0]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[0]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Mutasi Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -609,16 +627,17 @@
                         @php 
                             $eff = ($pengujian[0]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[0]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[0]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         
                         Mutasi Uji Masuk dari daerah : {{ $wilayah }}
                         <br>
+                        Lulus uji, efisiensi rem utama : {{ round($eff,2) }} %, 
                         Lulus uji, efisiensi rem utama : {{ round($eff,2) }} %, 
                         @if($data->bahanbakar == 'Solar')
                             Asap : {{ $pengujian[0]['alatuji_emisiasapbahanbakarsolar'] }}%, 
@@ -671,17 +690,17 @@
             @endif
             @if($count > 1)
             <tr class="column-height">
-                <td colspan="3">{{ date_format(date_create($pengujian[1]['tglpendaftaran']),"d F Y") }}</td>
-                <td colspan="5">{{ date_format(date_create($pengujian[1]['masaberlakuuji']),"d F Y") }}</td>
+                <td colspan="3">{{ tgl_indo($pengujian[1]['tglpendaftaran']) }}</td>
+                <td colspan="5">{{ tgl_indo(substr($pengujian[1]['masaberlakuuji'],4,4).'-'.substr($pengujian[1]['masaberlakuuji'],2,2).'-'.substr($pengujian[1]['masaberlakuuji'],0,2)) }}</td>
                 @if($pengujian[1]['kodepenerbitans_id'] == '9')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('numpang','numpang.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[1]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[1]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Numpang Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -689,12 +708,12 @@
                 @elseif($pengujian[1]['kodepenerbitans_id'] == '10')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[1]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[1]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Mutasi Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -704,12 +723,12 @@
                         @php 
                             $eff = ($pengujian[1]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[1]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[1]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         
                         Mutasi Uji Masuk dari daerah : {{ $wilayah }}
@@ -766,17 +785,17 @@
             
             @if($count > 2)
             <tr class="column-height">
-                <td colspan="3">{{ date_format(date_create($pengujian[2]['tglpendaftaran']),"d F Y") }}</td>
-                <td colspan="5">{{ date_format(date_create($pengujian[2]['masaberlakuuji']),"d F Y") }}</td>
+                <td colspan="3">{{ tgl_indo($pengujian[2]['tglpendaftaran']) }}</td>
+                <td colspan="5">{{ tgl_indo(substr($pengujian[2]['masaberlakuuji'],4,4).'-'.substr($pengujian[2]['masaberlakuuji'],2,2).'-'.substr($pengujian[2]['masaberlakuuji'],0,2)) }}</td>
                 @if($pengujian[2]['kodepenerbitans_id'] == '9')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('numpang','numpang.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[2]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[2]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Numpang Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -784,12 +803,12 @@
                 @elseif($pengujian[2]['kodepenerbitans_id'] == '10')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[2]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[2]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Mutasi Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -799,12 +818,12 @@
                         @php 
                             $eff = ($pengujian[2]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[2]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[2]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         
                         Mutasi Uji Masuk dari daerah : {{ $wilayah }}
@@ -830,12 +849,12 @@
                         @php 
                             $eff = ($pengujian[2]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[2]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[2]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         
                         Mutasi Uji Masuk dari daerah : {{ $wilayah }}
@@ -891,17 +910,17 @@
             @endif
             <tr class="column-height">
             @if($count > 3)
-                <td colspan="3">{{ date_format(date_create($pengujian[3]['tglpendaftaran']),"d F Y") }}</td>
-                <td colspan="5">{{ date_format(date_create($pengujian[3]['masaberlakuuji']),"d F Y") }}</td>
+                <td colspan="3">{{ tgl_indo($pengujian[3]['tglpendaftaran']) }}</td>
+                <td colspan="5">{{ tgl_indo(substr($pengujian[3]['masaberlakuuji'],4,4).'-'.substr($pengujian[3]['masaberlakuuji'],2,2).'-'.substr($pengujian[3]['masaberlakuuji'],0,2)) }}</td>
                 @if($pengujian[3]['kodepenerbitans_id'] == '9')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('numpang','numpang.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[3]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[3]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Numpang Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -909,12 +928,12 @@
                 @elseif($pengujian[3]['kodepenerbitans_id'] == '10')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[3]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[3]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Mutasi Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -924,12 +943,12 @@
                         @php 
                             $eff = ($pengujian[3]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[3]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[3]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         
                         Mutasi Uji Masuk dari daerah : {{ $wilayah }}
@@ -981,17 +1000,17 @@
             </tr>
             <tr class="column-height">
             @if($count > 4)
-                <td colspan="3">{{ date_format(date_create($pengujian[4]['tglpendaftaran']),"d F Y") }}</td>
-                <td colspan="5">{{ date_format(date_create($pengujian[4]['masaberlakuuji']),"d F Y") }}</td>
+                <td colspan="3">{{ tgl_indo($pengujian[4]['tglpendaftaran']) }}</td>
+                <td colspan="5">{{ tgl_indo(substr($pengujian[4]['masaberlakuuji'],4,4).'-'.substr($pengujian[4]['masaberlakuuji'],2,2).'-'.substr($pengujian[4]['masaberlakuuji'],0,2)) }}</td>
                 @if($pengujian[4]['kodepenerbitans_id'] == '9')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('numpang','numpang.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[4]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[4]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Numpang Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -999,12 +1018,12 @@
                 @elseif($pengujian[4]['kodepenerbitans_id'] == '10')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[4]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[4]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Mutasi Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -1014,12 +1033,12 @@
                         @php 
                             $eff = ($pengujian[4]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[4]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[4]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         
                         Mutasi Uji Masuk dari daerah : {{ $wilayah }}
@@ -1068,10 +1087,102 @@
             @endif
                 <td colspan="15"></td>
             </tr>
+
+            @if($count > 5)
+            <tr class="column-height">
+                <td colspan="3">{{ tgl_indo($pengujian[5]['tglpendaftaran']) }}</td>
+                <td colspan="5">{{ tgl_indo(substr($pengujian[5]['masaberlakuuji'],4,4).'-'.substr($pengujian[5]['masaberlakuuji'],2,2).'-'.substr($pengujian[5]['masaberlakuuji'],0,2)) }}</td>
+                @if($pengujian[5]['kodepenerbitans_id'] == '9')
+                    <td colspan="8">
+                        @php 
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[5]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
+                        @endphp
+                        Numpang Uji Keluar ke daerah : {{ $wilayah }}
+                    </td>
+                    <td colspan="5" class="text-center"></td>
+                @elseif($pengujian[5]['kodepenerbitans_id'] == '10')
+                    <td colspan="8">
+                        @php 
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[5]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
+                        @endphp
+                        Mutasi Uji Keluar ke daerah : {{ $wilayah }}
+                    </td>
+                    <td colspan="5" class="text-center"></td>
+                @elseif($pengujian[5]['kodepenerbitans_id'] == '6')
+                    <td colspan="8">
+                        @php 
+                            $eff = ($pengujian[5]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
+
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[5]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
+                        @endphp
+                        
+                        Mutasi Uji Masuk dari daerah : {{ $wilayah }}
+                        <br>
+                        Lulus uji, efisiensi rem utama : {{ round($eff,2) }} %, 
+                        @if($data->bahanbakar == 'Solar')
+                            Asap : {{ $pengujian[5]['alatuji_emisiasapbahanbakarsolar'] }}%, 
+                        @else
+                            CO : {{ $pengujian[5]['alatuji_emisicobahanbakarbensin'] }}%, HC : {{ $pengujian[5]['alatuji_emisihcbahanbakarbensin'] }} Ppm,
+                        @endif    
+                            Intensitas lampu kiri : {{ $pengujian[5]['alatuji_lampuutamakekuatanpancarlampukiri'] }} cd, kanan : {{ $pengujian[5]['alatuji_lampuutamakekuatanpancarlampukanan'] }} cd
+                    </td>
+                    <td colspan="5" class="text-center">
+                        @php echo '<img width="110" height="55" src="data:image/jpeg;base64,'.base64_encode($pengujian[5]['tandatangan']).'"/>';
+                        @endphp
+                        <br>
+                        {{ $pengujian[5]['nama'] }}
+                        <br>
+                        {{ $pengujian[5]['nrp'] }}
+                    </td>
+                @else
+                    @php
+                        $eff = ($pengujian[5]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
+                    @endphp
+                    <td colspan="8">Lulus uji, efisiensi rem utama : {{ round($eff,2) }} %, 
+                    @if($data->bahanbakar == 'Solar')
+                        Asap : {{ $pengujian[5]['alatuji_emisiasapbahanbakarsolar'] }}%, 
+                    @else
+                        CO : {{ $pengujian[5]['alatuji_emisicobahanbakarbensin'] }}%, HC : {{ $pengujian[5]['alatuji_emisihcbahanbakarbensin'] }} Ppm,
+                    @endif    
+                        Intensitas lampu kiri : {{ $pengujian[5]['alatuji_lampuutamakekuatanpancarlampukiri'] }} cd, kanan : {{ $pengujian[5]['alatuji_lampuutamakekuatanpancarlampukanan'] }} cd</td>
+                    <td colspan="5" class="text-center">
+                        @php echo '<img width="110" height="55" src="data:image/jpeg;base64,'.base64_encode($pengujian[5]['tandatangan']).'"/>';
+                        @endphp
+                        <br>
+                        {{ $pengujian[5]['nama'] }}
+                        <br>
+                        {{ $pengujian[5]['nrp'] }}
+                    </td>
+                @endif
+                <td colspan="20"></td>
+            </tr>
+            @else
+                <tr class="column-height">
+                <td colspan="3"></td>
+                <td colspan="5"></td>
+                <td colspan="8"></td>
+                <td colspan="20"></td>
+            </tr>
+            @endif
         </table>
     </div>
 
-    @if($count > 5)
+    @if($count > 6)
     <div id="form-noborder-100" class="kertasbaru">
         <table class="table table-bordered" id="table">
             <tr class="aligncenter">
@@ -1280,7 +1391,7 @@
             </tr>
             <tr class="allborder">
                 <td colspan="6" style="border-right: 2px white;">Jenis : <b>{{ $data->jenis }}</b></td>
-                <td colspan="8" class="noborder">Kartu Uji Kendaraan diberikan di : <b>Kabupaten Mimika</b></td>
+                <td colspan="8" class="noborder">Kartu Uji Kendaraan diberikan di : <b>{{ env('APP_KAB').' '.env('APP_WILAYAH') }}</b></td>
                 <td colspan="5" class="noborder">Pada Tanggal : <b>{{ $tglcetak }}</b></td>
                 <td colspan="10" rowspan="2" class="allborder">No. Uji Berkala : <b>{{ $data->nouji }}</b></td>
             </tr>
@@ -1295,113 +1406,19 @@
                 <td colspan="3">Nomor Kendaraan</td>
                 <td colspan="11">Nama dan Alamat Pemilik kendaraan</td>
             </tr>
-            @if($count > 5)
-            <tr class="column-height">
-                <td colspan="3">{{ date_format(date_create($pengujian[5]['tglpendaftaran']),"d F Y") }}</td>
-                <td colspan="5">{{ date_format(date_create($pengujian[5]['masaberlakuuji']),"d F Y") }}</td>
-                @if($pengujian[5]['kodepenerbitans_id'] == '9')
-                    <td colspan="8">
-                        @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('numpang','numpang.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[5]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
-                        @endphp
-                        Numpang Uji Keluar ke daerah : {{ $wilayah }}
-                    </td>
-                    <td colspan="5" class="text-center"></td>
-                @elseif($pengujian[5]['kodepenerbitans_id'] == '10')
-                    <td colspan="8">
-                        @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[5]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
-                        @endphp
-                        Mutasi Uji Keluar ke daerah : {{ $wilayah }}
-                    </td>
-                    <td colspan="5" class="text-center"></td>
-                @elseif($pengujian[5]['kodepenerbitans_id'] == '6')
-                    <td colspan="8">
-                        @php 
-                            $eff = ($pengujian[5]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
-
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[5]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
-                        @endphp
-                        
-                        Mutasi Uji Masuk dari daerah : {{ $wilayah }}
-                        <br>
-                        Lulus uji, efisiensi rem utama : {{ round($eff,2) }} %, 
-                        @if($data->bahanbakar == 'Solar')
-                            Asap : {{ $pengujian[5]['alatuji_emisiasapbahanbakarsolar'] }}%, 
-                        @else
-                            CO : {{ $pengujian[5]['alatuji_emisicobahanbakarbensin'] }}%, HC : {{ $pengujian[5]['alatuji_emisihcbahanbakarbensin'] }} Ppm,
-                        @endif    
-                            Intensitas lampu kiri : {{ $pengujian[5]['alatuji_lampuutamakekuatanpancarlampukiri'] }} cd, kanan : {{ $pengujian[5]['alatuji_lampuutamakekuatanpancarlampukanan'] }} cd
-                    </td>
-                    <td colspan="5" class="text-center">
-                        @php echo '<img width="110" height="55" src="data:image/jpeg;base64,'.base64_encode($pengujian[5]['tandatangan']).'"/>';
-                        @endphp
-                        <br>
-                        {{ $pengujian[5]['nama'] }}
-                        <br>
-                        {{ $pengujian[5]['nrp'] }}
-                    </td>
-                @else
-                    @php
-                        $eff = ($pengujian[5]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
-                    @endphp
-                    <td colspan="8">Lulus uji, efisiensi rem utama : {{ round($eff,2) }} %, 
-                    @if($data->bahanbakar == 'Solar')
-                        Asap : {{ $pengujian[5]['alatuji_emisiasapbahanbakarsolar'] }}%, 
-                    @else
-                        CO : {{ $pengujian[5]['alatuji_emisicobahanbakarbensin'] }}%, HC : {{ $pengujian[5]['alatuji_emisihcbahanbakarbensin'] }} Ppm,
-                    @endif    
-                        Intensitas lampu kiri : {{ $pengujian[5]['alatuji_lampuutamakekuatanpancarlampukiri'] }} cd, kanan : {{ $pengujian[5]['alatuji_lampuutamakekuatanpancarlampukanan'] }} cd</td>
-                    <td colspan="5" class="text-center">
-                        @php echo '<img width="110" height="55" src="data:image/jpeg;base64,'.base64_encode($pengujian[5]['tandatangan']).'"/>';
-                        @endphp
-                        <br>
-                        {{ $pengujian[5]['nama'] }}
-                        <br>
-                        {{ $pengujian[5]['nrp'] }}
-                    </td>
-                @endif
-                <td colspan="3">{{ $data->noregistrasikendaraan }}</td>
-                <td colspan="11">{{ $data->nama }} <br> {{ $data->alamat }}</td>
-            </tr>
-            @else
-                <tr class="column-height">
-                <td colspan="3"></td>
-                <td colspan="5"></td>
-                <td colspan="8"></td>
-                <td colspan="5"></td>
-                <td colspan="3">{{ $data->noregistrasikendaraan }}</td>
-                <td colspan="11">{{ $data->nama }} <br> {{ $data->alamat }}</td>
-            </tr>
-            @endif
             @if($count > 6)
             <tr class="column-height">
-                <td colspan="3">{{ date_format(date_create($pengujian[6]['tglpendaftaran']),"d F Y") }}</td>
-                <td colspan="5">{{ date_format(date_create($pengujian[6]['masaberlakuuji']),"d F Y") }}</td>
+                <td colspan="3">{{ tgl_indo($pengujian[6]['tglpendaftaran']) }}</td>
+                <td colspan="5">{{ tgl_indo(substr($pengujian[6]['masaberlakuuji'],4,4).'-'.substr($pengujian[6]['masaberlakuuji'],2,2).'-'.substr($pengujian[6]['masaberlakuuji'],0,2)) }}</td>
                 @if($pengujian[6]['kodepenerbitans_id'] == '9')
                     <td colspan="8">
-                        @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('numpang','numpang.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[6]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                        @php
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[6]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Numpang Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -1409,12 +1426,12 @@
                 @elseif($pengujian[6]['kodepenerbitans_id'] == '10')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[6]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[6]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Mutasi Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -1424,12 +1441,12 @@
                         @php 
                             $eff = ($pengujian[6]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[6]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $$wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[6]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         
                         Mutasi Uji Masuk dari daerah : {{ $wilayah }}
@@ -1470,8 +1487,8 @@
                         {{ $pengujian[6]['nrp'] }}
                     </td>
                 @endif
-                <td colspan="3"></td>
-                <td colspan="11"></td>
+                <td colspan="3">{{ $data->noregistrasikendaraan }}</td>
+                <td colspan="11">{{ $data->nama }} <br> {{ $data->alamat }}</td>
             </tr>
             @else
                 <tr class="column-height">
@@ -1479,24 +1496,24 @@
                 <td colspan="5"></td>
                 <td colspan="8"></td>
                 <td colspan="5"></td>
-                <td colspan="3"></td>
-                <td colspan="11"></td>
+                <td colspan="3">{{ $data->noregistrasikendaraan }}</td>
+                <td colspan="11">{{ $data->nama }} <br> {{ $data->alamat }}</td>
             </tr>
             @endif
             
             @if($count > 7)
             <tr class="column-height">
-                <td colspan="3">{{ date_format(date_create($pengujian[7]['tglpendaftaran']),"d F Y") }}</td>
-                <td colspan="5">{{ date_format(date_create($pengujian[7]['masaberlakuuji']),"d F Y") }}</td>
+                <td colspan="3">{{ tgl_indo($pengujian[7]['tglpendaftaran']) }}</td>
+                <td colspan="5">{{ tgl_indo(substr($pengujian[7]['masaberlakuuji'],4,4).'-'.substr($pengujian[7]['masaberlakuuji'],2,2).'-'.substr($pengujian[7]['masaberlakuuji'],0,2)) }}</td>
                 @if($pengujian[7]['kodepenerbitans_id'] == '9')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('numpang','numpang.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[7]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[7]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Numpang Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -1504,12 +1521,12 @@
                 @elseif($pengujian[7]['kodepenerbitans_id'] == '10')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[7]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[7]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Mutasi Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -1519,12 +1536,12 @@
                         @php 
                             $eff = ($pengujian[7]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[7]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[7]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         
                         Mutasi Uji Masuk dari daerah : {{ $wilayah }}
@@ -1580,17 +1597,17 @@
             @endif
             <tr class="column-height">
             @if($count > 8)
-                <td colspan="3">{{ date_format(date_create($pengujian[8]['tglpendaftaran']),"d F Y") }}</td>
-                <td colspan="5">{{ date_format(date_create($pengujian[8]['masaberlakuuji']),"d F Y") }}</td>
+                <td colspan="3">{{ tgl_indo($pengujian[8]['tglpendaftaran']) }}</td>
+                <td colspan="5">{{ tgl_indo(substr($pengujian[8]['masaberlakuuji'],4,4).'-'.substr($pengujian[8]['masaberlakuuji'],2,2).'-'.substr($pengujian[8]['masaberlakuuji'],0,2)) }}</td>
                 @if($pengujian[8]['kodepenerbitans_id'] == '9')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('numpang','numpang.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[8]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[8]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Numpang Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -1613,12 +1630,12 @@
                         @php 
                             $eff = ($pengujian[8]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[8]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[8]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         
                         Mutasi Uji Masuk dari daerah : {{ $wilayah }}
@@ -1670,17 +1687,17 @@
             </tr>
             <tr class="column-height">
             @if($count > 9)
-                <td colspan="3">{{ date_format(date_create($pengujian[9]['tglpendaftaran']),"d F Y") }}</td>
-                <td colspan="5">{{ date_format(date_create($pengujian[9]['masaberlakuuji']),"d F Y") }}</td>
+                <td colspan="3">{{ tgl_indo($pengujian[9]['tglpendaftaran']) }}</td>
+                <td colspan="5">{{ tgl_indo(substr($pengujian[9]['masaberlakuuji'],4,4).'-'.substr($pengujian[9]['masaberlakuuji'],2,2).'-'.substr($pengujian[9]['masaberlakuuji'],0,2)) }}</td>
                 @if($pengujian[9]['kodepenerbitans_id'] == '9')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('numpang','numpang.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[9]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[9]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Numpang Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -1688,12 +1705,12 @@
                 @elseif($pengujian[9]['kodepenerbitans_id'] == '10')
                     <td colspan="8">
                         @php 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[9]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[9]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         Mutasi Uji Keluar ke daerah : {{ $wilayah }}
                     </td>
@@ -1703,12 +1720,12 @@
                         @php 
                             $eff = ($pengujian[9]['alatuji_remutamatotalgayapengereman']/$data['beratkosong'])*100;
 
-                                $wilayah = App\Models\Kodewilayah::select('area_name')->Join('mutasi','mutasi.daerah','kodewilayah.kodewilayah')->where('pendaftaran_id',$pengujian[9]['id'])->first();
-                                if($wilayah){
-                                    $wilayah = $wilayah['area_name'];
-                                }else{
-                                    $wilayah = '';
-                                }
+                            $wilayah = App\Models\Kodewilayah::select('area_name')->where('area_code',$pengujian[9]['kode'])->first();
+                            if($wilayah){
+                                $wilayah = $wilayah['area_name'];
+                            }else{
+                                $wilayah = '';
+                            }
                         @endphp
                         
                         Mutasi Uji Masuk dari daerah : {{ $wilayah }}
