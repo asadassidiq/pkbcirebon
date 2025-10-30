@@ -16,7 +16,7 @@
                             @click="setStatus()"
                         >
                             <option selected="selected">SEMUA</option>
-                            <option>MIMIKA</option>
+                            <option>CIREBON</option>
                             <option>AKTIF</option>
                             <option>TIDAK AKTIF</option>
                             <option>NU MASUK</option>
@@ -89,6 +89,12 @@
                                         @click="print(datakendaraan.uuid)"
                                     >
                                         <i class="fa fa-print text-info"></i>
+                                    </a>
+                                    <a
+                                        href="javascript:void(0)"
+                                        @click="print2(datakendaraan.uuid)"
+                                    >
+                                        <i class="fa fa-print text-warning"></i>
                                     </a>
                                     <a
                                         href="javascript:void(0)"
@@ -362,6 +368,9 @@ export default {
         },
         print(id) {
             window.open("/cetak/" + id + "/kartuinduk");
+        },
+        print2(id) {
+            window.open("/cetak/" + id + "/kartuindukv2");
         },
         customTgl1(tgl) {
             if (tgl) {

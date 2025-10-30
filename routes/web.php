@@ -33,6 +33,7 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Api'], function () {
 
 	Route::group(['prefix' => 'cetak'], function () {
 		Route::get('/{id}/kartuinduk', 'DatakendaraanController@cetak')->name('kartu.induk');
+		Route::get('/{id}/kartuindukv2', 'DatakendaraanController@cetakKartu')->name('kartu.indukv2');
 	});
 
 	Route::group(['prefix' => 'cetak'], function () {
