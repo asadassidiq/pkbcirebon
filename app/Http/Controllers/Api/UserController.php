@@ -59,6 +59,31 @@ class UserController extends Controller
         return $this->returnJson($data, 'User Updated');
     }
 
+    public function storettd(Request $request)
+    {
+        // Validasi file harus gambar
+        $request->validate([
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
+        ]);
+
+        // Ambil file dari request
+        $file = $request->file('image');
+
+        // Buat nama unik untuk file
+        $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+
+        // Pindahkan ke folder public/uploads
+        $file->move(public_path('ttd'), $filename);
+
+        // Return response JSON ke Vue
+        return response()->json([
+            'success' => true,
+            'message' => 'Upload berhasil',
+            'filename' => $filename,
+            'url' => url('ttd/' . $filename),
+        ]);
+    }
+
     public function delete($id)
     {
         $data = $this->UserService->delete($id);

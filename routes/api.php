@@ -242,6 +242,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
         Route::group(['middleware' => ['role:admin'], 'prefix' => 'user'], function () {
             Route::post('/', 'UserController@store');
+            Route::post('/upload-image', 'UserController@storettd');
             Route::get('/', 'UserController@index');
             Route::get('/name', 'UserController@getUserName');
             Route::get('/{id}', 'UserController@getUser');
