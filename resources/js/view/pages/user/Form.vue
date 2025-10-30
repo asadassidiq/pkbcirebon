@@ -190,8 +190,9 @@
             </div>
         </div>
     </div>
-    <div>
-      <h3>Upload Foto</h3>
+    <hr>
+    <div style="margin-top: 30px;margin-bottom: 40px;" class="text-right">
+      <h3>Upload Tanda Tangan</h3>
 
       <!-- Input Upload -->
       <input type="file" @change="onFileChange" accept="image/*" />
@@ -275,12 +276,20 @@ export default {
         const res = await axios.post("/api/upload-image", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-
-        alert("Upload berhasil!");
-        console.log(res.data);
+        Swal.fire({
+          title: "",
+          text: "Success!",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1500
+        });
       } catch (error) {
-        console.error(error);
-        alert("Upload gagal!");
+        console.error("Error uploading image:", error);
+        Swal.fire({
+          title: "Error",
+          text: "Failed to upload image.",
+          icon: "error",
+        });
       }
     },
   },
