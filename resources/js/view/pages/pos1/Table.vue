@@ -1,10 +1,10 @@
 <template>
   <div class="card card-custom">
-    <div class="card-title">
-      <span class="card-icon">
-        <i class="flaticon2-lorry text-primary"></i>
-      </span>
-      <div class="card-header">
+    <div class="card-header">
+      <div class="card-title">
+        <span class="card-icon">
+          <i class="flaticon2-lorry text-primary"></i>
+        </span>
         <h3 class="card-label">Pengujian POS 1</h3>
       </div>
       <div class="card-toolbar">
@@ -39,7 +39,7 @@
             <tbody>
               <tr v-for="(pendaftaran, index) in pos1.pendaftarans
                 .data" :key="pendaftaran.uuid">
-                <td>{{ index + 1 }}</td>
+                <td>{{ index+1 }}</td>
                 <td>{{ pendaftaran.keterangan }}</td>
                 <td>{{ pendaftaran.nouji }}</td>
                 <td>{{ pendaftaran.noregistrasikendaraan }}</td>
@@ -70,11 +70,14 @@
     </div>
   </div>
 </template>
+
 <script>
 import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
 import { mapState, mapActions } from "vuex";
 export default {
   created() {
+    // this.getPendaftarans();
+
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, "0");
     var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
@@ -84,6 +87,7 @@ export default {
   },
   data() {
     return {
+      // users: {}
       search: "",
       tgl: "",
     };

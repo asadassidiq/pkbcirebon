@@ -284,7 +284,7 @@
     }" v-if="user.p1 == true">
       <a href="#" class="menu-link menu-toggle">
         <i class="menu-icon flaticon2-safe"></i>
-        <span class="menu-text">Uji Visual
+        <span class="menu-text">POS 1
           <div class="blink" v-if="notif.pos1 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos1
                 }}</span></span>
@@ -297,7 +297,7 @@
         <ul class="menu-subnav">
           <li aria-haspopup="true" class="menu-item menu-item-parent">
             <span class="menu-link">
-              <span class="menu-text">Uji Visual</span>
+              <span class="menu-text">POS 1</span>
             </span>
           </li>
 
@@ -351,7 +351,7 @@
     }" v-if="user.p2 == true">
       <a href="#" class="menu-link menu-toggle">
         <i class="menu-icon flaticon2-safe"></i>
-        <span class="menu-text">Kebisingan
+        <span class="menu-text">POS 2
           <div class="blink" v-if="notif.pos2 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos2
                 }}</span></span>
@@ -364,7 +364,7 @@
         <ul class="menu-subnav">
           <li aria-haspopup="true" class="menu-item menu-item-parent">
             <span class="menu-link">
-              <span class="menu-text">Emisi</span>
+              <span class="menu-text">POS 2</span>
             </span>
           </li>
 
@@ -418,7 +418,7 @@
     }" v-if="user.p3 == true">
       <a href="#" class="menu-link menu-toggle">
         <i class="menu-icon flaticon2-safe"></i>
-        <span class="menu-text">Emisi
+        <span class="menu-text">POS 3
           <div class="blink" v-if="notif.pos3 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos3
                 }}</span></span>
@@ -431,7 +431,7 @@
         <ul class="menu-subnav">
           <li aria-haspopup="true" class="menu-item menu-item-parent">
             <span class="menu-link">
-              <span class="menu-text">Speedometer</span>
+              <span class="menu-text">POS 3</span>
             </span>
           </li>
 
@@ -485,7 +485,7 @@
     }" v-if="user.p4 == true">
       <a href="#" class="menu-link menu-toggle">
         <i class="menu-icon flaticon2-safe"></i>
-        <span class="menu-text">Lampu
+        <span class="menu-text">POS 4
           <div class="blink" v-if="notif.pos4 > 0">
             <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos4
                 }}</span></span>
@@ -498,7 +498,7 @@
         <ul class="menu-subnav">
           <li aria-haspopup="true" class="menu-item menu-item-parent">
             <span class="menu-link">
-              <span class="menu-text">Bagian Bawah</span>
+              <span class="menu-text">POS 4</span>
             </span>
           </li>
 
@@ -546,287 +546,6 @@
         </ul>
       </div>
     </li>
-
-    <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item menu-item-submenu" v-bind:class="{
-      'menu-item-open': hasActiveChildren('/pos5')
-    }" v-if="user.p5 == true">
-      <a href="#" class="menu-link menu-toggle">
-        <i class="menu-icon flaticon2-safe"></i>
-        <span class="menu-text">Sideslip
-          <div class="blink" v-if="notif.pos5 > 0">
-            <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos5
-                }}</span></span>
-          </div>
-        </span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="menu-submenu">
-        <span class="menu-arrow"></span>
-        <ul class="menu-subnav">
-          <li aria-haspopup="true" class="menu-item menu-item-parent">
-            <span class="menu-link">
-              <span class="menu-text">Kebisingan</span>
-            </span>
-          </li>
-
-          <router-link to="/pos5" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Datakendaraan Uji</span>
-              </a>
-            </li>
-          </router-link>
-
-          <router-link to="/pos5/lulus" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Lulus</span>
-              </a>
-            </li>
-          </router-link>
-
-          <router-link to="/pos5/tidaklulus" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Tidak Lulus</span>
-              </a>
-            </li>
-          </router-link>
-        </ul>
-      </div>
-    </li>
-
-    <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item menu-item-submenu" v-bind:class="{
-      'menu-item-open': hasActiveChildren('/pos6')
-    }" v-if="user.p6 == true">
-      <a href="#" class="menu-link menu-toggle">
-        <i class="menu-icon flaticon2-safe"></i>
-        <span class="menu-text">Timbangan
-          <div class="blink" v-if="notif.pos6 > 0">
-            <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos6
-                }}</span></span>
-          </div>
-        </span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="menu-submenu">
-        <span class="menu-arrow"></span>
-        <ul class="menu-subnav">
-          <li aria-haspopup="true" class="menu-item menu-item-parent">
-            <span class="menu-link">
-              <span class="menu-text">Rem</span>
-            </span>
-          </li>
-
-          <router-link to="/pos6" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Datakendaraan Uji</span>
-              </a>
-            </li>
-          </router-link>
-
-          <router-link to="/pos6/lulus" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Lulus</span>
-              </a>
-            </li>
-          </router-link>
-
-          <router-link to="/pos6/tidaklulus" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Tidak Lulus</span>
-              </a>
-            </li>
-          </router-link>
-        </ul>
-      </div>
-    </li>
-
-    <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item menu-item-submenu" v-bind:class="{
-      'menu-item-open': hasActiveChildren('/pos7')
-    }" v-if="user.p7 == true">
-      <a href="#" class="menu-link menu-toggle">
-        <i class="menu-icon flaticon2-safe"></i>
-        <span class="menu-text">Rem
-          <div class="blink" v-if="notif.pos7 > 0">
-            <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos7
-                }}</span></span>
-          </div>
-        </span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="menu-submenu">
-        <span class="menu-arrow"></span>
-        <ul class="menu-subnav">
-          <li aria-haspopup="true" class="menu-item menu-item-parent">
-            <span class="menu-link">
-              <span class="menu-text">Sideslip</span>
-            </span>
-          </li>
-
-          <router-link to="/pos7" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Datakendaraan Uji</span>
-              </a>
-            </li>
-          </router-link>
-
-          <router-link to="/pos7/lulus" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Lulus</span>
-              </a>
-            </li>
-          </router-link>
-
-          <router-link to="/pos7/tidaklulus" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Tidak Lulus</span>
-              </a>
-            </li>
-          </router-link>
-        </ul>
-      </div>
-    </li>
-
-    <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item menu-item-submenu" v-bind:class="{
-      'menu-item-open': hasActiveChildren('/pos8')
-    }" v-if="user.p8 == true">
-      <a href="#" class="menu-link menu-toggle">
-        <i class="menu-icon flaticon2-safe"></i>
-        <span class="menu-text">Speedometer
-          <div class="blink" v-if="notif.pos8 > 0">
-            <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{ notif.pos8
-                }}</span></span>
-          </div>
-        </span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="menu-submenu">
-        <span class="menu-arrow"></span>
-        <ul class="menu-subnav">
-          <li aria-haspopup="true" class="menu-item menu-item-parent">
-            <span class="menu-link">
-              <span class="menu-text">Lampu</span>
-            </span>
-          </li>
-
-          <router-link to="/pos8" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Datakendaraan Uji</span>
-              </a>
-            </li>
-          </router-link>
-
-          <router-link to="/pos8/lulus" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Lulus</span>
-              </a>
-            </li>
-          </router-link>
-
-          <router-link to="/pos8/tidaklulus" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Tidak Lulus</span>
-              </a>
-            </li>
-          </router-link>
-        </ul>
-      </div>
-    </li>
-
-    <router-link to="/monitoring" v-slot="{ href, navigate, isActive, isExactActive }"
-      v-if="user.v1 == true || user.v2 == true || user.role == 'KEPALA UPT'">
-      <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-        isActive && 'menu-item-active',
-        isExactActive && 'menu-item-active'
-      ]">
-        <a :href="href" class="menu-link" @click="navigate">
-          <i class="menu-icon flaticon2-setup"></i>
-          <span class="menu-text">Monitoring</span>
-        </a>
-      </li>
-    </router-link>
 
     <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item menu-item-submenu" v-bind:class="{
       'menu-item-open': hasActiveChildren('/verif')
@@ -894,6 +613,19 @@
         </ul>
       </div>
     </li>
+
+    <router-link to="/monitoring" v-slot="{ href, navigate, isActive, isExactActive }"
+      v-if="user.v1 == true || user.v2 == true || user.role == 'KEPALA UPT'">
+      <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
+        isActive && 'menu-item-active',
+        isExactActive && 'menu-item-active'
+      ]">
+        <a :href="href" class="menu-link" @click="navigate">
+          <i class="menu-icon flaticon2-setup"></i>
+          <span class="menu-text">Monitoring</span>
+        </a>
+      </li>
+    </router-link>
 
     <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item menu-item-submenu" v-bind:class="{
       'menu-item-open': hasActiveChildren('/cetak')

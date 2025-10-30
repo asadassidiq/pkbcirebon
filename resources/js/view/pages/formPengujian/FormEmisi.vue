@@ -33,9 +33,6 @@
                     v-on:change="hasiluji" />
             </div>
         </div>
-        <!-- <div class="col-sm-12">
-            <p class="text-danger">{{ ambangBatas() }}</p>
-        </div> -->
 
         <b-modal ref="my-modal" title="Alasan Penolakan" @ok="submit">
             <div class="form-group">
