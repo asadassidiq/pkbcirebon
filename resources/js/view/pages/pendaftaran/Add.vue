@@ -66,8 +66,8 @@
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
-                      <label> No Seri</label>
-                      <input type="number" min="1" class="form-control  form-control-lg" placeholder="No Seri "
+                      <label> No Antrian</label>
+                      <input type="number" min="1" class="form-control  form-control-lg" placeholder="No Antrian"
                         v-model="pendaftaran.noantrian" />
                     </div>
                   </div>

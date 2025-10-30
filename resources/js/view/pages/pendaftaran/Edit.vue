@@ -101,12 +101,12 @@
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
-                      <label> No Seri</label>
+                      <label> No Antrian</label>
                       <input
                         type="number"
                         min="1"
                         class="form-control form-control-lg"
-                        placeholder="No Seri "
+                        placeholder="No Antrian"
                         v-model="pendaftaran.noantrian"
                       />
                     </div>
@@ -1102,18 +1102,6 @@
                       <p class="text-danger" v-if="errors.warna">
                         {{ errors.warna[0] }}
                       </p>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label> No TMK</label>
-                      <input
-                        type="number"
-                        min="1"
-                        class="form-control form-control-lg"
-                        placeholder="No TMK "
-                        v-model="pendaftaran.tmk"
-                      />
                     </div>
                   </div>
                 </div>

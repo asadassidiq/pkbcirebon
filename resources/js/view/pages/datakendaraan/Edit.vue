@@ -260,13 +260,6 @@
                         style="text-transform: uppercase;" v-model="datakendaraan.warna" />
                     </div>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label> No TMK</label>
-                      <input type="number" min="1" class="form-control  form-control-lg" placeholder="No TMK "
-                        v-model="datakendaraan.tmk" />
-                    </div>
-                  </div>
                 </div>
               </div>
               <!--end: Wizard Step 2-->

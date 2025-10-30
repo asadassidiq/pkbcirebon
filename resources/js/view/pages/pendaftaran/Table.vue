@@ -146,7 +146,6 @@ export default {
         var yyyy = today.getFullYear();
         today = yyyy + "-" + mm + "-" + dd;
         this.tgl = today;
-        console.log(this.$store.state.auth.notif);
     },
     data() {
         return {
