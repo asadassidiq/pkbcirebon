@@ -65,12 +65,13 @@ class UserController extends Controller
         $request->validate([
             'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
+        $user = auth()->user();
 
         // Ambil file dari request
         $file = $request->file('image');
 
         // Buat nama unik untuk file
-        $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $filename = 'ttd-'.$user->uuid. '.jpg';
 
         // Pindahkan ke folder public/uploads
         $file->move(public_path('ttd'), $filename);

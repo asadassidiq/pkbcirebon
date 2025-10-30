@@ -221,6 +221,7 @@ export default {
       showPass: false,
       file: null,
       preview: null,
+      url: '',
     };
   },
   computed: {
@@ -259,11 +260,24 @@ export default {
     },
     togglePass() {
         this.showPass = !this.showPass;
-    },onFileChange(e) {
+    },
+    onFileChange(e) {
       const selectedFile = e.target.files[0];
       if (selectedFile) {
         this.file = selectedFile;
         this.preview = URL.createObjectURL(selectedFile);
+      }
+    },
+    async loadImage() {
+      try {
+        const res = await axios.get(`http://127.0.0.1:8000/api/get-image/${this.nouji}`);
+        if (res.data.exists) {
+          this.preview = res.data.url;
+        } else {
+          this.preview = "/default.jpg"; // fallback jika tidak ada gambar
+        }
+      } catch (error) {
+        console.error("Gagal memuat gambar:", error);
       }
     },
     async uploadImage() {
@@ -283,6 +297,7 @@ export default {
           showConfirmButton: false,
           timer: 1500
         });
+        this.preview = `${this.url}/ttd/ttd-${this.user.uuid}.jpg`;
       } catch (error) {
         console.error("Error uploading image:", error);
         Swal.fire({
@@ -298,6 +313,13 @@ export default {
   },
   created() {
     this.CLEAR_FORM();
+    const appUrlMeta = document.querySelector('meta[name="app-url"]');
+    if (appUrlMeta) {
+      this.url = appUrlMeta.getAttribute('content');
+    }else{
+      console.log('App Url not found');
+    }
+    this.preview = `${this.url}/ttd/ttd-${this.user.uuid}.jpg`;
   },
   components: {
   },

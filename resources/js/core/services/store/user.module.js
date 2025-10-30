@@ -8,6 +8,7 @@ export const state = {
         tgl: ""
     },
     user: {
+        uuid: "",
         name:"",
         username:"",
         password:"",
@@ -45,6 +46,7 @@ export const mutations = {
     },
     ASSIGN_FORM(state, payload) {
         state.user = {
+            uuid: payload.uuid,
             name:payload.name,
             username: payload.username,
             password: "",
@@ -69,6 +71,7 @@ export const mutations = {
     },
     CLEAR_FORM(state) {
         state.user= {
+            uuid: "",
             name:"",
             username:"",
             password:"",
