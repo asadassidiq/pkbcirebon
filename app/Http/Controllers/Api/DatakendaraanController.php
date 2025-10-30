@@ -206,6 +206,56 @@ class DatakendaraanController extends Controller
         return $pdf->stream('KARTU INDUK-' . $data['nouji'] . '.pdf')->header('Content-Type', 'application/pdf');
         // return $pdf->download('KARTU INDUK-'.$data['nouji'].'.pdf');
     }
+
+    public function cetakKartu($id){
+        $tglcetak = date_create(date("d-m-Y"));
+        $tglcetak= date_format($tglcetak,"d-m-Y");
+        $data = $this->datakendaraanService->getKartuInduk($id);
+        if($data){
+            // $uji  = $this->datakendaraanService->getListPengujian($data->identitaskendaraan_id);
+            // $nu  = $this->datakendaraanService->getListNU($data->identitaskendaraan_id);
+            // $mu  = $this->datakendaraanService->getListMU($data->identitaskendaraan_id);
+            // $catatan  = $this->datakendaraanService->getListCatatan($data->identitaskendaraan_id);
+        }else{
+            return "Something Error";
+        }
+            
+        if($data){
+            $pengujian = $this->datakendaraanService->getPengujianKartu($data->identitaskendaraan_id);
+            $persuratan = $this->datakendaraanService->getPersuratan($data->identitaskendaraan_id);
+            $combined = $pengujian->merge($persuratan);
+
+            // Urutkan berdasarkan tanggal
+            $sorted = $combined->sortBy('tglpendaftaran');
+            
+            // Jika perlu mengembalikan koleksi yang telah diurutkan sebagai array
+            $finalResult = $sorted->values()->all();
+
+            if($data->idjenis >= 0){
+                if(strpos($data->jenis, "MOBIL BARANG") !== false){
+                    return view('cetak.kartu.mobilbarang', ['tglcetak' => $tglcetak, 'data' => $data, 'pengujian'=> $finalResult]);
+                }elseif(strpos($data->jenis, "MOBIL PENUMPANG") !== false){
+                    return view('cetak.kartu.mobilpenumpang', ['tglcetak' => $tglcetak, 'data' => $data, 'pengujian'=> $finalResult]);
+                }elseif(strpos($data->jenis, "MOBIL BUS") !== false){
+                    return view('cetak.kartu.mobilbus', ['tglcetak' => $tglcetak, 'data' => $data, 'pengujian'=> $finalResult]);
+                }else{
+                    return view('cetak.kartu.kereta', ['tglcetak' => $tglcetak, 'data' => $data, 'pengujian'=> $finalResult]);
+                }
+            }else{
+                $klasifikasi = $this->datakendaraanService->getKlasifikasi($data->model);
+                if ($klasifikasi->klasifikasis_id == '2') {
+                    return view('cetak.kartu.mobilpenumpang', ['tglcetak' => $tglcetak, 'data' => $data, 'pengujian'=> $finalResult]);
+                }elseif ($klasifikasi->klasifikasis_id == '3') {
+                    return view('cetak.kartu.mobilbus', ['tglcetak' => $tglcetak, 'data' => $data, 'pengujian'=> $finalResult]);
+                }elseif ($klasifikasi->klasifikasis_id == '4') {
+                    return view('cetak.kartu.mobilbarang', ['tglcetak' => $tglcetak, 'data' => $data, 'pengujian'=> $finalResult]);
+                }else{
+                    return view('cetak.kartu.kereta', ['tglcetak' => $tglcetak, 'data' => $data, 'pengujian'=> $finalResult]);
+                }
+            }
+        }
+    }
+
     public function getPendingRequests()
     {
         try {

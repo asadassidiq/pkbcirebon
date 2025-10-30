@@ -18,7 +18,7 @@ use App\Models\Ujiberkala;
 use App\Models\Pengujian;
 use App\Models\TamanKendaraan;
 use App\Models\LaikJalan;
-use App\Models\Kendaraan;
+use App\Models\Jenis;
 use App\Utils;
 use DB;
 use DateTime;
@@ -141,6 +141,12 @@ class DatakendaraanRepository
     return $data->first();
   }
 
+  public function getKlasifikasi($jenis)
+  {
+      $data = Jenis::select('klasifikasis_id')->where('jenis', $jenis)->first();
+      return $data;
+  }
+
   public function getListPengujian($id)
   {
     $data = $this->model2
@@ -172,6 +178,19 @@ class DatakendaraanRepository
     $data = $this->model2
       ->join('catatan', 'catatan.pendaftaran_id', '=', 'pendaftarans.id')->where('pendaftarans.identitaskendaraan_id', $id)->where('catatan.status', '0');
     return $data->get();
+  }
+
+  public function getPengujianKartu($id)
+  {
+      // $data = Pendaftaran::leftJoin('pengujians','pengujians.pendaftaran_id','=','pendaftarans.id')->where('statuslulusuji','1')->where('identitaskendaraan_id',$id)->get();
+      $data = Pendaftaran::select('pendaftarans.id', 'pendaftarans.tglpendaftaran', 'laikjalan.masaberlakuuji', 'alatuji_remutamatotalgayapengereman', 'alatuji_emisiasapbahanbakarsolar', 'alatuji_emisicobahanbakarbensin', 'alatuji_emisihcbahanbakarbensin', 'alatuji_lampuutamakekuatanpancarlampukiri', 'alatuji_lampuutamakekuatanpancarlampukanan', 'penguji.nama', 'penguji.nrp', 'penguji.tandatangan', 'pendaftarans.kodepenerbitans_id')->leftJoin('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')->leftJoin('penguji', 'penguji.idx', '=', 'laikjalan.idpenguji')->where('identitaskendaraan_id', $id)->where('statuslulusuji', '1')->where('pendaftarans.idx', '>=', '0')->get();
+      return $data;
+  }
+
+  public function getPersuratan($id)
+  {
+      $data = Pendaftaran::select('pendaftarans.id', 'kodepenerbitans_id', 'tglpendaftaran','persuratan.*')->leftjoin('persuratan','persuratan.pendaftaran_id','=','pendaftarans.id')->whereIn('kodepenerbitans_id', ['9', '10'])->where('identitaskendaraan_id', $id)->get();
+      return $data;
   }
 
   public function createDatakendaraan($request)

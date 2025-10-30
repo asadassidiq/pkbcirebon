@@ -153,6 +153,21 @@ class DatakendaraanService
     {
         return $this->repoDatakendaraan->riwayatUji($id);
     }
+    
+    public function getPengujianKartu($id)
+    {
+        return $this->repoDatakendaraan->getPengujianKartu($id);
+    }
+    
+    public function getPersuratan($id)
+    {
+        return $this->repoDatakendaraan->getPersuratan($id);
+    }
+    
+    public function getKlasifikasi($id)
+    {
+        return $this->repoDatakendaraan->getKlasifikasi($id);
+    }
 
     public function detailRiwayatuji($id)
     {
