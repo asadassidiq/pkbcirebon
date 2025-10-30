@@ -366,6 +366,17 @@ export default new Router({
           ],
         },
         {
+          path: "/profile/:id",
+          component: () => import("@/view/pages/user/Index.vue"),
+          children: [
+            {
+              path: "",
+              name: "profile.edit",
+              component: () => import("@/view/pages/user/Profile.vue")
+            },
+          ]
+        },
+        {
           path: "/datapengujian",
           component: () => import("@/view/pages/datapengujian/Index.vue"),
           children: [
