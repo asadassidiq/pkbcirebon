@@ -172,13 +172,29 @@
                     <td>:</td>
                     <td></td>
                     <td class="leftborder" colspan="2" rowspan="6">
-                        <img style="width:170px;height:100px;position: absolute;" src="{{url('/normal_images/'.$data->nouji.'-tampakdepan.jpg')}}">
+                        @php
+                            $path = public_path('normal_images/' . $data->nouji . '-tampakdepan.jpg');
+                        @endphp
+                        @if (file_exists($path))
+                            <img style="width:130px;height:95px;position:absolute;"
+                                src="{{ url('/normal_images/'.$data->nouji.'-tampakdepan.jpg') }}">
+                        @else
+                            <img style="width:130px;height:95px;position:absolute;"
+                                src="{{ url('/img/no image.jpg') }}"> {{-- gambar pengganti --}}
+                        @endif
                     </td>
                     <td class="leftborder rightborder" colspan="2" rowspan="6">
-                        <img style="width:170px;height:100px;position: absolute;" src="{{url('/normal_images/'.$data->nouji.'-tampakbelakang.jpg')}}">
+                        @php
+                            $path = public_path('normal_images/' . $data->nouji . '-tampakbelakang.jpg');
+                        @endphp
+                        @if (file_exists($path))
+                            <img style="width:170px;height:100px;position: absolute;" src="{{url('/normal_images/'.$data->nouji.'-tampakbelakang.jpg')}}">
+                        @else
+                            <img style="width:170px;height:100px;position: absolute;" src="{{url('/img/no image.jpg')}}">
+                        @endif
                     </td>
                 </tr>
-                 <tr>
+                <tr>
                     <td class="leftborder" colspan="2">c. Berat kendaraan sumbu ke-1</td>
                     <td>: {{ $data->beratsumbu1 }}</td>
                     <td></td>
@@ -243,10 +259,28 @@
                     <td>: {{ $data->groundclearance }}</td>
                     <td class="rightborder"></td>
                     <td colspan="2" rowspan="6" class="col">
-                        <img style="width:170px;height:95px;position: absolute;" src="{{url('/normal_images/'.$data->nouji.'-tampakkanan.jpg')}}">
+                        @php
+                            $path = public_path('normal_images/' . $data->nouji . '-tampakkanan.jpg');
+                        @endphp
+                        @if (file_exists($path))
+                            <img style="width:130px;height:95px;position:absolute;"
+                                src="{{ url('/normal_images/'.$data->nouji.'-tampakkanan.jpg') }}">
+                        @else
+                            <img style="width:130px;height:95px;position:absolute;"
+                                src="{{ url('/img/no image.jpg') }}"> {{-- gambar pengganti --}}
+                        @endif
                     </td>
                     <td colspan="2" rowspan="6" class="leftborder rightborder col">
-                        <img style="width:170px;height:95px;position: absolute;" src="{{url('/normal_images/'.$data->nouji.'-tampakkiri.jpg')}}">
+                        @php
+                            $path = public_path('normal_images/' . $data->nouji . '-tampakkiri.jpg');
+                        @endphp
+                        @if (file_exists($path))
+                            <img style="width:170px;height:95px;position: absolute;"
+                                src="{{ url('/normal_images/'.$data->nouji.'-tampakkiri.jpg') }}">
+                        @else
+                            <img style="width:170px;height:95px;position: absolute;"
+                                src="{{ url('/img/no image.jpg') }}"> {{-- gambar pengganti --}}
+                        @endif
                     </td>
                 </tr>
                 <tr>
