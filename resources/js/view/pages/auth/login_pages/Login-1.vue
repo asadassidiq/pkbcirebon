@@ -198,10 +198,10 @@ export default {
     },
   },
   mounted() {
-    const meta = document.querySelector('meta[name="recaptcha-sitekey"]');
-    if (meta) {
-      this.recaptchaSitekey = meta.getAttribute("content");
-    }
+    // const meta = document.querySelector('meta[name="recaptcha-sitekey"]');
+    // if (meta) {
+    //   this.recaptchaSitekey = meta.getAttribute("content");
+    // }
     const script = document.createElement("script");
     script.src = "https://www.google.com/recaptcha/api.js";
     document.head.appendChild(script);
