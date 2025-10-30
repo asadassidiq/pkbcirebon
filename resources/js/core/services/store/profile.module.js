@@ -12,7 +12,7 @@ export const CLEAR = 'clear';
 const state = {
   user_personal_info: {
     photo: "media/users/default.jpg",
-    uuid:""
+    uuid:"",
     name: "",
     username: "",
     role:"",
