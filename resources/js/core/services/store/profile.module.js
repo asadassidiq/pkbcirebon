@@ -12,6 +12,7 @@ export const CLEAR = 'clear';
 const state = {
   user_personal_info: {
     photo: "media/users/default.jpg",
+    uuid:""
     name: "",
     username: "",
     role:"",
@@ -47,6 +48,7 @@ const state = {
 const getters = {
   currentUserPersonalInfo(state) {
     const user = JSON.parse(window.localStorage.getItem('userPKB'));
+    state.user_personal_info.uuid = user.uuid;
     state.user_personal_info.name = user.name;
     state.user_personal_info.username = user.username;
     state.user_personal_info.role = user.role;
@@ -112,6 +114,7 @@ const mutations = {
   [CLEAR](state) {
         state.user_personal_info = {
           photo: "media/users/default.jpg",
+          uuid: "",
           name: "",
           username: "",
           role:"",
