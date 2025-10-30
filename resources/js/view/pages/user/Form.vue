@@ -190,16 +190,36 @@
             </div>
         </div>
     </div>
+    <div>
+      <h3>Upload Foto</h3>
+
+      <!-- Input Upload -->
+      <input type="file" @change="onFileChange" accept="image/*" />
+
+      <!-- Preview -->
+      <div v-if="preview" style="margin-top:10px;">
+        <img :src="preview" style="width:200px; border-radius:8px;" />
+      </div>
+
+      <!-- Tombol Upload -->
+      <button @click="uploadImage" :disabled="!file" class="btn btn-primary mt-3">
+        Upload
+      </button>
+    </div>
   </div>
 </template>
 <script>
 import { mapState, mapMutations, mapActions } from "vuex";
 import Swal from "sweetalert2";
+import axios from "axios";
+
 export default {
   data() {
     return {
       pass: '',
       showPass: false,
+      file: null,
+      preview: null,
     };
   },
   computed: {
@@ -238,6 +258,30 @@ export default {
     },
     togglePass() {
         this.showPass = !this.showPass;
+    },onFileChange(e) {
+      const selectedFile = e.target.files[0];
+      if (selectedFile) {
+        this.file = selectedFile;
+        this.preview = URL.createObjectURL(selectedFile);
+      }
+    },
+    async uploadImage() {
+      if (!this.file) return alert("Pilih gambar terlebih dahulu!");
+
+      const formData = new FormData();
+      formData.append("image", this.file);
+
+      try {
+        const res = await axios.post("/api/upload-image", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+
+        alert("Upload berhasil!");
+        console.log(res.data);
+      } catch (error) {
+        console.error(error);
+        alert("Upload gagal!");
+      }
     },
   },
   destroyed() {
@@ -250,3 +294,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+</style>
