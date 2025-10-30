@@ -147,7 +147,7 @@ class DatakendaraanRepository
       // ->Join('pendaftarans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
       ->Join('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id');
     // ->leftJoin('datapengujian', 'datapengujian.idx', '=', 'pendaftarans.idx');
-    $data = $data->where('laikjalan.statuslulusujia', '1')->where('pendaftarans.identitaskendaraan_id', $id)->groupBy('pendaftarans.id')->orderBy('pendaftarans.id', 'ASC');
+    $data = $data->where('laikjalan.statuslulusuji', '1')->where('pendaftarans.identitaskendaraan_id', $id)->groupBy('pendaftarans.id')->orderBy('pendaftarans.id', 'ASC');
 
     return $data->get();
   }
