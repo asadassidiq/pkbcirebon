@@ -287,7 +287,7 @@ export default {
       formData.append("image", this.file);
 
       try {
-        const res = await axios.post("/api/user/upload-image", formData, {
+        const res = await axios.post("/user/upload-image", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         Swal.fire({
