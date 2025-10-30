@@ -307,7 +307,7 @@ export default {
     }else{
       console.log('App Url not found');
     }
-    this.preview = `${this.url}/ttd/ttd-${this.user.uuid}.jpg`;
+    this.preview = `${this.url}/ttd/ttd-${this.$route.params.id}.jpg`;
     console.log(this.preview);
   },
   components: {
