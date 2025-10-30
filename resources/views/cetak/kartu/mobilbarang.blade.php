@@ -179,10 +179,10 @@
                             $path = public_path('normal_images/' . $data->nouji . '-tampakdepan.jpg');
                         @endphp
                         @if (file_exists($path))
-                            <img style="width:170px;height:95px;position:absolute;"
+                            <img style="width:150px;height:95px;position:absolute;"
                                 src="{{ url('/normal_images/'.$data->nouji.'-tampakdepan.jpg') }}">
                         @else
-                            <img style="width:170px;height:95px;position:absolute;"
+                            <img style="width:150px;height:95px;position:absolute;"
                                 src="{{ url('/img/no image.jpg') }}"> {{-- gambar pengganti --}}
                         @endif
                     </td>
@@ -191,10 +191,10 @@
                             $path = public_path('normal_images/' . $data->nouji . '-tampakbelakang.jpg');
                         @endphp
                         @if (file_exists($path))
-                            <img style="width:170px;height:95px;position:absolute;"
+                            <img style="width:150px;height:95px;position:absolute;"
                                 src="{{ url('/normal_images/'.$data->nouji.'-tampakbelakang.jpg') }}">
                         @else
-                            <img style="width:170px;height:95px;position:absolute;"
+                            <img style="width:150px;height:95px;position:absolute;"
                                 src="{{ url('/img/no image.jpg') }}"> {{-- gambar pengganti --}}
                         @endif
                     </td>
@@ -267,10 +267,10 @@
                             $path = public_path('normal_images/' . $data->nouji . '-tampakkanan.jpg');
                         @endphp
                         @if (file_exists($path))
-                            <img style="width:170px;height:95px;position:absolute;"
+                            <img style="width:150px;height:95px;position:absolute;"
                                 src="{{ url('/normal_images/'.$data->nouji.'-tampakkanan.jpg') }}">
                         @else
-                            <img style="width:170px;height:95px;position:absolute;"
+                            <img style="width:150px;height:95px;position:absolute;"
                                 src="{{ url('/img/no image.jpg') }}"> {{-- gambar pengganti --}}
                         @endif
                     </td>
@@ -279,10 +279,10 @@
                             $path = public_path('normal_images/' . $data->nouji . '-tampakkiri.jpg');
                         @endphp
                         @if (file_exists($path))
-                            <img style="width:170px;height:95px;position:absolute;"
+                            <img style="width:150px;height:95px;position:absolute;"
                                 src="{{ url('/normal_images/'.$data->nouji.'-tampakkiri.jpg') }}">
                         @else
-                            <img style="width:170px;height:95px;position:absolute;"
+                            <img style="width:150px;height:95px;position:absolute;"
                                 src="{{ url('/img/no image.jpg') }}"> {{-- gambar pengganti --}}
                         @endif
                     </td>
