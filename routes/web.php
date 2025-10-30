@@ -85,6 +85,7 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Api'], function () {
 	// Route::get('updatedata', 'DatapengujianController@updateData');
 	Route::get('updatedata', 'DatakendaraanController@updateData');
 	Route::get('updatedata2', 'DatakendaraanController@updateData2');
+	Route::get('updatelaikjalan', 'DatakendaraanController@upLaikJalan');
 	Route::get('updatedatakendaraan', 'DatakendaraanController@updateData');
 	Route::get('foto/{id}/', 'VerifController@fotoTest');
 });

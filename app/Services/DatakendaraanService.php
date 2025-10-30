@@ -169,6 +169,11 @@ class DatakendaraanService
         return $this->repoDatakendaraan->updateData2();
     }
 
+    public function upLaikJalan()
+    {
+        return $this->repoDatakendaraan->upLaikJalan();
+    }
+
     public function getApprovalRequest($tgl, $status)
     {
         return DatakendaraanApprovalRequest::with(['datakendaraan.identityTaskendaraan', 'requestedBy'])

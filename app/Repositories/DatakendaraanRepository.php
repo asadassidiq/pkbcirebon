@@ -147,7 +147,7 @@ class DatakendaraanRepository
       // ->Join('pendaftarans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
       ->Join('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id');
     // ->leftJoin('datapengujian', 'datapengujian.idx', '=', 'pendaftarans.idx');
-    $data = $data->where('laikjalan.statuslulusuji', '1')->where('pendaftarans.identitaskendaraan_id', $id)->groupBy('pendaftarans.id')->orderBy('pendaftarans.id', 'ASC');
+    $data = $data->where('laikjalan.statuslulusujia', '1')->where('pendaftarans.identitaskendaraan_id', $id)->groupBy('pendaftarans.id')->orderBy('pendaftarans.id', 'ASC');
 
     return $data->get();
   }
@@ -811,7 +811,29 @@ class DatakendaraanRepository
     //             }
     //         }
     //     }
-    // }
+    }
 
-  }
+    public function upLaikJalan()
+    {
+        // Implement the logic for updating the Laik Jalan status
+        $data = LaikJalan::all();
+        foreach ($data as $dt) {
+            $tgluji = $dt->tgluji;
+            if($tgluji && $tgluji != '0000-00-00') {
+                try {
+                  $tanggal_input = DateTime::createFromFormat('dmY', $tgluji);
+                  $masaberlakuuji = (clone $tanggal_input)->modify('+6 months');
+                  $masaberlakuuji = $masaberlakuuji->format('dmY');
+                } catch (Exception $e) {
+                    // Jika format tanggal tidak valid
+                    $masaberlakuuji = '';
+                }
+            } else {
+                $masaberlakuuji = '';
+            }
+            $update = LaikJalan::where('id', $dt->id)->first();
+            $update->masaberlakuuji = $masaberlakuuji;
+            $update->save();
+        }
+    }
 }

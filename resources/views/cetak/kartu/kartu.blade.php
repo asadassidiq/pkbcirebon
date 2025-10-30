@@ -144,8 +144,8 @@
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['norangka'] }}</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['nomesin'] }}</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['bahanbakar'] }}</p>
-			<p class="{{ strlen($data['jenis']) > 20 ? 'small-text' : 'normal-text' }}" style="margin-top: 0px; margin-bottom: 0px;">
-				: {{ $data['jenis'] }}
+			<p class="{{ strlen($data['subjenis']) > 20 ? 'small-text' : 'normal-text' }}" style="margin-top: 0px; margin-bottom: 0px;">
+				: {{ $data['subjenis'] }}
 			</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['isisilinder'] }}</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['dayamotorpenggerak'] }}</p>
@@ -161,7 +161,6 @@
 			<p style="margin-top: 0px;margin-bottom: 0px;">SK. Rancang Bangun</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">Tgl. Rancang Bangun</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">Karoseri</p>
-			<p style="margin-top: 0px;margin-bottom: 0px;">Letak No.Uji</p>
 		</div>
 		<div class="col-3">
 			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['warna'] }}</p>
@@ -173,7 +172,6 @@
 			<p style="margin-top: 0px;margin-bottom: 0px;">: <span style="font-size:10px">{{ $data['rancang'] }} </span></p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">: </p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">: </p>
-			<p style="margin-top: 0px;margin-bottom: 0px;">: {{ $data['posisinomeruji'] }}</p>
 		</div>
 	</div>
 

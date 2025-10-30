@@ -84,6 +84,12 @@ class DatakendaraanController extends Controller
         return $this->returnJson($data);
     }
 
+    public function upLaikJalan()
+    {
+        $data = $this->datakendaraanService->upLaikJalan();
+        return $this->returnJson($data);
+    }
+
     public function updateData2()
     {
         $data = $this->datakendaraanService->updateData2();
