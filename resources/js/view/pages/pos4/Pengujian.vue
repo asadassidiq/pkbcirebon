@@ -154,28 +154,28 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-3 col-sm-12 text-center">
-                                <img v-bind="size" :src="'/normal_images/' +
+                                <img v-bind="size" :src="'/tmp_images/' +
                                     identitaskendaraan.nouji +
                                     '-tampakdepan.jpg'
                                     " />
                                 <p>Tampak Depan</p>
                             </div>
                             <div class="col-md-3 col-sm-12 text-center">
-                                <img v-bind="size" :src="'/normal_images/' +
+                                <img v-bind="size" :src="'/tmp_images/' +
                                     identitaskendaraan.nouji +
                                     '-tampakbelakang.jpg'
                                     " />
                                 <p>Tampak Belakang</p>
                             </div>
                             <div class="col-md-3 col-sm-12 text-center">
-                                <img v-bind="size" :src="'/normal_images/' +
+                                <img v-bind="size" :src="'/tmp_images/' +
                                     identitaskendaraan.nouji +
                                     '-tampakkanan.jpg'
                                     " />
                                 <p>Tampak Kanan</p>
                             </div>
                             <div class="col-md-3 col-sm-12 text-center">
-                                <img v-bind="size" :src="'/normal_images/' +
+                                <img v-bind="size" :src="'/tmp_images/' +
                                     identitaskendaraan.nouji +
                                     '-tampakkiri.jpg'
                                     " />

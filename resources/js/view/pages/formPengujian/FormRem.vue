@@ -511,14 +511,14 @@
 
         <div class="col-3 col-form-label">
             <label><b>Alasan Kiri</b></label>
-            <button class="btn btn-danger btn-sm" :disabled="laikjalan.status_remkiri == '1'"
+            <button class="btn btn-danger btn-sm" :disabled="laikjalan.status_remkiri == '0'"
                 @click="showModal('Rem Kiri', '-')">
                 <i class="far fa-window-close"></i>
             </button>
         </div>
         <div class="col-3 col-form-label">
             <label><b>Alasan Kanan</b></label>
-            <button class="btn btn-danger btn-sm" :disabled="laikjalan.status_remkanan == '1'"
+            <button class="btn btn-danger btn-sm" :disabled="laikjalan.status_remkanan == '0'"
                 @click="showModal('Rem Kanan', '-')">
                 <i class="far fa-window-close"></i>
             </button>
@@ -526,7 +526,7 @@
 
         <div class="col-3 col-form-label">
             <label><b>Alasan Rem Parkir</b></label>
-            <button class="btn btn-danger btn-sm" :disabled="laikjalan.status_remparkir == '1'"
+            <button class="btn btn-danger btn-sm" :disabled="laikjalan.status_remparkir == '0'"
                 @click="showModal('Rem Parkir', 'Tangan : ' + laikjalan.alatuji_remparkirtangan + '%, Kaki : ' + laikjalan.alatuji_remparkirkaki + '%')">
                 <i class="far fa-window-close"></i>
             </button>
