@@ -268,18 +268,6 @@ export default {
         this.preview = URL.createObjectURL(selectedFile);
       }
     },
-    async loadImage() {
-      try {
-        const res = await axios.get(`http://127.0.0.1:8000/api/get-image/${this.nouji}`);
-        if (res.data.exists) {
-          this.preview = res.data.url;
-        } else {
-          this.preview = "/default.jpg"; // fallback jika tidak ada gambar
-        }
-      } catch (error) {
-        console.error("Gagal memuat gambar:", error);
-      }
-    },
     async uploadImage() {
       if (!this.file) return alert("Pilih gambar terlebih dahulu!");
 
@@ -320,6 +308,7 @@ export default {
       console.log('App Url not found');
     }
     this.preview = `${this.url}/ttd/ttd-${this.user.uuid}.jpg`;
+    console.log(this.preview);
   },
   components: {
   },
