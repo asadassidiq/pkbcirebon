@@ -129,11 +129,11 @@
             <td>Kolom 2 - Baris 1</td>
         </tr>
         <tr>
-            <td rowspan="2">Kolom 1 (Gabung 2 baris)</td>
-            <td>Kolom 2 - Baris 2</td>
+            <td>Kolom 2 - Baris 3</td>
         </tr>
         <tr>
-            <td>Kolom 2 - Baris 3</td>
+            <td rowspan="2">Kolom 1 (Gabung 2 baris)</td>
+            <td>Kolom 2 - Baris 2</td>
         </tr>
     </table>
 </div>
