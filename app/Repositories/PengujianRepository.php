@@ -392,15 +392,15 @@ class PengujianRepository
 
             // $ps = '9';
             if ($dataPend->kodepenerbitans_id == '7') {
-                if ($dataPend->pos1 == 0) {
+                if ($data->pos1 == 0) {
                     $ps = 1;
-                } elseif ($dataPend->pos2 == 0) {
+                } elseif ($data->pos2 == 0) {
                     $ps = 2;
-                } elseif ($dataPend->pos3 == 0) {
+                } elseif ($data->pos3 == 0) {
                     $ps = 3;
-                } elseif ($dataPend->pos4 == 0) {
+                } elseif ($data->pos4 == 0) {
                     $ps = 4;
-                } elseif ($dataPend->posverif == 0) {
+                } elseif ($data->posverif == 0) {
                     $ps = 5;
                 }
             }
