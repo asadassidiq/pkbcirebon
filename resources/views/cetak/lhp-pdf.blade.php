@@ -606,7 +606,11 @@
             @endif
 
             <td width="33%" style="vertical-align: top; text-align: center;">
+                @if($i <= 4)
                 Pos {{ $i }} Diperiksa Oleh,<br>
+                @else
+                Pos Verifikasi Diperiksa Oleh,<br>
+                @endif
                 <img src="{{ $item['ttd'] }}" alt="TTD {{ $pos }}" 
                     style="width:90px; height:auto; margin:5px 0;"><br>
                 <u>{{ strtoupper($item['data']->name ?? '-') }}</u><br>
