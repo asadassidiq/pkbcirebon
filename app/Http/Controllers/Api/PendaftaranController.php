@@ -140,9 +140,12 @@ class PendaftaranController extends Controller
         } else {
             $base64 = '';
         }
+        $path_logoKab = public_path() . '/img/kota.png';
+        $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
         $data = [
             'kendaraan' => $kendaraan,
             'base64'    => $base64,
+            'logokab'  => $logokab,
         ];
         $pdf = PDF::loadView('cetak.formulir', $data);
         return $pdf->stream('Formulir Uji.pdf');
