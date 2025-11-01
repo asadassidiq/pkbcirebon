@@ -57,6 +57,11 @@ class VerifService
     {
         return $this->repoVerif->getTTD($id);
     }
+    
+    public function getUserUUID($id)
+    {
+        return $this->repoVerif->getUserUUID($id);
+    }
 
     public function getCatatan($id)
     {

@@ -343,6 +343,13 @@ class VerifController extends Controller
         }
         $tgluji = $hari . ' ' . $bulan_ini . ' ' . $tahun;
         if ($data) {
+            $ttdUser = array(
+                'pos1' => $this->verifService->getUserUUID($data->user_pos1),
+                'pos2' => $this->verifService->getUserUUID($data->user_pos2),
+                'pos3' => $this->verifService->getUserUUID($data->user_pos3),
+                'pos4' => $this->verifService->getUserUUID($data->user_pos4),
+                'posverif' => $this->verifService->getUserUUID($data->user_posverif),
+            );
             $path_logoKab = public_path() . '/img/kota.png';
             $logokab = 'data:image/png' . ';base64,' . base64_encode(file_get_contents($path_logoKab));
             $ttd = User::select('users.name', 'nip', 'nrp', 'jabatan')->where('id', $data->idpenguji)->first();
@@ -350,6 +357,7 @@ class VerifController extends Controller
                 'data' => $data,
                 'tgluji'   => $tgluji,
                 'ttd'       => $ttd,
+                'ttdUser'       => $ttdUser,
                 'logokab'  => $logokab,
             ];
             $pdf = PDF::loadView('cetak.lhp-pdf', $data);

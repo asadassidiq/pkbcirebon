@@ -595,6 +595,25 @@
             @endif
         </tr>
     </table>
+    <br>
+    <table width="100%" cellspacing="0" cellpadding="5" style="font-size: 12px;">
+        <tr>
+            @php
+                $i = 1;
+            @endphp
+            @foreach ($ttdUser as $item)
+                <td width="50%" class="text-center">
+                    Pos {{ $i }} Diperiksa Oleh,<br>
+                    <img src="{{ asset('ttd/' . $item->uuid.'.jpg') }}" alt=""><br>
+                    <u>{{ strtoupper($item->name) }}</u><br>
+                    NRP. {{ $item->nrp }}
+                </td>
+                @php
+                    $i++;
+                @endphp
+            @endforeach
+        </tr>
+    </table>
 </div>
 
 </body>
