@@ -107,15 +107,6 @@
                 </div>
               </div>
               <div class="form-group">
-                <vue-recaptcha
-                  ref="recaptcha"
-                  type="invisible"
-                  :sitekey="recaptchaSitekey"
-                  @verify="onCaptchaVerified"
-                  @expired="onCaptchaExpired"
-                />
-              </div>
-              <div class="form-group">
                 <div class="g-recaptcha" :data-sitekey="recaptchaSitekey"></div>
               </div>
               <div class="pb-lg-0 pb-5">
