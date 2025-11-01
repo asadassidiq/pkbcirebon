@@ -601,12 +601,12 @@
             @php
                 $i = 1;
             @endphp
-            @foreach ($ttdUser as $item)
+            @foreach ($ttdUser as $pos => $item)
                 <td width="50%" class="text-center">
                     Pos {{ $i }} Diperiksa Oleh,<br>
-                    <img src="{{ asset('ttd/' . $item->uuid.'.jpg') }}" alt=""><br>
-                    <u>{{ strtoupper($item->name) }}</u><br>
-                    NRP. {{ $item->nrp }}
+                    <img src="{{ asset('ttd/' . $item['ttd'].'.jpg') }}" alt=""><br>
+                    <u>{{ strtoupper($item['data']->name) }}</u><br>
+                    NRP. {{ $item['data']->nrp }}
                 </td>
                 @php
                     $i++;

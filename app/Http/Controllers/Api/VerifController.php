@@ -343,12 +343,32 @@ class VerifController extends Controller
         }
         $tgluji = $hari . ' ' . $bulan_ini . ' ' . $tahun;
         if ($data) {
+            $pos1 =$this->verifService->getTTD($data->user_pos1);
+            $pos2 =$this->verifService->getTTD($data->user_pos2);
+            $pos3 =$this->verifService->getTTD($data->user_pos3);
+            $pos4 =$this->verifService->getTTD($data->user_pos4);
+            $posverif =$this->verifService->getTTD($data->user_posverif);
             $ttdUser = array(
-                'pos1' => $this->verifService->getUserUUID($data->user_pos1),
-                'pos2' => $this->verifService->getUserUUID($data->user_pos2),
-                'pos3' => $this->verifService->getUserUUID($data->user_pos3),
-                'pos4' => $this->verifService->getUserUUID($data->user_pos4),
-                'posverif' => $this->verifService->getUserUUID($data->user_posverif),
+                'pos1' => array(
+                    'data' => $pos1,
+                    'ttd'  => 'data:image/png' . ';base64,' . base64_encode(file_get_contents(public_path() . '/ttd/ttd-' . $pos1->uuid . '.jpg')),
+                ),
+                'pos2' => array(
+                    'data' => $pos2,
+                    'ttd'  => 'data:image/png' . ';base64,' . base64_encode(file_get_contents(public_path() . '/ttd/ttd-' . $pos2->uuid . '.jpg')),
+                ),
+                'pos3' => array(
+                    'data' => $pos3,
+                    'ttd'  => 'data:image/png' . ';base64,' . base64_encode(file_get_contents(public_path() . '/ttd/ttd-' . $pos3->uuid . '.jpg')),
+                ),
+                'pos4' => array(
+                    'data' => $pos4,
+                    'ttd'  => 'data:image/png' . ';base64,' . base64_encode(file_get_contents(public_path() . '/ttd/ttd-' . $pos4->uuid . '.jpg')),
+                ),
+                'posverif' => array(
+                    'data' => $posverif,
+                    'ttd'  => 'data:image/png' . ';base64,' . base64_encode(file_get_contents(public_path() . '/ttd/ttd-' . $posverif->uuid . '.jpg')),
+                ),
             );
             $path_logoKab = public_path() . '/img/kota.png';
             $logokab = 'data:image/png' . ';base64,' . base64_encode(file_get_contents($path_logoKab));
