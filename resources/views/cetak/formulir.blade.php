@@ -113,8 +113,10 @@
 </footer> --}}
 
 <div class="content">
-    <div class="text-right" style="border: 1px solid black;">
-        <h4>FORM MODEL PKB-3</h4>
+    <div class="text-right">
+        <h4 style="display: inline-block; border: 1px solid black; padding: 4px 8px; margin: 0;">
+            FORM MODEL PKB-3
+        </h4>
     </div>
 
     <p class="text-center">FORMULIR HASIL PENGUKURAN DAN PENIMBANGAN KENDARAAN BERMOTOR</p>
