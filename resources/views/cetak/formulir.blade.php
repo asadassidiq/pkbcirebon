@@ -6,7 +6,7 @@
     <style>
         @page {
             size: A4;
-            margin: 1cm 2cm 0.5cm 2cm;
+            margin: 1cm 1cm 0.5cm 1cm;
         }
 
         body {
@@ -120,9 +120,7 @@
     </div>
 
     <p class="text-center">FORMULIR HASIL PENGUKURAN DAN PENIMBANGAN KENDARAAN BERMOTOR</p>
-    <div class="text-center">
-        <p>NO.{{ $kendaraan->noantrian }} <span style="margin-left: 20px"> TANGGAL {{ tgl_indo($kendaraan->tglpendaftaran) }}</span></p>
-    </div>
+    <p class="text-center">NO.{{ $kendaraan->noantrian }} <span style="margin-left: 20px"> TANGGAL {{ tgl_indo($kendaraan->tglpendaftaran) }}</span></p>
     <p>Pada Hari : {{ namaHariIndo($kendaraan->tglpendaftaran) }} Tanggal {{ tgl_indo($kendaraan->tglpendaftaran) }} Pukul : ......... WIB telah dilakukan pemeriksaan terhadap kendaraan</p>
     
 </div>
