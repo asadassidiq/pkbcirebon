@@ -104,8 +104,9 @@
                     <div class="col-md-3 col-sm-12 text-center">
                         <img v-bind="size" :src="'/tmp_images/' +
                             identitaskendaraan.nouji +
-                            '-tampakdepan.jpg?r=' + timestamp
-                            " />
+                            '-tampakdepan.jpg?r=' + timestamp"
+                            @error="fotoKosong1 = true"
+                            @load="fotoKosong1 = false"/>
                         <p>Tampak Depan</p>
                     </div>
                     <div class="col-md-3 col-sm-12 text-center">
@@ -136,8 +137,10 @@
                     <div class="col-md-3 col-sm-12 text-center">
                         <img v-bind="size" :src="'/normal_images/' +
                             identitaskendaraan.nouji +
-                            '-tampakdepan.jpg?r=' + timestamp
-                            " />
+                            '-tampakdepan.jpg?r=' + timestamp"
+                            @error="fotoKosong2 = true"
+                            @load="fotoKosong2 = false"
+                            />
                         <p>Tampak Depan</p>
                     </div>
                     <div class="col-md-3 col-sm-12 text-center">
@@ -241,6 +244,8 @@ export default {
             image: "no image.jpg",
             sktl: 0,
             timestamp: Date.now(),
+            fotoKosong1: false, 
+            fotoKosong2: false, 
             size: {
                 width: 200,
                 height: 200,
@@ -268,7 +273,16 @@ export default {
             "ulangiFoto",
             "getKuota",
         ]),
-        submit() {
+        
+        async submit() {
+            if (this.fotoKosong1 && this.fotoKosong2) {
+                Swal.fire({
+                icon: 'warning',
+                title: 'Foto tidak ditemukan!',
+                text: 'Silakan lengkapi foto kendaraan terlebih dahulu.',
+                });
+                return;
+            }
             this.submitVerif(this.$route.params.id).then(() => {
                 Swal.fire({
                     title: "",
