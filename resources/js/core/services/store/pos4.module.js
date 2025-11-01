@@ -529,7 +529,7 @@ export const actions = {
     return new Promise((resolve, reject) => {
       PosService.postPos(data, state.posisi)
         .then((response) => {
-          commit("ASSIGN_PENGUJIAN", response.data.result);
+          // commit("ASSIGN_PENGUJIAN", response.data.result);
           resolve(response.data);
         })
         .catch((error) => {});
