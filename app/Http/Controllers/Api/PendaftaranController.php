@@ -128,4 +128,23 @@ class PendaftaranController extends Controller
         $pdf = PDF::loadView('cetak.permohonan-pdf', $data);
         return $pdf->stream('Surat Permohonan Uji.pdf');
     }
+
+
+    public function formulir($id)
+    {
+        $kendaraan = $this->pendaftaranService->getPendaftaran($id);
+
+        $qr = $kendaraan['uuid'];
+        if ($qr === NULL) {
+            $base64 = '';
+        } else {
+            $base64 = '';
+        }
+        $data = [
+            'kendaraan' => $kendaraan,
+            'base64'    => $base64,
+        ];
+        $pdf = PDF::loadView('cetak.formulir', $data);
+        return $pdf->stream('Formulir Uji.pdf');
+    }
 }

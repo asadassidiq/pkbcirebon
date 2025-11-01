@@ -5,11 +5,10 @@
                 <img style="width: 80px; height: auto;" src="{{ $logokab }}">
             </td>
             <td style="width: 85%" class="text-center">
-                <h3 class="text-center" style="margin:0;padding:0">PEMERINTAH {{ env('APP_KAB').' '.env('APP_WILAYAH') }}</h3>
+                <h3 class="text-center" style="margin:0;padding:0">PEMERINTAH DAERAH {{ env('APP_KAB').' '.env('APP_WILAYAH') }}</h3>
                 <h3 class="text-center" style="margin:0;padding:0"><b>DINAS PERHUBUNGAN</b></h3>
-                <p class="text-center" style="margin:0;padding:0">Jl. Pemuda, Sunyaragi, Kesambi, Kota Cirebon, Jawa Barat 45132</p>
-                <p class="text-center" style="margin:0;padding:0">Telp. (022) 7566197 </p>
-                <p class="text-center" style="margin:0;padding:0">Laman : <span style="color: royalblue"><u>https://www.cirebonkota.go.id</u></span>, Pos-el :………………</p>
+                <h4 class="text-center" style="margin:0;padding:0"><b>UPT. PENGUJIAN KENDARAAN BERMOTOR</b></h4>
+                <p class="text-center" style="margin:0;padding:0">Jalan Raya Kalijaga (Pantura) Kel. Pengambiran Kec. Lemahwungkuk Kota Cirebon</p>
             </td>
             </td>
         </tr>

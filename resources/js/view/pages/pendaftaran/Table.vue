@@ -94,6 +94,13 @@
                                     </a>
                                     <a
                                         href="javascript:void(0)"
+                                        @click="printFormulir(pendaftaran.uuid)"
+                                        title="Formulir Uji"
+                                    >
+                                        <i class="fa fa-print text-warning"></i>
+                                    </a>
+                                    <a
+                                        href="javascript:void(0)"
                                         @click="
                                             deletePendaftaran(pendaftaran.uuid)
                                         "
@@ -234,6 +241,9 @@ export default {
         },
         print(id) {
             window.open("/cetak/" + id + "/permohonan", "_blank");
+        },
+        printFormulir(id) {
+            window.open("/cetak/" + id + "/formulir", "_blank");
         },
         reload() {
             this.getPendaftarans(this.search);

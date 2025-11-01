@@ -19,6 +19,7 @@ use Illuminate\Support\Str;
 Route::group(['namespace' => 'App\\Http\\Controllers\\Api'], function () {
 	Route::group(['prefix' => 'cetak'], function () {
 		Route::get('/{id}/permohonan', 'PendaftaranController@cetak');
+		Route::get('/{id}/formulir', 'PendaftaranController@formulir');
 		Route::get('/{id}/surat', 'SuratController@cetak');
 		// Route::get('/{id}/mutasi', 'MutasiController@cetak');
 	});
