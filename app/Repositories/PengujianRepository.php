@@ -57,7 +57,7 @@ class PengujianRepository
         $threeMonthsAgo = (new DateTime())->sub(new DateInterval('P3M'));
         $sixMonthsAgo = (new DateTime())->sub(new DateInterval('P6M'));
 
-        $tgl2 = $identitaskendaraan_id->tglpendaftaran;
+        $tgl2 = new DateTime($identitaskendaraan_id->tglpendaftaran);
         if ($tgl2 < $sixMonthsAgo) {
             return 'Data uji terakhir tidak ditemukan atau sudah lebih dari 6 bulan, silahkan Uji Berkala!';
         } elseif ($tgl2 < $threeMonthsAgo) {
