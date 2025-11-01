@@ -119,10 +119,23 @@
         </h4>
     </div>
 
-    <p class="text-center">FORMULIR HASIL PENGUKURAN DAN PENIMBANGAN KENDARAAN BERMOTOR</p>
+    <h4 class="text-center">FORMULIR HASIL PENGUKURAN DAN PENIMBANGAN KENDARAAN BERMOTOR</h4>
     <p class="text-center">NO.{{ $kendaraan->noantrian }} <span style="margin-left: 20px"> TANGGAL {{ tgl_indo($kendaraan->tglpendaftaran) }}</span></p>
     <p>Pada Hari : {{ namaHariIndo($kendaraan->tglpendaftaran) }} Tanggal {{ tgl_indo($kendaraan->tglpendaftaran) }} Pukul : ......... WIB telah dilakukan pemeriksaan terhadap kendaraan</p>
     
+    <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; text-align:center;">
+        <tr>
+            <td>Kolom 1 - Baris 1</td>
+            <td>Kolom 2 - Baris 1</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Kolom 1 (Gabung 2 baris)</td>
+            <td>Kolom 2 - Baris 2</td>
+        </tr>
+        <tr>
+            <td>Kolom 2 - Baris 3</td>
+        </tr>
+    </table>
 </div>
 
 </body>
