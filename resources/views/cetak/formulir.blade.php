@@ -91,6 +91,20 @@
     $pecahkan = explode('-', $tanggal);
     return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
     }
+    function namaHariIndo($tanggal = null) {
+        $tanggal = $tanggal ?? date('Y-m-d');
+        $hariInggris = date('l', strtotime($tanggal));
+        $hariIndo = [
+            'Sunday'    => 'Minggu',
+            'Monday'    => 'Senin',
+            'Tuesday'   => 'Selasa',
+            'Wednesday' => 'Rabu',
+            'Thursday'  => 'Kamis',
+            'Friday'    => 'Jumat',
+            'Saturday'  => 'Sabtu',
+        ];
+        return $hariIndo[$hariInggris] ?? 'Tidak diketahui';
+    }
     @endphp
     @include('cetak.layouts.header')
 {{-- 
@@ -99,6 +113,15 @@
 </footer> --}}
 
 <div class="content">
+    <div class="text-right" style="border: 1px solid black;">
+        <h4>FORM MODEL PKB-3</h4>
+    </div>
+
+    <p class="text-center">FORMULIR HASIL PENGUKURAN DAN PENIMBANGAN KENDARAAN BERMOTOR</p>
+    <div class="text-center">
+        <p>NO.{{ $kendaraan->noantrian }} <span style="margin-left: 20px"> TANGGAL {{ tgl_indo($kendaraan->tglpendaftaran) }}</span></p>
+    </div>
+    <p>Pada Hari : {{ namaHariIndo($kendaraan->tglpendaftaran) }} Tanggal {{ tgl_indo($kendaraan->tglpendaftaran) }} Pukul : ......... WIB telah dilakukan pemeriksaan terhadap kendaraan</p>
     
 </div>
 
