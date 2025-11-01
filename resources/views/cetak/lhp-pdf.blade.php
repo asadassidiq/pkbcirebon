@@ -596,24 +596,28 @@
         </tr>
     </table>
     <br>
-    <table width="100%" cellspacing="0" cellpadding="5" style="font-size: 12px;">
-        <tr>
-            @php
-                $i = 1;
-            @endphp
-            @foreach ($ttdUser as $pos => $item)
-                <td width="50%" class="text-center">
-                    Pos {{ $i }} Diperiksa Oleh,<br>
-                    <img src="{{ asset('ttd/' . $item['ttd'].'.jpg') }}" alt=""><br>
-                    <u>{{ strtoupper($item['data']->name) }}</u><br>
-                    NRP. {{ $item['data']->nrp }}
-                </td>
-                @php
-                    $i++;
-                @endphp
-            @endforeach
-        </tr>
-    </table>
+    <table width="100%" cellspacing="0" cellpadding="5" style="font-size: 12px; text-align:center;">
+    <tr>
+        @php $i = 1; @endphp
+        @foreach ($ttdUser as $pos => $item)
+            {{-- Baris baru setelah 3 tanda tangan --}}
+            @if ($i == 4)
+                </tr><tr>
+            @endif
+
+            <td width="33%" style="vertical-align: top; text-align: center;">
+                Pos {{ $i }} Diperiksa Oleh,<br>
+                <img src="{{ $item['ttd'] }}" alt="TTD {{ $pos }}" 
+                    style="width:90px; height:auto; margin:5px 0;"><br>
+                <u>{{ strtoupper($item['data']->name ?? '-') }}</u><br>
+                NRP. {{ $item['data']->nrp ?? '-' }}
+            </td>
+
+            @php $i++; @endphp
+        @endforeach
+    </tr>
+</table>
+
 </div>
 
 </body>
