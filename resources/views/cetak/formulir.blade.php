@@ -227,7 +227,7 @@
                 </tr>
                 </table>
             </td>
-            <td rowspan="3">
+            <td rowspan="2">
                 <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
                 <tr>
                     <td colspan="6" style="border: none;">a. Jarak Sumbu</td>
@@ -372,9 +372,6 @@
                 </tr>
                 </table>
             </td>
-        </tr>
-        <tr style="height: 14px;">
-            <td style="height: 14px">3. UKURAN BERAT DAN PEMAKAIAN BAN</td>
         </tr>
         <tr>
             <td>
