@@ -448,6 +448,30 @@
         </td>
     </tr>
     </table>
+    <br><br>
+    <table style="width: 100%; border: none; border-collapse: collapse;
+    font-size: 14px;">
+            <tr>
+                <td style="width: 50%; border: none; text-align: center;">
+                    PENGUJI
+                </td>
+                <td style="width: 50%; border: none; text-align: center;">
+                    1. _______________________
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>NIP.</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>2. _______________________</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>NIP.</td>
+            </tr>
+    </table>
 </div>
 
 </body>
