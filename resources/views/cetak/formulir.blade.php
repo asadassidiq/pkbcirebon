@@ -188,7 +188,7 @@
             <td> 2. DIMENSI</td>
         </tr>
         <tr>
-            <td>
+            <td style="padding: 0;margin: 0;">
                 <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
                 <tr>
                     <td style="width: 50%; border: none;">a. JBB</td>
