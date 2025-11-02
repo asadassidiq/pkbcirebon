@@ -376,6 +376,9 @@
         <tr>
             <td>
                 <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <tr style="height: 14px;">
+                    <td style="height: 14px">3. UKURAN BERAT DAN PEMAKAIAN BAN</td>
+                </tr>
                 <tr>
                     <td style="width: 50%; border: none;">a. Berat Sumbu (S1)</td>
                     <td style="width: 5%; text-align: center; border: none;">=</td>
