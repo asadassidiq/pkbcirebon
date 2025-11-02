@@ -79,6 +79,9 @@ class RoleMiddleware
         } elseif ($ps == 'api/verif') {
             $encrypted = $user->v1;
             $checkPs = $user->username . 'posverifsatuok';
+        } elseif ($ps == 'api/approved') {
+            $encrypted = $user->ap;
+            $checkPs = $user->username . 'approvedok';
         } elseif ($ps == 'api/tandatangan') {
             $encrypted = $user->ct;
             $checkPs = $user->username . 'cetakok';
