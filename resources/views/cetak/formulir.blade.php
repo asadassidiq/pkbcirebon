@@ -403,9 +403,11 @@
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->bertsumbu5 }} Kg</td>
                 </tr>
+                </table>
+                <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
                 <tr>
-                    <td style="width: 60%;border: none;">f. Sumbu Tempelan (STP)</td>
-                    <td style="text-align: center; border: none;">=</td>
+                    <td style="width: 70%;border: none;">f. Sumbu Tempelan (STP)</td>
+                    <td style="width: 5%;text-align: center; border: none;">=</td>
                     <td style="border: none;"></td>
                 </tr>
                 <tr>
