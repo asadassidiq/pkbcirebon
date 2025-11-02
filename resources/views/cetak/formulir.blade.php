@@ -338,6 +338,8 @@
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->b }} cm</td>
                 </tr>
+                </table>
+                <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
                 <tr class="text-center">
                     <td style="border: none;width: 65%;" class="text-left">f. <span style="margin-left: 6px"> <u>Jarak atap lantai</u></span></td>
                     <td style="text-align: center; border: none;width: 5%;">=</td>
