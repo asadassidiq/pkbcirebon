@@ -125,7 +125,35 @@
     
     <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; text-align:center;">
         <tr>
-            <td>Kolom 1 - Baris 1</td>
+            <td>
+                <table style="width: 100%; border: none; border-collapse: collapse;">
+                    <tr>
+                        <td style="width: 60%;">MEREK/TIPE/TAHUN</td>
+                        <td style="width: 5%; text-align: center;">=</td>
+                        <td style="width: 35%;"></td>
+                    </tr>
+                    <tr>
+                        <td>NO. KENDARAAN</td>
+                        <td style="text-align: center;">=</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>NO. CHASIS/LANDASAN</td>
+                        <td style="text-align: center;">=</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>NO. MESIN</td>
+                        <td style="text-align: center;">=</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JENIS/MACAM</td>
+                        <td style="text-align: center;">=</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
             <td>Kolom 2 - Baris 1</td>
         </tr>
         <tr>
