@@ -256,6 +256,38 @@
                     <td style="border: none;"></td>
                     <td style="border: none;"></td>
                 </tr>
+                <tr class="text-center">
+                    <td style="border: none;margin-left:-20px">b. P</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->p }} cm</td>
+                    <td style="border: none;">b</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->b }} cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">Q</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->q }} cm</td>
+                    <td style="border: none;">b1</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;"> cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">G</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->g }} cm</td>
+                    <td style="border: none;">r</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->r }} cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">a2</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->a }} cm</td>
+                    <td style="border: none;"></td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;"> cm</td>
+                </tr>
                 </table>
             </td>
         </tr>
