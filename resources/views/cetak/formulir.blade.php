@@ -485,7 +485,7 @@
     <br><br><br>
 
     <div style="text-align: right; margin-right: 50px;">
-        Cirebon, ................ 2025
+        Cirebon, {{ tgl_indo($kendaraan->tglpendaftaran) }}
     </div>
 
     <div style="text-align: right; margin-right: 70px;">
