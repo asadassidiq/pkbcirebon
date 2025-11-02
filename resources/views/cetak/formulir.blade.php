@@ -463,10 +463,10 @@
 
     <br><br>
 
-    <table border="1" cellspacing="0" cellpadding="50" style="border-collapse: collapse; width: 100%;">
+    <table border="1" cellspacing="0" cellpadding="40" style="border-collapse: collapse; width: 100%;">
         <tr style="height: 45px;">
         <td style="width: 30%;"><b>NO. POLISI</b></td>
-        <td style="width: 70%;">{{ $kendaraan->nopol ?? '&nbsp;' }}</td>
+        <td style="width: 70%;"></td>
         </tr>
         <tr style="height: 45px;">
         <td><b>NO. MESIN</b></td>
