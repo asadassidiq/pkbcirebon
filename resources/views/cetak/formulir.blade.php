@@ -123,7 +123,7 @@
     <p class="text-center">NO.{{ $kendaraan->noantrian }} <span style="margin-left: 20px"> TANGGAL {{ tgl_indo($kendaraan->tglpendaftaran) }}</span></p>
     <p>Pada Hari : {{ namaHariIndo($kendaraan->tglpendaftaran) }} Tanggal {{ tgl_indo($kendaraan->tglpendaftaran) }} Pukul : ......... WIB telah dilakukan pemeriksaan terhadap kendaraan</p>
     
-    <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; text-align:center;">
+    <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; text-align:left;">
         <tr>
             <td>
                 <table style="width: 100%; border: none; border-collapse: collapse;">
