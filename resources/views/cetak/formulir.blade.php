@@ -458,8 +458,8 @@
 
 <!-- Awal halaman ke-2 -->
 <div style="page-break-before: always; font-family: 'Times New Roman', serif; font-size: 14px;">
-    <h4 style="text-align: center; margin: 0;">DINAS PERHUBUNGAN KOTA CIREBON</h4>
-    <h5 style="text-align: center; margin: 0;">UPT PENGUJIAN KENDARAAN BERMOTOR KOTA CIREBON</h5>
+    <h3 style="text-align: center; margin: 0;">DINAS PERHUBUNGAN KOTA CIREBON</h4>
+    <h3 style="text-align: center; margin: 0;">UPT PENGUJIAN KENDARAAN BERMOTOR KOTA CIREBON</h5>
 
     <br><br>
 
