@@ -456,5 +456,46 @@
     </div>
 </div>
 
+<div style="width: 100%; font-family: 'Times New Roman', serif; font-size: 14px;">
+    <h4 style="text-align: center; margin: 0;">DINAS PERHUBUNGAN KOTA CIREBON</h4>
+    <h5 style="text-align: center; margin: 0;">UPT PENGUJIAN KENDARAAN BERMOTOR KOTA CIREBON</h5>
+
+    <br>
+
+    <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%;">
+        <tr>
+        <td style="width: 30%;"><b>NO. POLISI</b></td>
+        <td style="width: 70%;">E 8489 BF</td>
+        </tr>
+        <tr>
+        <td><b>NO. MESIN</b></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><b>NO. RANGKA</b></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><b>NO. UJI</b></td>
+        <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <div style="text-align: right; margin-right: 40px;">
+        Cirebon, ................ 2025
+    </div>
+
+    <div style="text-align: right; margin-right: 60px;">
+        <b>(PENGUJI)</b>
+    </div>
+
+    <div style="text-align: right; margin-right: 50px; margin-top: 60px;">
+        (........................)
+    </div>
+</div>
+
+
 </body>
 </html>
