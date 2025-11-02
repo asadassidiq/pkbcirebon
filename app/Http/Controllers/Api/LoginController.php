@@ -98,6 +98,11 @@ class LoginController extends Controller
       } else {
         $user->v1 = false;
       }
+      if (!empty($user->ap)) {
+        $user->ap = true;
+      } else {
+        $user->ap = false;
+      }
     }
     $response = [
       'success'   => true,
@@ -116,6 +121,7 @@ class LoginController extends Controller
     $antrianDataPos3 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '3')->count();
     $antrianDataPos4 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '4')->count();
     $antrianDataVerif1 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '5')->count();
+    $antrianDataApproved = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '0')->count();
     $antrianDataFoto = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['1', '2', '3', '4', '5', '6', '7'])->where('foto', '0')->count();
     $antrianDataCetak = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['1', '2', '3', '4', '5', '6', '7'])->where('posisi', '6')->count();
     $antrianDataSurat = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['9', '10', '11', '12'])->where('posisi', '10')->count();
@@ -127,6 +133,7 @@ class LoginController extends Controller
       'pos3'   => $antrianDataPos3,
       'pos4'   => $antrianDataPos4,
       'verif1' => $antrianDataVerif1,
+      'approved' => $antrianDataApproved,
       'foto'   => $antrianDataFoto,
       'cetak'  => $antrianDataCetak,
       'surat'  => $antrianDataSurat,
