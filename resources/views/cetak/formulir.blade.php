@@ -227,7 +227,36 @@
                 </tr>
                 </table>
             </td>
-            <td rowspan="3">Kolom 2 (Gabung 2 baris)</td>
+            <td rowspan="3">
+                <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <tr>
+                    <td colspan="6" style="border: none;">a. Jarak Sumbu</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">S1-S2</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->jaraksumbu12 }} cm</td>
+                    <td style="border: none;">S4-S5</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->jaraksumbu45 }} cm</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">S2-S3</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->jaraksumbu23 }} cm</td>
+                    <td style="border: none;">S5-S6</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->jaraksumbu56 }} cm</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">S3-S4</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->jaraksumbu34 }} cm</td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                </tr>
+            </td>
         </tr>
         <tr>
             <td>3. UKURAN BERAT DAN PEMAKAIAN BAN</td>
@@ -282,6 +311,14 @@
                     <td style="border: none;"></td>
                 </tr>
                 </table>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; text-align:left;">
+        <tr>
+            <td>
+                Catatan : 
             </td>
         </tr>
     </table>
