@@ -449,8 +449,7 @@
     </tr>
     </table>
     <br><br>
-    <table style="width: 100%; border: none; border-collapse: collapse;
-    font-size: 14px;">
+    <table class="text-left" style="width: 100%; border: none; border-collapse: collapse;font-size: 14px;">
             <tr>
                 <td style="width: 50%; border: none; text-align: center;">
                     PENGUJI
