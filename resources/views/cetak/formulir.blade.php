@@ -450,9 +450,9 @@
     </table>
     <div class="text-right">
         <p><span style="margin-left: -25px">PENGUJI</span>  1. _______________________</p>
-        <p>NIP.</p>
+        <p>NIP. _______________________<</p>
         <p>2. _______________________</p>
-        <p>NIP.</p>
+        <p>NIP. _______________________<</p>
     </div>
 </div>
 
