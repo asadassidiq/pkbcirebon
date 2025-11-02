@@ -191,7 +191,7 @@
             <td>
                 <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
                 <tr>
-                    <td style="width: 45%; border: none;">a. JBB</td>
+                    <td style="width: 50%; border: none;">a. JBB</td>
                     <td style="width: 5%; text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->jbb }} Kg</td>
                 </tr>
@@ -237,7 +237,7 @@
 
                 <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
                 <tr>
-                    <td style="width: 45%; border: none;">a. Berat Sumbu (S1)</td>
+                    <td style="width: 50%; border: none;">a. Berat Sumbu (S1)</td>
                     <td style="width: 5%; text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->beratsumbu1 }} Kg</td>
                 </tr>
