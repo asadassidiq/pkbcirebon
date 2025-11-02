@@ -128,9 +128,9 @@
             <td>
                 <table style="width: 100%; border: none; border-collapse: collapse;">
                     <tr>
-                        <td style="width: 50%; border: none;">MEREK/TIPE/TAHUN</td>
-                        <td style="width: 5%; text-align: center; border: none;">=</td>
-                        <td style="width: 45%; border: none;"></td>
+                        <td style="width: 45%; border: none;">MEREK/TIPE/TAHUN</td>
+                        <td style="width: 2%; text-align: center; border: none;">=</td>
+                        <td style="width: 53%; border: none;"></td>
                     </tr>
                     <tr>
                         <td style="border: none;">NO. KENDARAAN</td>
