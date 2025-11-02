@@ -157,9 +157,9 @@
             <td>
                 <table style="width: 100%; border: none; border-collapse: collapse;">
                     <tr>
-                        <td style="width: 45%; border: none;">NAMA</td>
+                        <td style="width: 50%; border: none;">NAMA</td>
                         <td style="width: 2%; text-align: center; border: none;">=</td>
-                        <td style="width: 53%; border: none;">{{ $kendaraan->nama }}</td>
+                        <td style="width: 48%; border: none;">{{ $kendaraan->nama }}</td>
                     </tr>
                     <tr>
                         <td style="border: none;">ALAMAT</td>
