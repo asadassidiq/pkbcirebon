@@ -404,7 +404,7 @@
                     <td style="border: none;">{{ $kendaraan->bertsumbu5 }} Kg</td>
                 </tr>
                 <tr>
-                    <td style="border: none;">f. Sumbu Tempelan (STP)</td>
+                    <td style="width: 60%;border: none;">f. Sumbu Tempelan (STP)</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;"></td>
                 </tr>
