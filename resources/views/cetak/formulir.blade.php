@@ -184,6 +184,10 @@
                 </table>
         </tr>
         <tr>
+            <td> 1. DAYA ANGKUT</td>
+            <td> 2. DIMENSI</td>
+        </tr>
+        <tr>
             <td>Kolom 1 - Baris 2</td>
             <td rowspan="2">Kolom 2 (Gabung 2 baris)</td>
         </tr>
