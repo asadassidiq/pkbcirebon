@@ -343,17 +343,17 @@
                 <tr class="text-left">
                     <td style="border: none;width: 60%;" class="text-left">f. <span style="margin-left: 6px"> <u>Jarak atap lantai</u></span></td>
                     <td style="text-align: center; border: none;width: 5%;">=</td>
-                    <td style="border: none;">cm</td>
+                    <td style="border: none;" class="text-right">cm</td>
                 </tr>
                 <tr class="text-left">
                     <td style="border: none;">Lebar</td>
                     <td style="text-align: center; border: none;">=</td>
-                    <td style="border: none;">cm</td>
+                    <td style="border: none;" class="text-right">cm</td>
                 </tr>
                 <tr class="text-left">
                     <td style="border: none;">Jarak antar Tempat duduk</td>
                     <td style="text-align: center; border: none;">=</td>
-                    <td style="border: none;">cm</td>
+                    <td style="border: none;" class="text-right">cm</td>
                 </tr>
                 <tr class="text-left">
                     <td style="border: none;">Jarak Lorong</td>
@@ -363,12 +363,12 @@
                 <tr class="text-left">
                     <td style="border: none;">Lebar Tempat Duduk</td>
                     <td style="text-align: center; border: none;">=</td>
-                    <td style="border: none;">cm</td>
+                    <td style="border: none;" class="text-right">cm</td>
                 </tr>
                 <tr class="text-left">
                     <td style="border: none;">Tinggi Pijakan</td>
                     <td style="text-align: center; border: none;">=</td>
-                    <td style="border: none;">cm</td>
+                    <td style="border: none;" class="text-right">cm</td>
                 </tr>
                 </table>
             </td>
