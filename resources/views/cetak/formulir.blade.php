@@ -256,6 +256,7 @@
                     <td style="border: none;"></td>
                     <td style="border: none;"></td>
                 </tr>
+                </table>
             </td>
         </tr>
         <tr>
