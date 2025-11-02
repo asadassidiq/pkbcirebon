@@ -346,12 +346,12 @@
                     <td style="border: none;" class="text-right">cm</td>
                 </tr>
                 <tr class="text-left">
-                    <td style="border: none;"><span style="margin-left: 22px">Lebar</td>
+                    <td style="border: none;"><span style="margin-left: 23px">Lebar</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;" class="text-right">cm</td>
                 </tr>
                 <tr class="text-left">
-                    <td style="border: none;"><span style="margin-left: 22">Jarak antar Tempat duduk</td>
+                    <td style="border: none;"><span style="margin-left: 23px">Jarak antar Tempat duduk</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;" class="text-right">cm</td>
                 </tr>
@@ -361,12 +361,12 @@
                     <td style="border: none;" class="text-right">cm</td>
                 </tr>
                 <tr class="text-left">
-                    <td style="border: none;"><span style="margin-left: 22px">Lebar Tempat Duduk</td>
+                    <td style="border: none;"><span style="margin-left: 23px">Lebar Tempat Duduk</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;" class="text-right">cm</td>
                 </tr>
                 <tr class="text-left">
-                    <td style="border: none;"><span style="margin-left: 22px">Tinggi Pijakan</td>
+                    <td style="border: none;"><span style="margin-left: 23px">Tinggi Pijakan</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;" class="text-right">cm</td>
                 </tr>
