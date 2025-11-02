@@ -188,7 +188,15 @@
             <td> 2. DIMENSI</td>
         </tr>
         <tr>
-            <td>Kolom 1 - Baris 2</td>
+            <td>
+                <p>JBB         = {{ $kendaraan->jbb }}</p>
+                <p>BK          = {{ $kendaraan->beratkosong }}</p>
+                <p>DA ORANG    = {{ $kendaraan->dayaangkutorang }}</p>
+                <p>DA BARANG   = {{ $kendaraan->dayaangkutbarang }}</p>
+                <p>JBI         = {{ $kendaraan->jbi }}</p>
+                <p>MST         = {{ $kendaraan->mst }}</p>
+                <p>KELAS JALAN = {{ $kendaraan->kelasjalanterendah }}</p>
+            </td>
             <td rowspan="2">Kolom 2 (Gabung 2 baris)</td>
         </tr>
         <tr>
