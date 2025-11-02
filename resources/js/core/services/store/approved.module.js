@@ -1,19 +1,17 @@
-import PenyerahanService from "../penyerahan.service.js";
+import ApprovedService from "../approved.service.js";
 import Swal from "sweetalert2";
 export const namespaced = true;
 
 export const state = {
-    penyerahans: [],
-    penyerahansudah: [],
+    approveds: [],
+    approvedsudah: [],
     filter: {
         tgl: "",
         kodepenerbitan: "",
     },
-    penyerahan: {
-        pendaftaran_id:"",
-        namapenerima:"",
-        notelppenerima: "",
-        noidentitaspenerima: "",
+    approved: {
+        approved:"",
+        catatan: "",
     },
     identitaskendaraan: {
         nouji:"",
@@ -32,11 +30,11 @@ export const state = {
 };
 
 export const mutations = {
-    ASSING_DATA(state, penyerahans) {
-        state.penyerahans = penyerahans;
+    ASSING_DATA(state, approveds) {
+        state.approveds = approveds;
     },
-    ASSING_DATA_SUDAH(state, penyerahansudah) {
-        state.penyerahansudah = penyerahansudah;
+    ASSING_DATA_SUDAH(state, approvedsudah) {
+        state.approvedsudah = approvedsudah;
     },
     SET_PAGE(state, payload) {
         state.page = payload;
@@ -45,11 +43,9 @@ export const mutations = {
         state.filter.tgl = payload;
     },
     ASSIGN_FORM(state, payload) {
-        state.penyerahan = {
-            pendaftaran_id:"",
-            namapenerima:payload.namapenerima ,
-            noidentitaspenerima: payload.noidentitaspenerima,
-            notelppenerima: payload.notelppenerima,
+        state.approved = {
+            approved:payload.approved ,
+            catatan: payload.catatan,
         };
         state.identitaskendaraan = {
             merek      : payload.merek,
@@ -63,16 +59,14 @@ export const mutations = {
             jbb   : payload.jbb,
             norangka : payload.norangka,
         };
-        if(state.penyerahan.noidentitaspenerima  === null){
-            state.penyerahan.noidentitaspenerima = payload.noidentitaspemilik;
+        if(state.approved.noidentitaspenerima  === null){
+            state.approved.noidentitaspenerima = payload.noidentitaspemilik;
         }
     },
     CLEAR_FORM(state) {
-        state.penyerahan= {
-            pendaftaran_id:"",
-            namapenerima:"",
-            noidentitaspenerima:"",
-            notelppenerima: "",
+        state.approved= {
+            approved:"",
+            catatan:"",
         };
         state.identitaskendaraan= {
             nouji:"",
@@ -96,10 +90,10 @@ export const mutations = {
 };
 
 export const actions = {
-    getPenyerahans({ commit, state }, payload) {
+    getApproveds({ commit, state }, payload) {
         let search = typeof payload != "undefined" ? payload : "";
         return new Promise((resolve, reject) => {
-            PenyerahanService.getPenyerahans(state.page,state.filter.tgl, search)
+            ApprovedService.getApproveds(state.page,state.filter.tgl, search)
                 .then(response => {
                     commit("ASSING_DATA", response.data.result);
                     resolve(response.data);
@@ -119,10 +113,10 @@ export const actions = {
                 });
         });
     },
-    getPenyerahanSudah({ commit, state }, payload) {
+    getApprovedSudah({ commit, state }, payload) {
         let search = typeof payload != "undefined" ? payload : "";
         return new Promise((resolve, reject) => {
-            PenyerahanService.getPenyerahanSudah(state.page,state.filter.tgl,state.filter.kodepenerbitan, search)
+            ApprovedService.getApprovedSudah(state.page,state.filter.tgl,state.filter.kodepenerbitan, search)
                 .then(response => {
                     commit("ASSING_DATA_SUDAH", response.data.result);
                     resolve(response.data);
@@ -142,9 +136,9 @@ export const actions = {
                 });
         });
     },
-    editPenyerahan({ commit, state }, payload) {
+    editApproved({ commit, state }, payload) {
         return new Promise((resolve, reject) => {
-            PenyerahanService.getPenyerahan(payload)
+            ApprovedService.getApproved(payload)
                 .then(response => {
                     commit("ASSIGN_FORM", response.data.result);
                     resolve(response.data);
@@ -171,9 +165,9 @@ export const actions = {
                 });
         });
     },
-    updatePenyerahan({ state, commit }, id) {
+    updateApproved({ state, commit }, id) {
         return new Promise((resolve, reject) => {
-            PenyerahanService.updatePenyerahan(id, state.penyerahan)
+            ApprovedService.updateApproved(id, state.approved)
                 .then(response => {
                     // commit("CLEAR_FORM");
                     resolve(response.data);
@@ -192,7 +186,7 @@ export const actions = {
 };
 export const getters = {
     getEventById: state => id => {
-        return state.penyerahans.find(penyerahan => penyerahan.id === id);
+        return state.approveds.find(approved => approved.id === id);
     }
 };
 

@@ -22,11 +22,8 @@ const state = {
     p2:"",
     p3:"",
     p4:"",
-    p5:"",
-    p6:"",
-    p7:"",
-    p8:"",
     v1:"",
+    ap:"",
     ct:"",
   },
   notif :{
@@ -35,10 +32,7 @@ const state = {
     pos2:"0",
     pos3:"0",
     pos4:"0",
-    pos5:"0",
-    pos6:"0",
-    pos7:"0",
-    pos8:"0",
+    approved:"0",
     verif1:"0",
     cetak:"0",
     penyerahan:"0",
@@ -59,10 +53,7 @@ const getters = {
     state.user_personal_info.p2 = user.p2;
     state.user_personal_info.p3 = user.p3;
     state.user_personal_info.p4 = user.p4;
-    state.user_personal_info.p5 = user.p5;
-    state.user_personal_info.p6 = user.p6;
-    state.user_personal_info.p7 = user.p7;
-    state.user_personal_info.p8 = user.p8;
+    state.user_personal_info.ap = user.ap;
     state.user_personal_info.v1 = user.v1;
     return state.user_personal_info;
   },
@@ -73,10 +64,7 @@ const getters = {
     state.notif.pos2 = notif.pos2;
     state.notif.pos3 = notif.pos3;
     state.notif.pos4 = notif.pos4;
-    state.notif.pos5 = notif.pos5;
-    state.notif.pos6 = notif.pos6;
-    state.notif.pos7 = notif.pos7;
-    state.notif.pos8 = notif.pos8;
+    state.notif.approved = notif.approved;
     state.notif.verif1 = notif.verif1;
     state.notif.cetak = notif.cetak;
     state.notif.penyerahan = notif.penyerahan;
@@ -124,11 +112,8 @@ const mutations = {
           p2:"",
           p3:"",
           p4:"",
-          p5:"",
-          p6:"",
-          p7:"",
-          p8:"",
           v1:"",
+          ap:"",
           ct:"",
         };
         
@@ -138,12 +123,9 @@ const mutations = {
           pos2:"0",
           pos3:"0",
           pos4:"0",
-          pos5:"0",
-          pos6:"0",
-          pos7:"0",
-          pos8:"0",
           verif1:"0",
           cetak:"0",
+          approved:"0",
           penyerahan:"0",
         };
     },

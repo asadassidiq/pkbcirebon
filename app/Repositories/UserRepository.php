@@ -74,6 +74,11 @@ class UserRepository
             }else{
                 $data->v1 = false;
             }
+            if(!empty($data->ap)){
+                $data->ap = true;
+            }else{
+                $data->ap = false;
+            }
         }
         return $data;
     }
@@ -131,6 +136,11 @@ class UserRepository
         }else{
             $v1 = null;
         }
+        if($request->ap == true){
+            $ap= CryptHelper::encrypt($request->username.'approvedok', $key);
+        }else{
+            $ap = null;
+        }
         $data = $this->model::create([
                 'name' => $request->name,
                 'username' => $request->username,
@@ -147,6 +157,7 @@ class UserRepository
                 'p3' => $p3,
                 'p4' => $p4,
                 'v1' => $v1,
+                'ap' => $ap,
                 'ct' => $ct,
             ]);
         return $data;
@@ -208,6 +219,11 @@ class UserRepository
         }else{
             $v1 = null;
         }
+        if($request->ap == true){
+            $ap= CryptHelper::encrypt($request->username.'approvedok', $key);
+        }else{
+            $ap = null;
+        }
         $update->pf  = $pf;
         $update->ft  = $ft;
         $update->p1  = $p1;
@@ -216,6 +232,7 @@ class UserRepository
         $update->p4  = $p4;
         $update->v1  = $v1;
         $update->ct  = $ct;
+        $update->ap  = $ap;
         if ($update->save()) {
             return true;
         }

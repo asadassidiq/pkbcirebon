@@ -57,6 +57,7 @@ class UserPKB extends Authenticatable
         'p4',
         'v1',
         'ct',
+        'ap',
     ];
 
     protected $hidden = [

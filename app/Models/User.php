@@ -38,6 +38,7 @@ class User extends Authenticatable
         'p4',
         'v1',
         'ct',
+        'ap',
     ];
 
     /**

@@ -42,7 +42,6 @@ class PendaftaranRepository
 
     public function getAll()
     {
-
         $data = $this->model
             ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan', 'pendaftarans.status', 'pendaftarans.jenispendaftaran', 'pendaftarans.notelp')
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
@@ -68,7 +67,7 @@ class PendaftaranRepository
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->leftjoin('kodepenerbitans','pendaftarans.kodepenerbitans_id','=','kodepenerbitans.id')
             ->leftjoin('penyerahan','penyerahan.pendaftaran_id','=','pendaftarans.id')
-            ->where('pendaftarans.posisi','>=','10')
+            ->where('pendaftarans.posisi','>=','7')
             ->where('pendaftarans.tglpendaftaran',request()->t)
             ->orderBy('pendaftarans.noantrian','DESC');
         $search = str_replace("/", "", request()->q);
@@ -723,7 +722,7 @@ class PendaftaranRepository
 
             if ($update->save()) {
                 $data = $this->model->where('id',$id)->first();
-                $data->posisi = 11;
+                $data->posisi = 8;
                 $data->save();
                 return true;
             }
@@ -772,5 +771,52 @@ class PendaftaranRepository
             Persuratan::where('pendaftaran_id', $dataId)->delete();
         }
         return $delete;
+    }
+    
+    public function getAllApproved()
+    {
+        $data = $this->model
+            ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan', 'pendaftarans.status', 'pendaftarans.jenispendaftaran', 'pendaftarans.notelp', 'pendaftarans.namapemohon', 'pendaftarans.tglpendaftaran', 'pendaftarans.approved','pendaftarans.user_approved','pendaftarans.catatan','users.name')
+            ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
+            ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
+            ->leftJoin('users', 'pendaftarans.user_approved', '=', 'users.id')
+            ->where('pendaftarans.approved','>=', '0')
+            ->where('pendaftarans.tglpendaftaran', request()->t)
+            ->orderBy('pendaftarans.noantrian', 'DESC');
+        $search = str_replace("/", "", request()->q);
+
+        if ($search != '') {
+            $data = $data->where(function ($query) use ($search) {
+                $query->where('identitaskendaraans.noregistrasikendaraan', 'LIKE', '%' . $search . '%')
+                    ->orWhere('identitaskendaraans.nouji', 'LIKE', '%' . $search . '%');
+            });
+        }
+        return $data->paginate(10);
+    }
+
+    public function getApproved($id)
+    {
+        $data = $this->model->first();
+        return $data;
+    }
+
+    public function updateApproved($id, $request)
+    {
+        $update = $this->model->where('id',$id)->first();
+        if($update){
+            $update->update($request);
+            if ($update->save()) {
+                $data = $this->model->where('id',$id)->first();
+                if($data->kodepenerbitans_id == '10' || $data->kodepenerbitans_id == '9'){
+                    $data->posisi = 6;
+                }else{
+                    $data->posisi = 1;  
+                }
+                $data->save();
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
 }

@@ -192,6 +192,23 @@
       </li>
     </router-link>
 
+    <router-link to="/approved" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.ap == true">
+      <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
+        isActive && 'menu-item-active',
+        isExactActive && 'menu-item-active'
+      ]">
+        <a :href="href" class="menu-link" @click="navigate">
+          <i class="menu-icon flaticon-file-2"></i>
+          <span class="menu-text">Perizinan
+            <div class="blink" v-if="notif.approved > 0">
+              <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{
+                notif.approved }}</span></span>
+            </div>
+          </span>
+        </a>
+      </li>
+    </router-link>
+
     <router-link to="/surat" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.ct == true">
       <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
         isActive && 'menu-item-active',

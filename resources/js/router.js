@@ -425,6 +425,22 @@ export default new Router({
           ],
         },
         {
+          path: "/approved",
+          component: () => import("@/view/pages/approved/Index.vue"),
+          children: [
+            {
+              path: "",
+              name: "approved.data",
+              component: () => import("@/view/pages/approved/Table.vue"),
+            },
+            {
+              path: ":id",
+              name: "approved.edit",
+              component: () => import("@/view/pages/approved/Edit.vue"),
+            },
+          ],
+        },
+        {
           path: "/laporan",
           component: () => import("@/view/pages/cetak/laporan/Index.vue"),
           children: [

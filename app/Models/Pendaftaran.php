@@ -57,5 +57,8 @@ class Pendaftaran extends Model
         'user_pos3',
         'user_pos4',
         'user_posverif',
+        'approved',
+        'user_approved',
+        'catatan',
     ];
 }

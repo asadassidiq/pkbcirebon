@@ -72,11 +72,16 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::post('/', 'PendaftaranController@store2');
         });
 
-
         Route::group(['middleware' => ['role:admin|petugas'], 'prefix' => 'penyerahan'], function () {
             Route::get('/{id}', 'PendaftaranController@getPenyerahan');
             Route::put('/{id}', 'PendaftaranController@storePenyerahan');
             Route::get('/', 'PendaftaranController@getAllPenyerahan');
+        });
+
+        Route::group(['middleware' => ['role:admin|petugas|kepala'], 'prefix' => 'approved'], function () {
+            Route::get('/{id}', 'PendaftaranController@getApproved');
+            Route::put('/{id}', 'PendaftaranController@updateApproved');
+            Route::get('/', 'PendaftaranController@getAllApproved');
         });
 
         Route::group(['middleware' => ['role:admin|petugas'], 'prefix' => 'antrian'], function () {

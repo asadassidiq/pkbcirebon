@@ -99,6 +99,15 @@
                 </label>
             </div>
         </div>
+        <div class="col-3 col-form-label" v-if="user.role == 'ADMIN' || user.role == 'PETUGAS' || user.role == 'KEPALA UPT'">
+            <div class="checkbox-list">
+                <label class="checkbox">
+                    <input type="checkbox"  name="ap" v-model="user.ap" />
+                    <span></span>
+                    Perizinan
+                </label>
+            </div>
+        </div>
         <div class="col-3 col-form-label" v-if="user.role == 'ADMIN' || user.role == 'PENGUJI'">
             <div class="checkbox-list">
                 <label class="checkbox">
@@ -113,7 +122,7 @@
                 <label class="checkbox">
                     <input type="checkbox"  name="p1" v-model="user.p1" />
                     <span></span>
-                    Uji Visual
+                    POS 1
                 </label>
             </div>
         </div>
@@ -122,7 +131,7 @@
                 <label class="checkbox">
                     <input type="checkbox"  name="p2" v-model="user.p2" />
                     <span></span>
-                    Emisi
+                    POS 2
                 </label>
             </div>
         </div>
@@ -131,7 +140,7 @@
                 <label class="checkbox">
                     <input type="checkbox"  name="p3" v-model="user.p3" />
                     <span></span>
-                    Speedometer
+                    POS 3
                 </label>
             </div>
         </div>
@@ -140,43 +149,7 @@
                 <label class="checkbox">
                     <input type="checkbox"  name="p4" v-model="user.p4" />
                     <span></span>
-                    Bagian Bawah
-                </label>
-            </div>
-        </div>
-        <div class="col-3 col-form-label" v-if="user.role == 'ADMIN' || user.role == 'PENGUJI'">
-            <div class="checkbox-list">
-                <label class="checkbox">
-                    <input type="checkbox"  name="p5" v-model="user.p5" />
-                    <span></span>
-                    Kebisingan
-                </label>
-            </div>
-        </div>
-        <div class="col-3 col-form-label" v-if="user.role == 'ADMIN' || user.role == 'PENGUJI'">
-            <div class="checkbox-list">
-                <label class="checkbox">
-                    <input type="checkbox"  name="p6" v-model="user.p6" />
-                    <span></span>
-                    Rem
-                </label>
-            </div>
-        </div>
-        <div class="col-3 col-form-label" v-if="user.role == 'ADMIN' || user.role == 'PENGUJI'">
-            <div class="checkbox-list">
-                <label class="checkbox">
-                    <input type="checkbox"  name="p7" v-model="user.p7" />
-                    <span></span>
-                    Sideslip
-                </label>
-            </div>
-        </div>
-        <div class="col-3 col-form-label" v-if="user.role == 'ADMIN' || user.role == 'PENGUJI'">
-            <div class="checkbox-list">
-                <label class="checkbox">
-                    <input type="checkbox"  name="p8" v-model="user.p8" />
-                    <span></span>
-                    Lampu
+                    POS 4
                 </label>
             </div>
         </div>
