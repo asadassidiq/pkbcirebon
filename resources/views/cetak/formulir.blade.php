@@ -128,29 +128,29 @@
             <td>
                 <table style="width: 100%; border: none; border-collapse: collapse;">
                     <tr>
-                        <td style="width: 60%;">MEREK/TIPE/TAHUN</td>
-                        <td style="width: 5%; text-align: center;">=</td>
-                        <td style="width: 35%;"></td>
+                        <td style="width: 60%; border: none;">MEREK/TIPE/TAHUN</td>
+                        <td style="width: 5%; text-align: center; border: none;">=</td>
+                        <td style="width: 35%; border: none;"></td>
                     </tr>
                     <tr>
-                        <td>NO. KENDARAAN</td>
-                        <td style="text-align: center;">=</td>
-                        <td></td>
+                        <td style="border: none;">NO. KENDARAAN</td>
+                        <td style="text-align: center; border: none;">=</td>
+                        <td style="border: none;"></td>
                     </tr>
                     <tr>
-                        <td>NO. CHASIS/LANDASAN</td>
-                        <td style="text-align: center;">=</td>
-                        <td></td>
+                        <td style="border: none;">NO. CHASIS/LANDASAN</td>
+                        <td style="text-align: center; border: none;">=</td>
+                        <td style="border: none;"></td>
                     </tr>
                     <tr>
-                        <td>NO. MESIN</td>
-                        <td style="text-align: center;">=</td>
-                        <td></td>
+                        <td style="border: none;">NO. MESIN</td>
+                        <td style="text-align: center; border: none;">=</td>
+                        <td style="border: none;"></td>
                     </tr>
                     <tr>
-                        <td>JENIS/MACAM</td>
-                        <td style="text-align: center;">=</td>
-                        <td></td>
+                        <td style="border: none;">JENIS/MACAM</td>
+                        <td style="text-align: center; border: none;">=</td>
+                        <td style="border: none;"></td>
                     </tr>
                 </table>
             </td>
