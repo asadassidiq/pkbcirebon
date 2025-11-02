@@ -187,12 +187,14 @@ class PendaftaranService
                     $request->merge([
                         'foto'                      => null,
                         'posisi'                    => '0',
+                        'approved'                  => '0',
                         'identitaskendaraan_id'     => $dataIden['id'],
                     ]);
                 }   elseif ($request->kodepenerbitans_id == '9' || $request->kodepenerbitans_id == '10') {
                     $request->merge([
                         'foto'                      => null,
                         'posisi'                    => '0',
+                        'approved'                  => '0',
                         'identitaskendaraan_id'     => $dataIden['id'],
                     ]);
                 } elseif ($request->kodepenerbitans_id == '7') {
