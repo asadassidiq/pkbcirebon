@@ -226,12 +226,63 @@
                     <td style="border: none;">{{ $kendaraan->kelasjalanterendah }}</td>
                 </tr>
                 </table>
-
             </td>
-            <td rowspan="2">Kolom 2 (Gabung 2 baris)</td>
+            <td rowspan="3">Kolom 2 (Gabung 2 baris)</td>
         </tr>
         <tr>
-            <td>Kolom 1 - Baris 3</td>
+            <td>3. UKURAN BERAT DAN PEMAKAIAN BAN</td>
+        </tr>
+        <tr>
+            <td>
+
+                <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <tr>
+                    <td style="width: 35%; border: none;">a. Berat Sumbu (S1)</td>
+                    <td style="width: 5%; text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->beratsumbu1 }} Kg</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">b. Berat Sumbu (S2)</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->beratsumbu2 }} Kg</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">c. Berat Sumbu (S3)</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->beratsumbu3 }} Kg</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">d. Berat Sumbu (S4)</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->beratsumbu4 }} Kg</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">e. Berat Sumbu (S5)</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->bertsumbu5 }} Kg</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">f. Sumbu Tempelan (STP)</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;"></td>
+                </tr>
+                <tr>
+                    <td style="border: none;">g. Ukuran Ban</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->ukuranban }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">h. Konfigurasi</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->konfigurasisumburoda }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">i. Status</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;"></td>
+                </tr>
+                </table>
+            </td>
         </tr>
     </table>
 </div>
