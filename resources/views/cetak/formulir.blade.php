@@ -154,7 +154,34 @@
                     </tr>
                 </table>
             </td>
-            <td>Kolom 2 - Baris 1</td>
+            <td>
+                <table style="width: 100%; border: none; border-collapse: collapse;">
+                    <tr>
+                        <td style="width: 45%; border: none;">NAMA</td>
+                        <td style="width: 2%; text-align: center; border: none;">=</td>
+                        <td style="width: 53%; border: none;">{{ $kendaraan->nama }}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">ALAMAT</td>
+                        <td style="text-align: center; border: none;">=</td>
+                        <td style="border: none;">{{ $kendaraan->alamat }}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">BENGKEL PEMBUAT</td>
+                        <td style="text-align: center; border: none;">=</td>
+                        <td style="border: none;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">BAHAN</td>
+                        <td style="text-align: center; border: none;">=</td>
+                        <td style="border: none;">{{ $kendaraan->bahan }}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: none;">LOKASI PEMERIKSAAN</td>
+                        <td style="text-align: center; border: none;">=</td>
+                        <td style="border: none;"></td>
+                    </tr>
+                </table>
         </tr>
         <tr>
             <td>Kolom 1 - Baris 2</td>
