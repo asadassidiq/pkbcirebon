@@ -288,6 +288,86 @@
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;"> cm</td>
                 </tr>
+                <tr class="text-center">
+                    <td style="border: none;" class="text-left">c. <span style="margin-left: 6px"> ROH</span></td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->p }} cm</td>
+                    <td style="border: none;">FOH</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->b }} cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;" class="text-left">d. <span style="margin-left: 6px"> Panjang</span></td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->p }} cm</td>
+                    <td style="border: none;">Lebar</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->b }} cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">Tinggi</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->b }} cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;" class="text-left">e. <span style="margin-left: 6px"> <u>Tangki</u></span></td>
+                    <td style="text-align: center; border: none;"></td>
+                    <td style="border: none;">Dom Tangki</td>
+                    <td style="border: none;"></td>
+                    <td style="text-align: center; border: none;"></td>
+                    <td style="border: none;">/td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">Panjang</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->b }} cm</td>
+                    <td style="border: none;">Diameter</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->b }} cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">Lebar</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->b }} cm</td>
+                    <td style="border: none;">Tinggi</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->b }} cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">Tinggi</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->b }} cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;" class="text-left">f. <span style="margin-left: 6px"> <u>Jarak atap lantai</u></span></td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">Lebar</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">Jarak antar Tempat duduk</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">Jarak Lorong</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">Lebar Tempat Duduk</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">cm</td>
+                </tr>
+                <tr class="text-center">
+                    <td style="border: none;">Tinggi Pijakan</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">cm</td>
+                </tr>
                 </table>
             </td>
         </tr>
