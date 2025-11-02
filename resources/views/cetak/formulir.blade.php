@@ -456,44 +456,46 @@
     </div>
 </div>
 
-<div style="width: 100%; font-family: 'Times New Roman', serif; font-size: 14px;">
+<!-- Awal halaman ke-2 -->
+<div style="page-break-before: always; font-family: 'Times New Roman', serif; font-size: 14px;">
     <h4 style="text-align: center; margin: 0;">DINAS PERHUBUNGAN KOTA CIREBON</h4>
     <h5 style="text-align: center; margin: 0;">UPT PENGUJIAN KENDARAAN BERMOTOR KOTA CIREBON</h5>
 
-    <br>
+    <br><br>
 
-    <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%;">
-        <tr>
+    <table border="1" cellspacing="0" cellpadding="15" style="border-collapse: collapse; width: 100%;">
+        <tr style="height: 45px;">
         <td style="width: 30%;"><b>NO. POLISI</b></td>
-        <td style="width: 70%;">E 8489 BF</td>
+        <td style="width: 70%;">{{ $kendaraan->nopol ?? '&nbsp;' }}</td>
         </tr>
-        <tr>
+        <tr style="height: 45px;">
         <td><b>NO. MESIN</b></td>
-        <td>&nbsp;</td>
+        <td>{{ $kendaraan->nomesin ?? '&nbsp;' }}</td>
         </tr>
-        <tr>
+        <tr style="height: 45px;">
         <td><b>NO. RANGKA</b></td>
-        <td>&nbsp;</td>
+        <td>{{ $kendaraan->norangka ?? '&nbsp;' }}</td>
         </tr>
-        <tr>
+        <tr style="height: 45px;">
         <td><b>NO. UJI</b></td>
-        <td>&nbsp;</td>
+        <td>{{ $kendaraan->nouji ?? '&nbsp;' }}</td>
         </tr>
     </table>
 
-    <br><br>
+    <br><br><br>
 
-    <div style="text-align: right; margin-right: 40px;">
+    <div style="text-align: right; margin-right: 50px;">
         Cirebon, ................ 2025
     </div>
 
-    <div style="text-align: right; margin-right: 60px;">
+    <div style="text-align: right; margin-right: 70px;">
         <b>(PENGUJI)</b>
     </div>
 
-    <div style="text-align: right; margin-right: 50px; margin-top: 60px;">
-        (........................)
+    <div style="text-align: right; margin-right: 60px; margin-top: 80px;">
+        (..................................)
     </div>
+
 </div>
 
 
