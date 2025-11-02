@@ -232,7 +232,7 @@
                 <tr>
                     <td colspan="6" style="border: none;">a. Jarak Sumbu</td>
                 </tr>
-                <tr>
+                <tr class="text-center">
                     <td style="border: none;">S1-S2</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->jaraksumbu12 }} cm</td>
@@ -240,7 +240,7 @@
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->jaraksumbu45 }} cm</td>
                 </tr>
-                <tr>
+                <tr class="text-center">
                     <td style="border: none;">S2-S3</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->jaraksumbu23 }} cm</td>
@@ -248,7 +248,7 @@
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->jaraksumbu56 }} cm</td>
                 </tr>
-                <tr>
+                <tr class="text-center">
                     <td style="border: none;">S3-S4</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->jaraksumbu34 }} cm</td>
