@@ -189,13 +189,44 @@
         </tr>
         <tr>
             <td>
-                <p>JBB         = {{ $kendaraan->jbb }}</p>
-                <p>BK          = {{ $kendaraan->beratkosong }}</p>
-                <p>DA ORANG    = {{ $kendaraan->dayaangkutorang }}</p>
-                <p>DA BARANG   = {{ $kendaraan->dayaangkutbarang }}</p>
-                <p>JBI         = {{ $kendaraan->jbi }}</p>
-                <p>MST         = {{ $kendaraan->mst }}</p>
-                <p>KELAS JALAN = {{ $kendaraan->kelasjalanterendah }}</p>
+                <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <tr>
+                    <td style="width: 30%; border: none;">JBB</td>
+                    <td style="width: 5%; text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->jbb }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">BK</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->beratkosong }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">DA ORANG</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->dayaangkutorang }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">DA BARANG</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->dayaangkutbarang }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">JBI</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->jbi }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">MST</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->mst }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none;">KELAS JALAN</td>
+                    <td style="text-align: center; border: none;">=</td>
+                    <td style="border: none;">{{ $kendaraan->kelasjalanterendah }}</td>
+                </tr>
+                </table>
+
             </td>
             <td rowspan="2">Kolom 2 (Gabung 2 baris)</td>
         </tr>
