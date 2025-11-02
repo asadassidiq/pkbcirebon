@@ -443,7 +443,7 @@
     </table>
     <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; text-align: left;">
     <tr>
-        <td style="height: 15px; vertical-align: top;">
+        <td style="padding: 5px; height: 25px; vertical-align: top;">
         Catatan :<br>
         </td>
     </tr>
