@@ -340,32 +340,32 @@
                 </tr>
                 </table>
                 <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                <tr class="text-center">
-                    <td style="border: none;width: 65%;" class="text-left">f. <span style="margin-left: 6px"> <u>Jarak atap lantai</u></span></td>
+                <tr class="text-left">
+                    <td style="border: none;width: 60%;" class="text-left">f. <span style="margin-left: 6px"> <u>Jarak atap lantai</u></span></td>
                     <td style="text-align: center; border: none;width: 5%;">=</td>
                     <td style="border: none;">cm</td>
                 </tr>
-                <tr class="text-center">
+                <tr class="text-left">
                     <td style="border: none;">Lebar</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">cm</td>
                 </tr>
-                <tr class="text-center">
+                <tr class="text-left">
                     <td style="border: none;">Jarak antar Tempat duduk</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">cm</td>
                 </tr>
-                <tr class="text-center">
+                <tr class="text-left">
                     <td style="border: none;">Jarak Lorong</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">cm</td>
                 </tr>
-                <tr class="text-center">
+                <tr class="text-left">
                     <td style="border: none;">Lebar Tempat Duduk</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">cm</td>
                 </tr>
-                <tr class="text-center">
+                <tr class="text-left">
                     <td style="border: none;">Tinggi Pijakan</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">cm</td>
