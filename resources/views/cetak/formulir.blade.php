@@ -191,7 +191,7 @@
             <td>
                 <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
                 <tr>
-                    <td style="width: 35%; border: none;">a. JBB</td>
+                    <td style="width: 40%; border: none;">a. JBB</td>
                     <td style="width: 5%; text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->jbb }} Kg</td>
                 </tr>
