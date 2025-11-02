@@ -449,28 +449,12 @@
     </tr>
     </table>
     <br><br>
-    <table class="text-left" style="width: 100%; border: none; border-collapse: collapse;font-size: 14px;">
-            <tr>
-                <td style="width: 50%; border: none; text-align: center;">
-                    PENGUJI
-                </td>
-                <td style="width: 50%; border: none; text-align: center;">
-                    1. _______________________
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>NIP.</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>2. _______________________</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>NIP.</td>
-            </tr>
-    </table>
+    <div class="text-right">
+        <p><span style="margin-left: -25px">PENGUJI</span>  1. _______________________</p>
+        <p>NIP.</p>
+        <p>2. _______________________</p>
+        <p>NIP.</p>
+    </div>
 </div>
 
 </body>
