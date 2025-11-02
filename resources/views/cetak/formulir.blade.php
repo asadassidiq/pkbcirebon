@@ -183,7 +183,7 @@
                     </tr>
                 </table>
         </tr>
-        <tr>
+        <tr class="text-left">
             <td> 1. DAYA ANGKUT</td>
             <td> 2. DIMENSI</td>
         </tr>
