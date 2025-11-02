@@ -90,19 +90,19 @@ class PendaftaranController extends Controller
     public function getApproved($id)
     {
         $data = $this->pendaftaranService->getApproved($id);
-        return $data;
+        return $this->returnJson($data);
     }
 
     public function getAllApproved()
     {
         $data = $this->pendaftaranService->getAllApproved();
-        return $data;
+        return $this->returnJson($data);
     }
 
     public function updateApproved(Request $request, $id)
     {
         $data = $this->pendaftaranService->update($request, $id);
-        return $data;
+        return $this->returnJson($data);
     }
 
     public function store2(PendaftaranStore2Request $request)
