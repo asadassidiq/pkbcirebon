@@ -429,9 +429,21 @@
             </td>
         </tr>
     </table>
-    <br>
     <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; text-align:left;">
         <tr>
+            <td>
+                Hasil Penilaian : 
+            </td>
+            <td> 
+                Lulus
+            </td>
+            <td> 
+                Gagal
+            </td>
+        </tr>
+    </table>
+    <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; text-align:left;">
+        <tr style="padding: 20px">
             <td>
                 Catatan : 
             </td>
