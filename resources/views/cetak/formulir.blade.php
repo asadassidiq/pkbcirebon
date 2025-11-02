@@ -130,27 +130,27 @@
                     <tr>
                         <td style="width: 45%; border: none;">MEREK/TIPE/TAHUN</td>
                         <td style="width: 2%; text-align: center; border: none;">=</td>
-                        <td style="width: 53%; border: none;"></td>
+                        <td style="width: 53%; border: none;">{{ $kendaraan->merek.'/'.$kendaraan->tipe.'/'.$kendaraan->thpembuatan }}</td>
                     </tr>
                     <tr>
                         <td style="border: none;">NO. KENDARAAN</td>
                         <td style="text-align: center; border: none;">=</td>
-                        <td style="border: none;"></td>
+                        <td style="border: none;">{{ $kendaraan->noregistrasikendaraan }}</td>
                     </tr>
                     <tr>
                         <td style="border: none;">NO. CHASIS/LANDASAN</td>
                         <td style="text-align: center; border: none;">=</td>
-                        <td style="border: none;"></td>
+                        <td style="border: none;">{{ $kendaraan->norangka }}</td>
                     </tr>
                     <tr>
                         <td style="border: none;">NO. MESIN</td>
                         <td style="text-align: center; border: none;">=</td>
-                        <td style="border: none;"></td>
+                        <td style="border: none;">{{ $kendaraan->nomesin }}</td>
                     </tr>
                     <tr>
                         <td style="border: none;">JENIS/MACAM</td>
                         <td style="text-align: center; border: none;">=</td>
-                        <td style="border: none;"></td>
+                        <td style="border: none;">{{ $kendaraan->subjenis }}</td>
                     </tr>
                 </table>
             </td>
