@@ -193,32 +193,32 @@
                 <tr>
                     <td style="width: 35%; border: none;">a. JBB</td>
                     <td style="width: 5%; text-align: center; border: none;">=</td>
-                    <td style="border: none;">{{ $kendaraan->jbb }}</td>
+                    <td style="border: none;">{{ $kendaraan->jbb }} Kg</td>
                 </tr>
                 <tr>
                     <td style="border: none;">b. BK</td>
                     <td style="text-align: center; border: none;">=</td>
-                    <td style="border: none;">{{ $kendaraan->beratkosong }}</td>
+                    <td style="border: none;">{{ $kendaraan->beratkosong }} Kg</td>
                 </tr>
                 <tr>
                     <td style="border: none;">c. DA ORANG</td>
                     <td style="text-align: center; border: none;">=</td>
-                    <td style="border: none;">{{ $kendaraan->dayaangkutorang }}</td>
+                    <td style="border: none;">{{ $kendaraan->dayaangkutorang }} Orang</td>
                 </tr>
                 <tr>
                     <td style="border: none;">d. DA BARANG</td>
                     <td style="text-align: center; border: none;">=</td>
-                    <td style="border: none;">{{ $kendaraan->dayaangkutbarang }}</td>
+                    <td style="border: none;">{{ $kendaraan->dayaangkutbarang }} Kg</td>
                 </tr>
                 <tr>
                     <td style="border: none;">e. JBI</td>
                     <td style="text-align: center; border: none;">=</td>
-                    <td style="border: none;">{{ $kendaraan->jbi }}</td>
+                    <td style="border: none;">{{ $kendaraan->jbi }} Kg</td>
                 </tr>
                 <tr>
                     <td style="border: none;">f. MST</td>
                     <td style="text-align: center; border: none;">=</td>
-                    <td style="border: none;">{{ $kendaraan->mst }}</td>
+                    <td style="border: none;">{{ $kendaraan->mst }} Kg</td>
                 </tr>
                 <tr>
                     <td style="border: none;">g. KELAS JALAN</td>
