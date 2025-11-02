@@ -191,37 +191,37 @@
             <td>
                 <table cellspacing="0" cellpadding="4" style="width: 100%; border-collapse: collapse; font-size: 14px;">
                 <tr>
-                    <td style="width: 30%; border: none;">JBB</td>
+                    <td style="width: 30%; border: none;">a. JBB</td>
                     <td style="width: 5%; text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->jbb }}</td>
                 </tr>
                 <tr>
-                    <td style="border: none;">BK</td>
+                    <td style="border: none;">b. BK</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->beratkosong }}</td>
                 </tr>
                 <tr>
-                    <td style="border: none;">DA ORANG</td>
+                    <td style="border: none;">c. DA ORANG</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->dayaangkutorang }}</td>
                 </tr>
                 <tr>
-                    <td style="border: none;">DA BARANG</td>
+                    <td style="border: none;">d. DA BARANG</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->dayaangkutbarang }}</td>
                 </tr>
                 <tr>
-                    <td style="border: none;">JBI</td>
+                    <td style="border: none;">e. JBI</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->jbi }}</td>
                 </tr>
                 <tr>
-                    <td style="border: none;">MST</td>
+                    <td style="border: none;">f. MST</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->mst }}</td>
                 </tr>
                 <tr>
-                    <td style="border: none;">KELAS JALAN</td>
+                    <td style="border: none;">g. KELAS JALAN</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->kelasjalanterendah }}</td>
                 </tr>
