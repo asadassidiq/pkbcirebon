@@ -443,14 +443,14 @@
     </table>
     <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; text-align: left;">
     <tr>
-        <td style="padding: 20px; height: 25px; vertical-align: top;">
+        <td style="height: 15px; vertical-align: top;">
         Catatan :<br>
         </td>
     </tr>
     </table>
     <div class="text-right">
         <p><span style="margin-left: -25px">PENGUJI</span>  1. _______________________</p>
-        <p>NIP. _______________________<</p>
+        <p>NIP. _______________________</p>
         <p>2. _______________________</p>
         <p>NIP. _______________________<</p>
     </div>
