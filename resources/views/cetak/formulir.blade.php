@@ -374,7 +374,7 @@
             </td>
         </tr>
         <tr>
-            <td>3. UKURAN BERAT DAN PEMAKAIAN BAN</td>
+            <td style="height: 20px">3. UKURAN BERAT DAN PEMAKAIAN BAN</td>
         </tr>
         <tr>
             <td>
