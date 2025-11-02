@@ -425,21 +425,6 @@
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;"></td>
                 </tr>
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
                 </table>
             </td>
         </tr>
