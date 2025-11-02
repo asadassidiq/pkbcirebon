@@ -373,7 +373,7 @@
                 </table>
             </td>
         </tr>
-        <tr style="height: auto;">
+        <tr style="height: 10px;">
             <td>3. UKURAN BERAT DAN PEMAKAIAN BAN</td>
         </tr>
         <tr>
