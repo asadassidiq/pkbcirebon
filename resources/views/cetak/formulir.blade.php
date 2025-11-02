@@ -374,7 +374,7 @@
             </td>
         </tr>
         <tr>
-            <td style="height: 20px">3. UKURAN BERAT DAN PEMAKAIAN BAN</td>
+            <td>3. UKURAN BERAT DAN PEMAKAIAN BAN</td>
         </tr>
         <tr>
             <td>
@@ -424,6 +424,21 @@
                     <td style="border: none;">i. Status</td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
                 </tr>
                 </table>
             </td>
