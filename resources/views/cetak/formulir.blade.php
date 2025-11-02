@@ -315,7 +315,7 @@
                     <td style="border: none;">Dom Tangki</td>
                     <td style="border: none;"></td>
                     <td style="text-align: center; border: none;"></td>
-                    <td style="border: none;">/td>
+                    <td style="border: none;"></td>
                 </tr>
                 <tr class="text-center">
                     <td style="border: none;">Panjang</td>
