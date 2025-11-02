@@ -448,7 +448,6 @@
         </td>
     </tr>
     </table>
-    <br><br>
     <div class="text-right">
         <p><span style="margin-left: -25px">PENGUJI</span>  1. _______________________</p>
         <p>NIP.</p>
