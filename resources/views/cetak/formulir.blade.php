@@ -257,7 +257,7 @@
                     <td style="border: none;"></td>
                 </tr>
                 <tr class="text-center">
-                    <td style="border: none;" class="text-left">b. P</td>
+                    <td style="border: none;" class="text-left">b. <span style="margin-left: 20px"> P</span></td>
                     <td style="text-align: center; border: none;">=</td>
                     <td style="border: none;">{{ $kendaraan->p }} cm</td>
                     <td style="border: none;">b</td>
