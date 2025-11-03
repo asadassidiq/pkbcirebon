@@ -45,7 +45,6 @@
                             <td>{{ approved.nouji }}</td>
                             <td>{{ approved.nama }}</td>
                             <td>{{ approved.keterangan }}</td>
-                            <td>{{ approved.approved }}</td>
                             
                             <td v-if="approved.approved == '2'">Ditolak</td>
                             <td v-else-if="approved.approved == '1'">Approved</td>
