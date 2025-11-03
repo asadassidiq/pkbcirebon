@@ -435,8 +435,13 @@ export default new Router({
             },
             {
               path: ":id",
-              name: "approved.edit",
-              component: () => import("@/view/pages/approved/Edit.vue"),
+              name: "approved.approved",
+              component: () => import("@/view/pages/approved/Approved.vue"),
+            },
+            {
+              path: "detail/:id",
+              name: "approved.detail",
+              component: () => import("@/view/pages/approved/Detail.vue"),
             },
           ],
         },
