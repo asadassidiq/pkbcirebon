@@ -40,7 +40,7 @@
         }
 
         .content {
-            padding-top: 0.6cm;
+            padding-top: 0.4cm;
         }
         
         .line-wrapper {
