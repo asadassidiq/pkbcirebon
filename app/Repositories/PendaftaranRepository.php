@@ -796,7 +796,7 @@ class PendaftaranRepository
 
     public function getApproved($id)
     {
-        $data = $this->model->select('identitaskendaraans.uuid','approved','catatan','nouji','noregistrasikendaraan','kodepenerbitans.keterangan','merek','tipe','jenis','subjenis','nomesin','norangka','thpembuatan')->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')->first();
+        $data = $this->model->select('identitaskendaraans.uuid','approved','catatan','nouji','noregistrasikendaraan','kodepenerbitans.keterangan','merek','tipe','jenis','subjenis','nomesin','norangka','thpembuatan','peruntukan')->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')->first();
         return $data;
     }
 

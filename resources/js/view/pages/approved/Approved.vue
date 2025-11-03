@@ -11,26 +11,70 @@
         <b-collapse visible id="collapse-3">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="form-group">
                             <label>Jenis Pendaftaran</label>
                             <input type="text" class="form-control  form-control-lg" name="width"
                                 readonly v-model="identitaskendaraan.keterangan" />
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="form-group">
                             <label> No Uji</label>
                             <input type="text" class="form-control  form-control-lg" name="width"
                                 readonly placeholder="No Uji" v-model="identitaskendaraan.nouji" />
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="form-group">
                             <label>No Kendaraan</label>
                             <input type="text" class="form-control  form-control-lg" name="width"
                                 readonly placeholder=" No Kendaraan"
                                 v-model="identitaskendaraan.noregistrasikendaraan" />
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>No Rangka</label>
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                                readonly v-model="identitaskendaraan.norangka" />
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>No Mesin</label>
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                                readonly v-model="identitaskendaraan.nomesin" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Merek</label>
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                                readonly placeholder="merek" v-model="identitaskendaraan.merek" />
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Tipe</label>
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                                readonly placeholder="tipe" v-model="identitaskendaraan.tipe" />
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label> Jenis </label>
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                                readonly placeholder="Jenis" v-model="identitaskendaraan.jenis" />
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label> Peruntukan</label>
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="length"
+                                readonly placeholder="Peruntukan" v-model="identitaskendaraan.peruntukan" />
                         </div>
                     </div>
                 </div>
