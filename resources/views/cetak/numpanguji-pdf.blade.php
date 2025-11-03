@@ -181,7 +181,7 @@
 
         <table style="width: 100%;margin-left:20px">
             <tr>
-                <td style="width: 60%">
+                <td style="width: 45%" class="text-center">
                     <div style="
                         border: 2px solid darkred;
                         padding: 8px 16px;
@@ -196,9 +196,9 @@
                         <b>tanggal ditetapkan</b>
                     </div>
                 </td>
-                <td style="width: 40%" class="text-center">
+                <td style="width: 55%" class="text-center">
                     {{-- <p class="text-center">Gangga, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p> --}}
-                    <p>A/n, KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
+                    <p>a.n, KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
                     <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
                     <p>Kota Cirebon</p>
                     <br><br><br><br><br>
