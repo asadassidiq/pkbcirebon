@@ -6,7 +6,7 @@
     <style>
         @page {
             size: A4;
-            margin: 0.5cm 2cm 0.5cm 2cm;
+            margin: 0.5cm 1cm 0.1cm 2cm;
         }
 
         body {
@@ -43,7 +43,7 @@
         }
 
         .content {
-            padding-top: 1.5cm;
+            padding-top: 0.4cm;
         }
         
         .line-wrapper {
@@ -123,9 +123,8 @@
         <tr>
             <td style="width: 10%">
                 <p>Nomor</p>
-                <p>Sifat</p>
                 <p>Lampiran</p>
-                <p>Hal</p>
+                <p>Perihal</p>
             </td>
             <td style="width: 3%">
                 <p>:</p>
@@ -135,12 +134,11 @@
             </td>
             <td style="width: 42%">
                 <p>{{ $kendaraan['nosurat'] }}</p>
-                <p>Biasa</p>
-                <p>-</p>
-                <p> Mutasi Kendaraan</p>
+                <p>1 (Satu) Berkas</p>
+                <p> <u><b>MUTASI KELUAR KENDARAAN</b></u></p>
             </td>
             <td style="width: 50%">
-                <p class="text-center">Gangga, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p>
+                <p class="text-center">Cirebon, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p>
                 <p>Kepada :</p>
                 <p><span>Yth. {{ $kendaraan->kepada }}</span></p>
                 <p><span>{{ $kendaraan->tujuan }}</span></p>
@@ -149,19 +147,22 @@
     </table>
 
     <div>
-        <p>Dengan ini disampaikan bahwa kendaraan tersebut dibawah ini :</p>
+        <p>Berdasarkan permohonan pemilik / pemegang / penguasa kendaraan bermotor dengan data sebagai berikut : </p>
         <table style="width: 100%;margin-left:20px">
             <tr>
                 <td style="width: 27%">
-                    <p>1. No. Pemeriksaan</p>
-                    <p>2. No. Kendaraan</p>
-                    <p>3. Nama Pemilik</p>
-                    <p>4. Alamat Pemilik</p>
-                    <p>5. Jenis / Sifat</p>
-                    <p>6. Merk / Type</p>
-                    <p>7. Tahun Pembuatan</p>
-                    <p>8. No. Rangka Landasan</p>
-                    <p>9. No. Mesin Penggerak</p>
+                    <p>1.  Nomor Kendaraan</p>
+                    <p>2.  Merk Kendaraan</p>
+                    <p>3.  Tipe Kendaraan</p>
+                    <p>4.  Tahun Pembuatan</p>
+                    <p>5.  No Rangka</p>
+                    <p>6.  No Mesin</p>
+                    <p>7.  Nomor Uji Berkala</p>
+                    <p>8.  Jenis Kendaraan</p>
+                    <p>9.  Status</p>
+                    <p>10. Warna</p>
+                    <p>11. Nama Pemilik</p>
+                    <p>12. Alamat Pemilik</p>
                 </td>
                 <td style="width: 5%">
                     <p>:</p>
@@ -173,65 +174,53 @@
                     <p>:</p>
                     <p>:</p>
                     <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
                 </td>
                 <td style="width: 68%">
-                    <p>{{ $kendaraan->nouji }}</p>
                     <p>{{ $kendaraan->noregistrasikendaraan }}</p>
-                    <p>{{ $kendaraan->nama }}</p>
-                    <p>{{ $kendaraan->alamat }}</p>
-                    <p>{{ $kendaraan->subjenis }} // {{ $kendaraan->peruntukan }}</p>
-                    <p>{{ $kendaraan->merek }} / {{ $kendaraan->tipe }} </p>
+                    <p>{{ $kendaraan->merek }} </p>
+                    <p>{{ $kendaraan->tipe }} </p>
                     <p>{{ $kendaraan->thpembuatan }}</p>
                     <p>{{ $kendaraan->norangka }}</p>
                     <p>{{ $kendaraan->nomesin }}</p>
+                    <p>{{ $kendaraan->nouji }}</p>
+                    <p>{{ $kendaraan->subjenis }}</p>
+                    {{-- <p>{{ $kendaraan->status }}</p> --}}
+                    <p>-</p>
+                    <p>{{ $kendaraan->warna }}</p>
+                    <p>{{ $kendaraan->nama }}</p>
+                    <p>{{ $kendaraan->alamat }}</p>
                 </td>
             </tr>
         </table>
 
-        <p style="margin: 0;padding:0">Sesuai pemeriksaan yang dilakukan maka kendaraan tersebut dinyatakan
-memenuhi syarat untuk dimutasikan ke {{ $kendaraan->tujuan }}, dengan pemilik baru :</p>
-
-        <table style="width: 100%;margin-left:20px">
-            <tr>
-                <td style="width: 27%">
-                    <p>Nama</p>
-                    <p>Alamat</p>
-                    <p>Nomor Kendaraan</p>
-                </td>
-                <td style="width: 5%">
-                    <p>:</p>
-                    <p>:</p>
-                    <p>:</p>
-                </td>
-                <td style="width: 68%">
-                    <p>{{ $kendaraan->namapemilikbaru }}</p>
-                    <p>{{ $kendaraan->alamatpemilikbaru }}</p>
-                    <p>{{ $kendaraan->nokendaraanbaru }}</p>
-                </td>
-            </tr>
-        </table>
-
-        <p style="margin: 0;padding:0">Demikian surat keterangan ini disampaikan untuk mendapatkan penyelesaian lebih
-lanjut dan terimakasih.</p>
+        <p>Kami tidak keberatan kendaraan tersebut di atas dipindahkan / dimutasikan ke :</p>
+        <h4 class="text-center">{{ $kendaraan->tujuan }}</h4>
+        <p>Kartu Induk Pemeriksaan dan Pengujian Kendaraan Bermotor tersebut, dilampirkan bersama surat ini.</p>
+        <p>Demikian agar maklum.</p>
 
         <table style="width: 100%;line-height:1">
             <tr>
-                <td style="width: 60%"></td>
-                <td style="width: 40%" class="text-center">
-                    <p>A/n, KEPALA DINAS PERHUBUNGAN</p>
-                    <p>{{ env('APP_KAB') .' '.env('APP_WILAYAH')}}</p>
-                    <p>PENGUJIAN KENDARAAN BERMOTOR</p>
-                    <p>Penguji</p>
+                <td style="width: 45%"></td>
+                <td style="width: 55%" class="text-center">
+                    <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
+                    <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
+                    <p>Kota Cirebon</p>
                     <br><br><br><br><br>
-                    <p><u><b>{{ $ttd['name'] }}</u></b></p>
-                    <p>NIP. {{ $ttd['nip'] }}</p>
+                    <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
+                    <p style="margin: 0;padding: 0">NIP. {{ $ttd['pangkat'] }}</p>
+                    <p style="margin: 0;padding: 0">NIP. {{ $ttd['nip'] }}</p>
                 </td>
             </tr>
         </table>
         <br><br>
         <p style="margin: 0;padding:0">Tembusan disampaikan kepada Yth :</p>
         <ol style="margin: 0;padding:0;margin-left: 50px">
-            <li>KADISHUB Kab. Lombok Utara ( sebagai laporan )</li>
+            <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
+            <li>Kepala Kepolisian Resort Cirebon Kota,</li>
+            <li>Arsip.</li>
         </ol>
     </div>
 </div>

@@ -114,7 +114,7 @@
             <td style="width: 55%">
                 <p>{{ $kendaraan['nosurat'] }}</p>
                 <p>-</p>
-                <p><u>IJIN NUMPANG UJI BERKALA</u></p>
+                <p><u><b>IJIN NUMPANG UJI BERKALA</b></u></p>
             </td>
             <td style="width: 37%">
                 <p class="text-center">Cirebon, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p>
@@ -166,7 +166,8 @@
                     <p>{{ $kendaraan->nomesin }}</p>
                     <p>{{ $kendaraan->nouji }}</p>
                     <p>{{ $kendaraan->subjenis }}</p>
-                    <p>{{ $kendaraan->status }}</p>
+                    {{-- <p>{{ $kendaraan->status }}</p> --}}
+                    <p>-</p>
                     <p>{{ $kendaraan->warna }}</p>
                     <p>{{ $kendaraan->nama }}</p>
                     <p>{{ $kendaraan->alamat }}</p>
