@@ -110,12 +110,12 @@
                 <p>:</p>
                 <p>:</p>
             </td>
-            <td style="width: 42%">
+            <td style="width: 55%">
                 <p>{{ $kendaraan['nosurat'] }}</p>
                 <p>-</p>
                 <p><u>IJIN NUMPANG UJI BERKALA</u></p>
             </td>
-            <td style="width: 50%">
+            <td style="width: 37%">
                 <p>Kepada :</p>
                 <p><span>Yth. {{ $kendaraan->kepada }}</span></p>
                 <p>Di - </p>
