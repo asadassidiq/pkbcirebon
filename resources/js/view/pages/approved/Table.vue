@@ -48,7 +48,7 @@
                             <td>{{ approved.approved }}</td>
                             <td>{{ approved.name }}</td>
                             <td>
-                                <router-link :to="{ name: 'approved.edit', params: { id: approved.uuid } }">
+                                <router-link :to="{ name: 'approved.approved', params: { id: approved.uuid } }">
                                     <i class="fa fa-edit text-success"></i>
                                 </router-link>
                             </td>
