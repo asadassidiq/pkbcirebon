@@ -202,9 +202,9 @@
                     <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
                     <p>Kota Cirebon</p>
                     <br><br><br><br><br>
-                    <p><u><b>{{ $ttd['name'] }}</u></b></p>
-                    <p>NIP. {{ $ttd['pangkat'] }}</p>
-                    <p>NIP. {{ $ttd['nip'] }}</p>
+                    <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
+                    <p style="margin: 0;padding: 0">NIP. {{ $ttd['pangkat'] }}</p>
+                    <p style="margin: 0;padding: 0">NIP. {{ $ttd['nip'] }}</p>
                 </td>
             </tr>
         </table>
