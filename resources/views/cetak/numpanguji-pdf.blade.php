@@ -113,7 +113,7 @@
             <td style="width: 42%">
                 <p>{{ $kendaraan['nosurat'] }}</p>
                 <p>-</p>
-                <p> Numpang Uji</p>
+                <p><u>IJIN NUMPANG UJI BERKALA</u></p>
             </td>
             <td style="width: 50%">
                 <p>Kepada :</p>
@@ -125,20 +125,22 @@
     </table>
 
     <div>
-        <p>Sesuai dengan permohonan pemilik kendaraan bermotor tersebut dibawah ini : </p>
+        <p>Berdasarkan permohonan pemilik / pemegang / penguasa kendaraan bermotor dengan data sebagai berikut : </p>
         <table style="width: 100%;margin-left:20px">
             <tr>
                 <td style="width: 20%">
-                    <p>Nama Pemilik</p>
-                    <p>Alamat Pemilik</p>
-                    <p>Nomor Kendaraan</p>
-                    <p>Merk/Tipe</p>
-                    <p>Tahun Pembuatan</p>
-                    <p>No Rangka</p>
-                    <p>No Mesin</p>
-                    <p>Jenis / Sifat</p>
-                    <p>Bahan Bakar</p>
-                    <p>Nomor Pemeriksaan</p>
+                    <p>1.  Nomor Kendaraan</p>
+                    <p>2.  Merk Kendaraan</p>
+                    <p>3.  Tipe Kendaraan</p>
+                    <p>4.  Tahun Pembuatan</p>
+                    <p>5.  No Rangka</p>
+                    <p>6.  No Mesin</p>
+                    <p>7.  Nomor Uji Berkala</p>
+                    <p>8.  Jenis Kendaraan</p>
+                    <p>9.  Status</p>
+                    <p>10. Warna</p>
+                    <p>11. Nama Pemilik</p>
+                    <p>12. Alamat Pemilik</p>
                 </td>
                 <td style="width: 5%">
                     <p>:</p>
@@ -151,37 +153,54 @@
                     <p>:</p>
                     <p>:</p>
                     <p>:</p>
+                    <p>:</p>
                 </td>
                 <td style="width: 75%">
-                    <p>{{ $kendaraan->nama }}</p>
-                    <p>{{ $kendaraan->alamat }}</p>
                     <p>{{ $kendaraan->noregistrasikendaraan }}</p>
-                    <p>{{ $kendaraan->merek }} / {{ $kendaraan->tipe }} </p>
+                    <p>{{ $kendaraan->merek }} </p>
+                    <p>{{ $kendaraan->tipe }} </p>
                     <p>{{ $kendaraan->thpembuatan }}</p>
                     <p>{{ $kendaraan->norangka }}</p>
                     <p>{{ $kendaraan->nomesin }}</p>
-                    <p>{{ $kendaraan->subjenis }} / {{ $kendaraan->peruntukan }}</p>
-                    <p>{{ $kendaraan->bahanbakar }}</p>
                     <p>{{ $kendaraan->nouji }}</p>
+                    <p>{{ $kendaraan->subjenis }}</p>
+                    <p>{{ $kendaraan->status }}</p>
+                    <p>{{ $kendaraan->warna }}</p>
+                    <p>{{ $kendaraan->nama }}</p>
+                    <p>{{ $kendaraan->alamat }}</p>
                 </td>
             </tr>
         </table>
 
-        <p>Tidak keberatan kendaraan tersebut untuk melaksanakan uji berkala pada dinas perhubungan <span> {{ $kendaraan->tujuan }} </span> dengan ketentuan.</p>
-        <p>Setelah diadakan penelitian pada prinsipnya kami tidak keberatan kendaraan wajib uji
-tersebut untuk dilaksanakan <span><b><i>Numpang Uji</i></b></span> satu kali pada Dinas Perhubungan {{ $kendaraan->tujuan }} dan hasilnya mohon segera dikirim ke Pengujian Kendaraan Bermotor
-Dinas Perhubungan Kab. Lombok Utara</p>
+        <p>Kami tidak keberatan kendaraan tersebut untuk melaksanakan uji berkala di :</p>
+        <h4>{{ $kendaraan->tujuan }}</h4>
+        <p>Untuk 1 (satu) kali periode pengujian dan surat keterangan hasil uji berkala tersebut dikirimkan kepada kami.</p>
 
-        <p>Demikian Surat ini dibuat untuk dapat dipergunakan sebagaimana mestinya.</p>
+
+        <p>Demikian agar maklum.</p>
+
         <table style="width: 100%;margin-left:20px">
             <tr>
-                <td style="width: 60%"></td>
+                <td style="width: 60%">
+                    <div style="
+                        border: 2px solid darkred;
+                        padding: 8px 16px;
+                        display: inline-block;
+                        text-align: center;
+                        font-family: 'Times New Roman', serif;
+                        font-size: 16px;
+                        line-height: 1.4;
+                    ">
+                        Surat Ijin Numpang Uji ini<br>
+                        berlaku 14 hari setelah<br>
+                        <b>tanggal ditetapkan</b>
+                    </div>
+                </td>
                 <td style="width: 40%" class="text-center">
-                    <p class="text-center">Gangga, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p>
-                    <p>A/n, KEPALA DINAS PERHUBUNGAN</p>
-                    <p>{{ env('APP_KAB') .' '.env('APP_WILAYAH')}}</p>
-                    <p>PENGUJIAN KENDARAAN BERMOTOR</p>
-                    <p>Penguji</p>
+                    {{-- <p class="text-center">Gangga, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p> --}}
+                    <p>A/n, KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
+                    <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
+                    <p>Kota Cirebon</p>
                     <br><br><br><br><br>
                     <p><u><b>{{ $ttd['name'] }}</u></b></p>
                     <p>NIP. {{ $ttd['nip'] }}</p>

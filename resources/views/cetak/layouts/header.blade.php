@@ -9,6 +9,7 @@
                 <h3 class="text-center" style="margin:0;padding:0"><b>DINAS PERHUBUNGAN</b></h3>
                 <h4 class="text-center" style="margin:0;padding:0"><b>UPT. PENGUJIAN KENDARAAN BERMOTOR</b></h4>
                 <p class="text-center" style="margin:0;padding:0">Jalan Raya Kalijaga (Pantura) Kel. Pengambiran Kec. Lemahwungkuk Kota Cirebon</p>
+                <p class="text-center" style="margin:0;padding:0">Kode Pos : 45113 email : upt.pkbkotacirebon@gmail.com</p>
             </td>
             </td>
         </tr>
