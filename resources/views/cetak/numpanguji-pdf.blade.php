@@ -208,6 +208,13 @@
                 </td>
             </tr>
         </table>
+        <div style="color: darkred">
+            <p>CATATAN :</p>
+            <ol>
+                <li>Surat Ijin Numpang Uji ini diberikan untuk 1 (satu) kali periode uji berkala (berlaku 6 bulan).</li>
+                <li>Pengujian berkala berikutny agar dilaksanakan di UPT. Pengujian Kendaraan Bermotor Dinas perhubungan Kota Cirebon.</li>
+            </ol>
+        </div>
     </div>
 </div>
 
