@@ -81,7 +81,7 @@ class SuratController extends Controller
         }
         $path_logoKab = public_path() . '/img/kota.png';
         $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
-        $path_logoDishub = public_path() . '/img/dishub warna.png';
+        $path_logoDishub = public_path() . '/img/kemenhub.png';
         $logodishub = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoDishub));
 
         $kendaraan = $this->suratService->getPendaftaran($id);
