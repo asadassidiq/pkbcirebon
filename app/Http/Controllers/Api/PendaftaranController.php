@@ -101,7 +101,7 @@ class PendaftaranController extends Controller
 
     public function updateApproved(Request $request, $id)
     {
-        $data = $this->pendaftaranService->update($request, $id);
+        $data = $this->pendaftaranService->updateApproved($request, $id);
         return $this->returnJson($data);
     }
 
