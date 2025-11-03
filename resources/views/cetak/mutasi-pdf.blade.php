@@ -140,7 +140,8 @@
             <td style="width: 37%">
                 <p class="text-center">Cirebon, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p>
                 <p>Kepada :</p>
-                <p><span>Yth. {{ $kendaraan->kepada }}</span></p>
+                <p style="margin: left:28px">Yth. {{ $kendaraan->kepada }}</p>
+                <p>Di - </p>
                 <p><span>{{ $kendaraan->tujuan }}</span></p>
             </td>
         </tr>
