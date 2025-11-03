@@ -46,6 +46,10 @@
                             <td>{{ approved.nama }}</td>
                             <td>{{ approved.keterangan }}</td>
                             <td>{{ approved.approved }}</td>
+                            
+                            <td v-if="approved.approved == '2'">Ditolak</td>
+                            <td v-else-if="approved.approved == '1'">Approved</td>
+                            <td v-else>Menunggu</td>
                             <td>{{ approved.name }}</td>
                             <td>
                                 <router-link :to="{ name: 'approved.approved', params: { id: approved.uuid } }">

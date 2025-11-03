@@ -89,7 +89,7 @@
                                 Disetujui
                                 </label>
                                 <label class="radio radio-danger">
-                                <input type="radio" v-model="approved.approved" value="0" />
+                                <input type="radio" v-model="approved.approved" value="2" />
                                 <span></span>
                                 Ditolak
                                 </label>
