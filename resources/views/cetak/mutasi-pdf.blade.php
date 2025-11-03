@@ -95,7 +95,7 @@
         
         .watermark {
             position: fixed;
-            top: 35%;
+            top: 38%;
             left: 40%;
             transform: translate(-50%, -50%);
             opacity: 0.08; /* transparansi */
