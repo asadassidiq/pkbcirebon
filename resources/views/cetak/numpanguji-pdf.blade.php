@@ -198,11 +198,12 @@
                 </td>
                 <td style="width: 55%" class="text-center">
                     {{-- <p class="text-center">Gangga, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p> --}}
-                    <p>a.n, KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
+                    <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
                     <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
                     <p>Kota Cirebon</p>
                     <br><br><br><br><br>
                     <p><u><b>{{ $ttd['name'] }}</u></b></p>
+                    <p>NIP. {{ $ttd['pangkat'] }}</p>
                     <p>NIP. {{ $ttd['nip'] }}</p>
                 </td>
             </tr>
