@@ -806,16 +806,15 @@ class PendaftaranRepository
         $user = auth()->user();
         $update = $this->model->where('uuid',$id)->first();
         if($update){
-            $update->update($request->all());
+            $update->approved = $request->approved;
+            $update->catatan = $request->catatan;
+            $update->user_approved = $user->id;
+            if($update->kodepenerbitans_id == '10' || $update->kodepenerbitans_id == '9'){
+                $update->posisi = 6;
+            }else{
+                $update->posisi = 1;  
+            }
             if ($update->save()) {
-                $data = $this->model->where('id',$id)->first();
-                if($data->kodepenerbitans_id == '10' || $data->kodepenerbitans_id == '9'){
-                    $data->posisi = 6;
-                }else{
-                    $data->posisi = 1;  
-                }
-                $data->user_approved = $user->id;
-                $data->save();
                 return true;
             }
             return false;
