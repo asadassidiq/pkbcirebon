@@ -64,6 +64,15 @@
             /* font-size: 12px; */
         }
 
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.08; /* transparansi */
+            z-index: -1; /* di belakang teks */
+            width: 60%; /* ukuran bisa diatur */
+        }
 
         .text-center { text-align: center; }
         .text-right { text-align: right; }
@@ -99,6 +108,7 @@
 </footer> --}}
 
 <div class="content">
+    <img src="{{ $logodishub }}" class="watermark" alt="Watermark">
     <table style="width: 100%">
         <tr>
             <td style="width: 10%">

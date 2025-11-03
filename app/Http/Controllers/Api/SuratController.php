@@ -81,6 +81,8 @@ class SuratController extends Controller
         }
         $path_logoKab = public_path() . '/img/kota.png';
         $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
+        $path_logoDishub = public_path() . '/img/dishub warna.png';
+        $logodishub = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoDishub));
 
         $kendaraan = $this->suratService->getPendaftaran($id);
         $ttd = Tandatangan::select('users.name','nip','nrp','jabatan','pangkat')->Join('users','users.id','=','tandatangan.user_id')->where('tandatangan.name','Persuratan')->first();
@@ -112,6 +114,7 @@ class SuratController extends Controller
             'kendaraan' => $kendaraan,
             'ttd'       => $ttd,
             'logokab'  => $logokab,
+            'logodishub'  => $logodishub,
             'qrcode'    => $qrcode
         ];
         $pdf = PDF::loadView($view, $data);
