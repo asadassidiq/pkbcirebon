@@ -803,7 +803,8 @@ class PendaftaranRepository
 
     public function updateApproved($id, $request)
     {
-        $update = $this->model->where('id',$id)->first();
+        $user = auth()->user();
+        $update = $this->model->where('uuid',$id)->first();
         if($update){
             $update->update($request);
             if ($update->save()) {
@@ -813,6 +814,7 @@ class PendaftaranRepository
                 }else{
                     $data->posisi = 1;  
                 }
+                $data->user_approved = $user->id;
                 $data->save();
                 return true;
             }
