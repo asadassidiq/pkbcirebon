@@ -1,3 +1,4 @@
+import { uuid } from "vue-uuid/dist/index.js";
 import ApprovedService from "../approved.service.js";
 import Swal from "sweetalert2";
 export const namespaced = true;
@@ -14,6 +15,7 @@ export const state = {
         catatan: "",
     },
     identitaskendaraan: {
+        uuid: "",
         nouji:"",
         noregistrasikendaraan:"",
         merek:"",
@@ -48,6 +50,7 @@ export const mutations = {
             catatan: payload.catatan,
         };
         state.identitaskendaraan = {
+            uuid: payload.uuid,
             merek      : payload.merek,
             nouji: payload.nouji,
             noregistrasikendaraan : payload.noregistrasikendaraan,
@@ -69,6 +72,7 @@ export const mutations = {
             catatan:"",
         };
         state.identitaskendaraan= {
+            uuid: "",
             nouji:"",
             noregistrasikendaraan:"",
             merek:"",
