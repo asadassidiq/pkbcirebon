@@ -132,12 +132,12 @@
                 <p>:</p>
                 <p>:</p>
             </td>
-            <td style="width: 42%">
+            <td style="width: 55%">
                 <p>{{ $kendaraan['nosurat'] }}</p>
                 <p>1 (Satu) Berkas</p>
                 <p> <u><b>MUTASI KELUAR KENDARAAN</b></u></p>
             </td>
-            <td style="width: 50%">
+            <td style="width: 37%">
                 <p class="text-center">Cirebon, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p>
                 <p>Kepada :</p>
                 <p><span>Yth. {{ $kendaraan->kepada }}</span></p>
