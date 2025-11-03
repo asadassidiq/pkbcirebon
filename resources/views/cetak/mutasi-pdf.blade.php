@@ -6,7 +6,7 @@
     <style>
         @page {
             size: A4;
-            margin: 0.5cm 1cm 0.1cm 2cm;
+            margin: 0.5cm 1cm 1cm 2cm;
         }
 
         body {
