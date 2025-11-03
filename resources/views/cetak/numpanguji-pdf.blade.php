@@ -117,6 +117,7 @@
                 <p><u>IJIN NUMPANG UJI BERKALA</u></p>
             </td>
             <td style="width: 37%">
+                <p class="text-center">Cirebon, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p>
                 <p>Kepada :</p>
                 <p><span>Yth. {{ $kendaraan->kepada }}</span></p>
                 <p>Di - </p>
@@ -198,7 +199,6 @@
                     </div>
                 </td>
                 <td style="width: 55%" class="text-center">
-                    {{-- <p class="text-center">Gangga, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p> --}}
                     <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
                     <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
                     <p>Kota Cirebon</p>
