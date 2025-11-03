@@ -23,6 +23,7 @@ export const state = {
         thpembuatan:"", 
         jbb:"",
         norangka:"",
+        keterangan:"",
     },
     carinouji:"",
     page: 1
@@ -56,6 +57,7 @@ export const mutations = {
             subjenis : payload.subjenis,
             jbb   : payload.jbb,
             norangka : payload.norangka,
+            keterangan: payload.keterangan,
         };
         if(state.approved.noidentitaspenerima  === null){
             state.approved.noidentitaspenerima = payload.noidentitaspemilik;
@@ -76,6 +78,7 @@ export const mutations = {
             thpembuatan:"",
             jbb:"",
             norangka:"",
+            keterangan:"",
         }
     },
 
