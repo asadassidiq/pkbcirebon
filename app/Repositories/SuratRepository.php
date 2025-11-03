@@ -27,7 +27,7 @@ class SuratRepository
     public function getAll()
     {
         $data = $this->model
-            ->select('pendaftarans.noantrian','pendaftarans.uuid','kodepenerbitans.keterangan','identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan','persuratan.document_id','nosurat','status_cetak','posisi','posverif')
+            ->select('pendaftarans.noantrian','pendaftarans.uuid','kodepenerbitans.keterangan','identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan','persuratan.document_id','nosurat','status_cetak','posisi','posverif','approved')
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->join('kodepenerbitans','pendaftarans.kodepenerbitans_id','=','kodepenerbitans.id')
             ->leftjoin('persuratan','persuratan.pendaftaran_id','=','pendaftarans.id')

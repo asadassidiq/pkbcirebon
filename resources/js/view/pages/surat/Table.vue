@@ -60,19 +60,14 @@
                 <td v-else-if="pendaftaran.status_cetak == '1'">terkirim</td>
                 <td v-else>Menunggu</td>
                 <td>
-                  <div v-if="user.role == 'KEPALA'" >
-                    <router-link :to="{ name: 'verif2.verifikasi', params: { id: pendaftaran.uuid } }">
-                      <i class="fa fa-edit text-success"></i>
-                    </router-link>
-                  </div>
-                  <div v-else>
+                  <div>
                     <router-link :to="{ name: 'pendaftaran.edit', params: { id: pendaftaran.uuid } }">
                       <i class="fa fa-edit text-success"></i>
                     </router-link>
                     <a href="javascript:void(0)" @click="sendPendaftaran(pendaftaran.uuid,pendaftaran.nouji)">
                       <i class="fas fa-paper-plane text-danger"></i>
                     </a>
-                    <a href="javascript:void(0)" @click="print(pendaftaran.uuid)">
+                    <a href="javascript:void(0)"@click="print(pendaftaran.uuid,pendaftaran.approved)">
                       <i class="fa fa-print text-info"></i>
                     </a>
                   </div>
@@ -194,8 +189,28 @@ export default {
     customFormatter(today) {
       return today;
     },
-    print(id) {
-      window.open('/cetak/' + id + '/surat', "_blank");
+    print(id,approved) {
+      if(approved == 1 || approved == '1'){
+        window.open('/cetak/' + id + '/surat', "_blank");
+      }else if(approved == 2 || approved == '2'){
+        Swal.fire({
+            icon: "error",
+            title: "Status",
+            text: 'Dokumen ditolak Perizinan!!',
+        }).then((result) => {
+            if (result.isConfirmed) {
+            };
+        });
+      }else{
+        Swal.fire({
+            icon: "error",
+            title: "Status",
+            text: 'Dokumen belum tersedia Menunggu Perizinan Approved!!',
+        }).then((result) => {
+            if (result.isConfirmed) {
+            };
+        });
+      }
     },
     checkSurat(id)
     {
