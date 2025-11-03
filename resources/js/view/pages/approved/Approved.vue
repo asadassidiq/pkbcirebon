@@ -37,63 +37,17 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class=" col-4" v-if="identitaskendaraan.keterangan == 'Numpang Uji Keluar' || identitaskendaraan.keterangan == 'Mutasi Keluar' || identitaskendaraan.keterangan == 'Persetujuan Numpang Uji Masuk'">
-                        <div class="checkbox-list">
-                            <label class="checkbox">
-                                <input type="checkbox" name="v_stnk" v-model="surat.v_stnk" :true-value="1" :false-value="0" :disabled="user.role == 'KEPALA'"/>
-                                <span></span>
-                                STNK asli dan masih berlaku
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-4"v-if="identitaskendaraan.keterangan == 'Mutasi Keluar'">
-                        <div class="checkbox-list">
-                            <label class="checkbox">
-                                <input type="checkbox" name="v_kartuinduk" v-model="surat.v_kartuinduk" :true-value="1" :false-value="0"/>
-                                <span></span>
-                                Kartu Induk Pemeriksaan 
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-4" v-if="identitaskendaraan.keterangan == 'Numpang Uji Keluar' || identitaskendaraan.keterangan == 'Mutasi Keluar' || identitaskendaraan.keterangan == 'Persetujuan Numpang Uji Masuk'">
-                        <div class="checkbox-list">
-                            <label class="checkbox">
-                                <input type="checkbox" name="v_smartcard" v-model="surat.v_smartcard" :true-value="1" :false-value="0" :disabled="user.role == 'KEPALA'"/>
-                                <span></span>
-                                Kartu Uji
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-4" v-if="identitaskendaraan.keterangan == 'Mutasi Keluar'">
-                        <div class="checkbox-list">
-                            <label class="checkbox">
-                                <input type="checkbox" name="v_srut" v-model="surat.v_srut" :true-value="1" :false-value="0" :disabled="user.role == 'KEPALA'"/>
-                                <span></span>
-                                SRUT
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-4" v-if="identitaskendaraan.keterangan == 'Mutasi Keluar'">
-                        <div class="checkbox-list">
-                            <label class="checkbox">
-                                <input type="checkbox" name="v_riwayat" v-model="surat.v_riwayat" :true-value="1" :false-value="0" :disabled="user.role == 'KEPALA'"/>
-                                <span></span>
-                                Riwayat dan Dokumen Pendukung Lainnya 
-                            </label>
-                        </div>
-                    </div>
-                    
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label><b>Persetujuan Verifikator</b></label>
+                            <label><b>Persetujuan</b></label>
                             <div class="radio-inline">
                                 <label class="radio radio-success">
-                                <input type="radio" v-model="surat.posapproved" value="1" />
+                                <input type="radio" v-model="approved.approved" value="1" />
                                 <span></span>
                                 Disetujui
                                 </label>
                                 <label class="radio radio-danger">
-                                <input type="radio" v-model="surat.posapproved" value="0" />
+                                <input type="radio" v-model="approved.approved" value="0" />
                                 <span></span>
                                 Ditolak
                                 </label>
@@ -101,27 +55,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleTextarea">Catatan</label>
-                            <textarea class="form-control " v-model="surat.catatan" rows="3"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4" v-if="user.role == 'KEPALA'">
-                        <div class="form-group">
-                            <label>Pass Key</label>
-                            <div class="input-group">
-                                <input
-                                :type="showPass ? 'text' : 'password'"
-                                class="form-control form-control-lg"
-                                v-model="surat.passkey"
-                                name="fake_passkey"
-                                autocomplete="off"
-                                />
-                                <div class="input-group-append">
-                                <span class="input-group-text" @click="togglePass">
-                                    <i :class="showPass ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
-                                </span>
-                                </div>
-                            </div>
+                            <textarea class="form-control " v-model="approved.catatan" rows="3"></textarea>
                         </div>
                     </div>
                     
@@ -200,7 +134,7 @@ export default {
         ...mapState(["errors"]),
         ...mapState({
             identitaskendaraan: state => state.approved.identitaskendaraan,
-            surat: state => state.approved.surat,
+            approved: state => state.approved.approved,
         }),
     },
     components: {
