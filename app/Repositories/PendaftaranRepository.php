@@ -803,6 +803,7 @@ class PendaftaranRepository
 
     public function updateApproved($id, $request)
     {
+        dd($request);
         $user = auth()->user();
         $update = $this->model->where('uuid',$id)->first();
         if($update){
