@@ -173,7 +173,7 @@
         </table>
 
         <p>Kami tidak keberatan kendaraan tersebut untuk melaksanakan uji berkala di :</p>
-        <h4>{{ $kendaraan->tujuan }}</h4>
+        <h4 class="text-center">{{ $kendaraan->tujuan }}</h4>
         <p>Untuk 1 (satu) kali periode pengujian dan surat keterangan hasil uji berkala tersebut dikirimkan kepada kami.</p>
 
 
