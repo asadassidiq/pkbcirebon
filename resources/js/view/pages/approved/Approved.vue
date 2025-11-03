@@ -47,8 +47,6 @@
                                 readonly v-model="identitaskendaraan.nomesin" />
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label>Merek</label>

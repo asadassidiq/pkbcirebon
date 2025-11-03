@@ -19,6 +19,7 @@ export const state = {
         nouji:"",
         noregistrasikendaraan:"",
         merek:"",
+        tipe:"",
         jenis:"",
         subjenis:"",
         nomesin:"",
@@ -53,6 +54,7 @@ export const mutations = {
         state.identitaskendaraan = {
             uuid: payload.uuid,
             merek      : payload.merek,
+            tipe: payload.tipe,
             nouji: payload.nouji,
             noregistrasikendaraan : payload.noregistrasikendaraan,
             nomesin : payload.nomesin,
@@ -78,6 +80,7 @@ export const mutations = {
             nouji:"",
             noregistrasikendaraan:"",
             merek:"",
+            tipe:"",
             jenis:"",
             subjenis:"",
             nomesin:"",
