@@ -67,11 +67,11 @@
         .watermark {
             position: fixed;
             top: 50%;
-            left: 50%;
+            left: 45%;
             transform: translate(-50%, -50%);
             opacity: 0.08; /* transparansi */
             z-index: -1; /* di belakang teks */
-            width: 60%; /* ukuran bisa diatur */
+            width: 40%; /* ukuran bisa diatur */
         }
 
         .text-center { text-align: center; }
