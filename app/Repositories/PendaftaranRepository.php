@@ -803,11 +803,10 @@ class PendaftaranRepository
 
     public function updateApproved($id, $request)
     {
-        dd($request);
         $user = auth()->user();
         $update = $this->model->where('uuid',$id)->first();
         if($update){
-            $update->update($request);
+            $update->update($request->all());
             if ($update->save()) {
                 $data = $this->model->where('id',$id)->first();
                 if($data->kodepenerbitans_id == '10' || $data->kodepenerbitans_id == '9'){
