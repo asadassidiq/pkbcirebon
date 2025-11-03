@@ -5,7 +5,7 @@
                 <h3 class="card-label">Kendaraan</h3>
             </div>
             <div class="card-toolbar">
-                <button class="btn btn-sm btn-light-warning mr-2" @click="goBack">Close</button>
+                
             </div>
         </div>
         <b-collapse visible id="collapse-3">
@@ -102,6 +102,7 @@
                     </div>
                     
                     <div class="col-12 text-right">
+                        <button class="btn btn-sm btn-light-warning mr-2" @click="goBack">Close</button>
                         <button class="btn btn-primary btn-sm" @click.prevent="submit">
                         <i class="fa fa-save"></i> Submit
                         </button>

@@ -124,7 +124,7 @@ class LoginController extends Controller
     $antrianDataApproved = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '0')->count();
     $antrianDataFoto = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['1', '2', '3', '4', '5', '6', '7'])->where('foto', '0')->count();
     $antrianDataCetak = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['1', '2', '3', '4', '5', '6', '7'])->where('posisi', '6')->count();
-    $antrianDataSurat = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['9', '10', '11', '12'])->where('posisi', '10')->count();
+    $antrianDataSurat = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['9', '10'])->where('posisi', '6')->count();
     $antrianDataPenyerahan = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '7')->count();
     $data  = [
       'approvals'   => $approvalsNotifications,
