@@ -28,6 +28,11 @@ class DatakendaraanService
         return $this->repoDatakendaraan->getAll();
     }
 
+    public function getJenisModel()
+    {
+        return $this->repoDatakendaraan->getJenisModel();
+    }
+
     public function getDatakendaraan($id)
     {
         return $this->repoDatakendaraan->getDatakendaraan($id);

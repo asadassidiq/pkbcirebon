@@ -14,7 +14,7 @@ use App\Models\Kelasjalan;
 use App\Models\Merek;
 use App\Models\Bc_Tipe;
 use App\Models\Bahanbakar;
-use App\Models\Ujiberkala;
+use App\Models\JenisModel;
 use App\Models\Pengujian;
 use App\Models\TamanKendaraan;
 use App\Models\LaikJalan;
@@ -101,6 +101,11 @@ class DatakendaraanRepository
     }
 
     return $data->paginate(10);
+  }
+  
+  public function getJenisModel()
+  {
+      return JenisModel::all();
   }
 
   public function getDatakendaraan($id)

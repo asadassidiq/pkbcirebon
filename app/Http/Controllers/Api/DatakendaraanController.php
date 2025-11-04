@@ -35,6 +35,12 @@ class DatakendaraanController extends Controller
         return $this->returnJson($data);
     }
 
+    public function getJenisModel()
+    {
+        $data = $this->datakendaraanService->getJenisModel();
+        return $this->returnJson($data);
+    }
+
     public function getDatakendaraan($id)
     {
         $data = $this->datakendaraanService->getDatakendaraan($id);
