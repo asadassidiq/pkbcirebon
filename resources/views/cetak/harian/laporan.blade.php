@@ -168,17 +168,19 @@
                 <td>{{ $data->nama }}</td>
                 <td>{{ $data->alamat }}</td>
                 <td>{{ $data->keterangan }}</td>
-                <td>{{ $data->peruntukan }}</td>
-                @if (!empty($data->rfid_tid))
-                <td>BARU</td>
-                @else
-                <td>LAMA</td>
-                @endif
                 @if ($data->statuslulusuji == 1)
                 <td>LULUS</td>
                 @else
                 <td>TIDAK LULUS</td>
                 @endif
+                <td>{{ $data->peruntukan }}</td>
+                <td>{{ $data->nokendalikartu }}</td>
+                {{-- @if (!empty($data->rfid_tid))
+                <td>BARU</td>
+                @else
+                <td>LAMA</td> --}}
+                @endif
+                <td>-</td>
             </tr>
             @php $i++
             @endphp
