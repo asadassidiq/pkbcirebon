@@ -41,7 +41,7 @@
         }
 
         .content {
-            padding-top: 0.5cm;
+            padding-top: 0.2cm;
         }
         
         .line-wrapper {
@@ -107,9 +107,9 @@
     }
     @endphp
 <header>
-        <h5 style="margin:1;padding:1">LAPORAN HARIAN PENGUJIAN BERKALA KENDARAAN BERMOTOR</h5>
-        <h5 style="margin:1;padding:1">UPT PKB DISHUB KOTA CIREBON</h5>
-        <h5 style="margin:1;padding:1">{{ $tglprint }}</h5>
+        <h3 style="margin:1;padding:1">LAPORAN HARIAN PENGUJIAN BERKALA KENDARAAN BERMOTOR</h3>
+        <h3 style="margin:1;padding:1">UPT PKB DISHUB KOTA CIREBON</h3>
+        <h3 style="margin:1;padding:1">{{ $tglprint }}</h3>
 </header>
 <div class="content">
     <table class="table table-bordered ">
