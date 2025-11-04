@@ -179,11 +179,18 @@
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
-                      <label>Model <span class="text-danger" v-if="datakendaraan.model">{{ datakendaraan.model
+                      <label>Sub Jenis <span class="text-danger" v-if="datakendaraan.model">{{ datakendaraan.model
                       }}</span></label>
                       <vSelect label="vehicle_sub_name" ref="subjenis" :options="subjenis"
                         v-model="datakendaraan.subjenis" @input="setSubVehicleid" :disabled="!subjenis.length">
                       </vSelect>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Model</label>
+                      <vSelect label="model" ref="jenismodel" :options="jenismodel"
+                        v-model="datakendaraan.model" @input="setModel" :disabled="!jenismodel.length"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -984,6 +991,7 @@ export default {
     this.getVarians();
     this.getJenis();
     this.getSubJenis();
+    this.getJenisModel();
     this.getFuels();
     this.getKotas();
     this.getKelasJalans();
@@ -1003,7 +1011,7 @@ export default {
   },
   methods: {
     ...mapMutations("datakendaraan", ["CLEAR_FORM"]),
-    ...mapActions("datakendaraan", ["updateDatakendaraan", "editDatakendaraan", "getMereks", "getTipes", "getVarians", "getJenis", "getSubJenis", "getJeniskendaraan", "getFuels", "getKelasJalans", "getKodewilayahs", "getKotas", "getKecamatans", "getKelurahans", "getVTA", "getRiwayatUji", "getDetailRiwayatUji"]),
+    ...mapActions("datakendaraan", ["updateDatakendaraan", "editDatakendaraan", "getMereks", "getTipes", "getVarians", "getJenis", "getSubJenis", "getJeniskendaraan", "getFuels", "getKelasJalans", "getKodewilayahs", "getKotas", "getKecamatans", "getKelurahans", "getVTA", "getRiwayatUji", "getDetailRiwayatUji","getJenisModel"]),
     submit() {
       this.updateDatakendaraan(this.$route.params.id).then(() => {
         Swal.fire({
@@ -1077,6 +1085,16 @@ export default {
       this.datakendaraan.jenis = value.vehicle_type_name;
       this.datakendaraan.idjenis = value.vehicle_type_id;
       this.getSubJenis(value.vehicle_type_id);
+      var self = this;
+      var jenismodels = this.jenismodel.find(function(item) {
+          return item.model === self.datakendaraan.jenis;
+      });
+      if (jenismodels) {
+          this.datakendaraan.model= jenismodels.model;
+      }
+    },
+    setModel(value) {
+      this.datakendaraan.model = value;
     },
     setSubVehicleid(value) {
       this.datakendaraan.subjenis = value.vehicle_sub_name;
@@ -1184,7 +1202,7 @@ export default {
     ...mapState("datakendaraan", {
       mereks: state => state.mereks, tipes: state => state.tipes, varians: state => state.varians, jenis: state => state.jenis, subjenis: state => state.subjenis, jeniskendaraan: state => state.jeniskendaraan, fuels: state => state.fuels, kelasjalans: state => state.kelasjalans,
       kotas: state => state.kotas, kecamatans: state => state.kecamatans, kelurahans: state => state.kelurahans,
-      responeBlue: state => state.responeBlue,
+      responeBlue: state => state.responeBlue, jenismodel: state => state.jenismodel,
     })
   },
   components: {
