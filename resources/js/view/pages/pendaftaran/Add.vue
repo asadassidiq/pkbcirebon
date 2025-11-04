@@ -518,27 +518,6 @@
                       <p class="text-danger" v-if="errors.dayamotorpenggerak">{{ errors.dayamotorpenggerak[0] }}</p>
                     </div>
                   </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label>Nomer Mesin</label>
-                      <input type="text" class="form-control  form-control-lg" name="nomesin" placeholder="Nomer Mesin"
-                        style="text-transform: uppercase;" v-model="pendaftaran.nomesin" />
-                      <p class="text-danger" v-if="errors.nomesin">{{ errors.nomesin[0] }}</p>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <label>Nomer Rangka</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control  form-control-lg" name="norangka"
-                        style="text-transform: uppercase;" ref="norangka" placeholder=" No Rangka"
-                        v-model="pendaftaran.norangka" />
-                      <span class="input-group-text" id="basic-addon2"><a href="javascript:void(0)"
-                          @click="getDataVTA(pendaftaran.norangka)"
-                          class="btn btn-sm btn-light-success font-weight-bold">
-                          <i class="flaticon2-search"></i> Cek Data
-                        </a></span>
-                    </div>
-                  </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label class="text-danger">Bahan Bakar</label>
@@ -575,6 +554,28 @@
                       <input type="text" class="form-control  form-control-lg" name="warna" placeholder="Warna"
                         style="text-transform: uppercase;" v-model="pendaftaran.warna" />
                       <p class="text-danger" v-if="errors.warna">{{ errors.warna[0] }}</p>
+                    </div>
+                  </div>
+                  
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Nomer Mesin</label>
+                      <input type="text" class="form-control  form-control-lg" name="nomesin" placeholder="Nomer Mesin"
+                        style="text-transform: uppercase;" v-model="pendaftaran.nomesin" />
+                      <p class="text-danger" v-if="errors.nomesin">{{ errors.nomesin[0] }}</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label>Nomer Rangka</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control  form-control-lg" name="norangka"
+                        style="text-transform: uppercase;" ref="norangka" placeholder=" No Rangka"
+                        v-model="pendaftaran.norangka" />
+                      <span class="input-group-text" id="basic-addon2"><a href="javascript:void(0)"
+                          @click="getDataVTA(pendaftaran.norangka)"
+                          class="btn btn-sm btn-light-success font-weight-bold">
+                          <i class="flaticon2-search"></i> Cek Data
+                        </a></span>
                     </div>
                   </div>
                 </div>
