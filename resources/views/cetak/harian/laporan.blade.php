@@ -187,12 +187,21 @@
             @endforeach
         </tbody>
     </table>
+    <div style="position: absolute; right: 0; bottom: 2cm; width: 300px;">
+        <p style="text-align: center">Mengetahui,</p>
+        <p style="text-align: center">Kepala UPT Pengujian Kendaraan Bermotor</p>
+        <p style="text-align: center">Dinas Perhubungan Kota Cirebon</p>
+        <br><br><br>
+        <p style="margin: 0;padding: 0;text-align: center"><u><b>{{ $ttd['name'] }}</u></b></p>
+        <p style="margin: 0;padding: 0;text-align: center">NIP. {{ $ttd['pangkat'] }}</p>
+        <p style="margin: 0;padding: 0;text-align: center">NIP. {{ $ttd['nip'] }}</p>
+    </div>
     <div class="page-break"> </div>
 
     <div class="text-left">
-        <h5 style="margin:1;padding:1">Lampiran</h5>
-        <h5 style="margin:1;padding:1">DATA ADMINISTRASI</h5>
-        <h5 style="margin:1;padding:1">{{ $tglprint }}</h5>
+        <h3 style="margin:1;padding:1">Lampiran</h3>
+        <h3 style="margin:1;padding:1">DATA ADMINISTRASI</h3>
+        <h3 style="margin:1;padding:1">{{ $tglprint }}</h3>
     </div>
     
     {{-- <table style="width: 100%">
