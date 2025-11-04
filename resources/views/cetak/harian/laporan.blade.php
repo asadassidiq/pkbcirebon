@@ -203,7 +203,6 @@
         <h3 style="margin:1;padding:1">DATA ADMINISTRASI</h3>
         <h3 style="margin:1;padding:1">{{ $tglprint }}</h3>
     </div>
-    
     <table style="width: 100%">
         <tr>
             <td style="width: 50%;vertical-align: top;">
@@ -211,8 +210,7 @@
                 <table class="table table-bordered ">
                     <thead style="text-align:center;">
                         <tr>
-                            <th style="width:40%;">JENIS KENDARAAN</th>
-                            <th style="width:40%;">SUB JENIS</th>
+                            <th style="width:40%;" colspan="2">JENIS KENDARAAN</th>
                             <th style="width:20%;">JUMLAH</th>
                         </tr>
                     </thead>
