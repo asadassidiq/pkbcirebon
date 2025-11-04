@@ -32,7 +32,7 @@ class LaporanController extends Controller
     {
         $tglcetak = date('d-m-Y', strtotime($tgl));
         $tglcreate = date_create($tgl);
-        $hari = $this->hari(date_format($tglcreate, "D"));
+        $hari = Utils::hari(date_format($tglcreate, "D"));
 
         $tglprint = $hari . ', ' . $tglcetak;
 
