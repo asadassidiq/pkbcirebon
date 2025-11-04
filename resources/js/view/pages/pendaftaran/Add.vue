@@ -1460,9 +1460,12 @@ export default {
       this.pendaftaran.jenis = value.vehicle_type_name;
       this.pendaftaran.idjenis = value.vehicle_type_id;
       this.getSubJenis(value.vehicle_type_id);
+      console.log(this.pendaftaran.jenismodel);
       var jenismodels = this.jenismodel.find(function(item) {
+          console.log(this.pendaftaran.jenis);
           return item.model === this.pendaftaran.jenis;
       });
+      console.log(jenismodels);
       if (jenismodels) {
           this.pendaftaran.model= jenismodels.model;
       }
