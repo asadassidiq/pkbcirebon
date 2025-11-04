@@ -1464,7 +1464,7 @@ export default {
           return item.model === this.pendaftaran.jenis;
       });
       if (jenismodels) {
-          state.pendaftaran.model= jenismodels.model;
+          this.pendaftaran.model= jenismodels.model;
       }
     },
     setSubVehicleid(value) {
