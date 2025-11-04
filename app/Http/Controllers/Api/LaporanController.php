@@ -40,7 +40,7 @@ class LaporanController extends Controller
 
         $hari = $this->utils->hari(date_format($tglcreate, "D"));
 
-        $tglprint = $hari . ', ' . $tglcetak;
+        $tglprint = $hari . ', ' . $this->utils->tgl_indo($tglcetak);
 
         $kendaraan  = Pendaftaran::select('pendaftarans.noantrian','identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan','identitaskendaraans.merek','identitaskendaraans.tipe','identitaskendaraans.thpembuatan','identitaskendaraans.bahanbakar', 'identitaskendaraans.nama','identitaskendaraans.alamat', 'datarfid.statuspenerbitan', 'identitaskendaraans.subjenis', 'datakendaraans.jbb', 'identitaskendaraans.jenis', 'identitaskendaraans.model', 'kodepenerbitans.keterangan', 'laikjalan.statuslulusuji', 'peruntukan', 'datarfid.rfid_tid')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->leftJoin('datakendaraans', 'datakendaraans.identitaskendaraan_id', 'identitaskendaraans.id')->leftJoin('kodepenerbitans', 'kodepenerbitans.id', '=', 'pendaftarans.kodepenerbitans_id')->leftJoin('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')->leftJoin('datarfid','datarfid.idx','pendaftarans.idx')->where('tglpendaftaran', $tgl)->orderBy('pendaftarans.noantrian', 'ASC')->get();
         // $umum       = Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $tgl)->where('peruntukan', 'Umum')->count();

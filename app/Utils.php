@@ -63,7 +63,7 @@ class Utils
         }
         return $hari_ini;
     }
-    
+
     public function bulan($bulan)
     {
         switch ($bulan) {
@@ -120,5 +120,24 @@ class Utils
                 break;
         }
         return $bulan_ini;
+    }
+
+    public function tgl_indo($tanggal){
+        $bulan = array (
+        1 => 'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+        );
+        $pecahkan = explode('-', $tanggal);
+        return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
     }
 }
