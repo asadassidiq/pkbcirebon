@@ -54,6 +54,9 @@ export default {
     getSubJenis(id) {
         return ApiService.get(`/bluecore?p=subvehicletype&i=${id}`);
     },
+    getJenisModel() {
+        return ApiService.get("/master/model");
+    },
     getJeniskendaraan() {
         return ApiService.get("/jeniskendaraan/name");
     },

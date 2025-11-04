@@ -59,6 +59,9 @@ export default {
     getJeniskendaraan() {
         return ApiService.get("/jeniskendaraan/name");
     },
+    getJenisModel() {
+        return ApiService.get("/master/model");
+    },
     getKodepenerbitans() {
         return ApiService.get("/kodepenerbitans/name");
     },

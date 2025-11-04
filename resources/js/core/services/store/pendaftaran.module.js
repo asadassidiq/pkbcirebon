@@ -17,6 +17,7 @@ export const state = {
     fuels:[],
     kelasjalans:[],
     jeniskendaraan: [],
+    jenismodel: [],
     filter: {
         tgl: ""
     },
@@ -215,6 +216,9 @@ export const mutations = {
     },
     DATA_JENISKENDARAAN(state, jeniskendaraan){
         state.jeniskendaraan = jeniskendaraan;
+    },
+    DATA_JENISMODEL(state, jenismodel){
+        state.jenismodel = jenismodel;
     },
     ASSING_DATA(state, pendaftarans) {
         state.pendaftarans = pendaftarans;
@@ -1415,6 +1419,11 @@ export const actions = {
     getJeniskendaraan({ commit, state }) {
         return PendaftaranService.getJeniskendaraan().then(response => {
             commit("DATA_JENISKENDARAAN", response.data.result);
+        });
+    },
+    async getJenisModel({ commit, state }) {
+        return await PendaftaranService.getJenisModel().then(response => {
+            commit("DATA_JENISMODEL", response.data.result);
         });
     },
     async getKodepenerbitans({ commit, state }) {

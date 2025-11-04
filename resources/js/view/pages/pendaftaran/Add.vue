@@ -272,11 +272,10 @@
                   </div>
                   <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == '11'">
                     <div class="form-group">
-                      <label>Model <span class="text-danger" v-if="pendaftaran.model">{{ pendaftaran.model
+                      <label>Sub Jenis <span class="text-danger" v-if="pendaftaran.model">{{ pendaftaran.model
                           }}</span></label>
                       <vSelect label="vehicle_sub_name" ref="subjenis" :options="subjenis"
                         v-model="pendaftaran.subjenis" @input="setSubVehicleid" :disabled="!subjenis.length"></vSelect>
-                      <p class="text-danger" v-if="errors.model">{{ errors.model[0] }}</p>
                     </div>
                   </div>
 
@@ -491,6 +490,13 @@
                       <vSelect label="vehicle_sub_name" ref="subjenis" :options="subjenis"
                         v-model="pendaftaran.subjenis" @input="setSubVehicleid" :disabled="!subjenis.length"></vSelect>
                       <p class="text-danger" v-if="errors.model">{{ errors.model[0] }}</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Model</label>
+                      <vSelect label="model" ref="jenismodel" :options="jenismodel"
+                        v-model="pendaftaran.model" @input="setModel" :disabled="!jenismodel.length"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4"
@@ -1309,6 +1315,7 @@ export default {
     this.getTipes();
     this.getVarians();
     this.getJenis();
+    this.getJenisModel();
     this.getSubJenis();
     this.getFuels();
     this.getKotas();
@@ -1453,10 +1460,19 @@ export default {
       this.pendaftaran.jenis = value.vehicle_type_name;
       this.pendaftaran.idjenis = value.vehicle_type_id;
       this.getSubJenis(value.vehicle_type_id);
+      var jenismodels = this.jenismodel.find(function(item) {
+          return item.model === this.pendaftaran.jenis;
+      });
+      if (jenismodels) {
+          state.pendaftaran.model= jenismodels.model;
+      }
     },
     setSubVehicleid(value) {
       this.pendaftaran.subjenis = value.vehicle_sub_name;
       this.pendaftaran.idsubjenis = value.vehicle_sub_id;
+    },
+    setModel(value) {
+      this.pendaftaran.model = value.model;
     },
     setArea(value) {
       this.pendaftaran.kodewilayah = value.area_code;
@@ -1600,11 +1616,12 @@ export default {
       uuid: state => state.uuid,
     }),
     ...mapState("pendaftaran", {
-      kodewilayahs: state => state.kodewilayahs
+      kodewilayahs: state => state.kodewilayahs,
     }),
     ...mapState("pendaftaran", {
       mereks: state => state.mereks, tipes: state => state.tipes, varians: state => state.varians, jenis: state => state.jenis, subjenis: state => state.subjenis, jeniskendaraan: state => state.jeniskendaraan, fuels: state => state.fuels, kelasjalans: state => state.kelasjalans,
       kotas: state => state.kotas, kecamatans: state => state.kecamatans, kelurahans: state => state.kelurahans,
+      jenismodel: state => state.jenismodel,
     }),
     disabled() {
       return this.state === 'disabled'

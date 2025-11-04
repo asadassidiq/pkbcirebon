@@ -128,6 +128,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::delete('/{id}', 'DatakendaraanController@delete');
         });
 
+        Route::group(['middleware' => ['role:admin|petugas'], 'prefix' => 'master'], function () {
+            Route::get('/model', 'DatakendaraanController@getJenisModel');
+        });
+
         Route::group(['middleware' => ['role:admin|kepala'], 'prefix' => 'datakendaraan/approvals'], function () {
             Route::get('/pending', 'DatakendaraanController@getPendingRequests');
             // Route::get('/rejected', 'DatakendaraanController@getRejectedRequests');
