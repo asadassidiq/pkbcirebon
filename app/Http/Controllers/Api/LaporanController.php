@@ -76,7 +76,7 @@ class LaporanController extends Controller
         //     array_push($pelayanan, $arr);
         // }
 
-        // $ttd = Ttd::leftjoin('users', 'users.id', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
+        $ttd = Ttd::leftjoin('users', 'users.uuid', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
 
         // return view('cetak.laporanharian', ['kendaraan' => $kendaraan, 'tglprint' => $tglprint, 'umum' => $umum, 'tidakumum' => $tidakumum, 'lulus' => $lulus, 'tidaklulus' => $tidaklulus, 'jenis' => $totaljenis, 'jenispelayanan' => $pelayanan, 'pemakaianbuku' => $pemakaianbuku, 'barang' => $mBarang, 'ttd' => $ttd]);
         
@@ -95,7 +95,7 @@ class LaporanController extends Controller
             // 'jenispelayanan' => $pelayanan,
             // 'pemakaianbuku' => $pemakaianbuku,
             // 'barang' => $mBarang,
-            // 'ttd'     => $ttd,
+            'ttd'     => $ttd,
             'logokab'  => $logokab,
         ];
         $pdf = PDF::loadView('cetak.harian.laporan', $data);
