@@ -204,7 +204,7 @@
         <h3 style="margin:1;padding:1">{{ $tglprint }}</h3>
     </div> --}}
     <div style="display: flex; justify-content: space-between; gap: 20px;">
-        <div style="flex: 1; width: 50%;">
+        <div style="flex: 1; width: 45%;">
             <table class="table table-bordered ">
                 <thead style="text-align:center;">
                     <tr>
@@ -291,7 +291,8 @@
                 </tbody>
             </table>
         </div>
-        <div style="flex: 1; width: 50%;">
+
+        <div style="flex: 1; width: 45%;">
             <table class="table table-bordered ">
                 <thead>
                     <tr>
