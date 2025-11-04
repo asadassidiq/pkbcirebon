@@ -1462,10 +1462,8 @@ export default {
       this.getSubJenis(value.vehicle_type_id);
       var self = this;
       var jenismodels = this.jenismodel.find(function(item) {
-          console.log(item.model+'=='+self.pendaftaran.jenis);
           return item.model === self.pendaftaran.jenis;
       });
-      console.log(jenismodels);
       if (jenismodels) {
           this.pendaftaran.model= jenismodels.model;
       }
@@ -1475,7 +1473,7 @@ export default {
       this.pendaftaran.idsubjenis = value.vehicle_sub_id;
     },
     setModel(value) {
-      this.pendaftaran.model = value.model;
+      this.pendaftaran.model = value;
     },
     setArea(value) {
       this.pendaftaran.kodewilayah = value.area_code;
