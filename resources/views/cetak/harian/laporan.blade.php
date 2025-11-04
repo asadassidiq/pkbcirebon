@@ -207,27 +207,7 @@
     <table style="width: 100%">
         <tr>
             <td style="width: 50%;vertical-align: top;">
-                <table class="table table-bordered ">
-                    <thead>
-                        <tr>
-                        <th scope="col" colspan="2">JENIS KENDARAAN</th>
-                        <th scope="col">JUMLAH</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td rowspan="2">MOBIL PNP</td>
-                    </tr>
-                    @foreach ($jenis as $data) 
-                    <tr>
-                        <td>{{ $data['jenis']  }}</td>
-                        <td>{{ $data['jumlah'] }}</td>
-                    </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </td>
-            <td style="width: 50%;vertical-align: top;">
+                
                 <table class="table table-bordered ">
                     <thead style="text-align:center;">
                         <tr>
@@ -312,6 +292,24 @@
                         <tr><td>FLAT DECK</td><td>{{ $totaljenis['mobil37'] ?? 0 }}</td></tr>
                         <tr><td>MIXER</td><td>{{ $totaljenis['mobil38'] ?? 0 }}</td></tr>
                         <tr><td>CONCREEDPUMP</td><td>{{ $totaljenis['mobil39'] ?? 0 }}</td></tr>
+                    </tbody>
+                </table>
+            </td>
+            <td style="width: 50%;vertical-align: top;">
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr>
+                        <th scope="col">JENIS PELAYANAN</th>
+                        <th scope="col">JUMLAH</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($jenispelayanan as $data) 
+                    <tr>
+                        <td>{{ $data['jenispelayanan']  }}</td>
+                        <td>{{ $data['jumlah'] }}</td>
+                    </tr>
+                    @endforeach
                     </tbody>
                 </table>
                 <br>
