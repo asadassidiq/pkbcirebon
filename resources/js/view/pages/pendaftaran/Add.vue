@@ -546,17 +546,6 @@
                         v-model="pendaftaran.wilayahasal" @input="setAreaFrom"></vSelect>
                     </div>
                   </div>
-
-                  <div class="col-sm-4"
-                    v-if="pendaftaran.kodepenerbitans_id < 12 || pendaftaran.kodepenerbitans_id > 12">
-                    <div class="form-group">
-                      <label>Warna</label>
-                      <input type="text" class="form-control  form-control-lg" name="warna" placeholder="Warna"
-                        style="text-transform: uppercase;" v-model="pendaftaran.warna" />
-                      <p class="text-danger" v-if="errors.warna">{{ errors.warna[0] }}</p>
-                    </div>
-                  </div>
-                  
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Nomer Mesin</label>
@@ -578,6 +567,17 @@
                         </a></span>
                     </div>
                   </div>
+
+                  <div class="col-sm-4"
+                    v-if="pendaftaran.kodepenerbitans_id < 12 || pendaftaran.kodepenerbitans_id > 12">
+                    <div class="form-group">
+                      <label>Warna</label>
+                      <input type="text" class="form-control  form-control-lg" name="warna" placeholder="Warna"
+                        style="text-transform: uppercase;" v-model="pendaftaran.warna" />
+                      <p class="text-danger" v-if="errors.warna">{{ errors.warna[0] }}</p>
+                    </div>
+                  </div>
+                  
                 </div>
               </div>
               <!--end: Wizard Step 2-->

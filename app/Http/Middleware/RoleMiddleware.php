@@ -131,6 +131,10 @@ class RoleMiddleware
             if ($user->role == 'KEPALA' || $user->role == 'PENGUJI' || $user->role == 'ADMIN') {
                 $decrypted = $checkPs;
             }
+        } elseif ($ps == 'api/master') {
+            if ($user->role == 'KEPALA' || $user->role == 'PENGUJI' || $user->role == 'ADMIN') {
+                $decrypted = $checkPs;
+            }
         } elseif ($ps == 'api/bluecore' || $ps == 'api/vta') {
             if ($user->role == 'PENGUJI' || $user->role == 'ADMIN') {
                 $decrypted = $checkPs;

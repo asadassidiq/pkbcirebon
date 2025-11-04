@@ -596,7 +596,7 @@
                         v-model="pendaftaran.model" @input="setModel" :disabled="!jenismodel.length"></vSelect>
                     </div>
                   </div>
-                  
+
                   <div class="col-sm-4" v-if="
                     pendaftaran.kodepenerbitans_id < 12 ||
                     pendaftaran.kodepenerbitans_id > 12
@@ -662,21 +662,7 @@
                       </p>
                     </div>
                   </div>
-
-                  <div class="col-sm-4" v-if="
-                    pendaftaran.kodepenerbitans_id < 12 ||
-                    pendaftaran.kodepenerbitans_id > 12
-                  ">
-                    <div class="form-group">
-                      <label>Warna</label>
-                      <input type="text" class="form-control form-control-lg" name="warna" placeholder="Warna"
-                        style="text-transform: uppercase" v-model="pendaftaran.warna" />
-                      <p class="text-danger" v-if="errors.warna">
-                        {{ errors.warna[0] }}
-                      </p>
-                    </div>
-                  </div>
-
+                  
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>No Mesin</label>
@@ -698,6 +684,20 @@
                           class="btn btn-sm btn-light-success font-weight-bold">
                           <i class="flaticon2-search"></i> Cek Data
                         </a></span>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4" v-if="
+                    pendaftaran.kodepenerbitans_id < 12 ||
+                    pendaftaran.kodepenerbitans_id > 12
+                  ">
+                    <div class="form-group">
+                      <label>Warna</label>
+                      <input type="text" class="form-control form-control-lg" name="warna" placeholder="Warna"
+                        style="text-transform: uppercase" v-model="pendaftaran.warna" />
+                      <p class="text-danger" v-if="errors.warna">
+                        {{ errors.warna[0] }}
+                      </p>
                     </div>
                   </div>
                 </div>
