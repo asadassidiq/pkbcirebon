@@ -205,7 +205,7 @@
     </div> --}}
     <table style="width: 100%">
         <tr>
-            <td style="width: 45%;vertical-align: top;">
+            <td style="width: 60%;vertical-align: top;">
                 <table class="table table-bordered ">
                     <thead style="text-align:center;">
                         <tr>
@@ -292,7 +292,7 @@
                     </tbody>
                 </table>
             </td>
-            <td style="width: 55%;vertical-align: top;">
+            <td style="width: 40%;vertical-align: top;">
                 <table class="table table-bordered ">
                     <thead>
                         <tr>
