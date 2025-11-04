@@ -203,8 +203,8 @@
         <h3 style="margin:1;padding:1">DATA ADMINISTRASI</h3>
         <h3 style="margin:1;padding:1">{{ $tglprint }}</h3>
     </div> --}}
-    <div style="display: flex; justify-content: space-between; gap: 20px;">
-        <div style="flex: 1; width: 45%;">
+    <div style="display: block;">
+        <div style="width: 100%; margin-bottom: 20px;">
             <table class="table table-bordered ">
                 <thead style="text-align:center;">
                     <tr>
@@ -292,7 +292,7 @@
             </table>
         </div>
 
-        <div style="flex: 1; width: 45%;">
+        <div style="width: 100%; margin-bottom: 20px;">
             <table class="table table-bordered ">
                 <thead>
                     <tr>
