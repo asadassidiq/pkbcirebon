@@ -20,7 +20,7 @@ class TandatanganRepository
 
     public function getAll()
     {
-        $data = $this->model->select('tandatangan.id','tandatangan.name','users.name as nama')->Join('users','users.id','=','tandatangan.user_id');
+        $data = $this->model->select('tandatangan.id','tandatangan.name','users.name as nama')->Join('users','users.uuid','=','tandatangan.user_id');
         
         $search = str_replace("/", "", request()->q);
 
@@ -39,7 +39,7 @@ class TandatanganRepository
 
     public function getTandatanganName()
     {
-        $data = $this->model->select('tandatangan.id','tandatangan.name','users.name as nama')->LeftJoin('users','users.id','=','tandatangan.user_id')->orderBy('id', 'ASC');
+        $data = $this->model->select('tandatangan.id','tandatangan.name','users.name as nama')->LeftJoin('users','users.uuid','=','tandatangan.user_id')->orderBy('id', 'ASC');
 
         if(request()->tandatangan != '' && request()->tandatangan != 'undefined'   ){
             $data = $data->where('id', request()->tandatangan);
