@@ -26,13 +26,19 @@ use App\Utils;
 
 class LaporanController extends Controller
 {
-    use Utils;
+    private $utils;
+
+    public function __construct()
+    {
+        $this->utils = new Utils();
+    }
 
     public function printlaporanharian($tgl)
     {
         $tglcetak = date('d-m-Y', strtotime($tgl));
         $tglcreate = date_create($tgl);
-        $hari = Utils::hari(date_format($tglcreate, "D"));
+
+        $hari = $this->utils->hari(date_format($tglcreate, "D"));
 
         $tglprint = $hari . ', ' . $tglcetak;
 
