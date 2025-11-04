@@ -69,109 +69,14 @@
         table.table-bordered {
             width: 100%;
             border-collapse: collapse;
-            table-layout: fixed;
         }
 
         .table-bordered th,
         .table-bordered td {
             border: 1px solid #000;
-            padding: 3px;
+            padding: 6px;
             text-align: left;
             vertical-align: top;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            font-size: calc(8px + (12 - 8) * ((100vw - 300px) / (1600 - 300)));
-            min-width: 0;
-            max-width: 100%;
-        }
-
-        /* Column width adjustments */
-        .table-bordered th:nth-child(1), /* NO */
-        .table-bordered td:nth-child(1) {
-            width: 3%;
-        }
-        .table-bordered th:nth-child(2), /* NO KENDARAAN */
-        .table-bordered td:nth-child(2) {
-            width: 7%;
-        }
-        .table-bordered th:nth-child(3), /* NO UJI */
-        .table-bordered td:nth-child(3) {
-            width: 7%;
-        }
-        .table-bordered th:nth-child(4), /* NO RANGKA */
-        .table-bordered td:nth-child(4) {
-            width: 8%;
-        }
-        .table-bordered th:nth-child(5), /* NO MESIN */
-        .table-bordered td:nth-child(5) {
-            width: 8%;
-        }
-        .table-bordered th:nth-child(6), /* MEREK */
-        .table-bordered td:nth-child(6) {
-            width: 6%;
-        }
-        .table-bordered th:nth-child(7), /* TIPE */
-        .table-bordered td:nth-child(7) {
-            width: 6%;
-        }
-        .table-bordered th:nth-child(8), /* TAHUN */
-        .table-bordered td:nth-child(8) {
-            width: 4%;
-        }
-        .table-bordered th:nth-child(9), /* JENIS KEND */
-        .table-bordered td:nth-child(9) {
-            width: 7%;
-        }
-        .table-bordered th:nth-child(10), /* JBB */
-        .table-bordered td:nth-child(10) {
-            width: 4%;
-        }
-        .table-bordered th:nth-child(11), /* BAHAN BAKAR */
-        .table-bordered td:nth-child(11) {
-            width: 5%;
-        }
-        .table-bordered th:nth-child(12), /* NAMA */
-        .table-bordered td:nth-child(12) {
-            width: 8%;
-        }
-        .table-bordered th:nth-child(13), /* ALAMAT */
-        .table-bordered td:nth-child(13) {
-            width: 10%;
-        }
-        .table-bordered th:nth-child(14), /* JENIS PELAYANAN */
-        .table-bordered td:nth-child(14) {
-            width: 7%;
-        }
-        .table-bordered th:nth-child(15), /* HASIL UJI */
-        .table-bordered td:nth-child(15) {
-            width: 5%;
-        }
-        .table-bordered th:nth-child(16), /* STATUS KEND */
-        .table-bordered td:nth-child(16) {
-            width: 5%;
-        }
-        .table-bordered th:nth-child(17), /* NO KENDALI KARTU */
-        .table-bordered td:nth-child(17) {
-            width: 4%;
-        }
-        .table-bordered th:nth-child(18), /* KET */
-        .table-bordered td:nth-child(18) {
-            width: 3%;
-        }
-
-        /* Ensure table stays on one page */
-        .table-container {
-            page-break-inside: avoid;
-            margin-bottom: 10px;
-        }
-
-        /* Handle extremely small screens */
-        @media print and (max-width: 297mm) {
-            .table-bordered th,
-            .table-bordered td {
-                font-size: 7pt;
-                padding: 2px;
-            }
         }
 
         .text-center { text-align: center; }
@@ -207,8 +112,7 @@
         <h3 style="margin:1;padding:1">{{ $tglprint }}</h3>
 </header>
 <div class="content">
-    <div class="table-container">
-    <table class="table table-bordered">
+    <table class="table table-bordered ">
         <thead>
             <tr>
                 <th scope="col">NO</th>
@@ -267,7 +171,6 @@
             @endforeach
         </tbody>
     </table>
-    </div>
     <div class="page-break"> </div>
 
     <div class="text-left">
