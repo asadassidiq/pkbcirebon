@@ -42,6 +42,20 @@
 
         .content {
             padding-top: 0.2cm;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            table-layout: auto;
+            font-size: 8pt; /* Smaller font size for better fitting */
+        }
+
+        @media print {
+            table {
+            max-width: 100%;
+            overflow-x: hidden;
+            }
         }
         
         .line-wrapper {
