@@ -179,8 +179,8 @@
                 <td>BARU</td>
                 @else
                 <td>LAMA</td> --}}
-                @endif
-                <td>-</td>
+                {{-- @endif --}}
+                <td></td>
             </tr>
             @php $i++
             @endphp
