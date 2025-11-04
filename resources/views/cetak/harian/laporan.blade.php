@@ -188,9 +188,9 @@
         </tbody>
     </table>
     <div style="position: absolute; right: 0; bottom: 2cm; width: 300px;">
-        <p style="text-align: center">Mengetahui,</p>
-        <p style="text-align: center">Kepala UPT Pengujian Kendaraan Bermotor</p>
-        <p style="text-align: center">Dinas Perhubungan Kota Cirebon</p>
+        <p style="margin: 0;padding: 0;text-align: center">Mengetahui,</p>
+        <p style="margin: 0;padding: 0;text-align: center">Kepala UPT Pengujian Kendaraan Bermotor</p>
+        <p style="margin: 0;padding: 0;text-align: center">Dinas Perhubungan Kota Cirebon</p>
         <br><br><br>
         <p style="margin: 0;padding: 0;text-align: center"><u><b>{{ $ttd['name'] }}</u></b></p>
         <p style="margin: 0;padding: 0;text-align: center">NIP. {{ $ttd['pangkat'] }}</p>
