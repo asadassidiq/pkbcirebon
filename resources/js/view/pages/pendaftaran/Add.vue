@@ -485,11 +485,10 @@
                   <div class="col-sm-4"
                     v-if="pendaftaran.kodepenerbitans_id < 12 || pendaftaran.kodepenerbitans_id > 12">
                     <div class="form-group">
-                      <label>Model <span class="text-danger" v-if="pendaftaran.model">{{ pendaftaran.model
+                      <label>Sub Jenis <span class="text-danger" v-if="pendaftaran.model">{{ pendaftaran.model
                           }}</span></label>
                       <vSelect label="vehicle_sub_name" ref="subjenis" :options="subjenis"
                         v-model="pendaftaran.subjenis" @input="setSubVehicleid" :disabled="!subjenis.length"></vSelect>
-                      <p class="text-danger" v-if="errors.model">{{ errors.model[0] }}</p>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -1329,7 +1328,7 @@ export default {
   },
   methods: {
     ...mapMutations("pendaftaran", ["CLEAR_FORM"]),
-    ...mapActions("pendaftaran", ["getMereks", "getTipes", "getVarians", "getJenis", "getSubJenis", "getJeniskendaraan", "getFuels", "getKelasJalans", "getKodewilayahs", "getIdentitaskendaraanNouji", "editPendaftaran", "submitPendaftaran", "submitPendaftaran2", "setNoSurat", "getNouji", "getKotas", "getKecamatans", "getKelurahans", "getVTA", "checkNU", "checkMU"]),
+    ...mapActions("pendaftaran", ["getMereks", "getTipes", "getVarians", "getJenis", "getSubJenis", "getJeniskendaraan", "getFuels", "getKelasJalans", "getKodewilayahs", "getIdentitaskendaraanNouji", "editPendaftaran", "submitPendaftaran", "submitPendaftaran2", "setNoSurat", "getNouji", "getKotas", "getKecamatans", "getKelurahans", "getVTA", "checkNU", "checkMU","getJenisModel"]),
     isLocked(field) {
       return (
         this.pendaftaran[field] !== undefined ||
