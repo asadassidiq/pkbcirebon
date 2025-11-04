@@ -203,7 +203,30 @@
         <h3 style="margin:1;padding:1">DATA ADMINISTRASI</h3>
         <h3 style="margin:1;padding:1">{{ $tglprint }}</h3>
     </div> --}}
-    <div style="display: flex; flex-direction: column; width: 100%;">
+    <div style="display: flex; justify-content: space-between; width: 100%;">
+        <div style="width: 48%;">
+            <table class="table table-bordered ">
+                <thead style="text-align:center;">
+                    <tr>
+                        <th style="width:40%;text-align:center" colspan="2">JENIS KENDARAAN</th>
+                        <th style="width:20%;">JUMLAH</th>
+                    </tr>
+                </thead>
+                <!-- ... Existing table content ... -->
+            </table>
+        </div>
+        <div style="width: 48%;">
+            <table class="table table-bordered ">
+                <thead>
+                    <tr>
+                        <th scope="col">JENIS PELAYANAN</th>
+                        <th scope="col">JUMLAH</th>
+                    </tr>
+                </thead>
+                <!-- ... Other tables ... -->
+            </table>
+        </div>
+    </div>
         <div style="width: 100%; margin-bottom: 20px;">
             <table class="table table-bordered ">
                 <thead style="text-align:center;">
