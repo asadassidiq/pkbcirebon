@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laporan Kendaraan Harian</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-   <link rel="icon" href="{{ asset('img/icon.ico') }}" type="image/ico">
+    <link rel="icon" href="{{ asset('img/icon.ico') }}" type="image/ico">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
@@ -44,9 +44,9 @@
         h4, p{
             margin:0px;
         }
-         @page { size: landscape; }
+        @page { size: landscape; }
 
-         @media print {
+        @media print {
             .kertasbaru {page-break-before: always;}
           }
     </style>

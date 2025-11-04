@@ -107,42 +107,32 @@
     }
     @endphp
 <header>
-    <table style="width: 100%">
-        <tr>
-            <td style="width: 15%">
-                <img style="width: 80px; height: auto;" src="{{ $logokab }}">
-            </td>
-            <td style="width: 85%" class="text-center">
-                <h3 class="text-center" style="margin:0;padding:0">PEMERINTAH KABUPATEN MIMIKA</h3>
-                <h3 class="text-center" style="margin:0;padding:0"><b>DINAS PERHUBUNGAN</b></h3>
-                <h2 class="text-center" style="margin:0;padding:0"><b>UPT PENGUJIAN KENDARAAN BERMOTOR</b></h2>
-                <p class="text-center" style="margin:0;padding:0">Jl. Mahkota Jalur 1 Kel.Timika Jaya Kec.Mimika Baru</p>
-                <p class="text-center" style="margin:0;padding:0">Telp.0901-323630, Email: unitpengujikabmmk@yahoo.com, Kode Pos : 99910</p>
-            </td>
-        </tr>
-    </table>
-    
-    <div class="line-wrapper">
-        <div class="line-thin"></div>
-        <div class="line-thick"></div>
-    </div>
+        <h5 style="margin:1;padding:1">LAPORAN HARIAN PENGUJIAN BERKALA KENDARAAN BERMOTOR</h5>
+        <h5 style="margin:1;padding:1">UPT PKB DISHUB KOTA CIREBON</h5>
+        <h5 style="margin:1;padding:1">{{ $tglprint }}</h5>
 </header>
 <div class="content">
     <table class="table table-bordered ">
         <thead>
             <tr>
                 <th scope="col">NO</th>
-                <th scope="col">NO UJI KENDARAAN</th>
                 <th scope="col">NO KENDARAAN</th>
-                <th scope="col">NAMA PEMILIK</th>
-                <th scope="col">JENIS KENDARAAN</th>
+                <th scope="col">NO UJI</th>
+                <th scope="col">NO RANGKA</th>
+                <th scope="col">NO MESIN</th>
+                <th scope="col">MEREK</th>
+                <th scope="col">TIPE</th>
+                <th scope="col">TAHUN</th>
+                <th scope="col">JENIS KEND</th>
                 <th scope="col">JBB</th>
-                <th scope="col">KENDARAAN</th>
+                <th scope="col">BAHAN BAKAR</th>
+                <th scope="col">NAMA</th>
+                <th scope="col">ALAMAT</th>
                 <th scope="col">JENIS PELAYANAN</th>
                 <th scope="col">HASIL UJI</th>
-                <th scope="col">PERUNTUKAN</th>
-                <th scope="col">KARTU</th>
-                <th scope="col">NO HP</th>
+                <th scope="col">STATUS KEND</th>
+                <th scope="col">NO KENDALI KARTU</th>
+                <th scope="col">KET</th>
             </tr>
         </thead>
         <tbody>
@@ -151,25 +141,30 @@
             @foreach ($kendaraan as $data) 
             <tr>
                 <th scope="row">{{ $i }}</th>
-                <td>{{ $data->nouji }}</td>
                 <td>{{ $data->noregistrasikendaraan }}</td>
-                <td>{{ $data->nama }}</td>
-                <td>{{ $data->klasifikasis }}</td>
+                <td>{{ $data->nouji }}</td>
+                <td>{{ $data->norangka }}</td>
+                <td>{{ $data->nomesin }}</td>
+                <td>{{ $data->merek }}</td>
+                <td>{{ $data->tipe }}</td>
+                <td>{{ $data->thpembuatan }}</td>
+                <td>{{ $data->subjenis }}</td>
                 <td>{{ $data->jbb }}</td>
-                <td>{{ $data->model }}</td>
-                <td>{{ $data->keterangan }}</td>
-                @if ($data->statuslulusuji == 1)
-                <td>LULUS</td>
-                @else
-                <td>TIDAK LULUS</td>
-                @endif
+                <td>{{ $data->bahanbakar }}</td>
+                <td>{{ $data->nama }}</td>
+                <td>{{ $data->alamat }}</td>
                 <td>{{ $data->peruntukan }}</td>
+                <td>{{ $data->keterangan }}</td>
                 @if (!empty($data->rfid_tid))
                 <td>BARU</td>
                 @else
                 <td>LAMA</td>
                 @endif
-                <td>{{ $data->notelp }}</td>
+                @if ($data->statuslulusuji == 1)
+                <td>LULUS</td>
+                @else
+                <td>TIDAK LULUS</td>
+                @endif
             </tr>
             @php $i++
             @endphp
@@ -184,7 +179,7 @@
         <h5 style="margin:1;padding:1">{{ $tglprint }}</h5>
     </div>
     
-    <table style="width: 100%">
+    {{-- <table style="width: 100%">
         <tr>
             <td style="width: 50%;vertical-align: top;">
                 <table class="table table-bordered ">
@@ -284,7 +279,7 @@
                 </table>
             </td>
         </tr>
-    </table>
+    </table> --}}
 </div>
 
 </body>
