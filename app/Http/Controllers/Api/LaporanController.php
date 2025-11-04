@@ -35,7 +35,7 @@ class LaporanController extends Controller
 
     public function printlaporanharian($tgl)
     {
-        $tglcetak = date('d-m-Y', strtotime($tgl));
+        $tglcetak = date('Y-m-d', strtotime($tgl));
         $tglcreate = date_create($tgl);
 
         $hari = $this->utils->hari(date_format($tglcreate, "D"));
