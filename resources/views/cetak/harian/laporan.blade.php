@@ -41,7 +41,7 @@
         }
 
         .content {
-            padding-top: 3.5cm;
+            padding-top: 0.5cm;
         }
         
         .line-wrapper {
