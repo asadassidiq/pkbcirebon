@@ -65,7 +65,6 @@ export const state = {
         namapemilikbaru: "",
         alamatpemilikbaru: "",
         warna: "",
-        tmk: "",
         idmerek:"",
         idtipe:"",
         idvarian:"",
@@ -190,7 +189,6 @@ export const state = {
         namapemilikbaru: "",
         alamatpemilikbaru: "",
         warna: "",
-        tmk: "",
         idmerek:"",
         idtipe:"",
         idvarian:"",
@@ -445,7 +443,6 @@ export const mutations = {
             tglsertifikatreg: payload.tglsertifikatreg,
             rancang : payload.rancang,
             warna: payload.warna,
-            tmk: payload.tmk,
             idmerek: payload.idmerek,
             idtipe: payload.idtipe,
             idvarian: payload.idvarian,
@@ -1295,7 +1292,6 @@ export const mutations = {
     CLEAR_FORM(state) {
         state.pendaftaran = {
             uuid:"",
-            noantrian:"",
             nouji:"",
             nama:"",
             alamat:"",
