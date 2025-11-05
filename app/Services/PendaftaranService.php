@@ -68,7 +68,7 @@ class PendaftaranService
 
     public function create($request)
     {
-        dd($request);
+        dd($request['pendaftaran']);
         $user = auth()->user();
         $statusPengujian = true;
         $statusDatakendaraan = false;
