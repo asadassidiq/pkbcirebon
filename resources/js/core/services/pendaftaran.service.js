@@ -81,8 +81,8 @@ export default {
     sendMU(id,nouji,search,keyword) {
         return ApiService.get(`/bluecore?p=insertexam&i=${id}&n=${nouji}&s=${search}&k=${keyword}`);
     },
-    postPendaftaran(pendaftaran,datalam) {
-        return ApiService.post("/pendaftaran", {pendaftaran, datalam});
+    postPendaftaran(pendaftaran,perubahans) {
+        return ApiService.post("/pendaftaran", {pendaftaran, perubahans});
     },
     postPendaftaran2(pendaftaran) {
         return ApiService.post("/pendaftaran2", pendaftaran);
