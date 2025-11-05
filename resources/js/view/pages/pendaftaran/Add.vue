@@ -1220,6 +1220,7 @@ export default {
       );
     },
     submit() {
+      console.log(this.cekPerubahanData());
       this.perubahans = this.cekPerubahanData();
       if (this.pendaftaran.kodepenerbitans_id == '11' || this.pendaftaran.kodepenerbitans_id == '12') {
         this.submitPendaftaran2().then(() => {
