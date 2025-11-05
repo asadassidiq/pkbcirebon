@@ -1491,9 +1491,27 @@ export default {
       const dataBaru = this.pendaftaran; // data setelah edit
       
       const perubahan = [];
+      const excludedKeys = [
+        'tglpendaftaran',
+        'kodepenerbitans_id',
+        'nosurat',
+        'nosuratdari',
+        'kepada',
+        'tglhbsuji',
+        'tglterakhiruji',
+        'ketujiterakhir',
+        'penguji',
+        'nrp',
+        'nokendaraanbaru',
+        'namapemilikbaru',
+        'alamatpemilikbaru',
+        'catatanrubahbentuk',
+        'uuid'
+      ];
 
       // Loop semua field di dataBaru
       for (const key in dataBaru) {
+        if (excludedKeys.includes(key)) continue
         if (dataBaru.hasOwnProperty(key)) {
           // ubah semua nilai ke string biar aman dari .trim error
           const lama = String(dataLama[key] ?? "").trim();
