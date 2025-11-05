@@ -68,6 +68,7 @@ class PendaftaranService
 
     public function create($request)
     {
+        dd($request);
         $user = auth()->user();
         $statusPengujian = true;
         $statusDatakendaraan = false;
@@ -183,14 +184,7 @@ class PendaftaranService
                         'posisi'                    => '5',
                         'identitaskendaraan_id'     => $dataIden['id'],
                     ]);
-                }  elseif ($request->kodepenerbitans_id == '5' || $request->kodepenerbitans_id == '6') {
-                    $request->merge([
-                        'foto'                      => null,
-                        'posisi'                    => '0',
-                        'approved'                  => '0',
-                        'identitaskendaraan_id'     => $dataIden['id'],
-                    ]);
-                }   elseif ($request->kodepenerbitans_id == '9' || $request->kodepenerbitans_id == '10') {
+                }  elseif ($request->kodepenerbitans_id == '9' || $request->kodepenerbitans_id == '10') {
                     $request->merge([
                         'foto'                      => null,
                         'posisi'                    => '0',

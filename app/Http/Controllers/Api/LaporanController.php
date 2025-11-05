@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use App\Models\Pendaftaran;
 use App\Models\Transaksi;
 use App\Models\Datakendaraan;
@@ -114,8 +115,6 @@ class LaporanController extends Controller
         // return view('cetak.laporanharian', ['kendaraan' => $kendaraan, 'tglprint' => $tglprint, 'umum' => $umum, 'tidakumum' => $tidakumum, 'lulus' => $lulus, 'tidaklulus' => $tidaklulus, 'model' => $totaljenis, 'jenispelayanan' => $pelayanan, 'pemakaianbuku' => $pemakaianbuku, 'barang' => $mBarang, 'ttd' => $ttd]);
         
         $path_logoKab = public_path() . '/img/kota.png';
-        
-        
         $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
         $data = [
             'kendaraan' => $kendaraan,
@@ -134,5 +133,357 @@ class LaporanController extends Controller
         $pdf->setPaper('A4', 'landscape');
         return $pdf->stream('Laporan Harian.pdf')->header('Content-Type','application/pdf');
     }
+
+    //BULANAN
+    public function printbulananpelayanan($tgl)
+    {
+        $tglcetak = date('Y-m-d', strtotime($tgl));
+        $tglprint = $this->utils->bulan($tglcetak);
+        $tglcreate = date_create($tgl);
+        $bulan = date_format($tglcreate, "m");
+        $tahun = date_format($tglcreate, "Y");
+        $tgl = Pendaftaran::select('tglpendaftaran')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->groupBy('tglpendaftaran')->get();
+        $data = array();
+        foreach ($tgl as $dt) {
+            $date = date_create($dt->tglpendaftaran);
+            $date = date_format($date, "d-m-Y");
+            $arr = array(
+                'tgl'  => $date,
+                'lulus' => Pendaftaran::leftJoin('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')->where('statuslulusuji', '1')->where('tglpendaftaran', $dt->tglpendaftaran)->count(),
+                'tidaklulus' => Pendaftaran::leftJoin('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('statuslulusuji', '0')->where('kodepenerbitans_id', '!=', '9')->where('kodepenerbitans_id', '!=', '10')->count(),
+                'numasuk' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id', '5')->count(),
+                'nukeluar' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id', '9')->count(),
+                'ujiulang' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id', '7')->count(),
+                'mutasikeluar' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id', '10')->count(),
+                'mutasimasuk' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id', '6')->count(),
+                'ujipertama' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id','1')->count(),
+                'ujiberkala' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id','2')->count(),
+                'rubahbentuk' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id','8')->count(),
+            );
+            array_push($data, $arr);
+        };
+
+        $path_logoKab = public_path() . '/img/kota.png';
+        $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
+        $ttd = Ttd::leftjoin('users', 'users.uuid', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
+        $data = [
+            'kendaraan' => $data,
+            'tglprint' => $tglprint,
+            'ttd'     => $ttd,
+            'logokab'  => $logokab,
+        ];
+        $pdf = PDF::loadView('cetak.bulanan.pelayanan', $data);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream('Laporan Bulanan Pelayanan.pdf')->header('Content-Type','application/pdf');
+    }
+
+    public function printbulanankartu($tgl)
+    {
+        $tglcetak = date('Y-m-d', strtotime($tgl));
+        $tglprint = $this->utils->bulan($tglcetak);
+        $tglcreate = date_create($tgl);
+        $bulan = date_format($tglcreate, "m");
+        $tahun = date_format($tglcreate, "Y");
+        $tgl = Pendaftaran::select('tglpendaftaran')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->groupBy('tglpendaftaran')->get();
+        $data = Pendaftaran::select('tglpendaftaran','keterangan','identitaskendaraans.nouji','identitaskendaraans.noregistrasikendaraan','datapengujian.tgluji','datapengujian.masaberlakuuji','nokendalikartu','datapengujian.perso')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->leftJoin('kodepenerbitans', 'kodepenerbitans.id', '=', 'pendaftarans.kodepenerbitans_id')->leftJoin('datapengujian','datapengujian.idx','pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->orderBy('pendaftarans.noantrian', 'ASC')->get();
+
+        $path_logoKab = public_path() . '/img/kota.png';
+        $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
+        $ttd = Ttd::leftjoin('users', 'users.uuid', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
+        $data = [
+            'kendaraan' => $data,
+            'tglprint' => $tglprint,
+            'ttd'     => $ttd,
+            'logokab'  => $logokab,
+        ];
+        $pdf = PDF::loadView('cetak.bulanan.kartu', $data);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream('Laporan Bulanan Kartu.pdf')->header('Content-Type','application/pdf');
+    }
+
+    public function printbulananjeniskendaraan($tgl)
+    {
+        $tglcetak = date('Y-m-d', strtotime($tgl));
+        $tglprint = $this->utils->bulan($tglcetak);
+        $tglcreate = date_create($tgl);
+        $bulan = date_format($tglcreate, "m");
+        $tahun = date_format($tglcreate, "Y");
+        $tgl = Pendaftaran::select('tglpendaftaran')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->groupBy('tglpendaftaran')->get();
+        $data = array();
+        foreach ($tgl as $dt) {
+            $date = date_create($dt->tglpendaftaran);
+            $date = date_format($date, "d-m-Y");
+            $kwbusblm = TamanKendaraan::where('tanggal', '<', $dt->tglpendaftaran)->orderBy('tanggal','DESC')->first();
+            $kwbu = TamanKendaraan::where('tanggal', $dt->tglpendaftaran)->first();
+            if($kwbu){
+                $kwbu = $kwbu->total;
+            }else{
+                $kwbu = '';
+            }
+            if($kwbusblm){
+                $kwbusblm = $kwbusblm->total;
+            }else{
+                $kwbusblm = '';
+            }
+            $arr = array(
+                'tgl'  => $date,
+                'kwbusblm' => $kwbusblm,
+                'kwbu' => $kwbu,
+                'mobil1' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL PENUMPANG SEDAN')->count(),
+                'mobil2' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL PENUMPANG BUKAN SEDAN')->count(),
+                'mobil3' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL BUS KECIL')->count(),
+                'mobil4' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL BUS SEDANG')->count(),
+                'mobil5' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL BUS BESAR')->count(),
+                'mobil6' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL BUS MAXI')->count(),
+                'mobil7' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL BUS GANDENG')->count(),
+                'mobil8' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL BUS TEMPEL')->count(),
+                'mobil9' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL BUS TINGKAT')->count(),
+                'mobil10' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'PICK UP')->count(),
+                'mobil11' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'DOUBLE CABIN')->count(),
+                'mobil12' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'LIGHT TRUCK')->count(),
+                'mobil13' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'DUMP TRUCK')->count(),
+                'mobil14' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'LOST BAK')->count(),
+                'mobil15' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'CAR CARRIER')->count(),
+                'mobil16' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'PICK UP BOX')->count(),
+                'mobil17' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'PICK UP RANGKA')->count(),
+                'mobil18' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'LIGHT TRUCK BOX')->count(),
+                'mobil19' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'BLIND VAN')->count(),
+                'mobil20' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'DELIVERY VAN')->count(),
+                'mobil21' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL TANGKI')->count(),
+                'mobil22' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MOBIL PENARIK')->count(),
+                'mobil23' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'KERETA GANDENG BAK TERBUKA')->count(),
+                'mobil24' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'KERETA GANDENG BAK TERTUTUP')->count(),
+                'mobil25' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'KERETA GANDENG TANGKI')->count(),
+                'mobil26' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'KERETA TEMPELAN BAK TERBUKA')->count(),
+                'mobil27' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'KERETA TEMPELAN BAK TERTUTUP')->count(),
+                'mobil28' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'KERETA TEMPELAN TANGKI')->count(),
+                'mobil29' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'KENDARAAN BERMOTOR RODA TIGA ANGKUTAN BARANG BAK MUATAN TERBUKA')->count(),
+                'mobil30' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'KENDARAAN BERMOTOR RODA TIGA ANGKUTAN BARANG BAK MUATAN TERTUTUP')->count(),
+                'mobil31' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'KENDARAAN BERMOTOR RODA TIGA ANGKUTAN PENUMPANG')->count(),
+                'mobil32' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'KENDARAAN BERMOTOR RODA TIGA ANGKUTAN BARANG TANGKI')->count(),
+                'mobil33' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'AMBULANCE')->count(),
+                'mobil34' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'DAMKAR')->count(),
+                'mobil35' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'ARM ROLL')->count(),
+                'mobil36' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'DEREK')->count(),
+                'mobil37' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'FLAT DECK')->count(),
+                'mobil38' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'MIXER')->count(),
+                'mobil39' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('tglpendaftaran', $dt->tglpendaftaran)->where('model', 'CONCRETEPUMP')->count(),
+            );
+            array_push($data, $arr);
+        };
+
+        $path_logoKab = public_path() . '/img/kota.png';
+        $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
+        $ttd = Ttd::leftjoin('users', 'users.uuid', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
+        $data = [
+            'kendaraan' => $data,
+            'tglprint' => $tglprint,
+            'ttd'     => $ttd,
+            'logokab'  => $logokab,
+        ];
+        $pdf = PDF::loadView('cetak.bulanan.jeniskendaraan', $data);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream('Laporan Bulanan Jenis Kendaraan.pdf')->header('Content-Type','application/pdf');
+    }
+
+    //TRIWULAN
+    public function printtriwulanpelayanan($tahun)
+    {
+        $triwulan = str_replace("/", "", request()->t);
+        switch ($triwulan) {
+            case 1:
+                $range = array('1', '2', '3');
+                break;
+            case 2:
+                $range = array('4', '5', '6');
+                break;
+            case 3:
+                $range = array('7', '8', '9');
+                break;
+            case 4:
+                $range = array('10', '11', '12');
+                break;
+        }
+        $tglprint = $triwulan . ' ' . $tahun;
+        $data = array();
+        foreach ($range as $bulan) {
+            $date = date_create($bulan);
+            $date = $this->utils->bulan(date_format($date, "m"));
+            $arr = array(
+                'bulan'  => $date,
+                'lulus' => Pendaftaran::leftJoin('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')->where('statuslulusuji', '1')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->count(),
+                'tidaklulus' => Pendaftaran::leftJoin('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('statuslulusuji', '0')->where('kodepenerbitans_id', '!=', '9')->where('kodepenerbitans_id', '!=', '10')->count(),
+                'numasuk' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id', '5')->count(),
+                'nukeluar' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id', '9')->count(),
+                'ujiulang' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id', '7')->count(),
+                'mutasikeluar' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id', '10')->count(),
+                'mutasimasuk' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id', '6')->count(),
+                'ujipertama' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id','1')->count(),
+                'ujiberkala' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id','2')->count(),
+                'rubahbentuk' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id','8')->count(),
+            );
+            array_push($data, $arr);
+        };
+
+        $path_logoKab = public_path() . '/img/kota.png';
+        $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
+        $ttd = Ttd::leftjoin('users', 'users.uuid', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
+        $data = [
+            'kendaraan' => $data,
+            'tglprint' => $tglprint,
+            'ttd'     => $ttd,
+            'logokab'  => $logokab,
+        ];
+        $pdf = PDF::loadView('cetak.triwulan.pelayanan', $data);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream('Laporan Triwulan Pelayanan.pdf')->header('Content-Type','application/pdf');
+    }
+
+    public function printtriwulankartu($tahun)
+    {
+        $triwulan = str_replace("/", "", request()->t);
+        switch ($triwulan) {
+            case 1:
+                $range = array('1', '2', '3');
+                break;
+            case 2:
+                $range = array('4', '5', '6');
+                break;
+            case 3:
+                $range = array('7', '8', '9');
+                break;
+            case 4:
+                $range = array('10', '11', '12');
+                break;
+        }
+        $tglprint = $triwulan . ' ' . $tahun;
+        $data = array();
+        foreach ($range as $bulan) {
+            $date = date_create($bulan);
+            $date = $this->utils->bulan(date_format($date, "m"));
+            $arr = array(
+                'bulan'  => $date,
+                'baru'   => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->whereIn('kodepenerbitans_id', ['1', '2', '5', '6'])->where('rfid_tid', '!=','')->count(),
+                'perpanjangan'   => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id', '2')->where('rfid_tid','')->count(),
+                'rusak'  => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id', '3')->where('rfid_tid', '!=','')->count(),
+                'hilang' => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id', '4')->where('rfid_tid', '!=','')->count(),
+            );
+            array_push($data, $arr);
+        }
+
+        $path_logoKab = public_path() . '/img/kota.png';
+        $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
+        $ttd = Ttd::leftjoin('users', 'users.uuid', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
+        $data = [
+            'kendaraan' => $data,
+            'tglprint' => $tglprint,
+            'ttd'     => $ttd,
+            'logokab'  => $logokab,
+        ];
+        $pdf = PDF::loadView('cetak.triwulan.kartu', $data);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream('Laporan Triwulan Kartu.pdf')->header('Content-Type','application/pdf');
+    }
+
+    public function printtriwulanjeniskendaraan($tahun)
+    {
+        $triwulan = str_replace("/", "", request()->t);
+        switch ($triwulan) {
+            case 1:
+                $range = array('1', '2', '3');
+                break;
+            case 2:
+                $range = array('4', '5', '6');
+                break;
+            case 3:
+                $range = array('7', '8', '9');
+                break;
+            case 4:
+                $range = array('10', '11', '12');
+                break;
+        }
+        $tglprint = $triwulan . ' ' . $tahun;
+        $data = array();
+        foreach ($range as $bulan) {
+            if($bulan == 1){
+                $kwbusblm = TamanKendaraan::whereMonth('tanggal', '12')->whereYear('tanggal', (int)$tahun-1)->orderBy('tanggal','DESC')->first();
+            }else{
+                $kwbusblm = TamanKendaraan::whereMonth('tanggal', $bulan)->whereYear('tanggal', $tahun)->orderBy('tanggal','DESC')->first();
+            }
+            $kwbu = TamanKendaraan::whereMonth('tanggal', $bulan)->whereYear('tanggal', $tahun)->first();
+            if($kwbu){
+                $kwbu = $kwbu->total;
+            }else{
+                $kwbu = '';
+            }
+            if($kwbusblm){
+                $kwbusblm = $kwbusblm->total;
+            }else{
+                $kwbusblm = '';
+            }
+
+            $date = date_create($bulan);
+            $date = $this->utils->bulan(date_format($date, "m"));
+            $arr = array(
+                'bulan'  => $date,
+                'kwbusblm' => $kwbusblm,
+                'kwbu' => $kwbu,
+                'mobil1' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL PENUMPANG SEDAN')->count(),
+                'mobil2' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL PENUMPANG BUKAN SEDAN')->count(),
+                'mobil3' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL BUS KECIL')->count(),
+                'mobil4' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL BUS SEDANG')->count(),
+                'mobil5' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL BUS BESAR')->count(),
+                'mobil6' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL BUS MAXI')->count(),
+                'mobil7' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL BUS GANDENG')->count(),
+                'mobil8' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL BUS TEMPEL')->count(),
+                'mobil9' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL BUS TINGKAT')->count(),
+                'mobil10' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'PICK UP')->count(),
+                'mobil11' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'DOUBLE CABIN')->count(),
+                'mobil12' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'LIGHT TRUCK')->count(),
+                'mobil13' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'DUMP TRUCK')->count(),
+                'mobil14' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'LOST BAK')->count(),
+                'mobil15' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'CAR CARRIER')->count(),
+                'mobil16' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'PICK UP BOX')->count(),
+                'mobil17' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'PICK UP RANGKA')->count(),
+                'mobil18' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'LIGHT TRUCK BOX')->count(),
+                'mobil19' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'BLIND VAN')->count(),
+                'mobil20' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'DELIVERY VAN')->count(),
+                'mobil21' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL TANGKI')->count(),
+                'mobil22' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MOBIL PENARIK')->count(),
+                'mobil23' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'KERETA GANDENG BAK TERBUKA')->count(),
+                'mobil24' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'KERETA GANDENG BAK TERTUTUP')->count(),
+                'mobil25' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'KERETA GANDENG TANGKI')->count(),
+                'mobil26' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'KERETA TEMPELAN BAK TERBUKA')->count(),
+                'mobil27' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'KERETA TEMPELAN BAK TERTUTUP')->count(),
+                'mobil28' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'KERETA TEMPELAN TANGKI')->count(),
+                'mobil29' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'KENDARAAN BERMOTOR RODA TIGA ANGKUTAN BARANG BAK MUATAN TERBUKA')->count(),
+                'mobil30' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'KENDARAAN BERMOTOR RODA TIGA ANGKUTAN BARANG BAK MUATAN TERTUTUP')->count(),
+                'mobil31' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'KENDARAAN BERMOTOR RODA TIGA ANGKUTAN PENUMPANG')->count(),
+                'mobil32' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'KENDARAAN BERMOTOR RODA TIGA ANGKUTAN BARANG TANGKI')->count(),
+                'mobil33' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'AMBULANCE')->count(),
+                'mobil34' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'DAMKAR')->count(),
+                'mobil35' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'ARM ROLL')->count(),
+                'mobil36' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'DEREK')->count(),
+                'mobil37' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'FLAT DECK')->count(),
+                'mobil38' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'MIXER')->count(),
+                'mobil39' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('model', 'CONCRETEPUMP')->count(),
+            );
+            array_push($data, $arr);
+        };
+
+        $path_logoKab = public_path() . '/img/kota.png';
+        $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
+        $ttd = Ttd::leftjoin('users', 'users.uuid', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
+        $data = [
+            'kendaraan' => $data,
+            'tglprint' => $tglprint,
+            'ttd'     => $ttd,
+            'logokab'  => $logokab,
+        ];
+        $pdf = PDF::loadView('cetak.bulanan.jeniskendaraan', $data);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream('Laporan Bulanan Jenis Kendaraan.pdf')->header('Content-Type','application/pdf');
+    }
+
 
 }

@@ -1338,6 +1338,7 @@ export default {
       );
     },
     submit() {
+      this.perubahans = this.cekPerubahanData();
       if (this.pendaftaran.kodepenerbitans_id == '11' || this.pendaftaran.kodepenerbitans_id == '12') {
         this.submitPendaftaran2().then(() => {
           Swal.fire({
@@ -1601,6 +1602,31 @@ export default {
 
       }
     },
+    cekPerubahanData() {
+      const dataLama = this.datalama; // data lama sebelum edit
+      const dataBaru = this.pendaftaran; // data setelah edit
+      
+      const perubahan = [];
+
+      // Loop semua field di dataBaru
+      for (const key in dataBaru) {
+        if (dataBaru.hasOwnProperty(key)) {
+          const lama = (dataLama[key] || "").trim();
+          const baru = (dataBaru[key] || "").trim();
+
+          // Jika nilainya berbeda dan data baru tidak kosong
+          if (lama !== baru && baru !== "") {
+            perubahan.push({
+              field: key,
+              lama: lama,
+              baru: baru
+            });
+          }
+        }
+      }
+
+      return perubahan;
+    }
   },
   destroyed() {
     this.CLEAR_FORM();
@@ -1609,6 +1635,8 @@ export default {
     ...mapState(["errors"]),
     ...mapState("pendaftaran", {
       pendaftaran: state => state.pendaftaran,
+      datalama: state => state.datalama,
+      perubahans: state => state.perubahans,
       carinouji: state => state.carinouji,
       carinokendaraan: state => state.carinokendaraan,
       carinorangka: state => state.carinorangka,
