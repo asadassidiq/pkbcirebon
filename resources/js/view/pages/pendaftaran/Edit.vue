@@ -734,10 +734,7 @@
                               <label>Panjang Kendaraan (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="panjangkendaraan" min="0"
                                 placeholder="Panjang Kendaraan" v-model="pendaftaran.panjangkendaraan"
-                                @focus="('panjangkendaraan')" :readonly="isLocked('panjangkendaraan')" />
-                              <p class="text-danger" v-if="errors.panjangkendaraan">
-                                {{ errors.panjangkendaraan[0] }}
-                              </p>
+                                @focus="handleFocus('panjangkendaraan')"/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -745,10 +742,7 @@
                               <label>Lebar Kendaraan (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="lebarkendaraan" min="0"
                                 placeholder="Lebar Kendaraan" v-model="pendaftaran.lebarkendaraan"
-                                @focus="handleFocus('lebarkendaraan')" :readonly="isLocked('lebarkendaraan')" />
-                              <p class="text-danger" v-if="errors.lebarkendaraan">
-                                {{ errors.lebarkendaraan[0] }}
-                              </p>
+                                @focus="handleFocus('lebarkendaraan')" />
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -756,42 +750,28 @@
                               <label>Tinggi Kendaraan (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="tinggikendaraan" min="0"
                                 placeholder="Tinggi Kendaraan" v-model="pendaftaran.tinggikendaraan"
-                                @focus="handleFocus('tinggikendaraan')" :readonly="isLocked('tinggikendaraan')" />
-                              <p class="text-danger" v-if="errors.tinggikendaraan">
-                                {{ errors.tinggikendaraan[0] }}
-                              </p>
+                                @focus="handleFocus('tinggikendaraan')" />
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>Julur Belakang(mm)</label>
                               <input type="number" class="form-control form-control-lg" name="julurbelakang" min="0"
-                                v-model="pendaftaran.julurbelakang" @focus="handleFocus('julurbelakang')"
-                                :readonly="isLocked('julurbelakang')" />
-                              <p class="text-danger" v-if="errors.julurbelakang">
-                                {{ errors.julurbelakang[0] }}
-                              </p>
+                                v-model="pendaftaran.julurbelakang" @focus="handleFocus('julurbelakang')"/>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>Julur Depan(mm)</label>
                               <input type="number" class="form-control form-control-lg" name="julurdepan" min="0"
-                                v-model="pendaftaran.julurdepan" @focus="handleFocus('julurdepan')"
-                                :readonly="isLocked('julurdepan')" />
-                              <p class="text-danger" v-if="errors.julurdepan">
-                                {{ errors.julurdepan[0] }}
-                              </p>
+                                v-model="pendaftaran.julurdepan" @focus="handleFocus('julurdepan')"/>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>Jenis Rumah-rumah</label>
                               <input type="text" class="form-control form-control-lg" name="bahan"
-                                v-model="pendaftaran.bahan" :readonly="isLocked('bahan')" />
-                              <p class="text-danger" v-if="errors.bahan">
-                                {{ errors.bahan[0] }}
-                              </p>
+                                v-model="pendaftaran.bahan"/>
                             </div>
                           </div>
                         </div>
@@ -807,11 +787,7 @@
                               <label>Panjang Bak atau Tangki Muatan (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="panjangbakatautangki"
                                 min="0" placeholder="Panjang Bak atau Tangki Muatan"
-                                v-model="pendaftaran.panjangbakatautangki" @focus="handleFocus('panjangbakatautangki')"
-                                :readonly="isLocked('panjangbakatautangki')" />
-                              <p class="text-danger" v-if="errors.panjangbakatautangki">
-                                {{ errors.panjangbakatautangki[0] }}
-                              </p>
+                                v-model="pendaftaran.panjangbakatautangki" @focus="handleFocus('panjangbakatautangki')"/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -819,11 +795,7 @@
                               <label>Lebar Bak atau Tangki Muatan (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="lebarbakatautangki"
                                 min="0" placeholder="Lebar Bak atau Tangki Muatan"
-                                v-model="pendaftaran.lebarbakatautangki" @focus="handleFocus('lebarbakatautangki')"
-                                :readonly="isLocked('lebarbakatautangki')" />
-                              <p class="text-danger" v-if="errors.lebarbakatautangki">
-                                {{ errors.lebarbakatautangki[0] }}
-                              </p>
+                                v-model="pendaftaran.lebarbakatautangki" @focus="handleFocus('lebarbakatautangki')"/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -831,11 +803,7 @@
                               <label>Tinggi Bak atau Tangki Muatan (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="tinggibakatautangki"
                                 min="0" placeholder="Tinggi Bak atau Tangki Muatan"
-                                v-model="pendaftaran.tinggibakatautangki" @focus="handleFocus('tinggibakatautangki')"
-                                :readonly="isLocked('tinggibakatautangki')" />
-                              <p class="text-danger" v-if="errors.tinggibakatautangki">
-                                {{ errors.tinggibakatautangki[0] }}
-                              </p>
+                                v-model="pendaftaran.tinggibakatautangki" @focus="handleFocus('tinggibakatautangki')" />
                             </div>
                           </div>
                         </div>
@@ -851,10 +819,7 @@
                               <label class="text-danger">Jumlah Sumbu</label>
                               <input type="number" class="form-control form-control-lg" name="jumlah_sumbu" min="2"
                                 placeholder="Jumlah Sumbu" v-model="pendaftaran.jumlah_sumbu"
-                                @focus="handleFocus('jumlah_sumbu')" :readonly="isLocked('jumlah_sumbu')" />
-                              <p class="text-danger" v-if="errors.jumlah_sumbu">
-                                {{ errors.jumlah_sumbu[0] }}
-                              </p>
+                                @focus="handleFocus('jumlah_sumbu')"/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -862,10 +827,7 @@
                               <label>Jarak Sumbu I-II (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu1_2" min="0"
                                 placeholder="Jarak Sumbu I-II (mm)" v-model="pendaftaran.jaraksumbu1_2"
-                                @focus="handleFocus('jaraksumbu1_2')" :readonly="isLocked('jaraksumbu1_2')" />
-                              <p class="text-danger" v-if="errors.jaraksumbu1_2">
-                                {{ errors.jaraksumbu1_2[0] }}
-                              </p>
+                                @focus="handleFocus('jaraksumbu1_2')" />
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="pendaftaran.jumlah_sumbu > 2">
@@ -873,10 +835,7 @@
                               <label>Jarak Sumbu II-III (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="height"
                                 placeholder="Jarak Sumbu II-III (mm)" min="0" v-model="pendaftaran.jaraksumbu2_3"
-                                @focus="handleFocus('jaraksumbu2_3')" :readonly="isLocked('jaraksumbu2_3')" />
-                              <p class="text-danger" v-if="errors.jaraksumbu2_3">
-                                {{ errors.jaraksumbu2_3[0] }}
-                              </p>
+                                @focus="handleFocus('jaraksumbu2_3')"/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="pendaftaran.jumlah_sumbu > 3">
@@ -884,10 +843,7 @@
                               <label>Jarak Sumbu III-IV (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="length"
                                 placeholder="Jarak Sumbu III-IV (mm)" min="0" v-model="pendaftaran.jaraksumbu3_4"
-                                @focus="handleFocus('jaraksumbu3_4')" :readonly="isLocked('jaraksumbu3_4')" />
-                              <p class="text-danger" v-if="errors.jaraksumbu3_4">
-                                {{ errors.jaraksumbu3_4[0] }}
-                              </p>
+                                @focus="handleFocus('jaraksumbu3_4')"/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="pendaftaran.jumlah_sumbu > 4">
@@ -895,7 +851,7 @@
                               <label>Jarak Sumbu IV-V (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu4_5"
                                 placeholder="Jarak Sumbu IV-V (mm)" min="0" v-model="pendaftaran.jaraksumbu4_5"
-                                @focus="handleFocus('jaraksumbu4_5')" :readonly="isLocked('jaraksumbu4_5')" />
+                                @focus="handleFocus('jaraksumbu4_5')"/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="pendaftaran.jumlah_sumbu > 5">
@@ -903,7 +859,7 @@
                               <label>Jarak Sumbu V-VI (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu5_6"
                                 placeholder="Jarak Sumbu V-VI (mm)" min="0" v-model="pendaftaran.jaraksumbu5_6"
-                                @focus="handleFocus('jaraksumbu5_6')" :readonly="isLocked('jaraksumbu5_6')" />
+                                @focus="handleFocus('jaraksumbu5_6')"/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="pendaftaran.jumlah_sumbu > 6">
@@ -911,7 +867,7 @@
                               <label>Jarak Sumbu VI-VII (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu6_7"
                                 placeholder="Jarak Sumbu VI-VII (mm)" min="0" v-model="pendaftaran.jaraksumbu6_7"
-                                @focus="handleFocus('jaraksumbu6_7')" :readonly="isLocked('jaraksumbu6_7')" />
+                                @focus="handleFocus('jaraksumbu6_7')" />
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="pendaftaran.jumlah_sumbu > 7">
@@ -919,7 +875,7 @@
                               <label>Jarak Sumbu VII-VIII (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu7_8"
                                 placeholder="Jarak Sumbu VII-VIII (mm)" min="0" v-model="pendaftaran.jaraksumbu7_8"
-                                @focus="handleFocus('jaraksumbu7_8')" :readonly="isLocked('jaraksumbu7_8')" />
+                                @focus="handleFocus('jaraksumbu7_8')" />
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="pendaftaran.jumlah_sumbu > 8">
@@ -927,7 +883,7 @@
                               <label>Jarak Sumbu VIII-IX (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu8_9"
                                 placeholder="Jarak Sumbu VIII-IX (mm)" min="0" v-model="pendaftaran.jaraksumbu8_9"
-                                @focus="handleFocus('jaraksumbu8_9')" :readonly="isLocked('jaraksumbu8_9')" />
+                                @focus="handleFocus('jaraksumbu8_9')" />
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="pendaftaran.jumlah_sumbu > 9">
@@ -935,7 +891,7 @@
                               <label>Jarak Sumbu IX-X (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu9_10"
                                 placeholder="Jarak Sumbu IX-X (mm)" min="0" v-model="pendaftaran.jaraksumbu9_10"
-                                @focus="handleFocus('jaraksumbu9_10')" :readonly="isLocked('jaraksumbu9_10')" />
+                                @focus="handleFocus('jaraksumbu9_10')" />
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="pendaftaran.jumlah_sumbu > 10">
@@ -943,7 +899,7 @@
                               <label>Jarak Sumbu X-XI (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu10_11" min="0"
                                 placeholder="Jarak Sumbu X-XI (mm)" v-model="pendaftaran.jaraksumbu10_11"
-                                @focus="handleFocus('jaraksumbu10_11')" :readonly="isLocked('jaraksumbu10_11')" />
+                                @focus="handleFocus('jaraksumbu10_11')" />
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="pendaftaran.jumlah_sumbu > 11">
@@ -951,48 +907,35 @@
                               <label>Jarak Sumbu XI-XII (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu11_12" min="0"
                                 placeholder="Jarak Sumbu XI-XII (mm)" v-model="pendaftaran.jaraksumbu11_12"
-                                @focus="handleFocus('jaraksumbu11_12')" :readonly="isLocked('jaraksumbu11_12')" />
+                                @focus="handleFocus('jaraksumbu11_12')" />
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>Wheelbase (mm)</label>
                               <input type="number" name="a" class="form-control form-control-lg"
-                                placeholder="Wheelbase (mm)" v-model="pendaftaran.a" @focus="handleFocus('a')"
-                                :readonly="isLocked('a')" />
-                              <p class="text-danger" v-if="errors.a">
-                                {{ errors.a[0] }}
-                              </p>
+                                placeholder="Wheelbase (mm)" v-model="pendaftaran.a" @focus="handleFocus('a')" />
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>P (mm)</label>
                               <input type="number" class="form-control form-control-lg" placeholder="P (mm)" name="p"
-                                min="0" v-model="pendaftaran.p" @focus="handleFocus('p')" :readonly="isLocked('p')" />
-                              <p class="text-danger" v-if="errors.p">
-                                {{ errors.p[0] }}
-                              </p>
+                                min="0" v-model="pendaftaran.p" @focus="handleFocus('p')"/>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>Q(mm)</label>
                               <input type="number" class="form-control form-control-lg" placeholder="Q (mm)" name="q"
-                                min="0" v-model="pendaftaran.q" @focus="handleFocus('q')" :readonly="isLocked('q')" />
-                              <p class="text-danger" v-if="errors.q">
-                                {{ errors.q[0] }}
-                              </p>
+                                min="0" v-model="pendaftaran.q" @focus="handleFocus('q')"/>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>R(mm)</label>
                               <input type="number" class="form-control form-control-lg" placeholder="R (mm)" name="r"
-                                min="0" v-model="pendaftaran.r" @focus="handleFocus('r')" :readonly="isLocked('r')" />
-                              <p class="text-danger" v-if="errors.r">
-                                {{ errors.r[0] }}
-                              </p>
+                                min="0" v-model="pendaftaran.r" @focus="handleFocus('r')"/>
                             </div>
                           </div>
                         </div>
@@ -1008,12 +951,9 @@
                               <label>Berat Sumbu 1(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu1" min="0"
                                 v-model="pendaftaran.beratsumbu1" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu1')" :readonly="isLocked('beratsumbu1')" />
-                              <p class="text-danger" v-if="errors.beratsumbu1">
-                                {{ errors.beratsumbu1[0] }}
-                              </p>
+                                " @focus="handleFocus('beratsumbu1')"/>
                             </div>
                           </div>
                           <div class="col-sm-2">
@@ -1021,12 +961,9 @@
                               <label>Berat Sumbu 2(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu2" min="0"
                                 v-model="pendaftaran.beratsumbu2" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu2')" :readonly="isLocked('beratsumbu2')" />
-                              <p class="text-danger" v-if="errors.beratsumbu2">
-                                {{ errors.beratsumbu2[0] }}
-                              </p>
+                                " @focus="handleFocus('beratsumbu2')"/>
                             </div>
                           </div>
                           <div class="col-sm-2">
@@ -1034,12 +971,9 @@
                               <label>Berat Sumbu 3(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu3" min="0"
                                 v-model="pendaftaran.beratsumbu3" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu3')" :readonly="isLocked('beratsumbu3')" />
-                              <p class="text-danger" v-if="errors.beratsumbu3">
-                                {{ errors.beratsumbu3[0] }}
-                              </p>
+                                " @focus="handleFocus('beratsumbu3')"/>
                             </div>
                           </div>
                           <div class="col-sm-2">
@@ -1047,12 +981,9 @@
                               <label>Berat Sumbu 4(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu4" min="0"
                                 v-model="pendaftaran.beratsumbu4" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu4')" :readonly="isLocked('beratsumbu4')" />
-                              <p class="text-danger" v-if="errors.beratsumbu4">
-                                {{ errors.beratsumbu4[0] }}
-                              </p>
+                                " @focus="handleFocus('beratsumbu4')"/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="pendaftaran.jumlah_sumbu > 4">
@@ -1060,9 +991,9 @@
                               <label>Berat Sumbu 5(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu5" min="0"
                                 v-model="pendaftaran.beratsumbu5" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu5')" :readonly="isLocked('beratsumbu5')" />
+                                " @focus="handleFocus('beratsumbu5')"/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="pendaftaran.jumlah_sumbu > 5">
@@ -1070,9 +1001,9 @@
                               <label>Berat Sumbu 6(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu6" min="0"
                                 v-model="pendaftaran.beratsumbu6" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu6')" :readonly="isLocked('beratsumbu6')" />
+                                " @focus="handleFocus('beratsumbu6')"/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="pendaftaran.jumlah_sumbu > 6">
@@ -1080,9 +1011,9 @@
                               <label>Berat Sumbu 7(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu7" min="0"
                                 v-model="pendaftaran.beratsumbu7" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu7')" :readonly="isLocked('beratsumbu7')" />
+                                " @focus="handleFocus('beratsumbu7')"/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="pendaftaran.jumlah_sumbu > 7">
@@ -1090,9 +1021,9 @@
                               <label>Berat Sumbu 8(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu8" min="0"
                                 v-model="pendaftaran.beratsumbu8" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu8')" :readonly="isLocked('beratsumbu8')" />
+                                " @focus="handleFocus('beratsumbu8')"/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="pendaftaran.jumlah_sumbu > 8">
@@ -1100,9 +1031,9 @@
                               <label>Berat Sumbu 9(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu9" min="0"
                                 v-model="pendaftaran.beratsumbu9" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu9')" :readonly="isLocked('beratsumbu9')" />
+                                " @focus="handleFocus('beratsumbu9')"/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="pendaftaran.jumlah_sumbu > 9">
@@ -1110,9 +1041,9 @@
                               <label>Berat Sumbu 10(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu10" min="0"
                                 v-model="pendaftaran.beratsumbu10" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu10')" :readonly="isLocked('beratsumbu10')" />
+                                " @focus="handleFocus('beratsumbu10')">
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="pendaftaran.jumlah_sumbu > 10">
@@ -1120,9 +1051,9 @@
                               <label>Berat Sumbu 11(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu11" min="0"
                                 v-model="pendaftaran.beratsumbu11" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu11')" :readonly="isLocked('beratsumbu11')" />
+                                " @focus="handleFocus('beratsumbu11')"/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="pendaftaran.jumlah_sumbu > 11">
@@ -1130,20 +1061,16 @@
                               <label>Berat Sumbu 12(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu12" min="0"
                                 v-model="pendaftaran.beratsumbu12" @change="
-                                  totalBeratSumbu();
+                                totalBeratSumbu();
                                 setJBI();
-                                " @focus="handleFocus('beratsumbu12')" :readonly="isLocked('beratsumbu12')" />
+                                " @focus="handleFocus('beratsumbu12')"/>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>Total Berat Sumbu(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratkosong"
-                                v-model="pendaftaran.beratkosong" @change="setJBI()" @focus="handleFocus('beratkosong')"
-                                :readonly="isLocked('beratkosong')" />
-                              <p class="text-danger" v-if="errors.beratsumbu4">
-                                {{ errors.beratsumbu4[0] }}
-                              </p>
+                                v-model="pendaftaran.beratkosong" @change="setJBI()" @focus="handleFocus('beratkosong')"/>
                             </div>
                           </div>
                         </div>
@@ -1159,11 +1086,7 @@
                               <label>Daya Angkut Orang (orang)</label>
                               <input type="number" class="form-control form-control-lg" name="dayaangkutorang" min="0"
                                 placeholder="Daya Angkut Orang (mm)" v-model="pendaftaran.dayaangkutorang"
-                                @change="setJBI()" @focus="handleFocus('dayaangkutorang')"
-                                :readonly="isLocked('dayaangkutorang')" />
-                              <p class="text-danger" v-if="errors.dayaangkutorang">
-                                {{ errors.dayaangkutorang[0] }}
-                              </p>
+                                @change="setJBI()" @focus="handleFocus('dayaangkutorang')"/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -1171,78 +1094,50 @@
                               <label>Daya Angkut Barang (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="dayaangkutbarang" min="0"
                                 placeholder="Daya Angkut Barang" v-model="pendaftaran.dayaangkutbarang"
-                                @change="setJBI()" @focus="handleFocus('dayaangkutbarang')"
-                                :readonly="isLocked('dayaangkutbarang')" />
-                              <p class="text-danger" v-if="errors.dayaangkutbarang">
-                                {{ errors.dayaangkutbarang[0] }}
-                              </p>
+                                @change="setJBI()" @focus="handleFocus('dayaangkutbarang')"/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>JBB (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="jbb" min="0"
-                                placeholder="JBB" v-model="pendaftaran.jbb" @focus="handleFocus('jbb')"
-                                :readonly="isLocked('jbb')" />
-                              <p class="text-danger" v-if="errors.jbb">
-                                {{ errors.jbb[0] }}
-                              </p>
+                                placeholder="JBB" v-model="pendaftaran.jbb" @focus="handleFocus('jbb')"/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>JBKB (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="jbkb" min="0"
-                                placeholder="JBKB (Kg)" v-model="pendaftaran.jbkb" @focus="handleFocus('jbkb')"
-                                :readonly="isLocked('jbkb')" />
-                              <p class="text-danger" v-if="errors.jbkb">
-                                {{ errors.jbkb[0] }}
-                              </p>
+                                placeholder="JBKB (Kg)" v-model="pendaftaran.jbkb" @focus="handleFocus('jbkb')"/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>JBI (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="jbi" min="0"
-                                placeholder="JBI (Kg)" v-model="pendaftaran.jbi" @focus="handleFocus('jbi')"
-                                :readonly="isLocked('jbi')" />
-                              <p class="text-danger" v-if="errors.jbi">
-                                {{ errors.jbi[0] }}
-                              </p>
+                                placeholder="JBI (Kg)" v-model="pendaftaran.jbi" @focus="handleFocus('jbi')"/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>JBKI (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="jbki" min="0"
-                                placeholder="JBKI (Kg)" v-model="pendaftaran.jbki" @focus="handleFocus('jbki')"
-                                :readonly="isLocked('jbki')" />
-                              <p class="text-danger" v-if="errors.jbki">
-                                {{ errors.jbki[0] }}
-                              </p>
+                                placeholder="JBKI (Kg)" v-model="pendaftaran.jbki" @focus="handleFocus('jbki')"/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>MST (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="mst" min="0"
-                                placeholder="MST" v-model="pendaftaran.mst" @focus="handleFocus('mst')"
-                                :readonly="isLocked('mst')" />
-                              <p class="text-danger" v-if="errors.mst">
-                                {{ errors.mst[0] }}
-                              </p>
+                                placeholder="MST" v-model="pendaftaran.mst" @focus="handleFocus('mst')"/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label class="text-danger">Kelas Jalan Terendah</label>
                               <vSelect label="kelasjalan_name" ref="kelasjalanterendah" :options="kelasjalans"
-                                v-model="pendaftaran.kelasjalanterendah" @input="setKelasJalan"
-                                :noDrop="isLocked('kelasjalanterendah')" :clearable="!isLocked('kelasjalanterendah')">
+                                v-model="pendaftaran.kelasjalanterendah" @input="setKelasJalan">
                               </vSelect>
-                              <p class="text-danger" v-if="errors.kelasjalanterendah">
-                                {{ errors.kelasjalanterendah[0] }}
-                              </p>
                             </div>
                           </div>
                           <div class="col-sm-3">
@@ -1250,22 +1145,14 @@
                               <label>Konfigurasi Sumbu Roda</label>
                               <input type="text" class="form-control form-control-lg" name="konfigurasisumburoda"
                                 min="0" placeholder="Konfigurasi Sumbu Roda" v-model="pendaftaran.konfigurasisumburoda"
-                                @focus="handleFocus('konfigurasisumburoda')"
-                                :readonly="isLocked('konfigurasisumburoda')" />
-                              <p class="text-danger" v-if="errors.konfigurasisumburoda">
-                                {{ errors.konfigurasisumburoda[0] }}
-                              </p>
+                                @focus="handleFocus('konfigurasisumburoda')"/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>Ukuran Ban</label>
                               <input type="text" class="form-control form-control-lg" name="ukuranban"
-                                placeholder="Ukuran Ban" v-model="pendaftaran.ukuranban"
-                                :readonly="isLocked('ukuranban')" />
-                              <p class="text-danger" v-if="errors.ukuranban">
-                                {{ errors.ukuranban[0] }}
-                              </p>
+                                placeholder="Ukuran Ban" v-model="pendaftaran.ukuranban"/>
                             </div>
                           </div>
                         </div>
@@ -1280,11 +1167,7 @@
                             <div class="form-group">
                               <label>Catatan Rubah Bentuk</label>
                               <input type="text" class="form-control form-control-lg" placeholder="Catatan Rubah Bentuk"
-                                name="catatanrubahbentuk" v-model="pendaftaran.catatanrubahbentuk"
-                                :readonly="isLocked('catatanrubahbentuk')" />
-                              <p class="text-danger" v-if="errors.catatanrubahbentuk">
-                                {{ errors.catatanrubahbentuk[0] }}
-                              </p>
+                                name="catatanrubahbentuk" v-model="pendaftaran.catatanrubahbentuk"/>
                             </div>
                           </div>
                         </div>
