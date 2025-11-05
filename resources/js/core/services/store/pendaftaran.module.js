@@ -1667,7 +1667,7 @@ export const actions = {
                     state.pendaftaran.idkodewilayah= wilayah.area_id;
                 }
             }
-            PendaftaranService.postPendaftaran(state.pendaftaran, state.datalama)
+            PendaftaranService.postPendaftaran(state.pendaftaran, state.perubahans)
                 .then(response => {
                     // console.log(response);
                     resolve(response.data);
