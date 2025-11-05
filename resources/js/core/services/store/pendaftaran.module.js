@@ -327,6 +327,9 @@ export const mutations = {
     ASSING_DATA(state, pendaftarans) {
         state.pendaftarans = pendaftarans;
     },
+    ASSING_UPDATE(state, payload) {
+        state.perubahans = payload;
+    },
     ASSING_DATAID(state, pendaftaran_id){
         state.pendaftaran.pendaftaran_id= pendaftaran_id;
         state.pendaftaran.pendaftaran_id= pendaftaran_id;

@@ -1210,7 +1210,7 @@ export default {
     this.pendaftaran.tglpendaftaran = CurrentDate;
   },
   methods: {
-    ...mapMutations("pendaftaran", ["CLEAR_FORM"]),
+    ...mapMutations("pendaftaran", ["CLEAR_FORM","ASSING_UPDATE"]),
     ...mapActions("pendaftaran", ["getMereks", "getTipes", "getVarians", "getJenis", "getSubJenis", "getJeniskendaraan", "getFuels", "getKelasJalans", "getKodewilayahs", "getIdentitaskendaraanNouji", "editPendaftaran", "submitPendaftaran", "submitPendaftaran2", "setNoSurat", "getNouji", "getKotas", "getKecamatans", "getKelurahans", "getVTA", "checkNU", "checkMU","getJenisModel"]),
     isLocked(field) {
       return (
@@ -1221,7 +1221,8 @@ export default {
     },
     submit() {
       console.log(this.cekPerubahanData());
-      this.perubahans = this.cekPerubahanData();
+      var updateData = this.cekPerubahanData();
+      this.ASSING_UPDATE(updateData);
       if (this.pendaftaran.kodepenerbitans_id == '11' || this.pendaftaran.kodepenerbitans_id == '12') {
         this.submitPendaftaran2().then(() => {
           Swal.fire({
@@ -1499,7 +1500,7 @@ export default {
           const baru = String(dataBaru[key] ?? "").trim();
 
           // cek apakah nilainya berbeda dan data baru tidak kosong
-          if (lama !== baru && baru !== "" && lama !== "" && baru == "0") {
+          if (lama !== baru && baru !== "" && key !== 'tglpendaftaran' && key !== 'kodepenerbitans_id' && key !== 'nosurat' && key !== 'nosuratdari' && key !== 'kepada' && key !== 'tglhbsuji' && key !== 'tglterakhiruji' && key !== 'ketujiterakhir' && key !== 'penguji' && key !== 'nrp' && key !== 'nokendaraanbaru' && key !== 'namapemilikbaru' && key !== 'alamatpemilikbaru' && key !== 'catatanrubahbentuk' && key !== 'uuid') {
             perubahan.push({
               field: key,
               lama: lama,
