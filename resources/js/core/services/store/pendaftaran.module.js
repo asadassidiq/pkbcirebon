@@ -1578,10 +1578,12 @@ export const actions = {
                         var nosuratkehilangan = state.pendaftaran.nosuratkehilangan;
                         var tglpendaftaran = state.pendaftaran.tglpendaftaran;
                         var nosurat = state.pendaftaran.nosurat;
+                        var noantrian = state.pendaftaran.noantrian;
                         commit("CLEAR_FORM");
                         state.pendaftaran.nouji = nouji;
                         state.pendaftaran.kodepenerbitans_id = kode;
                         state.pendaftaran.nosurat = nosurat;
+                        state.pendaftaran.noantrian = noantrian;
                         state.pendaftaran.nosuratkehilangan = nosuratkehilangan;
                         state.pendaftaran.tglpendaftaran = tglpendaftaran;
                         state.carinouji = 0;

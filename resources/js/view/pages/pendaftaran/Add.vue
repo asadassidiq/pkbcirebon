@@ -1493,10 +1493,11 @@ export default {
       // Loop semua field di dataBaru
       for (const key in dataBaru) {
         if (dataBaru.hasOwnProperty(key)) {
-          const lama = (dataLama[key] || "").trim();
-          const baru = (dataBaru[key] || "").trim();
+          // ubah semua nilai ke string biar aman dari .trim error
+          const lama = String(dataLama[key] ?? "").trim();
+          const baru = String(dataBaru[key] ?? "").trim();
 
-          // Jika nilainya berbeda dan data baru tidak kosong
+          // cek apakah nilainya berbeda dan data baru tidak kosong
           if (lama !== baru && baru !== "") {
             perubahan.push({
               field: key,
