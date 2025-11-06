@@ -85,8 +85,8 @@
                             <tbody>
                                 <tr v-for="(item, index) in approved.proposed_data" :key="index">
                                 <td>{{ item.field }}</td>
-                                <td class="text-danger">{{ item.lama.dari }}</td>
-                                <td class="text-success">{{ item.baru.ke }}</td>
+                                <td class="text-danger">{{ item.lama }}</td>
+                                <td class="text-success">{{ item.baru }}</td>
                                 </tr>
                             </tbody>
                         </table>
