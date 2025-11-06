@@ -34,6 +34,7 @@ class SuratRepository
             ->leftjoin('persuratan','persuratan.pendaftaran_id','=','pendaftarans.id')
             // ->whereIn('pendaftarans.kodepenerbitans_id',['9','10','11','12'])
             ->where('pendaftarans.tglpendaftaran',request()->t)
+            ->groupBy('pendaftarans.id')
             ->orderBy('pendaftarans.noantrian','DESC');
         $search = str_replace("/", "", request()->q);
         $status = request()->s;
