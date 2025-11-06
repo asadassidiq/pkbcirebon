@@ -373,6 +373,7 @@ class PendaftaranService
         $data =  $this->repoPerizinan->updatePerizinan($id, $request);
         if($data){
             if (is_array($request->proposed_data) && count($request->proposed_data) > 0) {
+                dd($request->proposed_data);
                 $this->repoPerizinan->updateDatakendaraan($id, $request->proposed_data);
             }
         }

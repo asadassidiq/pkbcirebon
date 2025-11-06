@@ -113,7 +113,7 @@ class PerizinanRepository
     public function updateDatakendaraan($id,$request)
     {
         DB::beginTransaction();
-        try {
+        // try {
             // ambil data join
             $pendaftaran = DB::table('pendaftarans')
                 ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
@@ -150,12 +150,12 @@ class PerizinanRepository
             }
 
             DB::commit();
-        }catch (\Exception $e) {
-        DB::rollBack();
-            return response()->json([
-                'success' => false,
-                'messages' => 'Gagal approve: ' . $e->getMessage(),
-            ], 500);
-        }
+        // }catch (\Exception $e) {
+        // DB::rollBack();
+        //     return response()->json([
+        //         'success' => false,
+        //         'messages' => 'Gagal approve: ' . $e->getMessage(),
+        //     ], 500);
+        // }
     }
 }
