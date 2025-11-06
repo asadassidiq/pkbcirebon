@@ -117,7 +117,7 @@ class PerizinanRepository
             // ambil data join
             $pendaftaran = DB::table('pendaftarans')
                 ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
-                ->join('datakendaraans', 'pendaftarans.datakendaraan_id', '=', 'datakendaraans.id')
+                ->join('datakendaraans', 'datakendaraans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
                 ->select(
                     'pendaftarans.id as pendaftaran_id',
                     'identitaskendaraans.id as identitas_id',
