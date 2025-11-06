@@ -598,7 +598,7 @@ class PendaftaranRepository
     public function updatePendaftaran($id, $request)
     {
         $update = $this->model->where('uuid',$id)->first();
-        $update->update($request->all());
+        $update->update($request-);
 
         if ($update->save()) {
             // if ($update->jenispendaftaran == 'on' && is_null($update->posisi) && $update->kodepenerbitans_id != '7') {
