@@ -53,7 +53,6 @@
                                 <th>No Uji</th>
                                 <th>No Kendaraan</th>
                                 <th>No Telp</th>
-                                <th>Via</th>
                                 <th>Modify</th>
                             </tr>
                         </thead>
@@ -68,14 +67,6 @@
                                 <td>{{ pendaftaran.nouji }}</td>
                                 <td>{{ pendaftaran.noregistrasikendaraan }}</td>
                                 <td>{{ pendaftaran.notelp }}</td>
-                                <td v-if="pendaftaran.jenispendaftaran == 'on'">
-                                    online
-                                </td>
-                                <td
-                                    v-if="pendaftaran.jenispendaftaran == 'off'"
-                                >
-                                    offline
-                                </td>
                                 <td>
                                     <router-link
                                         :to="{
