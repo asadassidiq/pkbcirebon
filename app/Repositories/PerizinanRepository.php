@@ -6,7 +6,8 @@ use App\Traits\RepositoryTrait;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Perizinan;
 use App\Models\Pendaftaran;
-use DB;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class PerizinanRepository
 {
@@ -107,5 +108,54 @@ class PerizinanRepository
             return false;
         }
         return false;
+    }
+
+    public function updateDatakendaraan($id,$request)
+    {
+        DB::beginTransaction();
+        try {
+            // ambil data join
+            $pendaftaran = DB::table('pendaftarans')
+                ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
+                ->join('datakendaraans', 'pendaftarans.datakendaraan_id', '=', 'datakendaraans.id')
+                ->select(
+                    'pendaftarans.id as pendaftaran_id',
+                    'identitaskendaraans.id as identitas_id',
+                    'datakendaraans.id as data_id'
+                )
+                ->where('pendaftarans.uuid', $id)
+                ->first();
+
+            if (!$pendaftaran) {
+                return response()->json(['message' => 'Data tidak ditemukan'], 404);
+            }
+
+            // ambil log perubahan
+            $logs = $request;
+
+            foreach ($logs as $log) {
+                $field = $log->field;
+                $baru  = $log->baru;
+
+                // cek kolom ada di tabel mana
+                if (Schema::hasColumn('identitaskendaraans', $field)) {
+                    DB::table('identitaskendaraans')
+                        ->where('id', $pendaftaran->identitas_id)
+                        ->update([$field => $baru]);
+                } elseif (Schema::hasColumn('datakendaraans', $field)) {
+                    DB::table('datakendaraans')
+                        ->where('id', $pendaftaran->data_id)
+                        ->update([$field => $baru]);
+                }
+            }
+
+            DB::commit();
+        }catch (\Exception $e) {
+        DB::rollBack();
+            return response()->json([
+                'success' => false,
+                'messages' => 'Gagal approve: ' . $e->getMessage(),
+            ], 500);
+        }
     }
 }
