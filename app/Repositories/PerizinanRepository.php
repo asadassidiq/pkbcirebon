@@ -132,7 +132,7 @@ class PerizinanRepository
 
             // ambil log perubahan
             $logs = $request;
-
+            dd($request);
             foreach ($logs as $log) {
                 $field = $log->field;
                 $baru  = $log->baru;
