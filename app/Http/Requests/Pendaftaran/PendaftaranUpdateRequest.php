@@ -23,144 +23,114 @@ class PendaftaranUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        if ($this->input('kodepenerbitans_id') == 11)
+        $rules = [
+            // 'noantrian' => 'required',
+            'pendaftaran.tglpendaftaran'     => 'required',
+            'pendaftaran.kodepenerbitans_id' => 'required|integer',
+            'pendaftaran.uuid' => 'required|uuid', // validasi UUID dari input form
+            'pendaftaran.nouji' => 'required|string|unique:identitaskendaraans,nouji,' . $this->input('uuid') . ',uuid',
+            'pendaftaran.norangka' => 'required|string|max:100|unique:identitaskendaraans,norangka,' . $this->input('uuid') . ',uuid',
+            'pendaftaran.nomesin'           => 'required|string|max:100',
+            'pendaftaran.merek'           => 'required|string|max:100',
+            'pendaftaran.tipe'           => 'required|string|max:100',
+            'pendaftaran.jenis'           => 'required|string|max:100',
+            'pendaftaran.subjenis'           => 'required|string|max:100',
+            'pendaftaran.isisilinder'           => 'integer|min:0',
+            'pendaftaran.dayamotorpenggerak'           => 'integer|min:0',
+            'pendaftaran.bahanbakar'           => 'required|string|max:100',
+            'pendaftaran.nosertifikatreg'           => 'required|string|max:100',
+            'pendaftaran.tglsertifikatreg'           => 'required',
+            'pendaftaran.jbb'           => 'integer|min:0',
+            'pendaftaran.jbkb'           => 'integer|min:0',
+            'pendaftaran.jbi'           => 'integer|min:0',
+            'pendaftaran.jbki'           => 'integer|min:0',
+            'pendaftaran.mst'           => 'integer|min:0',
+            'pendaftaran.konfigurasisumburoda'           => 'required|string',
+            'pendaftaran.ukuranban'           => 'required|string|min:0',
+            'pendaftaran.panjangkendaraan'           => 'integer|min:0',
+            'pendaftaran.lebarkendaraan'           => 'integer|min:0',
+            'pendaftaran.tinggikendaraan'           => 'integer|min:0',
+            'pendaftaran.panjangbakatautangki'           => 'integer|min:0',
+            'pendaftaran.lebarbakatautangki'           => 'integer|min:0',
+            'pendaftaran.tinggibakatautangki'           => 'integer|min:0',
+            'pendaftaran.julurdepan'           => 'integer|min:0',
+            'pendaftaran.julurbelakang'           => 'integer|min:0',
+            'pendaftaran.jumlah_sumbu'           => 'required|integer|min:2',
+            'pendaftaran.jaraksumbu1_2'           => 'integer|min:0',
+            'pendaftaran.q'           => 'integer|min:0',
+            'pendaftaran.p'           => 'integer|min:0',
+            'pendaftaran.a'           => 'integer|min:0',
+            'pendaftaran.r'           => 'integer|min:0',
+            'pendaftaran.b'           => 'integer|min:0',
+            'pendaftaran.dayaangkutorang'           => 'integer|min:0',
+            'pendaftaran.dayaangkutbarang'           => 'integer|min:0',
+            'pendaftaran.kelasjalanterendah'           => 'required|string',
+            'pendaftaran.beratsumbu1'           => 'integer|min:0',
+            'pendaftaran.beratsumbu2'           => 'integer|min:0',
+            'pendaftaran.peruntukan'        => 'required|string',
+            'pendaftaran.nama'        => 'required|string',
+            'pendaftaran.alamat'        => 'required|string',
+            'pendaftaran.noidentitaspemilik'        => 'required',
+            'pendaftaran.nosuratkehilangan' => 'required_if:kodepenerbitans_id,4',
+        ];
+
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '2'){
+            $rules['pendaftaran.jaraksumbu1_2'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu1'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu2'] = 'required|integer|min:0';
+        }
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '3'){
+            $rules['pendaftaran.jaraksumbu2_3'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu3'] = 'required|integer|min:0';
+        }
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '4'){
+            $rules['pendaftaran.jaraksumbu3_4'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu4'] = 'required|integer|min:0';
+        }
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '5'){
+            $rules['pendaftaran.jaraksumbu4_5'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu5'] = 'required|integer|min:0';
+        }
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '6'){
+            $rules['pendaftaran.jaraksumbu5_6'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu6'] = 'required|integer|min:0';
+        }
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '7'){
+            $rules['pendaftaran.jaraksumbu6_7'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu7'] = 'required|integer|min:0';
+        }
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '8'){
+            $rules['pendaftaran.jaraksumbu7_8'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu8'] = 'required|integer|min:0';
+        }
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '9'){
+            $rules['pendaftaran.jaraksumbu8_9'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu9'] = 'required|integer|min:0';
+        }
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '10'){
+            $rules['pendaftaran.jaraksumbu9_10'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu10'] = 'required|integer|min:0';
+        }
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '11'){
+            $rules['pendaftaran.jaraksumbu10_11'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu11'] = 'required|integer|min:0';
+        }
+        if ($this->input('pendaftaran.jumlah_sumbu') >= '12'){
+            $rules['pendaftaran.jaraksumbu11_12'] = 'required|integer|min:0';
+            $rules['pendaftaran.beratsumbu12'] = 'required|integer|min:0';
+        }
+
+        if ($this->input('pendaftaran.kodepenerbitans_id') === '9' || $this->input('pendaftaran.kodepenerbitans_id') === '10')
         {
-            $rules = [
-                'tglpendaftaran'     => 'required',
-                'kodepenerbitans_id' => 'required|integer',
-                'nouji'              => 'required|string',
-                'noregistrasikendaraan' => 'required|string|max:20',
-                'merek'           => 'required|string|max:100',
-                'tipe'           => 'required|string|max:100',
-                'jenis'           => 'required|string|max:100',
-                'subjenis'           => 'required|string|max:100',
-                'nama'        => 'required|string',
-                'nosurat'        => 'required|string',
-                'tujuan'        => 'required|string',
-                // 'noantrian' => 'required',
-            ];
-        }elseif ($this->input('kodepenerbitans_id') == 12)
+            $rules['pendaftaran.nosurat'] = 'required|string';
+            $rules['pendaftaran.kepada'] = 'required|string';
+        }
+
+        if ($this->input('pendaftaran.kodepenerbitans_id') === '10')
         {
-            $rules = [
-                'tglpendaftaran'     => 'required',
-                'kodepenerbitans_id' => 'required|integer',
-                'noregistrasikendaraan' => 'required|string|max:20',
-                'nama'        => 'required|string',
-                'nosurat'        => 'required|string',
-                'tujuan'        => 'required|string',
-                // 'noantrian' => 'required',
-            ];
-        }else{
-            $rules = [
-                // 'noantrian' => 'required',
-                'tglpendaftaran'     => 'required',
-                'kodepenerbitans_id' => 'required|integer',
-                'uuid' => 'required|uuid', // validasi UUID dari input form
-                'nouji' => 'required|string|unique:identitaskendaraans,nouji,' . $this->input('uuid') . ',uuid',
-                // 'noregistrasikendaraan' => 'required|string|max:12|unique:identitaskendaraans,noregistrasikendaraan,' . $this->input('uuid') . ',uuid',
-                'norangka' => 'required|string|max:100|unique:identitaskendaraans,norangka,' . $this->input('uuid') . ',uuid',
-                'nomesin'           => 'required|string|max:100',
-                'merek'           => 'required|string|max:100',
-                'tipe'           => 'required|string|max:100',
-                'jenis'           => 'required|string|max:100',
-                'subjenis'           => 'required|string|max:100',
-                'isisilinder'           => 'integer|min:0',
-                'dayamotorpenggerak'           => 'integer|min:0',
-                'bahanbakar'           => 'required|string|max:100',
-                'nosertifikatreg'           => 'required|string|max:100',
-                'tglsertifikatreg'           => 'required',
-                'jbb'           => 'integer|min:0',
-                'jbkb'           => 'integer|min:0',
-                'jbi'           => 'integer|min:0',
-                'jbki'           => 'integer|min:0',
-                'mst'           => 'integer|min:0',
-                'konfigurasisumburoda'           => 'required|string',
-                'ukuranban'           => 'required|string|min:0',
-                'panjangkendaraan'           => 'integer|min:0',
-                'lebarkendaraan'           => 'integer|min:0',
-                'tinggikendaraan'           => 'integer|min:0',
-                'panjangbakatautangki'           => 'integer|min:0',
-                'lebarbakatautangki'           => 'integer|min:0',
-                'tinggibakatautangki'           => 'integer|min:0',
-                'julurdepan'           => 'integer|min:0',
-                'julurbelakang'           => 'integer|min:0',
-                'jumlah_sumbu'           => 'required|integer|min:2',
-                'jaraksumbu1_2'           => 'integer|min:0',
-                'q'           => 'integer|min:0',
-                'p'           => 'integer|min:0',
-                'a'           => 'integer|min:0',
-                'r'           => 'integer|min:0',
-                'b'           => 'integer|min:0',
-                'dayaangkutorang'           => 'integer|min:0',
-                'dayaangkutbarang'           => 'integer|min:0',
-                'kelasjalanterendah'           => 'required|string',
-                'beratsumbu1'           => 'integer|min:0',
-                'beratsumbu2'           => 'integer|min:0',
-                'peruntukan'        => 'required|string',
-                'nama'        => 'required|string',
-                'alamat'        => 'required|string',
-                'noidentitaspemilik'        => 'required',
-                'nosuratkehilangan' => 'required_if:kodepenerbitans_id,4',
-            ];
-
-            if ($this->input('jumlah_sumbu') >= '2'){
-                $rules['jaraksumbu1_2'] = 'required|integer|min:0';
-                $rules['beratsumbu1'] = 'required|integer|min:0';
-                $rules['beratsumbu2'] = 'required|integer|min:0';
-            }
-            if ($this->input('jumlah_sumbu') >= '3'){
-                $rules['jaraksumbu2_3'] = 'required|integer|min:0';
-                $rules['beratsumbu3'] = 'required|integer|min:0';
-            }
-            if ($this->input('jumlah_sumbu') >= '4'){
-                $rules['jaraksumbu3_4'] = 'required|integer|min:0';
-                $rules['beratsumbu4'] = 'required|integer|min:0';
-            }
-            if ($this->input('jumlah_sumbu') >= '5'){
-                $rules['jaraksumbu4_5'] = 'required|integer|min:0';
-                $rules['beratsumbu5'] = 'required|integer|min:0';
-            }
-            if ($this->input('jumlah_sumbu') >= '6'){
-                $rules['jaraksumbu5_6'] = 'required|integer|min:0';
-                $rules['beratsumbu6'] = 'required|integer|min:0';
-            }
-            if ($this->input('jumlah_sumbu') >= '7'){
-                $rules['jaraksumbu6_7'] = 'required|integer|min:0';
-                $rules['beratsumbu7'] = 'required|integer|min:0';
-            }
-            if ($this->input('jumlah_sumbu') >= '8'){
-                $rules['jaraksumbu7_8'] = 'required|integer|min:0';
-                $rules['beratsumbu8'] = 'required|integer|min:0';
-            }
-            if ($this->input('jumlah_sumbu') >= '9'){
-                $rules['jaraksumbu8_9'] = 'required|integer|min:0';
-                $rules['beratsumbu9'] = 'required|integer|min:0';
-            }
-            if ($this->input('jumlah_sumbu') >= '10'){
-                $rules['jaraksumbu9_10'] = 'required|integer|min:0';
-                $rules['beratsumbu10'] = 'required|integer|min:0';
-            }
-            if ($this->input('jumlah_sumbu') >= '11'){
-                $rules['jaraksumbu10_11'] = 'required|integer|min:0';
-                $rules['beratsumbu11'] = 'required|integer|min:0';
-            }
-            if ($this->input('jumlah_sumbu') >= '12'){
-                $rules['jaraksumbu11_12'] = 'required|integer|min:0';
-                $rules['beratsumbu12'] = 'required|integer|min:0';
-            }
-
-            if ($this->input('kodepenerbitans_id') === '9' || $this->input('kodepenerbitans_id') === '10')
-            {
-                $rules['nosurat'] = 'required|string';
-                $rules['kepada'] = 'required|string';
-            }
-
-            if ($this->input('kodepenerbitans_id') === '10')
-            {
-                $rules['nokendaraanbaru'] = 'required|string';
-                $rules['namapemilikbaru'] = 'required|string';
-                $rules['alamatpemilikbaru'] = 'required|string';
-            }
+            $rules['pendaftaran.nokendaraanbaru'] = 'required|string';
+            $rules['pendaftaran.namapemilikbaru'] = 'required|string';
+            $rules['pendaftaran.alamatpemilikbaru'] = 'required|string';
         }
         return $rules;
     }

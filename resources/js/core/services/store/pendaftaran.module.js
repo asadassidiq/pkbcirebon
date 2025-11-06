@@ -1731,7 +1731,7 @@ export const actions = {
     },
     updatePendaftaran({ state, commit }, id) {
         return new Promise((resolve, reject) => {
-            PendaftaranService.updatePendaftaran(id, state.pendaftaran)
+            PendaftaranService.updatePendaftaran(id, state.pendaftaran, state.perubahans)
                 .then(response => {
                     resolve(response.data);
                 })

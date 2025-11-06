@@ -285,45 +285,35 @@ class PendaftaranService
     public function update($request, $id)
     {
         $user = auth()->user();
+        $pendaftaran = $request->input('pendaftaran', []);
+        $perubahans  = $request->input('perubahans', []);
         $statusDatakendaraan = false;
         $statusPendaftaran = false;
-        $tglpendaftaran = date_create($request->tglpendaftaran);
+        $tglpendaftaran = date_create($pendaftaran['tglpendaftaran']);
         $tglpendaftaran = date_format($tglpendaftaran, "Y-m-d");
-        $request->merge([
-            'tglpendaftaran'            => $tglpendaftaran,
-            'jenispendaftaran'          => 'off',
-            // 'user_id'                   => $user['id'],
-        ]);
-        $dataP = $this->repoPendaftaran->updatePendaftaran($id, $request);
+        $pendaftaran['tglpendaftaran'] = $tglpendaftaran;
+        $dataP = $this->repoPendaftaran->updatePendaftaran($id, $pendaftaran);
 
         if($dataP){
             $statusPendaftaran = true;
-            if ($request->kodepenerbitans_id == '5' || $request->kodepenerbitans_id == '9' || $request->kodepenerbitans_id == '6' || $request->kodepenerbitans_id == '10') {
+            if ($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '9' || $pendaftaran['kodepenerbitans_id'] == '6' || $pendaftaran['kodepenerbitans_id'] == '10') {
                 $checkNu = $this->repoSurat->checkSurat($dataP['id']);
                 if($checkNu){
-                    if($request->kodepenerbitans_id == '5' || $request->kodepenerbitans_id == '6'){
-                        $request->merge([
-                            'kode'     => $request->kodewilayahasal,
-                        ]);
+                    if($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
+                        $pendaftaran['kode'] = $pendaftaran['kodewilayahasal'];
                     }else{
-                        $request->merge([
-                            'kode'     => $request->kodewilayah,
-                        ]);
+                        $pendaftaran['kode'] = $pendaftaran['kodewilayah'];
                     }
-                    $this->repoSurat->updateSurat($dataP['id'],$request);
+                    $this->repoSurat->updateSurat($dataP['id'],$pendaftaran);
                 }else{
-                    if($request->kodepenerbitans_id == '5' || $request->kodepenerbitans_id == '6'){
-                        $request->merge([
-                            'pendaftaran_id'     => $dataP['id'],
-                            'kode'     => $request->kodewilayahasal,
-                        ]);
+                    if($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
+                        $pendaftaran['pendaftaran_id'] = $dataP['id'];
+                        $pendaftaran['kode'] = $pendaftaran['kodewilayahasal'];
                     }else{
-                        $request->merge([
-                            'pendaftaran_id'     => $dataP['id'],
-                            'kode'     => $request->kodewilayah,
-                        ]);
+                        $pendaftaran['pendaftaran_id'] = $dataP['id'];
+                        $pendaftaran['kode'] = $pendaftaran['kodewilayah'];
                     }
-                    $this->repoSurat->createSurat($request->all());
+                    $this->repoSurat->createSurat($pendaftaran);
                 }
             }
         }
@@ -332,9 +322,9 @@ class PendaftaranService
         // $checkData = $this->repoIden->checkNouji($request->nouji);
         // if($checkNorangka === false && $checkData === false){
             $dataUUID = $this->repoIden->getUUID($request->nouji);
-            $dataIden = $this->repoIden->updateIdentitaskendaraan($request,$dataUUID->uuid);
+            $dataIden = $this->repoIden->updateIdentitaskendaraan($pendaftaran,$dataUUID->uuid);
             if($dataIden){
-                $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($request,$dataUUID->id);
+                $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataUUID->id);
                 $statusDatakendaraan = true;
             }
         // }

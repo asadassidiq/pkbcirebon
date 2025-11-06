@@ -1334,7 +1334,7 @@ export default {
     });
   },
   methods: {
-    ...mapMutations("pendaftaran", ["CLEAR_FORM"]),
+    ...mapMutations("pendaftaran", ["CLEAR_FORM","ASSING_UPDATE"]),
     ...mapActions("pendaftaran", [
       "updateIdentitaskendaraan",
       "getMereks",
@@ -1403,20 +1403,8 @@ export default {
         parseInt(this.pendaftaran.dayaangkutorang) * 60;
     },
     submit() {
-      if (
-        this.pendaftaran.kodepenerbitans_id == "11" ||
-        this.pendaftaran.kodepenerbitans_id == "12"
-      ) {
-        this.submitPendaftaran2().then(() => {
-          Swal.fire({
-            icon: "success",
-            title: "Saved",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          this.$router.push({ name: "pendaftaran.data" });
-        });
-      } else {
+        var updateData = this.cekPerubahanData();
+        this.ASSING_UPDATE(updateData);
         this.updatePendaftaran(this.$route.params.id).then(() => {
           Swal.fire({
             icon: "success",
@@ -1426,7 +1414,6 @@ export default {
           });
           this.$router.go(-1);
         });
-      }
     },
     setSurat() {
       this.setNoSurat();
@@ -1601,6 +1588,53 @@ export default {
         }
       }
     },
+    cekPerubahanData() {
+      const dataLama = this.datalama; // data lama sebelum edit
+      const dataBaru = this.pendaftaran; // data setelah edit
+      
+      const perubahan = [];
+      const excludedKeys = [
+        'tglpendaftaran',
+        'kodepenerbitans_id',
+        'nosurat',
+        'nosuratdari',
+        'kepada',
+        'tglhbsuji',
+        'tglterakhiruji',
+        'ketujiterakhir',
+        'penguji',
+        'nrp',
+        'nokendaraanbaru',
+        'namapemilikbaru',
+        'alamatpemilikbaru',
+        'catatanrubahbentuk',
+        'uuid',
+        'wilayah',
+        'wilayahasal',
+      ];
+
+      // Loop semua field di dataBaru
+      for (const key in dataBaru) {
+        if (excludedKeys.includes(key)) continue
+        if (dataBaru.hasOwnProperty(key)) {
+          // ubah semua nilai ke string biar aman dari .trim error
+          const lama = String(dataLama[key] ?? "").trim();
+          const baru = String(dataBaru[key] ?? "").trim();
+
+          // cek apakah nilainya berbeda dan data baru tidak kosong
+          //&& key !== 'tglpendaftaran' && key !== 'kodepenerbitans_id' && key !== 'nosurat' && key !== 'nosuratdari' && key !== 'kepada' && key !== 'tglhbsuji' && key !== 'tglterakhiruji' && key !== 'ketujiterakhir' && key !== 'penguji' && key !== 'nrp' && key !== 'nokendaraanbaru' && key !== 'namapemilikbaru' && key !== 'alamatpemilikbaru' && key !== 'catatanrubahbentuk' && key !== 'uuid'
+          if (lama !== baru && baru !== "" && lama !== "" && baru !== "null" && baru !== "0") {
+            perubahan.push({
+              field: key,
+              lama: lama,
+              baru: baru
+            });
+          }
+        }
+      }
+
+      return perubahan;
+    }
   },
   destroyed() {
     this.CLEAR_FORM();

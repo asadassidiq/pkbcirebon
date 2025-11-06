@@ -90,8 +90,8 @@ export default {
     deletePendaftaran(id) {
         return ApiService.delete(`/pendaftaran/${id}`);
     },
-    updatePendaftaran(id, data) {
-        return ApiService.put(`/pendaftaran/${id}`, data);
+    updatePendaftaran(id, pendaftaran, perubahans) {
+        return ApiService.put(`/pendaftaran/${id}`, {pendaftaran, perubahans});
     },
     updateIdentitaskendaraan(id, data) {
         return ApiService.put(`/identitaskendaraan/${id}`, data);
