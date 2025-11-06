@@ -33,6 +33,7 @@
                             <th>No Uji</th>
                             <th>Nama</th>
                             <th>Jenis Pendaftaran</th>
+                            <th>Jenis Pengajuan</th>
                             <th>Status</th>
                             <th>Approved</th>
                             <th>Modify</th>
@@ -45,6 +46,7 @@
                             <td>{{ approved.nouji }}</td>
                             <td>{{ approved.nama }}</td>
                             <td>{{ approved.keterangan }}</td>
+                            <td>{{ approved.type }}</td>
                             
                             <td v-if="approved.approved == '2'">Ditolak</td>
                             <td v-else-if="approved.approved == '1'">Approved</td>

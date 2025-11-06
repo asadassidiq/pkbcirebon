@@ -248,7 +248,7 @@ class PendaftaranService
                         'pendaftaran_id' => $dataP['id'],
                         'proposed_data' => json_encode($perubahans),
                         'requested_by_user_id' => $user->id,
-                        'type' => 'perubahan_data',
+                        'type' => 'Perubahan Data',
                     );
                     $this->repoPerizinan->create($arrayPerubahan);
                 }else{
@@ -257,7 +257,7 @@ class PendaftaranService
                             'pendaftaran_id' => $dataP['id'],
                             'proposed_data' => json_encode($perubahans),
                             'requested_by_user_id' => $user->id,
-                            'type' => 'persuratan',
+                            'type' => 'Persuratan',
                         );
                         $this->repoPerizinan->create($arrayPerubahan);
                     }
