@@ -11,6 +11,7 @@ export const state = {
         kodepenerbitan: "",
     },
     approved: {
+        proposed_data:[],
         approved:"",
         approval_notes: "",
         type:"",
@@ -49,6 +50,7 @@ export const mutations = {
     },
     ASSIGN_FORM(state, payload) {
         state.approved = {
+            proposed_data:payload.proposed_data,
             approved:payload.approved ,
             approval_notes: payload.approval_notes,
             type: payload.type,
@@ -74,6 +76,7 @@ export const mutations = {
     },
     CLEAR_FORM(state) {
         state.approved= {
+            proposed_data:[],
             approved:"",
             approval_notes:"",
             type:"",

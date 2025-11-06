@@ -74,7 +74,22 @@
                 <hr />
                 <div class="row" v-if="approved.type == 'Perubahan Data'">
                     <div class="col-sm-12">
-                        
+                        <table class="table table-bordered">
+                            <thead class="bg-secondary text-white">
+                                <tr>
+                                <th>Field</th>
+                                <th>Data Lama</th>
+                                <th>Data Baru</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item, index) in perubahans" :key="index">
+                                <td>{{ item.field }}</td>
+                                <td class="text-danger">{{ lama.dari }}</td>
+                                <td class="text-success">{{ baru.ke }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <hr />
