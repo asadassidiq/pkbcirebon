@@ -40,8 +40,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="approved in approved.approveds.data" :key="approved.uuid">
-                            <td>{{ approved.noantrian }}</td>
+                        <tr v-for="approved,index in approved.approveds.data" :key="approved.uuid">
+                            <td>{{ index + 1 }}</td>
                             <td>{{ approved.noregistrasikendaraan }}</td>
                             <td>{{ approved.nouji }}</td>
                             <td>{{ approved.nama }}</td>
