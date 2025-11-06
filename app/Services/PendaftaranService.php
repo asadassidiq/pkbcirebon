@@ -69,11 +69,14 @@ class PendaftaranService
     public function create($request)
     {
         $user = auth()->user();
-        dd($request['perubahans']);
+        $pendaftaran = $request->input('pendaftaran', []);
+        $perubahans  = $request->input('perubahans', []);
+        dd($pendaftaran['tglpendaftaran']);
+        //dd($request['perubahans']);
         $statusPengujian = true;
         $statusDatakendaraan = false;
         $statusPendaftaran = false;
-        $tglpendaftaran = date_create($request->tglpendaftaran);
+        $tglpendaftaran = date_create($pendaftaran['tglpendaftaran']);
         $tglpendaftaran = date_format($tglpendaftaran, "Y-m-d");
         $checkData = $this->repoIden->checkNouji($request->nouji);
         if($request->kodepenerbitans_id == 1){
