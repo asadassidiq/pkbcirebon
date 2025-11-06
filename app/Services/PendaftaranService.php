@@ -11,11 +11,13 @@ use App\Repositories\SuratRepository;
 use App\Repositories\IdentitaskendaraanRepository;
 use App\Repositories\DatakendaraanRepository;
 use App\Traits\apiJsonReturnTrait;
+use App\Utils;
 
 class PendaftaranService
 {
     protected $repoPendaftaran,$repoPengujian,$repoSurat,$repoIden,$repoDatakendaraan,$repoPerizinan;
     use apiJsonReturnTrait;
+    private $utils;
 
     public function __construct(PendaftaranRepository $repoPendaftaran, PengujianRepository $repoPengujian, SuratRepository $repoSurat, IdentitaskendaraanRepository $repoIden, DatakendaraanRepository $repoDatakendaraan, PerizinanRepository $repoPerizinan)
     {
@@ -25,6 +27,7 @@ class PendaftaranService
         $this->repoIden = $repoIden;
         $this->repoDatakendaraan = $repoDatakendaraan;
         $this->repoPerizinan = $repoPerizinan;
+        $this->utils = new Utils();
     }
 
     public function getAllPendaftaran()
@@ -245,6 +248,7 @@ class PendaftaranService
                 if (is_array($perubahans) && count($perubahans) >= 0) {
                     // ada data di perubahans
                     $arrayPerubahan = array(
+                        'uuid' => $this->utils->generateUUID(),
                         'pendaftaran_id' => $dataP['id'],
                         'proposed_data' => json_encode($perubahans),
                         'requested_by_user_id' => $user->id,
@@ -255,6 +259,7 @@ class PendaftaranService
                     
                 if($pendaftaran['kodepenerbitans_id'] == '9' || $pendaftaran['kodepenerbitans_id'] == '10'){
                         $arrayPerubahan = array(
+                        'uuid' => $this->utils->generateUUID(),
                         'pendaftaran_id' => $dataP['id'],
                         'proposed_data' => json_encode($perubahans),
                         'requested_by_user_id' => $user->id,
@@ -319,6 +324,7 @@ class PendaftaranService
             if (is_array($perubahans) && count($perubahans) >= 0) {
                 // ada data di perubahans
                 $arrayPerubahan = array(
+                    'uuid' => $this->utils->generateUUID(),
                     'pendaftaran_id' => $dataP['id'],
                     'proposed_data' => json_encode($perubahans),
                     'requested_by_user_id' => $user->id,

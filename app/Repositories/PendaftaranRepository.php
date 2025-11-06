@@ -782,7 +782,7 @@ class PendaftaranRepository
     public function getAllApproved()
     {
         $data = $this->model
-            ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan','identitaskendaraans.nama', 'pendaftarans.status', 'pendaftarans.jenispendaftaran', 'pendaftarans.notelp', 'pendaftarans.namapemohon', 'pendaftarans.tglpendaftaran', 'perizinans.approved','perizinans.approved_by_user_id as user_approved','perizinans.approval_notes as catatan','perizinans.type','users.name')
+            ->select('pendaftarans.noantrian','perizinans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan','identitaskendaraans.nama', 'pendaftarans.status', 'pendaftarans.jenispendaftaran', 'pendaftarans.notelp', 'pendaftarans.namapemohon', 'pendaftarans.tglpendaftaran', 'perizinans.approved','perizinans.approved_by_user_id as user_approved','perizinans.approval_notes as catatan','perizinans.type','users.name')
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
             ->join('perizinans', 'perizinans.pendaftaran_id', '=', 'pendaftarans.id')
@@ -805,7 +805,7 @@ class PendaftaranRepository
     public function getApproved($id)
     {
         $data = $this->model->select('identitaskendaraans.uuid','approved','approval_notes','perizinans.type','perizinans.proposed_data','nouji','noregistrasikendaraan','kodepenerbitans.keterangan','merek','tipe','jenis','subjenis','nomesin','norangka','thpembuatan','peruntukan')->join('perizinans', 'perizinans.pendaftaran_id', '=', 'pendaftarans.id')->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
-                    ->where('pendaftarans.uuid', $id)->first();
+                    ->where('perizinans.uuid', $id)->first();
         return $data;
     }
 
