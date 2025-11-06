@@ -780,7 +780,7 @@ class PendaftaranRepository
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
             ->join('perizinans', 'perizinans.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftJoin('users', 'pendaftarans.user_approved', '=', 'users.id')
+            ->leftJoin('users', 'perizinans.approved_by_user_id', '=', 'users.id')
             ->where('perizinans.status','>=', '0')
             ->where('pendaftarans.tglpendaftaran', request()->t)
             ->orderBy('pendaftarans.noantrian', 'DESC');
