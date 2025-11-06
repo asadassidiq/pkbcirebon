@@ -317,7 +317,7 @@ class PendaftaranService
                 }
             }
             dd(count($perubahans));
-            if (is_array($perubahans) && count($perubahans) > 0) {
+            if (is_array($perubahans) && count($perubahans) >= 0) {
                 // ada data di perubahans
                 $arrayPerubahan = array(
                     'pendaftaran_id' => $dataP['id'],
