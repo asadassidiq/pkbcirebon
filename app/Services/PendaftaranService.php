@@ -6,6 +6,7 @@ use App\Models\Datakendaraan;
 use App\Models\Identitaskendaraan;
 use App\Repositories\PendaftaranRepository;
 use App\Repositories\PengujianRepository;
+use App\Repositories\PerizinanRepository;
 use App\Repositories\SuratRepository;
 use App\Repositories\IdentitaskendaraanRepository;
 use App\Repositories\DatakendaraanRepository;
@@ -13,16 +14,17 @@ use App\Traits\apiJsonReturnTrait;
 
 class PendaftaranService
 {
-    protected $repoPendaftaran,$repoPengujian,$repoSurat,$repoIden,$repoDatakendaraan;
+    protected $repoPendaftaran,$repoPengujian,$repoSurat,$repoIden,$repoDatakendaraan,$repoPerizinan;
     use apiJsonReturnTrait;
 
-    public function __construct(PendaftaranRepository $repoPendaftaran, PengujianRepository $repoPengujian, SuratRepository $repoSurat, IdentitaskendaraanRepository $repoIden, DatakendaraanRepository $repoDatakendaraan)
+    public function __construct(PendaftaranRepository $repoPendaftaran, PengujianRepository $repoPengujian, SuratRepository $repoSurat, IdentitaskendaraanRepository $repoIden, DatakendaraanRepository $repoDatakendaraan, PerizinanRepository $repoPerizinan)
     {
         $this->repoPendaftaran = $repoPendaftaran;
         $this->repoPengujian = $repoPengujian;
         $this->repoSurat = $repoSurat;
         $this->repoIden = $repoIden;
         $this->repoDatakendaraan = $repoDatakendaraan;
+        $this->repoPerizinan = $repoPerizinan;
     }
 
     public function getAllPendaftaran()
@@ -71,6 +73,7 @@ class PendaftaranService
         $user = auth()->user();
         $pendaftaran = $request->input('pendaftaran', []);
         $perubahans  = $request->input('perubahans', []);
+        
         //dd($pendaftaran['tglpendaftaran']);
         $statusPengujian = true;
         $statusDatakendaraan = false;
@@ -238,6 +241,24 @@ class PendaftaranService
                         }
                         $this->repoSurat->createSurat($pendaftaran);
                     }
+                }
+                if (is_array($perubahans) && count($perubahans) > 0) {
+                    // ada data di perubahans
+                    $arrayPerubahan = array(
+                        'pendaftaran_id' => $dataP['id'],
+                        'proposed_data' => json_encode($perubahans),
+                        'requested_by_user_id' => $user->id,
+                        'type' => 'perubahan_data',
+                    );
+                    $this->repoPerizinan->create($arrayPerubahan);
+                }else{
+                    $arrayPerubahan = array(
+                        'pendaftaran_id' => $dataP['id'],
+                        'proposed_data' => json_encode($perubahans),
+                        'requested_by_user_id' => $user->id,
+                        'type' => 'persuratan',
+                    );
+                    $this->repoPerizinan->create($arrayPerubahan);
                 }
             }
         }
