@@ -12,7 +12,7 @@ class Perizinan extends Model
         'proposed_data',
         'requested_by_user_id',
         'approved_by_user_id',
-        'status',
+        'approved',
         'approval_notes',
         'type',
     ];

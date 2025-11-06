@@ -68,16 +68,16 @@
                                 readonly placeholder="Jenis" v-model="identitaskendaraan.jenis" />
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <label> Peruntukan</label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="length"
-                                readonly placeholder="Peruntukan" v-model="identitaskendaraan.peruntukan" />
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="card-body">
+                <hr />
+                <div class="row" v-if="approved.type == 'Perubahan Data'">
+                    <div class="col-sm-12">
+                        
+                    </div>
+                </div>
+                <hr />
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
@@ -97,7 +97,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleTextarea">Catatan</label>
-                            <textarea class="form-control " v-model="approved.catatan" rows="3"></textarea>
+                            <textarea class="form-control " v-model="approved.approval_notes" rows="3"></textarea>
                         </div>
                     </div>
                     

@@ -12,7 +12,8 @@ export const state = {
     },
     approved: {
         approved:"",
-        catatan: "",
+        approval_notes: "",
+        type:"",
     },
     identitaskendaraan: {
         uuid: "",
@@ -49,7 +50,8 @@ export const mutations = {
     ASSIGN_FORM(state, payload) {
         state.approved = {
             approved:payload.approved ,
-            catatan: payload.catatan,
+            approval_notes: payload.approval_notes,
+            type: payload.type,
         };
         state.identitaskendaraan = {
             uuid: payload.uuid,
@@ -73,7 +75,8 @@ export const mutations = {
     CLEAR_FORM(state) {
         state.approved= {
             approved:"",
-            catatan:"",
+            approval_notes:"",
+            type:"",
         };
         state.identitaskendaraan= {
             uuid: "",
