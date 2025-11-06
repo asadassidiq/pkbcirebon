@@ -1617,7 +1617,8 @@ export default {
         'namapemohon',
         'alamatpemohon',
         'notelp',
-        'masaberlakuuji'
+        'masaberlakuuji',
+        'tujuan',
       ];
 
       // Loop semua field di dataBaru
