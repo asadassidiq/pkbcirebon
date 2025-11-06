@@ -1661,6 +1661,8 @@ export default {
       kodewilayahs: (state) => state.kodewilayahs,
     }),
     ...mapState("pendaftaran", {
+      datalama: state => state.datalama,
+      perubahans: state => state.perubahans,
       mereks: (state) => state.mereks,
       tipes: (state) => state.tipes,
       varians: (state) => state.varians,
