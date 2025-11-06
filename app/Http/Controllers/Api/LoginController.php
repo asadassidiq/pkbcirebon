@@ -121,7 +121,7 @@ class LoginController extends Controller
     $antrianDataPos3 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '3')->count();
     $antrianDataPos4 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '4')->count();
     $antrianDataVerif1 = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '5')->count();
-    $antrianDataApproved = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '0')->count();
+    $antrianDataApproved = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->join('perizinans','pendaftarans.id','=','perizinans.pendaftaran_id')->where('approved', '0')->count();
     $antrianDataFoto = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['1', '2', '3', '4', '5', '6', '7'])->where('foto', '0')->count();
     $antrianDataCetak = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['1', '2', '3', '4', '5', '6', '7'])->where('posisi', '6')->count();
     $antrianDataSurat = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['9', '10'])->where('posisi', '6')->count();

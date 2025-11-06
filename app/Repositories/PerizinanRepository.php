@@ -73,11 +73,14 @@ class PerizinanRepository
     {
         $update = $this->modelPendaftaran->where('id',$id)->first();
         if($update){
-            $update->posisi = $request;
-            $update->foto = null;
-            if ($update->save()) {
-                return true;
+            if($update->posisi == null){
+                $update->posisi = $request;
+                $update->foto = null;
+                if ($update->save()) {
+                    return true;
+                }
             }
+            return true;
         }
         
         return false;
