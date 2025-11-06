@@ -789,6 +789,7 @@ class PendaftaranRepository
             ->leftJoin('users', 'perizinans.approved_by_user_id', '=', 'users.id')
             ->where('perizinans.approved','>=', '0')
             ->where('pendaftarans.tglpendaftaran', request()->t)
+            ->groupBy('perizinans.id')
             ->orderBy('pendaftarans.noantrian', 'DESC');
         $search = str_replace("/", "", request()->q);
 
