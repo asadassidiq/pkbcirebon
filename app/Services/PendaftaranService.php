@@ -71,41 +71,38 @@ class PendaftaranService
         $user = auth()->user();
         $pendaftaran = $request->input('pendaftaran', []);
         $perubahans  = $request->input('perubahans', []);
-        dd($pendaftaran['tglpendaftaran']);
-        //dd($request['perubahans']);
+        //dd($pendaftaran['tglpendaftaran']);
         $statusPengujian = true;
         $statusDatakendaraan = false;
         $statusPendaftaran = false;
         $tglpendaftaran = date_create($pendaftaran['tglpendaftaran']);
         $tglpendaftaran = date_format($tglpendaftaran, "Y-m-d");
-        $checkData = $this->repoIden->checkNouji($request->nouji);
-        if($request->kodepenerbitans_id == 1){
+        $checkData = $this->repoIden->checkNouji($pendaftaran['nouji']);
+        if($pendaftaran['kodepenerbitans_id'] == 1){
             if($checkData === true){
                 return $this->error(false,'no uji sudah dipakai kendaraan lain','',422);
             }
-            $checkNorangka = $this->repoIden->checkNorangka($request->nouji,$request->norangka);
+            $checkNorangka = $this->repoIden->checkNorangka($pendaftaran['nouji'],$pendaftaran['norangka']);
             if($checkNorangka === true){
                 return $this->error(false,'no rangka sudah dipakai kendaraan lain','',422);
             }
-            $dataIden = $this->repoIden->createIdentitaskendaraan($request->all());
+            $dataIden = $this->repoIden->createIdentitaskendaraan($pendaftaran);
             if($dataIden){
-                $request->merge([
-                    'identitaskendaraan_id'     => $dataIden->id,
-                ]);
-                $dataKendaraan = $this->repoDatakendaraan->createDatakendaraan($request->all());
+                $pendaftaran['identitaskendaraan_id'] = $dataIden->id;
+                $dataKendaraan = $this->repoDatakendaraan->createDatakendaraan($pendaftaran);
                 $statusDatakendaraan = true;
             }else{
                 $statusDatakendaraan = false;
             }
         }
-        elseif($request->kodepenerbitans_id == 5 || $request->kodepenerbitans_id == 6){
-            $checkNorangka = $this->repoIden->checkNorangka($request->nouji,$request->norangka);
+        elseif($pendaftaran['kodepenerbitans_id'] == 5 || $pendaftaran['kodepenerbitans_id'] == 6){
+            $checkNorangka = $this->repoIden->checkNorangka($pendaftaran['nouji'],$pendaftaran['norangka']);
             if($checkData === true){
                 if($checkNorangka === false){
-                    $dataUUID = $this->repoIden->getUUID($request->nouji);
-                    $dataIden = $this->repoIden->updateIdentitaskendaraan($request,$dataUUID->uuid);
+                    $dataUUID = $this->repoIden->getUUID($pendaftaran['nouji']);
+                    $dataIden = $this->repoIden->updateIdentitaskendaraan($pendaftaran,$dataUUID->uuid);
                     if($dataIden){
-                        $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($request,$dataIden->id);
+                        $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataIden->id);
                         $statusDatakendaraan = true;
                     }
                 }else{
@@ -115,32 +112,30 @@ class PendaftaranService
                 if($checkNorangka === true){
                     return $this->error(false,'no rangka sudah dipakai kendaraan lain','',422);
                 }
-                $dataIden = $this->repoIden->createIdentitaskendaraan($request->all());
+                $dataIden = $this->repoIden->createIdentitaskendaraan($pendaftaran);
                 if($dataIden){
-                    $request->merge([
-                        'identitaskendaraan_id'     => $dataIden->id,
-                    ]);
-                    $dataKendaraan = $this->repoDatakendaraan->createDatakendaraan($request->all());
+                    $pendaftaran['identitaskendaraan_id'] = $dataIden->id;
+                    $dataKendaraan = $this->repoDatakendaraan->createDatakendaraan($pendaftaran);
                     $statusDatakendaraan = true;
                 }else{
                     $statusDatakendaraan = false;
                 }
             }
         }
-        elseif($request->kodepenerbitans_id == 3 || $request->kodepenerbitans_id == 4 || $request->kodepenerbitans_id == 7){
+        elseif($pendaftaran['kodepenerbitans_id'] == 3 || $pendaftaran['kodepenerbitans_id'] == 4 || $pendaftaran['kodepenerbitans_id'] == 7){
             if($checkData === false){
                 return $this->error(false,'data kendaraan tidak ditemukan','',422);
             }
-            $dataUUID = $this->repoIden->getUUID($request->nouji);
+            $dataUUID = $this->repoIden->getUUID($pendaftaran['nouji']);
             $checkUji = $this->repoPengujian->checkPengujian($dataUUID->id);
             if($checkUji !== true){
                 return $this->error(false,$checkUji,'',422);
             }
-            $checkNorangka = $this->repoIden->checkNorangka($request->nouji,$request->norangka);
+            $checkNorangka = $this->repoIden->checkNorangka($pendaftaran['nouji'],$pendaftaran['norangka']);
             if($checkNorangka === false){
-                $dataIden = $this->repoIden->updateIdentitaskendaraan($request,$dataUUID->uuid);
+                $dataIden = $this->repoIden->updateIdentitaskendaraan($pendaftaran,$dataUUID->uuid);
                 if($dataIden){
-                    $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($request,$dataIden->id);
+                    $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataIden->id);
                     $statusDatakendaraan = true;
                 }
             }else{
@@ -148,24 +143,22 @@ class PendaftaranService
             }
         }
         else{
-            $checkNorangka = $this->repoIden->checkNorangka($request->nouji,$request->norangka);
+            $checkNorangka = $this->repoIden->checkNorangka($pendaftaran['nouji'],$pendaftaran['norangka']);
             if($checkNorangka === false){
-                $dataUUID = $this->repoIden->getUUID($request->nouji);
+                $dataUUID = $this->repoIden->getUUID($pendaftaran['nouji']);
                 if($dataUUID === null){
-                    $dataIden = $this->repoIden->createIdentitaskendaraan($request->all());
+                    $dataIden = $this->repoIden->createIdentitaskendaraan($pendaftaran);
                     if($dataIden){
-                        $request->merge([
-                            'identitaskendaraan_id'     => $dataIden->id,
-                        ]);
-                        $dataKendaraan = $this->repoDatakendaraan->createDatakendaraan($request->all());
+                        $pendaftaran['identitaskendaraan_id'] = $dataIden->id;
+                        $dataKendaraan = $this->repoDatakendaraan->createDatakendaraan($pendaftaran);
                         $statusDatakendaraan = true;
                     }else{
                         $statusDatakendaraan = false;
                     }
                 }
-                $dataIden = $this->repoIden->updateIdentitaskendaraan($request,$dataUUID->uuid);
+                $dataIden = $this->repoIden->updateIdentitaskendaraan($pendaftaran,$dataUUID->uuid);
                 if($dataIden){
-                    $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($request,$dataIden->id);
+                    $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataIden->id);
                     $statusDatakendaraan = true;
                 }
             }else{
@@ -174,94 +167,76 @@ class PendaftaranService
         }
 
         if($statusDatakendaraan){
-            $checkP = $this->repoPendaftaran->getPendaftaranid($dataIden->id, $request->tglpendaftaran);
-            if($checkP && $request->kodepenerbitans_id != '3' && $request->kodepenerbitans_id != '4'){
+            $checkP = $this->repoPendaftaran->getPendaftaranid($dataIden->id, $pendaftaran['tglpendaftaran']);
+            if($checkP && $pendaftaran['kodepenerbitans_id'] != '3' && $pendaftaran['kodepenerbitans_id'] != '4'){
                 // $request->merge([
                 //     'user_id'                   => $user['id'],
                 // ]);
-                $dataP = $this->repoPendaftaran->updatePendaftaran($checkP->uuid, $request);
+                $dataP = $this->repoPendaftaran->updatePendaftaran($checkP->uuid, $pendaftaran);
             }else{
-                if ($request->kodepenerbitans_id == '3' || $request->kodepenerbitans_id == '4') {
-                    $request->merge([
-                        'foto'                      => '1',
-                        'posisi'                    => '5',
-                        'identitaskendaraan_id'     => $dataIden['id'],
-                    ]);
-                }  elseif ($request->kodepenerbitans_id == '9' || $request->kodepenerbitans_id == '10') {
-                    $request->merge([
-                        'foto'                      => null,
-                        'posisi'                    => '0',
-                        'approved'                  => '0',
-                        'identitaskendaraan_id'     => $dataIden['id'],
-                    ]);
-                } elseif ($request->kodepenerbitans_id == '7') {
-                    $request->merge([
-                        'foto'                      => '1',
-                        // 'posisi'                    => '1',
-                        'identitaskendaraan_id'     => $dataIden['id'],
-                    ]);
+                if ($pendaftaran['kodepenerbitans_id'] == '3' || $pendaftaran['kodepenerbitans_id'] == '4') {
+                    $pendaftaran['foto'] = '1';
+                    $pendaftaran['posisi'] = '5';
+                    $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
+                }  elseif ($pendaftaran['kodepenerbitans_id'] == '9' || $pendaftaran['kodepenerbitans_id'] == '10') {
+                    $pendaftaran['foto'] = null;
+                    $pendaftaran['posisi'] = '0';
+                    $pendaftaran['approved'] = '0';
+                    $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
+                } elseif ($pendaftaran['kodepenerbitans_id'] == '7') {
+                    $pendaftaran['foto'] = '1';
+                    // $pendaftaran['posisi'] = '1';
+                    $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
                 } else {
-                    $request->merge([
-                        'foto'                      => '0',
-                        'posisi'                    => '1',
-                        'identitaskendaraan_id'     => $dataIden['id'],
-                    ]);
+                    $pendaftaran['foto'] = '0';
+                    $pendaftaran['posisi'] = '1';
+                    $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
                 }
                 
-                $request->merge([
-                    'tglpendaftaran'            => $tglpendaftaran,
-                    'status'                    => '1',
-                    'verif'                     => '1',
-                    'jenispendaftaran'          => 'off',
-                    'user_id'                   => $user['id'],
-                ]);
-                $dataP = $this->repoPendaftaran->createPendaftaran($request->all());
+                $pendaftaran['tglpendaftaran'] = $tglpendaftaran;
+                $pendaftaran['status'] = '1';
+                $pendaftaran['verif'] = '1';
+                $pendaftaran['jenispendaftaran'] = 'off';
+                $pendaftaran['user_id'] = $user->id;
+                $dataP = $this->repoPendaftaran->createPendaftaran($pendaftaran);
             }
 
             if($dataP){
                 $statusPendaftaran = true;
-                if ($request->kodepenerbitans_id == '3') {
+                if ($pendaftaran['kodepenerbitans_id'] == '3') {
                     $pengujian = $this->repoPengujian->setCopyPengujian($dataP['id']);
                     if (!$pengujian) {
                         $statusPengujian = false;
                     }
-                } elseif ($request->kodepenerbitans_id == '4') {
+                } elseif ($pendaftaran['kodepenerbitans_id'] == '4') {
                     $pengujian = $this->repoPengujian->setCopyPengujian($dataP['id']);
                     if (!$pengujian) {
                         $statusPengujian = false;
                     }
-                }  elseif ($request->kodepenerbitans_id == '7') {
+                }  elseif ($pendaftaran['kodepenerbitans_id'] == '7') {
                     $pengujian = $this->repoPengujian->setCopyPengujian($dataP['id']);
                     if (!$pengujian) {
                         $statusPengujian = false;
                     }
                 } 
-                else if ($request->kodepenerbitans_id == '5' || $request->kodepenerbitans_id == '9' || $request->kodepenerbitans_id == '6' || $request->kodepenerbitans_id == '10') {
+                else if ($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '9' || $pendaftaran['kodepenerbitans_id'] == '6' || $pendaftaran['kodepenerbitans_id'] == '10') {
                     $checkNu = $this->repoSurat->checkSurat($dataP['id']);
                     if($checkNu){
-                        if($request->kodepenerbitans_id == '5' || $request->kodepenerbitans_id == '6'){
-                            $request->merge([
-                                'kode'     => $request->kodewilayahasal,
-                            ]);
+                        if($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
+                            $pendaftaran['kode'] = $pendaftaran['kodewilayahasal'];
                         }else{
-                            $request->merge([
-                                'kode'     => $request->kodewilayah,
-                            ]);
+                            $pendaftaran['kode'] = $pendaftaran['kodewilayah'];
                         }
                         $this->repoSurat->updateSurat($dataP['id'],$request);
                     }else{
-                        if($request->kodepenerbitans_id == '5' || $request->kodepenerbitans_id == '6'){
-                        $request->merge([
-                                'pendaftaran_id'     => $dataP['id'],
-                                'kode'     => $request->kodewilayahasal,
-                            ]);
+                        if($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
+                            $pendaftaran['pendaftaran_id'] = $dataP['id'];
+                            $pendaftaran['kode'] = $pendaftaran['kodewilayahasal'];
                         }else{
-                            $request->merge([
-                                'pendaftaran_id'     => $dataP['id'],
-                                'kode'     => $request->kodewilayah,
-                            ]);
+                            $pendaftaran['pendaftaran_id'] = $dataP['id'];
+                            $pendaftaran['kode'] = $pendaftaran['kodewilayah'];
                         }
-                        $this->repoSurat->createSurat($request->all());
+                        $this->repoSurat->createSurat($pendaftaran);
                     }
                 }
             }
