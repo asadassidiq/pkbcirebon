@@ -1619,6 +1619,7 @@ export default {
         'notelp',
         'masaberlakuuji',
         'tujuan',
+        'alasan',
       ];
 
       // Loop semua field di dataBaru
