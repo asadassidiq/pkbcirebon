@@ -332,7 +332,7 @@ class PendaftaranService
         // $checkNorangka = $this->repoIden->checkNorangka($request->nouji,$request->norangka);
         // $checkData = $this->repoIden->checkNouji($request->nouji);
         // if($checkNorangka === false && $checkData === false){
-            $dataUUID = $this->repoIden->getUUID($request->nouji);
+            $dataUUID = $this->repoIden->getUUID($pendaftaran['nouji']);
             $dataIden = $this->repoIden->updateIdentitaskendaraan($pendaftaran,$dataUUID->uuid);
             if($dataIden){
                 $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataUUID->id);
