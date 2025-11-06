@@ -20,7 +20,7 @@ class TandatanganRepository
 
     public function getAll()
     {
-        $data = $this->model->select('tandatangan.id','tandatangan.name','users.name as nama')->Join('users','users.uuid','=','tandatangan.user_id');
+        $data = $this->model->select('tandatangan.id','tandatangan.name','users.name as nama')->leftJoin('users','users.uuid','=','tandatangan.user_id');
         
         $search = str_replace("/", "", request()->q);
 
