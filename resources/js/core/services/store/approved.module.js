@@ -50,8 +50,8 @@ export const mutations = {
     },
     ASSIGN_FORM(state, payload) {
         state.approved = {
-            proposed_data:payload.proposed_data,
-            approved:payload.approved ,
+            proposed_data: typeof payload.proposed_data === "string" ? JSON.parse(payload.proposed_data) : payload.proposed_data,
+            approved: payload.approved,
             approval_notes: payload.approval_notes,
             type: payload.type,
         };
