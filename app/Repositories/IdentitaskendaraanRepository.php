@@ -339,7 +339,7 @@ class IdentitaskendaraanRepository
     public function updateIdentitaskendaraan($request, $id)
     {
         $update = $this->model->where('uuid', $id)->first();
-        $update->update($request->all());
+        $update->update($request);
 
         if ($update->save()) {
             if ($update) {

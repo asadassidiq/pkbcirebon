@@ -206,7 +206,7 @@ class DatakendaraanRepository
   public function updateDatakendaraan($request, $id)
   {
     $update = $this->model1->where('identitaskendaraan_id', $id)->first();
-    $update->update($request->all());
+    $update->update($request);
 
     if ($update->save()) {
       return true;
