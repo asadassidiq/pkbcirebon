@@ -94,7 +94,7 @@ class PerizinanRepository
         if($update){
             $update->approved       = $request->approved;
             $update->approval_notes = $request->approval_notes;
-            $update->user_approved = $user->id;
+            $update->approved_by_user_id = $user->id;
             if($update->save()){
                 if($dataId->kodepenerbitans_id == '10' || $dataId->kodepenerbitans_id == '9'){
                     $dataId->posisi = 6;
