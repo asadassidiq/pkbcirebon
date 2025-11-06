@@ -1404,6 +1404,7 @@ export default {
     },
     submit() {
         var updateData = this.cekPerubahanData();
+        console.log(updateData);
         this.ASSING_UPDATE(updateData);
         this.updatePendaftaran(this.$route.params.id).then(() => {
           Swal.fire({
@@ -1652,6 +1653,8 @@ export default {
     ...mapState(["errors"]),
     ...mapState("pendaftaran", {
       pendaftaran: (state) => state.pendaftaran,
+      datalama: state => state.datalama,
+      perubahans: state => state.perubahans,
       uuid: (state) => state.uuid,
       notif: (state) => state.notif,
       responeBlue: (state) => state.responeBlue,
@@ -1661,8 +1664,6 @@ export default {
       kodewilayahs: (state) => state.kodewilayahs,
     }),
     ...mapState("pendaftaran", {
-      datalama: state => state.datalama,
-      perubahans: state => state.perubahans,
       mereks: (state) => state.mereks,
       tipes: (state) => state.tipes,
       varians: (state) => state.varians,
