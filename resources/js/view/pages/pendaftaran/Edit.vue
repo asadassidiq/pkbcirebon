@@ -1611,6 +1611,7 @@ export default {
         'uuid',
         'wilayah',
         'wilayahasal',
+        'noantrian',
       ];
 
       // Loop semua field di dataBaru
