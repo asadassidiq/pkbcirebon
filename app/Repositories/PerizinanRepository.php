@@ -123,7 +123,7 @@ class PerizinanRepository
                     'identitaskendaraans.id as identitas_id',
                     'datakendaraans.id as data_id'
                 )
-                ->where('pendaftarans.uuida', $id)
+                ->where('pendaftarans.uuid', $id)
                 ->first();
 
             if (!$pendaftaran) {
