@@ -781,7 +781,7 @@ class PendaftaranRepository
             ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
             ->join('perizinans', 'perizinans.pendaftaran_id', '=', 'pendaftarans.id')
             ->leftJoin('users', 'pendaftarans.user_approved', '=', 'users.id')
-            ->where('pendaftarans.approved','>=', '0')
+            ->where('perizinans.status','>=', '0')
             ->where('pendaftarans.tglpendaftaran', request()->t)
             ->orderBy('pendaftarans.noantrian', 'DESC');
         $search = str_replace("/", "", request()->q);
