@@ -28,8 +28,8 @@ class PendaftaranUpdateRequest extends FormRequest
             'pendaftaran.tglpendaftaran'     => 'required',
             'pendaftaran.kodepenerbitans_id' => 'required|integer',
             'pendaftaran.uuid' => 'required|uuid', // validasi UUID dari input form
-            'pendaftaran.nouji' => 'required|string|unique:identitaskendaraans,nouji,' . $this->input('uuid') . ',uuid',
-            'pendaftaran.norangka' => 'required|string|max:100|unique:identitaskendaraans,norangka,' . $this->input('uuid') . ',uuid',
+            'pendaftaran.nouji' => 'required|string|unique:identitaskendaraans,nouji,' . $this->input('pendaftaran.uuid') . ',uuid',
+            'pendaftaran.norangka' => 'required|string|max:100|unique:identitaskendaraans,norangka,' . $this->input('pendaftaran.uuid') . ',uuid',
             'pendaftaran.nomesin'           => 'required|string|max:100',
             'pendaftaran.merek'           => 'required|string|max:100',
             'pendaftaran.tipe'           => 'required|string|max:100',
