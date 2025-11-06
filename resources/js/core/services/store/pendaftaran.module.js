@@ -329,6 +329,9 @@ export const mutations = {
     },
     ASSING_UPDATE(state, payload) {
         state.perubahans = payload;
+        state.perubahans.forEach(item => {
+            state.pendaftaran[item.field] = item.lama;
+        });
     },
     ASSING_DATAID(state, pendaftaran_id){
         state.pendaftaran.pendaftaran_id= pendaftaran_id;

@@ -1506,7 +1506,9 @@ export default {
         'namapemilikbaru',
         'alamatpemilikbaru',
         'catatanrubahbentuk',
-        'uuid'
+        'uuid',
+        'wilayah',
+        'wilayahasal',
       ];
 
       // Loop semua field di dataBaru
