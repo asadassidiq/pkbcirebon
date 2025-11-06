@@ -1509,6 +1509,12 @@ export default {
         'wilayah',
         'wilayahasal',
         'noantrian',
+        'jenispendaftaran',
+        'nosuratkehilangan',
+        'namapemohon',
+        'alamatpemohon',
+        'notelp',
+        'masaberlakuuji'
       ];
 
       // Loop semua field di dataBaru
