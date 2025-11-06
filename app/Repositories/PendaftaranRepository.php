@@ -776,9 +776,10 @@ class PendaftaranRepository
     public function getAllApproved()
     {
         $data = $this->model
-            ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', '.noregistrasikendaraan','identitaskendaraans.nama', 'pendaftarans.status', 'pendaftarans.jenispendaftaran', 'pendaftarans.notelp', 'pendaftarans.namapemohon', 'pendaftarans.tglpendaftaran', 'pendaftarans.approved','pendaftarans.user_approved','pendaftarans.catatan','users.name')
+            ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan','identitaskendaraans.nama', 'pendaftarans.status', 'pendaftarans.jenispendaftaran', 'pendaftarans.notelp', 'pendaftarans.namapemohon', 'pendaftarans.tglpendaftaran', 'perizinans.status as approved','perizinans.approved_by_user_id as user_approved','perizinans.approval_notes as catatan','perizinans.type','users.name')
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
+            ->join('perizinans', 'perizinans.pendaftaran_id', '=', 'pendaftarans.id')
             ->leftJoin('users', 'pendaftarans.user_approved', '=', 'users.id')
             ->where('pendaftarans.approved','>=', '0')
             ->where('pendaftarans.tglpendaftaran', request()->t)
