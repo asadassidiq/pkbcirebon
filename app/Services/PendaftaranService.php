@@ -252,13 +252,15 @@ class PendaftaranService
                     );
                     $this->repoPerizinan->create($arrayPerubahan);
                 }else{
-                    $arrayPerubahan = array(
-                        'pendaftaran_id' => $dataP['id'],
-                        'proposed_data' => json_encode($perubahans),
-                        'requested_by_user_id' => $user->id,
-                        'type' => 'persuratan',
-                    );
-                    $this->repoPerizinan->create($arrayPerubahan);
+                    if($pendaftaran['kodepenerbitans_id'] == '9' || $pendaftaran['kodepenerbitans_id'] == '10'){
+                            $arrayPerubahan = array(
+                            'pendaftaran_id' => $dataP['id'],
+                            'proposed_data' => json_encode($perubahans),
+                            'requested_by_user_id' => $user->id,
+                            'type' => 'persuratan',
+                        );
+                        $this->repoPerizinan->create($arrayPerubahan);
+                    }
                 }
             }
         }

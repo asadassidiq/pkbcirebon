@@ -5,17 +5,19 @@ namespace App\Repositories;
 use App\Traits\RepositoryTrait;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Perizinan;
+use App\Models\Pendaftaran;
 use DB;
 
 class PerizinanRepository
 {
     use RepositoryTrait;
 
-    protected $model;
+    protected $model,$modelPendaftaran;
 
-    public function __construct(Perizinan $model)
+    public function __construct(Perizinan $model, Pendaftaran $modelPendaftaran)
     {
         $this->model = $model;
+        $this->modelPendaftaran = $modelPendaftaran;
     }
 
     public function getAll()
@@ -58,7 +60,25 @@ class PerizinanRepository
 
     public function create($request)
     {
-        return $this->model->create($request);
+        $data = $this->model->create($request);
+        if($data){
+            $this->upPosisi($request['pendaftaran_id'],'0');
+            return $data;
+        }
+        return false;
+    }
+
+    public function upPosisi($id,$request)
+    {
+        $update = $this->modelPendaftaran->where('id',$id)->first();
+        if($update){
+            $update->posisi = $request;
+            if ($update->save()) {
+                return true;
+            }
+        }
+        
+        return false;
     }
 
     public function updatePerizinan($id,$request)

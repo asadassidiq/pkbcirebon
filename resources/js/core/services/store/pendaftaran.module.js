@@ -763,6 +763,7 @@ export const mutations = {
     },
     ASSIGN_FORMNOUJI(state, payload) {
         state.pendaftaran = {
+            noantrian:state.pendaftaran.noantrian,
             tglpendaftaran: state.pendaftaran.tglpendaftaran,
             kodepenerbitans_id: state.pendaftaran.kodepenerbitans_id,
             nosurat: state.pendaftaran.nosurat,
