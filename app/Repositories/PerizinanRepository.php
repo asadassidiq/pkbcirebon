@@ -132,10 +132,9 @@ class PerizinanRepository
 
             // ambil log perubahan
             $logs = $request;
-            dd($request);
             foreach ($logs as $log) {
-                $field = $log->field;
-                $baru  = $log->baru;
+                $field = $log['field'];
+                $baru  = $log['baru'];
 
                 // cek kolom ada di tabel mana
                 if (Schema::hasColumn('identitaskendaraans', $field)) {
