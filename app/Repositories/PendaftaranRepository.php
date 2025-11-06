@@ -151,7 +151,13 @@ class PendaftaranRepository
     {
         $data = $this->model->select('pendaftarans.id');
         $data = $data->where('uuid', $id);
+        return $data->first();
+    }
 
+    public function getUUID($id)
+    {
+        $data = $this->model->select('identitaskendaraans.uuid')->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id');
+        $data = $data->where('pendaftarans.uuid', $id);
         return $data->first();
     }
 

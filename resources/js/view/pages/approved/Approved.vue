@@ -75,7 +75,7 @@
                 <div class="row" v-if="approved.type == 'Perubahan Data'">
                     <div class="col-sm-12">
                         <table class="table table-bordered">
-                            <thead class="bg-secondary text-white">
+                            <thead class="bg-warning text-white">
                                 <tr>
                                 <th>Field</th>
                                 <th>Data Lama</th>

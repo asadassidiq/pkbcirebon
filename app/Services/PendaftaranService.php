@@ -370,7 +370,19 @@ class PendaftaranService
 
     public function updateApproved($request, $id)
     {
-        return $this->repoPendaftaran->updateApproved($id, $request);
+        $data =  $this->repoPerizinan->updatePerizinan($id, $request);
+        if($data){
+            if (is_array($request->proposed_data) && count($request->proposed_data) > 0) {
+            $dataUUID = $this->repoPendaftaran->getUUID($id);
+                if($dataUUID){
+                    $dataIden = $this->repoIden->updateIdentitaskendaraan($request->proposed_data,$dataUUID->uuid);
+                    if($dataIden){
+                        $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($request->proposed_data,$dataIden->id);
+                    }
+                }
+            }
+        }
+        return $data;
     }
 
     public function ulangiFoto($id){

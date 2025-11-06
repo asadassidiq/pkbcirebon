@@ -84,11 +84,27 @@ class PerizinanRepository
 
     public function updatePerizinan($id,$request)
     {
-        $update = $this->model->find($id);
-        $update->update($request->all());
-
-        if ($update->save()) {
-            return true;
+        $user = auth()->user();
+        $dataId = $this->modelPendaftaran->where('uuid',$id)->first();
+        if(!$dataId){
+            return false;
+        }
+        $update = $this->model->where('pendaftaran_id',$dataId->id)->first();
+        if($update){
+            $update->approved       = $request->approved;
+            $update->approval_notes = $request->approval_notes;
+            $update->user_approved = $user->id;
+            if($update->save()){
+                if($dataId->kodepenerbitans_id == '10' || $dataId->kodepenerbitans_id == '9'){
+                    $dataId->posisi = 6;
+                }else{
+                    $dataId->posisi = 1;  
+                }
+                if ($dataId->save()) {
+                    return true;
+                }
+            }
+            return false;
         }
         return false;
     }
