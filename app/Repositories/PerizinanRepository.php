@@ -95,7 +95,7 @@ class PerizinanRepository
             $update->approval_notes = $request->approval_notes;
             $update->approved_by_user_id = $user->id;
             if($update->save()){
-                $dataId = $this->model->where('id',$update->pendaftaran_id)->first();
+                $dataId = $this->modelPendaftaran->where('id',$update->pendaftaran_id)->first();
                 if(!$dataId){
                     return false;
                 }
@@ -121,12 +121,13 @@ class PerizinanRepository
             $pendaftaran = DB::table('pendaftarans')
                 ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
                 ->join('datakendaraans', 'datakendaraans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
+                ->join('perizinans', 'perizinans.pendaftaran_id', '=', 'pendaftarans.id')
                 ->select(
                     'pendaftarans.id as pendaftaran_id',
                     'identitaskendaraans.id as identitas_id',
                     'datakendaraans.id as data_id'
                 )
-                ->where('pendaftarans.uuid', $id)
+                ->where('perizinans.uuid', $id)
                 ->first();
 
             if (!$pendaftaran) {
