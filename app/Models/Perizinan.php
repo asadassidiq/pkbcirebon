@@ -9,6 +9,7 @@ class Perizinan extends Model
     protected $table = 'perizinans';
     protected $fillable = [
         'pendaftaran_id',
+        'uuid',
         'proposed_data',
         'requested_by_user_id',
         'approved_by_user_id',
