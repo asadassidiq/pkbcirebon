@@ -1222,27 +1222,15 @@ export default {
     submit() {
       var updateData = this.cekPerubahanData();
       this.ASSING_UPDATE(updateData);
-      if (this.pendaftaran.kodepenerbitans_id == '11' || this.pendaftaran.kodepenerbitans_id == '12') {
-        this.submitPendaftaran2().then(() => {
-          Swal.fire({
-            icon: 'success',
-            title: 'Saved',
-            showConfirmButton: false,
-            timer: 1500
-          })
-          this.$router.push({ name: "pendaftaran.data" });
-        });
-      } else {
-        this.submitPendaftaran().then(() => {
-          Swal.fire({
-            icon: 'success',
-            title: 'Saved',
-            showConfirmButton: false,
-            timer: 1500
-          })
-          this.$router.push({ name: "pendaftaran.data" });
-        });
-      }
+      this.submitPendaftaran().then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Saved',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.$router.push({ name: "pendaftaran.data" });
+      });
     },
     totalBeratSumbu() {
       this.pendaftaran.beratkosong = parseInt(this.pendaftaran.beratsumbu1) + parseInt(this.pendaftaran.beratsumbu2) + parseInt(this.pendaftaran.beratsumbu3) + parseInt(this.pendaftaran.beratsumbu4);

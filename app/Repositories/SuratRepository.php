@@ -30,6 +30,7 @@ class SuratRepository
             ->select('pendaftarans.noantrian','pendaftarans.uuid','kodepenerbitans.keterangan','identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan','persuratan.document_id','nosurat','status_cetak','posisi','posverif','approved')
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->join('kodepenerbitans','pendaftarans.kodepenerbitans_id','=','kodepenerbitans.id')
+            ->join('perizinans','perizinans.pendaftaran_id','=','pendaftarans.id')
             ->leftjoin('persuratan','persuratan.pendaftaran_id','=','pendaftarans.id')
             // ->whereIn('pendaftarans.kodepenerbitans_id',['9','10','11','12'])
             ->where('pendaftarans.tglpendaftaran',request()->t)
