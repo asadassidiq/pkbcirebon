@@ -144,22 +144,22 @@
             @foreach ($kendaraan as $data) 
             <tr>
                 <th scope="row">{{ $i }}</th>
-                <td>{{ $data->bulan }}</td>
-                <td>{{ $data->nouji }}</td>
-                <td>{{ $data->noregistrasikendaraan }}</td>
+                <td>{{ $data['bulan'] }}</td>
+                <td>{{ $data['nouji'] }}</td>
+                <td>{{ $data['noregistrasikendaraan'] }}</td>
                 @php
-                    if (strlen($data->masaberlakuuji) === 8) {
-                        $hari  = substr($tgl, 0, 2);
-                        $bulan = substr($tgl, 2, 2);
-                        $tahun = substr($tgl, 4, 4);
+                    if (strlen($data['masaberlakuuji']) === 8) {
+                        $hari  = substr($data['masaberlakuuji'], 0, 2);
+                        $bulan = substr($data['masaberlakuuji'], 2, 2);
+                        $tahun = substr($data['masaberlakuuji'], 4, 4);
                         $masaberlakuuji = "$tahun-$bulan-$hari";
                     } else {
                         $masaberlakuuji = '-'; 
                     }
                 @endphp
                 <td>{{ $masaberlakuuji }}</td>
-                <td>{{ $data->nokendalikartu }}</td>
-                @if ($data->perso == '1')
+                <td>{{ $data['nokendalikartu'] }}</td>
+                @if ($data['perso'] == '1')
                 <td>BARU</td>
                 @else
                 <td>LAMA</td>

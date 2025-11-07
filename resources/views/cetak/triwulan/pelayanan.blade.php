@@ -167,29 +167,29 @@
             @foreach ($kendaraan as $data) 
             <tr>
                 <th scope="row">{{ $i }}</th>
-                <td>{{ $data->tgl }}</td>
-                <td>{{ $data->ujipertama }}</td>
-                <td>{{ $data->ujiberkala }}</td>
-                <td>{{ $data->numasuk }}</td>
-                <td>{{ $data->mutasimasuk }}</td>
-                <td>{{ $data->rubahbentuk }}</td>
-                <td>{{ $data->nukeluar }}</td>
-                <td>{{ $data->mutasikeluar }}</td>
-                <td>{{ $data->ujiulang }}</td>
-                <td>{{ $data->lulus }}</td>
-                <td>{{ $data->tidaklulus }}</td>
+                <td>{{ $data['bulan'] }}</td>
+                <td>{{ $data['ujipertama'] }}</td>
+                <td>{{ $data['ujiberkala'] }}</td>
+                <td>{{ $data['numasuk'] }}</td>
+                <td>{{ $data['mutasimasuk'] }}</td>
+                <td>{{ $data['rubahbentuk'] }}</td>
+                <td>{{ $data['nukeluar'] }}</td>
+                <td>{{ $data['mutasikeluar'] }}</td>
+                <td>{{ $data['ujiulang'] }}</td>
+                <td>{{ $data['lulus'] }}</td>
+                <td>{{ $data['tidaklulus'] }}</td>
             </tr>
             @php $i++;
-            $ujipertama += $data->ujipertama;
-            $ujiberkala += $data->ujiberkala;
-            $numasuk += $data->numasuk;
-            $mutasimasuk += $data->mutasimasuk;
-            $rubahbentuk += $data->rubahbentuk;
-            $nukeluar += $data->nukeluar;
-            $mutasikeluar += $data->mutasikeluar;
-            $ujiulang += $data->ujiulang;
-            $lulus += $data->lulus;
-            $tidaklulus += $data->tidaklulus;
+            $ujipertama += $data['ujipertama'];
+            $ujiberkala += $data['ujiberkala'];
+            $numasuk += $data['numasuk'];
+            $mutasimasuk += $data['mutasimasuk'];
+            $rubahbentuk += $data['rubahbentuk'];
+            $nukeluar += $data['nukeluar'];
+            $mutasikeluar += $data['mutasikeluar'];
+            $ujiulang += $data['ujiulang'];
+            $lulus += $data['lulus'];
+            $tidaklulus += $data['tidaklulus'];
             @endphp
             @endforeach
             <tr>
