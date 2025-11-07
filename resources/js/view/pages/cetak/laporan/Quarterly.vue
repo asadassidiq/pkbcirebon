@@ -9,12 +9,14 @@
                         </div>
                         <div class="col-3">
                             <label>Pilih Tanggal</label>
-                            <b-form-datepicker
-                            v-model="tgl"
-                            :date-format-options="{ year: 'numeric' }"
-                            locale="id"
-                            class="form-control"
-                            ></b-form-datepicker>
+                            <datepicker
+                                input-class="form-control"
+                                v-model="tgl"
+                                :language="id"
+                                :format="customFormatter"
+                                :minimum-view="'year'"
+                                :maximum-view="'year'"
+                            ></datepicker>
                         </div>
 
                         <div class="col-3">
