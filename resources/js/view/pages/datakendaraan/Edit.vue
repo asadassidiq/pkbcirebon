@@ -191,6 +191,13 @@
                         @focus="handleFocus('dayamotorpenggerak')" disabled />
                     </div>
                   </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Bahan Bakar</label>
+                      <vSelect label="fuel_name" ref="bahanbakar" :options="fuels" v-model="datakendaraan.bahanbakar"
+                        @input="setFuel" :disabled="true"></vSelect>
+                    </div>
+                  </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>No Mesin</label>
@@ -209,13 +216,6 @@
                           class="btn btn-sm btn-light-success font-weight-bold">
                           <i class="flaticon2-search"></i> Cek Data
                         </a></span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label>Bahan Bakar</label>
-                      <vSelect label="fuel_name" ref="bahanbakar" :options="fuels" v-model="datakendaraan.bahanbakar"
-                        @input="setFuel" :disabled="true"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4">
