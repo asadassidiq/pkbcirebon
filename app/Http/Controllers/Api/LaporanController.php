@@ -307,8 +307,7 @@ class LaporanController extends Controller
         $tglprint = $triwulan . ' ' . $tahun;
         $data = array();
         foreach ($range as $bulan) {
-            $date = date_create($bulan);
-            $date = $this->utils->bulan(date_format($date, "m"));
+            $date = $this->utils->bulan($bulan);
             $arr = array(
                 'bulan'  => $date,
                 'lulus' => Pendaftaran::leftJoin('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')->where('statuslulusuji', '1')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->count(),
