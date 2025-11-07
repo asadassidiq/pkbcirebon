@@ -128,45 +128,39 @@
     <table class="table table-bordered ">
         <thead>
             <tr>
-                <th scope="col">NO</th>
-                <th scope="col">BULAN</th>
-                <th scope="col">NO UJI</th>
-                <th scope="col">NO KENDARAAN</th>
-                <th scope="col">MASA BERLAKU UJI</th>
-                <th scope="col">NO KENDALI KARTU</th>
-                <th scope="col">STATUS KARTU</th>
-                <th scope="col">KET</th>
+                <th scope="col" rowspan="2">NO</th>
+                <th scope="col" rowspan="2">BULAN</th>
+                <th scope="col" colspan="4">STATUS KARTU</th>
+                <th scope="col" rowspan="2">KET</th>
+            </tr>
+            <tr>
+                <th>BARU</th>
+                <th>PERPANJANGAN</th>
+                <th>RUSAK</th>
+                <th>HILANG</th>
             </tr>
         </thead>
         <tbody>
-            @php $i=1
+            @php $i=1;
+            $baru=0;
+            $perpanjangan=0;
+            $rusak=0;
+            $hilang=0;
             @endphp
             @foreach ($kendaraan as $data) 
             <tr>
                 <th scope="row">{{ $i }}</th>
                 <td>{{ $data['bulan'] }}</td>
-                <td>{{ $data['nouji'] }}</td>
-                <td>{{ $data['noregistrasikendaraan'] }}</td>
-                @php
-                    if (strlen($data['masaberlakuuji']) === 8) {
-                        $hari  = substr($data['masaberlakuuji'], 0, 2);
-                        $bulan = substr($data['masaberlakuuji'], 2, 2);
-                        $tahun = substr($data['masaberlakuuji'], 4, 4);
-                        $masaberlakuuji = "$tahun-$bulan-$hari";
-                    } else {
-                        $masaberlakuuji = '-'; 
-                    }
-                @endphp
-                <td>{{ $masaberlakuuji }}</td>
-                <td>{{ $data['nokendalikartu'] }}</td>
-                @if ($data['perso'] == '1')
-                <td>BARU</td>
-                @else
-                <td>LAMA</td>
-                @endif
-                <td></td>
+                <td>{{ $data['baru'] }}</td>
+                <td>{{ $data['perpanjangan'] }}</td>
+                <td>{{ $data['rusak'] }}</td>
+                <td>{{ $data['hilang'] }}</td>
             </tr>
-            @php $i++
+            @php $i++;
+            $baru += $data['baru'];
+            $perpanjangan += $data['perpanjangan'];
+            $rusak += $data['rusak'];
+            $hilang += $data['hilang'];
             @endphp
             @endforeach
         </tbody>
