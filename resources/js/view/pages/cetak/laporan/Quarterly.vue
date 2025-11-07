@@ -113,11 +113,11 @@ export default {
     methods: {
         printLaporan() {
             this.tgl = moment(this.tgl).format("YYYY");
-            window.open("/cetak/" + this.tgl + '/'+this.dataLaporan, "_blank");
+            window.open("/cetak/" + this.tgl + '/'+this.dataLaporan+`?page=${this.triwulan}`, "_blank");
         },
         exportLaporan() {
             this.tgl = moment(this.tgl).format("YYYY");
-            window.open("/export/" + this.tgl + '/'+this.dataLaporan, "_blank");
+            window.open("/export/" + this.tgl + '/'+this.dataLaporan+`?page=${this.triwulan}`, "_blank");
         },
         customFormatter(date) {
             if (!date) return '';

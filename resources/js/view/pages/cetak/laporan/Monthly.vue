@@ -14,6 +14,7 @@
                                 v-model="tgl"
                                 :language="id"
                                 :format="customFormatter"
+                                :minimum-view="'month'" :maximum-view="'month'"
                             ></datepicker>
                         </div>
                         
