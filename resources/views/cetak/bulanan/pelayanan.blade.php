@@ -163,10 +163,12 @@
             $ujiulang = 0;
             $lulus = 0;
             $tidaklulus = 0;
+            dd($kendaraan);
             @endphp
             @foreach ($kendaraan as $data) 
             <tr>
                 <th scope="row">{{ $i }}</th>
+                <td>{{ $data->tgl }}</td>
                 <td>{{ $data->ujipertama }}</td>
                 <td>{{ $data->ujiberkala }}</td>
                 <td>{{ $data->numasuk }}</td>
