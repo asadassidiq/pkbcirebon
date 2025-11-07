@@ -129,29 +129,6 @@ export const actions = {
                 });
         });
     },
-    getApprovedSudah({ commit, state }, payload) {
-        let search = typeof payload != "undefined" ? payload : "";
-        return new Promise((resolve, reject) => {
-            ApprovedService.getApprovedSudah(state.page,state.filter.tgl,state.filter.kodepenerbitan, search)
-                .then(response => {
-                    commit("ASSING_DATA_SUDAH", response.data.result);
-                    resolve(response.data);
-                })
-                .catch(error => {
-                    if (error == 'Error: [KTs] ApiService Error: Request failed with status code 403') {
-                        Swal.fire({
-                            icon: "error",
-                            title: "Oops...",
-                            text: 'Akses ditolak. Anda tidak memiliki izin!!',
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                window.history.back();
-                            };
-                        });
-                    }
-                });
-        });
-    },
     editApproved({ commit, state }, payload) {
         return new Promise((resolve, reject) => {
             ApprovedService.getApproved(payload)
@@ -194,6 +171,15 @@ export const actions = {
                             icon: "error",
                             title: "Oops...",
                             text: error.response.data.messages,
+                        });
+                    }else if (error == 'Error: [KTs] ApiService Error: Request failed with status code 403') {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: 'Akses ditolak. Anda tidak memiliki izin!!',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                            };
                         });
                     }
                 });
