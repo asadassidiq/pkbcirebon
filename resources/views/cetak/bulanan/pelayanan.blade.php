@@ -167,7 +167,6 @@
             @foreach ($kendaraan as $data) 
             <tr>
                 <th scope="row">{{ $i }}</th>
-                <td>{{ $data->tgl }}</td>
                 <td>{{ $data->ujipertama }}</td>
                 <td>{{ $data->ujiberkala }}</td>
                 <td>{{ $data->numasuk }}</td>
