@@ -460,9 +460,9 @@ export default new Router({
               component: () => import("@/view/pages/cetak/laporan/Monthly.vue"),
             },
             {
-              path: "tahunan",
-              name: "laporan.tahunan",
-              component: () => import("@/view/pages/cetak/laporan/Yearly.vue"),
+              path: "triwulan",
+              name: "laporan.triwulan",
+              component: () => import("@/view/pages/cetak/laporan/Quarterly.vue"),
             },
             {
               path: "all",

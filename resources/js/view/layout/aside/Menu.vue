@@ -637,7 +637,7 @@
             </li>
           </router-link>
 
-          <router-link to="/laporan/tahunan" v-slot="{ href, navigate, isActive, isExactActive }">
+          <router-link to="/laporan/triwulan" v-slot="{ href, navigate, isActive, isExactActive }">
             <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
               isActive && 'menu-item-active',
               isExactActive && 'menu-item-active'
@@ -646,7 +646,7 @@
                 <i class="menu-bullet menu-bullet-dot">
                   <span></span>
                 </i>
-                <span class="menu-text">Laporan Tahunan</span>
+                <span class="menu-text">Laporan Triwulan</span>
               </a>
             </li>
           </router-link>

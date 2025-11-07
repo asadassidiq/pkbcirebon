@@ -7,14 +7,25 @@
                         <div class="col-12">
                             <h4>Tahunan</h4>
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                             <label>Pilih Tanggal</label>
-                            <datepicker
-                                input-class="form-control"
-                                v-model="tgl"
-                                :language="id"
-                                :format="customFormatter"
-                            ></datepicker>
+                            <b-form-datepicker
+                            v-model="tgl"
+                            :date-format-options="{ year: 'numeric' }"
+                            locale="id"
+                            class="form-control"
+                            ></b-form-datepicker>
+                        </div>
+
+                        <div class="col-3">
+                            <label>Pilih Triwulan</label>
+                            <select class="form-control" v-model="triwulan">
+                                <option selected="selected" value=""></option>
+                                <option value="1">I-III</option>
+                                <option value="2">IV-VI</option>
+                                <option value="3">VII-IX</option>
+                                <option value="4">X-XII</option>
+                            </select>
                         </div>
                         
                         <div class="col-4">
@@ -26,7 +37,7 @@
                                 <option value="pelayanantahunan">Pelayanan</option>
                             </select>
                         </div>
-                        <div class="col-4">
+                        <div class="col-2">
                             <label>Pilih Aksi</label>
                             <br>
                             <a
@@ -83,6 +94,7 @@ export default {
     data() {
         return {
             loading: true,
+            triwulan: "1",
             dataLaporan:"",
             tgl: "",
         };
@@ -90,7 +102,7 @@ export default {
     mounted() {
         this.$store.dispatch(SET_BREADCRUMB, [
             { title: "Cetak" },
-            { title: "Laporan Tahunan" },
+            { title: "Laporan Triwulan" },
         ]);
     },
     computed: {
@@ -106,8 +118,9 @@ export default {
             window.open("/export/" + this.tgl + '/'+this.dataLaporan, "_blank");
         },
         customFormatter(date) {
-            return moment(date).format("YYYY");
-        },
+            if (!date) return '';
+            return date.getFullYear();
+        }
     },
     components: {
         datepicker,
