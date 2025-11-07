@@ -359,8 +359,7 @@ class LaporanController extends Controller
         $tglprint = $triwulan . ' ' . $tahun;
         $data = array();
         foreach ($range as $bulan) {
-            $date = date_create($bulan);
-            $date = $this->utils->bulan(date_format($date, "m"));
+            $date = $this->utils->bulan($bulan);
             $arr = array(
                 'bulan'  => $date,
                 'baru'   => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->whereIn('kodepenerbitans_id', ['1', '2', '5', '6'])->where('rfid_tid', '!=','')->count(),
