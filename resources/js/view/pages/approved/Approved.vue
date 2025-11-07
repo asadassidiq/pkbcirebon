@@ -99,12 +99,12 @@
                             <label><b>Persetujuan</b></label>
                             <div class="radio-inline">
                                 <label class="radio radio-success">
-                                <input type="radio" v-model="approved.approved" value="1" />
+                                <input type="radio" v-model="approved.approved" value="1" :disabled="!user.ap" />
                                 <span></span>
                                 Disetujui
                                 </label>
                                 <label class="radio radio-danger">
-                                <input type="radio" v-model="approved.approved" value="2" />
+                                <input type="radio" v-model="approved.approved" value="2" :disabled="!user.ap" />
                                 <span></span>
                                 Ditolak
                                 </label>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleTextarea">Catatan</label>
-                            <textarea class="form-control " v-model="approved.approval_notes" rows="3"></textarea>
+                            <textarea class="form-control " v-model="approved.approval_notes" rows="3" :disabled="!user.ap"></textarea>
                         </div>
                     </div>
                     
