@@ -166,6 +166,7 @@ class LaporanController extends Controller
         $path_logoKab = public_path() . '/img/kota.png';
         $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
         $ttd = Ttd::leftjoin('users', 'users.uuid', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
+        dd($dataKend);
         $data = [
             'kendaraan' => $dataKend,
             'tglprint' => $tglprint,
