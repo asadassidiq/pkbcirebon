@@ -21,7 +21,7 @@
                             <label>Pilih Jenis Laporan</label>
                             <select class="form-control" v-model="dataLaporan">
                                 <option selected="selected" value=""></option>
-                                <option value="kwbubulanan">KWBU</option>
+                                <option value="kartubulanan">Pemakaian Kartu</option>
                                 <option value="jenisbulanan">Jenis Kendaraan</option>
                                 <option value="pelayananbulanan">Pelayanan</option>
                             </select>
