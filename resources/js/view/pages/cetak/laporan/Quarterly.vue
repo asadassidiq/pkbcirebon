@@ -61,18 +61,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-12">
-            <div v-if="loading && dataLaporan == 'printlaporanharian'" class="loading-overlay">
-                <div class="spinner">Loading Laporan...</div>
-            </div>
-            <!-- <iframe
-                :src="`/cetak/${tgl}/${dataLaporan}`"
-                width="100%"
-                height="650"
-                style="border: none;"
-                @load="loading = false"
-            ></iframe> -->
-        </div>
     </div>
 </template>
 
@@ -113,11 +101,11 @@ export default {
     methods: {
         printLaporan() {
             this.tgl = moment(this.tgl).format("YYYY");
-            window.open("/cetak/" + this.tgl + '/'+this.dataLaporan+`?page=${this.triwulan}`, "_blank");
+            window.open("/cetak/" + this.tgl + '/'+this.dataLaporan+`?t=${this.triwulan}`, "_blank");
         },
         exportLaporan() {
             this.tgl = moment(this.tgl).format("YYYY");
-            window.open("/export/" + this.tgl + '/'+this.dataLaporan+`?page=${this.triwulan}`, "_blank");
+            window.open("/export/" + this.tgl + '/'+this.dataLaporan+`?t=${this.triwulan}`, "_blank");
         },
         customFormatter(date) {
             if (!date) return '';
