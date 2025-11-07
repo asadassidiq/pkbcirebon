@@ -38,17 +38,14 @@
                     <div class="form-group">
                       <label> No Uji</label>
                       <input type="text" class="form-control form-control-lg" name="nouji" placeholder="No Uji"
-                        v-model="datakendaraan.nouji" />
-                      <p class="text-danger" v-if="errors.nouji">{{ errors.nouji[0] }}</p>
+                        v-model="datakendaraan.nouji" disabled />
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>No Kendaraan</label>
                       <input type="text" class="form-control form-control-lg" name="noregistrasikendaraan"
-                        placeholder=" No Kendaraan" v-model="datakendaraan.noregistrasikendaraan" />
-                      <p class="text-danger" v-if="errors.noregistrasikendaraan">{{ errors.noregistrasikendaraan[0] }}
-                      </p>
+                        placeholder=" No Kendaraan" v-model="datakendaraan.noregistrasikendaraan" disabled />
                     </div>
                   </div>
                 </div>
@@ -57,88 +54,76 @@
                     <div class="form-group">
                       <label> Nama</label>
                       <input type="text" class="form-control form-control-lg" name="nama" placeholder=" nama"
-                        v-model="datakendaraan.nama" />
-                      <p class="text-danger" v-if="errors.nama">{{ errors.nama[0] }}</p>
+                        v-model="datakendaraan.nama" disabled />
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label> No Identitas</label>
                       <input type="text" class="form-control form-control-lg" name="noidentitaspemilik"
-                        placeholder=" No Identitas" v-model="datakendaraan.noidentitaspemilik" />
-                      <p class="text-danger" v-if="errors.noidentitaspemilik">{{ errors.noidentitaspemilik[0] }}</p>
+                        placeholder=" No Identitas" v-model="datakendaraan.noidentitaspemilik" disabled />
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label> Alamat</label>
                       <input type="text" class="form-control form-control-lg" name="alamat" placeholder=" Alamat"
-                        v-model="datakendaraan.alamat" />
-                      <p class="text-danger" v-if="errors.alamat">{{ errors.alamat[0] }}</p>
+                        v-model="datakendaraan.alamat" disabled />
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Kabupaten</label>
-                      <vSelect label="nama" :options="kotas" v-model="datakendaraan.kota" @input="setKota"></vSelect>
-                      <p class="text-danger" v-if="errors.kota">{{ errors.kota[0] }}</p>
+                      <vSelect label="nama" :options="kotas" v-model="datakendaraan.kota" @input="setKota" :disabled="true"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Kecamatan</label>
                       <vSelect label="nama" :options="kecamatans" v-model="datakendaraan.kecamatan"
-                        @input="setKecamatan" :disabled="disabled1 == 1"></vSelect>
-                      <p class="text-danger" v-if="errors.kecamatan">{{ errors.kecamatan[0] }}</p>
+                        @input="setKecamatan" :disabled="true"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Kelurahan</label>
                       <vSelect label="nama" :options="kelurahans" v-model="datakendaraan.kelurahan"
-                        @input="setKelurahan" :disabled="disabled2 == 1"></vSelect>
-                      <p class="text-danger" v-if="errors.Kelurahan">{{ errors.Kelurahan[0] }}</p>
+                        @input="setKelurahan" :disabled="true"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>No SRUT</label>
                       <input type="text" class="form-control form-control-lg" name="nosertifikatreg"
-                        placeholder=" No SRUT" v-model="datakendaraan.nosertifikatreg" />
-                      <p class="text-danger" v-if="errors.nosertifikatreg">{{ errors.nosertifikatreg[0] }}</p>
+                        placeholder=" No SRUT" v-model="datakendaraan.nosertifikatreg" disabled />
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Tanggal SRUT</label>
                       <b-form-datepicker id="tglsertifikatreg" v-model="datakendaraan.tglsertifikatreg"
-                        locale="id"></b-form-datepicker>
-                      <p class="text-danger" v-if="errors.tglsertifikatreg">{{ errors.tglsertifikatreg[0] }}</p>
+                        locale="id" disabled></b-form-datepicker>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Tanggal STNK terbit</label>
                       <b-form-datepicker id="tgl_registrasikendaraan" v-model="datakendaraan.tgl_registrasikendaraan"
-                        locale="id"></b-form-datepicker>
-                      <p class="text-danger" v-if="errors.tgl_registrasikendaraan">{{ errors.tgl_registrasikendaraan[0]
-                      }}</p>
+                        locale="id" disabled></b-form-datepicker>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>SK Rancang Bangun</label>
                       <input type="text" class="form-control form-control-lg" name="rancang"
-                        placeholder="SK Rancang Bangun" v-model="datakendaraan.rancang" />
-                      <p class="text-danger" v-if="errors.rancang">{{ errors.rancang[0] }}</p>
+                        placeholder="SK Rancang Bangun" v-model="datakendaraan.rancang" disabled />
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Tahun Pembuatan</label>
                       <input type="number" class="form-control form-control-lg" name="thpembuatan"
-                        placeholder="Tahun Pembuatan" v-model="datakendaraan.thpembuatan" />
-                      <p class="text-danger" v-if="errors.thpembuatan">{{ errors.thpembuatan[0] }}</p>
+                        placeholder="Tahun Pembuatan" v-model="datakendaraan.thpembuatan" disabled />
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -146,8 +131,7 @@
                       <label>Merek <span class="text-danger" v-if="datakendaraan.mereklama">{{ datakendaraan.mereklama
                       }}</span></label>
                       <vSelect label="vehicle_brand_name" ref="merek" :options="mereks" v-model="datakendaraan.merek"
-                        @input="setType"></vSelect>
-
+                        @input="setType" :disabled="true"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -155,8 +139,7 @@
                       <label>Tipe <span class="text-danger" v-if="datakendaraan.tipelama">{{ datakendaraan.tipelama
                       }}</span></label>
                       <vSelect label="vehicle_varian_type_name" ref="tipes" :options="tipes"
-                        v-model="datakendaraan.tipe" @input="setVarian" :disabled="!tipes.length"></vSelect>
-
+                        v-model="datakendaraan.tipe" @input="setVarian" :disabled="true"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -164,9 +147,8 @@
                       <div class="col-sm-12">
                         <label class="text-danger">Varian</label>
                         <vSelect label="vehicle_varian_name" ref="varian" :options="varians"
-                          v-model="datakendaraan.varian" @input="setVarianid" :disabled="!varians.length"></vSelect>
+                          v-model="datakendaraan.varian" @input="setVarianid" :disabled="true" ></vSelect>
                       </div>
-                      <p class="text-danger" v-if="errors.varian">{{ errors.varian[0] }}</p>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -174,7 +156,7 @@
                       <label>Jenis <span class="text-danger" v-if="datakendaraan.jenislama">{{ datakendaraan.jenislama
                       }}</span></label>
                       <vSelect label="vehicle_type_name" ref="jenis" :options="jenis" v-model="datakendaraan.jenis"
-                        @input="setSubVehicle" :disabled="!jenis.length"></vSelect>
+                        @input="setSubVehicle" :disabled="true"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -182,7 +164,7 @@
                       <label>Sub Jenis <span class="text-danger" v-if="datakendaraan.model">{{ datakendaraan.model
                       }}</span></label>
                       <vSelect label="vehicle_sub_name" ref="subjenis" :options="subjenis"
-                        v-model="datakendaraan.subjenis" @input="setSubVehicleid" :disabled="!subjenis.length">
+                        v-model="datakendaraan.subjenis" @input="setSubVehicleid" :disabled="true">
                       </vSelect>
                     </div>
                   </div>
@@ -190,7 +172,7 @@
                     <div class="form-group">
                       <label>Model</label>
                       <vSelect label="model" ref="jenismodel" :options="jenismodel"
-                        v-model="datakendaraan.model" @input="setModel" :disabled="!jenismodel.length"></vSelect>
+                        v-model="datakendaraan.model" @input="setModel" :disabled="true"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -198,8 +180,7 @@
                       <label>Isi Silinder</label>
                       <input type="number" class="form-control form-control-lg" name="isisilinder"
                         placeholder=" Isi Silinder" v-model="datakendaraan.isisilinder"
-                        @focus="handleFocus('isisilinder')" />
-                      <p class="text-danger" v-if="errors.isisilinder">{{ errors.isisilinder[0] }}</p>
+                        @focus="handleFocus('isisilinder')" disabled />
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -207,16 +188,14 @@
                       <label>Daya Motor Penggerak</label>
                       <input type="number" class="form-control form-control-lg" name="dayamotorpenggerak"
                         placeholder=" Daya Motor Penggerak" v-model="datakendaraan.dayamotorpenggerak"
-                        @focus="handleFocus('dayamotorpenggerak')" />
-                      <p class="text-danger" v-if="errors.dayamotorpenggerak">{{ errors.dayamotorpenggerak[0] }}</p>
+                        @focus="handleFocus('dayamotorpenggerak')" disabled />
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>No Mesin</label>
                       <input type="text" class="form-control form-control-lg" name="nomesin" placeholder="No Mesin"
-                        style="text-transform: uppercase;" v-model="datakendaraan.nomesin" />
-                      <p class="text-danger" v-if="errors.nomesin">{{ errors.nomesin[0] }}</p>
+                        style="text-transform: uppercase;" v-model="datakendaraan.nomesin" disabled />
                     </div>
                   </div>
                   <div class="col-sm-6">
@@ -224,7 +203,7 @@
                     <div class="input-group">
                       <input type="text" class="form-control form-control-lg" name="norangka"
                         style="text-transform: uppercase;" ref="norangka" placeholder=" No Rangka"
-                        v-model="datakendaraan.norangka" />
+                        v-model="datakendaraan.norangka" disabled />
                       <span class="input-group-text" id="basic-addon2"><a href="javascript:void(0)"
                           @click="getDataVTA(datakendaraan.norangka)"
                           class="btn btn-sm btn-light-success font-weight-bold">
@@ -236,27 +215,24 @@
                     <div class="form-group">
                       <label>Bahan Bakar</label>
                       <vSelect label="fuel_name" ref="bahanbakar" :options="fuels" v-model="datakendaraan.bahanbakar"
-                        @input="setFuel"></vSelect>
-                      <p class="text-danger" v-if="errors.bahanbakar">{{ errors.bahanbakar[0] }}</p>
+                        @input="setFuel" :disabled="true"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Penggunaan</label>
-                      <select class="form-control" v-model="datakendaraan.peruntukan">
+                      <select class="form-control" v-model="datakendaraan.peruntukan" disabled>
                         <option value="UMUM" selected="selected">UMUM</option>
                         <option value="TIDAK UMUM">TIDAK UMUM</option>
                         <option value="PEMERINTAH">PEMERINTAH</option>
                       </select>
-                      <p class="text-danger" v-if="errors.peruntukan">{{ errors.peruntukan[0] }}</p>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Daerah Asal</label>
                       <vSelect label="area_name" ref="kodewilayahasal" :options="kodewilayahs"
-                        v-model="datakendaraan.wilayahasal" @input="setAreaFrom"></vSelect>
-                      <p class="text-danger" v-if="errors.kodewilayah">{{ errors.kodewilayah[0] }}</p>
+                        v-model="datakendaraan.wilayahasal" @input="setAreaFrom" :disabled="true"></vSelect>
                     </div>
                   </div>
 
@@ -264,7 +240,7 @@
                     <div class="form-group">
                       <label>Warna</label>
                       <input type="text" class="form-control form-control-lg" name="warna" placeholder="Warna"
-                        style="text-transform: uppercase;" v-model="datakendaraan.warna" />
+                        style="text-transform: uppercase;" v-model="datakendaraan.warna" disabled/>
                     </div>
                   </div>
                 </div>
@@ -300,8 +276,7 @@
                               <label>Panjang Kendaraan (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="panjangkendaraan" min="0"
                                 placeholder="Panjang Kendaraan" v-model="datakendaraan.panjangkendaraan"
-                                @focus="handleFocus('panjangkendaraan')" />
-                              <p class="text-danger" v-if="errors.panjangkendaraan">{{ errors.panjangkendaraan[0] }}</p>
+                                @focus="handleFocus('panjangkendaraan')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -309,8 +284,7 @@
                               <label>Lebar Kendaraan (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="lebarkendaraan" min="0"
                                 placeholder="Lebar Kendaraan" v-model="datakendaraan.lebarkendaraan"
-                                @focus="handleFocus('lebarkendaraan')" />
-                              <p class="text-danger" v-if="errors.lebarkendaraan">{{ errors.lebarkendaraan[0] }}</p>
+                                @focus="handleFocus('lebarkendaraan')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -318,32 +292,28 @@
                               <label>Tinggi Kendaraan (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="tinggikendaraan" min="0"
                                 placeholder="Tinggi Kendaraan" v-model="datakendaraan.tinggikendaraan"
-                                @focus="handleFocus('tinggikendaraan')" />
-                              <p class="text-danger" v-if="errors.tinggikendaraan">{{ errors.tinggikendaraan[0] }}</p>
+                                @focus="handleFocus('tinggikendaraan')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>Julur Belakang(mm)</label>
                               <input type="number" class="form-control form-control-lg" name="julurbelakang" min="0"
-                                v-model="datakendaraan.julurbelakang" @focus="handleFocus('julurbelakang')" />
-                              <p class="text-danger" v-if="errors.julurbelakang">{{ errors.julurbelakang[0] }}</p>
+                                v-model="datakendaraan.julurbelakang" @focus="handleFocus('julurbelakang')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>Julur Depan(mm)</label>
                               <input type="number" class="form-control form-control-lg" name="julurdepan" min="0"
-                                v-model="datakendaraan.julurdepan" @focus="handleFocus('julurdepan')" />
-                              <p class="text-danger" v-if="errors.julurdepan">{{ errors.julurdepan[0] }}</p>
+                                v-model="datakendaraan.julurdepan" @focus="handleFocus('julurdepan')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>Jenis Rumah-rumah</label>
                               <input type="text" class="form-control form-control-lg" name="bahan"
-                                v-model="datakendaraan.bahan" />
-                              <p class="text-danger" v-if="errors.bahan">{{ errors.bahan[0] }}</p>
+                                v-model="datakendaraan.bahan" disabled/>
                             </div>
                           </div>
                         </div>
@@ -360,9 +330,7 @@
                               <input type="number" class="form-control form-control-lg" name="panjangbakatautangki"
                                 min="0" placeholder="Panjang Bak atau Tangki Muatan"
                                 v-model="datakendaraan.panjangbakatautangki"
-                                @focus="handleFocus('panjangbakatautangki')" />
-                              <p class="text-danger" v-if="errors.panjangbakatautangki">{{
-                                errors.panjangbakatautangki[0] }}</p>
+                                @focus="handleFocus('panjangbakatautangki')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -370,9 +338,7 @@
                               <label>Lebar Bak atau Tangki Muatan (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="lebarbakatautangki"
                                 min="0" placeholder="Lebar Bak atau Tangki Muatan"
-                                v-model="datakendaraan.lebarbakatautangki" @focus="handleFocus('lebarbakatautangki')" />
-                              <p class="text-danger" v-if="errors.lebarbakatautangki">{{ errors.lebarbakatautangki[0] }}
-                              </p>
+                                v-model="datakendaraan.lebarbakatautangki" @focus="handleFocus('lebarbakatautangki')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -381,9 +347,7 @@
                               <input type="number" class="form-control form-control-lg" name="tinggibakatautangki"
                                 min="0" placeholder="Tinggi Bak atau Tangki Muatan"
                                 v-model="datakendaraan.tinggibakatautangki"
-                                @focus="handleFocus('tinggibakatautangki')" />
-                              <p class="text-danger" v-if="errors.tinggibakatautangki">{{ errors.tinggibakatautangki[0]
-                              }}</p>
+                                @focus="handleFocus('tinggibakatautangki')" disabled/>
                             </div>
                           </div>
                         </div>
@@ -399,8 +363,7 @@
                               <label class="text-danger">Jumlah Sumbu</label>
                               <input type="number" class="form-control form-control-lg" name="jumlah_sumbu" min="2"
                                 placeholder="Jumlah Sumbu" v-model="datakendaraan.jumlah_sumbu"
-                                @focus="handleFocus('jumlah_sumbu')" />
-                              <p class="text-danger" v-if="errors.jumlah_sumbu">{{ errors.jumlah_sumbu[0] }}</p>
+                                @focus="handleFocus('jumlah_sumbu')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -408,8 +371,7 @@
                               <label>Jarak Sumbu I-II (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu1_2" min="0"
                                 placeholder="Jarak Sumbu I-II (mm)" v-model="datakendaraan.jaraksumbu1_2"
-                                @focus="handleFocus('jaraksumbu1_2')" />
-                              <p class="text-danger" v-if="errors.jaraksumbu1_2">{{ errors.jaraksumbu1_2[0] }}</p>
+                                @focus="handleFocus('jaraksumbu1_2')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="datakendaraan.jumlah_sumbu > 2">
@@ -417,8 +379,7 @@
                               <label>Jarak Sumbu II-III (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="height"
                                 placeholder="Jarak Sumbu II-III (mm)" min="0" v-model="datakendaraan.jaraksumbu2_3"
-                                @focus="handleFocus('jaraksumbu2_3')" />
-                              <p class="text-danger" v-if="errors.jaraksumbu2_3">{{ errors.jaraksumbu2_3[0] }}</p>
+                                @focus="handleFocus('jaraksumbu2_3')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="datakendaraan.jumlah_sumbu > 3">
@@ -426,8 +387,7 @@
                               <label>Jarak Sumbu III-IV (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="length"
                                 placeholder="Jarak Sumbu III-IV (mm)" min="0" v-model="datakendaraan.jaraksumbu3_4"
-                                @focus="handleFocus('jaraksumbu3_4')" />
-                              <p class="text-danger" v-if="errors.jaraksumbu3_4">{{ errors.jaraksumbu3_4[0] }}</p>
+                                @focus="handleFocus('jaraksumbu3_4')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="datakendaraan.jumlah_sumbu > 4">
@@ -435,7 +395,7 @@
                               <label>Jarak Sumbu IV-V (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu4_5"
                                 placeholder="Jarak Sumbu IV-V (mm)" min="0" v-model="datakendaraan.jaraksumbu4_5"
-                                @focus="handleFocus('jaraksumbu4_5')" />
+                                @focus="handleFocus('jaraksumbu4_5')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="datakendaraan.jumlah_sumbu > 5">
@@ -443,7 +403,7 @@
                               <label>Jarak Sumbu V-VI (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu5_6"
                                 placeholder="Jarak Sumbu V-VI (mm)" min="0" v-model="datakendaraan.jaraksumbu5_6"
-                                @focus="handleFocus('jaraksumbu5_6')" />
+                                @focus="handleFocus('jaraksumbu5_6')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="datakendaraan.jumlah_sumbu > 6">
@@ -459,7 +419,7 @@
                               <label>Jarak Sumbu VII-VIII (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu7_8"
                                 placeholder="Jarak Sumbu VII-VIII (mm)" min="0" v-model="datakendaraan.jaraksumbu7_8"
-                                @focus="handleFocus('jaraksumbu7_8')" />
+                                @focus="handleFocus('jaraksumbu7_8')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="datakendaraan.jumlah_sumbu > 8">
@@ -467,7 +427,7 @@
                               <label>Jarak Sumbu VIII-IX (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu8_9"
                                 placeholder="Jarak Sumbu VIII-IX (mm)" min="0" v-model="datakendaraan.jaraksumbu8_9"
-                                @focus="handleFocus('jaraksumbu8_9')" />
+                                @focus="handleFocus('jaraksumbu8_9')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="datakendaraan.jumlah_sumbu > 9">
@@ -475,7 +435,7 @@
                               <label>Jarak Sumbu IX-X (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu9_10"
                                 placeholder="Jarak Sumbu IX-X (mm)" min="0" v-model="datakendaraan.jaraksumbu9_10"
-                                @focus="handleFocus('jaraksumbu9_10')" />
+                                @focus="handleFocus('jaraksumbu9_10')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="datakendaraan.jumlah_sumbu > 10">
@@ -483,7 +443,7 @@
                               <label>Jarak Sumbu X-XI (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu10_11" min="0"
                                 placeholder="Jarak Sumbu X-XI (mm)" v-model="datakendaraan.jaraksumbu10_11"
-                                @focus="handleFocus('jaraksumbu10_11')" />
+                                @focus="handleFocus('jaraksumbu10_11')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3" v-if="datakendaraan.jumlah_sumbu > 11">
@@ -491,7 +451,7 @@
                               <label>Jarak Sumbu XI-XII (mm)</label>
                               <input type="number" class="form-control form-control-lg" name="jaraksumbu11_12" min="0"
                                 placeholder="Jarak Sumbu XI-XII (mm)" v-model="datakendaraan.jaraksumbu11_12"
-                                @focus="handleFocus('jaraksumbu11_12')" />
+                                @focus="handleFocus('jaraksumbu11_12')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3">
@@ -506,24 +466,21 @@
                             <div class="form-group">
                               <label>P (mm)</label>
                               <input type="number" class="form-control form-control-lg" placeholder="P (mm)" name="p"
-                                min="0" v-model="datakendaraan.p" @focus="handleFocus('p')" />
-                              <p class="text-danger" v-if="errors.p">{{ errors.p[0] }}</p>
+                                min="0" v-model="datakendaraan.p" @focus="handleFocus('p')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>Q(mm)</label>
                               <input type="number" class="form-control form-control-lg" placeholder="Q (mm)" name="q"
-                                min="0" v-model="datakendaraan.q" @focus="handleFocus('q')" />
-                              <p class="text-danger" v-if="errors.q">{{ errors.q[0] }}</p>
+                                min="0" v-model="datakendaraan.q" @focus="handleFocus('q')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="form-group">
                               <label>R(mm)</label>
                               <input type="number" class="form-control form-control-lg" placeholder="R (mm)" name="r"
-                                min="0" v-model="datakendaraan.r" @focus="handleFocus('r')" />
-                              <p class="text-danger" v-if="errors.r">{{ errors.r[0] }}</p>
+                                min="0" v-model="datakendaraan.r" @focus="handleFocus('r')" disabled/>
                             </div>
                           </div>
                         </div>
@@ -539,8 +496,7 @@
                               <label>Berat Sumbu 1(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu1" min="0"
                                 v-model="datakendaraan.beratsumbu1" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu1')" />
-                              <p class="text-danger" v-if="errors.beratsumbu1">{{ errors.beratsumbu1[0] }}</p>
+                                @focus="handleFocus('beratsumbu1')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2">
@@ -548,8 +504,7 @@
                               <label>Berat Sumbu 2(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu2" min="0"
                                 v-model="datakendaraan.beratsumbu2" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu2')" />
-                              <p class="text-danger" v-if="errors.beratsumbu2">{{ errors.beratsumbu2[0] }}</p>
+                                @focus="handleFocus('beratsumbu2')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2">
@@ -557,8 +512,7 @@
                               <label>Berat Sumbu 3(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu3" min="0"
                                 v-model="datakendaraan.beratsumbu3" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu3')" />
-                              <p class="text-danger" v-if="errors.beratsumbu3">{{ errors.beratsumbu3[0] }}</p>
+                                @focus="handleFocus('beratsumbu3')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2">
@@ -566,8 +520,7 @@
                               <label>Berat Sumbu 4(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu4" min="0"
                                 v-model="datakendaraan.beratsumbu4" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu4')" />
-                              <p class="text-danger" v-if="errors.beratsumbu4">{{ errors.beratsumbu4[0] }}</p>
+                                @focus="handleFocus('beratsumbu4')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="datakendaraan.jumlah_sumbu > 4">
@@ -575,7 +528,7 @@
                               <label>Berat Sumbu 5(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu5" min="0"
                                 v-model="datakendaraan.beratsumbu5" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu5')" />
+                                @focus="handleFocus('beratsumbu5')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="datakendaraan.jumlah_sumbu > 5">
@@ -583,7 +536,7 @@
                               <label>Berat Sumbu 6(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu6" min="0"
                                 v-model="datakendaraan.beratsumbu6" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu6')" />
+                                @focus="handleFocus('beratsumbu6')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="datakendaraan.jumlah_sumbu > 6">
@@ -591,7 +544,7 @@
                               <label>Berat Sumbu 7(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu7" min="0"
                                 v-model="datakendaraan.beratsumbu7" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu7')" />
+                                @focus="handleFocus('beratsumbu7')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="datakendaraan.jumlah_sumbu > 7">
@@ -599,7 +552,7 @@
                               <label>Berat Sumbu 8(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu8" min="0"
                                 v-model="datakendaraan.beratsumbu8" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu8')" />
+                                @focus="handleFocus('beratsumbu8')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="datakendaraan.jumlah_sumbu > 8">
@@ -607,7 +560,7 @@
                               <label>Berat Sumbu 9(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu9" min="0"
                                 v-model="datakendaraan.beratsumbu9" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu9')" />
+                                @focus="handleFocus('beratsumbu9')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="datakendaraan.jumlah_sumbu > 9">
@@ -615,7 +568,7 @@
                               <label>Berat Sumbu 10(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu10" min="0"
                                 v-model="datakendaraan.beratsumbu10" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu10')" />
+                                @focus="handleFocus('beratsumbu10')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="datakendaraan.jumlah_sumbu > 10">
@@ -623,7 +576,7 @@
                               <label>Berat Sumbu 11(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu11" min="0"
                                 v-model="datakendaraan.beratsumbu11" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu11')" />
+                                @focus="handleFocus('beratsumbu11')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-2" v-if="datakendaraan.jumlah_sumbu > 11">
@@ -631,7 +584,7 @@
                               <label>Berat Sumbu 12(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratsumbu12" min="0"
                                 v-model="datakendaraan.beratsumbu12" @change="totalBeratSumbu(); setJBI()"
-                                @focus="handleFocus('beratsumbu12')" />
+                                @focus="handleFocus('beratsumbu12')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -639,8 +592,7 @@
                               <label>Total Berat Sumbu(Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="beratkosong"
                                 v-model="datakendaraan.beratkosong" @change="setJBI()"
-                                @focus="handleFocus('beratkosong')" />
-                              <p class="text-danger" v-if="errors.beratsumbu4">{{ errors.beratsumbu4[0] }}</p>
+                                @focus="handleFocus('beratkosong')" disabled/>
                             </div>
                           </div>
                         </div>
@@ -656,8 +608,7 @@
                               <label>Daya Angkut Orang (orang)</label>
                               <input type="number" class="form-control form-control-lg" name="dayaangkutorang" min="0"
                                 placeholder="Daya Angkut Orang (mm)" v-model="datakendaraan.dayaangkutorang"
-                                @change="setJBI()" @focus="handleFocus('dayaangkutorang')" />
-                              <p class="text-danger" v-if="errors.dayaangkutorang">{{ errors.dayaangkutorang[0] }}</p>
+                                @change="setJBI()" @focus="handleFocus('dayaangkutorang')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-4">
@@ -665,57 +616,49 @@
                               <label>Daya Angkut Barang (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="dayaangkutbarang" min="0"
                                 placeholder="Daya Angkut Barang" v-model="datakendaraan.dayaangkutbarang"
-                                @focus="handleFocus('dayaangkutbarang')" @change="setJBI()" />
-                              <p class="text-danger" v-if="errors.dayaangkutbarang">{{ errors.dayaangkutbarang[0] }}</p>
+                                @focus="handleFocus('dayaangkutbarang')" @change="setJBI()" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>JBB (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="jbb" min="0"
-                                placeholder="JBB" v-model="datakendaraan.jbb" @focus="handleFocus('jbb')" />
-                              <p class="text-danger" v-if="errors.jbb">{{ errors.jbb[0] }}</p>
+                                placeholder="JBB" v-model="datakendaraan.jbb" @focus="handleFocus('jbb')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>JBKB (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="jbkb" min="0"
-                                placeholder="JBKB (Kg)" v-model="datakendaraan.jbkb" @focus="handleFocus('jbkb')" />
-                              <p class="text-danger" v-if="errors.jbkb">{{ errors.jbkb[0] }}</p>
+                                placeholder="JBKB (Kg)" v-model="datakendaraan.jbkb" @focus="handleFocus('jbkb')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>JBI (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="jbi" min="0"
-                                placeholder="JBI (Kg)" v-model="datakendaraan.jbi" @focus="handleFocus('jbi')" />
-                              <p class="text-danger" v-if="errors.jbi">{{ errors.jbi[0] }}</p>
+                                placeholder="JBI (Kg)" v-model="datakendaraan.jbi" @focus="handleFocus('jbi')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>JBKI (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="jbki" min="0"
-                                placeholder="JBKI (Kg)" v-model="datakendaraan.jbki" @focus="handleFocus('jbki')" />
-                              <p class="text-danger" v-if="errors.jbki">{{ errors.jbki[0] }}</p>
+                                placeholder="JBKI (Kg)" v-model="datakendaraan.jbki" @focus="handleFocus('jbki')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>MST (Kg)</label>
                               <input type="number" class="form-control form-control-lg" name="mst" min="0"
-                                placeholder="MST" v-model="datakendaraan.mst" @focus="handleFocus('mst')" />
-                              <p class="text-danger" v-if="errors.mst">{{ errors.mst[0] }}</p>
+                                placeholder="MST" v-model="datakendaraan.mst" @focus="handleFocus('mst')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>Kelas Jalan Terendah</label>
                               <vSelect label="kelasjalan_name" ref="kelasjalanterendah" :options="kelasjalans"
-                                v-model="datakendaraan.kelasjalanterendah" @input="setKelasJalan"></vSelect>
-                              <p class="text-danger" v-if="errors.kelasjalanterendah">{{ errors.kelasjalanterendah[0] }}
-                              </p>
+                                v-model="datakendaraan.kelasjalanterendah" @input="setKelasJalan" :disabled="true"></vSelect>
                             </div>
                           </div>
                           <div class="col-sm-3">
@@ -724,17 +667,14 @@
                               <input type="text" class="form-control form-control-lg" name="konfigurasisumburoda"
                                 min="0" placeholder="Konfigurasi Sumbu Roda"
                                 v-model="datakendaraan.konfigurasisumburoda"
-                                @focus="handleFocus('konfigurasisumburoda')" />
-                              <p class="text-danger" v-if="errors.konfigurasisumburoda">{{
-                                errors.konfigurasisumburoda[0] }}</p>
+                                @focus="handleFocus('konfigurasisumburoda')" disabled/>
                             </div>
                           </div>
                           <div class="col-sm-3">
                             <div class="form-group">
                               <label>Ukuran Ban</label>
                               <input type="text" class="form-control form-control-lg" name="ukuranban"
-                                placeholder="Ukuran Ban" v-model="datakendaraan.ukuranban" />
-                              <p class="text-danger" v-if="errors.ukuranban">{{ errors.ukuranban[0] }}</p>
+                                placeholder="Ukuran Ban" v-model="datakendaraan.ukuranban" disabled/>
                             </div>
                           </div>
                         </div>
@@ -749,9 +689,7 @@
                             <div class="form-group">
                               <label>Catatan Rubah Bentuk</label>
                               <input type="text" class="form-control form-control-lg" placeholder="Catatan Rubah Bentuk"
-                                name="catatanrubahbentuk" v-model="datakendaraan.catatanrubahbentuk" />
-                              <p class="text-danger" v-if="errors.catatanrubahbentuk">{{ errors.catatanrubahbentuk[0] }}
-                              </p>
+                                name="catatanrubahbentuk" v-model="datakendaraan.catatanrubahbentuk" disabled/>
                             </div>
                           </div>
                         </div>
@@ -861,7 +799,7 @@
                 <div>
                   <button v-on:click="submit" class="btn btn-success font-weight-bold text-uppercase px-9 py-4"
                     data-wizard-type="action-submit">
-                    Submit
+                    Close
                   </button>
                   <button class="btn btn-primary font-weight-bold text-uppercase px-9 py-4"
                     data-wizard-type="action-next">
@@ -1013,15 +951,15 @@ export default {
     ...mapMutations("datakendaraan", ["CLEAR_FORM"]),
     ...mapActions("datakendaraan", ["updateDatakendaraan", "editDatakendaraan", "getMereks", "getTipes", "getVarians", "getJenis", "getSubJenis", "getJeniskendaraan", "getFuels", "getKelasJalans", "getKodewilayahs", "getKotas", "getKecamatans", "getKelurahans", "getVTA", "getRiwayatUji", "getDetailRiwayatUji","getJenisModel"]),
     submit() {
-      this.updateDatakendaraan(this.$route.params.id).then(() => {
-        Swal.fire({
-          icon: 'success',
-          title: 'Saved',
-          showConfirmButton: false,
-          timer: 1500
-        })
+      // this.updateDatakendaraan(this.$route.params.id).then(() => {
+      //   Swal.fire({
+      //     icon: 'success',
+      //     title: 'Saved',
+      //     showConfirmButton: false,
+      //     timer: 1500
+      //   })
         this.$router.go(-1);
-      });
+      // });
     },
     totalBeratSumbu() {
       this.datakendaraan.beratkosong = parseInt(this.datakendaraan.beratsumbu1) + parseInt(this.datakendaraan.beratsumbu2) + parseInt(this.datakendaraan.beratsumbu3) + parseInt(this.datakendaraan.beratsumbu4);
