@@ -125,12 +125,12 @@
     <h3 style="margin:1;padding:1;text-align: center">LAPORAN BULANAN PENGUJIAN KENDARAAN BERMOTOR</h3>
     <h3 style="margin:1;padding:1;text-align: center">MENURUT JENIS PELAYANAN</h3>
     <h3 style="margin:1;padding:1;text-align: center">TRIWULAN KE {{ $tglprint }}</h3>
-    <table class="table table-bordered ">
+    <table class="table table-bordered text-center">
         <thead>
             <tr>
                 <th scope="col" rowspan="3">NO</th>
                 <th scope="col" rowspan="3">BULAN</th>
-                <th scope="col" colspan="3">JENIS PELAYANAN</th>
+                <th scope="col" colspan="8">JENIS PELAYANAN</th>
                 <th scope="col" colspan="2">HASIL UJI</th>
                 <th scope="col" rowspan="3">KET</th>
             </tr>
@@ -178,6 +178,7 @@
                 <td>{{ $data['ujiulang'] }}</td>
                 <td>{{ $data['lulus'] }}</td>
                 <td>{{ $data['tidaklulus'] }}</td>
+                <td></td>
             </tr>
             @php $i++;
             $ujipertama += $data['ujipertama'];
@@ -204,6 +205,7 @@
                 <td>{{ $ujiulang }}</td>
                 <td>{{ $lulus }}</td>
                 <td>{{ $tidaklulus }}</td>
+                <td></td>
             </tr>
         </tbody>
     </table>
