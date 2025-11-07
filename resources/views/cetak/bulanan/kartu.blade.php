@@ -149,9 +149,9 @@
                 <td>{{ $data->noregistrasikendaraan }}</td>
                 @php
                     if (strlen($data->masaberlakuuji) === 8) {
-                        $hari  = substr($tgl, 0, 2);
-                        $bulan = substr($tgl, 2, 2);
-                        $tahun = substr($tgl, 4, 4);
+                        $hari  = substr($data->masaberlakuuji, 0, 2);
+                        $bulan = substr($data->masaberlakuuji, 2, 2);
+                        $tahun = substr($data->masaberlakuuji, 4, 4);
                         $masaberlakuuji = "$tahun-$bulan-$hari";
                     } else {
                         $masaberlakuuji = '-'; 
