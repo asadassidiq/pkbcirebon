@@ -14,6 +14,7 @@ use App\Http\Requests\Pendaftaran\PendaftaranUpdate2Request;
 use App\Http\Requests\Penyerahan\PenyerahanStoreRequest;
 use Barryvdh\DomPDF\Facade\Pdf;
 // use PDF;
+use App\Traits\CryptHelper;
 
 use Illuminate\Support\Str;
 
@@ -101,6 +102,20 @@ class PendaftaranController extends Controller
 
     public function updateApproved(Request $request, $id)
     {
+        $key = 'solusiteknikindonesiaxsimbok';
+        $user = auth()->user();
+        $decrypted = CryptHelper::decrypt($user->ap, $key);
+        $checkPs = $user->username . 'approvedok';
+        if ($checkPs !== $decrypted) {
+            if ($request->expectsJson()) {
+                return response()->json([
+                    'status' => 403,
+                    'message' => 'Akses ditolak. Anda tidak memiliki izin.',
+                ], 403);
+            }
+            // abort(403, 'Anda tidak memiliki akses ke halaman ini.');
+        }
+        dd($decrypted.'-'.$checkPs);
         $data = $this->pendaftaranService->updateApproved($request, $id);
         return $this->returnJson($data);
     }

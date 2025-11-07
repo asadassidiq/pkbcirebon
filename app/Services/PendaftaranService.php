@@ -377,20 +377,6 @@ class PendaftaranService
 
     public function updateApproved($request, $id)
     {
-        $key = 'solusiteknikindonesiaxsimbok';
-        $user = auth()->user();
-        $decrypted = CryptHelper::decrypt($user->ap, $key);
-        $checkPs = $user->username . 'approvedok';
-        if ($checkPs !== $decrypted) {
-            if ($request->expectsJson()) {
-                return response()->json([
-                    'status' => 403,
-                    'message' => 'Akses ditolak. Anda tidak memiliki izin.',
-                ], 403);
-            }
-            // abort(403, 'Anda tidak memiliki akses ke halaman ini.');
-        }
-        dd($decrypted.'-'.$checkPs);
         $data =  $this->repoPerizinan->updatePerizinan($id, $request);
         if($data){
             if (is_array($request->proposed_data) && count($request->proposed_data) > 0) {
