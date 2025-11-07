@@ -155,6 +155,7 @@
                 <td>{{ $data['perpanjangan'] }}</td>
                 <td>{{ $data['rusak'] }}</td>
                 <td>{{ $data['hilang'] }}</td>
+                <td></td>
             </tr>
             @php $i++;
             $baru += $data['baru'];
@@ -163,6 +164,14 @@
             $hilang += $data['hilang'];
             @endphp
             @endforeach
+            <tr>
+                <td colspan="2">TOTAL</td>
+                <td>{{ $baru }}</td>
+                <td>{{ $perpanjangan }}</td>
+                <td>{{ $rusak }}</td>
+                <td>{{ $hilang }}</td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
     <div style="position: absolute; right: 0; bottom: 2cm; width: 300px;">
