@@ -118,7 +118,7 @@
                     
                     <div class="col-12 text-right">
                         <button class="btn btn-sm btn-light-warning mr-2" @click="goBack">Close</button>
-                        <button class="btn btn-primary btn-sm" @click.prevent="submit">
+                        <button class="btn btn-primary btn-sm" v-if="user.ap == true" @click.prevent="submit">
                         <i class="fa fa-save"></i> Submit
                         </button>
                     </div>
