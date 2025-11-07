@@ -178,6 +178,7 @@
                 <td>{{ $data['ujiulang'] }}</td>
                 <td>{{ $data['lulus'] }}</td>
                 <td>{{ $data['tidaklulus'] }}</td>
+                <td></td>
             </tr>
             @php $i++;
             $ujipertama += $data['ujipertama'];
@@ -204,6 +205,7 @@
                 <td>{{ $ujiulang }}</td>
                 <td>{{ $lulus }}</td>
                 <td>{{ $tidaklulus }}</td>
+                <td></td>
             </tr>
         </tbody>
     </table>
