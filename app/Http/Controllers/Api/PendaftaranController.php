@@ -115,7 +115,6 @@ class PendaftaranController extends Controller
             }
             // abort(403, 'Anda tidak memiliki akses ke halaman ini.');
         }
-        dd($decrypted.'-'.$checkPs);
         $data = $this->pendaftaranService->updateApproved($request, $id);
         return $this->returnJson($data);
     }

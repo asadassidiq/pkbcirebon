@@ -166,13 +166,7 @@ export const actions = {
                     resolve(response.data);
                 })
                 .catch(error => {
-                    if (error.response.status == 422) {
-                        Swal.fire({
-                            icon: "error",
-                            title: "Oops...",
-                            text: error.response.data.messages,
-                        });
-                    }else if (error == 'Error: [KTs] ApiService Error: Request failed with status code 403') {
+                    if (error == 'Error: [KTs] ApiService Error: Request failed with status code 403') {
                         Swal.fire({
                             icon: "error",
                             title: "Oops...",
@@ -180,6 +174,14 @@ export const actions = {
                         }).then((result) => {
                             if (result.isConfirmed) {
                             };
+                        });
+                    }
+
+                    else if (error.response.status == 422) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: error.response.data.messages,
                         });
                     }
                 });
