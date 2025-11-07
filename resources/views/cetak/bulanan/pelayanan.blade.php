@@ -41,7 +41,7 @@
         }
 
         .content {
-            padding-top: 0.2cm;
+            padding-top: 0.4cm;
             width: 100%;
         }
 
@@ -122,9 +122,9 @@
     @endphp
 @include('cetak.layouts.header')
 <div class="content">
-    <h3 style="margin:1;padding:1">LAPORAN BULANAN PENGUJIAN KENDARAAN BERMOTOR</h3>
-    <h3 style="margin:1;padding:1">MENURUT JENIS PELAYANAN</h3>
-    <h3 style="margin:1;padding:1">BULAN {{ $tglprint }}</h3>
+    <h3 style="margin:1;padding:1;text-align:center">LAPORAN BULANAN PENGUJIAN KENDARAAN BERMOTOR</h3>
+    <h3 style="margin:1;padding:1;text-align:center">MENURUT JENIS PELAYANAN</h3>
+    <h3 style="margin:1;padding:1;text-align:center">BULAN {{ $tglprint }}</h3>
     <table class="table table-bordered ">
         <thead>
             <tr>
