@@ -128,16 +128,16 @@
     <table class="table table-bordered ">
         <thead>
             <tr>
-                <th scope="col" rowspan="2">NO</th>
-                <th scope="col" rowspan="2">BULAN</th>
-                <th scope="col" colspan="4">STATUS KARTU</th>
-                <th scope="col" rowspan="2">KET</th>
+                <th scope="col" rowspan="2" style="text-align: center">NO</th>
+                <th scope="col" rowspan="2" style="text-align: center">BULAN</th>
+                <th scope="col" colspan="4" style="text-align: center">STATUS KARTU</th>
+                <th scope="col" rowspan="2" style="text-align: center">KET</th>
             </tr>
             <tr>
-                <th>BARU</th>
-                <th>PERPANJANGAN</th>
-                <th>RUSAK</th>
-                <th>HILANG</th>
+                <th style="text-align: center">BARU</th>
+                <th style="text-align: center">PERPANJANGAN</th>
+                <th style="text-align: center">RUSAK</th>
+                <th style="text-align: center">HILANG</th>
             </tr>
         </thead>
         <tbody>
