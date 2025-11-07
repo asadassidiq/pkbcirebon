@@ -54,76 +54,9 @@
       </li>
     </router-link> -->
 
-    <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item menu-item-submenu" v-bind:class="{
-      'menu-item-open': hasActiveChildren('/datakendaraan')
-    }" v-if="user.ft == true">
-      <a href="#" class="menu-link menu-toggle">
-        <i class="menu-icon flaticon2-lorry"></i>
-        <span class="menu-text">Datakendaraan
-          <div class="blink" v-if="notif.approvals > 0">
-            <span>
-              <span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">
-                {{
-                  notif.approvals
-                }}
-              </span>
-            </span>
-          </div>
-        </span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="menu-submenu">
-        <span class="menu-arrow"></span>
-        <ul class="menu-subnav">
-          <li aria-haspopup="true" class="menu-item menu-item-parent">
-            <span class="menu-link">
-              <span class="menu-text">Datakendaraan</span>
-            </span>
-          </li>
+    
 
-          <router-link to="/datakendaraan" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">Datakendaraan</span>
-              </a>
-            </li>
-          </router-link>
-
-          <router-link to="/datakendaraan/approvals" v-slot="{ href, navigate, isActive, isExactActive }">
-            <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
-              isActive && 'menu-item-active',
-              isExactActive && 'menu-item-active'
-            ]">
-              <a :href="href" class="menu-link" @click="navigate">
-                <i class="menu-bullet menu-bullet-dot">
-                  <span></span>
-                </i>
-                <span class="menu-text">
-                  Perubahan Datakendaraan
-                  <div class="blink" v-if="notif.approvals > 0">
-                    <span>
-                      <span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">
-                        {{
-                          notif.approvals
-                        }}
-                      </span>
-                    </span>
-                  </div>
-                </span>
-              </a>
-            </li>
-          </router-link>
-        </ul>
-      </div>
-    </li>
-
-    <!-- <router-link to="/datakendaraan" v-slot="{ href, navigate, isActive, isExactActive }"
+    <router-link to="/datakendaraan" v-slot="{ href, navigate, isActive, isExactActive }"
       v-if="user.pf == true || user.v1 == true || user.v2 == true">
       <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
         isActive && 'menu-item-active',
@@ -134,7 +67,7 @@
           <span class="menu-text">Datakendaraan</span>
         </a>
       </li>
-    </router-link> -->
+    </router-link>
 
     <!-- <router-link
       to="/antrian"
