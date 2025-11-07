@@ -138,10 +138,10 @@ class LaporanController extends Controller
     public function printbulananpelayanan($tgl)
     {
         $tglcetak = date('Y-m-d', strtotime($tgl));
-        $tglprint = $this->utils->bulan($tglcetak);
         $tglcreate = date_create($tgl);
         $bulan = date_format($tglcreate, "m");
         $tahun = date_format($tglcreate, "Y");
+        $tglprint = $this->utils->bulan($bulan).' '.$tahun;
         $tgl = Pendaftaran::select('tglpendaftaran')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->groupBy('tglpendaftaran')->get();
         $data = array();
         foreach ($tgl as $dt) {
@@ -180,10 +180,10 @@ class LaporanController extends Controller
     public function printbulanankartu($tgl)
     {
         $tglcetak = date('Y-m-d', strtotime($tgl));
-        $tglprint = $this->utils->bulan($tglcetak);
         $tglcreate = date_create($tgl);
         $bulan = date_format($tglcreate, "m");
         $tahun = date_format($tglcreate, "Y");
+        $tglprint = $this->utils->bulan($bulan).' '.$tahun;
         $tgl = Pendaftaran::select('tglpendaftaran')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->groupBy('tglpendaftaran')->get();
         $data = Pendaftaran::select('tglpendaftaran','keterangan','identitaskendaraans.nouji','identitaskendaraans.noregistrasikendaraan','datapengujian.tgluji','datapengujian.masaberlakuuji','nokendalikartu','datapengujian.perso')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->leftJoin('kodepenerbitans', 'kodepenerbitans.id', '=', 'pendaftarans.kodepenerbitans_id')->leftJoin('datapengujian','datapengujian.idx','pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->orderBy('pendaftarans.noantrian', 'ASC')->get();
 
@@ -204,10 +204,10 @@ class LaporanController extends Controller
     public function printbulananjeniskendaraan($tgl)
     {
         $tglcetak = date('Y-m-d', strtotime($tgl));
-        $tglprint = $this->utils->bulan($tglcetak);
         $tglcreate = date_create($tgl);
         $bulan = date_format($tglcreate, "m");
         $tahun = date_format($tglcreate, "Y");
+        $tglprint = $this->utils->bulan($bulan).' '.$tahun;
         $tgl = Pendaftaran::select('tglpendaftaran')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->groupBy('tglpendaftaran')->get();
         $data = array();
         foreach ($tgl as $dt) {
