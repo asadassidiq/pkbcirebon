@@ -192,7 +192,7 @@
       </li>
     </router-link>
 
-    <router-link to="/approved" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.ap == true">
+    <router-link to="/approved" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.ap == true || user.pf == true">
       <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
         isActive && 'menu-item-active',
         isExactActive && 'menu-item-active'
