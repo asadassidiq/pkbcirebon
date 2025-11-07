@@ -143,7 +143,7 @@ class LaporanController extends Controller
         $tahun = date_format($tglcreate, "Y");
         $tglprint = $this->utils->bulan($bulan).' '.$tahun;
         $tgl = Pendaftaran::select('tglpendaftaran')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->groupBy('tglpendaftaran')->get();
-        $data = array();
+        $dataKend = array();
         foreach ($tgl as $dt) {
             $date = date_create($dt->tglpendaftaran);
             $date = date_format($date, "d-m-Y");
@@ -160,14 +160,14 @@ class LaporanController extends Controller
                 'ujiberkala' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id','2')->count(),
                 'rubahbentuk' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id','8')->count(),
             );
-            array_push($data, $arr);
+            array_push($dataKend, $arr);
         };
 
         $path_logoKab = public_path() . '/img/kota.png';
         $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
         $ttd = Ttd::leftjoin('users', 'users.uuid', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
         $data = [
-            'kendaraan' => $data,
+            'kendaraan' => $dataKend,
             'tglprint' => $tglprint,
             'ttd'     => $ttd,
             'logokab'  => $logokab,
