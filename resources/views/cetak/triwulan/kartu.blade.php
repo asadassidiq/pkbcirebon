@@ -41,7 +41,7 @@
         }
 
         .content {
-            padding-top: 0.2cm;
+            padding-top: 0.4cm;
             width: 100%;
         }
 
