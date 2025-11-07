@@ -390,6 +390,7 @@ class PendaftaranService
             }
             // abort(403, 'Anda tidak memiliki akses ke halaman ini.');
         }
+        dd($decrypted.'-'.$checkPs);
         $data =  $this->repoPerizinan->updatePerizinan($id, $request);
         if($data){
             if (is_array($request->proposed_data) && count($request->proposed_data) > 0) {
