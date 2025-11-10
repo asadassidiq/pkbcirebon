@@ -20,7 +20,7 @@
             <td rowspan="3">KET</td>
         </tr>
         <tr>
-            <td colspan="5">PELAYANAN ADMINISTRASI & TEKNIK</td>
+            <td colspan="5">PELAYANAN ADMINISTRASI dan TEKNIK</td>
             <td colspan="2">PELAYANAN ADMINISTRASI</td>
             <td rowspan="2">UJI ULANG</td>
             <td rowspan="2">LULUS</td>
