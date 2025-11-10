@@ -48,7 +48,7 @@
         $lulus = 0;
         $tidaklulus = 0;
         @endphp
-        @foreach ($data as $dt)
+        @foreach ($data as $data)
         <tr>
             <td scope="row">{{ $i }}</td>
             <td>{{ $data->tgl }}</td>
