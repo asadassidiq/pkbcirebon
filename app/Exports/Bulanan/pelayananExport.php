@@ -47,6 +47,7 @@ class pelayananExport implements FromView
             );
             array_push($dataKend, $arr);
         };
+        dd($dataKend);
 
         return view('exports.bulanan.pelayanan', ['tglprint' => $tglprint, 'tglcetak' => $tglcetak, 'data' => $dataKend]);
     }
