@@ -194,7 +194,7 @@
             @endphp
             @endforeach
             <tr>
-                <th scope="row" colspan="2">TOTAL</th>
+                <td scope="row" colspan="2">TOTAL</td>
                 <td>{{ $ujipertama }}</td>
                 <td>{{ $ujiberkala }}</td>
                 <td>{{ $numasuk }}</td>

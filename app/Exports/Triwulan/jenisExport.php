@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exports\Bulanan;
+namespace App\Exports\Triwulan;
 
 use App\Models\Pendaftaran;
 use Maatwebsite\Excel\Concerns\Exportable;

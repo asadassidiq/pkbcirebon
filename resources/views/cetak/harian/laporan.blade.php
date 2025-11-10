@@ -154,7 +154,7 @@
             @endphp
             @foreach ($kendaraan as $data) 
             <tr>
-                <th scope="row">{{ $i }}</th>
+                <td scope="row">{{ $i }}</td>
                 <td>{{ $data->noregistrasikendaraan }}</td>
                 <td>{{ $data->nouji }}</td>
                 <td>{{ $data->norangka }}</td>
@@ -175,11 +175,6 @@
                 @endif
                 <td>{{ $data->peruntukan }}</td>
                 <td>{{ $data->nokendalikartu }}</td>
-                {{-- @if (!empty($data->rfid_tid))
-                <td>BARU</td>
-                @else
-                <td>LAMA</td> --}}
-                {{-- @endif --}}
                 <td></td>
             </tr>
             @php $i++
@@ -203,7 +198,7 @@
         <h3 style="margin:1;padding:1">DATA ADMINISTRASI</h3>
         <h3 style="margin:1;padding:1">{{ $tglprint }}</h3>
     </div> --}}
-    {{-- <div style="display: flex; flex-direction: column; width: 100%;">
+    <div style="display: flex; flex-direction: column; width: 100%;">
         <div style="width: 100%; margin-bottom: 20px;">
             <table class="table table-bordered ">
                 <thead style="text-align:center;">
@@ -371,7 +366,7 @@
                 </tbody>
             </table>
         </div>
-    </div> --}}
+    </div>
 </div>
 
 </body>

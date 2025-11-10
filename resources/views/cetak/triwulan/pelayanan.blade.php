@@ -124,7 +124,7 @@
     @endphp
 @include('cetak.layouts.header')
 <div class="content">
-    <h3 style="margin:1;padding:1;text-align: center">LAPORAN BULANAN PENGUJIAN KENDARAAN BERMOTOR</h3>
+    <h3 style="margin:1;padding:1;text-align: center">LAPORAN TRIWULAN PENGUJIAN KENDARAAN BERMOTOR</h3>
     <h3 style="margin:1;padding:1;text-align: center">MENURUT JENIS PELAYANAN</h3>
     <h3 style="margin:1;padding:1;text-align: center">TRIWULAN KE {{ $tglprint }}</h3>
     <table class="table table-bordered">

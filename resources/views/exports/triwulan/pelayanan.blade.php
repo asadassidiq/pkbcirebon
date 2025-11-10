@@ -1,20 +1,20 @@
 <table>
     <thead>
         <tr>
-            <td colspan="13"><b>LAPORAN BULANAN PENGUJIAN KENDARAAN BERMOTOR</b></td>
+            <td colspan="13"><b>LAPORAN TRIWULAN PENGUJIAN KENDARAAN BERMOTOR</b></td>
         </tr>
         <tr>
             <td colspan="13"><b>MENURUT JENIS PELAYANAN</b></td>
         </tr>
         <tr>
-            <td colspan="13"><b>BULAN {{ $tglprint }}</b></td>
+            <td colspan="13"><b>TRIWULAN KE {{ $tglprint }}</b></td>
         </tr>
 
     </thead>
     <tbody>
         <tr>
             <th scope="col" rowspan="3">NO</th>
-            <th scope="col" rowspan="3">BULAN</th>
+            <th scope="col" rowspan="3">TANGGAL</th>
             <th scope="col" colspan="8">JENIS PELAYANAN</th>
             <th scope="col" colspan="2">HASIL UJI</th>
             <th scope="col" rowspan="3">KET</th>
@@ -35,8 +35,7 @@
             <th>NUMPANG UJI KELUAR</th>
             <th>MUTASI KELUAR</th>
         </tr>
-        @php
-        $i=1;
+        @php $i=1;
         $ujipertama = 0;
         $ujiberkala = 0;
         $numasuk = 0;
@@ -48,10 +47,10 @@
         $lulus = 0;
         $tidaklulus = 0;
         @endphp
-        @foreach ($data as $dt)
+        @foreach ($kendaraan as $data) 
         <tr>
-            <td scope="row">{{ $i }}</td>
-            <td>{{ $data['tgl'] }}</td>
+            <th scope="row">{{ $i }}</th>
+            <td>{{ $data['bulan'] }}</td>
             <td>{{ $data['ujipertama'] }}</td>
             <td>{{ $data['ujiberkala'] }}</td>
             <td>{{ $data['numasuk'] }}</td>
@@ -64,8 +63,7 @@
             <td>{{ $data['tidaklulus'] }}</td>
             <td></td>
         </tr>
-        @php
-        $i++;
+        @php $i++;
         $ujipertama += $data['ujipertama'];
         $ujiberkala += $data['ujiberkala'];
         $numasuk += $data['numasuk'];
@@ -79,7 +77,7 @@
         @endphp
         @endforeach
         <tr>
-            <td scope="row" colspan="2">TOTAL</td>
+            <th scope="row" colspan="2">TOTAL</th>
             <td>{{ $ujipertama }}</td>
             <td>{{ $ujiberkala }}</td>
             <td>{{ $numasuk }}</td>
@@ -92,6 +90,5 @@
             <td>{{ $tidaklulus }}</td>
             <td></td>
         </tr>
-        <tr></tr>
     </tbody>
 </table>
