@@ -56,15 +56,12 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Api'], function () {
 
 	Route::group(['prefix' => 'export'], function () {
 		Route::get('/{tgl}/laporanharian', 'LaporanExportsController@HarianKendaraan');
-		// Route::get('/{tgl}/kwbubulanan', 'LaporanExportsController@Kwbu');
-		// Route::get('/{tgl}/kwbutahunan', 'LaporanExportsController@KwbuTahunan');
-		// Route::get('/{tgl}/pelayananbulanan', 'LaporanExportsController@Pelayanan');
-		// Route::get('/{tgl}/pelayanantahunan', 'LaporanExportsController@PelayananTahunan');
-		// Route::get('/{tgl}/jenisbulanan', 'LaporanExportsController@Jenis');
-		// Route::get('/{tgl}/jenistahunan', 'LaporanExportsController@JenisTahunan');
-		// Route::get('/{tgl}/tamankendaraantahunan', 'LaporanExportsController@TamankendaraanTahunan');
-		// Route::get('/custom1', 'LaporanExportsController@custom1');
-		// Route::get('/custom2', 'LaporanExportsController@custom2');
+		Route::get('/{tgl}/kartubulanan', 'LaporanExportsController@KartuBulanan');
+		Route::get('/{tgl}/pelayananbulanan', 'LaporanExportsController@PelayananBulanan');
+		Route::get('/{tgl}/jenisbulanan', 'LaporanExportsController@JenisKendaraanBulanan');
+		Route::get('/{tgl}/kartutriwulan', 'LaporanExportsController@KartuTriwulan');
+		Route::get('/{tgl}/pelayanantriwulan', 'LaporanExportsController@PelayananTriwulan');
+		Route::get('/{tgl}/jenistriwulan', 'LaporanExportsController@JenisKendaraanTriwulan');
 	});
 });
 

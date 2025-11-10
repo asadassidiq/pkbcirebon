@@ -20,17 +20,17 @@ class LaporanExportsController extends Controller
         return (new KendaraanExport($tgl))->download('LAPORAN RINCIAN KENDARAAN UJI PERIODE '.$tgl.'.xlsx');
     }
 
-    public function KartuBulanana($tgl)
+    public function KartuBulanan($tgl)
     {
         return (new kartuExport($tgl))->download('LAPORAN BULANAN PEMAKAIN SMART CARD.xlsx');
     }
 
-    public function PelayananBulanana($tgl)
+    public function PelayananBulanan($tgl)
     {
         return (new pelayananExport($tgl))->download('LAPORAN BULANAN PENGUJIAN KENDARAAN BERMOTOR.xlsx');
     }
 
-    public function JenisKendaraanBulanana($tgl)
+    public function JenisKendaraanBulanan($tgl)
     {
         return (new jenisExport($tgl))->download('LAPORAN BULANAN PENGUJIAN KENDARAAN BERMOTOR.xlsx');
     }
