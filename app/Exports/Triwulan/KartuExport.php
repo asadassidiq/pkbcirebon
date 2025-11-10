@@ -44,10 +44,10 @@ class KartuExport implements FromView
             $date = $this->utils->bulan($bulan);
             $arr = array(
                 'bulan'  => $date,
-                'baru'   => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tahunpendaftaran', $bulan)->whereYear('tahunpendaftaran', $this->tahun)->whereIn('kodepenerbitans_id', ['1', '2', '5', '6'])->where('rfid_tid', '!=','')->count(),
-                'perpanjangan'   => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tahunpendaftaran', $bulan)->whereYear('tahunpendaftaran', $this->tahun)->where('kodepenerbitans_id', '2')->where('rfid_tid','')->count(),
-                'rusak'  => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tahunpendaftaran', $bulan)->whereYear('tahunpendaftaran', $this->tahun)->where('kodepenerbitans_id', '3')->where('rfid_tid', '!=','')->count(),
-                'hilang' => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tahunpendaftaran', $bulan)->whereYear('tahunpendaftaran', $this->tahun)->where('kodepenerbitans_id', '4')->where('rfid_tid', '!=','')->count(),
+                'baru'   => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $this->tahun)->whereIn('kodepenerbitans_id', ['1', '2', '5', '6'])->where('rfid_tid', '!=','')->count(),
+                'perpanjangan'   => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $this->tahun)->where('kodepenerbitans_id', '2')->where('rfid_tid','')->count(),
+                'rusak'  => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $this->tahun)->where('kodepenerbitans_id', '3')->where('rfid_tid', '!=','')->count(),
+                'hilang' => Pendaftaran::leftJoin('datarfid', 'datarfid.idx', '=', 'pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $this->tahun)->where('kodepenerbitans_id', '4')->where('rfid_tid', '!=','')->count(),
             );
             array_push($data, $arr);
         }
