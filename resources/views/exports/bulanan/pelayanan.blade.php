@@ -13,11 +13,11 @@
     </thead>
     <tbody>
         <tr>
-            <td scope="col" rowspan="3">NO</td>
-            <td scope="col" rowspan="3">TANGGAL</td>
-            <td scope="col" colspan="8">JENIS PELAYANAN</td>
-            <td scope="col" colspan="2">HASIL UJI</td>
-            <td scope="col" rowspan="3">KET</td>
+            <td rowspan="3">NO</td>
+            <td rowspan="3">TANGGAL</td>
+            <td colspan="8">JENIS PELAYANAN</td>
+            <td colspan="2">HASIL UJI</td>
+            <td rowspan="3">KET</td>
         </tr>
         <tr>
             <td colspan="5">PELAYANAN ADMINISTRASI & TEKNIK</td>
@@ -35,6 +35,5 @@
             <td>NUMPANG UJI KELUAR</td>
             <td>MUTASI KELUAR</td>
         </tr>
-        
     </tbody>
 </table>
