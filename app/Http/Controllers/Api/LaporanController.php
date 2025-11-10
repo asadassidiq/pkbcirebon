@@ -185,7 +185,7 @@ class LaporanController extends Controller
         $tahun = date_format($tglcreate, "Y");
         $tglprint = $this->utils->bulan($bulan).' '.$tahun;
         $tgl = Pendaftaran::select('tglpendaftaran')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->groupBy('tglpendaftaran')->get();
-        $data = Pendaftaran::select('tglpendaftaran','keterangan','identitaskendaraans.nouji','identitaskendaraans.noregistrasikendaraan','datapengujian.tgluji','datapengujian.masaberlakuuji','nokendalikartu','datapengujian.perso')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->leftJoin('kodepenerbitans', 'kodepenerbitans.id', '=', 'pendaftarans.kodepenerbitans_id')->leftJoin('datapengujian','datapengujian.idx','pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->orderBy('pendaftarans.noantrian', 'ASC')->get();
+        $data = Pendaftaran::select('tglpendaftaran as tgl','keterangan','identitaskendaraans.nouji','identitaskendaraans.noregistrasikendaraan','datapengujian.tgluji','datapengujian.masaberlakuuji','nokendalikartu','datapengujian.perso')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->leftJoin('kodepenerbitans', 'kodepenerbitans.id', '=', 'pendaftarans.kodepenerbitans_id')->leftJoin('datapengujian','datapengujian.idx','pendaftarans.idx')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->orderBy('pendaftarans.noantrian', 'ASC')->get();
 
         $path_logoKab = public_path() . '/img/kota.png';
         $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
