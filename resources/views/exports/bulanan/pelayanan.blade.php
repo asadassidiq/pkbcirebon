@@ -51,7 +51,7 @@
         @foreach ($data as $data)
         <tr>
             <td scope="row">{{ $i }}</td>
-            <td>{{ $data->tgl }}</td>
+            <td>{{ $data['tgl'] }}</td>
             <td>{{ $data['ujipertama'] }}</td>
             <td>{{ $data['ujiberkala'] }}</td>
             <td>{{ $data['numasuk'] }}</td>
