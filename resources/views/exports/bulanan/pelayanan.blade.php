@@ -49,7 +49,21 @@
         $tidaklulus = 0;
         @endphp
         @foreach ($data as $data)
-        
+        <tr>
+            <td scope="row">{{ $i }}</td>
+            <td>{{ $data['tgl'] }}</td>
+            <td>{{ $data['ujipertama'] }}</td>
+            <td>{{ $data['ujiberkala'] }}</td>
+            <td>{{ $data['numasuk'] }}</td>
+            <td>{{ $data['mutasimasuk'] }}</td>
+            <td>{{ $data['rubahbentuk'] }}</td>
+            <td>{{ $data['nukeluar'] }}</td>
+            <td>{{ $data['mutasikeluar'] }}</td>
+            <td>{{ $data['ujiulang'] }}</td>
+            <td>{{ $data['lulus'] }}</td>
+            <td>{{ $data['tidaklulus'] }}</td>
+            <td></td>
+        </tr>
         @php
         $i++;
         $ujipertama += $data['ujipertama'];
@@ -64,19 +78,5 @@
         $tidaklulus += $data['tidaklulus'];
         @endphp
         @endforeach
-        <tr>
-            <td scope="row" colspan="2">TOTAL</td>
-            <td>{{ $ujipertama }}</td>
-            <td>{{ $ujiberkala }}</td>
-            <td>{{ $numasuk }}</td>
-            <td>{{ $mutasimasuk }}</td>
-            <td>{{ $rubahbentuk }}</td>
-            <td>{{ $nukeluar }}</td>
-            <td>{{ $mutasikeluar }}</td>
-            <td>{{ $ujiulang }}</td>
-            <td>{{ $lulus }}</td>
-            <td>{{ $tidaklulus }}</td>
-            <td></td>
-        </tr>
     </tbody>
 </table>
