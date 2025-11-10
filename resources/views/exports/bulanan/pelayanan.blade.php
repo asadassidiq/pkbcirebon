@@ -14,7 +14,7 @@
     <tbody>
         <tr>
             <th scope="col" rowspan="3">NO</th>
-            <th scope="col" rowspan="3">BULAN</th>
+            <th scope="col" rowspan="3">TANGGAL</th>
             <th scope="col" colspan="8">JENIS PELAYANAN</th>
             <th scope="col" colspan="2">HASIL UJI</th>
             <th scope="col" rowspan="3">KET</th>
@@ -51,7 +51,7 @@
         @foreach ($data as $dt)
         <tr>
             <td scope="row">{{ $i }}</td>
-            <td>{{ $data['tgl'] }}</td>
+            {{-- <td>{{ $data['tgl'] }}</td> --}}
             <td>{{ $data['ujipertama'] }}</td>
             <td>{{ $data['ujiberkala'] }}</td>
             <td>{{ $data['numasuk'] }}</td>
