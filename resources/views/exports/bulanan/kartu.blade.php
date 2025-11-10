@@ -24,7 +24,7 @@
         </tr>
         @php $i=1
         @endphp
-        @foreach ($kendaraan as $data) 
+        @foreach ($data as $data) 
         <tr>
             <th scope="row">{{ $i }}</th>
             <td>{{ $data->tgl }}</td>
