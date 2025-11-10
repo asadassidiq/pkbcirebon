@@ -6,10 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Exports\Harian\KendaraanExport;
 use App\Exports\Bulanan\jenisExport;
-use App\Exports\Bulanan\kartuExport;
+use App\Exports\Bulanan\KartuExport;
 use App\Exports\Bulanan\pelayananExport;
 use App\Exports\Triwulan\jenisExport as jenisTExport;
-use App\Exports\Triwulan\kartuExport as kartuTExport;
+use App\Exports\Triwulan\KartuExport as KartuTExport;
 use App\Exports\Triwulan\pelayananExport as pelayananTExport;
 
 class LaporanExportsController extends Controller
@@ -22,7 +22,7 @@ class LaporanExportsController extends Controller
 
     public function KartuBulanan($tgl)
     {
-        return (new kartuExport($tgl))->download('LAPORAN BULANAN PEMAKAIN SMART CARD.xlsx');
+        return (new KartuExport($tgl))->download('LAPORAN BULANAN PEMAKAIN SMART CARD.xlsx');
     }
 
     public function PelayananBulanan($tgl)
@@ -42,7 +42,7 @@ class LaporanExportsController extends Controller
         }else{
             $triwulan = '0';
         }
-        return (new kartuTExport($tgl,$triwulan))->download('LAPORAN BULANAN PEMAKAIN SMART CARD.xlsx');
+        return (new KartuTExport($tgl,$triwulan))->download('LAPORAN BULANAN PEMAKAIN SMART CARD.xlsx');
     }
 
     public function PelayananTriwulan($tgl)
