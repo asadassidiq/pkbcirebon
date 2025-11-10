@@ -28,7 +28,7 @@ class pelayananExport implements FromView
         $tahun = date_format($tglcreate, "Y");
         $tglprint = $this->utils->bulan($bulan).' '.$tahun;
         $tgl = Pendaftaran::select('tglpendaftaran')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->groupBy('tglpendaftaran')->get();
-        $dataKend = array();
+        $data = array();
         foreach ($tgl as $dt) {
             $date = date_create($dt->tglpendaftaran);
             $date = date_format($date, "d-m-Y");
@@ -45,10 +45,8 @@ class pelayananExport implements FromView
                 'ujiberkala' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id','2')->count(),
                 'rubahbentuk' => Pendaftaran::where('tglpendaftaran', $dt->tglpendaftaran)->where('kodepenerbitans_id','8')->count(),
             );
-            array_push($dataKend, $arr);
+            array_push($data, $arr);
         };
-        dd($dataKend);
-
-        return view('exports.bulanan.pelayanan', ['tglprint' => $tglprint, 'tglcetak' => $tglcetak, 'data' => $dataKend]);
+        return view('exports.bulanan.pelayanan', ['tglprint' => $tglprint, 'tglcetak' => $tglcetak, 'data' => $data]);
     }
 }
