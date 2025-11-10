@@ -51,6 +51,6 @@ class KartuExport implements FromView
             );
             array_push($data, $arr);
         }
-        return view('exports.triwulan.pelayanan', ['tglprint' => $tglprint, 'tglcetak' => $tglcetak, 'data' => $data]);
+        return view('exports.triwulan.kartu', ['tglprint' => $tglprint, 'tglcetak' => $tglcetak, 'data' => $data]);
     }
 }
