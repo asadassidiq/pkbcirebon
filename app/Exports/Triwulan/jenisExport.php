@@ -65,8 +65,7 @@ class jenisExport implements FromView
                 $kwbusblm = '';
             }
 
-            $date = date_create($bulan);
-            $date = $this->utils->bulan(date_format($date, "m"));
+            $date = $this->utils->bulan($bulan);
             $arr = array(
                 'bulan'  => $date,
                 'kwbusblm' => $kwbusblm,

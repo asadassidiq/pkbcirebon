@@ -422,9 +422,7 @@ class LaporanController extends Controller
                 $kwbusblm = '';
             }
 
-            $date = date_create($bulan);
-            dd($bulan);
-            $date = $this->utils->bulan(date_format($date, "m"));
+            $date = $this->utils->bulan($bulan);
             $arr = array(
                 'bulan'  => $date,
                 'kwbusblm' => $kwbusblm,
