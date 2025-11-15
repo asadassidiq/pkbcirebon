@@ -204,6 +204,29 @@ class LaporanController extends Controller
     public function printbulananjeniskendaraan($tgl)
     {
         $kode = str_replace("/", "", request()->k);
+        switch ($kode) {
+            case 1:
+                $ket = 'UJI PERTAMA';
+                break;
+            case 2:
+                $ket = 'UJI BERKALA';
+                break;
+            case 5:
+                $ket = 'NUMPANG UJI MASUK';
+                break;
+            case 6:
+                $ket = 'MUTASI MASUK';
+                break;
+            case 8:
+                $ket = 'RUBAH BENTUK';
+                break;
+            case 9:
+                $ket = 'NUMPANG UJI KELUAR';
+                break;
+            case 10:
+                $ket = 'MUTASI KELUAR';
+                break;
+        }
         $tglcetak = date('Y-m-d', strtotime($tgl));
         $tglcreate = date_create($tgl);
         $bulan = date_format($tglcreate, "m");
@@ -281,6 +304,7 @@ class LaporanController extends Controller
             'tglprint' => $tglprint,
             'ttd'     => $ttd,
             'logokab'  => $logokab,
+            'ket' => $ket,
         ];
         $pdf = PDF::loadView('cetak.bulanan.jeniskendaraan', $data);
         $pdf->setPaper('A4', 'landscape');
@@ -388,6 +412,29 @@ class LaporanController extends Controller
     {
         $kode = str_replace("/", "", request()->k);
         $triwulan = str_replace("/", "", request()->t);
+        switch ($kode) {
+            case 1:
+                $ket = 'UJI PERTAMA';
+                break;
+            case 2:
+                $ket = 'UJI BERKALA';
+                break;
+            case 5:
+                $ket = 'NUMPANG UJI MASUK';
+                break;
+            case 6:
+                $ket = 'MUTASI MASUK';
+                break;
+            case 8:
+                $ket = 'RUBAH BENTUK';
+                break;
+            case 9:
+                $ket = 'NUMPANG UJI KELUAR';
+                break;
+            case 10:
+                $ket = 'MUTASI KELUAR';
+                break;
+        }
         switch ($triwulan) {
             case 1:
                 $range = array('1', '2', '3');
@@ -478,6 +525,7 @@ class LaporanController extends Controller
             'tglprint' => $tglprint,
             'ttd'     => $ttd,
             'logokab'  => $logokab,
+            'ket'   => $ket,
         ];
         $pdf = PDF::loadView('cetak.bulanan.jeniskendaraan', $data);
         $pdf->setPaper('A4', 'landscape');
