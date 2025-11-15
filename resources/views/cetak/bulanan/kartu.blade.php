@@ -143,7 +143,7 @@
             @endphp
             @foreach ($kendaraan as $data) 
             <tr>
-                <th scope="row">{{ $i }}</th>
+                <th scope="row">{{ $i++ }}</th>
                 <td>{{ $data->tgl }}</td>
                 <td>{{ $data->nouji }}</td>
                 <td>{{ $data->noregistrasikendaraan }}</td>

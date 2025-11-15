@@ -1,10 +1,13 @@
 <table>
     <thead>
         <tr>
-            <th colspan="13"><b>Laporan Bulanan Jenis Kendaraan Pengujian Kendaraan Bermotor</b></th>
+            <th colspan="13"><b>LAPORAN BULANAN {{ $ket }} KENDARAAN BERMOTOR</b></th>
         </tr>
         <tr>
-            <th colspan="13"><b>Pada UPT PKB Dinas Perhubungan Kabupaten Mimika</b></th>
+            <th colspan="13"><b>MENURUT JENIS KENDARAAN</b></th>
+        </tr>
+        <tr>
+            <th colspan="13"><b>UPT PKB DISHUB KOTA CIREBON</b></th>
         </tr>
         <tr>
             <th colspan="13"><b>Bulan {{ $tglprint }}</b></th>
@@ -13,1010 +16,164 @@
         <tr></tr>
 
         <tr>
-            <th scope="col" rowspan="3">No</th>
-            <th scope="col" rowspan="3" class="text-center" style="width:15%">Tanggal</th>
-            <th scope="col" rowspan="3" class="text-center">KBWU yang di Uji</th>
-            <th scope="col" class="text-center" colspan="23">Jenis Kendaraan</th>
-            <th scope="col" rowspan="3">Total</th>
-        </tr>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col" class="text-center" colspan="4">Bus</th>
-            <th scope="col" class="text-center" colspan="15">Mobil Barang</th>
-            <th scope="col" class="text-center">K.Tempelan</th>
-            <th scope="col" class="text-center">K.Gandeng</th>
-            <th scope="col" class="text-center" rowspan="2">Lain-Lain</th>
-        </tr>
-        <tr>
-            <th scope="col">Mobil Penumpang</th>
-            <th scope="col">Kecil</th>
-            <th scope="col">Sedang</th>
-            <th scope="col">Besar</th>
-            <th scope="col">Maxi</th>
-            <th scope="col">Pick Up</th>
-            <th scope="col">Pick Up Box</th>
-            <th scope="col">Truck</th>
-            <th scope="col">Light Truck</th>
-            <th scope="col">Dump Truck</th>
-            <th scope="col">Truck Box</th>
-            <th scope="col">Tractor Head</th>
-            <th scope="col">Delivery Van</th>
-            <th scope="col">Double Cabin</th>
-            <th scope="col">Truck Bak Crane</th>
-            <th scope="col">Car Carrier</th>
-            <th scope="col">Truck Tangki</th>
-            <th scope="col">Blind Van</th>
-            <th scope="col">Tronton</th>
-            <th scope="col">Flat Deck</th>
-            <th scope="col">Kereta Tempelan</th>
-            <th scope="col">Kereta Gandengan</th>
-        </tr>
+                <th scope="col" rowspan="2">NO</th>
+                <th scope="col" rowspan="2">TANGGAL</th>
+                <th scope="col" rowspan="2">KBWU TH LALU</th>
+                <th scope="col" rowspan="2">KBWU YG DI UJI</th>
+                <th scope="col" colspan="2">MOBIL PENUMPANG</th>
+                <th scope="col" colspan="7">MOBIL BUS</th>
+                <th scope="col" colspan="6">MOBIL BARANG BAK TERBUKA</th>
+                <th scope="col" colspan="5">MOBIL BARANG BAK TERTUTUP</th>
+                <th scope="col" rowspan="2">MOBIL TANGKI</th>
+                <th scope="col" rowspan="2">MOBIL PENARIK</th>
+                <th scope="col" rowspan="2">KERETA GANDENG BAK TERBUKA</th>
+                <th scope="col" rowspan="2">KERETA GANDENG BAK TERTUTUP</th>
+                <th scope="col" rowspan="2">KERETA GANDENG TANKI</th>
+                <th scope="col" rowspan="2">KERETA TEMPELAN BAK TERBUKA</th>
+                <th scope="col" rowspan="2">KERETA TEMPELAN BAK TERTUTUP</th>
+                <th scope="col" rowspan="2">KERETA TEMPELAN TANGKI</th>
+                <th scope="col" rowspan="2">KB Roda Tiga Angkutan Barang Bak Muatan Terbuka</th>
+                <th scope="col" rowspan="2">KB Roda Tiga Angkutan Barang Bak Muatan Tertutup</th>
+                <th scope="col" rowspan="2">KB Roda Tiga Angkutan Penumpang</th>
+                <th scope="col" rowspan="2">KB Roda Tiga Angkutan Barang Tangki</th>
+                <th scope="col" colspan="7">KENDARAAN KHUSUS</th>
+                <th scope="col" rowspan="2">KET</th>
+            </tr>
+            <tr>
+                <th>SEDAN</th>
+                <th>BUKAN SEDAN</th>
+                <th>B.KECIL</th>
+                <th>B.SEDANG</th>
+                <th>B.BESAR</th>
+                <th>B.MAXI</th>
+                <th>B.GANDENG</th>
+                <th>B.TEMPEL</th>
+                <th>B.TINGKAT</th>
+                <th>P.UP</th>
+                <th>DOUBLE CABIN</th>
+                <th>L.TRUCK</th>
+                <th>DUMP TRUCK</th>
+                <th>LOST BAK</th>
+                <th>CAR CARIER </th>
+                <th>P.UP BOX</th>
+                <th>P.UP RANGKA</th>
+                <th>L.TRUCK BOX</th>
+                <th>BLIND VAN</th>
+                <th>DELIVERY VAN</th>
+                <th>AMBULANCE</th>
+                <th>DAMKAR</th>
+                <th>ARM ROLL</th>
+                <th>DEREK</th>
+                <th>FLAT DECK</th>
+                <th>MIXER</th>
+                <th>CONCREED PUMP</th>
+            </tr>
     </thead>
     <tbody>
-        @php $i=1;$kbwu=0;$mobilpenumpang=0;$buskecil=0;$bussedang=0;$busbesar=0;$busmaxi=0;
-        $pickup=0;$pickupbox=0;$truck=0;$lighttruck=0;$dumptruck=0;$truckbox=0;
-        $traktorhead=0;$deliveryvan=0;$doublecabin=0;$truckbakcrane=0;$carcarrier=0;
-        $trucktangki=0;$blindvan=0;$tronton=0;$flatdeck=0;$keretatempelan=0;$keretagandeng=0;
-        $lainlain=0;
+        @php $i=1;
+        $kwbu = 0;
+        $kwbusblm = 0;
+        $mobil1 = 0;$mobil2 = 0;$mobil3 = 0;$mobil4 = 0;$mobil5 = 0;$mobil6 = 0;$mobil7 = 0;
+        $mobil8 = 0;$mobil9 = 0;$mobil10 = 0;$mobil11 = 0;$mobil12 = 0;$mobil13 = 0;$mobil14 = 0;
+        $mobil15 = 0;$mobil16 = 0;$mobil17 = 0;$mobil18 = 0;$mobil19 = 0;$mobil20 = 0;$mobil21 = 0;
+        $mobil22 = 0;$mobil23 = 0;$mobil24 = 0;$mobil25 = 0;$mobil26 = 0;$mobil27 = 0;$mobil28 = 0;
+        $mobil29 = 0;$mobil30 = 0;$mobil31 = 0;$mobil32 = 0;$mobil33 = 0;$mobil34 = 0;$mobil35 = 0;
+        $mobil36 = 0;$mobil37 = 0;$mobil38 = 0;$mobil39 = 0;
         @endphp
-        @foreach ($data as $dt)
+        @foreach ($data as $data) 
         <tr>
-            <td scope="row">{{ $i }}</td>
-            <td>{{ $dt['tgl'] }}</td>
-            <td>{{ $dt['kbwu'] }}</td>
-            <td>{{ $dt['mobilpenumpang'] }}</td>
-            <td>{{ $dt['buskecil'] }}</td>
-            <td>{{ $dt['bussedang'] }}</td>
-            <td>{{ $dt['busbesar'] }}</td>
-            <td>{{ $dt['busmaxi'] }}</td>
-            <td>{{ $dt['pickup'] }}</td>
-            <td>{{ $dt['pickupbox'] }}</td>
-            <td>{{ $dt['truck'] }}</td>
-            <td>{{ $dt['lighttruck'] }}</td>
-            <td>{{ $dt['dumptruck'] }}</td>
-            <td>{{ $dt['truckbox'] }}</td>
-            <td>{{ $dt['traktorhead'] }}</td>
-            <td>{{ $dt['deliveryvan'] }}</td>
-            <td>{{ $dt['doublecabin'] }}</td>
-            <td>{{ $dt['truckbakcrane'] }}</td>
-            <td>{{ $dt['carcarrier'] }}</td>
-            <td>{{ $dt['trucktangki'] }}</td>
-            <td>{{ $dt['blindvan'] }}</td>
-            <td>{{ $dt['tronton'] }}</td>
-            <td>{{ $dt['flatdeck'] }}</td>
-            <td>{{ $dt['keretatempelan'] }}</td>
-            <td>{{ $dt['keretagandeng'] }}</td>
-            <td>{{ $dt['lainlain'] }}</td>
-            <td>{{ $dt['mobilpenumpang']+$dt['buskecil']+$dt['bussedang']+$dt['busbesar']+$dt['busmaxi']+$dt['pickup']+$dt['pickupbox']+$dt['truck']+$dt['lighttruck']+$dt['dumptruck']+$dt['truckbox']+$dt['traktorhead']+$dt['deliveryvan']+$dt['doublecabin']+$dt['truckbakcrane']+$dt['carcarrier']+$dt['trucktangki']+$dt['blindvan']+$dt['tronton']+$dt['flatdeck']+$dt['keretatempelan']+$dt['keretagandeng']+$dt['lainlain'] }}</td>
+            <th scope="row">{{ $i }}</th>
+            <td>{{ $data->tgl }}</td>
+            <td>{{ $data->kwbusblm }}</td>
+            <td>{{ $data->kwbu }}</td>
+            <td>{{ $data->mobil1 }}</td>
+            <td>{{ $data->mobil2 }}</td>
+            <td>{{ $data->mobil3 }}</td>
+            <td>{{ $data->mobil4 }}</td>
+            <td>{{ $data->mobil5 }}</td>
+            <td>{{ $data->mobil6 }}</td>
+            <td>{{ $data->mobil7 }}</td>
+            <td>{{ $data->mobil8 }}</td>
+            <td>{{ $data->mobil9 }}</td>
+            <td>{{ $data->mobil10 }}</td>
+            <td>{{ $data->mobil11 }}</td>
+            <td>{{ $data->mobil12 }}</td>
+            <td>{{ $data->mobil13 }}</td>
+            <td>{{ $data->mobil14 }}</td>
+            <td>{{ $data->mobil15 }}</td>
+            <td>{{ $data->mobil16 }}</td>
+            <td>{{ $data->mobil17 }}</td>
+            <td>{{ $data->mobil18 }}</td>
+            <td>{{ $data->mobil19 }}</td>
+            <td>{{ $data->mobil20 }}</td>
+            <td>{{ $data->mobil21 }}</td>
+            <td>{{ $data->mobil22 }}</td>
+            <td>{{ $data->mobil23 }}</td>
+            <td>{{ $data->mobil24 }}</td>
+            <td>{{ $data->mobil25 }}</td>
+            <td>{{ $data->mobil26 }}</td>
+            <td>{{ $data->mobil27 }}</td>
+            <td>{{ $data->mobil28 }}</td>
+            <td>{{ $data->mobil29 }}</td>
+            <td>{{ $data->mobil30 }}</td>
+            <td>{{ $data->mobil31 }}</td>
+            <td>{{ $data->mobil32 }}</td>
+            <td>{{ $data->mobil33 }}</td>
+            <td>{{ $data->mobil34 }}</td>
+            <td>{{ $data->mobil35 }}</td>
+            <td>{{ $data->mobil36 }}</td>
+            <td>{{ $data->mobil37 }}</td>
+            <td>{{ $data->mobil38 }}</td>
+            <td>{{ $data->mobil39 }}</td>
         </tr>
-        @php
-        $i++;$kbwu=$kbwu+$dt['kbwu'];$mobilpenumpang=$mobilpenumpang+$dt['mobilpenumpang'];$buskecil=$buskecil+$dt['buskecil'];$bussedang=$bussedang+$dt['bussedang'];$busbesar=$busbesar+$dt['busbesar'];$busmaxi=$busmaxi+$dt['busmaxi'];
-        $pickup=$pickup+$dt['pickup'];$pickupbox=$pickupbox+$dt['pickupbox'];$truck=$truck+$dt['truck'];$lighttruck=$lighttruck+$dt['lighttruck'];$dumptruck=$dumptruck+$dt['dumptruck'];$truckbox=$truckbox+$dt['truckbox'];
-        $traktorhead=$traktorhead+$dt['traktorhead'];$deliveryvan=$deliveryvan+$dt['deliveryvan'];$doublecabin=$doublecabin+$dt['doublecabin'];$truckbakcrane=$truckbakcrane+$dt['truckbakcrane'];$carcarrier=$carcarrier+$dt['carcarrier'];
-        $trucktangki=$trucktangki+$dt['trucktangki'];$blindvan=$blindvan+$dt['blindvan'];$tronton=$tronton+$dt['tronton'];$flatdeck=$flatdeck+$dt['flatdeck'];$keretatempelan=$keretatempelan+$dt['keretatempelan'];$keretagandeng=$dt['keretagandeng'];
-        $lainlain=$lainlain+$dt['lainlain'];
+        @php $i++;
+        $kwbu += $data->kwbu;
+        $kwbusblm += $data->kwbusblm;
+        $mobil1 += $data->mobil1;$mobil2 += $data->mobil2;$mobil3 += $data->mobil3;$mobil4 += $data->mobil4;$mobil5 += $data->mobil5;$mobil6 += $data->mobil6;$mobil7 += $data->mobil7;$mobil8 += $data->mobil8;$mobil9 += $data->mobil9;$mobil10 += $data->mobil10;$mobil11 += $data->mobil11;$mobil12 += $data->mobil12;$mobil13 += $data->mobil13;$mobil14 += $data->mobil14;$mobil15 += $data->mobil15;$mobil16 += $data->mobil16;$mobil17 += $data->mobil17;$mobil18 += $data->mobil18;$mobil19 += $data->mobil19;$mobil20 += $data->mobil20;$mobil21 += $data->mobil21;$mobil22 += $data->mobil22;$mobil23 += $data->mobil23;$mobil24 += $data->mobil24;$mobil25 += $data->mobil25;$mobil26 += $data->mobil26;$mobil27 += $data->mobil27;$mobil28 += $data->mobil28;$mobil29 += $data->mobil29;$mobil30 += $data->mobil30;$mobil31 += $data->mobil31;$mobil32 += $data->mobil32;$mobil33 += $data->mobil33;$mobil34 += $data->mobil34;$mobil35 += $data->mobil35;$mobil36 += $data->mobil36;$mobil37 += $data->mobil37;$mobil38 += $data->mobil38;$mobil39 += $data->mobil39;
         @endphp
-
         @endforeach
         <tr>
-            <td colspan="2">Total</td>
-            <td>{{ $kbwu }}</td>
-            <td>{{ $mobilpenumpang }}</td>
-            <td>{{ $buskecil }}</td>
-            <td>{{ $bussedang }}</td>
-            <td>{{ $busbesar }}</td>
-            <td>{{ $busmaxi }}</td>
-            <td>{{ $pickup }}</td>
-            <td>{{ $pickupbox }}</td>
-            <td>{{ $truck }}</td>
-            <td>{{ $lighttruck }}</td>
-            <td>{{ $dumptruck }}</td>
-            <td>{{ $truckbox }}</td>
-            <td>{{ $traktorhead }}</td>
-            <td>{{ $deliveryvan }}</td>
-            <td>{{ $doublecabin }}</td>
-            <td>{{ $truckbakcrane }}</td>
-            <td>{{ $carcarrier }}</td>
-            <td>{{ $trucktangki }}</td>
-            <td>{{ $blindvan }}</td>
-            <td>{{ $tronton }}</td>
-            <td>{{ $flatdeck }}</td>
-            <td>{{ $keretatempelan }}</td>
-            <td>{{ $keretagandeng }}</td>
-            <td>{{ $lainlain }}</td>
-        </tr>
-
-        <tr></tr>
-
-        <tr>
-            <td colspan="13"><b>Laporan Bulanan Jenis Kendaraan Untuk Pelayanan Uji Pertama Pengujian Kendaraan Bermotor</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Pada UPT PKB Dinas Perhubungan Kabupaten Mimika</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Bulan {{ $tglprint }}</b></td>
-        </tr>
-        <tr></tr>
-        <tr>
-            <th scope="col" rowspan="3">No</th>
-            <th scope="col" rowspan="3" class="text-center" style="width:15%">Tanggal</th>
-            <th scope="col" rowspan="3" class="text-center">KBWU yang di Uji</th>
-            <th scope="col" class="text-center" colspan="23">Jenis Kendaraan</th>
-        </tr>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col" class="text-center" colspan="4">Bus</th>
-            <th scope="col" class="text-center" colspan="15">Mobil Barang</th>
-            <th scope="col" class="text-center">K.Tempelan</th>
-            <th scope="col" class="text-center">K.Gandeng</th>
-            <th scope="col" class="text-center" rowspan="2">Lain-Lain</th>
-        </tr>
-        <tr>
-            <th scope="col">Mobil Penumpang</th>
-            <th scope="col">Kecil</th>
-            <th scope="col">Sedang</th>
-            <th scope="col">Besar</th>
-            <th scope="col">Maxi</th>
-            <th scope="col">Pick Up</th>
-            <th scope="col">Pick Up Box</th>
-            <th scope="col">Truck</th>
-            <th scope="col">Light Truck</th>
-            <th scope="col">Dump Truck</th>
-            <th scope="col">Truck Box</th>
-            <th scope="col">Tractor Head</th>
-            <th scope="col">Delivery Van</th>
-            <th scope="col">Double Cabin</th>
-            <th scope="col">Truck Bak Crane</th>
-            <th scope="col">Car Carrier</th>
-            <th scope="col">Truck Tangki</th>
-            <th scope="col">Blind Van</th>
-            <th scope="col">Tronton</th>
-            <th scope="col">Flat Deck</th>
-            <th scope="col">Kereta Tempelan</th>
-            <th scope="col">Kereta Gandengan</th>
-        </tr>
-        @php $i=1;$kbwu=0;$mobilpenumpang=0;$buskecil=0;$bussedang=0;$busbesar=0;$busmaxi=0;
-        $pickup=0;$pickupbox=0;$truck=0;$lighttruck=0;$dumptruck=0;$truckbox=0;
-        $traktorhead=0;$deliveryvan=0;$doublecabin=0;$truckbakcrane=0;$carcarrier=0;
-        $trucktangki=0;$blindvan=0;$tronton=0;$flatdeck=0;$keretatempelan=0;$keretagandeng=0;
-        $lainlain=0;
-        @endphp
-        @foreach ($dataujipertama as $dt)
-        <tr>
-            <td scope="row">{{ $i }}</td>
-            <td>{{ $dt['tgl'] }}</td>
-            <td>{{ $dt['kbwu'] }}</td>
-            <td>{{ $dt['mobilpenumpang'] }}</td>
-            <td>{{ $dt['buskecil'] }}</td>
-            <td>{{ $dt['bussedang'] }}</td>
-            <td>{{ $dt['busbesar'] }}</td>
-            <td>{{ $dt['busmaxi'] }}</td>
-            <td>{{ $dt['pickup'] }}</td>
-            <td>{{ $dt['pickupbox'] }}</td>
-            <td>{{ $dt['truck'] }}</td>
-            <td>{{ $dt['lighttruck'] }}</td>
-            <td>{{ $dt['dumptruck'] }}</td>
-            <td>{{ $dt['truckbox'] }}</td>
-            <td>{{ $dt['traktorhead'] }}</td>
-            <td>{{ $dt['deliveryvan'] }}</td>
-            <td>{{ $dt['doublecabin'] }}</td>
-            <td>{{ $dt['truckbakcrane'] }}</td>
-            <td>{{ $dt['carcarrier'] }}</td>
-            <td>{{ $dt['trucktangki'] }}</td>
-            <td>{{ $dt['blindvan'] }}</td>
-            <td>{{ $dt['tronton'] }}</td>
-            <td>{{ $dt['flatdeck'] }}</td>
-            <td>{{ $dt['keretatempelan'] }}</td>
-            <td>{{ $dt['keretagandeng'] }}</td>
-            <td>{{ $dt['lainlain'] }}</td>
-        </tr>
-        @php
-        $i++;$kbwu=$kbwu+$dt['kbwu'];$mobilpenumpang=$mobilpenumpang+$dt['mobilpenumpang'];$buskecil=$buskecil+$dt['buskecil'];$bussedang=$bussedang+$dt['bussedang'];$busbesar=$busbesar+$dt['busbesar'];$busmaxi=$busmaxi+$dt['busmaxi'];
-        $pickup=$pickup+$dt['pickup'];$pickupbox=$pickupbox+$dt['pickupbox'];$truck=$truck+$dt['truck'];$lighttruck=$lighttruck+$dt['lighttruck'];$dumptruck=$dumptruck+$dt['dumptruck'];$truckbox=$truckbox+$dt['truckbox'];
-        $traktorhead=$traktorhead+$dt['traktorhead'];$deliveryvan=$deliveryvan+$dt['deliveryvan'];$doublecabin=$doublecabin+$dt['doublecabin'];$truckbakcrane=$truckbakcrane+$dt['truckbakcrane'];$carcarrier=$carcarrier+$dt['carcarrier'];
-        $trucktangki=$trucktangki+$dt['trucktangki'];$blindvan=$blindvan+$dt['blindvan'];$tronton=$tronton+$dt['tronton'];$flatdeck=$flatdeck+$dt['flatdeck'];$keretatempelan=$keretatempelan+$dt['keretatempelan'];$keretagandeng=$dt['keretagandeng'];
-        $lainlain=$lainlain+$dt['lainlain'];
-        @endphp
-
-        @endforeach
-        <tr>
-            <td colspan="2">Total</td>
-            <td>{{ $kbwu }}</td>
-            <td>{{ $mobilpenumpang }}</td>
-            <td>{{ $buskecil }}</td>
-            <td>{{ $bussedang }}</td>
-            <td>{{ $busbesar }}</td>
-            <td>{{ $busmaxi }}</td>
-            <td>{{ $pickup }}</td>
-            <td>{{ $pickupbox }}</td>
-            <td>{{ $truck }}</td>
-            <td>{{ $lighttruck }}</td>
-            <td>{{ $dumptruck }}</td>
-            <td>{{ $truckbox }}</td>
-            <td>{{ $traktorhead }}</td>
-            <td>{{ $deliveryvan }}</td>
-            <td>{{ $doublecabin }}</td>
-            <td>{{ $truckbakcrane }}</td>
-            <td>{{ $carcarrier }}</td>
-            <td>{{ $trucktangki }}</td>
-            <td>{{ $blindvan }}</td>
-            <td>{{ $tronton }}</td>
-            <td>{{ $flatdeck }}</td>
-            <td>{{ $keretatempelan }}</td>
-            <td>{{ $keretagandeng }}</td>
-            <td>{{ $lainlain }}</td>
-        </tr>
-
-        <tr></tr>
-
-        <tr>
-            <td><b>Laporan Bulanan Jenis Kendaraan Untuk Pelayanan Uji Berkala Pengujian Kendaraan Bermotor</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Pada UPT PKB Dinas Perhubungan Kabupaten Mimika</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Bulan {{ $tglprint }}</b></td>
-        </tr>
-        <tr></tr>
-        <tr>
-            <th scope="col" rowspan="3">No</th>
-            <th scope="col" rowspan="3" class="text-center" style="width:15%">Tanggal</th>
-            <th scope="col" rowspan="3" class="text-center">KBWU yang di Uji</th>
-            <th scope="col" class="text-center" colspan="23">Jenis Kendaraan</th>
-        </tr>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col" class="text-center" colspan="4">Bus</th>
-            <th scope="col" class="text-center" colspan="15">Mobil Barang</th>
-            <th scope="col" class="text-center">K.Tempelan</th>
-            <th scope="col" class="text-center">K.Gandeng</th>
-            <th scope="col" class="text-center" rowspan="2">Lain-Lain</th>
-        </tr>
-        <tr>
-            <th scope="col">Mobil Penumpang</th>
-            <th scope="col">Kecil</th>
-            <th scope="col">Sedang</th>
-            <th scope="col">Besar</th>
-            <th scope="col">Maxi</th>
-            <th scope="col">Pick Up</th>
-            <th scope="col">Pick Up Box</th>
-            <th scope="col">Truck</th>
-            <th scope="col">Light Truck</th>
-            <th scope="col">Dump Truck</th>
-            <th scope="col">Truck Box</th>
-            <th scope="col">Tractor Head</th>
-            <th scope="col">Delivery Van</th>
-            <th scope="col">Double Cabin</th>
-            <th scope="col">Truck Bak Crane</th>
-            <th scope="col">Car Carrier</th>
-            <th scope="col">Truck Tangki</th>
-            <th scope="col">Blind Van</th>
-            <th scope="col">Tronton</th>
-            <th scope="col">Flat Deck</th>
-            <th scope="col">Kereta Tempelan</th>
-            <th scope="col">Kereta Gandengan</th>
-        </tr>
-        <tr>
-            <th scope="col" rowspan="3">No</th>
-            <th scope="col" rowspan="3" class="text-center" style="width:15%">Tanggal</th>
-            <th scope="col" rowspan="3" class="text-center">KBWU yang di Uji</th>
-            <th scope="col" class="text-center" colspan="23">Jenis Kendaraan</th>
-        </tr>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col" class="text-center" colspan="4">Bus</th>
-            <th scope="col" class="text-center" colspan="15">Mobil Barang</th>
-            <th scope="col" class="text-center">K.Tempelan</th>
-            <th scope="col" class="text-center">K.Gandeng</th>
-            <th scope="col" class="text-center" rowspan="2">Lain-lain</th>
-        </tr>
-        <tr>
-            <th scope="col">Mobil Penumpang</th>
-            <th scope="col">Kecil</th>
-            <th scope="col">Sedang</th>
-            <th scope="col">Besar</th>
-            <th scope="col">Maxi</th>
-            <th scope="col">Pick Up</th>
-            <th scope="col">Pick Up Box</th>
-            <th scope="col">Truck</th>
-            <th scope="col">Light Truck</th>
-            <th scope="col">Dump Truck</th>
-            <th scope="col">Truck Box</th>
-            <th scope="col">Tractor Head</th>
-            <th scope="col">Delivery Van</th>
-            <th scope="col">Double Cabin</th>
-            <th scope="col">Truck Bak Crane</th>
-            <th scope="col">Car Carrier</th>
-            <th scope="col">Truck Tangki</th>
-            <th scope="col">Blind Van</th>
-            <th scope="col">Tronton</th>
-            <th scope="col">Flat Deck</th>
-            <th scope="col">Kereta Tempelan</th>
-            <th scope="col">Kereta Gandengan</th>
-        </tr>
-        @php $i=1;$kbwu=0;$mobilpenumpang=0;$buskecil=0;$bussedang=0;$busbesar=0;$busmaxi=0;
-        $pickup=0;$pickupbox=0;$truck=0;$lighttruck=0;$dumptruck=0;$truckbox=0;
-        $traktorhead=0;$deliveryvan=0;$doublecabin=0;$truckbakcrane=0;$carcarrier=0;
-        $trucktangki=0;$blindvan=0;$tronton=0;$flatdeck=0;$keretatempelan=0;$keretagandeng=0;
-        $lainlain=0;
-        @endphp
-        @foreach ($dataujiberkala as $dt)
-        <tr>
-            <td scope="row">{{ $i }}</td>
-            <td>{{ $dt['tgl'] }}</td>
-            <td>{{ $dt['kbwu'] }}</td>
-            <td>{{ $dt['mobilpenumpang'] }}</td>
-            <td>{{ $dt['buskecil'] }}</td>
-            <td>{{ $dt['bussedang'] }}</td>
-            <td>{{ $dt['busbesar'] }}</td>
-            <td>{{ $dt['busmaxi'] }}</td>
-            <td>{{ $dt['pickup'] }}</td>
-            <td>{{ $dt['pickupbox'] }}</td>
-            <td>{{ $dt['truck'] }}</td>
-            <td>{{ $dt['lighttruck'] }}</td>
-            <td>{{ $dt['dumptruck'] }}</td>
-            <td>{{ $dt['truckbox'] }}</td>
-            <td>{{ $dt['traktorhead'] }}</td>
-            <td>{{ $dt['deliveryvan'] }}</td>
-            <td>{{ $dt['doublecabin'] }}</td>
-            <td>{{ $dt['truckbakcrane'] }}</td>
-            <td>{{ $dt['carcarrier'] }}</td>
-            <td>{{ $dt['trucktangki'] }}</td>
-            <td>{{ $dt['blindvan'] }}</td>
-            <td>{{ $dt['tronton'] }}</td>
-            <td>{{ $dt['flatdeck'] }}</td>
-            <td>{{ $dt['keretatempelan'] }}</td>
-            <td>{{ $dt['keretagandeng'] }}</td>
-            <td>{{ $dt['lainlain'] }}</td>
-        </tr>
-        @php
-        $i++;$kbwu=$kbwu+$dt['kbwu'];$mobilpenumpang=$mobilpenumpang+$dt['mobilpenumpang'];$buskecil=$buskecil+$dt['buskecil'];$bussedang=$bussedang+$dt['bussedang'];$busbesar=$busbesar+$dt['busbesar'];$busmaxi=$busmaxi+$dt['busmaxi'];
-        $pickup=$pickup+$dt['pickup'];$pickupbox=$pickupbox+$dt['pickupbox'];$truck=$truck+$dt['truck'];$lighttruck=$lighttruck+$dt['lighttruck'];$dumptruck=$dumptruck+$dt['dumptruck'];$truckbox=$truckbox+$dt['truckbox'];
-        $traktorhead=$traktorhead+$dt['traktorhead'];$deliveryvan=$deliveryvan+$dt['deliveryvan'];$doublecabin=$doublecabin+$dt['doublecabin'];$truckbakcrane=$truckbakcrane+$dt['truckbakcrane'];$carcarrier=$carcarrier+$dt['carcarrier'];
-        $trucktangki=$trucktangki+$dt['trucktangki'];$blindvan=$blindvan+$dt['blindvan'];$tronton=$tronton+$dt['tronton'];$flatdeck=$flatdeck+$dt['flatdeck'];$keretatempelan=$keretatempelan+$dt['keretatempelan'];$keretagandeng=$dt['keretagandeng'];
-        $lainlain=$lainlain+$dt['lainlain'];
-        @endphp
-
-        @endforeach
-        <tr>
-            <td colspan="2"></td>
-            <td>{{ $kbwu }}</td>
-            <td>{{ $mobilpenumpang }}</td>
-            <td>{{ $buskecil }}</td>
-            <td>{{ $bussedang }}</td>
-            <td>{{ $busbesar }}</td>
-            <td>{{ $busmaxi }}</td>
-            <td>{{ $pickup }}</td>
-            <td>{{ $pickupbox }}</td>
-            <td>{{ $truck }}</td>
-            <td>{{ $lighttruck }}</td>
-            <td>{{ $dumptruck }}</td>
-            <td>{{ $truckbox }}</td>
-            <td>{{ $traktorhead }}</td>
-            <td>{{ $deliveryvan }}</td>
-            <td>{{ $doublecabin }}</td>
-            <td>{{ $truckbakcrane }}</td>
-            <td>{{ $carcarrier }}</td>
-            <td>{{ $trucktangki }}</td>
-            <td>{{ $blindvan }}</td>
-            <td>{{ $tronton }}</td>
-            <td>{{ $flatdeck }}</td>
-            <td>{{ $keretatempelan }}</td>
-            <td>{{ $keretagandeng }}</td>
-            <td>{{ $lainlain }}</td>
-        </tr>
-
-        <tr></tr>
-
-        <tr>
-            <td colspan="13"><b>Laporan Bulanan Jenis Kendaraan Untuk Pelayanan Numpang Uji Masuk Pengujian Kendaraan Bermotor</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Pada UPT PKB Dinas Perhubungan Kabupaten Mimika</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Bulan {{ $tglprint }}</b></td>
-        </tr>
-        <tr></tr>
-        <tr>
-            <th scope="col" rowspan="3">No</th>
-            <th scope="col" rowspan="3" class="text-center" style="width:15%">Tanggal</th>
-            <th scope="col" rowspan="3" class="text-center">KBWU yang di Uji</th>
-            <th scope="col" class="text-center" colspan="23">Jenis Kendaraan</th>
-        </tr>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col" class="text-center" colspan="4">Bus</th>
-            <th scope="col" class="text-center" colspan="15">Mobil Barang</th>
-            <th scope="col" class="text-center">K.Tempelan</th>
-            <th scope="col" class="text-center">K.Gandeng</th>
-            <th scope="col" class="text-center" rowspan="2">Lain-Lain</th>
-        </tr>
-        <tr>
-            <th scope="col">Mobil Penumpang</th>
-            <th scope="col">Kecil</th>
-            <th scope="col">Sedang</th>
-            <th scope="col">Besar</th>
-            <th scope="col">Maxi</th>
-            <th scope="col">Pick Up</th>
-            <th scope="col">Pick Up Box</th>
-            <th scope="col">Truck</th>
-            <th scope="col">Light Truck</th>
-            <th scope="col">Dump Truck</th>
-            <th scope="col">Truck Box</th>
-            <th scope="col">Tractor Head</th>
-            <th scope="col">Delivery Van</th>
-            <th scope="col">Double Cabin</th>
-            <th scope="col">Truck Bak Crane</th>
-            <th scope="col">Car Carrier</th>
-            <th scope="col">Truck Tangki</th>
-            <th scope="col">Blind Van</th>
-            <th scope="col">Tronton</th>
-            <th scope="col">Flat Deck</th>
-            <th scope="col">Kereta Tempelan</th>
-            <th scope="col">Kereta Gandengan</th>
-        </tr>
-        @php $i=1;$kbwu=0;$mobilpenumpang=0;$buskecil=0;$bussedang=0;$busbesar=0;$busmaxi=0;
-        $pickup=0;$pickupbox=0;$truck=0;$lighttruck=0;$dumptruck=0;$truckbox=0;
-        $traktorhead=0;$deliveryvan=0;$doublecabin=0;$truckbakcrane=0;$carcarrier=0;
-        $trucktangki=0;$blindvan=0;$tronton=0;$flatdeck=0;$keretatempelan=0;$keretagandeng=0;
-        $lainlain=0;
-        @endphp
-        @foreach ($datanumasuk as $dt)
-        <tr>
-            <td scope="row">{{ $i }}</td>
-            <td>{{ $dt['tgl'] }}</td>
-            <td>{{ $dt['kbwu'] }}</td>
-            <td>{{ $dt['mobilpenumpang'] }}</td>
-            <td>{{ $dt['buskecil'] }}</td>
-            <td>{{ $dt['bussedang'] }}</td>
-            <td>{{ $dt['busbesar'] }}</td>
-            <td>{{ $dt['busmaxi'] }}</td>
-            <td>{{ $dt['pickup'] }}</td>
-            <td>{{ $dt['pickupbox'] }}</td>
-            <td>{{ $dt['truck'] }}</td>
-            <td>{{ $dt['lighttruck'] }}</td>
-            <td>{{ $dt['dumptruck'] }}</td>
-            <td>{{ $dt['truckbox'] }}</td>
-            <td>{{ $dt['traktorhead'] }}</td>
-            <td>{{ $dt['deliveryvan'] }}</td>
-            <td>{{ $dt['doublecabin'] }}</td>
-            <td>{{ $dt['truckbakcrane'] }}</td>
-            <td>{{ $dt['carcarrier'] }}</td>
-            <td>{{ $dt['trucktangki'] }}</td>
-            <td>{{ $dt['blindvan'] }}</td>
-            <td>{{ $dt['tronton'] }}</td>
-            <td>{{ $dt['flatdeck'] }}</td>
-            <td>{{ $dt['keretatempelan'] }}</td>
-            <td>{{ $dt['keretagandeng'] }}</td>
-            <td>{{ $dt['lainlain'] }}</td>
-        </tr>
-        @php
-        $i++;$kbwu=$kbwu+$dt['kbwu'];$mobilpenumpang=$mobilpenumpang+$dt['mobilpenumpang'];$buskecil=$buskecil+$dt['buskecil'];$bussedang=$bussedang+$dt['bussedang'];$busbesar=$busbesar+$dt['busbesar'];$busmaxi=$busmaxi+$dt['busmaxi'];
-        $pickup=$pickup+$dt['pickup'];$pickupbox=$pickupbox+$dt['pickupbox'];$truck=$truck+$dt['truck'];$lighttruck=$lighttruck+$dt['lighttruck'];$dumptruck=$dumptruck+$dt['dumptruck'];$truckbox=$truckbox+$dt['truckbox'];
-        $traktorhead=$traktorhead+$dt['traktorhead'];$deliveryvan=$deliveryvan+$dt['deliveryvan'];$doublecabin=$doublecabin+$dt['doublecabin'];$truckbakcrane=$truckbakcrane+$dt['truckbakcrane'];$carcarrier=$carcarrier+$dt['carcarrier'];
-        $trucktangki=$trucktangki+$dt['trucktangki'];$blindvan=$blindvan+$dt['blindvan'];$tronton=$tronton+$dt['tronton'];$flatdeck=$flatdeck+$dt['flatdeck'];$keretatempelan=$keretatempelan+$dt['keretatempelan'];$keretagandeng=$dt['keretagandeng'];
-        $lainlain=$lainlain+$dt['lainlain'];
-        @endphp
-
-        @endforeach
-        <tr>
-            <td colspan="2"></td>
-            <td>{{ $kbwu }}</td>
-            <td>{{ $mobilpenumpang }}</td>
-            <td>{{ $buskecil }}</td>
-            <td>{{ $bussedang }}</td>
-            <td>{{ $busbesar }}</td>
-            <td>{{ $busmaxi }}</td>
-            <td>{{ $pickup }}</td>
-            <td>{{ $pickupbox }}</td>
-            <td>{{ $truck }}</td>
-            <td>{{ $lighttruck }}</td>
-            <td>{{ $dumptruck }}</td>
-            <td>{{ $truckbox }}</td>
-            <td>{{ $traktorhead }}</td>
-            <td>{{ $deliveryvan }}</td>
-            <td>{{ $doublecabin }}</td>
-            <td>{{ $truckbakcrane }}</td>
-            <td>{{ $carcarrier }}</td>
-            <td>{{ $trucktangki }}</td>
-            <td>{{ $blindvan }}</td>
-            <td>{{ $tronton }}</td>
-            <td>{{ $flatdeck }}</td>
-            <td>{{ $keretatempelan }}</td>
-            <td>{{ $keretagandeng }}</td>
-            <td>{{ $lainlain }}</td>
-        </tr>
-
-        <tr></tr>
-
-        <tr>
-            <td colspan="13"><b>Laporan Bulanan Jenis Kendaraan Untuk Pelayanan Numpang Uji Keluar Pengujian Kendaraan Bermotor</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Pada UPT PKB Dinas Perhubungan Kabupaten Mimika</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Bulan {{ $tglprint }}</b></td>
-        </tr>
-        <tr></tr>
-        <tr>
-            <th scope="col" rowspan="3">No</th>
-            <th scope="col" rowspan="3" class="text-center" style="width:15%">Tanggal</th>
-            <th scope="col" rowspan="3" class="text-center">KBWU yang di Uji</th>
-            <th scope="col" class="text-center" colspan="23">Jenis Kendaraan</th>
-        </tr>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col" class="text-center" colspan="4">Bus</th>
-            <th scope="col" class="text-center" colspan="15">Mobil Barang</th>
-            <th scope="col" class="text-center">K.Tempelan</th>
-            <th scope="col" class="text-center">K.Gandeng</th>
-            <th scope="col" class="text-center" rowspan="2">Lain-Lain</th>
-        </tr>
-        <tr>
-            <th scope="col">Mobil Penumpang</th>
-            <th scope="col">Kecil</th>
-            <th scope="col">Sedang</th>
-            <th scope="col">Besar</th>
-            <th scope="col">Maxi</th>
-            <th scope="col">Pick Up</th>
-            <th scope="col">Pick Up Box</th>
-            <th scope="col">Truck</th>
-            <th scope="col">Light Truck</th>
-            <th scope="col">Dump Truck</th>
-            <th scope="col">Truck Box</th>
-            <th scope="col">Tractor Head</th>
-            <th scope="col">Delivery Van</th>
-            <th scope="col">Double Cabin</th>
-            <th scope="col">Truck Bak Crane</th>
-            <th scope="col">Car Carrier</th>
-            <th scope="col">Truck Tangki</th>
-            <th scope="col">Blind Van</th>
-            <th scope="col">Tronton</th>
-            <th scope="col">Flat Deck</th>
-            <th scope="col">Kereta Tempelan</th>
-            <th scope="col">Kereta Gandengan</th>
-        </tr>
-        @php $i=1;$kbwu=0;$mobilpenumpang=0;$buskecil=0;$bussedang=0;$busbesar=0;$busmaxi=0;
-        $pickup=0;$pickupbox=0;$truck=0;$lighttruck=0;$dumptruck=0;$truckbox=0;
-        $traktorhead=0;$deliveryvan=0;$doublecabin=0;$truckbakcrane=0;$carcarrier=0;
-        $trucktangki=0;$blindvan=0;$tronton=0;$flatdeck=0;$keretatempelan=0;$keretagandeng=0;
-        $lainlain=0;
-        @endphp
-        @foreach ($datanukeluar as $dt)
-        <tr>
-            <td scope="row">{{ $i }}</td>
-            <td>{{ $dt['tgl'] }}</td>
-            <td>{{ $dt['kbwu'] }}</td>
-            <td>{{ $dt['mobilpenumpang'] }}</td>
-            <td>{{ $dt['buskecil'] }}</td>
-            <td>{{ $dt['bussedang'] }}</td>
-            <td>{{ $dt['busbesar'] }}</td>
-            <td>{{ $dt['busmaxi'] }}</td>
-            <td>{{ $dt['pickup'] }}</td>
-            <td>{{ $dt['pickupbox'] }}</td>
-            <td>{{ $dt['truck'] }}</td>
-            <td>{{ $dt['lighttruck'] }}</td>
-            <td>{{ $dt['dumptruck'] }}</td>
-            <td>{{ $dt['truckbox'] }}</td>
-            <td>{{ $dt['traktorhead'] }}</td>
-            <td>{{ $dt['deliveryvan'] }}</td>
-            <td>{{ $dt['doublecabin'] }}</td>
-            <td>{{ $dt['truckbakcrane'] }}</td>
-            <td>{{ $dt['carcarrier'] }}</td>
-            <td>{{ $dt['trucktangki'] }}</td>
-            <td>{{ $dt['blindvan'] }}</td>
-            <td>{{ $dt['tronton'] }}</td>
-            <td>{{ $dt['flatdeck'] }}</td>
-            <td>{{ $dt['keretatempelan'] }}</td>
-            <td>{{ $dt['keretagandeng'] }}</td>
-            <td>{{ $dt['lainlain'] }}</td>
-        </tr>
-        @php
-        $i++;$kbwu=$kbwu+$dt['kbwu'];$mobilpenumpang=$mobilpenumpang+$dt['mobilpenumpang'];$buskecil=$buskecil+$dt['buskecil'];$bussedang=$bussedang+$dt['bussedang'];$busbesar=$busbesar+$dt['busbesar'];$busmaxi=$busmaxi+$dt['busmaxi'];
-        $pickup=$pickup+$dt['pickup'];$pickupbox=$pickupbox+$dt['pickupbox'];$truck=$truck+$dt['truck'];$lighttruck=$lighttruck+$dt['lighttruck'];$dumptruck=$dumptruck+$dt['dumptruck'];$truckbox=$truckbox+$dt['truckbox'];
-        $traktorhead=$traktorhead+$dt['traktorhead'];$deliveryvan=$deliveryvan+$dt['deliveryvan'];$doublecabin=$doublecabin+$dt['doublecabin'];$truckbakcrane=$truckbakcrane+$dt['truckbakcrane'];$carcarrier=$carcarrier+$dt['carcarrier'];
-        $trucktangki=$trucktangki+$dt['trucktangki'];$blindvan=$blindvan+$dt['blindvan'];$tronton=$tronton+$dt['tronton'];$flatdeck=$flatdeck+$dt['flatdeck'];$keretatempelan=$keretatempelan+$dt['keretatempelan'];$keretagandeng=$dt['keretagandeng'];
-        $lainlain=$lainlain+$dt['lainlain'];
-        @endphp
-
-        @endforeach
-        <tr>
-            <td colspan="2"></td>
-            <td>{{ $kbwu }}</td>
-            <td>{{ $mobilpenumpang }}</td>
-            <td>{{ $buskecil }}</td>
-            <td>{{ $bussedang }}</td>
-            <td>{{ $busbesar }}</td>
-            <td>{{ $busmaxi }}</td>
-            <td>{{ $pickup }}</td>
-            <td>{{ $pickupbox }}</td>
-            <td>{{ $truck }}</td>
-            <td>{{ $lighttruck }}</td>
-            <td>{{ $dumptruck }}</td>
-            <td>{{ $truckbox }}</td>
-            <td>{{ $traktorhead }}</td>
-            <td>{{ $deliveryvan }}</td>
-            <td>{{ $doublecabin }}</td>
-            <td>{{ $truckbakcrane }}</td>
-            <td>{{ $carcarrier }}</td>
-            <td>{{ $trucktangki }}</td>
-            <td>{{ $blindvan }}</td>
-            <td>{{ $tronton }}</td>
-            <td>{{ $flatdeck }}</td>
-            <td>{{ $keretatempelan }}</td>
-            <td>{{ $keretagandeng }}</td>
-            <td>{{ $lainlain }}</td>
-        </tr>
-
-        <tr></tr>
-
-        <tr>
-            <td colspan="13"><b>Laporan Bulanan Jenis Kendaraan Untuk Pelayanan Mutasi Masuk Pengujian Kendaraan Bermotor</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Pada UPT PKB Dinas Perhubungan Kabupaten Mimika</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Bulan {{ $tglprint }}</b></td>
-        </tr>
-        <tr></tr>
-        <tr>
-            <th scope="col" rowspan="3">No</th>
-            <th scope="col" rowspan="3" class="text-center" style="width:15%">Tanggal</th>
-            <th scope="col" rowspan="3" class="text-center">KBWU yang di Uji</th>
-            <th scope="col" class="text-center" colspan="23">Jenis Kendaraan</th>
-        </tr>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col" class="text-center" colspan="4">Bus</th>
-            <th scope="col" class="text-center" colspan="15">Mobil Barang</th>
-            <th scope="col" class="text-center">K.Tempelan</th>
-            <th scope="col" class="text-center">K.Gandeng</th>
-            <th scope="col" class="text-center" rowspan="2">Lain-Lain</th>
-        </tr>
-        <tr>
-            <th scope="col">Mobil Penumpang</th>
-            <th scope="col">Kecil</th>
-            <th scope="col">Sedang</th>
-            <th scope="col">Besar</th>
-            <th scope="col">Maxi</th>
-            <th scope="col">Pick Up</th>
-            <th scope="col">Pick Up Box</th>
-            <th scope="col">Truck</th>
-            <th scope="col">Light Truck</th>
-            <th scope="col">Dump Truck</th>
-            <th scope="col">Truck Box</th>
-            <th scope="col">Tractor Head</th>
-            <th scope="col">Delivery Van</th>
-            <th scope="col">Double Cabin</th>
-            <th scope="col">Truck Bak Crane</th>
-            <th scope="col">Car Carrier</th>
-            <th scope="col">Truck Tangki</th>
-            <th scope="col">Blind Van</th>
-            <th scope="col">Tronton</th>
-            <th scope="col">Flat Deck</th>
-            <th scope="col">Kereta Tempelan</th>
-            <th scope="col">Kereta Gandengan</th>
-        </tr>
-        @php $i=1;$kbwu=0;$mobilpenumpang=0;$buskecil=0;$bussedang=0;$busbesar=0;$busmaxi=0;
-        $pickup=0;$pickupbox=0;$truck=0;$lighttruck=0;$dumptruck=0;$truckbox=0;
-        $traktorhead=0;$deliveryvan=0;$doublecabin=0;$truckbakcrane=0;$carcarrier=0;
-        $trucktangki=0;$blindvan=0;$tronton=0;$flatdeck=0;$keretatempelan=0;$keretagandeng=0;
-        $lainlain=0;
-        @endphp
-        @foreach ($datamutasimasuk as $dt)
-        <tr>
-            <td scope="row">{{ $i }}</td>
-            <td>{{ $dt['tgl'] }}</td>
-            <td>{{ $dt['kbwu'] }}</td>
-            <td>{{ $dt['mobilpenumpang'] }}</td>
-            <td>{{ $dt['buskecil'] }}</td>
-            <td>{{ $dt['bussedang'] }}</td>
-            <td>{{ $dt['busbesar'] }}</td>
-            <td>{{ $dt['busmaxi'] }}</td>
-            <td>{{ $dt['pickup'] }}</td>
-            <td>{{ $dt['pickupbox'] }}</td>
-            <td>{{ $dt['truck'] }}</td>
-            <td>{{ $dt['lighttruck'] }}</td>
-            <td>{{ $dt['dumptruck'] }}</td>
-            <td>{{ $dt['truckbox'] }}</td>
-            <td>{{ $dt['traktorhead'] }}</td>
-            <td>{{ $dt['deliveryvan'] }}</td>
-            <td>{{ $dt['doublecabin'] }}</td>
-            <td>{{ $dt['truckbakcrane'] }}</td>
-            <td>{{ $dt['carcarrier'] }}</td>
-            <td>{{ $dt['trucktangki'] }}</td>
-            <td>{{ $dt['blindvan'] }}</td>
-            <td>{{ $dt['tronton'] }}</td>
-            <td>{{ $dt['flatdeck'] }}</td>
-            <td>{{ $dt['keretatempelan'] }}</td>
-            <td>{{ $dt['keretagandeng'] }}</td>
-            <td>{{ $dt['lainlain'] }}</td>
-        </tr>
-        @php
-        $i++;$kbwu=$kbwu+$dt['kbwu'];$mobilpenumpang=$mobilpenumpang+$dt['mobilpenumpang'];$buskecil=$buskecil+$dt['buskecil'];$bussedang=$bussedang+$dt['bussedang'];$busbesar=$busbesar+$dt['busbesar'];$busmaxi=$busmaxi+$dt['busmaxi'];
-        $pickup=$pickup+$dt['pickup'];$pickupbox=$pickupbox+$dt['pickupbox'];$truck=$truck+$dt['truck'];$lighttruck=$lighttruck+$dt['lighttruck'];$dumptruck=$dumptruck+$dt['dumptruck'];$truckbox=$truckbox+$dt['truckbox'];
-        $traktorhead=$traktorhead+$dt['traktorhead'];$deliveryvan=$deliveryvan+$dt['deliveryvan'];$doublecabin=$doublecabin+$dt['doublecabin'];$truckbakcrane=$truckbakcrane+$dt['truckbakcrane'];$carcarrier=$carcarrier+$dt['carcarrier'];
-        $trucktangki=$trucktangki+$dt['trucktangki'];$blindvan=$blindvan+$dt['blindvan'];$tronton=$tronton+$dt['tronton'];$flatdeck=$flatdeck+$dt['flatdeck'];$keretatempelan=$keretatempelan+$dt['keretatempelan'];$keretagandeng=$dt['keretagandeng'];
-        $lainlain=$lainlain+$dt['lainlain'];
-        @endphp
-
-        @endforeach
-        <tr>
-            <td colspan="2"></td>
-            <td>{{ $kbwu }}</td>
-            <td>{{ $mobilpenumpang }}</td>
-            <td>{{ $buskecil }}</td>
-            <td>{{ $bussedang }}</td>
-            <td>{{ $busbesar }}</td>
-            <td>{{ $busmaxi }}</td>
-            <td>{{ $pickup }}</td>
-            <td>{{ $pickupbox }}</td>
-            <td>{{ $truck }}</td>
-            <td>{{ $lighttruck }}</td>
-            <td>{{ $dumptruck }}</td>
-            <td>{{ $truckbox }}</td>
-            <td>{{ $traktorhead }}</td>
-            <td>{{ $deliveryvan }}</td>
-            <td>{{ $doublecabin }}</td>
-            <td>{{ $truckbakcrane }}</td>
-            <td>{{ $carcarrier }}</td>
-            <td>{{ $trucktangki }}</td>
-            <td>{{ $blindvan }}</td>
-            <td>{{ $tronton }}</td>
-            <td>{{ $flatdeck }}</td>
-            <td>{{ $keretatempelan }}</td>
-            <td>{{ $keretagandeng }}</td>
-            <td>{{ $lainlain }}</td>
-        </tr>
-
-        <tr></tr>
-
-        <tr>
-            <td colspan="13"><b>Laporan Bulanan Jenis Kendaraan Untuk Pelayanan Mutasi Keluar Pengujian Kendaraan Bermotor</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Pada UPT PKB Dinas Perhubungan Kabupaten Mimika</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Bulan {{ $tglprint }}</b></td>
-        </tr>
-        <tr></tr>
-        <tr>
-            <th scope="col" rowspan="3">No</th>
-            <th scope="col" rowspan="3" class="text-center" style="width:15%">Tanggal</th>
-            <th scope="col" rowspan="3" class="text-center">KBWU yang di Uji</th>
-            <th scope="col" class="text-center" colspan="23">Jenis Kendaraan</th>
-        </tr>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col" class="text-center" colspan="4">Bus</th>
-            <th scope="col" class="text-center" colspan="15">Mobil Barang</th>
-            <th scope="col" class="text-center">K.Tempelan</th>
-            <th scope="col" class="text-center">K.Gandeng</th>
-            <th scope="col" class="text-center" rowspan="2">Lain-Lain</th>
-        </tr>
-        <tr>
-            <th scope="col">Mobil Penumpang</th>
-            <th scope="col">Kecil</th>
-            <th scope="col">Sedang</th>
-            <th scope="col">Besar</th>
-            <th scope="col">Maxi</th>
-            <th scope="col">Pick Up</th>
-            <th scope="col">Pick Up Box</th>
-            <th scope="col">Truck</th>
-            <th scope="col">Light Truck</th>
-            <th scope="col">Dump Truck</th>
-            <th scope="col">Truck Box</th>
-            <th scope="col">Tractor Head</th>
-            <th scope="col">Delivery Van</th>
-            <th scope="col">Double Cabin</th>
-            <th scope="col">Truck Bak Crane</th>
-            <th scope="col">Car Carrier</th>
-            <th scope="col">Truck Tangki</th>
-            <th scope="col">Blind Van</th>
-            <th scope="col">Tronton</th>
-            <th scope="col">Flat Deck</th>
-            <th scope="col">Kereta Tempelan</th>
-            <th scope="col">Kereta Gandengan</th>
-        </tr>
-        @php $i=1;$kbwu=0;$mobilpenumpang=0;$buskecil=0;$bussedang=0;$busbesar=0;$busmaxi=0;
-        $pickup=0;$pickupbox=0;$truck=0;$lighttruck=0;$dumptruck=0;$truckbox=0;
-        $traktorhead=0;$deliveryvan=0;$doublecabin=0;$truckbakcrane=0;$carcarrier=0;
-        $trucktangki=0;$blindvan=0;$tronton=0;$flatdeck=0;$keretatempelan=0;$keretagandeng=0;
-        $lainlain=$lainlain+$dt['lainlain'];
-        @endphp
-        @foreach ($datamutasikeluar as $dt)
-        <tr>
-            <td scope="row">{{ $i }}</td>
-            <td>{{ $dt['tgl'] }}</td>
-            <td>{{ $dt['kbwu'] }}</td>
-            <td>{{ $dt['mobilpenumpang'] }}</td>
-            <td>{{ $dt['buskecil'] }}</td>
-            <td>{{ $dt['bussedang'] }}</td>
-            <td>{{ $dt['busbesar'] }}</td>
-            <td>{{ $dt['busmaxi'] }}</td>
-            <td>{{ $dt['pickup'] }}</td>
-            <td>{{ $dt['pickupbox'] }}</td>
-            <td>{{ $dt['truck'] }}</td>
-            <td>{{ $dt['lighttruck'] }}</td>
-            <td>{{ $dt['dumptruck'] }}</td>
-            <td>{{ $dt['truckbox'] }}</td>
-            <td>{{ $dt['traktorhead'] }}</td>
-            <td>{{ $dt['deliveryvan'] }}</td>
-            <td>{{ $dt['doublecabin'] }}</td>
-            <td>{{ $dt['truckbakcrane'] }}</td>
-            <td>{{ $dt['carcarrier'] }}</td>
-            <td>{{ $dt['trucktangki'] }}</td>
-            <td>{{ $dt['blindvan'] }}</td>
-            <td>{{ $dt['tronton'] }}</td>
-            <td>{{ $dt['flatdeck'] }}</td>
-            <td>{{ $dt['keretatempelan'] }}</td>
-            <td>{{ $dt['keretagandeng'] }}</td>
-            <td>{{ $dt['lainlain'] }}</td>
-        </tr>
-        @php
-        $i++;$kbwu=$kbwu+$dt['kbwu'];$mobilpenumpang=$mobilpenumpang+$dt['mobilpenumpang'];$buskecil=$buskecil+$dt['buskecil'];$bussedang=$bussedang+$dt['bussedang'];$busbesar=$busbesar+$dt['busbesar'];$busmaxi=$busmaxi+$dt['busmaxi'];
-        $pickup=$pickup+$dt['pickup'];$pickupbox=$pickupbox+$dt['pickupbox'];$truck=$truck+$dt['truck'];$lighttruck=$lighttruck+$dt['lighttruck'];$dumptruck=$dumptruck+$dt['dumptruck'];$truckbox=$truckbox+$dt['truckbox'];
-        $traktorhead=$traktorhead+$dt['traktorhead'];$deliveryvan=$deliveryvan+$dt['deliveryvan'];$doublecabin=$doublecabin+$dt['doublecabin'];$truckbakcrane=$truckbakcrane+$dt['truckbakcrane'];$carcarrier=$carcarrier+$dt['carcarrier'];
-        $trucktangki=$trucktangki+$dt['trucktangki'];$blindvan=$blindvan+$dt['blindvan'];$tronton=$tronton+$dt['tronton'];$flatdeck=$flatdeck+$dt['flatdeck'];$keretatempelan=$keretatempelan+$dt['keretatempelan'];$keretagandeng=$dt['keretagandeng'];
-        $lainlain=$lainlain+$dt['lainlain'];
-        @endphp
-
-        @endforeach
-        <tr>
-            <td colspan="2"></td>
-            <td>{{ $kbwu }}</td>
-            <td>{{ $mobilpenumpang }}</td>
-            <td>{{ $buskecil }}</td>
-            <td>{{ $bussedang }}</td>
-            <td>{{ $busbesar }}</td>
-            <td>{{ $busmaxi }}</td>
-            <td>{{ $pickup }}</td>
-            <td>{{ $pickupbox }}</td>
-            <td>{{ $truck }}</td>
-            <td>{{ $lighttruck }}</td>
-            <td>{{ $dumptruck }}</td>
-            <td>{{ $truckbox }}</td>
-            <td>{{ $traktorhead }}</td>
-            <td>{{ $deliveryvan }}</td>
-            <td>{{ $doublecabin }}</td>
-            <td>{{ $truckbakcrane }}</td>
-            <td>{{ $carcarrier }}</td>
-            <td>{{ $trucktangki }}</td>
-            <td>{{ $blindvan }}</td>
-            <td>{{ $tronton }}</td>
-            <td>{{ $flatdeck }}</td>
-            <td>{{ $keretatempelan }}</td>
-            <td>{{ $keretagandeng }}</td>
-            <td>{{ $lainlain }}</td>
-        </tr>
-
-
-        <tr></tr>
-
-        <tr>
-            <td colspan="13"><b>Laporan Bulanan Jenis Kendaraan Untuk Pelayanan Uji Ulang Pengujian Kendaraan Bermotor</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Pada UPT PKB Dinas Perhubungan Kabupaten Mimika</b></td>
-        </tr>
-        <tr>
-            <td colspan="13"><b>Bulan {{ $tglprint }}</b></td>
-        </tr>
-        <tr></tr>
-        <tr>
-            <th scope="col" rowspan="3">No</th>
-            <th scope="col" rowspan="3" class="text-center" style="width:15%">Tanggal</th>
-            <th scope="col" rowspan="3" class="text-center">KBWU yang di Uji</th>
-            <th scope="col" class="text-center" colspan="23">Jenis Kendaraan</th>
-        </tr>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col" class="text-center" colspan="4">Bus</th>
-            <th scope="col" class="text-center" colspan="15">Mobil Barang</th>
-            <th scope="col" class="text-center">K.Tempelan</th>
-            <th scope="col" class="text-center">K.Gandeng</th>
-            <th scope="col" class="text-center" rowspan="2">Lain-Lain</th>
-        </tr>
-        <tr>
-            <th scope="col">Mobil Penumpang</th>
-            <th scope="col">Kecil</th>
-            <th scope="col">Sedang</th>
-            <th scope="col">Besar</th>
-            <th scope="col">Maxi</th>
-            <th scope="col">Pick Up</th>
-            <th scope="col">Pick Up Box</th>
-            <th scope="col">Truck</th>
-            <th scope="col">Light Truck</th>
-            <th scope="col">Dump Truck</th>
-            <th scope="col">Truck Box</th>
-            <th scope="col">Tractor Head</th>
-            <th scope="col">Delivery Van</th>
-            <th scope="col">Double Cabin</th>
-            <th scope="col">Truck Bak Crane</th>
-            <th scope="col">Car Carrier</th>
-            <th scope="col">Truck Tangki</th>
-            <th scope="col">Blind Van</th>
-            <th scope="col">Tronton</th>
-            <th scope="col">Flat Deck</th>
-            <th scope="col">Kereta Tempelan</th>
-            <th scope="col">Kereta Gandengan</th>
-        </tr>
-        @php $i=1;$kbwu=0;$mobilpenumpang=0;$buskecil=0;$bussedang=0;$busbesar=0;$busmaxi=0;
-        $pickup=0;$pickupbox=0;$truck=0;$lighttruck=0;$dumptruck=0;$truckbox=0;
-        $traktorhead=0;$deliveryvan=0;$doublecabin=0;$truckbakcrane=0;$carcarrier=0;
-        $trucktangki=0;$blindvan=0;$tronton=0;$flatdeck=0;$keretatempelan=0;$keretagandeng=0;
-        $lainlain=0;
-        @endphp
-        @foreach ($dataujiulang as $dt)
-        <tr>
-            <td scope="row">{{ $i }}</td>
-            <td>{{ $dt['tgl'] }}</td>
-            <td>{{ $dt['kbwu'] }}</td>
-            <td>{{ $dt['mobilpenumpang'] }}</td>
-            <td>{{ $dt['buskecil'] }}</td>
-            <td>{{ $dt['bussedang'] }}</td>
-            <td>{{ $dt['busbesar'] }}</td>
-            <td>{{ $dt['busmaxi'] }}</td>
-            <td>{{ $dt['pickup'] }}</td>
-            <td>{{ $dt['pickupbox'] }}</td>
-            <td>{{ $dt['truck'] }}</td>
-            <td>{{ $dt['lighttruck'] }}</td>
-            <td>{{ $dt['dumptruck'] }}</td>
-            <td>{{ $dt['truckbox'] }}</td>
-            <td>{{ $dt['traktorhead'] }}</td>
-            <td>{{ $dt['deliveryvan'] }}</td>
-            <td>{{ $dt['doublecabin'] }}</td>
-            <td>{{ $dt['truckbakcrane'] }}</td>
-            <td>{{ $dt['carcarrier'] }}</td>
-            <td>{{ $dt['trucktangki'] }}</td>
-            <td>{{ $dt['blindvan'] }}</td>
-            <td>{{ $dt['tronton'] }}</td>
-            <td>{{ $dt['flatdeck'] }}</td>
-            <td>{{ $dt['keretatempelan'] }}</td>
-            <td>{{ $dt['keretagandeng'] }}</td>
-            <td>{{ $dt['lainlain'] }}</td>
-        </tr>
-        @php
-        $i++;$kbwu=$kbwu+$dt['kbwu'];$mobilpenumpang=$mobilpenumpang+$dt['mobilpenumpang'];$buskecil=$buskecil+$dt['buskecil'];$bussedang=$bussedang+$dt['bussedang'];$busbesar=$busbesar+$dt['busbesar'];$busmaxi=$busmaxi+$dt['busmaxi'];
-        $pickup=$pickup+$dt['pickup'];$pickupbox=$pickupbox+$dt['pickupbox'];$truck=$truck+$dt['truck'];$lighttruck=$lighttruck+$dt['lighttruck'];$dumptruck=$dumptruck+$dt['dumptruck'];$truckbox=$truckbox+$dt['truckbox'];
-        $traktorhead=$traktorhead+$dt['traktorhead'];$deliveryvan=$deliveryvan+$dt['deliveryvan'];$doublecabin=$doublecabin+$dt['doublecabin'];$truckbakcrane=$truckbakcrane+$dt['truckbakcrane'];$carcarrier=$carcarrier+$dt['carcarrier'];
-        $trucktangki=$trucktangki+$dt['trucktangki'];$blindvan=$blindvan+$dt['blindvan'];$tronton=$tronton+$dt['tronton'];$flatdeck=$flatdeck+$dt['flatdeck'];$keretatempelan=$keretatempelan+$dt['keretatempelan'];$keretagandeng=$dt['keretagandeng'];
-        $lainlain=$lainlain+$dt['lainlain'];
-        @endphp
-
-        @endforeach
-        <tr>
-            <td colspan="2"></td>
-            <td>{{ $kbwu }}</td>
-            <td>{{ $mobilpenumpang }}</td>
-            <td>{{ $buskecil }}</td>
-            <td>{{ $bussedang }}</td>
-            <td>{{ $busbesar }}</td>
-            <td>{{ $busmaxi }}</td>
-            <td>{{ $pickup }}</td>
-            <td>{{ $pickupbox }}</td>
-            <td>{{ $truck }}</td>
-            <td>{{ $lighttruck }}</td>
-            <td>{{ $dumptruck }}</td>
-            <td>{{ $truckbox }}</td>
-            <td>{{ $traktorhead }}</td>
-            <td>{{ $deliveryvan }}</td>
-            <td>{{ $doublecabin }}</td>
-            <td>{{ $truckbakcrane }}</td>
-            <td>{{ $carcarrier }}</td>
-            <td>{{ $trucktangki }}</td>
-            <td>{{ $blindvan }}</td>
-            <td>{{ $tronton }}</td>
-            <td>{{ $flatdeck }}</td>
-            <td>{{ $keretatempelan }}</td>
-            <td>{{ $keretagandeng }}</td>
-            <td>{{ $lainlain }}</td>
+            <td>-</td>
+            <td>{{ $kwbu }}</td>
+            <td>{{ $mobil1 }}</td>
+            <td>{{ $mobil2 }}</td>
+            <td>{{ $mobil3 }}</td>
+            <td>{{ $mobil4 }}</td>
+            <td>{{ $mobil5 }}</td>
+            <td>{{ $mobil6 }}</td>
+            <td>{{ $mobil7 }}</td>
+            <td>{{ $mobil8 }}</td>
+            <td>{{ $mobil9 }}</td>
+            <td>{{ $mobil10 }}</td>
+            <td>{{ $mobil11 }}</td>
+            <td>{{ $mobil12 }}</td>
+            <td>{{ $mobil13 }}</td>
+            <td>{{ $mobil14 }}</td>
+            <td>{{ $mobil15 }}</td>
+            <td>{{ $mobil16 }}</td>
+            <td>{{ $mobil17 }}</td>
+            <td>{{ $mobil18 }}</td>
+            <td>{{ $mobil19 }}</td>
+            <td>{{ $mobil20 }}</td>
+            <td>{{ $mobil21 }}</td>
+            <td>{{ $mobil22 }}</td>
+            <td>{{ $mobil23 }}</td>
+            <td>{{ $mobil24 }}</td>
+            <td>{{ $mobil25 }}</td>
+            <td>{{ $mobil26 }}</td>
+            <td>{{ $mobil27 }}</td>
+            <td>{{ $mobil28 }}</td>
+            <td>{{ $mobil29 }}</td>
+            <td>{{ $mobil30 }}</td>
+            <td>{{ $mobil31 }}</td>
+            <td>{{ $mobil32 }}</td>
+            <td>{{ $mobil33 }}</td>
+            <td>{{ $mobil34 }}</td>
+            <td>{{ $mobil35 }}</td>
+            <td>{{ $mobil36 }}</td>
+            <td>{{ $mobil37 }}</td>
+            <td>{{ $mobil38 }}</td>
+            <td>{{ $mobil39 }}</td>
         </tr>
     </tbody>
 </table>
