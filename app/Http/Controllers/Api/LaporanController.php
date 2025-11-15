@@ -527,7 +527,6 @@ class LaporanController extends Controller
             'logokab'  => $logokab,
             'ket'   => $ket,
         ];
-        dd($dataKend);
         $pdf = PDF::loadView('cetak.triwulan.jeniskendaraan', $data);
         $pdf->setPaper('A4', 'landscape');
         return $pdf->stream('Laporan Triwulan Jenis Kendaraan.pdf')->header('Content-Type','application/pdf');
