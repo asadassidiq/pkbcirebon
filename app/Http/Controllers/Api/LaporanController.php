@@ -450,7 +450,7 @@ class LaporanController extends Controller
                 break;
         }
         $tglprint = $triwulan . ' ' . $tahun;
-        $data = array();
+        $dataKend = array();
         foreach ($range as $bulan) {
             if($bulan == 1){
                 $kwbusblm = TamanKendaraan::whereMonth('tanggal', '12')->whereYear('tanggal', (int)$tahun-1)->orderBy('tanggal','DESC')->first();
@@ -514,14 +514,14 @@ class LaporanController extends Controller
                 'mobil38' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id',$kode)->where('model', 'MIXER')->count(),
                 'mobil39' => Pendaftaran::leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $tahun)->where('kodepenerbitans_id',$kode)->where('model', 'CONCRETEPUMP')->count(),
             );
-            array_push($data, $arr);
+            array_push($dataKend, $arr);
         };
 
         $path_logoKab = public_path() . '/img/kota.png';
         $logokab = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoKab));
         $ttd = Ttd::leftjoin('users', 'users.uuid', 'tandatangan.user_id')->where('tandatangan.name', 'Laporan')->first();
         $data = [
-            'kendaraan' => $data,
+            'kendaraan' => $dataKend,
             'tglprint' => $tglprint,
             'ttd'     => $ttd,
             'logokab'  => $logokab,
