@@ -126,28 +126,28 @@ export default {
             this.tgl = moment(this.tgl).format("YYYY-MM");
             if(this.dataLaporan == 'jenis1')
             {
-                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=', "_blank");
+                window.open("/export/" + this.tgl + '/'+'jenisbulanan'+'?k=', "_blank");
             }else if(this.dataLaporan == 'jenis2')
             {
-                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=2', "_blank");
+                window.open("/export/" + this.tgl + '/'+'jenisbulanan'+'?k=2', "_blank");
             }else if(this.dataLaporan == 'jenis3')
             {
-                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=3', "_blank");
+                window.open("/export/" + this.tgl + '/'+'jenisbulanan'+'?k=3', "_blank");
             }else if(this.dataLaporan == 'jenis5')
             {
-                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=5', "_blank");
+                window.open("/export/" + this.tgl + '/'+'jenisbulanan'+'?k=5', "_blank");
             }else if(this.dataLaporan == 'jenis6')
             {
-                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=6', "_blank");
+                window.open("/export/" + this.tgl + '/'+'jenisbulanan'+'?k=6', "_blank");
             }else if(this.dataLaporan == 'jenis8')
             {
-                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=8', "_blank");
+                window.open("/export/" + this.tgl + '/'+'jenisbulanan'+'?k=8', "_blank");
             }else if(this.dataLaporan == 'jenis9')
             {
-                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=9', "_blank");
+                window.open("/export/" + this.tgl + '/'+'jenisbulanan'+'?k=9', "_blank");
             }else if(this.dataLaporan == 'jenis110')
             {
-                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=10', "_blank");
+                window.open("/export/" + this.tgl + '/'+'jenisbulanan'+'?k=10', "_blank");
             }else{
                 window.open("/export/" + this.tgl + '/'+this.dataLaporan, "_blank");
             }
