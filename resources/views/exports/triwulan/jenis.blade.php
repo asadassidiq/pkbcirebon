@@ -83,7 +83,7 @@
         @foreach ($data as $data) 
         <tr>
             <th scope="row">{{ $i }}</th>
-            <td>{{ $data->tgl }}</td>
+            <td>{{ $data->bulan }}</td>
             <td>{{ $data->kwbusblm }}</td>
             <td>{{ $data->kwbu }}</td>
             <td>{{ $data->mobil1 }}</td>
