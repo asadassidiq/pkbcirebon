@@ -80,7 +80,7 @@
         $mobil29 = 0;$mobil30 = 0;$mobil31 = 0;$mobil32 = 0;$mobil33 = 0;$mobil34 = 0;$mobil35 = 0;
         $mobil36 = 0;$mobil37 = 0;$mobil38 = 0;$mobil39 = 0;
         @endphp
-        @foreach ($data as $data) 
+        @foreach ($kendaraan as $data) 
         <tr>
             <th scope="row">{{ $i }}</th>
             <td>{{ $data->bulan }}</td>
