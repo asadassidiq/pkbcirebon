@@ -423,6 +423,7 @@ class LaporanController extends Controller
             }
 
             $date = date_create($bulan);
+            dd($bulan);
             $date = $this->utils->bulan(date_format($date, "m"));
             $arr = array(
                 'bulan'  => $date,
