@@ -93,6 +93,6 @@ class jenisExport implements FromView
             );
             array_push($data, $arr);
         };
-        return view('exports.bulanan.kartu', ['tglprint' => $tglprint, 'tglcetak' => $tglcetak, 'data' => $data, 'ket' => $this->ket]);
+        return view('exports.bulanan.jenis', ['tglprint' => $tglprint, 'tglcetak' => $tglcetak, 'data' => $data, 'ket' => $this->ket]);
     }
 }
