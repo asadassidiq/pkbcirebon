@@ -124,7 +124,33 @@ export default {
         },
         exportLaporan() {
             this.tgl = moment(this.tgl).format("YYYY-MM");
-            window.open("/export/" + this.tgl + '/'+this.dataLaporan, "_blank");
+            if(this.dataLaporan == 'jenis1')
+            {
+                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=&t='+this.triwulan, "_blank");
+            }else if(this.dataLaporan == 'jenis2')
+            {
+                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=2&t='+this.triwulan, "_blank");
+            }else if(this.dataLaporan == 'jenis3')
+            {
+                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=3&t='+this.triwulan, "_blank");
+            }else if(this.dataLaporan == 'jenis5')
+            {
+                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=5&t='+this.triwulan, "_blank");
+            }else if(this.dataLaporan == 'jenis6')
+            {
+                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=6&t='+this.triwulan, "_blank");
+            }else if(this.dataLaporan == 'jenis8')
+            {
+                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=8&t='+this.triwulan, "_blank");
+            }else if(this.dataLaporan == 'jenis9')
+            {
+                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=9&t='+this.triwulan, "_blank");
+            }else if(this.dataLaporan == 'jenis110')
+            {
+                window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=10&t='+this.triwulan, "_blank");
+            }else{
+                window.open("/export/" + this.tgl + '/'+this.dataLaporan+`?t=${this.triwulan}`, "_blank");
+            }
         },
         customFormatter(date) {
             return moment(date).format("YYYY-MM");
