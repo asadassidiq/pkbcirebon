@@ -23,7 +23,13 @@
                             <select class="form-control" v-model="dataLaporan">
                                 <option selected="selected" value=""></option>
                                 <option value="kartubulanan">Pemakaian Kartu</option>
-                                <option value="jenisbulanan">Jenis Kendaraan</option>
+                                <option value="jenis1">Jenis Kendaraan Uji Pertama</option>
+                                <option value="jenis2">Jenis Kendaraan Uji Berkala</option>
+                                <option value="jenis5">Jenis Kendaraan Numpang Uji Masuk</option>
+                                <option value="jenis6">Jenis Kendaraan Mutasi Masuk</option>
+                                <option value="jenis9">Jenis Kendaraan Numpang Uji Keluar</option>
+                                <option value="jenis10">Jenis Kendaraan Mutasi Keluar</option>
+                                <option value="jenis8">Jenis Kendaraan Rubah Bentuk</option>
                                 <option value="pelayananbulanan">Pelayanan</option>
                             </select>
                         </div>
@@ -88,7 +94,33 @@ export default {
     methods: {
         printLaporan() {
             this.tgl = moment(this.tgl).format("YYYY-MM");
-            window.open("/cetak/" + this.tgl + '/'+this.dataLaporan, "_blank");
+            if(this.dataLaporan == 'jenis1')
+            {
+                window.open("/cetak/" + this.tgl + '/'+'jenisbulanan'+'?k=1', "_blank");
+            }else if(this.dataLaporan == 'jenis2')
+            {
+                window.open("/cetak/" + this.tgl + '/'+'jenisbulanan'+'?k=2', "_blank");
+            }else if(this.dataLaporan == 'jenis3')
+            {
+                window.open("/cetak/" + this.tgl + '/'+'jenisbulanan'+'?k=3', "_blank");
+            }else if(this.dataLaporan == 'jenis5')
+            {
+                window.open("/cetak/" + this.tgl + '/'+'jenisbulanan'+'?k=5', "_blank");
+            }else if(this.dataLaporan == 'jenis6')
+            {
+                window.open("/cetak/" + this.tgl + '/'+'jenisbulanan'+'?k=6', "_blank");
+            }else if(this.dataLaporan == 'jenis8')
+            {
+                window.open("/cetak/" + this.tgl + '/'+'jenisbulanan'+'?k=8', "_blank");
+            }else if(this.dataLaporan == 'jenis9')
+            {
+                window.open("/cetak/" + this.tgl + '/'+'jenisbulanan'+'?k=9', "_blank");
+            }else if(this.dataLaporan == 'jenis110')
+            {
+                window.open("/cetak/" + this.tgl + '/'+'jenisbulanan'+'?k=10', "_blank");
+            }else{
+                window.open("/cetak/" + this.tgl + '/'+this.dataLaporan, "_blank");
+            }
         },
         exportLaporan() {
             this.tgl = moment(this.tgl).format("YYYY-MM");
