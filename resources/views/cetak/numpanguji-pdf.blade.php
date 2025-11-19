@@ -154,6 +154,7 @@
                 <p>Lampiran</p>
                 <p>Hal</p>
                 <p style="color: white">test</p>
+                <br>
                 <p>Yth. </p>
                 <br>
                 <p>Di Tempat</p>
@@ -181,117 +182,115 @@
         </tr>
     </table>
 
-    <div>
-        <p><span style="margin-left: 20px">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor 
-            terkait permohonan pengujian kendaraan bermotor di Daerah lain, 
-            Bersama ini kami sampaikan data kendaraan bermotor sebagai berikut : </p>
-        <table style="width: 100%;margin-left:20px">
-            <tr>
-                <td style="width: 27%">
-                    <p>Nama Pemilik Kendaraan</p>
-                    <p>Alamat</p>
-                    <p>Nomor Kendaraan</p>
-                    <p>Nomor Uji</p>
-                    <p>Merek/Tipe</p>
-                    <p>No Rangka</p>
-                    <p>No Mesin</p>
-                    <p>Daerah Tujuan</p>
-                    <p>Waktu Pelaksanaan</p>
-                    <p>Alasan Numpang Uji</p>
-                </td>
-                <td style="width: 5%">
-                    <p>:</p>
-                    <p>:</p>
-                    <p>:</p>
-                    <p>:</p>
-                    <p>:</p>
-                    <p>:</p>
-                    <p>:</p>
-                    <p>:</p>
-                    <p>:</p>
-                    <p>:</p>
-                </td>
-                <td style="width: 68%">
-                    <p>{{ $kendaraan->nama }}</p>
-                    <p>{{ $kendaraan->alamat }}</p>
-                    <p>{{ $kendaraan->noregistrasikendaraan }}</p>
-                    <p>{{ $kendaraan->nouji }}</p>
-                    <p>{{ $kendaraan->merek }}/{{ $kendaraan->tipe }}</p>
-                    <p>{{ $kendaraan->norangka }}</p>
-                    <p>{{ $kendaraan->nomesin }}</p>
-                    <p>{{ $kendaraan->tujuan }}</p>
-                    <p>{{ $kendaraan->tglpelaksanaan }}</p>
-                    <p><i>ceklist minimal 1 (satu)</i></p>
-                </td>
-            </tr>
-        </table>
-        <table class="tabel-ketentuan">
-            <tr>
-                <td style="width: 90%">
-                    Masa berlaku uji berkala telah jatuh tempo sedangkan kendaraan bermotor
-                    sedang berada di luar daerah domisili pemilik kendaraan;
-                </td>
-                <td style="width: 10%"></td>
-            </tr>
-            <tr>
-                <td style="width: 90%">
-                    Kendaraan terkena sanksi pelanggaran karena tidak memenuhi persyaratan
-                    teknis dan laik jalan sehingga harus melakukan kewajiban uji ulang, sebelum
-                    habis masa berlakunya;
-                </td>
-                <td style="width: 10%"></td>
-            </tr>
-            <tr>
-                <td style="width: 90%">
-                    Peralatan uji di unit pelaksana pengujian berkala kendaraan bermotor sesuai
-                    domisili kendaraan bermotor yang bersangkutan terdaftar sedang dalam
-                    keadaan rusak atau tidak berfungsi sebagaimana mestinya
-                </td>
-                <td style="width: 10%"></td>
-            </tr>
-            <tr>
-                <td style="width: 90%">
-                    Unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili tidak
-                    terakreditasi.
-                </td>
-                <td style="width: 10%"></td>
-            </tr>
-        </table>
+    <p><span style="margin-left: 20px">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor 
+        terkait permohonan pengujian kendaraan bermotor di Daerah lain, 
+        Bersama ini kami sampaikan data kendaraan bermotor sebagai berikut : </p>
+    <table style="width: 100%;margin-left:20px">
+        <tr>
+            <td style="width: 27%">
+                <p>Nama Pemilik Kendaraan</p>
+                <p>Alamat</p>
+                <p>Nomor Kendaraan</p>
+                <p>Nomor Uji</p>
+                <p>Merek/Tipe</p>
+                <p>No Rangka</p>
+                <p>No Mesin</p>
+                <p>Daerah Tujuan</p>
+                <p>Waktu Pelaksanaan</p>
+                <p>Alasan Numpang Uji</p>
+            </td>
+            <td style="width: 5%">
+                <p>:</p>
+                <p>:</p>
+                <p>:</p>
+                <p>:</p>
+                <p>:</p>
+                <p>:</p>
+                <p>:</p>
+                <p>:</p>
+                <p>:</p>
+                <p>:</p>
+            </td>
+            <td style="width: 68%">
+                <p>{{ $kendaraan->nama }}</p>
+                <p>{{ $kendaraan->alamat }}</p>
+                <p>{{ $kendaraan->noregistrasikendaraan }}</p>
+                <p>{{ $kendaraan->nouji }}</p>
+                <p>{{ $kendaraan->merek }}/{{ $kendaraan->tipe }}</p>
+                <p>{{ $kendaraan->norangka }}</p>
+                <p>{{ $kendaraan->nomesin }}</p>
+                <p>{{ $kendaraan->tujuan }}</p>
+                <p>{{ $kendaraan->tglpelaksanaan }}</p>
+                <p><i>ceklist minimal 1 (satu)</i></p>
+            </td>
+        </tr>
+    </table>
+    <table class="tabel-ketentuan">
+        <tr>
+            <td style="width: 90%">
+                Masa berlaku uji berkala telah jatuh tempo sedangkan kendaraan bermotor
+                sedang berada di luar daerah domisili pemilik kendaraan;
+            </td>
+            <td style="width: 10%"></td>
+        </tr>
+        <tr>
+            <td style="width: 90%">
+                Kendaraan terkena sanksi pelanggaran karena tidak memenuhi persyaratan
+                teknis dan laik jalan sehingga harus melakukan kewajiban uji ulang, sebelum
+                habis masa berlakunya;
+            </td>
+            <td style="width: 10%"></td>
+        </tr>
+        <tr>
+            <td style="width: 90%">
+                Peralatan uji di unit pelaksana pengujian berkala kendaraan bermotor sesuai
+                domisili kendaraan bermotor yang bersangkutan terdaftar sedang dalam
+                keadaan rusak atau tidak berfungsi sebagaimana mestinya
+            </td>
+            <td style="width: 10%"></td>
+        </tr>
+        <tr>
+            <td style="width: 90%">
+                Unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili tidak
+                terakreditasi.
+            </td>
+            <td style="width: 10%"></td>
+        </tr>
+    </table>
 
 
-        <p><span style="margin-left: 20px">Sehubungan</span> dilakukan Mutasi Uji Kendaraan Bermotor 
-        ke Dinas Perhubungan {{ $kendaraan->tujuan }} dengan data kendaraan :</p>
+    <p><span style="margin-left: 20px">Sehubungan</span> dilakukan Mutasi Uji Kendaraan Bermotor 
+    ke Dinas Perhubungan {{ $kendaraan->tujuan }} dengan data kendaraan :</p>
 
-        <p><span style="margin-left: 20px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
-        menerima pelaksanaan uji berkala kendaraan bermotor dimaksud untuk 1 (satu) kali uji. Kemudian 
-        hasil uji untuk dapat disampaikan kembali ke Dinas Perbungan {{ env('APP_KAB') }} {{ env('APP_WILAYAH') }} 
-        Adapun Surat Pengantar Pengujian Kendaraan Bermotor di Daerah Lainini berlaku 1 (satu) kali.
-        
-        <p><span style="margin-left: 20px">Demikian</span> disampaikan, atas perhatian dan perkenaanya diucapkan terima kasih.</p>
+    <p><span style="margin-left: 20px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
+    menerima pelaksanaan uji berkala kendaraan bermotor dimaksud untuk 1 (satu) kali uji. Kemudian 
+    hasil uji untuk dapat disampaikan kembali ke Dinas Perbungan {{ env('APP_KAB') }} {{ env('APP_WILAYAH') }} 
+    Adapun Surat Pengantar Pengujian Kendaraan Bermotor di Daerah Lainini berlaku 1 (satu) kali.
+    
+    <p><span style="margin-left: 20px">Demikian</span> disampaikan, atas perhatian dan perkenaanya diucapkan terima kasih.</p>
 
-        <table style="width: 100%;line-height:1">
-            <tr>
-                <td style="width: 45%"></td>
-                <td style="width: 55%" class="text-center">
-                    <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
-                    <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
-                    <p>Kota Cirebon</p>
-                    <br><br><br>
-                    <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
-                    {{-- <p style="margin: 0;padding: 0">{{ $ttd['pangkat'] }}</p> --}}
-                    <p style="margin: 0;padding: 0">NIP. {{ $ttd['nip'] }}</p>
-                </td>
-            </tr>
-        </table>
-        <br><br>
-        <p style="margin: 0;padding:0">Tembusan disampaikan kepada Yth :</p>
-        <ol style="margin: 0;padding:0;margin-left: 50px">
-            <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
-            <li>Kepala Balai Pengelola Transportasi Darat Kelas ...</li>
-            {{-- <li>Kepala Kepolisian Resort Cirebon Kota,</li> --}}
-            {{-- <li>Arsip.</li> --}}
-        </ol>
-    </div>
+    <table style="width: 100%;line-height:1">
+        <tr>
+            <td style="width: 45%"></td>
+            <td style="width: 55%" class="text-center">
+                <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
+                <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
+                <p>Kota Cirebon</p>
+                <br><br><br>
+                <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
+                {{-- <p style="margin: 0;padding: 0">{{ $ttd['pangkat'] }}</p> --}}
+                <p style="margin: 0;padding: 0">NIP. {{ $ttd['nip'] }}</p>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <p style="margin: 0;padding:0">Tembusan disampaikan kepada Yth :</p>
+    <ol style="margin: 0;padding:0;margin-left: 50px">
+        <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
+        <li>Kepala Balai Pengelola Transportasi Darat Kelas ...</li>
+        {{-- <li>Kepala Kepolisian Resort Cirebon Kota,</li> --}}
+        {{-- <li>Arsip.</li> --}}
+    </ol>
 </div>
 
 
