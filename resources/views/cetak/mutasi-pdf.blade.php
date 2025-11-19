@@ -133,20 +133,20 @@
 
     <table style="width: 100%">
         <tr>
-            <td style="width: 10%">
+            <td style="width: 10%;vertical-align: top">
                 <p>Nomor</p>
                 <p>Klasifikasi</p>
                 <p>Lampiran</p>
                 <p>Hal</p>
             </td>
-            <td style="width: 3%">
+            <td style="width: 3%;vertical-align: top">
                 <p>:</p>
                 <p>:</p>
                 <p>:</p>
                 <p>:</p>
                 <p>:</p>
             </td>
-            <td style="width: 55%">
+            <td style="width: 55%;vertical-align: top">
                 <p>{{ $kendaraan['nosurat'] }}</p>
                 <p>Biasa</p>
                 <p>-</p>
@@ -158,7 +158,7 @@
                 <br>
                 <p>Di Tempat</p>
             </td>
-            <td style="width: 37%">
+            <td style="width: 37%;vertical-align: top">
                 <p class="text-center">Cirebon, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p>
             </td>
         </tr>
@@ -239,7 +239,7 @@
                     <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
                     <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
                     <p>Kota Cirebon</p>
-                    <br><br><br><br>
+                    <br><br><br>
                     <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
                     {{-- <p style="margin: 0;padding: 0">{{ $ttd['pangkat'] }}</p> --}}
                     <p style="margin: 0;padding: 0">NIP. {{ $ttd['nip'] }}</p>
