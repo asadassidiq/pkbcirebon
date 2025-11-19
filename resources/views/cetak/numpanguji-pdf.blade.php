@@ -231,9 +231,13 @@
                 Masa berlaku uji berkala telah jatuh tempo sedangkan kendaraan bermotor
                 sedang berada di luar daerah domisili pemilik kendaraan;
             </td>
-            <td style="width: 10%">
-                <div class="custom-checkbox checked"></div>
-            </td>
+            @if(strpos($kendaraan->alasan, "Masa berlaku uji berkala telah jatuh tempo") !== false)
+                <td style="width: 10%;vertical-align: center" class="text-center">
+                    <div class="custom-checkbox checked"></div>
+                </td>
+            @else
+                <td style="width: 10%;"></td>
+            @endif
         </tr>
         <tr>
             <td style="width: 90%">
@@ -241,7 +245,13 @@
                 teknis dan laik jalan sehingga harus melakukan kewajiban uji ulang, sebelum
                 habis masa berlakunya;
             </td>
-            <td style="width: 10%"></td>
+            @if(strpos($kendaraan->alasan, "Kendaraan terkena sanksi pelanggaran") !== false)
+                <td style="width: 10%;vertical-align: center" class="text-center">
+                    <div class="custom-checkbox checked"></div>
+                </td>
+            @else
+                <td style="width: 10%;"></td>
+            @endif
         </tr>
         <tr>
             <td style="width: 90%">
@@ -249,14 +259,26 @@
                 domisili kendaraan bermotor yang bersangkutan terdaftar sedang dalam
                 keadaan rusak atau tidak berfungsi sebagaimana mestinya
             </td>
-            <td style="width: 10%"></td>
+            @if(strpos($kendaraan->alasan, "sedang dalam keadaan rusak atau tidak berfungsi") !== false)
+                <td style="width: 10%;vertical-align: center" class="text-center">
+                    <div class="custom-checkbox checked"></div>
+                </td>
+            @else
+                <td style="width: 10%;"></td>
+            @endif
         </tr>
         <tr>
             <td style="width: 90%">
                 Unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili tidak
                 terakreditasi.
             </td>
-            <td style="width: 10%"></td>
+            @if(strpos($kendaraan->alasan, "domisili tidak terakreditasi") !== false)
+                <td style="width: 10%;vertical-align: center" class="text-center">
+                    <div class="custom-checkbox checked"></div>
+                </td>
+            @else
+                <td style="width: 10%;"></td>
+            @endif
         </tr>
     </table>
 
