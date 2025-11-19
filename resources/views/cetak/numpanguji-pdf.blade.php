@@ -157,7 +157,7 @@
                 <br>
                 <p>Yth. </p>
                 <br>
-                <p>Di Tempat</p>
+                <p style="margin-top:-5px;">Di Tempat</p>
             </td>
             <td style="width: 3%;vertical-align: top">
                 <p>:</p>
@@ -172,7 +172,7 @@
                 <p>Keterangan Pengantar Pengujian</p>
                 <p>Kendaraan Bermotor di Daerah Lain</p>
                 <br>
-                <p style="margin-top:-10px;">{{ $kendaraan->kepada }}</p>
+                <p style="margin-top:-5px;">{{ $kendaraan->kepada }}</p>
                 <p><span>{{ $kendaraan->tujuan }}</span></p>
                 <br>
             </td>
