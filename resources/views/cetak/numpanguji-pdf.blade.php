@@ -115,7 +115,7 @@
             padding: 8px 10px;
             text-align: left;
             vertical-align: top;
-            line-height: 0.5;
+            line-height: 1;
         }
         
     </style>
