@@ -512,19 +512,11 @@ export const mutations = {
             bahan:payload.bahan,
         };
             if(payload.alasan !== null && payload.alasan  !== undefined && payload.alasan  !== ""){
-                const alasanString = payload.alasan ?? "";
-                // 1. Hilangkan karakter tidak perlu
-                raw = raw
-                    .replace(/[\[\]"]/g, "")   // hilangkan [ ] "
-                    .trim();
-
-                // 2. Pecah berdasarkan baris baru
-                let arr = raw.split(/\r?\n/);
-
-                // 3. Bersihkan setiap baris
-                state.pendaftaran.alasan = arr
-                    .map(a => a.trim())
-                    .filter(a => a.length > 0);
+                try {
+                    state.pendaftaran.alasan = JSON.parse(payload.alasan);
+                } catch (e) {
+                    state.pendaftaran.alasan = []; 
+                }
             }
         
         // setTimeout(() => {
