@@ -187,6 +187,7 @@
 
                   <div class="col-sm-8" v-if="pendaftaran.kodepenerbitans_id == 9">
                     <div class="input-group mb-3">
+                      <label>Alasan</label>
                       <textarea class="form-control" rows="4" v-model="textareaAlasan"
                                 placeholder="Klik tombol di kanan untuk memilih alasan" readonly></textarea>
 
