@@ -512,12 +512,20 @@ export const mutations = {
             bahan:payload.bahan,
         };
             if(payload.alasan !== null && payload.alasan  !== undefined && payload.alasan  !== ""){
-                const alasanString = payload.alasan;
-                state.pendaftaran.alasan = alasanString
-                    ? alasanString.split(",").map(a => a.trim()) 
-                    : []; 
-            }
+                const alasanString = payload.alasan ?? "";
+                // 1. Hilangkan karakter tidak perlu
+                raw = raw
+                    .replace(/[\[\]"]/g, "")   // hilangkan [ ] "
+                    .trim();
 
+                // 2. Pecah berdasarkan baris baru
+                let arr = raw.split(/\r?\n/);
+
+                // 3. Bersihkan setiap baris
+                state.pendaftaran.alasan = arr
+                    .map(a => a.trim())
+                    .filter(a => a.length > 0);
+            }
         
         // setTimeout(() => {
             if(payload.kodewilayah !== null && payload.kodewilayah  !== undefined && payload.kodewilayah  !== ""){
