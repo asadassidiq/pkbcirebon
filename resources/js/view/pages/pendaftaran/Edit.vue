@@ -1409,7 +1409,6 @@ export default {
       if (this.textareaAlasan !== "") {
         this.textareaAlasan = "• " + this.textareaAlasan;
       }
-      this.showModal = false;
     },
     canEditDataKendaraan() {
       if (this.pendaftaran.kodepenerbitans_id == 1) {
@@ -1539,15 +1538,15 @@ export default {
         this.pendaftaran[field] = "";
       }
     },
-    showModalVTA() {
-      this.$refs["modalVTA"].show();
-    },
     showModalAlasan() {
       this.$refs["modalAlasan"].show();
     },
     
     hideModalAlasan() {
       this.$refs["modalAlasan"].hide();
+    },
+    showModalVTA() {
+      this.$refs["modalVTA"].show();
     },
     getDataVTA(dataSearch) {
       if (this.dataSearch === "") {

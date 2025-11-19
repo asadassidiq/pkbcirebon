@@ -149,18 +149,17 @@
                       </vSelect>
                     </div>
                   </div>
-                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == 9">
-                    <div class="form-group">
+                  <div class="col-sm-8" v-if="pendaftaran.kodepenerbitans_id == 9">
+                    <div class="input-group mb-3">
                       <label>Alasan</label>
-                      <select v-model="pendaftaran.alasan" multiple class="form-control" size="6">
-                        <option
-                          v-for="(alasan, i) in alasanList"
-                          :key="i"
-                          :value="alasan"
-                        >
-                          {{ alasan }}
-                        </option>
-                      </select>
+                      <textarea class="form-control" rows="4" v-model="textareaAlasan"
+                                placeholder="Klik tombol di kanan untuk memilih alasan" readonly></textarea>
+
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" @click="showModalAlasan()">
+                          Pilih Alasan
+                        </button>
+                      </div>
                     </div>
                   </div>
                   <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == 9">
@@ -1107,6 +1106,23 @@
       </div>
     </div>
     <!--end: Wizard-->
+    
+    <!-- MODAL -->
+    <b-modal id="modalAlasan" ref="modalAlasan" class="modal" title="Pilihan Alasan" @ok="applySelection">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+
+          <h4>Pilih Alasan</h4>
+
+          <div v-for="(alasan, i) in alasanList" :key="i" class="mb-2">
+            <label>
+              <input type="checkbox" :value="alasan" v-model="pendaftaran.alasan">
+              {{ alasan }}
+            </label>
+          </div>
+        </div>
+      </div>
+    </b-modal>
 
     <b-modal id="modalVTA" ref="modalVTA" class="modal" title="Cek Data">
       <div class="form-group">
@@ -1187,6 +1203,8 @@ export default {
         "Peralatan uji di unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili kendaraan bermotor yang bersangkutan terdaftar sedang dalam keadaan rusak atau tidak berfungsi sebagaimana mestinya",
         "Unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili tidak terakreditasi"
       ],
+      selectedAlasan: [],
+      textareaAlasan: "",
     };
   },
   name: "Wizard-1",
@@ -1243,6 +1261,13 @@ export default {
         this.pendaftaran[field] !== "" ||
         this.pendaftaran[field] !== null
       );
+    },
+    
+    applySelection() {
+      this.textareaAlasan = this.pendaftaran.alasan.join("\n• ");
+      if (this.textareaAlasan !== "") {
+        this.textareaAlasan = "• " + this.textareaAlasan;
+      }
     },
     submit() {
       var updateData = this.cekPerubahanData();
@@ -1394,6 +1419,13 @@ export default {
       if (this.pendaftaran[field] === 0 || this.pendaftaran[field] === "0") {
         this.pendaftaran[field] = '';
       }
+    },
+    showModalAlasan() {
+      this.$refs["modalAlasan"].show();
+    },
+    
+    hideModalAlasan() {
+      this.$refs["modalAlasan"].hide();
     },
     showModalVTA() {
       this.$refs['modalVTA'].show()
