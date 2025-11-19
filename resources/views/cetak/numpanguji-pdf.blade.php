@@ -172,7 +172,7 @@
                 <p>Keterangan Pengantar Pengujian</p>
                 <p>Kendaraan Bermotor di Daerah Lain</p>
                 <br>
-                <p>{{ $kendaraan->kepada }}</p>
+                <p style="margin-top:-10px;">{{ $kendaraan->kepada }}</p>
                 <p><span>{{ $kendaraan->tujuan }}</span></p>
                 <br>
             </td>
