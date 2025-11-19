@@ -182,9 +182,28 @@
                       <label> Tujuan</label>
                       <vSelect label="nama" :options="kotas" v-model="pendaftaran.tujuan" @input="setKotaTujuan">
                       </vSelect>
-                      <p class="text-danger" v-if="errors.tujuan">
-                        {{ errors.tujuan[0] }}
-                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == 9">
+                    <div class="form-group">
+                      <label>Alasan</label>
+                      <select v-model="pendaftaran.alasan" multiple class="form-control" size="6">
+                        <option
+                          v-for="(alasan, i) in alasanList"
+                          :key="i"
+                          :value="alasan"
+                        >
+                          {{ alasan }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == 9">
+                    <div class="form-group">
+                      <label>Tanggal Pelaksanaan Uji</label>
+                      <b-form-datepicker id="tglhbsuji" v-model="pendaftaran.tglpelaksanaan" locale="id"></b-form-datepicker>
                     </div>
                   </div>
 
@@ -1285,6 +1304,12 @@ export default {
       disabled2: 1,
       isActive: true,
       statuschecking: true,
+      alasanList: [
+        "Masa berlaku uji berkala telah jatuh tempo sedangkan kendaraan bermotor sedang berada di luar daerah domisili pemilik kendaraan",
+        "Kendaraan terkena sanksi pelanggaran karena tidak memenuhi persyaratan teknis dan laik jalan sehingga harus melakukan kewajiban uji ulang, sebelum habis masa berlakunya",
+        "Peralatan uji di unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili kendaraan bermotor yang bersangkutan terdaftar sedang dalam keadaan rusak atau tidak berfungsi sebagaimana mestinya",
+        "Unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili tidak terakreditasi"
+      ],
     };
   },
   name: "Wizard-1",
