@@ -136,7 +136,7 @@ export const state = {
         notelp:"",
         nosurat:"",
         nosuratdari:"",
-        kepada:"Kepala",
+        kepada:"Kepala Dinas Perhubungan",
         tujuan:"",
         alasan:"",
         masaberlakuuji:"",

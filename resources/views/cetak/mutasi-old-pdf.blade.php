@@ -135,12 +135,10 @@
         <tr>
             <td style="width: 10%">
                 <p>Nomor</p>
-                <p>Klasifikasi</p>
                 <p>Lampiran</p>
-                <p>Hal</p>
+                <p>Perihal</p>
             </td>
             <td style="width: 3%">
-                <p>:</p>
                 <p>:</p>
                 <p>:</p>
                 <p>:</p>
@@ -148,36 +146,36 @@
             </td>
             <td style="width: 55%">
                 <p>{{ $kendaraan['nosurat'] }}</p>
-                <p>Biasa</p>
-                <p>-</p>
-                <p>Keterangan Mutasi Uji</p>
-                <p>Kendaraan Bermotor</p>
-                <br>
-                <p>Yth. {{ $kendaraan->kepada }}</p>
-                <p><span>{{ $kendaraan->tujuan }}</span></p>
-                <br>
-                <p>Di Tempat</p>
+                <p>1 (Satu) Berkas</p>
+                <p> <u><b>MUTASI KELUAR KENDARAAN</b></u></p>
             </td>
             <td style="width: 37%">
                 <p class="text-center">Cirebon, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p>
+                <p>Kepada :</p>
+                <p style="margin: left:-28px">Yth. {{ $kendaraan->kepada }}</p>
+                <p>Di - </p>
+                <p><span>{{ $kendaraan->tujuan }}</span></p>
             </td>
         </tr>
     </table>
 
     <div>
-        <p><span style="margin-left: 25px">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor terkait permohonan Mutasi Uji
-        Kendaraan Bermotor, Bersama ini kami sampaikan data kendaraan bermotor sebagai berikut : </p>
+        <p>Berdasarkan permohonan pemilik / pemegang / penguasa kendaraan bermotor dengan data sebagai berikut : </p>
         <table style="width: 100%;margin-left:20px">
             <tr>
                 <td style="width: 27%">
-                    <p>Nama Pemilik Kendaraan</p>
-                    <p>Alamat</p>
-                    <p>Nomor Kendaraan</p>
-                    <p>Nomor Uji</p>
-                    <p>Merek/Tipe</p>
-                    <p>No Rangka</p>
-                    <p>Jenis Kendaraan</p>
-                    <p>Status</p>
+                    <p>1.  Nomor Kendaraan</p>
+                    <p>2.  Merk Kendaraan</p>
+                    <p>3.  Tipe Kendaraan</p>
+                    <p>4.  Tahun Pembuatan</p>
+                    <p>5.  No Rangka</p>
+                    <p>6.  No Mesin</p>
+                    <p>7.  Nomor Uji Berkala</p>
+                    <p>8.  Jenis Kendaraan</p>
+                    <p>9.  Status</p>
+                    <p>10. Warna</p>
+                    <p>11. Nama Pemilik</p>
+                    <p>12. Alamat Pemilik</p>
                 </td>
                 <td style="width: 5%">
                     <p>:</p>
@@ -188,49 +186,33 @@
                     <p>:</p>
                     <p>:</p>
                     <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
+                    <p>:</p>
                 </td>
                 <td style="width: 68%">
+                    <p>{{ $kendaraan->noregistrasikendaraan }}</p>
+                    <p>{{ $kendaraan->merek }} </p>
+                    <p>{{ $kendaraan->tipe }} </p>
+                    <p>{{ $kendaraan->thpembuatan }}</p>
+                    <p>{{ $kendaraan->norangka }}</p>
+                    <p>{{ $kendaraan->nomesin }}</p>
+                    <p>{{ $kendaraan->nouji }}</p>
+                    <p>{{ $kendaraan->subjenis }}</p>
+                    {{-- <p>{{ $kendaraan->status }}</p> --}}
+                    <p>-</p>
+                    <p>{{ $kendaraan->warna }}</p>
                     <p>{{ $kendaraan->nama }}</p>
                     <p>{{ $kendaraan->alamat }}</p>
-                    <p>{{ $kendaraan->noregistrasikendaraan }}</p>
-                    <p>{{ $kendaraan->nouji }}</p>
-                    <p>{{ $kendaraan->merek }}/{{ $kendaraan->tipe }}</p>
-                    <p>{{ $kendaraan->norangka }}</p>
-                    <p>{{ $kendaraan->jenis }}</p>
-                    <p>{{ $kendaraan->peruntukan }}</p>
-                </td>
-            </tr>
-        </table>
-        <p><span style="margin-left: 25px">Untuk</span> dilakukan Mutasi Uji Kendaraan Bermotor 
-        ke Dinas Perhubungan {{ $kendaraan->tujuan }} dengan data kendaraan :</p>
-        <table style="width: 100%;margin-left:20px">
-            <tr>
-                <td style="width: 27%">
-                    <p>Nama Pemilik Kendaraan</p>
-                    <p>Alamat</p>
-                    <p>Nomor Kendaraan</p>
-                </td>
-                <td style="width: 5%">
-                    <p>:</p>
-                    <p>:</p>
-                    <p>:</p>
-                </td>
-                <td style="width: 68%">
-                    <p>{{ $kendaraan->nokendaraanbaru }}</p>
-                    <p>{{ $kendaraan->namapemilikbaru }}</p>
-                    <p>{{ $kendaraan->alamatpemilikbaru }}</p>
                 </td>
             </tr>
         </table>
 
-        <p><span style="margin-left: 25px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
-        menerima mutasi uji kendaraan bermotor sebagaimana dimaksud. Bersama ini terlampir berkas 
-        kendaraan sebagai berikut :</p>
-        <ol>
-            <li>Kartu Induk Kendaraan Bermotor dan</li>
-            <li>(Berkas pendukung lainnya)</li>
-        </ol>
-        <p><span style="margin-left: 25px">Demikian</span> disampaikan, atas perhatian dan perkenaanya diucapkan terima kasih.</p>
+        <p>Kami tidak keberatan kendaraan tersebut di atas dipindahkan / dimutasikan ke :</p>
+        <h4 class="text-center">{{ $kendaraan->tujuan }}</h4>
+        <p>Kartu Induk Pemeriksaan dan Pengujian Kendaraan Bermotor tersebut, dilampirkan bersama surat ini.</p>
+        <p>Demikian agar maklum.</p>
 
         <table style="width: 100%;line-height:1">
             <tr>
@@ -241,7 +223,7 @@
                     <p>Kota Cirebon</p>
                     <br><br><br><br><br>
                     <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
-                    {{-- <p style="margin: 0;padding: 0">{{ $ttd['pangkat'] }}</p> --}}
+                    <p style="margin: 0;padding: 0">NIP. {{ $ttd['pangkat'] }}</p>
                     <p style="margin: 0;padding: 0">NIP. {{ $ttd['nip'] }}</p>
                 </td>
             </tr>
@@ -250,9 +232,8 @@
         <p style="margin: 0;padding:0">Tembusan disampaikan kepada Yth :</p>
         <ol style="margin: 0;padding:0;margin-left: 50px">
             <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
-            <li>Kepala Balai Pengelola Transportasi Darat Kelas ...</li>
-            {{-- <li>Kepala Kepolisian Resort Cirebon Kota,</li> --}}
-            {{-- <li>Arsip.</li> --}}
+            <li>Kepala Kepolisian Resort Cirebon Kota,</li>
+            <li>Arsip.</li>
         </ol>
     </div>
 </div>

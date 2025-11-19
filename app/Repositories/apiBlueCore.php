@@ -119,6 +119,9 @@ class apiBlueCore
         $response = curl_exec($curl);
         if ($response === false) {
             $response = '';
+        }else if(strpos($response, '502 Bad Gateway') !== false)
+        {
+            $response = '';
         }
 
         // Cek jika ada error dalam request
