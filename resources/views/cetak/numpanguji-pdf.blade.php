@@ -28,7 +28,6 @@
         }
         table {
             line-height: 0.5;
-            margin: 0;
         }
 
         footer {
@@ -147,7 +146,7 @@
 <div class="content">
     <img src="{{ $logodishub }}" class="watermark" alt="Watermark">
 
-    <table style="width: 100%">
+    <table style="width: 100%;margin-bottom :0px;padding-bottom:0px;">
         <tr>
             <td style="width: 10%;vertical-align: top">
                 <p>Nomor</p>
