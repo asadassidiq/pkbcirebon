@@ -231,7 +231,7 @@
                 Masa berlaku uji berkala telah jatuh tempo sedangkan kendaraan bermotor
                 sedang berada di luar daerah domisili pemilik kendaraan;
             </td>
-            <td style="width: 10%"></td>
+            <td style="width: 10%">✔</td>
         </tr>
         <tr>
             <td style="width: 90%">
