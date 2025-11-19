@@ -191,7 +191,7 @@
                                 placeholder="Klik tombol di kanan untuk memilih alasan" readonly></textarea>
 
                       <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" @click="showModal = true">
+                        <button class="btn btn-outline-primary" type="button" @click="showModalAlasan()">
                           Pilih Alasan
                         </button>
                       </div>
