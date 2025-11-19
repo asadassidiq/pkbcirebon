@@ -188,15 +188,12 @@
                   <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == 9">
                     <div class="form-group">
                       <label>Alasan</label>
-                      <select v-model="pendaftaran.alasan" multiple class="form-control" size="6">
-                        <option
-                          v-for="(alasan, i) in alasanList"
-                          :key="i"
-                          :value="alasan"
-                        >
+                      <div v-for="(alasan, i) in alasanList" :key="i" class="mb-2">
+                        <label>
+                          <input type="checkbox" :value="alasan" v-model="pendaftaran.alasan">
                           {{ alasan }}
-                        </option>
-                      </select>
+                        </label>
+                      </div>
                     </div>
                   </div>
                   
