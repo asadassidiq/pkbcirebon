@@ -154,7 +154,6 @@
                 <p>Lampiran</p>
                 <p>Hal</p>
                 <p style="color: white">test</p>
-                <br>
                 <p>Yth. </p>
                 <br>
                 <p>Di Tempat</p>
