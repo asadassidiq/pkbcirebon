@@ -185,14 +185,15 @@
                     </div>
                   </div>
 
-                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == 9">
-                    <div class="form-group">
-                      <label>Alasan</label>
-                      <div v-for="(alasan, i) in alasanList" :key="i" class="mb-2">
-                        <label>
-                          <input type="checkbox" :value="alasan" v-model="selectedAlasan">
-                          {{ alasan }}
-                        </label>
+                  <div class="col-sm-8" v-if="pendaftaran.kodepenerbitans_id == 9">
+                    <div class="input-group mb-3">
+                      <textarea class="form-control" rows="4" v-model="textareaAlasan"
+                                placeholder="Klik tombol di kanan untuk memilih alasan" readonly></textarea>
+
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" @click="showModal = true">
+                          Pilih Alasan
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -1229,6 +1230,29 @@
       </div>
     </div>
     <!--end: Wizard-->
+    <!-- MODAL -->
+    <div v-if="showModal" class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+
+          <h4>Pilih Alasan</h4>
+
+          <div v-for="(alasan, i) in alasanList" :key="i" class="mb-2">
+            <label>
+              <input type="checkbox" :value="alasan" v-model="selectedAlasan">
+              {{ alasan }}
+            </label>
+          </div>
+
+          <div class="text-right mt-3">
+            <button class="btn btn-secondary" @click="showModal = false">Batal</button>
+            <button class="btn btn-success" @click="applySelection">Pilih</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <b-modal id="modalVTA" ref="modalVTA" class="modal" title="Cek Data">
       <div class="form-group">
         <label for>No SRUT</label>
@@ -1298,6 +1322,7 @@ export default {
   data() {
     return {
       disabled1: 1,
+      showModal:false,
       disabled2: 1,
       isActive: true,
       statuschecking: true,
@@ -1307,7 +1332,8 @@ export default {
         "Peralatan uji di unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili kendaraan bermotor yang bersangkutan terdaftar sedang dalam keadaan rusak atau tidak berfungsi sebagaimana mestinya",
         "Unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili tidak terakreditasi"
       ],
-      selectedAlasan: []
+      selectedAlasan: [],
+      textareaAlasan: "",
     };
   },
   name: "Wizard-1",
@@ -1382,6 +1408,13 @@ export default {
       "setNoSurat",
       "getJenisModel",
     ]),
+    applySelection() {
+      this.textareaAlasan = this.selectedAlasan.join("\n• ");
+      if (this.textareaAlasan !== "") {
+        this.textareaAlasan = "• " + this.textareaAlasan;
+      }
+      this.showModal = false;
+    },
     canEditDataKendaraan() {
       if (this.pendaftaran.kodepenerbitans_id == 1) {
         return false;
