@@ -164,7 +164,7 @@
     </table>
 
     <div>
-        <p><span style="margin-left: 25px">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor terkait permohonan Mutasi Uji
+        <p><span style="margin-left: 20px">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor terkait permohonan Mutasi Uji
         Kendaraan Bermotor, Bersama ini kami sampaikan data kendaraan bermotor sebagai berikut : </p>
         <table style="width: 100%;margin-left:20px">
             <tr>
@@ -200,7 +200,7 @@
                 </td>
             </tr>
         </table>
-        <p><span style="margin-left: 25px">Untuk</span> dilakukan Mutasi Uji Kendaraan Bermotor 
+        <p><span style="margin-left: 20px">Untuk</span> dilakukan Mutasi Uji Kendaraan Bermotor 
         ke Dinas Perhubungan {{ $kendaraan->tujuan }} dengan data kendaraan :</p>
         <table style="width: 100%;margin-left:20px">
             <tr>
@@ -222,14 +222,14 @@
             </tr>
         </table>
 
-        <p><span style="margin-left: 25px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
+        <p><span style="margin-left: 20px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
         menerima mutasi uji kendaraan bermotor sebagaimana dimaksud. Bersama ini terlampir berkas 
         kendaraan sebagai berikut :</p>
         <ol>
             <li>Kartu Induk Kendaraan Bermotor dan</li>
             <li>(Berkas pendukung lainnya)</li>
         </ol>
-        <p><span style="margin-left: 25px">Demikian</span> disampaikan, atas perhatian dan perkenaanya diucapkan terima kasih.</p>
+        <p><span style="margin-left: 20px">Demikian</span> disampaikan, atas perhatian dan perkenaanya diucapkan terima kasih.</p>
 
         <table style="width: 100%;line-height:1">
             <tr>
