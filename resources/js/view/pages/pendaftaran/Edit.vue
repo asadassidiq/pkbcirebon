@@ -190,7 +190,7 @@
                       <label>Alasan</label>
                       <div v-for="(alasan, i) in alasanList" :key="i" class="mb-2">
                         <label>
-                          <input type="checkbox" :value="alasan" v-model="pendaftaran.alasan">
+                          <input type="checkbox" :value="alasan" v-model="selectedAlasan">
                           {{ alasan }}
                         </label>
                       </div>
@@ -1307,6 +1307,7 @@ export default {
         "Peralatan uji di unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili kendaraan bermotor yang bersangkutan terdaftar sedang dalam keadaan rusak atau tidak berfungsi sebagaimana mestinya",
         "Unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili tidak terakreditasi"
       ],
+      selectedAlasan: []
     };
   },
   name: "Wizard-1",
