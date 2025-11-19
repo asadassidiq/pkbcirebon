@@ -182,7 +182,7 @@
         </tr>
     </table>
 
-    <p style="margin-top:-15px;"><span style="margin-left: 20px">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor 
+    <p style="margin-top:-5px;"><span style="margin-left: 20px">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor 
         terkait permohonan pengujian kendaraan bermotor di Daerah lain, 
         Bersama ini kami sampaikan data kendaraan bermotor sebagai berikut : </p>
     <table style="width: 100%;margin-left:20px;margin-top:-15px;">
