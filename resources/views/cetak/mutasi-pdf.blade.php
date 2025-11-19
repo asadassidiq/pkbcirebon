@@ -138,6 +138,10 @@
                 <p>Klasifikasi</p>
                 <p>Lampiran</p>
                 <p>Hal</p>
+                <p style="color: white">test</p>
+                <br>
+                <p>Yth. </p>
+                <p>Di Tempat</p>
             </td>
             <td style="width: 3%;vertical-align: top">
                 <p>:</p>
@@ -152,10 +156,9 @@
                 <p>Keterangan Mutasi Uji</p>
                 <p>Kendaraan Bermotor</p>
                 <br>
-                <p>Yth. {{ $kendaraan->kepada }}</p>
+                <p>{{ $kendaraan->kepada }}</p>
                 <p><span>{{ $kendaraan->tujuan }}</span></p>
                 <br>
-                <p>Di Tempat</p>
             </td>
             <td style="width: 37%;vertical-align: top">
                 <p class="text-center">Cirebon, <span id="date"><?php echo tgl_indo($kendaraan->tglpendaftaran) ?></span></p>
