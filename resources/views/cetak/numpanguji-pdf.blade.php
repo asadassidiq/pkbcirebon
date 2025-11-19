@@ -185,7 +185,7 @@
     <p><span style="margin-left: 20px">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor 
         terkait permohonan pengujian kendaraan bermotor di Daerah lain, 
         Bersama ini kami sampaikan data kendaraan bermotor sebagai berikut : </p>
-    <table style="width: 100%;margin-left:20px">
+    <table style="width: 100%;margin-left:20px;margin-top:-20px;">
         <tr>
             <td style="width: 27%">
                 <p>Nama Pemilik Kendaraan</p>
