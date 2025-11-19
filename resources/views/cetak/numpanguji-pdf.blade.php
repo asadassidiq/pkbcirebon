@@ -6,7 +6,7 @@
     <style>
         @page {
             size: A4;
-            margin: 0.5cm 1cm 1cm 2cm;
+            margin: 0.5cm 1cm 0.5cm 2cm;
         }
 
         body {
@@ -28,6 +28,7 @@
         }
         table {
             line-height: 0.5;
+            margin: 0;
         }
 
         footer {
@@ -107,6 +108,7 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 10pt;
+            margin: 0;
         }
 
         .tabel-ketentuan td {
