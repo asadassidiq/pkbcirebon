@@ -15,6 +15,7 @@ class Persuratan extends Model
         'kepada',
         'tujuan',
         'alasan',
+        'tglpelaksanaan',
         'nokendaraanbaru',
         'namapemilikbaru',
         'alamatpemilikbaru',
