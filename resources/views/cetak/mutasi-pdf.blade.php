@@ -144,7 +144,6 @@
                 <p>:</p>
                 <p>:</p>
                 <p>:</p>
-                <p>:</p>
             </td>
             <td style="width: 55%;vertical-align: top">
                 <p>{{ $kendaraan['nosurat'] }}</p>
