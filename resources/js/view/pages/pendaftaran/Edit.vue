@@ -1231,7 +1231,7 @@
     </div>
     <!--end: Wizard-->
     <!-- MODAL -->
-    <b-modal id="modalAlasan" ref="modalAlasan" class="modal" title="Pilihan Alasan">
+    <b-modal id="modalAlasan" ref="modalAlasan" class="modal" title="Pilihan Alasan" @ok="applySelection">
       <div class="modal-wrapper">
         <div class="modal-container">
 
@@ -1243,12 +1243,6 @@
               {{ alasan }}
             </label>
           </div>
-
-          <div class="text-right mt-3">
-            <button class="btn btn-secondary" @click="showModal = false">Batal</button>
-            <button class="btn btn-success" @click="applySelection">Pilih</button>
-          </div>
-
         </div>
       </div>
     </b-modal>
