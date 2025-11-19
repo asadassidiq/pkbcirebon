@@ -211,7 +211,7 @@ class SuratRepository
     {
         $update = $this->modelS->where('pendaftaran_id',$id)->first();
         if($update){
-            $update->update($request->all());
+            $update->update($request);
         }
         return $update;
     }
