@@ -1372,6 +1372,7 @@ export default {
     this.getKelasJalans().then(() => {
       if (this.$route.name == "pendaftaran.edit") {
         this.editPendaftaran(this.$route.params.id).then(() => {
+          this.applySelection();
           setTimeout(() => { }, 2000);
         });
       }
