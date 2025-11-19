@@ -410,7 +410,7 @@ export const mutations = {
             nosuratdari:payload.nosuratdari,
             kepada:payload.kepada,
             tujuan:payload.tujuan,
-            alasan:payload.alasan,
+            alasan:[],
             tglpelaksanaan:payload.tglpelaksanaan,
             masaberlakuuji:payload.masaberlakuuji,
             penguji:payload.penguji,
@@ -511,6 +511,13 @@ export const mutations = {
             catatanrubahbentuk:payload.catatanrubahbentuk,
             bahan:payload.bahan,
         };
+            if(payload.alasan !== null && payload.alasan  !== undefined && payload.alasan  !== ""){
+                const alasanString = payload.alasan;
+                state.pendaftaran.alasan = alasanString
+                    ? alasanString.split(",").map(a => a.trim()) 
+                    : []; 
+            }
+
         
         // setTimeout(() => {
             if(payload.kodewilayah !== null && payload.kodewilayah  !== undefined && payload.kodewilayah  !== ""){

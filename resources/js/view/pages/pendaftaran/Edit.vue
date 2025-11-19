@@ -1240,7 +1240,7 @@
 
           <div v-for="(alasan, i) in alasanList" :key="i" class="mb-2">
             <label>
-              <input type="checkbox" :value="alasan" v-model="selectedAlasan">
+              <input type="checkbox" :value="alasan" v-model="pendaftaran.alasan">
               {{ alasan }}
             </label>
           </div>
@@ -1404,7 +1404,7 @@ export default {
       "getJenisModel",
     ]),
     applySelection() {
-      this.textareaAlasan = this.selectedAlasan.join("\n• ");
+      this.textareaAlasan = this.pendaftaran.alasan.join("\n• ");
       if (this.textareaAlasan !== "") {
         this.textareaAlasan = "• " + this.textareaAlasan;
       }
