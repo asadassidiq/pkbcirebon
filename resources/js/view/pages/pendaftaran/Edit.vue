@@ -201,7 +201,7 @@
                   <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == 9">
                     <div class="form-group">
                       <label>Tanggal Pelaksanaan Uji</label>
-                      <b-form-datepicker id="tglhbsuji" v-model="pendaftaran.tglpelaksanaan" locale="id"></b-form-datepicker>
+                      <b-form-datepicker id="tglpelaksanaan" v-model="pendaftaran.tglpelaksanaan" locale="id"></b-form-datepicker>
                     </div>
                   </div>
 
@@ -1231,7 +1231,7 @@
     </div>
     <!--end: Wizard-->
     <!-- MODAL -->
-    <div v-if="showModal" class="modal-mask">
+    <b-modal id="modalAlasan" ref="modalAlasan" class="modal" title="Pilihan Alasan">
       <div class="modal-wrapper">
         <div class="modal-container">
 
@@ -1251,7 +1251,7 @@
 
         </div>
       </div>
-    </div>
+    </b-modal>
 
     <b-modal id="modalVTA" ref="modalVTA" class="modal" title="Cek Data">
       <div class="form-group">
@@ -1545,6 +1545,13 @@ export default {
     },
     showModalVTA() {
       this.$refs["modalVTA"].show();
+    },
+    showModalAlasan() {
+      this.$refs["modalAlasan"].show();
+    },
+    
+    hideModalAlasan() {
+      this.$refs["modalAlasan"].hide();
     },
     getDataVTA(dataSearch) {
       if (this.dataSearch === "") {
