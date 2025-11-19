@@ -75,8 +75,8 @@
         .text-left { text-align: left; }
         
         .custom-checkbox {
-            width: 18px;
-            height: 18px;
+            width: 14px;
+            height: 14px;
             border: 2px solid #000;
             background-color: #fff;
             display: inline-block;
