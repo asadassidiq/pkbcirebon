@@ -269,7 +269,7 @@
     
     <p><span style="margin-left: 20px">Demikian</span> disampaikan, atas perhatian dan perkenaanya diucapkan terima kasih.</p>
 
-    <table style="width: 100%;line-height:1">
+    <table style="width: 100%;line-height:1;margin-top:-8px">
         <tr>
             <td style="width: 45%"></td>
             <td style="width: 55%" class="text-center">
