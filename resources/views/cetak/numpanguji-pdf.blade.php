@@ -106,7 +106,7 @@
         .tabel-ketentuan {
             width: 100%;
             border-collapse: collapse;
-            font-size: 15px;
+            font-size: 10pt;
         }
 
         .tabel-ketentuan td {
@@ -227,34 +227,34 @@
         </table>
         <table class="tabel-ketentuan">
             <tr>
-                <td>
+                <td style="width: 90%">
                     Masa berlaku uji berkala telah jatuh tempo sedangkan kendaraan bermotor
                     sedang berada di luar daerah domisili pemilik kendaraan;
                 </td>
-                <td></td>
+                <td style="width: 10%"></td>
             </tr>
             <tr>
-                <td>
+                <td style="width: 90%">
                     Kendaraan terkena sanksi pelanggaran karena tidak memenuhi persyaratan
                     teknis dan laik jalan sehingga harus melakukan kewajiban uji ulang, sebelum
                     habis masa berlakunya;
                 </td>
-                <td></td>
+                <td style="width: 10%"></td>
             </tr>
             <tr>
-                <td>
+                <td style="width: 90%">
                     Peralatan uji di unit pelaksana pengujian berkala kendaraan bermotor sesuai
                     domisili kendaraan bermotor yang bersangkutan terdaftar sedang dalam
                     keadaan rusak atau tidak berfungsi sebagaimana mestinya
                 </td>
-                <td></td>
+                <td style="width: 10%"></td>
             </tr>
             <tr>
-                <td>
+                <td style="width: 90%">
                     Unit pelaksana pengujian berkala kendaraan bermotor sesuai domisili tidak
                     terakreditasi.
                 </td>
-                <td></td>
+                <td style="width: 10%"></td>
             </tr>
         </table>
 
