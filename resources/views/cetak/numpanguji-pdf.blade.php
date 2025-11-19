@@ -6,7 +6,7 @@
     <style>
         @page {
             size: A4;
-            margin: 0.5cm 1cm 0.5cm 2cm;
+            margin: 0.5cm 1cm 0cm 2cm;
         }
 
         body {
@@ -75,8 +75,8 @@
         .text-left { text-align: left; }
         
         .custom-checkbox {
-            width: 14px;
-            height: 14px;
+            width: 18px;
+            height: 18px;
             border: 2px solid #000;
             background-color: #fff;
             display: inline-block;
