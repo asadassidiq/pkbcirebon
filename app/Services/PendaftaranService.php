@@ -246,7 +246,7 @@ class PendaftaranService
                         $this->repoSurat->createSurat($pendaftaran);
                     }
                 }
-                if (is_array($perubahans) && count($perubahans) >= 0) {
+                if (is_array($perubahans) && count($perubahans) > 0) {
                     // ada data di perubahans
                     $arrayPerubahan = array(
                         'uuid' => $this->utils->generateUUID(),
@@ -322,8 +322,8 @@ class PendaftaranService
                     $this->repoSurat->createSurat($pendaftaran);
                 }
             }
-            dd(count($perubahans));
-            if (is_array($perubahans) && count($perubahans) >= 0) {
+            // dd(count($perubahans));
+            if (is_array($perubahans) && count($perubahans) > 0) {
                 // ada data di perubahans
                 $arrayPerubahan = array(
                     'uuid' => $this->utils->generateUUID(),
