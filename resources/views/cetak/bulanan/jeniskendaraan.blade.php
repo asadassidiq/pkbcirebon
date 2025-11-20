@@ -126,6 +126,7 @@
     <h3 style="margin:1;padding:1;text-align:center">MENURUT JENIS KENDARAAN</h3>
     <h3 style="margin:1;padding:1;text-align:center">UPT PKB DISHUB KOTA CIREBON</h3>
     <h3 style="margin:1;padding:1;text-align:center">BULAN {{ $tglprint }}</h3>
+    <div style="transform: scale(0.75); transform-origin: top left;">
     <table class="table table-bordered ">
         <thead>
             <tr>
@@ -291,6 +292,7 @@
             </tr>
         </tbody>
     </table>
+    </div>
     <div style="position: absolute; right: 0; bottom: 2cm; width: 300px;">
         <p style="margin: 0;padding: 0;text-align: center">Mengetahui,</p>
         <p style="margin: 0;padding: 0;text-align: center">Kepala UPT Pengujian Kendaraan Bermotor</p>
