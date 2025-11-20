@@ -201,7 +201,6 @@
     <table style="width: 100%">
         <tr>
             <td style="width: 47%;vertical-align: top">
-                <div style="transform: scale(0.65); transform-origin: top left;">
                 <table class="table table-bordered ">
                     <thead style="text-align:center;">
                         <tr>
@@ -287,7 +286,6 @@
                         <tr><td>CONCREEDPUMP</td><td>{{ $totaljenis['mobil39'] ?? 0 }}</td></tr>
                     </tbody>
                 </table>
-                </div>
             </td>
             <td style="width: 3%;vertical-align: top"></td>
             <td style="width: 45%;vertical-align: top">
