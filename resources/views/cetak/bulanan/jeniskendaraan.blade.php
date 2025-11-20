@@ -126,7 +126,7 @@
     <h3 style="margin:1;padding:1;text-align:center">MENURUT JENIS KENDARAAN</h3>
     <h3 style="margin:1;padding:1;text-align:center">UPT PKB DISHUB KOTA CIREBON</h3>
     <h3 style="margin:1;padding:1;text-align:center">BULAN {{ $tglprint }}</h3>
-    <div style="transform: scale(0.42); transform-origin: top left;">
+    <div style="transform: scale(0.43); transform-origin: top left;">
     <table class="table table-bordered ">
         <thead>
             <tr>
@@ -239,6 +239,7 @@
                 <td>{{ $data['mobil37'] }}</td>
                 <td>{{ $data['mobil38'] }}</td>
                 <td>{{ $data['mobil39'] }}</td>
+                <td></td>
             </tr>
             @php $i++;
             $kwbu = $data['kwbu'];
@@ -289,6 +290,7 @@
                 <td>{{ $mobil37 }}</td>
                 <td>{{ $mobil38 }}</td>
                 <td>{{ $mobil39 }}</td>
+                <td></td>
             </tr>
         </tbody>
     </table>
