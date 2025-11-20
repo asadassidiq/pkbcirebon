@@ -154,7 +154,7 @@
                 ].includes(identitaskendaraan.keterangan)">
                 <b-card-text class="p-0 d-flex flex-column" style="height: calc(100vh - 100px);">
                     <iframe
-                    :src="`${iframeUrl}/cetak/${$identitaskendaraan.puuid}/surat`"
+                    :src="`${iframeUrl}/cetak/${identitaskendaraan.puuid}/surat`"
                     style="flex: 1; width: 100%; border: none;"
                     ></iframe>
                 </b-card-text>
