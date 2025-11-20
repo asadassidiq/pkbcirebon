@@ -133,15 +133,34 @@
             </div>
         </b-collapse>
         <hr />
-        <div class="card-body">
-            <!-- <approved-form></approved-form> -->
-            <div style="width: 100%; height: 100vh;">
-                <iframe
-                :src="iframeUrl+'/cetak/'+identitaskendaraan.uuid+'/kartuinduk'"
-                style="width: 100%; height: 100%; border: none;"
-                ></iframe>
-            </div>
-        </div>
+        <b-card 
+            no-body 
+            style="width: 100%; height: 120vh;"
+            >
+            <b-tabs card style="height: 100%;">
+                <b-tab title="Preview Kartu Induk" active>
+                <b-card-text class="p-0 d-flex flex-column" style="height: calc(100vh - 100px);">
+                    <iframe
+                    :src="`${iframeUrl}/cetak/${identitaskendaraan.uuid}/kartuinduk`"
+                    style="flex: 1; width: 100%; border: none;"
+                    ></iframe>
+                </b-card-text>
+                </b-tab>
+
+                <b-tab title="Preview Surat" 
+                v-if="[
+                    'Numpang Uji Keluar', 
+                    'Mutasi Keluar'
+                ].includes(identitaskendaraan.keterangan)">
+                <b-card-text class="p-0 d-flex flex-column" style="height: calc(100vh - 100px);">
+                    <iframe
+                    :src="`${iframeUrl}/cetak/${$route.params.id}/surat`"
+                    style="flex: 1; width: 100%; border: none;"
+                    ></iframe>
+                </b-card-text>
+                </b-tab>
+            </b-tabs>
+        </b-card>
     </div>
 </template>
 
