@@ -126,6 +126,7 @@
     <h3 style="margin:1;padding:1;text-align:center">MENURUT JENIS KENDARAAN</h3>
     <h3 style="margin:1;padding:1;text-align:center">UPT PKB DISHUB KOTA CIREBON</h3>
     <h3 style="margin:1;padding:1;text-align:center">TRIWULAN KE {{ $tglprint }}</h3>
+    <div style="transform: scale(0.43); transform-origin: top left;">
     <table class="table table-bordered ">
         <thead>
             <tr>
@@ -238,17 +239,18 @@
                 <td>{{ $data['mobil37'] }}</td>
                 <td>{{ $data['mobil38'] }}</td>
                 <td>{{ $data['mobil39'] }}</td>
+                <td></td>
             </tr>
             @php $i++;
-            // $kwbu += $data['kwbu'] ?? 0;
-            // $kwbusblm += $data['kwbusblm'] ?? 0;
+            $kwbu = $data['kwbu'];
+            $kwbusblm = $data['kwbusblm'];
             $mobil1 += $data['mobil1'];$mobil2 += $data['mobil2'];$mobil3 += $data['mobil3'];$mobil4 += $data['mobil4'];$mobil5 += $data['mobil5'];$mobil6 += $data['mobil6'];$mobil7 += $data['mobil7'];$mobil8 += $data['mobil8'];$mobil9 += $data['mobil9'];$mobil10 += $data['mobil10'];$mobil11 += $data['mobil11'];$mobil12 += $data['mobil12'];$mobil13 += $data['mobil13'];$mobil14 += $data['mobil14'];$mobil15 += $data['mobil15'];$mobil16 += $data['mobil16'];$mobil17 += $data['mobil17'];$mobil18 += $data['mobil18'];$mobil19 += $data['mobil19'];$mobil20 += $data['mobil20'];$mobil21 += $data['mobil21'];$mobil22 += $data['mobil22'];$mobil23 += $data['mobil23'];$mobil24 += $data['mobil24'];$mobil25 += $data['mobil25'];$mobil26 += $data['mobil26'];$mobil27 += $data['mobil27'];$mobil28 += $data['mobil28'];$mobil29 += $data['mobil29'];$mobil30 += $data['mobil30'];$mobil31 += $data['mobil31'];$mobil32 += $data['mobil32'];$mobil33 += $data['mobil33'];$mobil34 += $data['mobil34'];$mobil35 += $data['mobil35'];$mobil36 += $data['mobil36'];$mobil37 += $data['mobil37'];$mobil38 += $data['mobil38'];$mobil39 += $data['mobil39'];
             @endphp
             @endforeach
             <tr>
-                <td>-</td>
-                <td>-</td>
-                {{-- <td>{{ $kwbu }}</td> --}}
+                <td colspan="2">-</td>
+                <td>{{ $kwbu }}</td>
+                <td>{{ $kwbusblm }}</td>
                 <td>{{ $mobil1 }}</td>
                 <td>{{ $mobil2 }}</td>
                 <td>{{ $mobil3 }}</td>
@@ -288,9 +290,11 @@
                 <td>{{ $mobil37 }}</td>
                 <td>{{ $mobil38 }}</td>
                 <td>{{ $mobil39 }}</td>
+                <td></td>
             </tr>
         </tbody>
     </table>
+    </div>
     <div style="position: absolute; right: 0; bottom: 2cm; width: 300px;">
         <p style="margin: 0;padding: 0;text-align: center">Mengetahui,</p>
         <p style="margin: 0;padding: 0;text-align: center">Kepala UPT Pengujian Kendaraan Bermotor</p>
