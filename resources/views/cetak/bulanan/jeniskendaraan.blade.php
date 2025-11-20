@@ -246,7 +246,7 @@
             @endphp
             @endforeach
             <tr>
-                <td>-</td>
+                <td colspan="2">-</td>
                 <td>{{ $kwbu }}</td>
                 <td>{{ $kwbusblm }}</td>
                 <td>{{ $mobil1 }}</td>
