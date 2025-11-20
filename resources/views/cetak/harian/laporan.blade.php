@@ -200,7 +200,7 @@
     </div> --}}
     <table style="width: 100%">
         <tr>
-            <td style="width: 47%">
+            <td style="width: 47%;vertical-align: top">
                 <table class="table table-bordered ">
                 <thead style="text-align:center;">
                     <tr>
@@ -287,85 +287,85 @@
                 </tbody>
             </table>
             </td>
-            <td style="width: 3%"></td>
-            <td style="width: 45%">
+            <td style="width: 3%;vertical-align: top"></td>
+            <td style="width: 45%;vertical-align: top">
                 <table class="table table-bordered ">
-                <thead>
+                    <thead>
+                        <tr>
+                        <th scope="col">JENIS PELAYANAN</th>
+                        <th scope="col">JUMLAH</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($jenispelayanan as $data) 
                     <tr>
-                    <th scope="col">JENIS PELAYANAN</th>
-                    <th scope="col">JUMLAH</th>
+                        <td>{{ $data['jenispelayanan']  }}</td>
+                        <td>{{ $data['jumlah'] }}</td>
                     </tr>
-                </thead>
-                <tbody>
-                @foreach ($jenispelayanan as $data) 
-                <tr>
-                    <td>{{ $data['jenispelayanan']  }}</td>
-                    <td>{{ $data['jumlah'] }}</td>
-                </tr>
-                @endforeach
-                </tbody>
-            </table>
-            <br>
-            <table class="table table-bordered ">
-                <thead>
+                    @endforeach
+                    </tbody>
+                </table>
+                <br>
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr>
+                        <th scope="col">KETERANGAN</th>
+                        <th scope="col">JUMLAH</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     <tr>
-                    <th scope="col">KETERANGAN</th>
-                    <th scope="col">JUMLAH</th>
+                        <td>LULUS</td>
+                        <td>{{ $lulus }}</td>
                     </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>LULUS</td>
-                    <td>{{ $lulus }}</td>
-                </tr>
-                <tr>
-                    <td>TIDAK LULUS</td>
-                    <td>{{ $tidaklulus }}</td>
-                </tr>
-                </tbody>
-            </table>
-            <br>
-            <table class="table table-bordered ">
-                <thead>
                     <tr>
-                    <th scope="col">UMUM / TIDAK UMUM</th>
-                    <th scope="col">JUMLAH</th>
+                        <td>TIDAK LULUS</td>
+                        <td>{{ $tidaklulus }}</td>
                     </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>UMUM</td>
-                    <td>{{ $umum }}</td>
-                </tr>
-                <tr>
-                    <td>TIDAK UMUM</td>
-                    <td>{{ $tidakumum }}</td>
-                </tr>
-                </tbody>
-            </table>
-            <br>
-            <table class="table table-bordered ">
-                <thead>
+                    </tbody>
+                </table>
+                <br>
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr>
+                        <th scope="col">UMUM / TIDAK UMUM</th>
+                        <th scope="col">JUMLAH</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     <tr>
-                    <th scope="col">PEMAKAIN KARTU UJI</th>
-                    <th scope="col">JUMLAH</th>
+                        <td>UMUM</td>
+                        <td>{{ $umum }}</td>
                     </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>BARU</td>
-                    <td>{{ $pemakaianbuku['baru'] }}</td>
-                </tr>
-                <tr>
-                    <td>RUSAK</td>
-                    <td>{{ $pemakaianbuku['rusak'] }}</td>
-                </tr>
-                <tr>
-                    <td>HILANG</td>
-                    <td>{{ $pemakaianbuku['hilang'] }}</td>
-                </tr>
-                </tbody>
-            </table>
+                    <tr>
+                        <td>TIDAK UMUM</td>
+                        <td>{{ $tidakumum }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr>
+                        <th scope="col">PEMAKAIN KARTU UJI</th>
+                        <th scope="col">JUMLAH</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>BARU</td>
+                        <td>{{ $pemakaianbuku['baru'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>RUSAK</td>
+                        <td>{{ $pemakaianbuku['rusak'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>HILANG</td>
+                        <td>{{ $pemakaianbuku['hilang'] }}</td>
+                    </tr>
+                    </tbody>
+                </table>
             </td>
         </tr>
     </table>
