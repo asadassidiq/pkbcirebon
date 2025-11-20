@@ -18,6 +18,7 @@ export const state = {
     },
     identitaskendaraan: {
         uuid: "",
+        puuid: "",
         nouji:"",
         noregistrasikendaraan:"",
         merek:"",
@@ -58,6 +59,7 @@ export const mutations = {
         };
         state.identitaskendaraan = {
             uuid: payload.uuid,
+            puuid: payload.puuid,
             merek      : payload.merek,
             tipe: payload.tipe,
             nouji: payload.nouji,
@@ -92,6 +94,7 @@ export const mutations = {
         };
         state.identitaskendaraan= {
             uuid: "",
+            puuid: "",
             nouji:"",
             noregistrasikendaraan:"",
             merek:"",

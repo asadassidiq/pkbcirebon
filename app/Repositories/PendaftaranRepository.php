@@ -804,7 +804,7 @@ class PendaftaranRepository
 
     public function getApproved($id)
     {
-        $data = $this->model->select('identitaskendaraans.uuid','approved','approval_notes','perizinans.type','perizinans.proposed_data','nouji','noregistrasikendaraan','kodepenerbitans.keterangan','merek','tipe','jenis','subjenis','nomesin','norangka','thpembuatan','peruntukan','persuratan.alasan')->join('perizinans', 'perizinans.pendaftaran_id', '=', 'pendaftarans.id')->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')->leftJoin('persuratan','persuratan.pendaftaran_id','=','pendaftarans.id')->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
+        $data = $this->model->select('identitaskendaraans.uuid','pendaftarans.uuid as puuid','approved','approval_notes','perizinans.type','perizinans.proposed_data','nouji','noregistrasikendaraan','kodepenerbitans.keterangan','merek','tipe','jenis','subjenis','nomesin','norangka','thpembuatan','peruntukan','persuratan.alasan')->join('perizinans', 'perizinans.pendaftaran_id', '=', 'pendaftarans.id')->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')->leftJoin('persuratan','persuratan.pendaftaran_id','=','pendaftarans.id')->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
                     ->where('perizinans.uuid', $id)->first();
         return $data;
     }
