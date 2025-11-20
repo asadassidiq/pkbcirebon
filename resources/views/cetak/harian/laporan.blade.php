@@ -7,7 +7,7 @@
         @page {
             size: A4;
             size: landscape;
-            margin: 0.2cm 0.5cm 0.5cm 0.5cm;
+            margin: 0.2cm 0.2cm 0cm 0.2cm;
         }
 
         body {
@@ -201,7 +201,7 @@
     <table style="width: 100%">
         <tr>
             <td style="width: 47%;vertical-align: top">
-                <div style="transform: scale(0.80); transform-origin: top left;">
+                <div style="transform: scale(0.65); transform-origin: top left;">
                 <table class="table table-bordered ">
                     <thead style="text-align:center;">
                         <tr>
