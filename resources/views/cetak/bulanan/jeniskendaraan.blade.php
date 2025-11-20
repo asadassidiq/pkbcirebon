@@ -126,7 +126,7 @@
     <h3 style="margin:1;padding:1;text-align:center">MENURUT JENIS KENDARAAN</h3>
     <h3 style="margin:1;padding:1;text-align:center">UPT PKB DISHUB KOTA CIREBON</h3>
     <h3 style="margin:1;padding:1;text-align:center">BULAN {{ $tglprint }}</h3>
-    <div style="transform: scale(0.40); transform-origin: top left;">
+    <div style="transform: scale(0.44); transform-origin: top left;">
     <table class="table table-bordered ">
         <thead>
             <tr>
