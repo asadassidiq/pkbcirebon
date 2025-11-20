@@ -68,6 +68,13 @@
                                 readonly placeholder="Jenis" v-model="identitaskendaraan.jenis" />
                         </div>
                     </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label> Alasan </label>
+                            <textarea class="form-control" rows="4" v-model="textareaAlasan"
+                                readonly></textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card-body">
@@ -147,6 +154,7 @@ export default {
     data() {
         return {
             user:[],
+            textareaAlasan: "",
             image: 'no image.jpg',
             showPass: false,
             timestamp: Date.now(),
@@ -164,7 +172,9 @@ export default {
         ]);
     },
     created() {
-        this.editApproved(this.$route.params.id);
+        this.editApproved(this.$route.params.id).then(() => {
+            this.applySelection();
+        });
         this.user = this.$store.state.profile.user_personal_info;
     },
     methods: {
@@ -180,6 +190,12 @@ export default {
                     });
                     this.$router.push({ name: "approved.data" });
                 });
+        },
+        applySelection() {
+            this.textareaAlasan = this.identitaskendaraan.alasan.join("\n• ");
+            if (this.textareaAlasan !== "") {
+                this.textareaAlasan = "• " + this.textareaAlasan;
+            }
         },
         goBack() {
             this.$router.go(-1);

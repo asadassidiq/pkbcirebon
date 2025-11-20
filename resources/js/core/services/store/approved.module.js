@@ -30,6 +30,7 @@ export const state = {
         norangka:"",
         peruntukan:"",
         keterangan:"",
+        alasan:[],
     },
     carinouji:"",
     page: 1
@@ -69,9 +70,17 @@ export const mutations = {
             norangka : payload.norangka,
             peruntukan : payload.peruntukan,
             keterangan: payload.keterangan,
+            alasan : [],
         };
         if(state.approved.noidentitaspenerima  === null){
             state.approved.noidentitaspenerima = payload.noidentitaspemilik;
+        }
+        if(payload.alasan !== null && payload.alasan  !== undefined && payload.alasan  !== ""){
+            try {
+                state.identitaskendaraan.alasan = JSON.parse(payload.alasan);
+            } catch (e) {
+                state.identitaskendaraan.alasan = []; 
+            }
         }
     },
     CLEAR_FORM(state) {
@@ -95,6 +104,7 @@ export const mutations = {
             norangka:"",
             peruntukan:"",
             keterangan:"",
+            alasan:[],
         }
     },
 
