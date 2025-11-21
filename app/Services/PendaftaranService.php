@@ -234,7 +234,7 @@ class PendaftaranService
                         }else{
                             $pendaftaran['kode'] = $pendaftaran['kodewilayah'];
                         }
-                        $this->repoSurat->updateSurat($dataP['id'],$request);
+                        $this->repoSurat->updateSurat($dataP['id'],$pendaftaran);
                     }else{
                         if($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
                             $pendaftaran['pendaftaran_id'] = $dataP['id'];
