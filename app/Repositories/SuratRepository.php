@@ -204,19 +204,19 @@ class SuratRepository
 
     public function createSurat($request)
     {
-        $data = Persuratan::create([
-                'pendaftaran_id' => $request['pendaftaran_id'],
-                'nosurat' => $request['nosurat'],
-                'nosuratdari' => $request['nosuratdari'],
-                'kode' => $request['kode'],
-                'kepada' => $request['kepada'],
-                'tujuan' => $request['tujuan'],
-                'alasan' => $request['alasan'],
-                'tglpelaksanaan' => $request['tglpelaksanaan'],
-                'nokendaraanbaru' => $request['nokendaraanbaru'],
-                'namapemilikbaru' => $request['namapemilikbaru'],
-                'alamatpemilikbaru	' => $request['alamatpemilikbaru'],
-            ]);
+        $data = $this->modelS::create([
+            'pendaftaran_id'   => $request['pendaftaran_id'],
+            'nosurat'          => $request['nosurat'],
+            'nosuratdari'      => $request['nosuratdari'],
+            'kode'             => $request['kode'],
+            'kepada'           => $request['kepada'],
+            'tujuan'           => $request['tujuan'],
+            'alasan'           => $request['alasan'],
+            'tglpelaksanaan'   => $request['tglpelaksanaan'],
+            'nokendaraanbaru'  => $request['nokendaraanbaru'],
+            'namapemilikbaru'  => $request['namapemilikbaru'],
+            'alamatpemilikbaru'=> $request['alamatpemilikbaru'],
+        ]);
         return $data;
     }
 
