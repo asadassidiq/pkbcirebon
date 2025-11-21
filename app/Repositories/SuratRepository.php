@@ -211,7 +211,7 @@ class SuratRepository
             'kode'             => $request['kode'],
             'kepada'           => $request['kepada'],
             'tujuan'           => $request['tujuan'],
-            'alasan'           => $request['alasan'],
+            // 'alasan'           => $request['alasan'],
             'tglpelaksanaan'   => $request['tglpelaksanaan'],
             'nokendaraanbaru'  => $request['nokendaraanbaru'],
             'namapemilikbaru'  => $request['namapemilikbaru'],
