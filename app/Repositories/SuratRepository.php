@@ -204,7 +204,7 @@ class SuratRepository
 
     public function createSurat($request)
     {
-        $data = $this->modelS->create($request);
+        $data = $this->modelS->create($request->all());
     }
 
     public function updateSurat($id, $request)
