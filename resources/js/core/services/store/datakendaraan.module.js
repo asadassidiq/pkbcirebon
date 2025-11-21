@@ -421,9 +421,9 @@ export const mutations = {
       });
       if (data) {
         state.datakendaraan.jenis = data.vehicle_type_name;
-        state.datakendaraan.idtipe = data.vehicle_type_id;
+        state.datakendaraan.idjenis = data.vehicle_type_id;
         const hasilFilter = state.subjenis.filter((f) =>
-          [state.datakendaraan.idtipe].includes(f.vehicle_sub_type_id)
+          [state.datakendaraan.idjenis].includes(f.vehicle_sub_type_id)
         );
         state.subjenis = hasilFilter;
       } else {
@@ -714,9 +714,9 @@ export const mutations = {
       });
       if (data) {
         state.datakendaraan.jenis = data.vehicle_type_name;
-        state.datakendaraan.idtipe = data.vehicle_type_id;
+        state.datakendaraan.idjenis = data.vehicle_type_id;
         const hasilFilter = state.subjenis.filter((f) =>
-          [state.datakendaraan.idtipe].includes(f.vehicle_sub_type_id)
+          [state.datakendaraan.idjenis].includes(f.vehicle_sub_type_id)
         );
         state.subjenis = hasilFilter;
       } else {

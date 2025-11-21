@@ -604,7 +604,7 @@ export const mutations = {
                 });
                 if (data) {
                     state.pendaftaran.jenis= data.vehicle_type_name;
-                    state.pendaftaran.idtipe= data.vehicle_type_id;
+                    state.pendaftaran.idjenis= data.vehicle_type_id;
                     const hasilFilter = state.subjenis.filter(f => [state.pendaftaran.idtipe].includes(f.vehicle_sub_type_id));
                     state.subjenis = hasilFilter;
                 }else{
@@ -944,7 +944,7 @@ export const mutations = {
                 });
                 if (data) {
                     state.pendaftaran.jenis= data.vehicle_type_name;
-                    state.pendaftaran.idtipe= data.vehicle_type_id;
+                    state.pendaftaran.idjenis= data.vehicle_type_id;
                     const hasilFilter = state.subjenis.filter(f => [state.pendaftaran.idtipe].includes(f.vehicle_sub_type_id));
                     state.subjenis = hasilFilter;
                 }else{
