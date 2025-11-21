@@ -395,7 +395,7 @@ class PengujianRepository
                 'idpenguji'                  => $data->idpenguji,
             ]);
 
-            // $ps = '9';
+            $ps = '5';
             if ($dataPend->kodepenerbitans_id == '7') {
                 if ($data->pos1 == 0) {
                     $ps = 1;
