@@ -211,13 +211,12 @@ class SuratRepository
             'kode'             => $request['kode'],
             'kepada'           => $request['kepada'],
             'tujuan'           => $request['tujuan'],
-            // 'alasan'           => $request['alasan'],
+            'alasan'           => json_encode($request->alasan ?? []),
             'tglpelaksanaan'   => $request['tglpelaksanaan'],
             'nokendaraanbaru'  => $request['nokendaraanbaru'],
             'namapemilikbaru'  => $request['namapemilikbaru'],
             'alamatpemilikbaru'=> $request['alamatpemilikbaru'],
         ]);
-        return $data;
     }
 
     public function updateSurat($id, $request)
