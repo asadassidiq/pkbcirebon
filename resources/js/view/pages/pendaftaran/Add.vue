@@ -1395,7 +1395,7 @@ export default {
       this.pendaftaran.idsubjenis = value.vehicle_sub_id;
     },
     setModel(value) {
-      this.pendaftaran.model = value;
+      this.pendaftaran.model = value.model;
     },
     setArea(value) {
       this.pendaftaran.kodewilayah = value.area_code;

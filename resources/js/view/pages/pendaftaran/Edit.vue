@@ -1500,7 +1500,7 @@ export default {
     },
     
     setModel(value) {
-      this.pendaftaran.model = value;
+      this.pendaftaran.model = value.model;
     },
     setSubVehicleid(value) {
       this.pendaftaran.subjenis = value.vehicle_sub_name;
