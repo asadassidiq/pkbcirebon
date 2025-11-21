@@ -1270,8 +1270,11 @@ export default {
       }
     },
     submit() {
-      var updateData = this.cekPerubahanData();
-      this.ASSING_UPDATE(updateData);
+      if(this.pendaftaran.kodepenerbitans_id != '1' || this.pendaftaran.kodepenerbitans_id != '5' || this.pendaftaran.kodepenerbitans_id != '6')
+      {
+        var updateData = this.cekPerubahanData();
+        this.ASSING_UPDATE(updateData);
+      }
       this.submitPendaftaran().then(() => {
         Swal.fire({
           icon: 'success',
