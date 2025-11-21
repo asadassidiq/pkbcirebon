@@ -204,8 +204,7 @@ class SuratRepository
 
     public function createSurat($request)
     {
-        dd($request['pendaftaran_id']);
-        $data = $this->modelS->create([
+        $data = $this->modelS::create([
                 'pendaftaran_id' => $request['pendaftaran_id'],
                 'nosurat' => $request['nosurat'],
                 'nosuratdari' => $request['nosuratdari'],
