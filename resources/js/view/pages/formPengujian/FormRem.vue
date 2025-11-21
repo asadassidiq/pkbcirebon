@@ -1005,7 +1005,7 @@ export default {
             }
             var totalBeratSumbu = parseInt(this.laikjalan.berats1) + parseInt(this.laikjalan.berats2) + parseInt(this.laikjalan.berats3) + parseInt(this.laikjalan.berats4) + parseInt(this.laikjalan.berats5) + parseInt(this.laikjalan.berats6);
             this.laikjalan.alatuji_remparkirtotalgayapengereman = parseInt(this.laikjalan.alatuji_gayapengeremanparkirkiri) + parseInt(this.laikjalan.alatuji_gayapengeremanparkirkanan);
-            this.laikjalan.alatuji_remparkirtangan = Math.ceil((this.laikjalan.alatuji_remparkirtotalgayapengereman / totalBeratSumbu) * 100);
+            this.laikjalan.alatuji_remparkirtangan = Math.ceil((this.laikjalan.alatuji_remparkirtotalgayapengereman / this.identitaskendaraan.jbb) * 100);
             this.hasiluji();
         },
         totEffRem() {
