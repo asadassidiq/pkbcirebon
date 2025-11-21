@@ -246,16 +246,19 @@ class PendaftaranService
                         $this->repoSurat->createSurat($pendaftaran);
                     }
                 }
-                if (is_array($perubahans) && count($perubahans) > 0) {
-                    // ada data di perubahans
-                    $arrayPerubahan = array(
-                        'uuid' => $this->utils->generateUUID(),
-                        'pendaftaran_id' => $dataP['id'],
-                        'proposed_data' => json_encode($perubahans),
-                        'requested_by_user_id' => $user->id,
-                        'type' => 'Perubahan Data',
-                    );
-                    $this->repoPerizinan->create($arrayPerubahan);
+                
+                if ($pendaftaran['kodepenerbitans_id'] == '1'|| $pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
+                    if (is_array($perubahans) && count($perubahans) > 0) {
+                        // ada data di perubahans
+                        $arrayPerubahan = array(
+                            'uuid' => $this->utils->generateUUID(),
+                            'pendaftaran_id' => $dataP['id'],
+                            'proposed_data' => json_encode($perubahans),
+                            'requested_by_user_id' => $user->id,
+                            'type' => 'Perubahan Data',
+                        );
+                        $this->repoPerizinan->create($arrayPerubahan);
+                    }
                 }
                     
                 if($pendaftaran['kodepenerbitans_id'] == '9' || $pendaftaran['kodepenerbitans_id'] == '10'){
@@ -323,16 +326,18 @@ class PendaftaranService
                 }
             }
             // dd(count($perubahans));
-            if (is_array($perubahans) && count($perubahans) > 0) {
-                // ada data di perubahans
-                $arrayPerubahan = array(
-                    'uuid' => $this->utils->generateUUID(),
-                    'pendaftaran_id' => $dataP['id'],
-                    'proposed_data' => json_encode($perubahans),
-                    'requested_by_user_id' => $user->id,
-                    'type' => 'Perubahan Data',
-                );
-                $this->repoPerizinan->create($arrayPerubahan);
+            if ($pendaftaran['kodepenerbitans_id'] == '1'|| $pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
+                if (is_array($perubahans) && count($perubahans) > 0) {
+                    // ada data di perubahans
+                    $arrayPerubahan = array(
+                        'uuid' => $this->utils->generateUUID(),
+                        'pendaftaran_id' => $dataP['id'],
+                        'proposed_data' => json_encode($perubahans),
+                        'requested_by_user_id' => $user->id,
+                        'type' => 'Perubahan Data',
+                    );
+                    $this->repoPerizinan->create($arrayPerubahan);
+                }
             }
         }
 

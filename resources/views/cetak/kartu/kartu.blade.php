@@ -331,7 +331,7 @@
 			<p style="margin-top: 0px;margin-bottom: 0px;">Kg</p>			
 		</div>
 		<div class="col-3">
-			<p style="margin-top: 0px;margin-bottom: 0px;">DA Orrang (G)</p>
+			<p style="margin-top: 0px;margin-bottom: 0px;">DA Orang (G)</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">DA Barang (L)</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">JBI</p>
 			<p style="margin-top: 0px;margin-bottom: 0px;">JBKI</p>
