@@ -165,7 +165,7 @@
                   <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == 9">
                     <div class="form-group">
                       <label>Tanggal Pelaksanaan Uji</label>
-                      <b-form-datepicker id="tglhbsuji" v-model="pendaftaran.tglpelaksanaan" locale="id"></b-form-datepicker>
+                      <b-form-datepicker id="tglpelaksanaan" v-model="pendaftaran.tglpelaksanaan" locale="id"></b-form-datepicker>
                     </div>
                   </div>
                   <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == '10'">
