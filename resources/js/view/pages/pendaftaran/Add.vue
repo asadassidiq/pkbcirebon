@@ -1270,7 +1270,7 @@ export default {
       }
     },
     submit() {
-      if(this.pendaftaran.kodepenerbitans_id != '1' || this.pendaftaran.kodepenerbitans_id != '5' || this.pendaftaran.kodepenerbitans_id != '6')
+      if(this.pendaftaran.kodepenerbitans_id !== '1' || this.pendaftaran.kodepenerbitans_id !== '5' || this.pendaftaran.kodepenerbitans_id !== '6')
       {
         var updateData = this.cekPerubahanData();
         this.ASSING_UPDATE(updateData);

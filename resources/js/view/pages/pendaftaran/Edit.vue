@@ -1454,7 +1454,8 @@ export default {
         parseInt(this.pendaftaran.dayaangkutorang) * 60;
     },
     submit() {
-        if(this.pendaftaran.kodepenerbitans_id != '1' || this.pendaftaran.kodepenerbitans_id != '5' || this.pendaftaran.kodepenerbitans_id != '6')
+        console.log(this.pendaftaran.kodepenerbitans_id);
+        if(this.pendaftaran.kodepenerbitans_id !== '1' || this.pendaftaran.kodepenerbitans_id !== '5' || this.pendaftaran.kodepenerbitans_id !== '6')
         {
           var updateData = this.cekPerubahanData();
           this.ASSING_UPDATE(updateData);
