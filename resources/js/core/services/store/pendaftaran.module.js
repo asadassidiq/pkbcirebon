@@ -777,7 +777,7 @@ export const mutations = {
             kodepenerbitans_id: state.pendaftaran.kodepenerbitans_id,
             nosurat: state.pendaftaran.nosurat,
             nosuratdari: state.pendaftaran.nosuratdari,
-            kepada:"Kepala",
+            kepada:"Kepala Dinas Perhubungan",
             tglhbsuji: payload.tglbayar,
             tglterakhiruji: payload.tgluji,
             ketujiterakhir: payload.jenispendaftaran,
@@ -885,6 +885,8 @@ export const mutations = {
             if(typeof(payload.rancang) === 'undefined'|| payload.rancang === null){
                 state.pendaftaran.rancang = 0;
             }
+
+            state.pendaftaran.alasan = []; 
             
             
         // setTimeout(() => {
@@ -1411,7 +1413,7 @@ export const mutations = {
             notelp:"",
             nosurat:"",
             nosuratdari:"",
-            kepada:"Kepala",
+            kepada:"Kepala Dinas Perhubungan",
             tujuan:"",
             alasan:[],
             tglpelaksanaan:"",
