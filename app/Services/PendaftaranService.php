@@ -190,6 +190,11 @@ class PendaftaranService
                     $pendaftaran['posisi'] = '0';
                     $pendaftaran['approved'] = '0';
                     $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
+                }   elseif ($pendaftaran['kodepenerbitans_id'] == '8') {
+                    $pendaftaran['foto'] = null;
+                    $pendaftaran['posisi'] = '0';
+                    $pendaftaran['approved'] = '0';
+                    $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
                 } elseif ($pendaftaran['kodepenerbitans_id'] == '7') {
                     $pendaftaran['foto'] = '1';
                     // $pendaftaran['posisi'] = '1';
