@@ -289,7 +289,7 @@
     <p><span style="margin-left: 20px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
     menerima pelaksanaan uji berkala kendaraan bermotor dimaksud untuk 1 (satu) kali uji. Kemudian 
     hasil uji untuk dapat disampaikan kembali ke Dinas Perbungan {{ env('APP_KAB') }} {{ env('APP_WILAYAH') }} 
-    Adapun Surat Pengantar Pengujian Kendaraan Bermotor di Daerah Lainini berlaku 1 (satu) kali.
+    Adapun Surat Pengantar Pengujian Kendaraan Bermotor di Daerah Lain ini berlaku 1 (satu) kali.
     
     <p><span style="margin-left: 20px">Demikian</span> disampaikan, atas perhatian dan perkenaanya diucapkan terima kasih.</p>
 
