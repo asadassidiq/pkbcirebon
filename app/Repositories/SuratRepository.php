@@ -204,21 +204,11 @@ class SuratRepository
 
     public function createSurat($request)
     {
-        dd($request);
-        // $request['alasan']
-        $data = $this->modelS::create([
-            'pendaftaran_id'   => $request['pendaftaran_id'],
-            'nosurat'          => $request['nosurat'],
-            'nosuratdari'      => $request['nosuratdari'],
-            'kode'             => $request['kode'],
-            'kepada'           => $request['kepada'],
-            'tujuan'           => $request['tujuan'],
-            'alasan'           => json_encode($request->alasan ?? []),
-            'tglpelaksanaan'   => $request['tglpelaksanaan'],
-            'nokendaraanbaru'  => $request['nokendaraanbaru'],
-            'namapemilikbaru'  => $request['namapemilikbaru'],
-            'alamatpemilikbaru'=> $request['alamatpemilikbaru'],
-        ]);
+        if($request['kodepenerbitans_id'] == '9')
+        {
+            $request['alasan'] = $request['alasan'] ??[];
+        }
+        $data = $this->modelS->create($request);
     }
 
     public function updateSurat($id, $request)
