@@ -701,7 +701,7 @@ class VerifRepository
 
             if (!$data->idx) {
                 $uji = Datapengujian::Create([
-                    'statuspenerbitan1'  => $kode,
+                    'statuspenerbitan'  => $kode,
                     'nouji'             => $data->nouji,
                     'nama'              => $data->nama,
                     'alamat'            => $alamatFull,
@@ -872,7 +872,7 @@ class VerifRepository
                 }
             } else {
                 $uji = Datapengujian::where('idx', $data->idx)->first();
-                $uji->statuspenerbitan1  = $kode;
+                $uji->statuspenerbitan  = $kode;
                 $uji->nouji             = $data->nouji;
                 $uji->nama              = $data->nama;
                 $uji->alamat            = $alamatFull;
