@@ -97,7 +97,7 @@
                   </div>
 
                   <div class="col-sm-4"
-                    v-if="pendaftaran.kodepenerbitans_id == '2' || pendaftaran.kodepenerbitans_id == '3' || pendaftaran.kodepenerbitans_id == '4' || pendaftaran.kodepenerbitans_id == '5' || pendaftaran.kodepenerbitans_id == '6' || pendaftaran.kodepenerbitans_id == '7' || pendaftaran.kodepenerbitans_id == '9' || pendaftaran.kodepenerbitans_id == '10'">
+                    v-if="pendaftaran.kodepenerbitans_id == '2' || pendaftaran.kodepenerbitans_id == '3' || pendaftaran.kodepenerbitans_id == '4' || pendaftaran.kodepenerbitans_id == '5' || pendaftaran.kodepenerbitans_id == '6' || pendaftaran.kodepenerbitans_id == '7' || pendaftaran.kodepenerbitans_id == '8' || pendaftaran.kodepenerbitans_id == '9' || pendaftaran.kodepenerbitans_id == '10'">
                     <div class="form-group">
                       <label> No Uji</label>
                       <input type="text" class="form-control  form-control-lg text-uppercase" name="nouji"
