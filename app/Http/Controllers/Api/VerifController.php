@@ -86,47 +86,6 @@ class VerifController extends Controller
         return $this->returnJson($data);
     }
 
-    public function storeVerif2(VerifStoreRequest $request)
-    {
-        $user = auth()->user();
-        $check = $this->verifService->checkid($request->pendaftaran_id);
-        if ($check->kodepenerbitans_id <= 7) {
-            $nouji = Pendaftaran::select('nouji')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('pendaftarans.id', $check['id'])->first()->nouji;
-            try {
-                $this->saveFoto($check['id'], $nouji);
-            } catch (\Exception $e) {
-            }
-        } else {
-            $nouji = 'sukses';
-        }
-        if ($check) {
-            $request->merge([
-                'statuslulusuji' => $request->verif,
-                'idpenguji'    => $user['id'],
-            ]);
-            $data = $this->verifService->update($request, $check->id);
-            if ($check->kodepenerbitans_id == '12') {
-                $check->posverif2      = $request->verif;
-                $check->user_posverif2 = $user['id'];
-                $check->posisi = '6';
-                $check->save();
-            } elseif ($request->verif == '1') {
-                $data = $this->verifService->setDatapengujian($check['id'], $request->jenis_cetak);
-                $check->posverif2      = $request->verif;
-                $check->user_posverif2 = $user['id'];
-                $check->posisi = '6';
-                $check->save();
-            } elseif ($request->verif == '0') {
-                // $data = $this->verifService->setDatapengujian($check['id']);
-                $check->posverif2      = $request->verif;
-                $check->user_posverif2 = $user['id'];
-                $check->posisi = '7';
-                $check->save();
-            }
-        }
-        return $this->returnJson($check);
-    }
-
     public function store(VerifStoreRequest $request)
     {
         $user = auth()->user();
@@ -174,6 +133,7 @@ class VerifController extends Controller
 
             $data = $this->verifService->update($request, $check->id);
             if ($data) {
+                $check = $this->verifService->checkid($request->pendaftaran_id);
                 if ($check->pos1 == 0) {
                     $ps = 1;
                 } elseif ($check->pos2 == 0) {
@@ -211,25 +171,25 @@ class VerifController extends Controller
             $data = $this->verifService->update($request, $check->id);
             if ($data) {
                 $check = $this->verifService->checkid($request->pendaftaran_id);
-                if ($check) {
-                    if ($check->pos1 == 0) {
-                        $ps = 1;
-                    } elseif ($check->pos2 == 0) {
-                        $ps = 2;
-                    } elseif ($check->pos3 == 0) {
-                        $ps = 3;
-                    } elseif ($check->posverif == 0) {
-                        $ps = 4;
-                    } elseif ($check->posverif == 1) {
-                        $ps = 5;
-                    } else {
-                        $ps = 5;
-                    }
-                    $check->posverif      = $request->verif;
-                    $check->user_posverif = $user['id'];
-                    $check->posisi = $ps;
-                    $check->save();
+                if ($check->pos1 == 0) {
+                    $ps = 1;
+                } elseif ($check->pos2 == 0) {
+                    $ps = 2;
+                } elseif ($check->pos3 == 0) {
+                    $ps = 3;
+                } elseif ($check->pos4 == 0) {
+                    $ps = 4;
+                } elseif ($check->posverif == 0) {
+                    $ps = 5;
+                } elseif ($check->posverif == 1) {
+                    $ps = 6;
+                } else {
+                    $ps = 5;
                 }
+                $check->posverif      = $request->verif;
+                $check->user_posverif = $user['id'];
+                $check->posisi = $ps;
+                $check->save();
             }
 
             // if ($data && $check->kodepenerbitans_id != '12') {
