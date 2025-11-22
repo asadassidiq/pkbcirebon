@@ -698,11 +698,10 @@ class VerifRepository
                 $kiri = null;
             }
             $alatuji_remparkirtotalgayapengereman = (int)$data->alatuji_gayapengeremanparkirkiri+(int)$data->alatuji_gayapengeremanparkirkanan;
-            dd($kode);
 
             if (!$data->idx) {
                 $uji = Datapengujian::Create([
-                    'statuspenerbitan'  => $kode,
+                    'statuspenerbitan1'  => $kode,
                     'nouji'             => $data->nouji,
                     'nama'              => $data->nama,
                     'alamat'            => $alamatFull,
@@ -873,7 +872,7 @@ class VerifRepository
                 }
             } else {
                 $uji = Datapengujian::where('idx', $data->idx)->first();
-                $uji->statuspenerbitan  = $kode;
+                $uji->statuspenerbitan1  = $kode;
                 $uji->nouji             = $data->nouji;
                 $uji->nama              = $data->nama;
                 $uji->alamat            = $alamatFull;
