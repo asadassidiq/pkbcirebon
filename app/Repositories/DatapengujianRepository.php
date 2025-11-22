@@ -32,7 +32,7 @@ class DatapengujianRepository
         $tgl = date_format(date_create(request()->t),"dmY");
         $data = $this->model
             ->select('datapengujian.idx','kodepenerbitans.keterangan','datapengujian.nouji', 'datapengujian.noregistrasikendaraan','nokendalikartu','rfid','datetimepersovisual','datetimecetaksertifikat','datetimepersorfid')
-            ->join('kodepenerbitans','datapengujian.statuspenerbitan','=','kodepenerbitans.id')
+            ->Leftjoin('kodepenerbitans','datapengujian.statuspenerbitan','=','kodepenerbitans.id')
             ->where('datapengujian.tgluji',$tgl)
             ->orderBy('datapengujian.idx','DESC');
         $search = str_replace("/", "", request()->q);
