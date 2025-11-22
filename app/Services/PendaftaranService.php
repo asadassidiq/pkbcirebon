@@ -272,6 +272,7 @@ class PendaftaranService
                         'pendaftaran_id' => $dataP['id'],
                         'proposed_data' => json_encode($perubahans),
                         'requested_by_user_id' => $user->id,
+                        'approved' => '0',
                         'type' => 'Persuratan',
                     );
                     $this->repoPerizinan->create($arrayPerubahan);
