@@ -204,10 +204,10 @@ class SuratRepository
 
     public function createSurat($request)
     {
-        if($request['kodepenerbitans_id'] == '9')
-        {
+        // if($request['kodepenerbitans_id'] == '9')
+        // {
             $request['alasan'] = json_encode($request['alasan'] ?? []);
-        }
+        // }
         $data = $this->modelS->create($request);
     }
 
