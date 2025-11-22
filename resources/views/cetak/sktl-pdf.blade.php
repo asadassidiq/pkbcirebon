@@ -291,7 +291,7 @@
             </tbody>
         </table>
         <p>Berdasarkan data hasil pemeriksaan teknis dan persyaratan teknis laik jalan di atas maka kendaraan tersebut dinyatakan <b>TIDAK LULUS UJI</b>
-            <p>Demikian keterangan ini dibuat, selanjutnya kepada pemilik kendaraan agar memperbaiki komponen tersebut dan melakukan uji ulang pada tanggal <span><b>{{ tgl_indo(date_format(date_create($data->tglujiulang),"d-m-Y")) }}</b></span></span>.</p>
+            <p>Demikian keterangan ini dibuat, selanjutnya kepada pemilik kendaraan agar memperbaiki komponen tersebut dan melakukan uji ulang pada tanggal <span><b>{{ tgl_indo(date_format(date_create($data->tglujiulang),"Y-m-d")) }}</b></span></span>.</p>
 
 
             <p>Demikian permohonan ini kami buat untuk dapat diproses lebih lanjut.</p>
