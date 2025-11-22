@@ -698,9 +698,9 @@ class VerifRepository
                 $kiri = null;
             }
             $alatuji_remparkirtotalgayapengereman = (int)$data->alatuji_gayapengeremanparkirkiri+(int)$data->alatuji_gayapengeremanparkirkanan;
+            dd($kode);
 
             if (!$data->idx) {
-                dd($kode);
                 $uji = Datapengujian::Create([
                     'statuspenerbitan'  => $kode,
                     'nouji'             => $data->nouji,
