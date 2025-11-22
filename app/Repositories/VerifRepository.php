@@ -644,7 +644,6 @@ class VerifRepository
                 $alamatFull = '';
             }
 
-                dd($kode);
             if($jenis_cetak == '1'){
                 try {
                     $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakdepan.jpg');
@@ -701,6 +700,7 @@ class VerifRepository
             $alatuji_remparkirtotalgayapengereman = (int)$data->alatuji_gayapengeremanparkirkiri+(int)$data->alatuji_gayapengeremanparkirkanan;
 
             if (!$data->idx) {
+                dd($kode);
                 $uji = Datapengujian::Create([
                     'statuspenerbitan'  => $kode,
                     'nouji'             => $data->nouji,
