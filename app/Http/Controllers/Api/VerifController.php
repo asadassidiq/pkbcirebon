@@ -212,9 +212,7 @@ class VerifController extends Controller
             if ($data) {
                 $check = $this->verifService->checkid($request->pendaftaran_id);
                 if ($check) {
-                    if (is_null($check->posverif2)) {
-                        $ps = 5;
-                    } elseif ($check->pos1 == 0) {
+                    if ($check->pos1 == 0) {
                         $ps = 1;
                     } elseif ($check->pos2 == 0) {
                         $ps = 2;
