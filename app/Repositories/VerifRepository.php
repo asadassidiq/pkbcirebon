@@ -549,7 +549,6 @@ class VerifRepository
                 if(empty($data->masaberlakuuji)){
                     $data->masaberlakuuji = date('dmY', strtotime($tglpendaftaran. ' + 6 Months'));
                 }
-                dd($kode);
             }else{
                 $kode= $data->kodepenerbitans_id;
                 $tgluji = date("dmY");
@@ -644,6 +643,8 @@ class VerifRepository
             }else{
                 $alamatFull = '';
             }
+
+                dd($kode);
             if($jenis_cetak == '1'){
                 try {
                     $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakdepan.jpg');
