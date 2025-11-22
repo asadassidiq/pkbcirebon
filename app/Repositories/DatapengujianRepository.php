@@ -29,7 +29,8 @@ class DatapengujianRepository
     public function getAll()
     {
 
-        $tgl = date_format(date_create(request()->t),"dmY");
+        // $tgl = date_format(date_create(request()->t),"dmY");
+        $tgl = request()->t;
         $data = $this->model
             ->select('datapengujian.idx','kodepenerbitans.keterangan','datapengujian.nouji', 'datapengujian.noregistrasikendaraan','nokendalikartu','rfid','datetimepersovisual','datetimecetaksertifikat','datetimepersorfid')
             ->Leftjoin('pendaftarans','pendaftarans.idx','=','datapengujian.idx')
