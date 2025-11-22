@@ -252,7 +252,7 @@ class PendaftaranService
                     }
                 }
 
-                if ($pendaftaran['kodepenerbitans_id'] == '1'|| $pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
+                if ($pendaftaran['kodepenerbitans_id'] != 1|| $pendaftaran['kodepenerbitans_id'] != 5 || $pendaftaran['kodepenerbitans_id'] != 6){
                     if (is_array($perubahans) && count($perubahans) > 0) {
                         // ada data di perubahans
                         $arrayPerubahan = array(
@@ -331,7 +331,7 @@ class PendaftaranService
                     $this->repoSurat->createSurat($pendaftaran);
                 }
             }
-            if ($pendaftaran['kodepenerbitans_id'] == '1'|| $pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
+            if ($pendaftaran['kodepenerbitans_id'] != 1 || $pendaftaran['kodepenerbitans_id'] != 5 || $pendaftaran['kodepenerbitans_id'] != 6){
                 if (is_array($perubahans) && count($perubahans) > 0) {
                     // ada data di perubahans
                     $arrayPerubahan = array(
