@@ -549,6 +549,7 @@ class VerifRepository
                 if(empty($data->masaberlakuuji)){
                     $data->masaberlakuuji = date('dmY', strtotime($tglpendaftaran. ' + 6 Months'));
                 }
+                dd($kode);
             }else{
                 $kode= $data->kodepenerbitans_id;
                 $tgluji = date("dmY");
