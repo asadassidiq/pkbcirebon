@@ -206,7 +206,7 @@ class SuratRepository
     {
         if($request['kodepenerbitans_id'] == '9')
         {
-            $request['alasan'] = $request['alasan'] ??[];
+            $request['alasan'] = json_encode($request['alasan'] ?? []);
         }
         $data = $this->modelS->create($request);
     }
