@@ -115,6 +115,7 @@
                     pendaftaran.kodepenerbitans_id == '4' ||
                     pendaftaran.kodepenerbitans_id == '5' ||
                     pendaftaran.kodepenerbitans_id == '7' ||
+                    pendaftaran.kodepenerbitans_id == '8' ||
                     pendaftaran.kodepenerbitans_id == '9' ||
                     pendaftaran.kodepenerbitans_id == '10'
                   ">
