@@ -121,7 +121,7 @@
                             ? 'background-color: #DC143C;'
                             : 'background-color: #FFFFFF;'
                             ">
-                            AKURASI PENUNJUK KECEPATAN/SPEEDOMETER (Km/Jam)
+                            Akurasi Penujuk Kecepatan/Speedometer (Km/Jam)
                         </h3>
                     </div>
                     <div class="card-toolbar">
