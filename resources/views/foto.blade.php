@@ -65,7 +65,7 @@
         <div class="d-flex align-items-center p-3 my-3 bg-info text-white rounded box-shadow">
             <!-- <img class="mr-3" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-outline.svg" alt="" width="48" height="48"> -->
             <div class="lh-100">
-                <h3 class="mb-0 text-white lh-100">SOLTINDO UPLOAD IMAGE</h3>
+                <h3 class="mb-0 text-white lh-100">UPLOAD FOTO KENDARAAN</h3>
                 <!-- <small>Since 2011</small> -->
             </div>
         </div>

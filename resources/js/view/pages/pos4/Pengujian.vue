@@ -141,7 +141,7 @@
             <div class="card card-custom">
                 <div class="card-header">
                     <div class="card-title">
-                        <h3 class="card-label">Foto Kendaraan Kendaraan</h3>
+                        <h3 class="card-label">Foto Kendaraan</h3>
                     </div>
                     <div class="card-toolbar">
                         <b-button v-b-toggle.collapse-dalam
