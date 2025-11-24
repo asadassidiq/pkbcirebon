@@ -535,7 +535,6 @@ export const mutations = {
                         return item.area_code === "DCRBN";
                     });
                     if (wilayah) {
-                    console.log(wilayah.area_code);
                         state.pendaftaran.wilayah= wilayah.area_name;
                         state.pendaftaran.kodewilayah= wilayah.area_code;
                         state.pendaftaran.idkodewilayah= wilayah.area_id;
