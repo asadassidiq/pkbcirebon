@@ -172,7 +172,7 @@ class RoleMiddleware
                 $decrypted = $checkPs;
             }
         } elseif ($ps == 'api/user') {
-            if ($user->role == 'ADMIN') {
+            if ($user->role == 'KEPALA' || $user->role == 'PENGUJI' || $user->role == 'ADMIN' || $user->role == 'PETUGAS') {
                 $decrypted = $checkPs;
             }
         } elseif ($nm == 'get.verif' || $nm == 'identitaskendaraan.pos' || $nm == 'approving.surat') {
@@ -183,10 +183,6 @@ class RoleMiddleware
             }
         } elseif ($ps == 'api/datakendaraan/approvals') {
             if ($user->role == 'ADMIN' || $user->role == 'KEPALA') {
-                $decrypted = $checkPs;
-            }
-        }elseif ($ps == 'api/user') {
-            if ($user->role == 'KEPALA' || $user->role == 'PENGUJI' || $user->role == 'ADMIN' || $user->role == 'PETUGAS') {
                 $decrypted = $checkPs;
             }
         }
