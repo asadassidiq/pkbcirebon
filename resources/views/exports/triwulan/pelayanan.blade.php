@@ -47,7 +47,7 @@
         $lulus = 0;
         $tidaklulus = 0;
         @endphp
-        @foreach ($kendaraan as $data) 
+        @foreach ($data as $data) 
         <tr>
             <th scope="row">{{ $i }}</th>
             <td>{{ $data['bulan'] }}</td>
