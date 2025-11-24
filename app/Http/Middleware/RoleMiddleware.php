@@ -189,7 +189,7 @@ class RoleMiddleware
             if ($user->role == 'KEPALA' || $user->role == 'PENGUJI' || $user->role == 'ADMIN' || $user->role == 'PETUGAS') {
                 $decrypted = $checkPs;
             }
-        } 
+        }
 
         // Tambah logika pengecekan role dsb...
         if ($checkPs !== $decrypted) {
