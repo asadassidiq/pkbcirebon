@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <td colspan="13"><b>LAPORAN TRIWULAN PENGUJIAN KENDARAAN BERMOTOR</b></td>
+            <td colspan="13"><b>LAPORAN BULANAN PENGUJIAN KENDARAAN BERMOTOR</b></td>
         </tr>
         <tr>
             <td colspan="13"><b>MENURUT JENIS PELAYANAN</b></td>
@@ -13,29 +13,30 @@
     </thead>
     <tbody>
         <tr>
-            <th scope="col" rowspan="3">NO</th>
-            <th scope="col" rowspan="3">TANGGAL</th>
-            <th scope="col" colspan="8">JENIS PELAYANAN</th>
-            <th scope="col" colspan="2">HASIL UJI</th>
-            <th scope="col" rowspan="3">KET</th>
+            <td rowspan="3">NO</td>
+            <td rowspan="3">TANGGAL</td>
+            <td colspan="8">JENIS PELAYANAN</td>
+            <td colspan="2">HASIL UJI</td>
+            <td rowspan="3">KET</td>
         </tr>
         <tr>
-            <th colspan="5">PELAYANAN ADMINISTRASI & TEKNIK</th>
-            <th colspan="2">PELAYANAN ADMINISTRASI</th>
-            <th rowspan="2">UJI ULANG</th>
-            <th rowspan="2">LULUS</th>
-            <th rowspan="2">TIDAK LULUS</th>
+            <td colspan="5">PELAYANAN ADMINISTRASI dan TEKNIK</td>
+            <td colspan="2">PELAYANAN ADMINISTRASI</td>
+            <td rowspan="2">UJI ULANG</td>
+            <td rowspan="2">LULUS</td>
+            <td rowspan="2">TIDAK LULUS</td>
         </tr>
         <tr>
-            <th>UJI PERTAMA</th>
-            <th>UJI BERKALA</th>
-            <th>NUMPANG UJI MASUK</th>
-            <th>MUTASI MASUK</th>
-            <th>RUBAH BENTUK</th>
-            <th>NUMPANG UJI KELUAR</th>
-            <th>MUTASI KELUAR</th>
+            <td>UJI PERTAMA</td>
+            <td>UJI BERKALA</td>
+            <td>NUMPANG UJI MASUK</td>
+            <td>MUTASI MASUK</td>
+            <td>RUBAH BENTUK</td>
+            <td>NUMPANG UJI KELUAR</td>
+            <td>MUTASI KELUAR</td>
         </tr>
-        @php $i=1;
+        @php
+        $i=1;
         $ujipertama = 0;
         $ujiberkala = 0;
         $numasuk = 0;
@@ -47,10 +48,10 @@
         $lulus = 0;
         $tidaklulus = 0;
         @endphp
-        @foreach ($data as $data) 
+        @foreach ($data as $data)
         <tr>
-            <th scope="row">{{ $i }}</th>
-            <td>{{ $data['bulan'] }}</td>
+            <td scope="row">{{ $i }}</td>
+            <td>{{ $data['tgl'] }}</td>
             <td>{{ $data['ujipertama'] }}</td>
             <td>{{ $data['ujiberkala'] }}</td>
             <td>{{ $data['numasuk'] }}</td>
@@ -63,7 +64,8 @@
             <td>{{ $data['tidaklulus'] }}</td>
             <td></td>
         </tr>
-        @php $i++;
+        @php
+        $i++;
         $ujipertama += $data['ujipertama'];
         $ujiberkala += $data['ujiberkala'];
         $numasuk += $data['numasuk'];
@@ -77,7 +79,7 @@
         @endphp
         @endforeach
         <tr>
-            <th scope="row" colspan="2">TOTAL</th>
+            <td scope="row" colspan="2">TOTAL</td>
             <td>{{ $ujipertama }}</td>
             <td>{{ $ujiberkala }}</td>
             <td>{{ $numasuk }}</td>
