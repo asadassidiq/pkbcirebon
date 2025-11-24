@@ -14,27 +14,12 @@ const hasBaseURL = baseURL.length > 0;
 const ApiService = {
   init() {
     Vue.use(VueAxios, axios);
-    if (!hasBaseURL) {
-      Swal.fire({
-        title: "",
-        text: "Invalid App URL!\nPlease provide correct App URL",
-        icon: "error",
-        showConfirmButton: false,
-        timer: 1500,
-        heightAuto: false,
-      });
-      return;
+    const appUrlMeta = document.querySelector('meta[name="app-url"]');
+    if (appUrlMeta) {
+      Vue.axios.defaults.baseURL = appUrlMeta.getAttribute('content')+"/api";
+    }else{
+      console.log('App Url not found');
     }
-
-    Vue.axios.defaults.baseURL = baseURL;
-
-    // Vue.axios.defaults.baseURL = "https://pkbmimika.stindo.tech/api";
-    // const appUrlMeta = document.querySelector('meta[name="app-url"]');
-    // if (appUrlMeta) {
-    //   Vue.axios.defaults.baseURL = appUrlMeta.getAttribute('content')+"/api";
-    // }else{
-    //   console.log('App Url not found');
-    // }
   },
 
   /**
