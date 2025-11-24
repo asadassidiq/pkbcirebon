@@ -181,7 +181,7 @@ class RoleMiddleware
                     $decrypted = $checkPs;
                 }
             }
-        } else if ($ps == 'api/datakendaraan/approvals') {
+        } elseif ($ps == 'api/datakendaraan/approvals') {
             if ($user->role == 'ADMIN' || $user->role == 'KEPALA') {
                 $decrypted = $checkPs;
             }
