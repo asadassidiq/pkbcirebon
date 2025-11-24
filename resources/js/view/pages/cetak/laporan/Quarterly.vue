@@ -158,7 +158,7 @@ export default {
             }else if(this.dataLaporan == 'jenis9')
             {
                 window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=9&t='+this.triwulan, "_blank");
-            }else if(this.dataLaporan == 'jenis110')
+            }else if(this.dataLaporan == 'jenis10')
             {
                 window.open("/export/" + this.tgl + '/'+'jenistriwulan'+'?k=10&t='+this.triwulan, "_blank");
             }else{
