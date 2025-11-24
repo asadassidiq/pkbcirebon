@@ -11,9 +11,6 @@
                         <button class="btn btn-primary btn-sm" @click.prevent="submit">
                             <i class="fa fa-save"></i> Update
                         </button>
-                        <button class="btn btn-danger btn-sm" @click.prevent="back">
-                            <i class="fa fa-arrow-left"></i> Kembali
-                        </button>
                     </div>
                 </div>
             </div>
@@ -52,11 +49,7 @@ export default {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                this.$router.push({ name: "user.data" });
             });
-        },
-        back() {
-            this.$router.push({ name: "user.data" });
         },
     },
     components: {

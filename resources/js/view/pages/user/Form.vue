@@ -246,6 +246,7 @@ export default {
 
       const formData = new FormData();
       formData.append("image", this.file);
+      formData.append("uuid", this.$route.params.id);
 
       try {
         const res = await axios.post("/user/upload-image", formData, {
