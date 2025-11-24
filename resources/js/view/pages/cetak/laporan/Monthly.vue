@@ -145,7 +145,7 @@ export default {
             }else if(this.dataLaporan == 'jenis9')
             {
                 window.open("/export/" + this.tgl + '/'+'jenisbulanan'+'?k=9', "_blank");
-            }else if(this.dataLaporan == 'jenis110')
+            }else if(this.dataLaporan == 'jenis10')
             {
                 window.open("/export/" + this.tgl + '/'+'jenisbulanan'+'?k=10', "_blank");
             }else{
