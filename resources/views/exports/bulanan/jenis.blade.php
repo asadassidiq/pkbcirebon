@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th colspan="13"><b>LAPORAN BULANAN {{ $ket }} KENDARAAN BERMOTOR</b></th>
+            <th colspan="13"><b>LAPORAN TRIWULAN {{ $ket }} KENDARAAN BERMOTOR</b></th>
         </tr>
         <tr>
             <th colspan="13"><b>MENURUT JENIS KENDARAAN</b></th>
@@ -10,7 +10,7 @@
             <th colspan="13"><b>UPT PKB DISHUB KOTA CIREBON</b></th>
         </tr>
         <tr>
-            <th colspan="13"><b>Bulan {{ $tglprint }}</b></th>
+            <th colspan="13"><b>BULAN {{ $tglprint }}</b></th>
         </tr>
 
         <tr></tr>
@@ -82,59 +82,60 @@
         @endphp
         @foreach ($data as $data) 
         <tr>
-            <th scope="row">{{ $i }}</th>
-            <td>{{ $data->tgl }}</td>
-            <td>{{ $data->kwbusblm }}</td>
-            <td>{{ $data->kwbu }}</td>
-            <td>{{ $data->mobil1 }}</td>
-            <td>{{ $data->mobil2 }}</td>
-            <td>{{ $data->mobil3 }}</td>
-            <td>{{ $data->mobil4 }}</td>
-            <td>{{ $data->mobil5 }}</td>
-            <td>{{ $data->mobil6 }}</td>
-            <td>{{ $data->mobil7 }}</td>
-            <td>{{ $data->mobil8 }}</td>
-            <td>{{ $data->mobil9 }}</td>
-            <td>{{ $data->mobil10 }}</td>
-            <td>{{ $data->mobil11 }}</td>
-            <td>{{ $data->mobil12 }}</td>
-            <td>{{ $data->mobil13 }}</td>
-            <td>{{ $data->mobil14 }}</td>
-            <td>{{ $data->mobil15 }}</td>
-            <td>{{ $data->mobil16 }}</td>
-            <td>{{ $data->mobil17 }}</td>
-            <td>{{ $data->mobil18 }}</td>
-            <td>{{ $data->mobil19 }}</td>
-            <td>{{ $data->mobil20 }}</td>
-            <td>{{ $data->mobil21 }}</td>
-            <td>{{ $data->mobil22 }}</td>
-            <td>{{ $data->mobil23 }}</td>
-            <td>{{ $data->mobil24 }}</td>
-            <td>{{ $data->mobil25 }}</td>
-            <td>{{ $data->mobil26 }}</td>
-            <td>{{ $data->mobil27 }}</td>
-            <td>{{ $data->mobil28 }}</td>
-            <td>{{ $data->mobil29 }}</td>
-            <td>{{ $data->mobil30 }}</td>
-            <td>{{ $data->mobil31 }}</td>
-            <td>{{ $data->mobil32 }}</td>
-            <td>{{ $data->mobil33 }}</td>
-            <td>{{ $data->mobil34 }}</td>
-            <td>{{ $data->mobil35 }}</td>
-            <td>{{ $data->mobil36 }}</td>
-            <td>{{ $data->mobil37 }}</td>
-            <td>{{ $data->mobil38 }}</td>
-            <td>{{ $data->mobil39 }}</td>
-        </tr>
-        @php $i++;
-        $kwbu += $data->kwbu;
-        $kwbusblm += $data->kwbusblm;
-        $mobil1 += $data->mobil1;$mobil2 += $data->mobil2;$mobil3 += $data->mobil3;$mobil4 += $data->mobil4;$mobil5 += $data->mobil5;$mobil6 += $data->mobil6;$mobil7 += $data->mobil7;$mobil8 += $data->mobil8;$mobil9 += $data->mobil9;$mobil10 += $data->mobil10;$mobil11 += $data->mobil11;$mobil12 += $data->mobil12;$mobil13 += $data->mobil13;$mobil14 += $data->mobil14;$mobil15 += $data->mobil15;$mobil16 += $data->mobil16;$mobil17 += $data->mobil17;$mobil18 += $data->mobil18;$mobil19 += $data->mobil19;$mobil20 += $data->mobil20;$mobil21 += $data->mobil21;$mobil22 += $data->mobil22;$mobil23 += $data->mobil23;$mobil24 += $data->mobil24;$mobil25 += $data->mobil25;$mobil26 += $data->mobil26;$mobil27 += $data->mobil27;$mobil28 += $data->mobil28;$mobil29 += $data->mobil29;$mobil30 += $data->mobil30;$mobil31 += $data->mobil31;$mobil32 += $data->mobil32;$mobil33 += $data->mobil33;$mobil34 += $data->mobil34;$mobil35 += $data->mobil35;$mobil36 += $data->mobil36;$mobil37 += $data->mobil37;$mobil38 += $data->mobil38;$mobil39 += $data->mobil39;
-        @endphp
-        @endforeach
+                <th scope="row">{{ $i }}</th>
+                <td>{{ $data['bulan'] }}</td>
+                <td>{{ $data['kwbusblm'] }}</td>
+                <td>{{ $data['kwbu'] }}</td>
+                <td>{{ $data['mobil1'] }}</td>
+                <td>{{ $data['mobil2'] }}</td>
+                <td>{{ $data['mobil3'] }}</td>
+                <td>{{ $data['mobil4'] }}</td>
+                <td>{{ $data['mobil5'] }}</td>
+                <td>{{ $data['mobil6'] }}</td>
+                <td>{{ $data['mobil7'] }}</td>
+                <td>{{ $data['mobil8'] }}</td>
+                <td>{{ $data['mobil9'] }}</td>
+                <td>{{ $data['mobil10'] }}</td>
+                <td>{{ $data['mobil11'] }}</td>
+                <td>{{ $data['mobil12'] }}</td>
+                <td>{{ $data['mobil13'] }}</td>
+                <td>{{ $data['mobil14'] }}</td>
+                <td>{{ $data['mobil15'] }}</td>
+                <td>{{ $data['mobil16'] }}</td>
+                <td>{{ $data['mobil17'] }}</td>
+                <td>{{ $data['mobil18'] }}</td>
+                <td>{{ $data['mobil19'] }}</td>
+                <td>{{ $data['mobil20'] }}</td>
+                <td>{{ $data['mobil2'] }}</td>
+                <td>{{ $data['mobil22'] }}</td>
+                <td>{{ $data['mobil23'] }}</td>
+                <td>{{ $data['mobil24'] }}</td>
+                <td>{{ $data['mobil25'] }}</td>
+                <td>{{ $data['mobil26'] }}</td>
+                <td>{{ $data['mobil27'] }}</td>
+                <td>{{ $data['mobil28'] }}</td>
+                <td>{{ $data['mobil29'] }}</td>
+                <td>{{ $data['mobil30'] }}</td>
+                <td>{{ $data['mobil31'] }}</td>
+                <td>{{ $data['mobil32'] }}</td>
+                <td>{{ $data['mobil33'] }}</td>
+                <td>{{ $data['mobil34'] }}</td>
+                <td>{{ $data['mobil35'] }}</td>
+                <td>{{ $data['mobil36'] }}</td>
+                <td>{{ $data['mobil37'] }}</td>
+                <td>{{ $data['mobil38'] }}</td>
+                <td>{{ $data['mobil39'] }}</td>
+            </tr>
+            @php $i++;
+            // $kwbu += $data['kwbu'] ?? 0;
+            // $kwbusblm += $data['kwbusblm'] ?? 0;
+            $mobil1 += $data['mobil1'];$mobil2 += $data['mobil2'];$mobil3 += $data['mobil3'];$mobil4 += $data['mobil4'];$mobil5 += $data['mobil5'];$mobil6 += $data['mobil6'];$mobil7 += $data['mobil7'];$mobil8 += $data['mobil8'];$mobil9 += $data['mobil9'];$mobil10 += $data['mobil10'];$mobil11 += $data['mobil11'];$mobil12 += $data['mobil12'];$mobil13 += $data['mobil13'];$mobil14 += $data['mobil14'];$mobil15 += $data['mobil15'];$mobil16 += $data['mobil16'];$mobil17 += $data['mobil17'];$mobil18 += $data['mobil18'];$mobil19 += $data['mobil19'];$mobil20 += $data['mobil20'];$mobil21 += $data['mobil21'];$mobil22 += $data['mobil22'];$mobil23 += $data['mobil23'];$mobil24 += $data['mobil24'];$mobil25 += $data['mobil25'];$mobil26 += $data['mobil26'];$mobil27 += $data['mobil27'];$mobil28 += $data['mobil28'];$mobil29 += $data['mobil29'];$mobil30 += $data['mobil30'];$mobil31 += $data['mobil31'];$mobil32 += $data['mobil32'];$mobil33 += $data['mobil33'];$mobil34 += $data['mobil34'];$mobil35 += $data['mobil35'];$mobil36 += $data['mobil36'];$mobil37 += $data['mobil37'];$mobil38 += $data['mobil38'];$mobil39 += $data['mobil39'];
+            @endphp
+            @endforeach
         <tr>
             <td>-</td>
-            <td>{{ $kwbu }}</td>
+            <td>-</td>
+            {{-- <td>{{ $kwbu }}</td> --}}
             <td>{{ $mobil1 }}</td>
             <td>{{ $mobil2 }}</td>
             <td>{{ $mobil3 }}</td>
