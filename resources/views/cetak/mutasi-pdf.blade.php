@@ -129,7 +129,7 @@
 
 @include('cetak.layouts.header')
 <div class="content">
-    <img src="{{ $logodishub }}" class="watermark" alt="Watermark">
+    {{-- <img src="{{ $logodishub }}" class="watermark" alt="Watermark"> --}}
 
     <table style="width: 100%">
         <tr>

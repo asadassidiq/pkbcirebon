@@ -10,7 +10,11 @@
       <div class="card-toolbar">
         <div class="row">
           <div class="col-5">
-            <datepicker input-class="form-control" v-model="tgl" :language="id"></datepicker>
+            <b-form-datepicker
+                id="example-datepicker"
+                v-model="tgl"
+                locale="id"
+            ></b-form-datepicker>
           </div>
           <div class="col-5">
             <input class="form-control" type="text" placeholder="serach" v-model="search" />
