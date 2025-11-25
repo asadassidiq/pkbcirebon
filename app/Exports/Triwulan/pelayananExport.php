@@ -54,6 +54,7 @@ class pelayananExport implements FromView
                 'ujipertama' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $this->tahun)->where('kodepenerbitans_id','1')->count(),
                 'ujiberkala' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $this->tahun)->where('kodepenerbitans_id','2')->count(),
                 'rubahbentuk' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $this->tahun)->where('kodepenerbitans_id','8')->count(),
+                'hilang' => Pendaftaran::whereMonth('tglpendaftaran', $bulan)->whereYear('tglpendaftaran', $this->tahun)->where('kodepenerbitans_id','4')->count(),
             );
             array_push($data, $arr);
         };
