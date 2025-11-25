@@ -1607,7 +1607,7 @@ export const actions = {
                     }
                 })
                 .catch(error => {
-                    console.log('There was an error:', error.response)
+                    console.log('There was an error:', error)
                 });
         });
     },
