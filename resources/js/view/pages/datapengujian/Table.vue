@@ -135,8 +135,12 @@ import { mapState, mapActions } from "vuex";
 export default {
   created() {
     // this.getDatapengujians();
-    var CurrentDate = moment().format("MM-DD-YYYY");
-    this.tgl=CurrentDate;
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, "0");
+        var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + "-" + mm + "-" + dd;
+        this.tgl = today;
   },
   data() {
     return {
