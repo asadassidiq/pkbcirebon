@@ -69,17 +69,16 @@ class PengujianService
                 $insertMap = [
                     'LaikJalan' => [$request[2], 'Laik Jalan'],
                 ];
-                dd($checkident['identitaskendaraan_id']);
-                try {
+                // try {
                     $datakendaraan = $this->repoPengujian->Datakendaraan($request[3], $checkident['identitaskendaraan_id']);
-                } catch (Exception $e) {
-                    $statusInsert = false;
-                    if (strlen($message) > 0) {
-                        $message = $message . ', Datakendaraan';
-                    } else {
-                        $message = 'Datakendaraan';
-                    }
-                }
+                // } catch (Exception $e) {
+                //     $statusInsert = false;
+                //     if (strlen($message) > 0) {
+                //         $message = $message . ', Datakendaraan';
+                //     } else {
+                //         $message = 'Datakendaraan';
+                //     }
+                // }
             } else {
                 $requestPend = $request[1];
                 $insertMap = [
