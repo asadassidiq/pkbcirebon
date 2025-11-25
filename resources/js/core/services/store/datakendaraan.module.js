@@ -1053,13 +1053,7 @@ export const actions = {
               title: "Oops...",
               text: new String(error).replace("Error: ", ""),
             });
-          } else {
-            Swal.fire({
-              icon: "error",
-              title: "Oops...",
-              text: "Terjadi kesalahan pada server",
-            });
-          }
+          } 
         });
     });
   },
