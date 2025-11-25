@@ -666,6 +666,9 @@ export const mutations = {
       mutations.SET_STATUS(state, state.pendaftaran.pos1);
     }
   },
+  ASSING_ALASAN(state, alasan) {
+      state.alasan = alasan;
+  },
   ASSIGN_FORM(state, payload) {
     state.identitaskendaraan = {
       merek: payload.merek,
@@ -1143,11 +1146,8 @@ export const actions = {
     return new Promise((resolve, reject) => {
       PosService.getCatatan(id, state.catatan.nama)
         .then((response) => {
-          console.log(response.data.result);
           if (response.data.result == "kosong") {
-          console.log('response.data.result');
           } else {
-            console.log('response.data.result1');
             commit("ASSIGN_CATATAN", response.data.result);
           }
           resolve(response.data);
