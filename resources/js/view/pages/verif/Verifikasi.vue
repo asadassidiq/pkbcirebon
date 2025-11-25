@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label>Jenis Pendaftaran</label>
+                            <label>Jenis Pelayanan</label>
                             <input type="text" class="form-control  form-control-lg" name="width"
                                 readonly v-model="identitaskendaraan.keterangan" />
                         </div>

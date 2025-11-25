@@ -32,7 +32,7 @@
               <th>No Kendaraan</th>
               <th>No Uji</th>
               <th>Nama</th>
-              <th>Jenis Pendaftaran</th>
+              <th>Jenis Pelayanan</th>
               <th>Modify</th>
             </tr>
           </thead>

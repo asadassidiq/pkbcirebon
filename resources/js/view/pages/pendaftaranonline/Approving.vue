@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label>Jenis Pendaftaran</label>
+                            <label>Jenis Pelayanan</label>
                             <input type="text" class="form-control  form-control-lg" name="keterangan"
                                 readonly v-model="approve.keterangan" />
                         </div>

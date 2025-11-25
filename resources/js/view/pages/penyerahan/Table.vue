@@ -38,7 +38,7 @@
               <th>Nama</th>
               <th>Nama Penerima</th>
               <th>Waktu</th>
-              <th>Jenis Pendaftaran</th>
+              <th>Jenis Pelayanan</th>
               <th>Modify</th>
             </tr>
           </thead>

@@ -39,7 +39,7 @@
     				    <thead>
     				        <tr>
     				            <th>No.</th> 
-                        <th>Jenis Pendaftaran</th>
+                        <th>Jenis Pelayanan</th>
                         <th>No Uji</th>
                         <th>No Kendaraan</th>
                         <th>Modify</th>
@@ -103,7 +103,7 @@
             <b-form-datepicker id="example-datepicker" v-model="identitaskendaraan.tglpendaftaran" locale="id"></b-form-datepicker>
           </div>
           <div class="form-group">
-            <label>Jenis Pendaftaran</label>
+            <label>Jenis Pelayanan</label>
             <select class="form-control" v-model="identitaskendaraan.kodepenerbitans_id">
              <option selected="selected" value="1">Daftar Baru</option>
                 <option value="2">Perpanjangan</option>

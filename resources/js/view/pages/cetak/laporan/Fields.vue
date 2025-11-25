@@ -302,7 +302,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-2">
-                            <label>Jenis Pendaftaran</label>
+                            <label>Jenis Pelayanan</label>
                             <select
                                 class="form-control"
                                 v-model="jenispendaftaran"

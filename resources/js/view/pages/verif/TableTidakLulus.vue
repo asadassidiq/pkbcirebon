@@ -30,7 +30,7 @@
 						<thead>
 							<tr>
 								<th>No.</th>
-								<th>Jenis Pendaftaran</th>
+								<th>Jenis Pelayanan</th>
 								<th>No Uji</th>
 								<th>No Kendaraan</th>
 								<th>Modify</th>

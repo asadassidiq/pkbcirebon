@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label>Jenis Pendaftaran</label>
+                                            <label>Jenis Pelayanan</label>
                                             <select class="form-control" v-model="pendaftaranonline.kodepenerbitans_id">
                                                 <option value="1">Uji Pertama</option>
                                                 <option value="2">Uji Berkala</option>
