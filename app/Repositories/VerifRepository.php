@@ -60,9 +60,15 @@ class VerifRepository
     {
 
         $data = $this->model1
-            ->select('pendaftarans.noantrian', 'pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'pendaftarans.posisi', 'identitaskendaraans.noregistrasikendaraan', 'pendaftarans.pos1', 'pendaftarans.pos2', 'pendaftarans.pos3', 'pendaftarans.pos4', 'pendaftarans.posverif')
+            ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'pendaftarans.posisi', 'identitaskendaraans.noregistrasikendaraan', 'pendaftarans.pos1', 'pendaftarans.user_pos1', 'pendaftarans.pos2' ,'pendaftarans.user_pos2', 'pendaftarans.pos3' ,'pendaftarans.user_pos3', 'pendaftarans.pos4' ,'pendaftarans.user_pos4', 'pendaftarans.posverif','pendaftarans.user_posverif',
+                'u1.name as nama_user_pos1',
+                'u2.name as nama_user_pos2',
+                'u3.name as nama_user_pos3',
+                'u4.name as nama_user_pos4',
+                'uv.name as nama_user_posverif'
+                )
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
-            ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
+            ->leftjoin('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
             ->where('pendaftarans.tglpendaftaran', request()->t)
             ->orderBy('pendaftarans.noantrian', 'DESC');
         $search = str_replace("/", "", request()->q);
