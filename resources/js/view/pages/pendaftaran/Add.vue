@@ -1343,6 +1343,7 @@ export default {
     },
     caridata() {
       this.getIdentitaskendaraanNouji().then(() => {
+        console.log(this.carinouji);
         if (this.carinouji == 1) {
           Swal.fire({
             icon: 'success',
