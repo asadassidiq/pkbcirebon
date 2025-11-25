@@ -32,9 +32,6 @@
                         
                         <!--begin::Body-->
                         <div class="card-body text-center">
-                            <div style="text-align:center;">
-                                <img width="50%" height="50%" src="{{ asset('img/kota.png') }}" class="img-fluid">
-                            </div>
                             <div style="text-align:center;font-size: 32px;font-weight: bold;">
                                 <p>UPTD Pengujian Kendaraan Bermotor <br> Dinas Perhubungan Kota Cirebon</p>
                             </div> 
