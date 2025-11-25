@@ -47,7 +47,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="datapengujian,index in datapengujian.datapengujians.data" :key="datapengujian.idx">
-                      <td>{{ index+1 }}</td>
+                      <td>{{ pendaftaran.noantrian }}</td>
                       <td>{{ datapengujian.keterangan }}</td>
                       <td>{{ datapengujian.nouji }}</td>
                       <td>{{ datapengujian.noregistrasikendaraan }}</td>

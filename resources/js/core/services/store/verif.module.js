@@ -372,7 +372,7 @@ export const state = {
     catatanverif: "",
     tglujiulang: "",
     user_verif: "",
-    jenis_cetak: "0",
+    jenis_cetak: "1",
   },
   pengujian2: {
     pos1: "0",
@@ -790,7 +790,7 @@ export const mutations = {
       catatanverif: "",
       tglujiulang: "",
       user_verif: "",
-      jenis_cetak: "0",
+      jenis_cetak: "1",
     };
     state.pengujian2 = {
       pos1: "0",

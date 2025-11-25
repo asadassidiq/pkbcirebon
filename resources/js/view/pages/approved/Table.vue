@@ -41,7 +41,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="approved,index in approved.approveds.data" :key="approved.uuid">
-                            <td>{{ index + 1 }}</td>
+                            <td>{{ pendaftaran.noantrian }}</td>
                             <td>{{ approved.noregistrasikendaraan }}</td>
                             <td>{{ approved.nouji }}</td>
                             <td>{{ approved.nama }}</td>
