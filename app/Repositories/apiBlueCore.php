@@ -30,7 +30,7 @@ class apiBlueCore
         if(empty($keyword) || is_null($keyword)){
             $keyword = null;
         };
-        $token = "eyJpdiI6Ilc0MjZBdE83Nkg3SGhReEgxYVQxN3c9PSIsInZhbHVlIjoiYUQ5Z1RMbGtINkRBbTJDbU9xQUVWb25nQzFpUW1HS1paemQxUjNCTm1hQ2ppMmtjY2FQZDdCbkk4WTNvNzg4ditxT1BFV0Rma2JCUzdVL0RSRUNLTE5pNU1HTUZjSFl1cTJuSEVMamtQbVQvc1RTSHkwMytUT05STHdOTG80VlgiLCJtYWMiOiIxMWQ5ZjU2ZDFjNmNlZmM1Nzg2MjljZTM4ZjQ2NmJmNWIxYjI5NGJjNWRjMTNhOWI0NjJlNjlhYTU2NGQ5OTFlIn0=";
+        $token = "eyJpdiI6ImltODYxQVRPejZsVzd1RktKcUcwaUE9PSIsInZhbHVlIjoiU1M4ODg3bFdaZHlsQWFHaFRUSFM0akpTbEdzaWtpcGs0bTBnMUdFMTk4RVNXbUZjWFp4aFllNkpzZ2Jza1FuZGFTbGRLemRPZjBVdmQwMUJTR0pYTjJ5Zm5NQzdmclZNdGdrU0s1Qlg1ejllRVVOYVZwMCtwWTZPbnh6cENOMVgiLCJtYWMiOiJjZjA5MjA1MzljNWRjZGJhNjI2N2UzZTM2Nzk1YTIxMzc4ZjQ3ZTgxNGVlODNlNGQ5OTYxNzNmMWMxM2NjYWQwIn0=";
         
         // Data yang akan dikirim dalam format JSON
 
@@ -314,10 +314,10 @@ class apiBlueCore
         $curl = curl_init();
         // Data yang akan dikirim dalam format JSON
             $data = json_encode([
-                // "email" => "pkblotara@gmail.com",
-                // "password" => "Test12345@",
-                "email" => "dishub@bantulkab.go.id",
-                "password" => "28N81p5@Edu7",
+                "email" => "pkblotara@gmail.com",
+                "password" => "Test12345@",
+                // "email" => "dishub@bantulkab.go.id",
+                // "password" => "28N81p5@Edu7",
             ]);
 
         // return $data;
