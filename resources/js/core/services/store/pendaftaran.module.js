@@ -1593,7 +1593,7 @@ export const actions = {
                         var tglpendaftaran = state.pendaftaran.tglpendaftaran;
                         var nosurat = state.pendaftaran.nosurat;
                         var noantrian = state.pendaftaran.noantrian;
-                        commit("CLEAR_FORM");
+                        // commit("CLEAR_FORM");
                         commit("ASSIGN_FORMNOUJI", response.data.result);
                         state.pendaftaran.nouji = nouji;
                         state.pendaftaran.kodepenerbitans_id = kode;
