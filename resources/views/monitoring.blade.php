@@ -7,7 +7,6 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<!--end::Fonts-->
-		<!-- <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css"/> -->
 		<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
 		<link href="{{ mix('css/app.css').'?r='.time() }}" type="text/css" rel="stylesheet"/>
         <!-- DataTables (CDN) -->
@@ -81,6 +80,7 @@
 		<!--begin::Javascript-->
 		<script>var hostUrl = "assets/";</script>
 		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<script src="{{ asset('js/app.js').'?r='.time() }}" type="text/javascript"></script>
 
 		<!-- DataTables (CDN) -->
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
