@@ -39,6 +39,14 @@ export const state = {
     beratsumbu10: "0",
     beratsumbu11: "0",
     beratsumbu12: "0",
+    dayaangkutorang: "0",
+    dayaangkutbarang: "0",
+    jbi: "0",
+    jbki: "0",
+    mst:"0",
+    kelasjalanterendah:"",
+    konfigurasisumburoda:"",
+    jbkb:"0",
   },
   laikjalan: {
     pendaftaran_id: "",
@@ -93,6 +101,7 @@ export const state = {
     status_remkanan: "0",
     status_remkiri: "0",
     status_remparkir: "0",
+    status_dayaangkut: "0",
   },
   pengujian: {
     pendaftaran_id: "",
@@ -217,6 +226,7 @@ export const mutations = {
       status_remkanan: payload.status_remkanan,
       status_remkiri: payload.status_remkiri,
       status_remparkir: payload.status_remparkir,
+      status_dayaangkut: payload.status_dayaangkut,
     };
   },
   ASSIGN_FORM(state, payload) {
@@ -245,6 +255,14 @@ export const mutations = {
       beratsumbu10: payload.beratsumbu10,
       beratsumbu11: payload.beratsumbu11,
       beratsumbu12: payload.beratsumbu12,
+      dayaangkutorang: payload.dayaangkutorang,
+      dayaangkutbarang: payload.dayaangkutbarang,
+      jbi: payload.jbi,
+      jbki: payload.jbki,
+      mst: payload.mst,
+      kelasjalanterendah: payload.kelasjalanterendah,
+      konfigurasisumburoda: payload.konfigurasisumburoda,
+      jbkb: payload.jbkb,
     };
   },
   CHECK_HASILUJI(state) {

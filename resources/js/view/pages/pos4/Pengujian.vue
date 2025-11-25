@@ -94,6 +94,29 @@
             <div class="card card-custom">
                 <div class="card-header">
                     <div class="card-title">
+                        <h3 class="card-label" v-bind:style="laikjalan.status_dayaangkut == '0'
+                                ? 'background-color: #DC143C;'
+                                : 'background-color: #FFFFFF;'
+                            ">
+                            Berat Kosong dan Daya Angkut Kendaraan
+                        </h3>
+                    </div>
+                    <div class="card-toolbar">
+                        <b-button v-b-toggle.collapse-bkdaya
+                            class="btn btn-icon btn-circle btn-sm btn-light-primary mr-1">
+                            <i class="ki ki-arrow-down icon-nm"></i>
+                        </b-button>
+                    </div>
+                </div>
+                <b-collapse id="collapse-bkdaya">
+                    <div class="card-body">
+                        <bkdaya-form></bkdaya-form>
+                    </div>
+                </b-collapse>
+            </div>
+            <div class="card card-custom">
+                <div class="card-header">
+                    <div class="card-title">
                         <h3 class="card-label" v-bind:style="laikjalan.status_remparkir == 0 || laikjalan.status_remparkir == 0
                             ? 'background-color: #DC143C;'
                             : 'background-color: #FFFFFF;'
@@ -237,6 +260,7 @@ import Swal from "sweetalert2";
 import { mapActions, mapState, mapGetters, mapMutations } from "vuex";
 import FormSpeed from "../formPengujian/FormSpeedometer.vue";
 import FormRem from "../formPengujian/FormRem.vue";
+import FormBKDayaangkut from "./FormBKDayaangkut.vue";
 
 export default {
     data() {
@@ -311,6 +335,7 @@ export default {
     components: {
         "posRem-form": FormRem,
         "posSpeed-form": FormSpeed,
+        'bkdaya-form': FormBKDayaangkut,
     },
 };
 </script>
