@@ -128,6 +128,7 @@
         <div style="display: flex; gap: 20px; align-items: center;">
           <img src="img/kota.png" style="width: 70px; height: auto; object-fit: contain;">
           <img src="img/dishub.jpg" style="width: 70px; height: auto; object-fit: contain;">
+          <img src="img/bsre.jpeg" style="width: 180px; height: 350px; object-fit: contain;">
         </div>
         </div>
         <!--end::Content footer-->
@@ -163,6 +164,7 @@ export default {
       state: "signin",
       loadingpage:false,
       showPassword: false,
+      // siteKey:"6LcKZysrAAAAAM1wREmk-8xv88UIsNdclLnzd5zb",
       recaptchaSitekey:"",
       // siteKey:import.meta.env.RECAPTCHA_SITE_KEY,
       // Remove this dummy login info
@@ -187,7 +189,6 @@ export default {
     }
   },
   mounted() {
-    
     const meta = document.querySelector('meta[name="recaptcha-sitekey"]');
     if (meta) {
       this.recaptchaSitekey = meta.getAttribute('content');
@@ -259,12 +260,14 @@ export default {
                   timer: 1500,
                   heightAuto: false
                 });
-              }else if(this.user.jabatan == 'KEPALA UPT PKB' && this.user.ct == true){
-                  this.$router.push({ name: "monitoring.data" })
               }else if(this.user.v1 == true){
                   this.$router.push({ name: "verif.data" })
+              }else if(this.user.v2 == true){
+                  this.$router.push({ name: "verif2.data" })
               }else if(this.user.pf == true){
                   this.$router.push({ name: "pendaftaran.data" })
+              }else if(this.user.ft == true){
+                  this.$router.push({ name: "foto.data" })
               }else if(this.user.p1 == true){
                   this.$router.push({ name: "pos1.data" })
               }else if(this.user.p2 == true){
@@ -272,17 +275,11 @@ export default {
               }else if(this.user.p3 == true){
                   this.$router.push({ name: "pos3.data" })
               }else if(this.user.p4 == true){
-                  this.$router.push({ name: "pos4.data" })
-              }else if(this.user.p5 == true){
-                  this.$router.push({ name: "pos5.data" })
-              }else if(this.user.p6 == true){
-                  this.$router.push({ name: "pos6.data" })
-              }else if(this.user.p7 == true){
-                  this.$router.push({ name: "pos7.data" })
-              }else if(this.user.p8 == true){
-                  this.$router.push({ name: "pos8.data" })
+                  this.$router.push({ name: "pos3.data" })
               }else if(this.user.ct == true){
                   this.$router.push({ name: "datapengujian.data" })
+              }else if((this.user.jabatan == 'KEPALA UPTD PKB' || this.user.jabatan == 'KEPALA') && this.user.ct == true){
+                  this.$router.push({ name: "monitoring.data" })
               }else{
                   this.$router.push({ name: "login" })
               }
