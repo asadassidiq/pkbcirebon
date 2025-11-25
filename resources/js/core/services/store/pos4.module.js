@@ -48,6 +48,7 @@ export const state = {
     kelasjalanterendah:"",
     idkelasjalanterendah:"",
     konfigurasisumburoda:"",
+    ukuranban:"",
     jbkb:"0",
   },
   laikjalan: {
@@ -268,6 +269,7 @@ export const mutations = {
       kelasjalanterendah: payload.kelasjalanterendah,
       idkelasjalanterendah: payload.idkelasjalanterendah,
       konfigurasisumburoda: payload.konfigurasisumburoda,
+      ukuranban: payload.ukuranban,
       jbkb: payload.jbkb,
     };
   },
