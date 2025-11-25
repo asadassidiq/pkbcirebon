@@ -108,7 +108,7 @@
                         </b-button>
                     </div>
                 </div>
-                <b-collapse id="collapse-bkdaya" visible>
+                <b-collapse id="collapse-bkdaya">
                     <div class="card-body">
                         <bkdaya-form></bkdaya-form>
                     </div>
@@ -278,6 +278,7 @@ export default {
         ]);
     },
     created() {
+        this.getKelasJalans();
         this.getIdentitaskendaraan(this.$route.params.id).then(() => {
             this.editPos(this.$route.params.id).then(() => {
                 this.hasiluji();
@@ -286,7 +287,7 @@ export default {
     },
     methods: {
         ...mapMutations("pos4", ["CLEAR_FORM", "CLEAR_CATATAN", "CHECK_HASILUJI"]),
-        ...mapActions("pos4", ["submitPos", "getIdentitaskendaraan", "editPos"]),
+        ...mapActions("pos4", ["submitPos", "getIdentitaskendaraan", "editPos","getKelasJalans"]),
         submit() {
             this.submitPos(this.$route.params.id).then(() => {
                 Swal.fire({

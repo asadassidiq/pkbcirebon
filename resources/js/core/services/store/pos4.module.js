@@ -7,6 +7,7 @@ export const state = {
   pendaftarans: [],
   pendaftaransLulus: [],
   pendaftaransTLulus: [],
+  kelasjalans:[],
   posisi: "4",
   filter: {
     tgl: "",
@@ -134,6 +135,9 @@ export const mutations = {
   },
   ASSING_DATATLULUS(state, pendaftaransTLulus) {
     state.pendaftaransTLulus = pendaftaransTLulus;
+  },
+  DATA_KELASJALAN(state, kelasjalans){
+      state.kelasjalans = kelasjalans;
   },
   SET_PAGE(state, payload) {
     state.page = payload;
@@ -543,7 +547,7 @@ export const actions = {
   },
   submitPos({ dispatch, commit, state }, id) {
     var data = [];
-    data.push(id, state.pendaftaran, state.laikjalan);
+    data.push(id, state.pendaftaran, state.laikjalan, state.identitaskendaraan);
     return new Promise((resolve, reject) => {
       PosService.postPos(data, state.posisi)
         .then((response) => {
@@ -578,6 +582,11 @@ export const actions = {
           }
         });
     });
+  },
+  async getKelasJalans({ commit, state }) {
+      return await PosService.getKelasJalans().then(response => {
+          commit("DATA_KELASJALAN", response.data.result.data);
+      });
   },
 };
 export const getters = {

@@ -26,4 +26,7 @@ export default {
   postCatatan(catatan) {
     return ApiService.post("/catatan", catatan);
   },
+  getKelasJalans() {
+      return ApiService.get(`/bluecore?p=kelasjalan`);
+  },
 };

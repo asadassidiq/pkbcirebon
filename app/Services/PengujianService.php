@@ -64,6 +64,21 @@ class PengujianService
                     'LaikJalan' => [$request[2], 'Laik Jalan'],
                     'BagianBawahKendaraan' => [$request[3], 'Bawah'],
                 ];
+            }elseif ($ps == '4') {
+                $requestPend = $request[1];
+                $insertMap = [
+                    'LaikJalan' => [$request[2], 'Laik Jalan'],
+                ];
+                try {
+                    $datakendaraan = $this->repoPengujian->Datakendaraan($request[3], $checkident['identitaskendaraan_id']);
+                } catch (Exception $e) {
+                    $statusInsert = false;
+                    if (strlen($message) > 0) {
+                        $message = $message . ', Datakendaraan';
+                    } else {
+                        $message = 'Datakendaraan';
+                    }
+                }
             } else {
                 $requestPend = $request[1];
                 $insertMap = [
