@@ -53,50 +53,80 @@
                 <td v-else-if="monitoring.posisi == 6">Cetak</td>
                 <td v-else-if="monitoring.posisi == 7">Diserahkan</td>
                 <td v-else>Selesai</td>
-                <td v-if="monitoring.pos1 == 0">
-                  <a href="javascript:void(0)"><i class="flaticon-circle text-danger"></i></a>
+                <td v-if="monitoring.pos1 == 0" class="text-center">
+                  <a href="javascript:void(0)" class="d-block">
+                    <i class="flaticon-circle text-danger"></i>
+                    <small class="text-danger d-block">{{ monitoring.nama_user_pos1 }}</small>
+                  </a>
                 </td>
-                <td v-else-if="monitoring.pos1 == 1">
-                  <a href="javascript:void(0)"><i class="flaticon2-correct text-success"></i></a>
+                <td v-else-if="monitoring.pos1 == 1" class="text-center">å
+                  <a href="javascript:void(0)" class="d-block">
+                    <i class="flaticon-correct text-success"></i>
+                    <small class="text-danger d-block">{{ monitoring.nama_user_pos1 }}</small>
+                  </a>
                 </td>
-                <td v-else>
-                  <a href="javascript:void(0)"><i class="flaticon2-line text-dark"></i></a>
+                <td v-else class="text-center">
+                  <a href="javascript:void(0)" class="d-block"><i class="flaticon2-line text-dark"></i></a>
                 </td>
-                <td v-if="monitoring.pos2 == 0">
-                  <a href="javascript:void(0)"><i class="flaticon-circle text-danger"></i></a>
+                <td v-if="monitoring.pos2 == 0" class="text-center">
+                  <a href="javascript:void(0)" class="d-block">
+                    <i class="flaticon-circle text-danger"></i>
+                    <small class="text-danger d-block">{{ monitoring.nama_user_pos2 }}</small>
+                  </a>
                 </td>
-                <td v-else-if="monitoring.pos2 == 1">
-                  <a href="javascript:void(0)"><i class="flaticon2-correct text-success"></i></a>
+                <td v-else-if="monitoring.pos2 == 1" class="text-center">
+                  <a href="javascript:void(0)" class="d-block">
+                    <i class="flaticon2-correct text-success"></i>
+                    <small class="text-success d-block">{{ monitoring.nama_user_pos2 }}</small>
+                  </a>
                 </td>
-                <td v-else>
-                  <a href="javascript:void(0)"><i class="flaticon2-line text-dark"></i></a>
+                <td v-else class="text-center">
+                  <a href="javascript:void(0)" class="d-block"><i class="flaticon2-line text-dark"></i></a>
                 </td>
-                <td v-if="monitoring.pos3 == 0">
-                  <a href="javascript:void(0)"><i class="flaticon-circle text-danger"></i></a>
+                <td v-if="monitoring.pos3 == 0" class="text-center">
+                  <a href="javascript:void(0)" class="d-block">
+                    <i class="flaticon-circle text-danger"></i>
+                    <small class="text-danger d-block">{{ monitoring.nama_user_pos3 }}</small>
+                  </a>
                 </td>
-                <td v-else-if="monitoring.pos3 == 1">
-                  <a href="javascript:void(0)"><i class="flaticon2-correct text-success"></i></a>
+                <td v-else-if="monitoring.pos3 == 1" class="text-center">
+                  <a href="javascript:void(0)" class="d-block">
+                    <i class="flaticon2-correct text-success"></i>
+                    <small class="text-success d-block">{{ monitoring.nama_user_pos3 }}</small>
+                  </a>
                 </td>
-                <td v-else>
-                  <a href="javascript:void(0)"><i class="flaticon2-line text-dark"></i></a>
+                <td v-else class="text-center">
+                  <a href="javascript:void(0)" class="d-block"><i class="flaticon2-line text-dark"></i></a>
                 </td>
-                <td v-if="monitoring.pos4 == 0">
-                  <a href="javascript:void(0)"><i class="flaticon-circle text-danger"></i></a>
+                <td v-if="monitoring.pos4 == 0" class="text-center">
+                  <a href="javascript:void(0)" class="d-block">
+                    <i class="flaticon-circle text-danger"></i>
+                    <small class="text-danger d-block">{{ monitoring.nama_user_pos4 }}</small>
+                  </a>
                 </td>
-                <td v-else-if="monitoring.pos4 == 1">
-                  <a href="javascript:void(0)"><i class="flaticon2-correct text-success"></i></a>
+                <td v-else-if="monitoring.pos4 == 1" class="text-center">
+                  <a href="javascript:void(0)" class="d-block">
+                    <i class="flaticon2-correct text-success"></i>
+                    <small class="text-success d-block">{{ monitoring.nama_user_pos4 }}</small>
+                  </a>
                 </td>
-                <td v-else>
-                  <a href="javascript:void(0)"><i class="flaticon2-line text-dark"></i></a>
+                <td v-else class="text-center">
+                  <a href="javascript:void(0)" class="d-block"><i class="flaticon2-line text-dark"></i></a>
                 </td>
-                <td v-if="monitoring.posverif == 0">
-                  <a href="javascript:void(0)"><i class="flaticon-circle text-danger"></i></a>
+                <td v-if="monitoring.posverif == 0" class="text-center">
+                  <a href="javascript:void(0)" class="d-block">
+                    <i class="flaticon-circle text-danger"></i>
+                    <small class="text-danger d-block">{{ monitoring.nama_user_posverif }}</small>
+                  </a>
                 </td>
-                <td v-else-if="monitoring.posverif == 1">
-                  <a href="javascript:void(0)"><i class="flaticon2-correct text-success"></i></a>
+                <td v-else-if="monitoring.posverif == 1" class="text-center">
+                  <a href="javascript:void(0)" class="d-block">
+                    <i class="flaticon2-correct text-success"></i>
+                    <small class="text-success d-block">{{ monitoring.nama_user_posverif }}</small>
+                  </a>
                 </td>
-                <td v-else>
-                  <a href="javascript:void(0)"><i class="flaticon2-line text-dark"></i></a>
+                <td v-else class="text-center">
+                  <a href="javascript:void(0)" class="d-block"><i class="flaticon2-line text-dark"></i></a>
                 </td>
               </tr>
             </tbody>
