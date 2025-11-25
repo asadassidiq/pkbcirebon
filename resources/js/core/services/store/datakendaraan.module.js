@@ -257,7 +257,7 @@ export const mutations = {
       jenis: payload.jenis,
       subjenis: payload.subjenis,
       model: payload.model,
-      peruntukan: payload.peruntukan.toUpperCase(),
+      peruntukan: payload.peruntukan,
       kodewilayah: payload.kodewilayah,
       kodewilayahasal: payload.kodewilayahasal,
       wilayah: "",
@@ -327,6 +327,13 @@ export const mutations = {
       catatanrubahbentuk: payload.catatanrubahbentuk,
       bahan: payload.bahan,
     };
+
+    if(payload.peruntukan !== null && payload.peruntukan  !== undefined && payload.peruntukan  !== ""){
+        try {
+            state.datakendaraan.peruntukan = state.datakendaraan.peruntukan.toUpperCase();
+        } catch (e) {
+        }
+    }
     if (
       payload.kodewilayah !== null &&
       payload.kodewilayah !== undefined &&
@@ -541,7 +548,7 @@ export const mutations = {
       jenis: payload.jenis,
       subjenis: payload.subjenis,
       model: payload.model,
-      peruntukan: payload.peruntukan.toUpperCase(),
+      peruntukan: payload.peruntukan,
       kodewilayah: payload.kodewilayah,
       kodewilayahasal: payload.kodewilayahasal,
       wilayah: "",
