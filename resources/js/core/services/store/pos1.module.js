@@ -1143,8 +1143,11 @@ export const actions = {
     return new Promise((resolve, reject) => {
       PosService.getCatatan(id, state.catatan.nama)
         .then((response) => {
+          console.log(response.data.result);
           if (response.data.result == "kosong") {
+          console.log('response.data.result');
           } else {
+            console.log('response.data.result1');
             commit("ASSIGN_CATATAN", response.data.result);
           }
           resolve(response.data);
