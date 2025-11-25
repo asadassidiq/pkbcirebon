@@ -34,7 +34,7 @@
                         <div class="card-body text-center">
 							<div class="row">
 								<div class="col-4">
-									<img width="50%" height="50%" src="{{ asset('img/kota.png') }}" class="img-fluid">
+									<img style="width: 180px; height: auto;" src="{{ $logokab }}">
 								</div>
 								<div class="col-4">
 									<div style="text-align:center;font-size: 32px;font-weight: bold;">
