@@ -260,7 +260,7 @@ import Swal from "sweetalert2";
 import { mapActions, mapState, mapGetters, mapMutations } from "vuex";
 import FormSpeed from "../formPengujian/FormSpeedometer.vue";
 import FormRem from "../formPengujian/FormRem.vue";
-import FormBKDayaangkut from "./FormBKDayaangkut.vue";
+import FormBKDayaangkut from "../formPengujian/FormBKDayaangkut.vue";
 
 export default {
     data() {
