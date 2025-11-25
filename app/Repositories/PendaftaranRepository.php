@@ -122,6 +122,8 @@ class PendaftaranRepository
 
     public function getMonitoring()
     {
+        // $date = date("Y-m-d");
+        $date = "2025-11-25";
         $data = $this->model
             ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'pendaftarans.posisi', 'identitaskendaraans.noregistrasikendaraan', 'pendaftarans.pos1', 'pendaftarans.user_pos1', 'pendaftarans.pos2' ,'pendaftarans.user_pos2', 'pendaftarans.pos3' ,'pendaftarans.user_pos3', 'pendaftarans.pos4' ,'pendaftarans.user_pos4', 'pendaftarans.posverif','pendaftarans.user_posverif',
                 'u1.name as nama_user_pos1',
@@ -137,7 +139,7 @@ class PendaftaranRepository
             ->leftJoin('users as u4', 'pendaftarans.user_pos4', '=', 'u4.id')
             ->leftJoin('users as uv', 'pendaftarans.user_posverif', '=', 'uv.id')
             ->leftjoin('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
-            ->where('pendaftarans.tglpendaftaran', date("Y-m-d"))
+            ->where('pendaftarans.tglpendaftaran', $date)
             ->orderBy('pendaftarans.posisi', 'DESC');
         return $data->get();
     }
