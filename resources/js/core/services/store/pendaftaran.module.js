@@ -442,7 +442,7 @@ export const mutations = {
             jenis: payload.jenis,
             subjenis: payload.subjenis,
             model: payload.model,
-            peruntukan: payload.peruntukan.toUpperCase(),
+            peruntukan: payload.peruntukan,
             kodewilayah: payload.kodewilayah,
             kodewilayahasal: payload.kodewilayahasal,
             wilayah:"",
@@ -516,6 +516,13 @@ export const mutations = {
                     state.pendaftaran.alasan = JSON.parse(payload.alasan);
                 } catch (e) {
                     state.pendaftaran.alasan = []; 
+                }
+            }
+
+            if(payload.peruntukan !== null && payload.peruntukan  !== undefined && payload.peruntukan  !== ""){
+                try {
+                    state.pendaftaran.peruntukan = state.pendaftaran.peruntukan.toUpperCase();
+                } catch (e) {
                 }
             }
         
@@ -887,6 +894,13 @@ export const mutations = {
             }
 
             state.pendaftaran.alasan = []; 
+
+            if(payload.peruntukan !== null && payload.peruntukan  !== undefined && payload.peruntukan  !== ""){
+                try {
+                    state.pendaftaran.peruntukan = state.pendaftaran.peruntukan.toUpperCase();
+                } catch (e) {
+                }
+            }
             
             
         // setTimeout(() => {
