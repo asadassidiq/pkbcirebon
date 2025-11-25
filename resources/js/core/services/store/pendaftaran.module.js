@@ -707,7 +707,7 @@ export const mutations = {
                 jenis: state.pendaftaran.jenis,
                 subjenis: state.pendaftaran.subjenis,
                 model: state.pendaftaran.model,
-                peruntukan: state.pendaftaran.peruntukan.toUpperCase(),
+                peruntukan: state.pendaftaran.peruntukan,
                 kodewilayah: state.pendaftaran.kodewilayah,
                 kodewilayahasal: state.pendaftaran.kodewilayahasal,
                 nosertifikatreg: state.pendaftaran.nosertifikatreg,
@@ -774,6 +774,13 @@ export const mutations = {
                 catatanrubahbentuk:state.pendaftaran.catatanrubahbentuk,
                 bahan:state.pendaftaran.bahan,
         };
+        
+        if(payload.peruntukan !== null && payload.peruntukan  !== undefined && payload.peruntukan  !== ""){
+            try {
+                state.pendaftaran.peruntukan = state.pendaftaran.peruntukan.toUpperCase();
+            } catch (e) {
+            }
+        }
         // }, 500);
     },
     ASSIGN_FORMNOUJI(state, payload) {
@@ -809,7 +816,7 @@ export const mutations = {
             jenis: payload.jenis,
             subjenis: payload.subjenis,
             model: payload.model,
-            peruntukan: payload.peruntukan.toUpperCase(),
+            peruntukan: payload.peruntukan,
             kodewilayah: payload.kodewilayah,
             kodewilayahasal: payload.kodewilayahasal,
             wilayah:"",
@@ -880,6 +887,12 @@ export const mutations = {
             catatanrubahbentuk:payload.catatanrubahbentuk,
             bahan:payload.bahan,
         };  
+        if(payload.peruntukan !== null && payload.peruntukan  !== undefined && payload.peruntukan  !== ""){
+            try {
+                state.pendaftaran.peruntukan = state.pendaftaran.peruntukan.toUpperCase();
+            } catch (e) {
+            }
+        }
             if(typeof(payload.tglsertifikatreg) === 'undefined'){
                 state.pendaftaran.tglsertifikatreg = null;
             }
@@ -1060,7 +1073,7 @@ export const mutations = {
                 jenis: state.pendaftaran.jenis,
                 subjenis: state.pendaftaran.subjenis,
                 model: state.pendaftaran.model,
-                peruntukan: state.pendaftaran.peruntukan.toUpperCase(),
+                peruntukan: state.pendaftaran.peruntukan,
                 kodewilayah: state.pendaftaran.kodewilayah,
                 kodewilayahasal: state.pendaftaran.kodewilayahasal,
                 nosertifikatreg: state.pendaftaran.nosertifikatreg,
