@@ -69,6 +69,11 @@ class VerifRepository
                 )
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->leftjoin('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
+            ->leftJoin('users as u1', 'pendaftarans.user_pos1', '=', 'u1.id')
+            ->leftJoin('users as u2', 'pendaftarans.user_pos2', '=', 'u2.id')
+            ->leftJoin('users as u3', 'pendaftarans.user_pos3', '=', 'u3.id')
+            ->leftJoin('users as u4', 'pendaftarans.user_pos4', '=', 'u4.id')
+            ->leftJoin('users as uv', 'pendaftarans.user_posverif', '=', 'uv.id')
             ->where('pendaftarans.tglpendaftaran', request()->t)
             ->orderBy('pendaftarans.noantrian', 'DESC');
         $search = str_replace("/", "", request()->q);
