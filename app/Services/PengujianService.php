@@ -69,6 +69,7 @@ class PengujianService
                 $insertMap = [
                     'LaikJalan' => [$request[2], 'Laik Jalan'],
                 ];
+                dd($request[3]);
                 try {
                     $datakendaraan = $this->repoPengujian->Datakendaraan($request[3], $checkident['identitaskendaraan_id']);
                 } catch (Exception $e) {
