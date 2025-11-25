@@ -9,19 +9,13 @@ import JwtService from "@/core/services/jwt.service";
 const ApiService = {
   init() {
     Vue.use(VueAxios, axios);
-    // Vue.axios.defaults.baseURL = "https://simpkb.sragenkab.go.id/api";
-    
+    // Vue.axios.defaults.baseURL = "https://pkbmimika.stindo.tech/api";
     const appUrlMeta = document.querySelector('meta[name="app-url"]');
     if (appUrlMeta) {
       Vue.axios.defaults.baseURL = appUrlMeta.getAttribute('content')+"/api";
     }else{
       console.log('App Url not found');
     }
-
-    
-    // Vue.axios.defaults.baseURL = "https://site-1:8890/api";
-    // Vue.axios.defaults.baseURL = "http://127.0.0.1:8000/api";
-    // Vue.axios.defaults.baseURL = "http://103.141.234.196/api";
   },
 
   /**
