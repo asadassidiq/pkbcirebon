@@ -1584,6 +1584,7 @@ export const actions = {
             PendaftaranService.getIdentitaskendaraanNouji(state.pendaftaran.nouji)
                 .then(response => {
                     resolve(response.data);
+                    console.log(response.data);
                     if (response.data.result != false) {
                         commit("ASSIGN_FORMNOUJI", response.data.result);
                         state.carinouji = 1;
