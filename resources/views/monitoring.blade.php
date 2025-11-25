@@ -81,7 +81,6 @@
 		<!--begin::Javascript-->
 		<script>var hostUrl = "assets/";</script>
 		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
-		<script src="{{ mix('js/app.js').'?r='.time() }}" type="text/javascript"></script>
 
 		<!-- DataTables (CDN) -->
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
