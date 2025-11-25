@@ -48,6 +48,23 @@
               <span></span>
               {{ item.alasanpenolakan }}
             </label>
+            <label class="checkbox">
+                <input type="checkbox"
+                    v-model="lainnyaChecked"
+                />
+                <span></span>
+                Alasan Lain
+            </label>
+
+            <!-- Input text muncul kalau checkbox dicentang -->
+            <input
+                v-if="lainnyaChecked"
+                type="text"
+                class="form-control mt-2"
+                v-model="inputLainnya"
+                @input="updateAlasanLain"
+                placeholder="Isi alasan lainnya..."
+            >
           </div>
         </div>
       </div>
@@ -63,6 +80,8 @@ export default {
     return {
       lainlain: false,
       coba: [],
+      lainnyaChecked: false,
+      inputLainnya: ""
     };
   },
   computed: {
@@ -161,6 +180,24 @@ export default {
         this.laikjalan[field] = '';
       }
     },
+    initEdit() {
+        // cari yang diawali Lainnya:
+        const lain = this.catatan.alasan.find(item => item.startsWith("Lainnya:"));
+
+        if (lain) {
+        this.lainnyaChecked = true;
+        this.inputLainnya = lain.replace("Lainnya: ", ""); // ambil isi text saja
+        }
+    },
+    updateAlasanLain() {
+        // hapus alasan lama yang berbasis "Lainnya:"
+        this.catatan.alasan = this.catatan.alasan.filter(item => !item.startsWith("Lainnya:"))
+
+        if (this.inputLainnya.trim() !== "") {
+        // tambahkan alasan baru
+        this.catatan.alasan.push("Lainnya: " + this.inputLainnya)
+        }
+    }
   },
   destroyed() {
     this.CLEAR_CATATAN();
