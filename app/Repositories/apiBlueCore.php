@@ -314,10 +314,10 @@ class apiBlueCore
         $curl = curl_init();
         // Data yang akan dikirim dalam format JSON
             $data = json_encode([
-                "email" => "pkblotara@gmail.com",
-                "password" => "Test12345@",
-                // "email" => "dishub@bantulkab.go.id",
-                // "password" => "28N81p5@Edu7",
+                // "email" => "pkblotara@gmail.com",
+                // "password" => "Test12345@",
+                "email" => "dishub@bantulkab.go.id",
+                "password" => "28N81p5@Edu7",
             ]);
 
         // return $data;
