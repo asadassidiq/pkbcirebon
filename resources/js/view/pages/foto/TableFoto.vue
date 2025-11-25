@@ -39,7 +39,7 @@
             </thead>
             <tbody>
               <tr v-for="pendaftaran, index in foto.pendaftaransFoto.data" :key="pendaftaran.uuid">
-                <td>{{ index+1 }}</td>
+                <td>{{ pendaftaran.noantrian }}</td>
                 <td>{{ pendaftaran.keterangan }}</td>
                 <td>{{ pendaftaran.nouji }}</td>
                 <td>{{ pendaftaran.noregistrasikendaraan }}</td>

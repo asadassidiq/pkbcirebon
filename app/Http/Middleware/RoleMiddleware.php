@@ -44,6 +44,7 @@ class RoleMiddleware
             || $ps == 'api/harilibur'
             || $ps == 'api/bluecore'
             || $ps == 'api/vta'
+            || $ps == 'api/master'
         ) {
             $encrypted = $user->pf;
             $checkPs = $user->username . 'pendaftaranok';
