@@ -46,6 +46,7 @@ export const state = {
     jbki: "0",
     mst:"0",
     kelasjalanterendah:"",
+    idkelasjalanterendah:"",
     konfigurasisumburoda:"",
     jbkb:"0",
   },
@@ -265,6 +266,7 @@ export const mutations = {
       jbki: payload.jbki,
       mst: payload.mst,
       kelasjalanterendah: payload.kelasjalanterendah,
+      idkelasjalanterendah: payload.idkelasjalanterendah,
       konfigurasisumburoda: payload.konfigurasisumburoda,
       jbkb: payload.jbkb,
     };
