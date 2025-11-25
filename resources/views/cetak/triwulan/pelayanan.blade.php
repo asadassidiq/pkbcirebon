@@ -132,7 +132,7 @@
             <tr>
                 <th scope="col" rowspan="3">NO</th>
                 <th scope="col" rowspan="3">BULAN</th>
-                <th scope="col" colspan="8">JENIS PELAYANAN</th>
+                <th scope="col" colspan="9">JENIS PELAYANAN</th>
                 <th scope="col" colspan="2">HASIL UJI</th>
                 <th scope="col" rowspan="3">KET</th>
             </tr>

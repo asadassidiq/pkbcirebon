@@ -15,7 +15,7 @@
         <tr>
             <td rowspan="3">NO</td>
             <td rowspan="3">TANGGAL</td>
-            <td colspan="8">JENIS PELAYANAN</td>
+            <td colspan="9">JENIS PELAYANAN</td>
             <td colspan="2">HASIL UJI</td>
             <td rowspan="3">KET</td>
         </tr>
