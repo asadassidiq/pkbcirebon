@@ -37,9 +37,7 @@
 									<img style="width: 80px; height: auto;" src="{{ asset('img/kota.png') }}" class="img-fluid">
 								</div>
 								<div class="col-4">
-									<div style="text-align:center;font-size: 32px;font-weight: bold;">
-										<p>UPTD Pengujian Kendaraan Bermotor <br> Dinas Perhubungan Kota Cirebon</p>
-									</div> 
+									<p style="text-align:center;font-size: 32px;font-weight: bold;">UPTD Pengujian Kendaraan Bermotor <br> Dinas Perhubungan Kota Cirebon</p>
 								</div>
 								<div class="col-4">
 								</div>
