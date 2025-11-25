@@ -103,8 +103,20 @@
 				// Optional: auto-scroll the table container for a ticker-like view
 				var $container = $('#kt_datatable_responsive').closest('.table-responsive');
 				if ($container.length) {
+					// Scroll by one viewport height of the container each interval
 					setInterval(function() {
-						$container.scrollTop($container.scrollTop() + 625);
+						var viewH = $container.innerHeight();
+						var maxScroll = $container[0].scrollHeight - viewH;
+						var current = $container.scrollTop();
+						var next = Math.min(current + viewH, maxScroll);
+						// If we're at (or near) the bottom, reset to top
+						if (current >= maxScroll - 5) {
+							// smooth scroll back to top
+							$container.animate({ scrollTop: 0 }, 800);
+						} else {
+							// smooth scroll down one viewport
+							$container.animate({ scrollTop: next }, 800);
+						}
 					}, 8000);
 				}
 			});
