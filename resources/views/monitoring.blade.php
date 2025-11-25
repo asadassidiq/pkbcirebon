@@ -41,7 +41,7 @@
                     </div>
 					<div class="card card-flush shadow-sm" style="width:100%">
 						<div class="card-body">
-						<div class="table-responsive">
+						<div class="table-responsive auto-scroll-container" style="max-height:80vh; overflow:auto;">
 							<table id="kt_datatable_responsive" class="table table-hover table-rounded table-row-bordered border gs-0 gy-4 gx-4" style="width:100%">
 								<thead>
 									<tr class="fw-semibold fs-6 text-gray-800 border-bottom-2 border-gray-200">
@@ -104,21 +104,55 @@
 				// Optional: auto-scroll the table container for a ticker-like view
 				var $container = $('#kt_datatable_responsive').closest('.table-responsive');
 				if ($container.length) {
-					// Scroll by one viewport height of the container each interval
-					setInterval(function() {
+					var autoScrollInterval = 8000; // 8 seconds
+					var animDuration = 800; // animation duration in ms
+					var scrollTimer = null;
+					var isPaused = false;
+
+					function doScrollStep() {
+						if (isPaused) return;
 						var viewH = $container.innerHeight();
 						var maxScroll = $container[0].scrollHeight - viewH;
-						var current = $container.scrollTop();
-						var next = Math.min(current + viewH, maxScroll);
-						// If we're at (or near) the bottom, reset to top
+						var current = Math.ceil($container.scrollTop());
+						// If content fits without scrolling, do nothing
+						if (maxScroll <= 0) return;
+						// If we're at (or very near) the bottom, go back to top
 						if (current >= maxScroll - 5) {
-							// smooth scroll back to top
-							$container.animate({ scrollTop: 0 }, 800);
+							$container.animate({ scrollTop: 0 }, animDuration);
 						} else {
-							// smooth scroll down one viewport
-							$container.animate({ scrollTop: next }, 800);
+							var next = Math.min(current + viewH, maxScroll);
+							$container.animate({ scrollTop: next }, animDuration);
 						}
-					}, 8000);
+					}
+
+					function startAutoScroll() {
+						stopAutoScroll();
+						scrollTimer = setInterval(doScrollStep, autoScrollInterval);
+					}
+
+					function stopAutoScroll() {
+						if (scrollTimer) {
+							clearInterval(scrollTimer);
+							scrollTimer = null;
+						}
+					}
+
+					// Pause on hover/focus
+					$container.on('mouseenter focusin', function() { isPaused = true; });
+					$container.on('mouseleave focusout', function() { isPaused = false; });
+
+					// Restart on window resize because dimensions changed
+					$(window).on('resize', function() {
+						// small debounce
+						if (this._resizeTimeout) clearTimeout(this._resizeTimeout);
+						this._resizeTimeout = setTimeout(function() {
+							// ensure we don't keep running old timers
+							startAutoScroll();
+						}, 250);
+					});
+
+					// Kick off
+					startAutoScroll();
 				}
 			});
 		</script>
