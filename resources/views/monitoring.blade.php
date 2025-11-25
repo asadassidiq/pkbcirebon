@@ -94,63 +94,23 @@
 		<!--end::Global Javascript Bundle-->
 		<script>
 			$(document).ready(function () {
-				// Initialize DataTable
+				// Initialize DataTable on server-rendered rows (no AJAX)
 				var table = $('#kt_datatable_responsive').DataTable({
 					responsive: true,
 					ordering: false,
 					searching: false,
 					paging: false,
 					info: false,
-					autoWidth: false,
-					ajax: {
-						url: '{{ route("monitoring.data") }}',
-						type: 'GET',
-						dataSrc: ''
-					},
-					columns: [
-						{ data: 'nouji', className: 'text-center' },
-						{ data: 'noregistrasikendaraan', className: 'text-center' },
-						{ data: 'nama', className: 'text-center' },
-						{ data: null, className: 'text-center', render: function(data, type, row) {
-							if(row.pos1 == '3' || row.pos2 == '3' || row.pos1 == '0' || row.pos2 == '0') return '<strong>Tidak Lulus Uji</strong>';
-							if(row.pos1 == '1' || row.pos2 == '1') return '<strong>Lulus Uji</strong>';
-							return '&nbsp;';
-						}}
-					],
-					createdRow: function(row, data, dataIndex) {
-						if(data.pos1 == '3' || data.pos2 == '3' || data.pos1 == '0' || data.pos2 == '0') {
-							$(row).addClass('table-danger');
-						} else if(data.pos1 == '1' || data.pos2 == '1') {
-							$(row).addClass('table-success');
-						} else {
-							$(row).addClass('table-warning');
-						}
-					}
+					autoWidth: false
 				});
 
-				// Note: using GET for AJAX so CSRF header is not required
-
-				// Periodically reload data via ajax
-				setInterval(function() {
-					table.ajax.reload(null, false); // user paging not reset
-				}, 8000);
-
-				// Optional: scroll the responsive container if you still want auto-scroll visual
+				// Optional: auto-scroll the table container for a ticker-like view
 				var $container = $('#kt_datatable_responsive').closest('.table-responsive');
-				var st = 0; var i = 0;
-				window.setInterval(function() {
-					if (!$container.length) return;
-					$container.scrollTop($container.scrollTop() + 625);
-					if (st == 0 && i == 2) {
-						// noop
-					} else if (st == $container.scrollTop() && i >= 1) {
-						// if not moving, reload table data
-						table.ajax.reload(null, false);
-					} else if (st < $container.scrollTop() || st == 0) {
-						st = $container.scrollTop();
-					}
-					i++;
-				}, 8000);
+				if ($container.length) {
+					setInterval(function() {
+						$container.scrollTop($container.scrollTop() + 625);
+					}, 8000);
+				}
 			});
 		</script>
 		<!--end::Javascript-->

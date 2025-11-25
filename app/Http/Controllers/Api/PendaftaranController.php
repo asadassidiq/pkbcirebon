@@ -42,7 +42,8 @@ class PendaftaranController extends Controller
 
     public function Monitor()
     {
-        return view('monitoring');
+        $data = $this->pendaftaranService->getMonitoring();
+        return view('monitoring', ['data' => $data]);
     }
 
     public function getMonitoring()
