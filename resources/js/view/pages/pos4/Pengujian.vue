@@ -108,7 +108,7 @@
                         </b-button>
                     </div>
                 </div>
-                <b-collapse id="collapse-bkdaya">
+                <b-collapse id="collapse-bkdaya" visible>
                     <div class="card-body">
                         <bkdaya-form></bkdaya-form>
                     </div>
@@ -125,13 +125,13 @@
                         </h3>
                     </div>
                     <div class="card-toolbar">
-                        <b-button v-b-toggle.collapse-emisi
+                        <b-button v-b-toggle.collapse-rem
                             class="btn btn-icon btn-circle btn-sm btn-light-primary mr-1">
                             <i class="ki ki-arrow-down icon-nm"></i>
                         </b-button>
                     </div>
                 </div>
-                <b-collapse id="collapse-emisi" visible>
+                <b-collapse id="collapse-rem">
                     <div class="card-body">
                         <posRem-form></posRem-form>
                     </div>
@@ -148,13 +148,13 @@
                         </h3>
                     </div>
                     <div class="card-toolbar">
-                        <b-button v-b-toggle.collapse-emisi
+                        <b-button v-b-toggle.collapse-speed
                             class="btn btn-icon btn-circle btn-sm btn-light-primary mr-1">
                             <i class="ki ki-arrow-down icon-nm"></i>
                         </b-button>
                     </div>
                 </div>
-                <b-collapse id="collapse-emisi" visible>
+                <b-collapse id="collapse-speed">
                     <div class="card-body">
                         <posSpeed-form></posSpeed-form>
                     </div>
