@@ -128,7 +128,6 @@
         <div style="display: flex; gap: 20px; align-items: center;">
           <img src="img/kota.png" style="width: 70px; height: auto; object-fit: contain;">
           <img src="img/dishub.jpg" style="width: 70px; height: auto; object-fit: contain;">
-          <img src="img/bsre.jpeg" style="width: 180px; height: 350px; object-fit: contain;">
         </div>
         </div>
         <!--end::Content footer-->
@@ -164,7 +163,7 @@ export default {
       state: "signin",
       loadingpage:false,
       showPassword: false,
-      // siteKey:"6LcKZysrAAAAAM1wREmk-8xv88UIsNdclLnzd5zb",
+      siteKey:"6LcKZysrAAAAAM1wREmk-8xv88UIsNdclLnzd5zb",
       recaptchaSitekey:"",
       // siteKey:import.meta.env.RECAPTCHA_SITE_KEY,
       // Remove this dummy login info
