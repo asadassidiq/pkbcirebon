@@ -770,6 +770,7 @@ export const mutations = {
         // }, 500);
     },
     ASSIGN_FORMNOUJI(state, payload) {
+        console.log(payload);
         state.pendaftaran = {
             noantrian:state.pendaftaran.noantrian,
             tglpendaftaran: state.pendaftaran.tglpendaftaran,
@@ -1583,7 +1584,6 @@ export const actions = {
             PendaftaranService.getIdentitaskendaraanNouji(state.pendaftaran.nouji)
                 .then(response => {
                     resolve(response.data);
-                    console.log(response.data.result);
                     if (response.data.result === false) {
                         state.carinouji = 0;
                     }else{
@@ -1593,7 +1593,7 @@ export const actions = {
                         var tglpendaftaran = state.pendaftaran.tglpendaftaran;
                         var nosurat = state.pendaftaran.nosurat;
                         var noantrian = state.pendaftaran.noantrian;
-                        // commit("CLEAR_FORM");
+                        commit("CLEAR_FORM");
                         commit("ASSIGN_FORMNOUJI", response.data.result);
                         state.pendaftaran.nouji = nouji;
                         state.pendaftaran.kodepenerbitans_id = kode;
