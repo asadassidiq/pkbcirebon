@@ -24,13 +24,14 @@ class VerifRepository
 {
     use RepositoryTrait;
 
-    protected $model, $model1, $modelS;
+    protected $model, $model1, $modelS, $modelI;
 
-    public function __construct(LaikJalan $model, Pendaftaran $model1, Persuratan $modelS)
+    public function __construct(LaikJalan $model, Pendaftaran $model1, Persuratan $modelS, Identitaskendaraan $modelI)
     {
         $this->model = $model;
         $this->model1 = $model1;
         $this->modelS = $modelS;
+        $this->modelI = $modelI;
     }
 
     public function getAll()
@@ -221,6 +222,17 @@ class VerifRepository
     {
         $data = Catatan::where('pendaftaran_id', $id)->where('status', '1')->get();
         return $data;
+    }
+
+    public function updateIdentitasKendaraanNouji($id, $data)
+    {
+        $idIdentitas = $this->model1->where('id',$id)->first()->identitaskendaraan_id;
+        $identitas = $this->modelI->where('id', $idIdentitas)->first();
+        if ($identitas) {
+            $identitas->nouji = $data;
+            return $identitas->save();
+        }
+        return false;
     }
 
     public function createDatapengujian($id, $data, $alamatFull, $kode, $idkepaladinas, $iddirektur, $idpetugas, $tglsertifikatreg, $masaberlakuuji, $alatuji_remparkirtotalgayapengereman)

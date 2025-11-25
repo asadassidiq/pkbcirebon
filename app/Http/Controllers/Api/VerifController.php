@@ -91,6 +91,12 @@ class VerifController extends Controller
         $user = auth()->user();
         $check = $this->verifService->checkid($request->pendaftaran_id);
         $status_check = false;
+        if ($check->kodepenerbitans_id == 1) {
+            try {
+                $this->verifService->updateIdentitasKendaraanNouji($check->id, $request->nouji);
+            } catch (\Exception $e) {
+            }
+        }
         if ($check->kodepenerbitans_id <= 7) {
             $nouji = Pendaftaran::select('nouji')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('pendaftarans.id', $check['id'])->first()->nouji;
             try {

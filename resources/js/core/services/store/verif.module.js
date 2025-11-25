@@ -373,6 +373,7 @@ export const state = {
     tglujiulang: "",
     user_verif: "",
     jenis_cetak: "1",
+    nouji: "",
   },
   pengujian2: {
     pos1: "0",
@@ -791,6 +792,7 @@ export const mutations = {
       tglujiulang: "",
       user_verif: "",
       jenis_cetak: "1",
+      nouji: "",
     };
     state.pengujian2 = {
       pos1: "0",
@@ -1024,6 +1026,7 @@ export const actions = {
 
   submitVerif({ dispatch, commit, state }, id) {
     state.pengujian.pendaftaran_id = id;
+    state.pengujian.nouji = state.identitaskendaraan.nouji;
     return new Promise((resolve, reject) => {
       VerifService.postVerif(state.pengujian)
         .then((response) => {

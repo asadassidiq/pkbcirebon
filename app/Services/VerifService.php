@@ -68,6 +68,11 @@ class VerifService
         return $this->repoVerif->getCatatan($id);
     }
 
+    public function updateIdentitasKendaraanNouji($id, $data)
+    {
+        return $this->repoVerif->updateIdentitasKendaraanNouji($id, $data);
+    }
+
     public function getVerifid($id,$tgl)
     {
         return $this->repoVerif->getVerifid($id,$tgl);

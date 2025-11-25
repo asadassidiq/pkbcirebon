@@ -141,6 +141,11 @@
             <hr />
         </div>
         <div class="col-sm-12">
+            <div class="form-group" v-if="identitaskendaraan.keterangan=='Uji Pertama'">
+                <label> No Uji</label>
+                <input type="text" class="form-control form-control-solid form-control-lg" name="nouji"
+                placeholder="No Uji" v-model="identitaskendaraan.nouji" />
+            </div>
             <div class="form-group">
                 <label><b>Jenis Cetak Blue</b></label>
                 <div class="radio-inline">

@@ -24,43 +24,42 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label> No Uji</label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="nouji"
                                 readonly placeholder="No Uji" v-model="identitaskendaraan.nouji" />
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>No Kendaraan</label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
-                                readonly placeholder=" No Kendaraan" v-model="identitaskendaraan.noregistrasikendaraan
-                                    " />
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="noregistrasikendaraan"
+                                readonly placeholder=" No Kendaraan" v-model="identitaskendaraan.noregistrasikendaraan" />
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>Jenis Pelayanan</label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="keterangan"
                                 readonly v-model="identitaskendaraan.keterangan" />
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>No Rangka</label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="norangka"
                                 readonly v-model="identitaskendaraan.norangka" />
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>No Mesin</label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="nomesin"
                                 readonly v-model="identitaskendaraan.nomesin" />
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label> JBB </label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="length"
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="jbb"
                                 readonly placeholder="JBB" v-model="identitaskendaraan.jbb" />
                         </div>
                     </div>
@@ -69,28 +68,28 @@
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label>Merek</label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="merek"
                                 readonly placeholder="merek" v-model="identitaskendaraan.merek" />
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label>Tipe</label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="tipe"
                                 readonly placeholder="tipe" v-model="identitaskendaraan.tipe" />
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label> Jenis </label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="width"
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="jenis"
                                 readonly placeholder="Jenis" v-model="identitaskendaraan.jenis" />
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label> Peruntukan</label>
-                            <input type="text" class="form-control form-control-solid form-control-lg" name="length"
+                            <input type="text" class="form-control form-control-solid form-control-lg" name="peruntukan"
                                 readonly placeholder="Peruntukan" v-model="identitaskendaraan.peruntukan" />
                         </div>
                     </div>
