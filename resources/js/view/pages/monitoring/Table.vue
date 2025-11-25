@@ -48,7 +48,7 @@
                 <td>{{ monitoring.nouji }}</td>
                 <td>{{ monitoring.noregistrasikendaraan }}</td>
                 <td v-if="monitoring.posisi == 0">Menunggu Uji</td>
-                <td v-else-if="monitoring.posisi < 5">{{ 'POS ' + monitoring.posisi }}</td>
+                <td v-else-if="monitoring.posisi < 5 && monitoring.posisi > 0">{{ 'POS ' + monitoring.posisi }}</td>
                 <td v-else-if="monitoring.posisi == 5">Verif</td>
                 <td v-else-if="monitoring.posisi == 6">Cetak</td>
                 <td v-else-if="monitoring.posisi == 7">Diserahkan</td>
