@@ -32,16 +32,10 @@
                         
                         <!--begin::Body-->
                         <div class="card-body text-center">
-							<div class="row">
-								<div class="col-sm-4">
-									<img style="width: 80px; height: auto;" src="{{ asset('img/kota.png') }}" class="img-fluid">
-								</div>
-								<div class="col-sm-4">
-									<p style="text-align:center;font-size: 32px;font-weight: bold;">UPTD Pengujian Kendaraan Bermotor <br> Dinas Perhubungan Kota Cirebon</p>
-								</div>
-								<div class="col-sm-4">
-								</div>
-							</div>
+                            <div style="text-align:center;font-size: 32px;font-weight: bold;">
+								<img style="width: 180px; height: auto;" src="{{ asset('img/kota.png') }}" class="img-fluid">
+                                <p>UPTD Pengujian Kendaraan Bermotor <br> Dinas Perhubungan Kota Cirebon</p>
+                            </div> 
                         </div>
                         <!--end::Body-->
                     </div>
