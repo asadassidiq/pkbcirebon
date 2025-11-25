@@ -42,7 +42,7 @@ class PendaftaranController extends Controller
 
     public function Monitor()
     {
-        return view('monitor');
+        return view('monitoring');
     }
 
     public function getMonitoring()
