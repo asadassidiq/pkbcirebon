@@ -9,9 +9,7 @@
 		<!--end::Fonts-->
 		<!-- <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css"/> -->
 		<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
-		<link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-
+		<link href="{{ mix('css/app.css').'?r='.time() }}" type="text/css" rel="stylesheet"/>
         <!-- DataTables (CDN) -->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
         <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" />
@@ -35,7 +33,7 @@
                         <!--begin::Body-->
                         <div class="card-body text-center">
                             <div style="text-align:center;">
-                                <img width="50%" height="50%" src="{{ asset('media/logos/logo-full.png') }}" class="img-fluid">
+                                <img width="50%" height="50%" src="{{ asset('img/kota.png') }}" class="img-fluid">
                             </div>
                             <div style="text-align:center;font-size: 32px;font-weight: bold;">
                                 <p>UPTD Pengujian Kendaraan Bermotor <br> Dinas Perhubungan Kota Cirebon</p>
@@ -85,8 +83,8 @@
 		<!--begin::Javascript-->
 		<script>var hostUrl = "assets/";</script>
 		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
-		<script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
-		<script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
+		<script src="{{ mix('js/app.js').'?r='.time() }}" type="text/javascript"></script>
+
 		<!-- DataTables (CDN) -->
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 		<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
