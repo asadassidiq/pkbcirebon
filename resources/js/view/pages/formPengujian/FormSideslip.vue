@@ -100,7 +100,9 @@ export default {
             this.catatan.pos = 3;
             this.catatan.status = '1';
             this.getAlasan();
-            this.getCatatan(this.$route.params.id);
+            this.getCatatan(this.$route.params.id).then(() => {
+                this.initEdit();
+            });
             this.$refs['my-modal'].show()
         },
         hideModal() {
@@ -117,7 +119,9 @@ export default {
             if (this.laikjalan.alatuji_penunjukkecepatan < 36 || this.laikjalan.alatuji_penunjukkecepatan > 46) {
                 this.catatan.nama = nama;
                 this.catatan.hasiluji = hasil;
-                this.getCatatan(this.$route.params.id);
+                this.getCatatan(this.$route.params.id).then(() => {
+                    this.initEdit();
+                });
                 this.$refs['my-modal'].show()
             }
         },

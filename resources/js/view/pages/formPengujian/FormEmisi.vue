@@ -124,7 +124,9 @@ export default {
             this.catatan.pos = 2;
             this.catatan.status = 1;
             this.getAlasan();
-            this.getCatatan(this.$route.params.id);
+            this.getCatatan(this.$route.params.id).then(() => {
+                this.initEdit();
+            });
             this.$refs['my-modal'].show()
         },
         hideModal() {
@@ -143,7 +145,9 @@ export default {
                 this.catatan.nama = nama;
                 this.catatan.hasiluji = hasil;
                 this.getAlasan();
-                this.getCatatan(this.$route.params.id);
+                this.getCatatan(this.$route.params.id).then(() => {
+                    this.initEdit();
+                });
                 this.$refs['my-modal'].show()
             }
             else if ((this.isPenumpang(this.identitaskendaraan.jenis) && this.identitaskendaraan.thpembuatan < 2007 && this.laikjalan.alatuji_emisicobahanbakarbensin > 4) ||
@@ -155,7 +159,9 @@ export default {
                 this.catatan.nama = nama;
                 this.catatan.hasiluji = hasil;
                 this.getAlasan();
-                this.getCatatan(this.$route.params.id);
+                this.getCatatan(this.$route.params.id).then(() => {
+                    this.initEdit();
+                });
                 this.$refs['my-modal'].show()
             }
             else if (
@@ -168,7 +174,9 @@ export default {
                 this.catatan.nama = nama;
                 this.catatan.hasiluji = hasil;
                 this.getAlasan();
-                this.getCatatan(this.$route.params.id);
+                this.getCatatan(this.$route.params.id).then(() => {
+                    this.initEdit();
+                });
                 this.$refs['my-modal'].show()
             }
         },

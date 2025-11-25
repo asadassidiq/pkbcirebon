@@ -112,7 +112,9 @@ export default {
       this.catatan.pos = 1;
       this.catatan.status = 1;
       this.getAlasan();
-      this.getCatatan(this.$route.params.id);
+      this.getCatatan(this.$route.params.id).then(() => {
+            this.initEdit();
+        });
       this.$refs['my-modal'].show()
     },
     hideModal() {
@@ -131,7 +133,9 @@ export default {
         this.catatan.hasiluji = hasil;
         this.catatan.pos = 1;
         this.catatan.status = 1;
-        this.getCatatan(this.$route.params.id);
+        this.getCatatan(this.$route.params.id).then(() => {
+          this.initEdit();
+        });
         this.$refs['my-modal'].show()
       }
     },

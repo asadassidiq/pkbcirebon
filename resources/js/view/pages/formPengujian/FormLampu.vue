@@ -146,7 +146,9 @@ export default {
             this.catatan.pos = 3;
             this.catatan.status = '1';
             this.getAlasan();
-            this.getCatatan(this.$route.params.id);
+            this.getCatatan(this.$route.params.id).then(() => {
+                this.initEdit();
+            });
             this.$refs['my-modal'].show()
         },
         hideModal() {
@@ -163,22 +165,30 @@ export default {
             if (this.laikjalan.alatuji_lampuutamapenyimpanganlampukiri > 1.09 && nama == 'Arah Kiri') {
                 this.catatan.nama = nama;
                 this.catatan.hasiluji = hasil;
-                this.getCatatan(this.$route.params.id);
+                this.getCatatan(this.$route.params.id).then(() => {
+                    this.initEdit();
+                });
                 this.$refs['my-modal'].show()
             } else if (this.laikjalan.alatuji_lampuutamapenyimpanganlampukanan > 0.34 && nama == 'Arah Kanan') {
                 this.catatan.nama = nama;
                 this.catatan.hasiluji = hasil;
-                this.getCatatan(this.$route.params.id);
+                this.getCatatan(this.$route.params.id).then(() => {
+                            this.initEdit();
+                        });
                 this.$refs['my-modal'].show()
             } else if (this.laikjalan.alatuji_lampuutamakekuatanpancarlampukanan < 12000 && nama == 'INTENSITAS KANAN') {
                 this.catatan.nama = nama;
                 this.catatan.hasiluji = hasil;
-                this.getCatatan(this.$route.params.id);
+                this.getCatatan(this.$route.params.id).then(() => {
+                    this.initEdit();
+                });
                 this.$refs['my-modal'].show()
             } else if (this.laikjalan.alatuji_lampuutamakekuatanpancarlampukiri < 12000 && nama == 'INTENSITAS KIRI') {
                 this.catatan.nama = nama;
                 this.catatan.hasiluji = hasil;
-                this.getCatatan(this.$route.params.id);
+                this.getCatatan(this.$route.params.id).then(() => {
+                    this.initEdit();
+                });
                 this.$refs['my-modal'].show()
             }
         },

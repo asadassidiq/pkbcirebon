@@ -246,7 +246,7 @@ export default {
             this.catatan.status = '1';
             this.getAlasan();
             this.getCatatan(this.$route.params.id).then(() => {
-                console.log(this.catatan)
+                this.initEdit();
             });
             this.$refs['my-modal'].show()
         },
