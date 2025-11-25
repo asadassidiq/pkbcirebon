@@ -123,18 +123,22 @@ class PendaftaranRepository
     public function getMonitoring()
     {
         $data = $this->model
-            ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'pendaftarans.posisi', 'identitaskendaraans.noregistrasikendaraan', 'pendaftarans.pos1', 'pendaftarans.pos2', 'pendaftarans.pos3', 'pendaftarans.posverif', 'pendaftarans.posverif2')
+            ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'pendaftarans.posisi', 'identitaskendaraans.noregistrasikendaraan', 'pendaftarans.pos1', 'pendaftarans.user_pos1', 'pendaftarans.pos2' ,'pendaftarans.user_pos2', 'pendaftarans.pos3' ,'pendaftarans.user_pos3', 'pendaftarans.pos4' ,'pendaftarans.user_pos4', 'pendaftarans.posverif','pendaftarans.user_posverif',
+                'u1.name as nama_user_pos1',
+                'u2.name as nama_user_pos2',
+                'u3.name as nama_user_pos3',
+                'u4.name as nama_user_pos4',
+                'uv.name as nama_user_posverif'
+                )
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
-            ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
+            ->leftJoin('users as u1', 'pendaftarans.user_pos1', '=', 'u1.id')
+            ->leftJoin('users as u2', 'pendaftarans.user_pos2', '=', 'u2.id')
+            ->leftJoin('users as u3', 'pendaftarans.user_pos3', '=', 'u3.id')
+            ->leftJoin('users as u4', 'pendaftarans.user_pos4', '=', 'u4.id')
+            ->leftJoin('users as uv', 'pendaftarans.user_posverif', '=', 'uv.id')
+            ->leftjoin('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
             ->where('pendaftarans.tglpendaftaran', date("Y-m-d"))
             ->orderBy('pendaftarans.posisi', 'DESC');
-        // $search = str_replace("/", "", request()->q);
-
-        // if ($search != '') {
-        //     $data = $data->where('identitaskendaraans.noregistrasikendaraan', 'LIKE', '%' . $search . '%')
-        //                  ->orWhere('identitaskendaraans.nouji','LIKE','%'. $search . '%');
-        // }
-
         return $data->get();
     }
 
