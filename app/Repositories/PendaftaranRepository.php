@@ -123,7 +123,7 @@ class PendaftaranRepository
     public function getMonitoring()
     {
         $data = $this->model
-            ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'pendaftarans.posisi', 'identitaskendaraans.noregistrasikendaraan', 'pendaftarans.pos1', 'pendaftarans.user_pos1', 'pendaftarans.pos2' ,'pendaftarans.user_pos2', 'pendaftarans.pos3' ,'pendaftarans.user_pos3', 'pendaftarans.pos4' ,'pendaftarans.user_pos4', 'pendaftarans.posverif','pendaftarans.user_posverif',
+            ->select('pendaftarans.noantrian1','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'pendaftarans.posisi', 'identitaskendaraans.noregistrasikendaraan', 'pendaftarans.pos1', 'pendaftarans.user_pos1', 'pendaftarans.pos2' ,'pendaftarans.user_pos2', 'pendaftarans.pos3' ,'pendaftarans.user_pos3', 'pendaftarans.pos4' ,'pendaftarans.user_pos4', 'pendaftarans.posverif','pendaftarans.user_posverif',
                 'u1.name as nama_user_pos1',
                 'u2.name as nama_user_pos2',
                 'u3.name as nama_user_pos3',
