@@ -53,7 +53,7 @@
 								</thead>
 								<tbody>
 									@foreach ($data as $dt)
-									<tr class="@if($dt->pos1 == '3' || $dt->pos2 == '3' || $dt->pos1 == '0' || $dt->pos2 == '0') table-danger @elseif($dt->pos1 == '1' || $dt->pos2 == '1') table-success @else table-warning @endif">
+									<tr class="@if($dt->pos1 == '0' || $dt->pos2 == '0' || $dt->pos3 == '0' || $dt->pos4 == '0') table-danger @elseif($dt->posverif == '1') table-success @else table-warning @endif">
 										<td class="text-center">{{ $dt->nouji }}</td>
 										<td class="text-center">{{ $dt->noregistrasikendaraan }}</td>
 										<td class="text-center">{{ $dt->nama }}</td>
