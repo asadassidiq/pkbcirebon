@@ -91,6 +91,8 @@ Route::get('{any}', function () {
 		// abort(404); // <-- jika mau blokir juga, tinggal aktifkan ini
 	} elseif (request()->is('arsip/*')) {
 		// abort(404); // Blokir akses langsung ke upload
+	} elseif (request()->is('monitor/*')) {
+		// abort(404); // Blokir akses langsung ke upload
 	} elseif (request()->is('upload/*')) {
 		// abort(404); // Blokir akses langsung ke upload
 	} elseif (request()->is('thumbnail_images/*')) {

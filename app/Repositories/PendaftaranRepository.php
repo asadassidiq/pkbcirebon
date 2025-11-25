@@ -139,7 +139,7 @@ class PendaftaranRepository
             ->leftJoin('users as u4', 'pendaftarans.user_pos4', '=', 'u4.id')
             ->leftJoin('users as uv', 'pendaftarans.user_posverif', '=', 'uv.id')
             ->leftjoin('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
-            ->where('pendaftarans.tglpendaftaran', $date)
+            ->where('pendaftarans.tglpendaftarana', $date)
             ->orderBy('pendaftarans.posisi', 'DESC');
         return $data->get();
     }
