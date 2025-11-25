@@ -1584,24 +1584,25 @@ export const actions = {
             PendaftaranService.getIdentitaskendaraanNouji(state.pendaftaran.nouji)
                 .then(response => {
                     resolve(response.data);
-                    if (response.data.result === false) {
-                        state.carinouji = 0;
+                    if (response.data.result != false) {
+                        commit("ASSIGN_FORMNOUJI", response.data.result);
+                        state.carinouji = 1;
                     }else{
                         var nouji = state.pendaftaran.nouji;
                         var kode = state.pendaftaran.kodepenerbitans_id;
                         var nosuratkehilangan = state.pendaftaran.nosuratkehilangan;
                         var tglpendaftaran = state.pendaftaran.tglpendaftaran;
                         var nosurat = state.pendaftaran.nosurat;
+                        var nosuratkehilangan = state.pendaftaran.nosuratkehilangan;
                         var noantrian = state.pendaftaran.noantrian;
-                        // commit("CLEAR_FORM");
-                        commit("ASSIGN_FORMNOUJI", response.data.result);
-                        state.carinouji = 1;
+                        commit("CLEAR_FORM");
                         state.pendaftaran.nouji = nouji;
                         state.pendaftaran.kodepenerbitans_id = kode;
                         state.pendaftaran.nosurat = nosurat;
-                        state.pendaftaran.noantrian = noantrian;
                         state.pendaftaran.nosuratkehilangan = nosuratkehilangan;
+                        state.pendaftaran.noantrian = noantrian;
                         state.pendaftaran.tglpendaftaran = tglpendaftaran;
+                        state.carinouji = 0;
                     }
                 })
                 .catch(error => {
