@@ -1583,6 +1583,7 @@ export const actions = {
             PendaftaranService.getIdentitaskendaraanNouji(state.pendaftaran.nouji)
                 .then(response => {
                     resolve(response.data);
+                    console.log(response.data.result);
                     if (response.data.result === false) {
                         state.carinouji = 0;
                     }else{
