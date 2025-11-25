@@ -489,7 +489,7 @@ export default {
           // tambahkan alasan baru
           this.catatan.alasan.push("Lainnya: " + this.inputLainnya)
           }
-      }
+      },
   },
   destroyed() {
     this.CLEAR_CATATAN();
@@ -499,5 +499,14 @@ export default {
   },
   components: {
   },
+  watch: {
+      lainnyaChecked(val) {
+          if (!val) {
+          // checkbox Lainnya dicabut → hapus dari alasan
+          this.inputLainnya = ""
+          this.catatan.alasan = this.catatan.alasan.filter(item => !item.startsWith("Lainnya:"))
+          }
+      }
+  }
 };
 </script>

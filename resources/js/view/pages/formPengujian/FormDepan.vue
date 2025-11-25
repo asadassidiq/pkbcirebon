@@ -383,5 +383,14 @@ export default {
   },
   components: {
   },
+  watch: {
+      lainnyaChecked(val) {
+          if (!val) {
+          // checkbox Lainnya dicabut → hapus dari alasan
+          this.inputLainnya = ""
+          this.catatan.alasan = this.catatan.alasan.filter(item => !item.startsWith("Lainnya:"))
+          }
+      }
+  }
 };
 </script>
