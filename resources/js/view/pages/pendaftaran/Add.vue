@@ -41,7 +41,7 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Tanggal Pendaftaran</label>
-                      <b-form-datepicker id="tglpendaftaran" v-model="pendaftaran.tglpendaftaran"
+                      <b-form-datepicker id="tglpendaftaran" v-model="pendaftaran.tglpendaftaran" @input="setLastAntrian"
                         locale="id"></b-form-datepicker>
                       <p class="text-danger" v-if="errors.tglpendaftaran">{{ errors.tglpendaftaran[0] }}</p>
                     </div>
@@ -1245,16 +1245,23 @@ export default {
 
     var CurrentDate = moment().format("YYYY-MM-DD");
     this.pendaftaran.tglpendaftaran = CurrentDate;
+    this.setLastAntrian();
   },
   methods: {
     ...mapMutations("pendaftaran", ["CLEAR_FORM","ASSING_UPDATE"]),
-    ...mapActions("pendaftaran", ["getMereks", "getTipes", "getVarians", "getJenis", "getSubJenis", "getJeniskendaraan", "getFuels", "getKelasJalans", "getKodewilayahs", "getIdentitaskendaraanNouji", "editPendaftaran", "submitPendaftaran", "submitPendaftaran2", "setNoSurat", "getNouji", "getKotas", "getKecamatans", "getKelurahans", "getVTA", "checkNU", "checkMU","getJenisModel"]),
+    ...mapActions("pendaftaran", ["getMereks", "getTipes", "getVarians", "getJenis", "getSubJenis", "getJeniskendaraan", "getFuels", "getKelasJalans", "getKodewilayahs", "getIdentitaskendaraanNouji", "editPendaftaran", "submitPendaftaran", "submitPendaftaran2", "setNoSurat", "getNouji", "getKotas", "getKecamatans", "getKelurahans", "getVTA", "checkNU", "checkMU","getJenisModel","getLastAntrian"]),
     isLocked(field) {
       return (
         this.pendaftaran[field] !== undefined ||
         this.pendaftaran[field] !== "" ||
         this.pendaftaran[field] !== null
       );
+    },
+
+    setLastAntrian() {
+      this.getLastAntrian(this.pendaftaran.tglpendaftaran).then(() => {
+        this.pendaftaran.antrian = this.lastantrian + 1;
+      });
     },
     
     applySelection() {

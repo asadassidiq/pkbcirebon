@@ -1653,6 +1653,17 @@ export const actions = {
                 });
         });
     },
+    getLastAntrian({ commit, state }, payload) {
+        return new Promise((resolve, reject) => {
+            PendaftaranService.getLastAntrian(state.pendaftaran.tglpendaftaran)
+                .then(response => {
+                    resolve(response.data);
+                    state.pendaftaran.noantrian = response.data.result;
+                })
+                .catch(error => {
+                });
+        });
+    },
     getNokendaraan({ commit, state }, payload) {
         return new Promise((resolve, reject) => {
             PendaftaranService.getNokendaraan(state.pendaftaran.noregistrasikendaraan)

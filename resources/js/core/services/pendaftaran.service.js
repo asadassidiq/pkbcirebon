@@ -12,6 +12,9 @@ export default {
     getIdentitaskendaraanNouji(nouji) {
         return ApiService.get(`/identitaskendaraan/nouji?nouji=${nouji}`);
     },
+    getLastAntrian(date) {
+        return ApiService.get(`/pendaftaran/antrian?date=${date}`);
+    },
     getCheckNouji(nouji) {
         return ApiService.get(`/identitaskendaraan/check?nouji=${nouji}`);
     },

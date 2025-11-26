@@ -72,6 +72,11 @@ class PendaftaranService
         return $this->repoPendaftaran->getPendaftaranid($id,$tgl);
     }
 
+    public function getLastAntrian()
+    {
+        return $this->repoPendaftaran->getLastAntrian();
+    }
+
     public function create($request)
     {
         $user = auth()->user();

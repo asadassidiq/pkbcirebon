@@ -77,6 +77,12 @@ class PendaftaranController extends Controller
         return $this->returnJson(($data));
     }
 
+    public function getLastAntrian()
+    {
+        $data = $this->pendaftaranService->getLastAntrian();
+        return $this->returnJson($data);
+    }
+
     public function store(PendaftaranStoreRequest $request)
     {
         $data = $this->pendaftaranService->create($request);

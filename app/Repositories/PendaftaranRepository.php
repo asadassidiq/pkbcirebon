@@ -486,6 +486,13 @@ class PendaftaranRepository
         }
     }
 
+    public function getLastAntrian()
+    {
+        $date = $search = str_replace("/", "", request()->date);
+        $data = $this->model->where('tglpendaftaran', $date)->orderBy('noantrian', 'DESC')->first();
+        return $data;
+    }
+
     public function createPendaftaran($request)
     {
 
