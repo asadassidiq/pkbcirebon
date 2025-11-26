@@ -85,9 +85,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         });
 
         Route::group(['middleware' => ['role:admin|petugas'], 'prefix' => 'antrian'], function () {
-            Route::get('/', 'AntrianController@index');
-            Route::get('/{id}', 'AntrianController@setNoAntrian');
-            Route::put('/{id}', 'AntrianController@update');
+            // Route::get('/', 'AntrianController@index');
+            // Route::get('/{id}', 'AntrianController@setNoAntrian');
+            // Route::put('/{id}', 'AntrianController@update');
             Route::get('/last', 'PendaftaranController@getLastAntrian');
         });
 

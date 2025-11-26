@@ -489,7 +489,7 @@ class PendaftaranRepository
     public function getLastAntrian()
     {
         $date = str_replace("/", "", request()->date);
-        $data = $this->model->where('tglpendaftarana', $date)->orderBy('noantrian', 'DESC')->first();
+        $data = $this->model->where('tglpendaftaran', $date)->orderBy('noantrian', 'DESC')->first();
         return $data;
     }
 
