@@ -18,14 +18,14 @@
                 <i class="wizard-icon flaticon2-lorry"></i>
                 <h3 class="wizard-title">2. Identitas</h3>
               </div>
-              <i class="wizard-arrow flaticon2-next" v-if="pendaftaran.kodepenerbitans_id < 11"></i>
+              <!-- <i class="wizard-arrow flaticon2-next" v-if="pendaftaran.kodepenerbitans_id < 11"></i> -->
             </div>
-            <div class="wizard-step" data-wizard-type="step" v-if="pendaftaran.kodepenerbitans_id < 11">
+            <!-- <div class="wizard-step" data-wizard-type="step" v-if="pendaftaran.kodepenerbitans_id < 11">
               <div class="wizard-label">
                 <i class="wizard-icon flaticon2-position"></i>
                 <h3 class="wizard-title">3. Data Kendaraan</h3>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!--end: Wizard Nav-->
@@ -677,7 +677,6 @@
                       <vSelect label="area_name" ref="kodewilayahasal" :options="kodewilayahs"
                         v-model="pendaftaran.wilayahasal" @input="setAreaFrom"></vSelect>
                       <p class="text-danger" v-if="errors.kodewilayah">
-                        {{ errors.kodewilayah[0] }}
                       </p>
                     </div>
                   </div>
@@ -688,7 +687,6 @@
                       <input type="text" class="form-control form-control-lg" name="nomesin" placeholder="No Mesin"
                         style="text-transform: uppercase" v-model="pendaftaran.nomesin" />
                       <p class="text-danger" v-if="errors.nomesin">
-                        {{ errors.nomesin[0] }}
                       </p>
                     </div>
                   </div>
@@ -715,7 +713,6 @@
                       <input type="text" class="form-control form-control-lg" name="warna" placeholder="Warna"
                         style="text-transform: uppercase" v-model="pendaftaran.warna" />
                       <p class="text-danger" v-if="errors.warna">
-                        {{ errors.warna[0] }}
                       </p>
                     </div>
                   </div>
@@ -723,8 +720,8 @@
               </div>
               <!--end: Wizard Step 2-->
 
-              <!--begin: Wizard Pendaftaran 3-->
-              <div class="pb-5" data-wizard-type="step-content" v-if="
+              <!--begin: Wizard Datakendaraan 3-->
+              <!-- <div class="pb-5" data-wizard-type="step-content" v-if="
                 pendaftaran.kodepenerbitans_id < 12 ||
                 pendaftaran.kodepenerbitans_id > 12
               ">
@@ -743,7 +740,6 @@
                         Bentuk</b-button>
                     </b-card-header>
 
-                    <!-- Accordion 1 Content -->
                     <b-collapse id="accordion-1" visible accordion="my-accordion" @show="isActive = true"
                       @hide="isActive = false" role="tabpanel">
                       <b-card-body>
@@ -797,7 +793,6 @@
                       </b-card-body>
                     </b-collapse>
 
-                    <!-- Accordion 2 Content -->
                     <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
                       <b-card-body>
                         <div class="row">
@@ -829,7 +824,6 @@
                       </b-card-body>
                     </b-collapse>
 
-                    <!-- Accordion 3 Content -->
                     <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
                       <b-card-body>
                         <div class="row">
@@ -961,7 +955,6 @@
                       </b-card-body>
                     </b-collapse>
 
-                    <!-- Accordion 4 Content -->
                     <b-collapse id="accordion-4" accordion="my-accordion" role="tabpanel">
                       <b-card-body>
                         <div class="row">
@@ -1096,7 +1089,6 @@
                       </b-card-body>
                     </b-collapse>
 
-                    <!-- Accordion 5 Content -->
                     <b-collapse id="accordion-5" accordion="my-accordion" role="tabpanel">
                       <b-card-body>
                         <div class="row">
@@ -1178,7 +1170,6 @@
                       </b-card-body>
                     </b-collapse>
 
-                    <!-- Accordion 6 Content -->
                     <b-collapse id="accordion-6" accordion="my-accordion" role="tabpanel">
                       <b-card-body>
                         <div class="row">
@@ -1194,7 +1185,7 @@
                     </b-collapse>
                   </b-card>
                 </div>
-              </div>
+              </div> -->
               <!--end: Wizard Step 4-->
 
               <!--begin: Wizard Actions -->

@@ -109,7 +109,7 @@ class PendaftaranService
                     $dataUUID = $this->repoIden->getUUID($pendaftaran['nouji']);
                     $dataIden = $this->repoIden->updateIdentitaskendaraan($pendaftaran,$dataUUID->uuid);
                     if($dataIden){
-                        $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataIden->id);
+                        // $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataIden->id);
                         $statusDatakendaraan = true;
                     }
                 }else{
@@ -142,7 +142,7 @@ class PendaftaranService
             if($checkNorangka === false){
                 $dataIden = $this->repoIden->updateIdentitaskendaraan($pendaftaran,$dataUUID->uuid);
                 if($dataIden){
-                    $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataIden->id);
+                    // $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataIden->id);
                     $statusDatakendaraan = true;
                 }
             }else{
@@ -165,7 +165,7 @@ class PendaftaranService
                 }
                 $dataIden = $this->repoIden->updateIdentitaskendaraan($pendaftaran,$dataUUID->uuid);
                 if($dataIden){
-                    $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataIden->id);
+                    // $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataIden->id);
                     $statusDatakendaraan = true;
                 }
             }else{
@@ -352,7 +352,7 @@ class PendaftaranService
             $dataUUID = $this->repoIden->getUUID($pendaftaran['nouji']);
             $dataIden = $this->repoIden->updateIdentitaskendaraan($pendaftaran,$dataUUID->uuid);
             if($dataIden){
-                $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataUUID->id);
+                // $dataKendaraan = $this->repoDatakendaraan->updateDatakendaraan($pendaftaran,$dataUUID->id);
                 $statusDatakendaraan = true;
             }
         // }
