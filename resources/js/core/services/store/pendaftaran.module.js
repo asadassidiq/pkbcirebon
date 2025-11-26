@@ -1658,8 +1658,7 @@ export const actions = {
             PendaftaranService.getLastAntrian(state.pendaftaran.tglpendaftaran)
                 .then(response => {
                     resolve(response.data);
-                    console.log(response.data);
-                    state.pendaftaran.noantrian = response.data.result;
+                    state.pendaftaran.noantrian = response.data;
                 })
                 .catch(error => {
                 });
