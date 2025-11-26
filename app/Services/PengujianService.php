@@ -90,12 +90,12 @@ class PengujianService
             $messageParts = [];
 
             foreach ($insertMap as $method => [$data, $label]) {
-                try {
+                // try {
                     $this->repoPengujian->setPengujian($data, $checkident['id'], $method);
-                } catch (Exception $e) {
-                    $statusInsert = false;
-                    $messageParts[] = $label;
-                }
+                // } catch (Exception $e) {
+                //     $statusInsert = false;
+                //     $messageParts[] = $label;
+                // }
             }
 
             if ($statusInsert) {
