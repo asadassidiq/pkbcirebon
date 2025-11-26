@@ -61,8 +61,8 @@
                 </td>
                 <td v-else-if="monitoring.pos1 == 1" class="text-center">
                   <a href="javascript:void(0)" class="d-block">
-                    <i class="flaticon-correct text-success"></i>
-                    <small class="text-danger d-block">{{ monitoring.nama_user_pos1 }}</small>
+                    <i class="flaticon2-correct text-success"></i>
+                    <small class="text-success d-block">{{ monitoring.nama_user_pos1 }}</small>
                   </a>
                 </td>
                 <td v-else class="text-center">
