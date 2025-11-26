@@ -891,7 +891,7 @@ class VerifRepository
                 if ($uji) {
                     $idx = Pendaftaran::where('id', $id)->first();
                     $idx->idx = $uji->idx;
-                    $idx->posisi = '5';
+                    $idx->posisi = '6';
                     $idx->save();
                 }
             } else {
