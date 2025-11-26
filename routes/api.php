@@ -55,7 +55,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::put('/{id}', 'PendaftaranController@update');
             Route::get('/', 'PendaftaranController@index');
             Route::get('/detail', 'PendaftaranController@getPendaftaranDetail');
-            Route::get('/antrian', 'PendaftaranController@getLastAntrian');
             Route::get('/{id}', 'PendaftaranController@getPendaftaran');
             Route::put('ulangifoto/{id}', 'PendaftaranController@ulangiFoto');
             Route::delete('/{id}', 'PendaftaranController@delete');
@@ -89,6 +88,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::get('/', 'AntrianController@index');
             Route::get('/{id}', 'AntrianController@setNoAntrian');
             Route::put('/{id}', 'AntrianController@update');
+            Route::get('/last', 'PendaftaranController@getLastAntrian');
         });
 
         Route::group(['middleware' => ['role:admin|petugas'], 'prefix' => 'regonline'], function () {
