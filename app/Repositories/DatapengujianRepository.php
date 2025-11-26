@@ -81,7 +81,7 @@ class DatapengujianRepository
         $update->perso = $request->perso;
         if ($update->save()) {
             $upPend = $this->model1::where('idx',$update->idx)->orderBy('tglpendaftaran','DESC')->first();
-            $upPend->posisi = '8';
+            $upPend->posisi = '7';
             if ($upPend->save()){
                 return true;
             }
