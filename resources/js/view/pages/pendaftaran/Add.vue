@@ -1260,7 +1260,6 @@ export default {
 
     setLastAntrian() {
       this.getLastAntrian(this.pendaftaran.tglpendaftaran).then(() => {
-        this.pendaftaran.antrian = this.lastantrian + 1;
       });
     },
     
