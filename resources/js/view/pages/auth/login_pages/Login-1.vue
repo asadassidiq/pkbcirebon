@@ -271,7 +271,7 @@ export default {
               }else if(this.user.p3 == true){
                   this.$router.push({ name: "pos3.data" })
               }else if(this.user.p4 == true){
-                  this.$router.push({ name: "pos3.data" })
+                  this.$router.push({ name: "pos4.data" })
               }else if(this.user.ct == true){
                   this.$router.push({ name: "datapengujian.data" })
               }else if((this.user.jabatan == 'KEPALA UPTD PKB' || this.user.jabatan == 'KEPALA') && this.user.ct == true){
