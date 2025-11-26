@@ -566,118 +566,156 @@ class DatakendaraanRepository
     foreach ($data as $kend) {
       $identitaskendaraan = array(
         'uuid'  => (string) Str::uuid(),
-        'nouji' => $kend->nouji,
-        'noidentitaspemilik'    => $kend->noidentitaspemilik,
-        'nama'  => $kend->nama,
+        'nouji' => $kend->no_uji,
+        'noidentitaspemilik'    => $kend->no_identitas,
+        'nama'  => $kend->nama_pemilik,
         'alamat' => $kend->alamat,
-        'merek'  => $kend->merek,
-        'idmerek'  => $kend->vehicle_brand_id,
+        'kelurahan' => $kend->kelurahan,
+        'kecamatan' => $kend->kecamatan,
+        'kota' => $kend->kota,  
+        'nohp'  => $kend->no_telp,
+        'merek'  => $kend->merk,
+        // 'idmerek'  => $kend->vehicle_brand_id,
         'tipe'   => $kend->tipe,
         'idtipe' => $kend->vehicle_varian_type_id,
-        'varian' => $kend->varian,
-        'idvarian' => $kend->vehicle_varian_id,
-        'noregistrasikendaraan' => $kend->noregistrasikendaraan,
-        'nosertifikatreg' => $kend->nosertifikatreg,
-        'tglsertifikatreg' => $kend->tglsertifikatreg,
-        'tgl_registrasikendaraan' => $kend->tglterbitstnk,
-        'norangka' => $kend->norangka,
-        'nomesin' => $kend->nomesin,
-        'thpembuatan' => $kend->thpembuatan,
-        'bahanbakar' => $kend->bahanbakar,
-        'idbahanbakar' => $kend->fuel_id,
-        'isisilinder' => $kend->isisilinder,
-        'dayamotorpenggerak' => $kend->dayamotorpenggerak,
-        'jenis' => $kend->jenis,
-        'idjenis' => $kend->vehicle_type_id,
-        'subjenis' => $kend->sub_Varian_kendaraan,
-        'idsubjenis' => $kend->vehicle_sub_id,
-        // 'model' => $kend->jenis,
-        // 'peruntukan' => $kend->peruntukan,
-        // 'warna' => $kend->warna,
+        // 'varian' => $kend->varian,
+        // 'idvarian' => $kend->vehicle_varian_id,
+        'noregistrasikendaraan' => $kend->no_kendaraan,
+        'nosertifikatreg' => $kend->no_regis,
+        'tglsertifikatreg' => $kend->tgl_regis,
+        'tgl_registrasikendaraan' => $kend->tgl_stnk,
+        'norangka' => $kend->no_chasis,
+        'nomesin' => $kend->no_mesin,
+        'thpembuatan' => $kend->tahun,
+        'bahanbakar' => $kend->bahan_bakar,
+        // 'idbahanbakar' => $kend->fuel_id,
+        'isisilinder' => $kend->isi_silinder,
+        'dayamotorpenggerak' => $kend->daya_motor,
+        'jenis' => $kend->nama_kendaraan,
+        // 'idjenis' => $kend->vehicle_type_id,
+        // 'subjenis' => $kend->sub_Varian_kendaraan,
+        // 'idsubjenis' => $kend->vehicle_sub_id,
+        'model' => $kend->nm_komersil,
+        'peruntukan' => $kend->sifat,
+        'warna' => $kend->warna,
         'statuskendaraan' => '0',
-        'idkepaladinas' => $kend->idkepaladinas,
-        'iddirektur'    => $kend->iddirektur,
-        'kodewilayah'   => $kend->kodewilayah,
-        'kodewilayahasal'   => $kend->kodewilayahasal,
-        'idkodewilayah'   => $kend->area_id,
-        'idkodewilayahasal'   => $kend->area_from_id,
+        // 'idkepaladinas' => $kend->idkepaladinas,
+        // 'iddirektur'    => $kend->iddirektur,
+        // 'kodewilayah'   => $kend->kodewilayah,
+        // 'kodewilayahasal'   => $kend->kodewilayahasal,
+        // 'idkodewilayah'   => $kend->area_id,
+        // 'idkodewilayahasal'   => $kend->area_from_id,
       );
       $searchCriteria = [
           'nouji' => $kend->nouji,
       ];
       $dataIden = Identitaskendaraan::updateOrCreate($searchCriteria, $identitaskendaraan);
       if ($dataIden) {
+        if($kend->bsumbu5 > 0){
+          $jumlahsumbu = 5;
+          $beratkosong = $kend->bsumbu5 + $kend->bsumbu4 + $kend->bsumbu3 + $kend->bsumbu2 + $kend->bsumbu1;
+        } elseif ($kend->bsumbu4 > 0){
+          $jumlahsumbu = 4;
+          $beratkosong = $kend->bsumbu4 + $kend->bsumbu3 + $kend->bsumbu2 + $kend->bsumbu1;
+        } elseif ($kend->bsumbu3 > 0){
+          $jumlahsumbu = 3;
+          $beratkosong =$kend->bsumbu3 + $kend->bsumbu2 + $kend->bsumbu1;
+        } else {
+          $jumlahsumbu = 2;
+          $beratkosong = $kend->bsumbu2 + $kend->bsumbu1;
+        }
         $datakendaraan = array(
           'identitaskendaraan_id'  => $dataIden->id,
-          'jbb' => $kend->jbb,
-          'jbkb' => $kend->jbkb,
-          'jbi' => $kend->jbi,
-          'jbki' => $kend->jbki,
-          'mst' => $kend->mst,
-          'konfigurasisumburoda' => $kend->konfigurasisumburoda,
-          'ukuranban' => $kend->ukuranban,
-          'panjangkendaraan' => $kend->panjangkendaraan,
-          'lebarkendaraan' => $kend->lebarkendaraan,
-          'tinggikendaraan' => $kend->tinggikendaraan,
-          'panjangbakatautangki' => $kend->panjangbakatautangki,
-          'lebarbakatautangki' => $kend->lebarbakatautangki,
-          'tinggibakatautangki' => $kend->tinggibakatautangki,
-          'julurdepan' => $kend->julurdepan,
-          'julurbelakang' => $kend->julurbelakang,
-          'groundclearance' => $kend->groundclearance,
-          'jumlah_sumbu' => $kend->jumlah_sumbu,
-          'jaraksumbu1_2' => $kend->jaraksumbu1_2,
-          'jaraksumbu2_3' => $kend->jaraksumbu2_3,
-          'jaraksumbu2_3' => $kend->jaraksumbu2_3,
-          'jaraksumbu3_4' => $kend->jaraksumbu3_4,
-          'jaraksumbu4_5' => $kend->jaraksumbu4_5,
-          'jaraksumbu5_6' => $kend->jaraksumbu5_6,
-          'jaraksumbu6_7' => $kend->jaraksumbu6_7,
-          'jaraksumbu7_8' => $kend->jaraksumbu7_8,
-          'jaraksumbu8_9' => $kend->jaraksumbu8_9,
-          'jaraksumbu9_10' => $kend->jaraksumbu9_10,
-          'jaraksumbu10_11' => $kend->jaraksumbu10_11,
-          'jaraksumbu11_12' => $kend->jaraksumbu11_12,
-          'q' => 0,
-          'a' => $kend->wheel_base,
+          'jbb' => $kend->kemjbb,
+          'jbkb' => $kend->kemjbkb,
+          // 'jbi' => $kend->jbi,
+          // 'jbki' => $kend->jbki,
+          'mst' => $kend->mst1,
+          'konfigurasisumburoda' => $kend->konsumbu,
+          'ukuranban' => $kend->psumbu1,
+          'panjangkendaraan' => $kend->ukuran_panjang,
+          'lebarkendaraan' => $kend->ukuran_lebar,
+          'tinggikendaraan' => $kend->ukuran_tinggi,
+          'panjangbakatautangki' => $kend->dimpanjang ?? $kend->tang_panjang,
+          'lebarbakatautangki' => $kend->dimlebar ?? $kend->tang_lebar,
+          'tinggibakatautangki' => $kend->dimtinggi ?? $kend->tang_tinggi,
+          'julurdepan' => $kend->bagian_depan,
+          'julurbelakang' => $kend->bagian_belakang,
+          // 'groundclearance' => $kend->groundclearance,
+          'jumlah_sumbu' => $jumlahsumbu,
+          'jaraksumbu1_2' => $kend->jsumbu1,
+          'jaraksumbu2_3' => $kend->jsumbu2,
+          'jaraksumbu2_3' => $kend->jsumbu3,
+          'jaraksumbu3_4' => $kend->jsumbu4,
+          // 'jaraksumbu4_5' => $kend->jaraksumbu4_5,
+          // 'jaraksumbu5_6' => $kend->jaraksumbu5_6,
+          // 'jaraksumbu6_7' => $kend->jaraksumbu6_7,
+          // 'jaraksumbu7_8' => $kend->jaraksumbu7_8,
+          // 'jaraksumbu8_9' => $kend->jaraksumbu8_9,
+          // 'jaraksumbu9_10' => $kend->jaraksumbu9_10,
+          // 'jaraksumbu10_11' => $kend->jaraksumbu10_11,
+          // 'jaraksumbu11_12' => $kend->jaraksumbu11_12,
+          'q' => $kend->ukq,
+          'a' => $kend->bagian_jterendah,
           'r' => 0,
           'b' => 0,
-          'p' => 0,
-          'dayaangkutorang' => $kend->dayaangkutorang,
-          'dayaangkutbarang' => $kend->dayaangkutbarang,
-          'kelasjalanterendah' => $kend->kelasjalanterendah,
-          'idkelasjalanterendah' => $kend->kelasjalan_id,
+          'p' => $kend->ukp,
+          'dayaangkutorang' => $kend->kemorang,
+          'dayaangkutbarang' => $kend->kembarang,
+          'kelasjalanterendah' => $kend->kls_jln,
+          // 'idkelasjalanterendah' => $kend->kelasjalan_id,
           'beratkosong' => $kend->beratkosong,
-          'beratsumbu1' => $kend->alatuji_beratsumbu1,
-          'beratsumbu2' => $kend->alatuji_beratsumbu2,
-          'beratsumbu3' => $kend->alatuji_beratsumbu3,
-          'beratsumbu4' => $kend->alatuji_beratsumbu4,
-          'beratsumbu5' => $kend->alatuji_beratsumbu5,
-          'beratsumbu6' => $kend->alatuji_beratsumbu6,
-          'beratsumbu7' => $kend->alatuji_beratsumbu7,
-          'beratsumbu8' => $kend->alatuji_beratsumbu8,
-          'beratsumbu9' => $kend->alatuji_beratsumbu9,
-          'beratsumbu10' => $kend->alatuji_beratsumbu10,
-          'beratsumbu11' => $kend->alatuji_beratsumbu11,
-          'beratsumbu12' => $kend->alatuji_beratsumbu12,
-          // 'volume' => $kend->volume,
+          'beratsumbu1' => $kend->bsumbu1,
+          'beratsumbu2' => $kend->bsumbu2,
+          'beratsumbu3' => $kend->bsumbu3,
+          'beratsumbu4' => $kend->bsumbu4,
+          'beratsumbu5' => $kend->bsumbu5,
+          // 'beratsumbu6' => $kend->alatuji_beratsumbu6,
+          // 'beratsumbu7' => $kend->alatuji_beratsumbu7,
+          // 'beratsumbu8' => $kend->alatuji_beratsumbu8,
+          // 'beratsumbu9' => $kend->alatuji_beratsumbu9,
+          // 'beratsumbu10' => $kend->alatuji_beratsumbu10,
+          // 'beratsumbu11' => $kend->alatuji_beratsumbu11,
+          // 'beratsumbu12' => $kend->alatuji_beratsumbu12,
+          // // 'volume' => $kend->volume,
           // 'jenismuatan' => $kend->jenismuatan,
-          // 'bahan' => $kend->bahan,
+          'bahan' => $kend->karoseri_bahan,
         );
         $dataKendaraanSearchCriteria = [
             'identitaskendaraan_id' => $dataIden->id,
         ];
 
         $dataKend = Datakendaraan::updateOrCreate($dataKendaraanSearchCriteria, $datakendaraan);
-        $dateTimeObj = new DateTime($kend->tgluji);
+        $dateTimeObj = new DateTime($kend->tgl_uji);
         $dateTimeObj2 = new DateTime($kend->masaberlakuuji);
+        if($kend->id_uji == '1')
+        {
+          $kode = '2';
+        }elseif($kend->id_uji == '2')
+        {
+          $kode = '5';
+        }elseif($kend->id_uji == '3')
+        {
+          $kode = '9';
+        }elseif($kend->id_uji == '4')
+        {
+          $kode = '5';
+        }elseif($kend->id_uji == '5')
+        {
+          $kode = '10';
+        }elseif($kend->id_uji == '5')
+        {
+          $kode = '10';
+        }else{
+          $kode = $kend->statuspenerbitan;  
+        }
         $pendaftaran = array(
           'uuid' => (string) Str::uuid(),
           'identitaskendaraan_id' => $dataIden->id,
-          'idx'   => $kend->idx,
+          // 'idx'   => $kend->idx,
           'kodepenerbitans_id'   => $kend->statuspenerbitan,
-          'tglpendaftaran'    => $dateTimeObj->format('Y-m-d'),
-          'nosuratkehilangan'  => $kend->nosuratkehilangan,
+          'tglpendaftaran'    => $kend->tgl_uji,
+          // 'nosuratkehilangan'  => $kend->nosuratkehilangan,
           // 'namapemohon'   => $pend->namapemohon,
           // 'alamatpemohon' => $pend->alamatpemohon,
           // 'notelp'    => $pend->notelp,

@@ -812,7 +812,7 @@ class PengujianRepository
         }
         $model = $this->{$modelProperty};
 
-        $data = $model->where('pendaftaran_id', $id)->first();
+        $data = $model->where('pendaftaran_ida', $id)->first();
         $request['pendaftaran_id'] = $id;
         if ($data) {
             $data->update($request);
