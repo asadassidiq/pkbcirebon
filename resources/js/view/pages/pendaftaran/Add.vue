@@ -1579,7 +1579,7 @@ export default {
 
           // cek apakah nilainya berbeda dan data baru tidak kosong
           //&& key !== 'tglpendaftaran' && key !== 'kodepenerbitans_id' && key !== 'nosurat' && key !== 'nosuratdari' && key !== 'kepada' && key !== 'tglhbsuji' && key !== 'tglterakhiruji' && key !== 'ketujiterakhir' && key !== 'penguji' && key !== 'nrp' && key !== 'nokendaraanbaru' && key !== 'namapemilikbaru' && key !== 'alamatpemilikbaru' && key !== 'catatanrubahbentuk' && key !== 'uuid'
-          if (lama !== baru && baru !== "" && lama !== "" && baru !== "null" && baru !== "0") {
+          if (lama !== baru && baru !== "" && lama !== "" && lama !== "-" && baru !== "null" && baru !== "0") {
             perubahan.push({
               field: key,
               lama: lama,
