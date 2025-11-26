@@ -491,9 +491,9 @@ class PendaftaranRepository
         $date = str_replace("/", "", request()->date);
         $data = $this->model->where('tglpendaftaran', $date)->orderBy('noantrian', 'DESC')->first();
         if($data){
-            return $data->noantrian;
+            return (int)$data->noantrian+1;
         }else{
-            return 0;
+            return 1;
         }   
     }
 
