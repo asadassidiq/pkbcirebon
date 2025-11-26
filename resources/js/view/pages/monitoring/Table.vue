@@ -34,11 +34,11 @@
                 <th>No Uji</th>
                 <th>No Kendaraan</th>
                 <th>Posisi</th>
-                <th>Pos 1</th>
-                <th>Pos 2</th>
-                <th>Pos 3</th>
-                <th>Pos 4</th>
-                <th>Verif</th>
+                <th class="text-center">Pos 1</th>
+                <th class="text-center">Pos 2</th>
+                <th class="text-center">Pos 3</th>
+                <th class="text-center">Pos 4</th>
+                <th class="text-center">Verif</th>
               </tr>
             </thead>
             <tbody>
