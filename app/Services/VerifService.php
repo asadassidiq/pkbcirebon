@@ -97,8 +97,8 @@ class VerifService
         return $this->repoVerif->approveSurat($id, $request);
     }
 
-    public function setDatapengujian($id,$jenis_cetak){
-        return $this->repoVerif->setDatapengujian($id,$jenis_cetak);
+    public function setDatapengujian($id,$jenis_cetak,$status){
+        return $this->repoVerif->setDatapengujian($id,$jenis_cetak,$status);
     }
 
     public function delete($id)

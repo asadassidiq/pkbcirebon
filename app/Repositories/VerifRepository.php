@@ -235,328 +235,328 @@ class VerifRepository
         return false;
     }
 
-    public function createDatapengujian($id, $data, $alamatFull, $kode, $idkepaladinas, $iddirektur, $idpetugas, $tglsertifikatreg, $masaberlakuuji, $alatuji_remparkirtotalgayapengereman)
-    {
-        return Datapengujian::Create([
-            'idx'              => $data->idx,
-            'statuspenerbitan'  => $kode,
-            'nouji'             => $data->nouji,
-            'nama'              => $alamatFull,
-            'alamat'            => $data->alamat,
-            'noidentitaspemilik' => $data->noidentitaspemilik,
-            'nosertifikatreg'   => $data->nosertifikatreg,
-            'tglsertifikatreg'      => $tglsertifikatreg,
-            'nosuratkehilangan'     => $data->nosuratkehilangan,
-            'noregistrasikendaraan' => $data->noregistrasikendaraan,
-            'tgl_registrasikendaraan' => $data->tgl_registrasikendaraan,
-            'norangka'              => $data->norangka,
-            'merek'                 => $data->merek,
-            'tipe'                  => $data->tipe,
-            'nomesin'               => $data->nomesin,
-            'jenis'                 => $data->jenis,
-            'subjenis_kendaraan'    => $data->subjenis,
-            'varian_kendaraan'      => $data->varian,
-            'sub_varian_kendaraan'  => $data->tipe,
-            'jbb'                   => $data->jbb,
-            'thpembuatan'           => $data->thpembuatan,
-            'bahanbakar'            => $data->bahanbakar,
-            'isisilinder'           => $data->isisilinder,
-            'dayamotorpenggerak'    => $data->dayamotorpenggerak,
-            'idkepaladinas'         => $idkepaladinas,
-            'iddirektur'            => $iddirektur,
-            'kodewilayah'           => $data->kodewilayah,
-            'kodewilayahasal'       => $data->kodewilayahasal,
-            'area_from_id'          => $data->idkodewilayah,
-            'area_from_name'        => $data->kodewilayah,
-            'vehicle_brand_id'      => $data->idmerek,
-            'vehicle_type_id'       => $data->idjenis,
-            'vehicle_sub_id'        => $data->idsubjenis,
-            'vehicle_varian_type_id' => $data->idtipe,
-            'vehicle_varian_id'     => $data->idvarian,
-            'fuel_id'               => $data->idbahanbakar,
-            'kelasjalan_id'         => $data->idkelasjalanterendah,
-            'jbi'                   => $data->jbi,
-            'jbkb'                  => $data->jbkb,
-            'jbki'                  => $data->jbki,
-            'mst'                   => $data->mst,
-            'beratkosong'           => $data->beratkosong,
-            'konfigurasisumburoda'  => $data->konfigurasisumburoda,
-            'ukuranban'             => $data->ukuranban,
-            'panjangkendaraan'      => $data->panjangkendaraan,
-            'lebarkendaraan'        => $data->lebarkendaraan,
-            'tinggikendaraan'       => $data->tinggikendaraan,
-            'panjangbakatautangki'  => $data->panjangbakatautangki,
-            'lebarbakatautangki'    => $data->lebarbakatautangki,
-            'tinggibakatautangki'   => $data->tinggibakatautangki,
-            'jumlah_sumbu'          => $data->jumlah_sumbu,
-            'julurdepan'            => $data->julurdepan,
-            'julurbelakang'         => $data->julurbelakang,
-            'jaraksumbu1_2'         => $data->jaraksumbu1_2,
-            'jaraksumbu2_3'         => $data->jaraksumbu2_3,
-            'jaraksumbu3_4'         => $data->jaraksumbu3_4,
-            'jaraksumbu5_6'         => $data->jaraksumbu5_6,
-            'jaraksumbu6_7'         => $data->jaraksumbu6_7,
-            'jaraksumbu7_8'         => $data->jaraksumbu7_8,
-            'jaraksumbu8_9'         => $data->jaraksumbu8_9,
-            'jaraksumbu9_10'        => $data->jaraksumbu9_10,
-            'jaraksumbu10_11'        => $data->jaraksumbu10_11,
-            'jaraksumbu11_12'        => $data->jaraksumbu11_12,
-            'dayaangkutorang'       => $data->dayaangkutorang,
-            'dayaangkutbarang'      => $data->dayaangkutbarang,
-            'kelasjalanterendah'    => $data->kelasjalanterendah,
-            'idpetugasuji'          => $idpetugas,
-            'huv_nomordankondisirangka'                 => '1',
-            'huv_nomordantipemotorpenggerak'            => '1',
-            'huv_kondisitangkicorongdanpipabahanbakar'  => '1',
-            'huv_kondisiconverterkit'                   => '1',
-            'huv_kondisidanposisipipapembuangan'        => '1',
-            'huv_ukurandankondisiban'                   => '1',
-            'huv_kondisisistemsuspensi'                 => '1',
-            'huv_kondisisistemremutama'                 => '1',
-            'huv_kondisipenutuplampudanalatpantulcahaya' => '1',
-            'huv_kondisipanelinstrumentdashboard'       => '1',
-            'huv_kondisikacaspion'                      => '1',
-            'huv_kondisispakbor'                        => '1',
-            'huv_bentukbumper'                          => '1',
-            'huv_keberadaandankondisiperlengkapan'      => '1',
-            'huv_rancanganteknis'                       => '1',
-            'huv_keberadaandankondisifasilitastanggapdaruratuntukmobilbus'   => '1',
-            'huv_kondisibadankacaengseltempatdudukmbarangbakmuatantertutup'  => '1',
-            'hum_kondisipenerusdaya'                    => '1',
-            'hum_sudutbebaskemudi'                      => '1',
-            'hum_kondisiremparkir'                      => '1',
-            'hum_fungsilampudanalatpantulcahaya'        => '1',
-            'hum_fungsipenghapuskaca'                   => '1',
-            'hum_tingkatkegelapankaca'                  => '1',
-            'hum_fungsiklakson'                         => '1',
-            'hum_kondisidanfungsisabukkeselamatan'      => '1',
-            'hum_ukurankendaraan'                       => '1',
-            'hum_ukurantempatdudukdanbagiandalamkendaraanuntukmobilbus'       => '1',
-            'berat_sumbu1'                              => $data->berats1,
-            'berat_sumbu2'                              => $data->berats2,
-            'berat_sumbu3'                              => $data->berats3,
-            'berat_sumbu4'                              => $data->berats4,
-            'berat_sumbu5'                              => $data->berats5,
-            'berat_sumbu6'                              => $data->berats6,
-            'berat_sumbu7'                              => $data->berats7,
-            'berat_sumbu8'                              => $data->berats8,
-            'berat_sumbu9'                              => $data->berats9,
-            'berat_sumbu10'                              => $data->berats10,
-            'berat_sumbu11'                              => $data->berats11,
-            'berat_sumbu12'                              => $data->berats12,
-            'alatuji_emisiasapbahanbakarsolar'          => $data->alatuji_emisiasapbahanbakarsolar,
-            'alatuji_emisicobahanbakarbensin'           => $data->alatuji_emisicobahanbakarbensin,
-            'alatuji_emisihcbahanbakarbensin'           => $data->alatuji_emisihcbahanbakarbensin,
-            'alatuji_gayaremparkirtangan'               => $data->alatuji_remparkirtangan,
-            'alatuji_gayaremparkirkaki'                 => $data->alatuji_remparkirkaki,
-            'alatuji_gayapengereman1kanan'              => $data->gayaremkanan1,
-            'alatuji_gayapengereman2kanan'              => $data->gayaremkanan2,
-            'alatuji_gayapengereman3kanan'              => $data->gayaremkanan3,
-            'alatuji_gayapengereman4kanan'              => $data->gayaremkanan4,
-            'alatuji_gayapengereman5kanan'              => $data->gayaremkanan5,
-            'alatuji_gayapengereman6kanan'              => $data->gayaremkanan6,
-            'alatuji_gayapengereman7kanan'              => $data->gayaremkanan7,
-            'alatuji_gayapengereman8kanan'              => $data->gayaremkanan8,
-            'alatuji_gayapengereman9kanan'              => $data->gayaremkanan9,
-            'alatuji_gayapengereman10kanan'             => $data->gayaremkanan10,
-            'alatuji_gayapengereman11kanan'             => $data->gayaremkanan11,
-            'alatuji_gayapengereman12kanan'             => $data->gayaremkanan12,
-            'alatuji_gayapengereman1kiri'               => $data->gayaremkiri1,
-            'alatuji_gayapengereman2kiri'               => $data->gayaremkiri2,
-            'alatuji_gayapengereman3kiri'               => $data->gayaremkiri3,
-            'alatuji_gayapengereman4kiri'               => $data->gayaremkiri4,
-            'alatuji_gayapengereman5kiri'               => $data->gayaremkiri5,
-            'alatuji_gayapengereman6kiri'               => $data->gayaremkiri6,
-            'alatuji_gayapengereman7kiri'               => $data->gayaremkiri7,
-            'alatuji_gayapengereman8kiri'               => $data->gayaremkiri8,
-            'alatuji_gayapengereman9kiri'               => $data->gayaremkiri9,
-            'alatuji_gayapengereman10kiri'              => $data->gayaremkiri10,
-            'alatuji_gayapengereman11kiri'              => $data->gayaremkiri11,
-            'alatuji_gayapengereman12kiri'              => $data->gayaremkiri12,
-            'alatuji_gayapengeremanparkirkanan'          => $data->alatuji_gayapengeremanparkirkanan,
-            'alatuji_gayapengeremanparkirkiri'          => $data->alatuji_gayapengeremanparkirkiri,
-            'alatuji_remparkirtotalgayapengereman'      => $alatuji_remparkirtotalgayapengereman,
-            'alatuji_remutamatotalgayapengereman'       => $data->alatuji_remutamatotalgayapengereman,
-            'alatuji_remutamaselisihgayapengeremanrodakirikanan1'  => $data->alatuji_remutamaselisihgayapengeremanrodakirikanan1,
-            'alatuji_remutamaselisihgayapengeremanrodakirikanan2'  => $data->alatuji_remutamaselisihgayapengeremanrodakirikanan2,
-            'alatuji_remutamaselisihgayapengeremanrodakirikanan3'  => $data->alatuji_remutamaselisihgayapengeremanrodakirikanan3,
-            'alatuji_remutamaselisihgayapengeremanrodakirikanan4'  => $data->alatuji_remutamaselisihgayapengeremanrodakirikanan4,
-            'alatuji_remparkirtangan'                   => $data->alatuji_remparkirtangan,
-            'alatuji_remparkirkaki'                     => $data->alatuji_remparkirkaki,
-            'alatuji_kincuprodadepan'                   => $data->alatuji_kincuprodadepan,
-            'alatuji_tingkatkebisingan'                 => $data->alatuji_tingkatkebisingan,
-            'alatuji_lampuutamakekuatanpancarlampukanan' => $data->alatuji_lampuutamakekuatanpancarlampukanan,
-            'alatuji_lampuutamakekuatanpancarlampukiri' => $data->alatuji_lampuutamakekuatanpancarlampukiri,
-            'alatuji_lampuutamapenyimpanganlampukanan'  => $data->alatuji_lampuutamapenyimpanganlampukanan,
-            'alatuji_lampuutamapenyimpanganlampukiri'   => $data->alatuji_lampuutamapenyimpanganlampukiri,
-            'alatuji_penunjukkecepatan'                 => $data->alatuji_penunjukkecepatan,
-            'alatuji_kedalamanalurban'                  => $data->alatuji_kedalamanalurban,
-            'alatuji_alatpemantulcahayatambahan_kuning' => $data->alatuji_alatpemantulcahayatambahan_kuning,
-            'alatuji_alatpemantulcahayatambahan_putih'  => $data->alatuji_alatpemantulcahayatambahan_putih,
-            'alatuji_alatpemantulcahayatambahan_merah'  => $data->alatuji_alatpemantulcahayatambahan_merah,
-            'wheel_base'                                => $data->a,
-            'tgluji'                                    => date("dmY"),
-            'masaberlakuuji'                            => $masaberlakuuji,
-            'statuslulusuji'                            => '1',
-        ]);
-    }
+    // public function createDatapengujian($id, $data, $alamatFull, $kode, $idkepaladinas, $iddirektur, $idpetugas, $tglsertifikatreg, $masaberlakuuji, $alatuji_remparkirtotalgayapengereman)
+    // {
+    //     return Datapengujian::Create([
+    //         'idx'              => $data->idx,
+    //         'statuspenerbitan'  => $kode,
+    //         'nouji'             => $data->nouji,
+    //         'nama'              => $alamatFull,
+    //         'alamat'            => $data->alamat,
+    //         'noidentitaspemilik' => $data->noidentitaspemilik,
+    //         'nosertifikatreg'   => $data->nosertifikatreg,
+    //         'tglsertifikatreg'      => $tglsertifikatreg,
+    //         'nosuratkehilangan'     => $data->nosuratkehilangan,
+    //         'noregistrasikendaraan' => $data->noregistrasikendaraan,
+    //         'tgl_registrasikendaraan' => $data->tgl_registrasikendaraan,
+    //         'norangka'              => $data->norangka,
+    //         'merek'                 => $data->merek,
+    //         'tipe'                  => $data->tipe,
+    //         'nomesin'               => $data->nomesin,
+    //         'jenis'                 => $data->jenis,
+    //         'subjenis_kendaraan'    => $data->subjenis,
+    //         'varian_kendaraan'      => $data->varian,
+    //         'sub_varian_kendaraan'  => $data->tipe,
+    //         'jbb'                   => $data->jbb,
+    //         'thpembuatan'           => $data->thpembuatan,
+    //         'bahanbakar'            => $data->bahanbakar,
+    //         'isisilinder'           => $data->isisilinder,
+    //         'dayamotorpenggerak'    => $data->dayamotorpenggerak,
+    //         'idkepaladinas'         => $idkepaladinas,
+    //         'iddirektur'            => $iddirektur,
+    //         'kodewilayah'           => $data->kodewilayah,
+    //         'kodewilayahasal'       => $data->kodewilayahasal,
+    //         'area_from_id'          => $data->idkodewilayah,
+    //         'area_from_name'        => $data->kodewilayah,
+    //         'vehicle_brand_id'      => $data->idmerek,
+    //         'vehicle_type_id'       => $data->idjenis,
+    //         'vehicle_sub_id'        => $data->idsubjenis,
+    //         'vehicle_varian_type_id' => $data->idtipe,
+    //         'vehicle_varian_id'     => $data->idvarian,
+    //         'fuel_id'               => $data->idbahanbakar,
+    //         'kelasjalan_id'         => $data->idkelasjalanterendah,
+    //         'jbi'                   => $data->jbi,
+    //         'jbkb'                  => $data->jbkb,
+    //         'jbki'                  => $data->jbki,
+    //         'mst'                   => $data->mst,
+    //         'beratkosong'           => $data->beratkosong,
+    //         'konfigurasisumburoda'  => $data->konfigurasisumburoda,
+    //         'ukuranban'             => $data->ukuranban,
+    //         'panjangkendaraan'      => $data->panjangkendaraan,
+    //         'lebarkendaraan'        => $data->lebarkendaraan,
+    //         'tinggikendaraan'       => $data->tinggikendaraan,
+    //         'panjangbakatautangki'  => $data->panjangbakatautangki,
+    //         'lebarbakatautangki'    => $data->lebarbakatautangki,
+    //         'tinggibakatautangki'   => $data->tinggibakatautangki,
+    //         'jumlah_sumbu'          => $data->jumlah_sumbu,
+    //         'julurdepan'            => $data->julurdepan,
+    //         'julurbelakang'         => $data->julurbelakang,
+    //         'jaraksumbu1_2'         => $data->jaraksumbu1_2,
+    //         'jaraksumbu2_3'         => $data->jaraksumbu2_3,
+    //         'jaraksumbu3_4'         => $data->jaraksumbu3_4,
+    //         'jaraksumbu5_6'         => $data->jaraksumbu5_6,
+    //         'jaraksumbu6_7'         => $data->jaraksumbu6_7,
+    //         'jaraksumbu7_8'         => $data->jaraksumbu7_8,
+    //         'jaraksumbu8_9'         => $data->jaraksumbu8_9,
+    //         'jaraksumbu9_10'        => $data->jaraksumbu9_10,
+    //         'jaraksumbu10_11'        => $data->jaraksumbu10_11,
+    //         'jaraksumbu11_12'        => $data->jaraksumbu11_12,
+    //         'dayaangkutorang'       => $data->dayaangkutorang,
+    //         'dayaangkutbarang'      => $data->dayaangkutbarang,
+    //         'kelasjalanterendah'    => $data->kelasjalanterendah,
+    //         'idpetugasuji'          => $idpetugas,
+    //         'huv_nomordankondisirangka'                 => '1',
+    //         'huv_nomordantipemotorpenggerak'            => '1',
+    //         'huv_kondisitangkicorongdanpipabahanbakar'  => '1',
+    //         'huv_kondisiconverterkit'                   => '1',
+    //         'huv_kondisidanposisipipapembuangan'        => '1',
+    //         'huv_ukurandankondisiban'                   => '1',
+    //         'huv_kondisisistemsuspensi'                 => '1',
+    //         'huv_kondisisistemremutama'                 => '1',
+    //         'huv_kondisipenutuplampudanalatpantulcahaya' => '1',
+    //         'huv_kondisipanelinstrumentdashboard'       => '1',
+    //         'huv_kondisikacaspion'                      => '1',
+    //         'huv_kondisispakbor'                        => '1',
+    //         'huv_bentukbumper'                          => '1',
+    //         'huv_keberadaandankondisiperlengkapan'      => '1',
+    //         'huv_rancanganteknis'                       => '1',
+    //         'huv_keberadaandankondisifasilitastanggapdaruratuntukmobilbus'   => '1',
+    //         'huv_kondisibadankacaengseltempatdudukmbarangbakmuatantertutup'  => '1',
+    //         'hum_kondisipenerusdaya'                    => '1',
+    //         'hum_sudutbebaskemudi'                      => '1',
+    //         'hum_kondisiremparkir'                      => '1',
+    //         'hum_fungsilampudanalatpantulcahaya'        => '1',
+    //         'hum_fungsipenghapuskaca'                   => '1',
+    //         'hum_tingkatkegelapankaca'                  => '1',
+    //         'hum_fungsiklakson'                         => '1',
+    //         'hum_kondisidanfungsisabukkeselamatan'      => '1',
+    //         'hum_ukurankendaraan'                       => '1',
+    //         'hum_ukurantempatdudukdanbagiandalamkendaraanuntukmobilbus'       => '1',
+    //         'berat_sumbu1'                              => $data->berats1,
+    //         'berat_sumbu2'                              => $data->berats2,
+    //         'berat_sumbu3'                              => $data->berats3,
+    //         'berat_sumbu4'                              => $data->berats4,
+    //         'berat_sumbu5'                              => $data->berats5,
+    //         'berat_sumbu6'                              => $data->berats6,
+    //         'berat_sumbu7'                              => $data->berats7,
+    //         'berat_sumbu8'                              => $data->berats8,
+    //         'berat_sumbu9'                              => $data->berats9,
+    //         'berat_sumbu10'                              => $data->berats10,
+    //         'berat_sumbu11'                              => $data->berats11,
+    //         'berat_sumbu12'                              => $data->berats12,
+    //         'alatuji_emisiasapbahanbakarsolar'          => $data->alatuji_emisiasapbahanbakarsolar,
+    //         'alatuji_emisicobahanbakarbensin'           => $data->alatuji_emisicobahanbakarbensin,
+    //         'alatuji_emisihcbahanbakarbensin'           => $data->alatuji_emisihcbahanbakarbensin,
+    //         'alatuji_gayaremparkirtangan'               => $data->alatuji_remparkirtangan,
+    //         'alatuji_gayaremparkirkaki'                 => $data->alatuji_remparkirkaki,
+    //         'alatuji_gayapengereman1kanan'              => $data->gayaremkanan1,
+    //         'alatuji_gayapengereman2kanan'              => $data->gayaremkanan2,
+    //         'alatuji_gayapengereman3kanan'              => $data->gayaremkanan3,
+    //         'alatuji_gayapengereman4kanan'              => $data->gayaremkanan4,
+    //         'alatuji_gayapengereman5kanan'              => $data->gayaremkanan5,
+    //         'alatuji_gayapengereman6kanan'              => $data->gayaremkanan6,
+    //         'alatuji_gayapengereman7kanan'              => $data->gayaremkanan7,
+    //         'alatuji_gayapengereman8kanan'              => $data->gayaremkanan8,
+    //         'alatuji_gayapengereman9kanan'              => $data->gayaremkanan9,
+    //         'alatuji_gayapengereman10kanan'             => $data->gayaremkanan10,
+    //         'alatuji_gayapengereman11kanan'             => $data->gayaremkanan11,
+    //         'alatuji_gayapengereman12kanan'             => $data->gayaremkanan12,
+    //         'alatuji_gayapengereman1kiri'               => $data->gayaremkiri1,
+    //         'alatuji_gayapengereman2kiri'               => $data->gayaremkiri2,
+    //         'alatuji_gayapengereman3kiri'               => $data->gayaremkiri3,
+    //         'alatuji_gayapengereman4kiri'               => $data->gayaremkiri4,
+    //         'alatuji_gayapengereman5kiri'               => $data->gayaremkiri5,
+    //         'alatuji_gayapengereman6kiri'               => $data->gayaremkiri6,
+    //         'alatuji_gayapengereman7kiri'               => $data->gayaremkiri7,
+    //         'alatuji_gayapengereman8kiri'               => $data->gayaremkiri8,
+    //         'alatuji_gayapengereman9kiri'               => $data->gayaremkiri9,
+    //         'alatuji_gayapengereman10kiri'              => $data->gayaremkiri10,
+    //         'alatuji_gayapengereman11kiri'              => $data->gayaremkiri11,
+    //         'alatuji_gayapengereman12kiri'              => $data->gayaremkiri12,
+    //         'alatuji_gayapengeremanparkirkanan'          => $data->alatuji_gayapengeremanparkirkanan,
+    //         'alatuji_gayapengeremanparkirkiri'          => $data->alatuji_gayapengeremanparkirkiri,
+    //         'alatuji_remparkirtotalgayapengereman'      => $alatuji_remparkirtotalgayapengereman,
+    //         'alatuji_remutamatotalgayapengereman'       => $data->alatuji_remutamatotalgayapengereman,
+    //         'alatuji_remutamaselisihgayapengeremanrodakirikanan1'  => $data->alatuji_remutamaselisihgayapengeremanrodakirikanan1,
+    //         'alatuji_remutamaselisihgayapengeremanrodakirikanan2'  => $data->alatuji_remutamaselisihgayapengeremanrodakirikanan2,
+    //         'alatuji_remutamaselisihgayapengeremanrodakirikanan3'  => $data->alatuji_remutamaselisihgayapengeremanrodakirikanan3,
+    //         'alatuji_remutamaselisihgayapengeremanrodakirikanan4'  => $data->alatuji_remutamaselisihgayapengeremanrodakirikanan4,
+    //         'alatuji_remparkirtangan'                   => $data->alatuji_remparkirtangan,
+    //         'alatuji_remparkirkaki'                     => $data->alatuji_remparkirkaki,
+    //         'alatuji_kincuprodadepan'                   => $data->alatuji_kincuprodadepan,
+    //         'alatuji_tingkatkebisingan'                 => $data->alatuji_tingkatkebisingan,
+    //         'alatuji_lampuutamakekuatanpancarlampukanan' => $data->alatuji_lampuutamakekuatanpancarlampukanan,
+    //         'alatuji_lampuutamakekuatanpancarlampukiri' => $data->alatuji_lampuutamakekuatanpancarlampukiri,
+    //         'alatuji_lampuutamapenyimpanganlampukanan'  => $data->alatuji_lampuutamapenyimpanganlampukanan,
+    //         'alatuji_lampuutamapenyimpanganlampukiri'   => $data->alatuji_lampuutamapenyimpanganlampukiri,
+    //         'alatuji_penunjukkecepatan'                 => $data->alatuji_penunjukkecepatan,
+    //         'alatuji_kedalamanalurban'                  => $data->alatuji_kedalamanalurban,
+    //         'alatuji_alatpemantulcahayatambahan_kuning' => $data->alatuji_alatpemantulcahayatambahan_kuning,
+    //         'alatuji_alatpemantulcahayatambahan_putih'  => $data->alatuji_alatpemantulcahayatambahan_putih,
+    //         'alatuji_alatpemantulcahayatambahan_merah'  => $data->alatuji_alatpemantulcahayatambahan_merah,
+    //         'wheel_base'                                => $data->a,
+    //         'tgluji'                                    => date("dmY"),
+    //         'masaberlakuuji'                            => $masaberlakuuji,
+    //         'statuslulusuji'                            => '1',
+    //     ]);
+    // }
 
-    public function updateDatapengujian(
-        $uji,
-        $data,
-        $alamatFull,
-        $kode,
-        $idkepaladinas,
-        $iddirektur,
-        $idpetugas,
-        $tglsertifikatreg,
-        $masaberlakuuji,
-        $alatuji_remparkirtotalgayapengereman
-    ) 
-    {
-        if (!$uji)
-            return [false, $uji];
+    // public function updateDatapengujian(
+    //     $uji,
+    //     $data,
+    //     $alamatFull,
+    //     $kode,
+    //     $idkepaladinas,
+    //     $iddirektur,
+    //     $idpetugas,
+    //     $tglsertifikatreg,
+    //     $masaberlakuuji,
+    //     $alatuji_remparkirtotalgayapengereman
+    // ) 
+    // {
+    //     if (!$uji)
+    //         return [false, $uji];
 
-        $uji->statuspenerbitan  = $kode;
-        $uji->nouji             = $data->nouji;
-        $uji->nama              = $data->nama;
-        $uji->alamat            = $alamatFull;
-        $uji->noidentitaspemilik = $data->noidentitaspemilik;
-        $uji->nosertifikatreg   = $data->nosertifikatreg;
-        $uji->tglsertifikatreg      = $data->tglsertifikatreg;
-        $uji->nosuratkehilangan     = $data->nosuratkehilangan;
-        $uji->noregistrasikendaraan = $data->noregistrasikendaraan;
-        $uji->tgl_registrasikendaraan = $data->tgl_registrasikendaraan;
-        $uji->norangka              = $data->norangka;
-        $uji->merek                 = $data->merek;
-        $uji->tipe                  = $data->tipe;
-        $uji->nomesin               = $data->nomesin;
-        $uji->jbb                   = $data->jbb;
-        $uji->thpembuatan           = $data->thpembuatan;
-        $uji->bahanbakar            = $data->bahanbakar;
-        $uji->jenis                 = $data->jenis;
-        $uji->subjenis_kendaraan    = $data->subjenis;
-        $uji->varian_kendaraan      = $data->varian;
-        $uji->sub_varian_kendaraan  = $data->tipe;
-        $uji->isisilinder           = $data->isisilinder;
-        $uji->dayamotorpenggerak    = $data->dayamotorpenggerak;
-        $uji->idkepaladinas         = $idkepaladinas;
-        $uji->iddirektur            = $iddirektur;
-        $uji->kodewilayah           = $data->kodewilayah;
-        $uji->kodewilayahasal       = $data->kodewilayahasal;
-        $uji->area_from_id          = $data->idkodewilayah;
-        $uji->area_from_name        = $data->kodewilayah;
-        $uji->vehicle_brand_id      = $data->idmerek;
-        $uji->vehicle_type_id       = $data->idjenis;
-        $uji->vehicle_sub_id        = $data->idsubjenis;
-        $uji->vehicle_varian_type_id = $data->idtipe;
-        $uji->vehicle_varian_id     = $data->idvarian;
-        $uji->fuel_id               = $data->idbahanbakar;
-        $uji->jbi                   = $data->jbi;
-        $uji->nosertifikatreg       = $data->nosertifikatreg;
-        $uji->tglsertifikatreg      = $tglsertifikatreg;
-        $uji->jbkb                  = $data->jbkb;
-        $uji->jbki                  = $data->jbki;
-        $uji->mst                   = $data->mst;
-        $uji->beratkosong           = $data->beratkosong;
-        $uji->konfigurasisumburoda  = $data->konfigurasisumburoda;
-        $uji->ukuranban             = $data->ukuranban;
-        $uji->panjangkendaraan      = $data->panjangkendaraan;
-        $uji->lebarkendaraan        = $data->lebarkendaraan;
-        $uji->tinggikendaraan       = $data->tinggikendaraan;
-        $uji->panjangbakatautangki  = $data->panjangbakatautangki;
-        $uji->lebarbakatautangki    = $data->lebarbakatautangki;
-        $uji->tinggibakatautangki   = $data->tinggibakatautangki;
-        $uji->julurdepan            = $data->julurdepan;
-        $uji->julurbelakang         = $data->julurbelakang;
-        $uji->jumlah_sumbu          = $data->jumlah_sumbu;
-        $uji->jaraksumbu1_2         = $data->jaraksumbu1_2;
-        $uji->jaraksumbu2_3         = $data->jaraksumbu2_3;
-        $uji->jaraksumbu3_4         = $data->jaraksumbu3_4;
-        $uji->jaraksumbu4_5         = $data->jaraksumbu4_5;
-        $uji->jaraksumbu5_6         = $data->jaraksumbu5_6;
-        $uji->jaraksumbu6_7         = $data->jaraksumbu6_7;
-        $uji->jaraksumbu7_8         = $data->jaraksumbu7_8;
-        $uji->jaraksumbu9_10         = $data->jaraksumbu9_10;
-        $uji->jaraksumbu10_11         = $data->jaraksumbu10_11;
-        $uji->jaraksumbu11_12         = $data->jaraksumbu11_12;
-        $uji->dayaangkutorang       = $data->dayaangkutorang;
-        $uji->dayaangkutbarang      = $data->dayaangkutbarang;
-        $uji->kelasjalanterendah    = $data->kelasjalanterendah;
-        $uji->kelasjalan_id         = $data->idkelasjalanterendah;
-        $uji->idpetugasuji          = $idpetugas;
-        $uji->berat_sumbu1          = $data->berats1;
-        $uji->berat_sumbu2          = $data->berats2;
-        $uji->berat_sumbu3          = $data->berats3;
-        $uji->berat_sumbu4          = $data->berats4;
-        $uji->berat_sumbu5          = $data->berats5;
-        $uji->berat_sumbu6          = $data->berats6;
-        $uji->berat_sumbu7          = $data->berats7;
-        $uji->berat_sumbu8          = $data->berats8;
-        $uji->berat_sumbu9          = $data->berats9;
-        $uji->berat_sumbu10          = $data->berats10;
-        $uji->berat_sumbu11          = $data->berats11;
-        $uji->berat_sumbu12          = $data->berats12;
-        $uji->alatuji_emisiasapbahanbakarsolar          = $data->alatuji_emisiasapbahanbakarsolar;
-        $uji->alatuji_emisicobahanbakarbensin           = $data->alatuji_emisicobahanbakarbensin;
-        $uji->alatuji_emisihcbahanbakarbensin           = $data->alatuji_emisihcbahanbakarbensin;
-        $uji->alatuji_gayaremparkirtangan               = $data->alatuji_remparkirtangan;
-        $uji->alatuji_gayaremparkirkaki                 = $data->alatuji_remparkirkaki;
-        $uji->alatuji_gayapengereman1kanan              = $data->gayaremkanan1;
-        $uji->alatuji_gayapengereman2kanan              = $data->gayaremkanan2;
-        $uji->alatuji_gayapengereman3kanan              = $data->gayaremkanan3;
-        $uji->alatuji_gayapengereman4kanan              = $data->gayaremkanan4;
-        $uji->alatuji_gayapengereman5kanan              = $data->gayaremkanan5;
-        $uji->alatuji_gayapengereman6kanan              = $data->gayaremkanan6;
-        $uji->alatuji_gayapengereman7kanan              = $data->gayaremkanan7;
-        $uji->alatuji_gayapengereman8kanan              = $data->gayaremkanan8;
-        $uji->alatuji_gayapengereman9kanan              = $data->gayaremkanan9;
-        $uji->alatuji_gayapengereman10kanan              = $data->gayaremkanan10;
-        $uji->alatuji_gayapengereman11kanan              = $data->gayaremkanan11;
-        $uji->alatuji_gayapengereman12kanan              = $data->gayaremkanan12;
-        $uji->alatuji_gayapengereman1kiri              = $data->gayaremkiri1;
-        $uji->alatuji_gayapengereman2kiri              = $data->gayaremkiri2;
-        $uji->alatuji_gayapengereman3kiri              = $data->gayaremkiri3;
-        $uji->alatuji_gayapengereman4kiri              = $data->gayaremkiri4;
-        $uji->alatuji_gayapengereman5kiri              = $data->gayaremkiri5;
-        $uji->alatuji_gayapengereman6kiri              = $data->gayaremkiri6;
-        $uji->alatuji_gayapengereman7kiri              = $data->gayaremkiri7;
-        $uji->alatuji_gayapengereman8kiri              = $data->gayaremkiri8;
-        $uji->alatuji_gayapengereman9kiri              = $data->gayaremkiri9;
-        $uji->alatuji_gayapengereman10kiri              = $data->gayaremkiri10;
-        $uji->alatuji_gayapengereman11kiri              = $data->gayaremkiri11;
-        $uji->alatuji_gayapengereman12kiri              = $data->gayaremkiri12;
-        $uji->alatuji_gayapengeremanparkirkanan         = $data->alatuji_gayapengeremanparkirkanan;
-        $uji->alatuji_gayapengeremanparkirkiri         = $data->alatuji_gayapengeremanparkirkiri;
-        $uji->alatuji_remutamatotalgayapengereman       = $data->alatuji_remutamatotalgayapengereman;
-        $uji->alatuji_remparkirtotalgayapengereman      = $alatuji_remparkirtotalgayapengereman;
-        $uji->alatuji_remutamaselisihgayapengeremanrodakirikanan1  = $data->alatuji_remutamaselisihgayapengeremanrodakirikanan1;
-        $uji->alatuji_remutamaselisihgayapengeremanrodakirikanan2  = $data->alatuji_remutamaselisihgayapengeremanrodakirikanan2;
-        $uji->alatuji_remutamaselisihgayapengeremanrodakirikanan3  = $data->alatuji_remutamaselisihgayapengeremanrodakirikanan3;
-        $uji->alatuji_remutamaselisihgayapengeremanrodakirikanan4  = $data->alatuji_remutamaselisihgayapengeremanrodakirikanan4;
-        $uji->alatuji_remparkirtangan                   = $data->alatuji_remparkirtangan;
-        $uji->alatuji_remparkirkaki                     = $data->alatuji_remparkirkaki;
-        $uji->alatuji_kincuprodadepan                   = $data->alatuji_kincuprodadepan;
-        $uji->alatuji_tingkatkebisingan                 = $data->alatuji_tingkatkebisingan;
-        $uji->alatuji_lampuutamakekuatanpancarlampukanan = $data->alatuji_lampuutamakekuatanpancarlampukanan;
-        $uji->alatuji_lampuutamakekuatanpancarlampukiri = $data->alatuji_lampuutamakekuatanpancarlampukiri;
-        $uji->alatuji_lampuutamapenyimpanganlampukanan  = $data->alatuji_lampuutamapenyimpanganlampukanan;
-        $uji->alatuji_lampuutamapenyimpanganlampukiri   = $data->alatuji_lampuutamapenyimpanganlampukiri;
-        $uji->alatuji_penunjukkecepatan                 = $data->alatuji_penunjukkecepatan;
-        $uji->alatuji_kedalamanalurban                  = $data->alatuji_kedalamanalurban;
-        $uji->alatuji_alatpemantulcahayatambahan_kuning = $data->alatuji_alatpemantulcahayatambahan_kuning;
-        $uji->alatuji_alatpemantulcahayatambahan_putih  = $data->alatuji_alatpemantulcahayatambahan_putih;
-        $uji->alatuji_alatpemantulcahayatambahan_merah  = $data->alatuji_alatpemantulcahayatambahan_merah;
-        $uji->wheel_base                                = $data->a;
-        $uji->tgluji                                    = date("dmY");
-        $uji->masaberlakuuji                            = $masaberlakuuji;
-        $uji->save();
+    //     $uji->statuspenerbitan  = $kode;
+    //     $uji->nouji             = $data->nouji;
+    //     $uji->nama              = $data->nama;
+    //     $uji->alamat            = $alamatFull;
+    //     $uji->noidentitaspemilik = $data->noidentitaspemilik;
+    //     $uji->nosertifikatreg   = $data->nosertifikatreg;
+    //     $uji->tglsertifikatreg      = $data->tglsertifikatreg;
+    //     $uji->nosuratkehilangan     = $data->nosuratkehilangan;
+    //     $uji->noregistrasikendaraan = $data->noregistrasikendaraan;
+    //     $uji->tgl_registrasikendaraan = $data->tgl_registrasikendaraan;
+    //     $uji->norangka              = $data->norangka;
+    //     $uji->merek                 = $data->merek;
+    //     $uji->tipe                  = $data->tipe;
+    //     $uji->nomesin               = $data->nomesin;
+    //     $uji->jbb                   = $data->jbb;
+    //     $uji->thpembuatan           = $data->thpembuatan;
+    //     $uji->bahanbakar            = $data->bahanbakar;
+    //     $uji->jenis                 = $data->jenis;
+    //     $uji->subjenis_kendaraan    = $data->subjenis;
+    //     $uji->varian_kendaraan      = $data->varian;
+    //     $uji->sub_varian_kendaraan  = $data->tipe;
+    //     $uji->isisilinder           = $data->isisilinder;
+    //     $uji->dayamotorpenggerak    = $data->dayamotorpenggerak;
+    //     $uji->idkepaladinas         = $idkepaladinas;
+    //     $uji->iddirektur            = $iddirektur;
+    //     $uji->kodewilayah           = $data->kodewilayah;
+    //     $uji->kodewilayahasal       = $data->kodewilayahasal;
+    //     $uji->area_from_id          = $data->idkodewilayah;
+    //     $uji->area_from_name        = $data->kodewilayah;
+    //     $uji->vehicle_brand_id      = $data->idmerek;
+    //     $uji->vehicle_type_id       = $data->idjenis;
+    //     $uji->vehicle_sub_id        = $data->idsubjenis;
+    //     $uji->vehicle_varian_type_id = $data->idtipe;
+    //     $uji->vehicle_varian_id     = $data->idvarian;
+    //     $uji->fuel_id               = $data->idbahanbakar;
+    //     $uji->jbi                   = $data->jbi;
+    //     $uji->nosertifikatreg       = $data->nosertifikatreg;
+    //     $uji->tglsertifikatreg      = $tglsertifikatreg;
+    //     $uji->jbkb                  = $data->jbkb;
+    //     $uji->jbki                  = $data->jbki;
+    //     $uji->mst                   = $data->mst;
+    //     $uji->beratkosong           = $data->beratkosong;
+    //     $uji->konfigurasisumburoda  = $data->konfigurasisumburoda;
+    //     $uji->ukuranban             = $data->ukuranban;
+    //     $uji->panjangkendaraan      = $data->panjangkendaraan;
+    //     $uji->lebarkendaraan        = $data->lebarkendaraan;
+    //     $uji->tinggikendaraan       = $data->tinggikendaraan;
+    //     $uji->panjangbakatautangki  = $data->panjangbakatautangki;
+    //     $uji->lebarbakatautangki    = $data->lebarbakatautangki;
+    //     $uji->tinggibakatautangki   = $data->tinggibakatautangki;
+    //     $uji->julurdepan            = $data->julurdepan;
+    //     $uji->julurbelakang         = $data->julurbelakang;
+    //     $uji->jumlah_sumbu          = $data->jumlah_sumbu;
+    //     $uji->jaraksumbu1_2         = $data->jaraksumbu1_2;
+    //     $uji->jaraksumbu2_3         = $data->jaraksumbu2_3;
+    //     $uji->jaraksumbu3_4         = $data->jaraksumbu3_4;
+    //     $uji->jaraksumbu4_5         = $data->jaraksumbu4_5;
+    //     $uji->jaraksumbu5_6         = $data->jaraksumbu5_6;
+    //     $uji->jaraksumbu6_7         = $data->jaraksumbu6_7;
+    //     $uji->jaraksumbu7_8         = $data->jaraksumbu7_8;
+    //     $uji->jaraksumbu9_10         = $data->jaraksumbu9_10;
+    //     $uji->jaraksumbu10_11         = $data->jaraksumbu10_11;
+    //     $uji->jaraksumbu11_12         = $data->jaraksumbu11_12;
+    //     $uji->dayaangkutorang       = $data->dayaangkutorang;
+    //     $uji->dayaangkutbarang      = $data->dayaangkutbarang;
+    //     $uji->kelasjalanterendah    = $data->kelasjalanterendah;
+    //     $uji->kelasjalan_id         = $data->idkelasjalanterendah;
+    //     $uji->idpetugasuji          = $idpetugas;
+    //     $uji->berat_sumbu1          = $data->berats1;
+    //     $uji->berat_sumbu2          = $data->berats2;
+    //     $uji->berat_sumbu3          = $data->berats3;
+    //     $uji->berat_sumbu4          = $data->berats4;
+    //     $uji->berat_sumbu5          = $data->berats5;
+    //     $uji->berat_sumbu6          = $data->berats6;
+    //     $uji->berat_sumbu7          = $data->berats7;
+    //     $uji->berat_sumbu8          = $data->berats8;
+    //     $uji->berat_sumbu9          = $data->berats9;
+    //     $uji->berat_sumbu10          = $data->berats10;
+    //     $uji->berat_sumbu11          = $data->berats11;
+    //     $uji->berat_sumbu12          = $data->berats12;
+    //     $uji->alatuji_emisiasapbahanbakarsolar          = $data->alatuji_emisiasapbahanbakarsolar;
+    //     $uji->alatuji_emisicobahanbakarbensin           = $data->alatuji_emisicobahanbakarbensin;
+    //     $uji->alatuji_emisihcbahanbakarbensin           = $data->alatuji_emisihcbahanbakarbensin;
+    //     $uji->alatuji_gayaremparkirtangan               = $data->alatuji_remparkirtangan;
+    //     $uji->alatuji_gayaremparkirkaki                 = $data->alatuji_remparkirkaki;
+    //     $uji->alatuji_gayapengereman1kanan              = $data->gayaremkanan1;
+    //     $uji->alatuji_gayapengereman2kanan              = $data->gayaremkanan2;
+    //     $uji->alatuji_gayapengereman3kanan              = $data->gayaremkanan3;
+    //     $uji->alatuji_gayapengereman4kanan              = $data->gayaremkanan4;
+    //     $uji->alatuji_gayapengereman5kanan              = $data->gayaremkanan5;
+    //     $uji->alatuji_gayapengereman6kanan              = $data->gayaremkanan6;
+    //     $uji->alatuji_gayapengereman7kanan              = $data->gayaremkanan7;
+    //     $uji->alatuji_gayapengereman8kanan              = $data->gayaremkanan8;
+    //     $uji->alatuji_gayapengereman9kanan              = $data->gayaremkanan9;
+    //     $uji->alatuji_gayapengereman10kanan              = $data->gayaremkanan10;
+    //     $uji->alatuji_gayapengereman11kanan              = $data->gayaremkanan11;
+    //     $uji->alatuji_gayapengereman12kanan              = $data->gayaremkanan12;
+    //     $uji->alatuji_gayapengereman1kiri              = $data->gayaremkiri1;
+    //     $uji->alatuji_gayapengereman2kiri              = $data->gayaremkiri2;
+    //     $uji->alatuji_gayapengereman3kiri              = $data->gayaremkiri3;
+    //     $uji->alatuji_gayapengereman4kiri              = $data->gayaremkiri4;
+    //     $uji->alatuji_gayapengereman5kiri              = $data->gayaremkiri5;
+    //     $uji->alatuji_gayapengereman6kiri              = $data->gayaremkiri6;
+    //     $uji->alatuji_gayapengereman7kiri              = $data->gayaremkiri7;
+    //     $uji->alatuji_gayapengereman8kiri              = $data->gayaremkiri8;
+    //     $uji->alatuji_gayapengereman9kiri              = $data->gayaremkiri9;
+    //     $uji->alatuji_gayapengereman10kiri              = $data->gayaremkiri10;
+    //     $uji->alatuji_gayapengereman11kiri              = $data->gayaremkiri11;
+    //     $uji->alatuji_gayapengereman12kiri              = $data->gayaremkiri12;
+    //     $uji->alatuji_gayapengeremanparkirkanan         = $data->alatuji_gayapengeremanparkirkanan;
+    //     $uji->alatuji_gayapengeremanparkirkiri         = $data->alatuji_gayapengeremanparkirkiri;
+    //     $uji->alatuji_remutamatotalgayapengereman       = $data->alatuji_remutamatotalgayapengereman;
+    //     $uji->alatuji_remparkirtotalgayapengereman      = $alatuji_remparkirtotalgayapengereman;
+    //     $uji->alatuji_remutamaselisihgayapengeremanrodakirikanan1  = $data->alatuji_remutamaselisihgayapengeremanrodakirikanan1;
+    //     $uji->alatuji_remutamaselisihgayapengeremanrodakirikanan2  = $data->alatuji_remutamaselisihgayapengeremanrodakirikanan2;
+    //     $uji->alatuji_remutamaselisihgayapengeremanrodakirikanan3  = $data->alatuji_remutamaselisihgayapengeremanrodakirikanan3;
+    //     $uji->alatuji_remutamaselisihgayapengeremanrodakirikanan4  = $data->alatuji_remutamaselisihgayapengeremanrodakirikanan4;
+    //     $uji->alatuji_remparkirtangan                   = $data->alatuji_remparkirtangan;
+    //     $uji->alatuji_remparkirkaki                     = $data->alatuji_remparkirkaki;
+    //     $uji->alatuji_kincuprodadepan                   = $data->alatuji_kincuprodadepan;
+    //     $uji->alatuji_tingkatkebisingan                 = $data->alatuji_tingkatkebisingan;
+    //     $uji->alatuji_lampuutamakekuatanpancarlampukanan = $data->alatuji_lampuutamakekuatanpancarlampukanan;
+    //     $uji->alatuji_lampuutamakekuatanpancarlampukiri = $data->alatuji_lampuutamakekuatanpancarlampukiri;
+    //     $uji->alatuji_lampuutamapenyimpanganlampukanan  = $data->alatuji_lampuutamapenyimpanganlampukanan;
+    //     $uji->alatuji_lampuutamapenyimpanganlampukiri   = $data->alatuji_lampuutamapenyimpanganlampukiri;
+    //     $uji->alatuji_penunjukkecepatan                 = $data->alatuji_penunjukkecepatan;
+    //     $uji->alatuji_kedalamanalurban                  = $data->alatuji_kedalamanalurban;
+    //     $uji->alatuji_alatpemantulcahayatambahan_kuning = $data->alatuji_alatpemantulcahayatambahan_kuning;
+    //     $uji->alatuji_alatpemantulcahayatambahan_putih  = $data->alatuji_alatpemantulcahayatambahan_putih;
+    //     $uji->alatuji_alatpemantulcahayatambahan_merah  = $data->alatuji_alatpemantulcahayatambahan_merah;
+    //     $uji->wheel_base                                = $data->a;
+    //     $uji->tgluji                                    = date("dmY");
+    //     $uji->masaberlakuuji                            = $masaberlakuuji;
+    //     $uji->save();
 
-        return [true, $uji];
-    }
+    //     return [true, $uji];
+    // }
 
 
-    public function setDatapengujian($id,$jenis_cetak)
+    public function setDatapengujian($id,$jenis_cetak,$status_cetak)
     {
         $data = $this->getData($id);
         if ($data) {
@@ -1061,6 +1061,19 @@ class VerifRepository
                 //     $catatan->status = '0';
                 //     $catatan->save();
                 // }
+                if($status_cetak == '1')
+                {
+                    try{
+                        $this->replicate($id);
+                    }catch(\Exception $e){
+                    }
+                }elseif($status_cetak == '2')
+                {
+                    try{
+                        $this->newData($id);
+                    }catch(\Exception $e){
+                    }
+                }
             }
 
             return $uji;
@@ -1095,6 +1108,56 @@ class VerifRepository
         }
     }
 
+    public function replicate($id)
+    {
+        $data = $this->model1->select('idx')->where('id',$id)->first();
+        if($data)
+        {
+            $original = Datapengujian::where('idx',$data->idx)->first();
+
+            if ($original) {
+                $copy = $original->replicate();
+                $copy->statuspenerbitan = '3';
+                if($copy->save())
+                {
+                    $original->delete();
+                    $dataUp = $this->model1->where('id',$id)->first();
+                    $dataUp->idx= $copy->idx;
+                    if($dataUp->save())
+                    {    
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        return false;
+    }
+    public function newData($id)
+    {
+        $data = $this->model1->select('idx')->where('id',$id)->first();
+        if($data)
+        {
+            $original = Datapengujian::where('idx',$data->idx)->first();
+
+            if ($original) {
+                $copy = $original->replicate();
+                if($copy->save())
+                {
+                    $original->delete();
+                    $dataUp = $this->model1->where('id',$id)->first();
+                    $dataUp->idx= $copy->idx;
+                    if($dataUp->save())
+                    {    
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        return false;
+    }
+
     public function createVerif($request)
     {
         return $this->model1->create($request);
@@ -1119,7 +1182,7 @@ class VerifRepository
         if ($update->save()) {
             // dd($update);
             if ($update->statuslulusuji == '1') {
-                $this->setDatapengujian($update->pendaftaran_id, $request->jenis_cetak ?? 0);
+                $this->setDatapengujian($update->pendaftaran_id, $request->jenis_cetak ?? 0, $request->status_cetak ?? 0);
             }
             return $update;
         }

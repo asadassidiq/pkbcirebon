@@ -103,6 +103,8 @@ class PerizinanRepository
                     $dataId->posisi = 6;
                 }elseif($dataId->kodepenerbitans_id == '3' || $dataId->kodepenerbitans_id == '4'){
                     $dataId->posisi = 5;  
+                }else{
+                    $dataId->posisi = 1;  
                 }
                 if ($dataId->save()) {
                     return true;
