@@ -122,8 +122,8 @@ class PendaftaranRepository
 
     public function getMonitoring()
     {
-        // $date = date("Y-m-d");
-        $date = "2025-11-24";
+        $date = date("Y-m-d");
+        // $date = "2025-11-24";
         $data = $this->model
             ->select('pendaftarans.noantrian','pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'pendaftarans.posisi', 'identitaskendaraans.noregistrasikendaraan', 'pendaftarans.pos1', 'pendaftarans.user_pos1', 'pendaftarans.pos2' ,'pendaftarans.user_pos2', 'pendaftarans.pos3' ,'pendaftarans.user_pos3', 'pendaftarans.pos4' ,'pendaftarans.user_pos4', 'pendaftarans.posverif','pendaftarans.user_posverif',
                 'u1.name as nama_user_pos1',
