@@ -294,16 +294,19 @@ export const mutations = {
       state.pendaftaran.pos4 = "0";
       state.laikjalan.status_remkiri = "0";
       state.laikjalan.status_remkanan = "0";
-    } else if (state.laikjalan.alatuji_remparkirtangan < 12) {
+    } else if (state.laikjalan.alatuji_remparkirtangan < 12 && state.identitaskendaraan.includes("BARANG")) {
+      state.pendaftaran.pos4 = "0";
+      state.laikjalan.status_remparkir = 0;
+    } else if (state.laikjalan.alatuji_remparkirtangan < 12 && state.identitaskendaraan.includes("BUS")) {
+      state.pendaftaran.pos4 = "0";
+      state.laikjalan.status_remparkir = 0;
+    } else if (state.laikjalan.alatuji_remparkirtangan <= 16) {
       state.pendaftaran.pos4 = "0";
       state.laikjalan.status_remparkir = 0;
     } else if (state.pengujian.totalgayarem < 50) {
       state.pendaftaran.pos4 = "0";
       state.laikjalan.status_remkiri = "0";
       state.laikjalan.status_remkanan = "0";
-    } else if (state.laikjalan.alatuji_remparkirtangan < 12) {
-      state.pendaftaran.pos4 = "0";
-      state.laikjalan.status_remparkir = 0;
     } else if (
       state.laikjalan.alatuji_penunjukkecepatan < 36 ||
       state.laikjalan.alatuji_penunjukkecepatan > 46
