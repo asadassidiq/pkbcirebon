@@ -125,7 +125,9 @@
         </tr>
         <tr>
             <td>No Uji</td>
-            <td colspan="3">: {{ $data->nouji }}</td>
+            <td>: {{ $data->nouji }}</td>
+            <td>NO kendaraan</td>
+            <td>: {{ $data->noregistrasikendaraan }}</td>
         </tr>
         <tr>
             <td>NO. SRUT</td>
