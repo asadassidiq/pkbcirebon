@@ -373,6 +373,7 @@ export const state = {
     tglujiulang: "",
     user_verif: "",
     jenis_cetak: "1",
+    status_cetak: "0",
     nouji: "",
   },
   pengujian2: {
@@ -793,6 +794,7 @@ export const mutations = {
       user_verif: "",
       jenis_cetak: "1",
       nouji: "",
+      status_cetak: "0",
     };
     state.pengujian2 = {
       pos1: "0",
