@@ -1123,6 +1123,10 @@ class VerifRepository
                     $original->delete();
                     $dataUp = $this->model1->where('id',$id)->first();
                     $dataUp->idx= $copy->idx;
+                    $dataUp->nokendalikartu= "";
+                    $dataUp->status_exam_id= "";
+                    $dataUp->rfid= "";
+                    $dataUp->perso= "";
                     if($dataUp->save())
                     {    
                         return true;
@@ -1147,6 +1151,10 @@ class VerifRepository
                     $original->delete();
                     $dataUp = $this->model1->where('id',$id)->first();
                     $dataUp->idx= $copy->idx;
+                    $dataUp->nokendalikartu= "";
+                    $dataUp->status_exam_id= "";
+                    $dataUp->rfid= "";
+                    $dataUp->perso= "";
                     if($dataUp->save())
                     {    
                         return true;

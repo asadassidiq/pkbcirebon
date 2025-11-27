@@ -101,6 +101,7 @@
 <div class="content">
     <div class="text-center">
         <h3>LEMBAR HASIL PEMERIKSAAN KENDARAAN BERMOTOR</h3>
+        <p class="text-left">{{ date('d-m-Y H:i:s') }}</p>
     </div>
     <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; font-size: 12px;">
         <!-- IDENTITAS PEMILIK -->
@@ -121,6 +122,10 @@
         <!-- DATA KENDARAAN -->
         <tr style="background-color: #f0f0f0; font-weight: bold;">
             <td colspan="4">DATA KENDARAAN</td>
+        </tr>
+        <tr>
+            <td>No Uji</td>
+            <td colspan="3">: {{ $data->nouji }}</td>
         </tr>
         <tr>
             <td>NO. SRUT</td>
