@@ -497,7 +497,7 @@
                 <label>Eff Rem Parkir</label>
                 <input type="number" min="0" class="form-control  form-control-lg" name="alatuji_remparkirtangan"
                     readonly @focus="$event.target.select()" v-model="laikjalan.alatuji_remparkirtangan"
-                    v-bind:style="laikjalan.alatuji_remparkirtangan < 12 ? 'background-color: #DC143C;' : 'background-color: #F3F6F9;'" />
+                    v-bind:style="laikjalan.status_remkiri == 0 ? 'background-color: #DC143C;' : 'background-color: #F3F6F9;'" />
             </div>
         </div>
 
