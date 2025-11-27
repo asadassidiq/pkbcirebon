@@ -1121,15 +1121,39 @@ class VerifRepository
                 if($copy->save())
                 {
                     $original->delete();
+                    try {
+                        $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakdepan.jpg');
+                        $kanan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkanan.jpg');
+                        $belakang = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakbelakang.jpg');
+                        $kiri     = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkiri.jpg');
+                    } catch (\Exception $e) {
+                        $depan = null;
+                        $kanan = null;
+                        $belakang = null;
+                        $kiri = null;
+                    }
                     $dataUp = $this->model1->where('id',$id)->first();
                     $dataUp->idx= $copy->idx;
+                    $dataUp->fotodepansmall    = $depan;
+                    $dataUp->fotokanansmall    = $kanan;
+                    $dataUp->fotokirismall    = $kiri;
+                    $dataUp->fotobelakangsmall    = $belakang;
                     $dataUp->nokendalikartu= "";
                     $dataUp->status_exam_id= "";
                     $dataUp->rfid= "";
                     $dataUp->perso= "";
                     if($dataUp->save())
                     {    
-                        return true;
+                        $copy2 = $original->replicate();
+                        $copy2->statuspenerbitan = '2';
+                        $copy2->fotodepansmall    = $depan;
+                        $copy2->fotokanansmall    = $kanan;
+                        $copy2->fotokirismall    = $kiri;
+                        $copy2->fotobelakangsmall    = $belakang;
+                        if($copy2->save())
+                        {
+                            return true;
+                        }
                     }
                 }
                 return false;
@@ -1149,8 +1173,23 @@ class VerifRepository
                 if($copy->save())
                 {
                     $original->delete();
+                    try {
+                        $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakdepan.jpg');
+                        $kanan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkanan.jpg');
+                        $belakang = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakbelakang.jpg');
+                        $kiri     = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkiri.jpg');
+                    } catch (\Exception $e) {
+                        $depan = null;
+                        $kanan = null;
+                        $belakang = null;
+                        $kiri = null;
+                    }
                     $dataUp = $this->model1->where('id',$id)->first();
                     $dataUp->idx= $copy->idx;
+                    $dataUp->fotodepansmall    = $depan;
+                    $dataUp->fotokanansmall    = $kanan;
+                    $dataUp->fotokirismall    = $kiri;
+                    $dataUp->fotobelakangsmall    = $belakang;
                     $dataUp->nokendalikartu= "";
                     $dataUp->status_exam_id= "";
                     $dataUp->rfid= "";
