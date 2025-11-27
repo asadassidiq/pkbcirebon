@@ -147,17 +147,24 @@
                 placeholder="No Uji" v-model="identitaskendaraan.nouji" />
             </div>
             <div class="form-group">
-                <label><b>Jenis Cetak Blue</b></label>
+                <label><b>Cetak Blue Rusak/Perubahan Data</b></label>
                 <div class="radio-inline">
                     <label class="radio radio-success">
-                        <input type="radio" v-model="pengujian.jenis_cetak" value="1" />
-                        <span></span>
-                        Full Cycle
+                    <input type="radio" v-model="pengujian.status_cetak" value="1" />
+                    <span></span>
+                    Kartu Rusak
                     </label>
+
                     <label class="radio radio-danger">
-                        <input type="radio" v-model="pengujian.jenis_cetak" value="0" />
-                        <span></span>
-                        Non Full Cycle
+                    <input type="radio" v-model="pengujian.status_cetak" value="0" />
+                    <span></span>
+                    Kartu Normal
+                    </label>
+
+                    <label class="radio radio-warning">
+                    <input type="radio" v-model="pengujian.status_cetak" value="2" />
+                    <span></span>
+                    Perubahan Data
                     </label>
                 </div>
             </div>
