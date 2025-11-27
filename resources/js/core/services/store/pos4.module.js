@@ -300,7 +300,7 @@ export const mutations = {
     } else if (state.laikjalan.alatuji_remparkirtangan < 12 && state.identitaskendaraan.includes("BUS")) {
       state.pendaftaran.pos4 = "0";
       state.laikjalan.status_remparkir = 0;
-    } else if (state.laikjalan.alatuji_remparkirtangan <= 16) {
+    } else if (state.laikjalan.alatuji_remparkirtangan < 16) {
       state.pendaftaran.pos4 = "0";
       state.laikjalan.status_remparkir = 0;
     } else if (state.pengujian.totalgayarem < 50) {
