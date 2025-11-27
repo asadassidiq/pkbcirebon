@@ -124,9 +124,9 @@
             <td colspan="4">DATA KENDARAAN</td>
         </tr>
         <tr>
-            <td>No Uji</td>
+            <td>NO UJI</td>
             <td>: {{ $data->nouji }}</td>
-            <td>NO kendaraan</td>
+            <td>NO KENDARAAN</td>
             <td>: {{ $data->noregistrasikendaraan }}</td>
         </tr>
         <tr>
