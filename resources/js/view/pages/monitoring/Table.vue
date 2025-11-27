@@ -43,7 +43,7 @@
             </thead>
             <tbody>
               <tr v-for="monitoring, index in monitoring.monitorings.data" :key="monitoring.uuid">
-                <td>{{ index+1 }}</td>
+                <td>{{ monitoring.noantrian }}</td>
                 <td>{{ monitoring.keterangan }}</td>
                 <td>{{ monitoring.nouji }}</td>
                 <td>{{ monitoring.noregistrasikendaraan }}</td>
