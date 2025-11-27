@@ -100,7 +100,7 @@
 
 <div class="content">
     <div class="text-center">
-        <h3>LEMBAR HASIL PEMERIKSAAN KENDARAAN BERMOTOR</h3>
+        <h3 style="margin: 0px;padding:0px">LEMBAR HASIL PEMERIKSAAN KENDARAAN BERMOTOR</h3>
         <p class="text-left" style="margin: 0px;padding:0px">{{ date('d-m-Y H:i:s') }}</p>
     </div>
     <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; font-size: 12px;">
