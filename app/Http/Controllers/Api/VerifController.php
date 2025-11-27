@@ -97,7 +97,7 @@ class VerifController extends Controller
             } catch (\Exception $e) {
             }
         }
-        if ($check->kodepenerbitans_id <= 7 || $check->kodepenerbitans_id == 9) {
+        if ($check->kodepenerbitans_id <= 7 || $check->kodepenerbitans_id == 8) {
             $nouji = Pendaftaran::select('nouji')->leftJoin('identitaskendaraans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')->where('pendaftarans.id', $check['id'])->first()->nouji;
             try {
                 $this->saveFoto($check['id'], $nouji);
