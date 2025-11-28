@@ -1117,34 +1117,34 @@ class VerifRepository
 
             if ($original) {
                 $copy = $original->replicate();
+                try {
+                    $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakdepan.jpg');
+                    $kanan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkanan.jpg');
+                    $belakang = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakbelakang.jpg');
+                    $kiri     = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkiri.jpg');
+                } catch (\Exception $e) {
+                    $depan = null;
+                    $kanan = null;
+                    $belakang = null;
+                    $kiri = null;
+                }
                 $copy->statuspenerbitan = '3';
+                $copy->fotodepansmall    = $depan;
+                $copy->fotokanansmall    = $kanan;
+                $copy->fotokirismall    = $kiri;
+                $copy->fotobelakangsmall    = $belakang;
+                $copy->nokendalikartu= "";
+                $copy->status_exam_id= "";
+                $copy->rfid= "";
+                $copy->perso= "";
                 if($copy->save())
                 {
                     $original->delete();
-                    try {
-                        $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakdepan.jpg');
-                        $kanan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkanan.jpg');
-                        $belakang = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakbelakang.jpg');
-                        $kiri     = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkiri.jpg');
-                    } catch (\Exception $e) {
-                        $depan = null;
-                        $kanan = null;
-                        $belakang = null;
-                        $kiri = null;
-                    }
                     $dataUp = $this->model1->where('id',$id)->first();
                     $dataUp->idx= $copy->idx;
-                    $dataUp->fotodepansmall    = $depan;
-                    $dataUp->fotokanansmall    = $kanan;
-                    $dataUp->fotokirismall    = $kiri;
-                    $dataUp->fotobelakangsmall    = $belakang;
-                    $dataUp->nokendalikartu= "";
-                    $dataUp->status_exam_id= "";
-                    $dataUp->rfid= "";
-                    $dataUp->perso= "";
                     if($dataUp->save())
                     {    
-                        $copy2 = $dataUp->replicate();
+                        $copy2 = $copy->replicate();
                         $copy2->statuspenerbitan = '2';
                         $copy2->fotodepansmall    = $depan;
                         $copy2->fotokanansmall    = $kanan;
@@ -1171,30 +1171,31 @@ class VerifRepository
 
             if ($original) {
                 $copy = $original->replicate();
+                try {
+                    $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakdepan.jpg');
+                    $kanan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkanan.jpg');
+                    $belakang = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakbelakang.jpg');
+                    $kiri     = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkiri.jpg');
+                } catch (\Exception $e) {
+                    $depan = null;
+                    $kanan = null;
+                    $belakang = null;
+                    $kiri = null;
+                }
+                $copy->fotodepansmall    = $depan;
+                $copy->fotokanansmall    = $kanan;
+                $copy->fotokirismall    = $kiri;
+                $copy->fotobelakangsmall    = $belakang;
+                $copy->nokendalikartu= "";
+                $copy->status_exam_id= "";
+                $copy->rfid= "";
+                $copy->perso= "";
                 if($copy->save())
                 {
                     $original->delete();
-                    try {
-                        $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakdepan.jpg');
-                        $kanan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkanan.jpg');
-                        $belakang = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakbelakang.jpg');
-                        $kiri     = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkiri.jpg');
-                    } catch (\Exception $e) {
-                        $depan = null;
-                        $kanan = null;
-                        $belakang = null;
-                        $kiri = null;
-                    }
+                    
                     $dataUp = $this->model1->where('id',$id)->first();
                     $dataUp->idx= $copy->idx;
-                    $dataUp->fotodepansmall    = $depan;
-                    $dataUp->fotokanansmall    = $kanan;
-                    $dataUp->fotokirismall    = $kiri;
-                    $dataUp->fotobelakangsmall    = $belakang;
-                    $dataUp->nokendalikartu= "";
-                    $dataUp->status_exam_id= "";
-                    $dataUp->rfid= "";
-                    $dataUp->perso= "";
                     if($dataUp->save())
                     {    
                         return true;
