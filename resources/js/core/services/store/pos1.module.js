@@ -659,10 +659,11 @@ export const mutations = {
       mutations.SET_STATUS(state, state.pendaftaran.pos1);
     } else if (state.laikjalan.alatuji_kedalamanalurban < 1) {
       state.pendaftaran.pos1 = 0;
-      state.laikjalan.status_alurban = "1";
+      state.laikjalan.status_alurban = "0";
       mutations.SET_STATUS(state, state.pendaftaran.pos1);
     } else {
       state.pendaftaran.pos1 = 1;
+      state.laikjalan.status_alurban = "1";
       mutations.SET_STATUS(state, state.pendaftaran.pos1);
     }
   },

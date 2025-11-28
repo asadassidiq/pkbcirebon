@@ -1144,7 +1144,7 @@ class VerifRepository
                     $dataUp->perso= "";
                     if($dataUp->save())
                     {    
-                        $copy2 = $original->replicate();
+                        $copy2 = $dataUp->replicate();
                         $copy2->statuspenerbitan = '2';
                         $copy2->fotodepansmall    = $depan;
                         $copy2->fotokanansmall    = $kanan;
@@ -1161,6 +1161,7 @@ class VerifRepository
         }
         return false;
     }
+
     public function newData($id)
     {
         $data = $this->model1->select('idx')->where('id',$id)->first();

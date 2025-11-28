@@ -231,7 +231,7 @@ export default {
     },
     methods: {
         ...mapMutations("pos2", ["CLEAR_FORM", "CLEAR_CATATAN", "CHECK_HASILUJI"]),
-        ...mapActions("pos2", ["submitPos", "getIdentitaskendaraan", "editPos", "CLEAR_FORM"]),
+        ...mapActions("pos2", ["submitPos", "getIdentitaskendaraan", "editPos"]),
         submit() {
             this.submitPos(this.$route.params.id).then(() => {
                 Swal.fire({
