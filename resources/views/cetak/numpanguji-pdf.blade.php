@@ -311,7 +311,7 @@
     <p style="margin-top:-25px">Tembusan disampaikan kepada Yth :</p>
     <ol style="margin: 0;padding:0;margin-left: 50px">
         <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
-        <li>Kepala Balai Pengelola Transportasi Darat Kelas ...</li>
+        <li>Kepala Balai Pengelola Transportasi Darat Kelas 1 Jawa Barat</li>
         {{-- <li>Kepala Kepolisian Resort Cirebon Kota,</li> --}}
         {{-- <li>Arsip.</li> --}}
     </ol>
