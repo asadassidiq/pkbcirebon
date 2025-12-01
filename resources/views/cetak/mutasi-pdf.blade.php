@@ -206,22 +206,50 @@
         </table>
         <p><span style="margin-left: 20px">Untuk</span> dilakukan Mutasi Uji Kendaraan Bermotor 
         ke Dinas Perhubungan {{ $kendaraan->tujuan }} dengan data kendaraan :</p>
+        @php
+            $alamat = $kendaraan->alamatpemilikbaru;
+            $alamat1 = '';
+            $alamat2 = '';
+            $batas = 60;
+            if (strlen($alamat) <= $batas) {
+                $alamat1 = $alamat;
+            }
+            // Cari posisi spasi terakhir sebelum batas
+            $posisiPecah = strrpos(substr($alamat, 0, $batas), ' ');
+
+            // Jika tidak ditemukan spasi, potong langsung di batas
+            if ($posisiPecah === false) {
+                $posisiPecah = $batas;
+            }
+
+            $alamat1 = trim(substr($alamat, 0, $posisiPecah));
+            $alamat2 = trim(substr($alamat, $posisiPecah));
+        @endphp
         <table style="width: 100%;margin-left:20px">
             <tr>
                 <td style="width: 27%">
                     <p>Nama Pemilik Kendaraan</p>
                     <p>Alamat</p>
                     <p>Nomor Kendaraan</p>
+                    @if(strlen($alamat) > 60)
+                    <p style="visibility: hidden">-</p>
+                    @endif
                 </td>
                 <td style="width: 5%">
                     <p>:</p>
                     <p>:</p>
                     <p>:</p>
+                    @if(strlen($alamat) > 60)
+                    <p style="visibility: hidden">-</p>
+                    @endif
                 </td>
                 <td style="width: 68%">
                     <p>{{ $kendaraan->nokendaraanbaru }}</p>
                     <p>{{ $kendaraan->namapemilikbaru }}</p>
-                    <p>{{ $kendaraan->alamatpemilikbaru }}</p>
+                    <p>{{ $alamat1 }}</p>
+                    @if(strlen($alamat) > 60)
+                    <p>{{ $alamat2 }}</p>
+                    @endif
                 </td>
             </tr>
         </table>
