@@ -166,7 +166,25 @@
             </td>
         </tr>
     </table>
+    @php
+        $alamat = $kendaraan->alamat;
+        $alamat1 = '';
+        $alamat2 = '';
+        $batas = 50;
+        if (strlen($alamat) <= $batas) {
+            $alamat1 = $alamat;
+        }
+        // Cari posisi spasi terakhir sebelum batas
+        $posisiPecah = strrpos(substr($alamat, 0, $batas), ' ');
 
+        // Jika tidak ditemukan spasi, potong langsung di batas
+        if ($posisiPecah === false) {
+            $posisiPecah = $batas;
+        }
+
+        $alamat1 = trim(substr($alamat, 0, $posisiPecah));
+        $alamat2 = trim(substr($alamat, $posisiPecah));
+    @endphp
     <div>
         <p><span style="margin-left: 20px">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor terkait permohonan Mutasi Uji
         Kendaraan Bermotor, Bersama ini kami sampaikan data kendaraan bermotor sebagai berikut : </p>
@@ -175,6 +193,9 @@
                 <td style="width: 27%">
                     <p>Nama Pemilik Kendaraan</p>
                     <p>Alamat</p>
+                    @if(strlen($alamat) > 50)
+                    <p style="visibility: hidden">-</p>
+                    @endif
                     <p>Nomor Kendaraan</p>
                     <p>Nomor Uji</p>
                     <p>Merek/Tipe</p>
@@ -185,6 +206,9 @@
                 <td style="width: 5%">
                     <p>:</p>
                     <p>:</p>
+                    @if(strlen($alamat) > 50)
+                    <p style="visibility: hidden">-</p>
+                    @endif
                     <p>:</p>
                     <p>:</p>
                     <p>:</p>
@@ -194,7 +218,10 @@
                 </td>
                 <td style="width: 68%">
                     <p>{{ $kendaraan->nama }}</p>
-                    <p>{{ $kendaraan->alamat }}</p>
+                    <p>{{ $alamat1 }}</p>
+                    @if(strlen($alamat) > 50)
+                    <p>{{ $alamat2 }}</p>
+                    @endif
                     <p>{{ $kendaraan->noregistrasikendaraan }}</p>
                     <p>{{ $kendaraan->nouji }}</p>
                     <p>{{ $kendaraan->merek }}/{{ $kendaraan->tipe }}</p>
