@@ -210,7 +210,7 @@
             $alamat = $kendaraan->alamatpemilikbaru;
             $alamat1 = '';
             $alamat2 = '';
-            $batas = 60;
+            $batas = 50;
             if (strlen($alamat) <= $batas) {
                 $alamat1 = $alamat;
             }
@@ -231,7 +231,7 @@
                     <p>Nama Pemilik Kendaraan</p>
                     <p>Alamat</p>
                     <p>Nomor Kendaraan</p>
-                    @if(strlen($alamat) > 60)
+                    @if(strlen($alamat) > 50)
                     <p style="visibility: hidden">-</p>
                     @endif
                 </td>
@@ -239,7 +239,7 @@
                     <p>:</p>
                     <p>:</p>
                     <p>:</p>
-                    @if(strlen($alamat) > 60)
+                    @if(strlen($alamat) > 50)
                     <p style="visibility: hidden">-</p>
                     @endif
                 </td>
@@ -247,7 +247,7 @@
                     <p>{{ $kendaraan->nokendaraanbaru }}</p>
                     <p>{{ $kendaraan->namapemilikbaru }}</p>
                     <p>{{ $alamat1 }}</p>
-                    @if(strlen($alamat) > 60)
+                    @if(strlen($alamat) > 50)
                     <p>{{ $alamat2 }}</p>
                     @endif
                 </td>
