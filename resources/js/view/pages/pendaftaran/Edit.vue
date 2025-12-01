@@ -510,7 +510,7 @@
                       <b-input-group>
                         <b-form-input
                           v-model="pendaftaran.tglsertifikatreg"
-                          placeholder="dd-mm-yyyy"
+                          placeholder="yyyy-mm-dd"
                           @input="formatTgl"
                         ></b-form-input>
 
