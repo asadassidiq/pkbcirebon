@@ -85,7 +85,7 @@ class SuratController extends Controller
         $logodishub = 'data:image/png'. ';base64,' . base64_encode(file_get_contents($path_logoDishub));
 
         $kendaraan = $this->suratService->getPendaftaran($id);
-        $ttd = Tandatangan::select('users.name','nip','nrp','jabatan','pangkat')->Join('users','users.uuid','=','tandatangan.user_id')->where('tandatangan.name','Persuratan')->first();
+        $ttd = Tandatangan::select('users.uuid','users.name','nip','nrp','jabatan','pangkat')->Join('users','users.uuid','=','tandatangan.user_id')->where('tandatangan.name','Persuratan')->first();
         if($kendaraan){
             if($kendaraan->kodepenerbitans_id == '9'){
                 $view = 'cetak.numpanguji-pdf';
@@ -110,9 +110,16 @@ class SuratController extends Controller
         }else{
             return abort(404, 'Page not found2');
         }
+        if($ttd)
+        {
+            $ttdImg = 'data:image/png' . ';base64,' . base64_encode(file_get_contents(public_path() . '/ttd/ttd-' . $ttd->uuid . '.jpg'));
+        }else{
+            $ttdImg = '';
+        }
         $data = [
             'kendaraan' => $kendaraan,
             'ttd'       => $ttd,
+            'ttdImg'       => $ttdImg,
             'logokab'  => $logokab,
             'logodishub'  => $logodishub,
             'qrcode'    => $qrcode
