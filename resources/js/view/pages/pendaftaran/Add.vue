@@ -432,18 +432,45 @@
                     v-if="pendaftaran.kodepenerbitans_id < 12 || pendaftaran.kodepenerbitans_id > 12">
                     <div class="form-group">
                       <label>Tanggal SRUT</label>
-                      <b-form-datepicker id="tglsertifikatreg" v-model="pendaftaran.tglsertifikatreg"
-                        locale="id"></b-form-datepicker>
-                      <p class="text-danger" v-if="errors.tglsertifikatreg">{{ errors.tglsertifikatreg[0] }}</p>
+                      <b-input-group>
+                        <b-form-input
+                          v-model="pendaftaran.tglsertifikatreg"
+                          placeholder="yyyy-mm-dd"
+                          @input="formatTgl"
+                        ></b-form-input>
+
+                        <b-input-group-append>
+                          <b-form-datepicker
+                            v-model="pendaftaran.tglsertifikatreg"
+                            button-only
+                            locale="id"
+                            right
+                            value-as-string
+                          ></b-form-datepicker>
+                        </b-input-group-append>
+                      </b-input-group>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label>Tanggal STNK terbit</label>
-                      <b-form-datepicker id="tgl_registrasikendaraan" v-model="pendaftaran.tgl_registrasikendaraan"
-                        locale="id"></b-form-datepicker>
-                      <p class="text-danger" v-if="errors.tgl_registrasikendaraan">{{ errors.tgl_registrasikendaraan[0]
-                      }}</p>
+                        <b-input-group>
+                        <b-form-input
+                          v-model="pendaftaran.tgl_registrasikendaraan"
+                          placeholder="yyyy-mm-dd"
+                          @input="formatTgl2"
+                        ></b-form-input>
+
+                        <b-input-group-append>
+                          <b-form-datepicker
+                            v-model="pendaftaran.tgl_registrasikendaraan"
+                            button-only
+                            locale="id"
+                            right
+                            value-as-string
+                          ></b-form-datepicker>
+                        </b-input-group-append>
+                      </b-input-group>
                     </div>
                   </div>
                   <div class="col-sm-4"
@@ -1257,7 +1284,61 @@ export default {
         this.pendaftaran[field] !== null
       );
     },
+    
+    formatTgl() {
+      let val = this.pendaftaran.tglsertifikatreg;
 
+      if (!val) return;
+
+      // Jika user input: dd-mm-yyyy → Y-m-d
+      const regex = /^(\d{2})-(\d{2})-(\d{4})$/;
+      const match = val.match(regex);
+
+      if (match) {
+        const [_, d, m, y] = match;
+        this.pendaftaran.tglsertifikatreg = `${y}-${m}-${d}`;
+        return;
+      }
+
+      // Jika input format Y/m/d atau pakai slash diganti otomatis ke dash
+      val = val.replace(/\//g, '-');
+      const parts = val.split('-');
+
+      // Jika user input 2025-12-01 → biarkan
+      if (parts.length === 3 && parts[0].length === 4) return;
+
+      // Jika user input 01-12-2025 → auto-convert
+      if (parts.length === 3 && parts[2].length === 4) {
+        this.pendaftaran.tglsertifikatreg = `${parts[2]}-${parts[1]}-${parts[0]}`;
+      }
+    },
+    formatTgl2() {
+      let val = this.pendaftaran.tgl_registrasikendaraan;
+
+      if (!val) return;
+
+      // Jika user input: dd-mm-yyyy → Y-m-d
+      const regex = /^(\d{2})-(\d{2})-(\d{4})$/;
+      const match = val.match(regex);
+
+      if (match) {
+        const [_, d, m, y] = match;
+        this.pendaftaran.tgl_registrasikendaraan = `${y}-${m}-${d}`;
+        return;
+      }
+
+      // Jika input format Y/m/d atau pakai slash diganti otomatis ke dash
+      val = val.replace(/\//g, '-');
+      const parts = val.split('-');
+
+      // Jika user input 2025-12-01 → biarkan
+      if (parts.length === 3 && parts[0].length === 4) return;
+
+      // Jika user input 01-12-2025 → auto-convert
+      if (parts.length === 3 && parts[2].length === 4) {
+        this.pendaftaran.tgl_registrasikendaraan = `${parts[2]}-${parts[1]}-${parts[0]}`;
+      }
+    },
     setLastAntrian() {
       this.getLastAntrian(this.pendaftaran.tglpendaftaran).then(() => {
       });
