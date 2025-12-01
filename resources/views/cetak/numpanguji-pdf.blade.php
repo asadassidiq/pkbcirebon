@@ -295,7 +295,13 @@
 
     <table style="width: 100%;line-height:1;margin-top:-15px">
         <tr>
-            <td style="width: 45%"></td>
+            <td style="width: 45%">
+                <p style="margin-top:35px">Tembusan disampaikan kepada Yth :</p>
+                <ol style="margin: 0;padding:0;margin-left: 50px">
+                    <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
+                    <li>Kepala Balai Pengelola Transportasi Darat Kelas 1 Jawa Barat</li>
+                </ol>
+            </td>
             <td style="width: 55%" class="text-center">
                 <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
                 <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
@@ -309,13 +315,6 @@
             </td>
         </tr>
     </table>
-    <p style="margin-top:-5px">Tembusan disampaikan kepada Yth :</p>
-    <ol style="margin: 0;padding:0;margin-left: 50px">
-        <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
-        <li>Kepala Balai Pengelola Transportasi Darat Kelas 1 Jawa Barat</li>
-        {{-- <li>Kepala Kepolisian Resort Cirebon Kota,</li> --}}
-        {{-- <li>Arsip.</li> --}}
-    </ol>
 </div>
 
 
