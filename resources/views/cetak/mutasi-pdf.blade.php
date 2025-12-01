@@ -237,17 +237,25 @@
 
         <table style="width: 100%;line-height:1">
             <tr>
-                <td style="width: 45%"></td>
-                <td style="width: 55%" class="text-center">
-                    <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
-                    <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
-                    <p>Kota Cirebon</p>
-                    <img src="{{ $ttdImg }}" alt="TTD" 
+                
+            <td style="width: 50%">
+                <p style="margin-top:155px">Tembusan disampaikan kepada Yth :</p>
+                <ol style="margin: 0;padding:0;margin-left: 10px">
+                    <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
+                    <li>Kepala Balai Pengelola Transportasi Darat Kelas 1 Jawa Barat</li>
+                </ol>
+            </td>
+            <td style="width: 50%" class="text-center">
+                <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
+                <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
+                <p>Kota Cirebon</p>
+                <img src="{{ $ttdImg }}" alt="TTD" 
                     style="width:4cm; height:auto; margin:0px 0;"><br>
-                    <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
-                    {{-- <p style="margin: 0;padding: 0">{{ $ttd['pangkat'] }}</p> --}}
-                    <p style="margin: 0;padding: 0">NIP. {{ $ttd['nip'] }}</p>
-                </td>
+                
+                <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
+                {{-- <p style="margin: 0;padding: 0">{{ $ttd['pangkat'] }}</p> --}}
+                <p style="margin: 0;padding: 0">NIP. {{ $ttd['nip'] }}</p>
+            </td>
             </tr>
         </table>
         <br><br>
