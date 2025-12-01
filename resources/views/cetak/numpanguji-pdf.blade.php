@@ -222,10 +222,10 @@
             </td>
             <td style="width: 5%">
                 <p>:</p>
+                <p>:</p>
                 @if(strlen($alamat) > 60)
                 <p style="visibility: hidden">-</p>
                 @endif
-                <p>:</p>
                 <p>:</p>
                 <p>:</p>
                 <p>:</p>
