@@ -1434,7 +1434,7 @@ export default {
       if (parts.length === 3 && parts[2].length === 4) {
         this.pendaftaran.tglsertifikatreg = `${parts[2]}-${parts[1]}-${parts[0]}`;
       }
-    }
+    },
     applySelection() {
       this.textareaAlasan = this.pendaftaran.alasan.join("\n• ");
       if (this.textareaAlasan !== "") {
