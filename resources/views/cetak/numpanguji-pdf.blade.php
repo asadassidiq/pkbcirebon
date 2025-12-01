@@ -295,14 +295,14 @@
 
     <table style="width: 100%;line-height:1;margin-top:-15px">
         <tr>
-            <td style="width: 45%">
+            <td style="width: 50%">
                 <p style="margin-top:35px">Tembusan disampaikan kepada Yth :</p>
                 <ol style="margin: 0;padding:0;margin-left: 50px">
                     <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
                     <li>Kepala Balai Pengelola Transportasi Darat Kelas 1 Jawa Barat</li>
                 </ol>
             </td>
-            <td style="width: 55%" class="text-center">
+            <td style="width: 50%" class="text-center">
                 <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
                 <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
                 <p>Kota Cirebon</p>
