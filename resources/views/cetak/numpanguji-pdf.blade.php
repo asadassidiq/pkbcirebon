@@ -301,7 +301,7 @@
                 <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
                 <p>Kota Cirebon</p>
                 <img src="{{ $ttdImg }}" alt="TTD" 
-                    style="width:75.59px; height:auto; margin:0px 0;"><br>
+                    style="width:4cm; height:auto; margin:0px 0;"><br>
                 
                 <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
                 {{-- <p style="margin: 0;padding: 0">{{ $ttd['pangkat'] }}</p> --}}
