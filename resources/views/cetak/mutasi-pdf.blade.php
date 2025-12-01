@@ -242,7 +242,8 @@
                     <p>a.n. KEPALA DINAS PERHUBUNGAN {{ env('APP_KAB') .' '.env('APP_WILAYAH')}} </p>
                     <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
                     <p>Kota Cirebon</p>
-                    <br><br><br>
+                    <img src="{{ $ttdImg }}" alt="TTD" 
+                    style="width:90px; height:auto; margin:0px 0;"><br>
                     <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
                     {{-- <p style="margin: 0;padding: 0">{{ $ttd['pangkat'] }}</p> --}}
                     <p style="margin: 0;padding: 0">NIP. {{ $ttd['nip'] }}</p>
