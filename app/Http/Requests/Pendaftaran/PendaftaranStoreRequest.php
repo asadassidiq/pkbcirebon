@@ -34,8 +34,8 @@ class PendaftaranStoreRequest extends FormRequest
             'pendaftaran.tipe'           => 'required|string|max:100',
             'pendaftaran.jenis'           => 'required|string|max:100',
             'pendaftaran.subjenis'           => 'required|string|max:100',
-            'pendaftaran.isisilinder'           => 'integer|min:1',
-            'pendaftaran.dayamotorpenggerak'           => 'integer|min:1',
+            // 'pendaftaran.isisilinder'           => 'required|integer|min:1',
+            // 'pendaftaran.dayamotorpenggerak'           => 'required|integer|min:1',
             'pendaftaran.bahanbakar'           => 'required|string|max:100',
             'pendaftaran.nosertifikatreg'           => 'required|string|max:100', 
             'pendaftaran.tglsertifikatreg'           => 'required',
@@ -192,6 +192,8 @@ class PendaftaranStoreRequest extends FormRequest
             'beratsumbu12.required' => 'berat sumbu 12 wajib diisi',
     
             // Validasi umum integer + min:0
+            'isisilinder.integer' => 'Isian isi silinder harus berupa angka',
+            'dayamotorpenggerak.integer' => 'Isian daya motor penggerak harus berupa angka',
             'jbb.integer' => 'Isian jbb harus berupa angka',
             'jbkb.integer' => 'Isian jbkb harus berupa angka',
             'jbi.integer' => 'Isian jbi harus berupa angka',
