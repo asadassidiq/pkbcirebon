@@ -297,7 +297,7 @@
         <tr>
             <td style="width: 50%">
                 <p style="margin-top:35px">Tembusan disampaikan kepada Yth :</p>
-                <ol style="margin: 0;padding:0;margin-left: 50px">
+                <ol style="margin: 0;padding:0;margin-left: 10px">
                     <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
                     <li>Kepala Balai Pengelola Transportasi Darat Kelas 1 Jawa Barat</li>
                 </ol>
