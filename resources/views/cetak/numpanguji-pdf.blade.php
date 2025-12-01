@@ -301,7 +301,7 @@
                 <p>Kepala UPT Pengujian Kendaraan Bermotor</p>
                 <p>Kota Cirebon</p>
                 <img src="{{ $ttdImg }}" alt="TTD" 
-                    style="width:3cm; height:auto; margin:0px 0;"><br>
+                    style="width:4cm; height:auto; margin:0px 0;"><br>
                 
                 <p style="margin: 0;padding: 0"><u><b>{{ $ttd['name'] }}</u></b></p>
                 {{-- <p style="margin: 0;padding: 0">{{ $ttd['pangkat'] }}</p> --}}
@@ -310,7 +310,7 @@
         </tr>
     </table>
     <br><br>
-    <p style="margin-top:-25px">Tembusan disampaikan kepada Yth :</p>
+    <p style="margin-top:-55px">Tembusan disampaikan kepada Yth :</p>
     <ol style="margin: 0;padding:0;margin-left: 50px">
         <li>Kepala Dinas Perhubungan Provinsi Jawa Barat,</li>
         <li>Kepala Balai Pengelola Transportasi Darat Kelas 1 Jawa Barat</li>
