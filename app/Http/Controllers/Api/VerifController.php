@@ -89,6 +89,7 @@ class VerifController extends Controller
     public function store(VerifStoreRequest $request)
     {
         $user = auth()->user();
+        dd($user);
         $check = $this->verifService->checkid($request->pendaftaran_id);
         $status_check = false;
         if ($check->kodepenerbitans_id == 1) {
