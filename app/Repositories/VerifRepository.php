@@ -909,10 +909,10 @@ class VerifRepository
         $update->catatanverif = $request->catatanverif;
 
         if ($update->save()) {
-            dd($update);
             if ($update->statuslulusuji == '1') {
                 $this->setDatapengujian($update->pendaftaran_id, $request->jenis_cetak ?? 0, $request->status_cetak ?? 0);
             }
+            dd($update);
             return $update;
         }
         return false;
