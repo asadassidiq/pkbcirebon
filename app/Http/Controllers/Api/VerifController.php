@@ -136,7 +136,7 @@ class VerifController extends Controller
             //     'statuslulusuji' => $request->verif,
             //     'idpenguji'    => $user['id'],
             // ]);
-
+            dd('masuk update');
             $data = $this->verifService->update($request, $check->id);
             if ($data) {
                 $check = $this->verifService->checkid($request->pendaftaran_id);
