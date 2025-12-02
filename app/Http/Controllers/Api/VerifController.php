@@ -156,7 +156,7 @@ class VerifController extends Controller
                     $ps = 5;
                 }
                 $check->posverif      = $request->verif;
-                $check->user_posverif1 = $user['id'];
+                $check->user_posverif = $user['id'];
                 $check->posisi = $ps;
                 $check->save();
             }
