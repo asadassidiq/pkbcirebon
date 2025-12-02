@@ -316,6 +316,8 @@ class apiBlueCore
             $data = json_encode([
                 "email" => "upt.pkbkotacirebon@gmail.com",
                 "password" => "7TUxgZJ#",
+                // "email" => "dishub@bantulkab.go.id",
+                // "password" => "28N81p5@Edu7",
             ]);
 
         // return $data;
