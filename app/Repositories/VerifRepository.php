@@ -412,7 +412,7 @@ class VerifRepository
                     'tglsertifikatreg'      => $tglsertifikatreg,
                     'nosuratkehilangan'     => $data->nosuratkehilangan,
                     'noregistrasikendaraan' => $data->noregistrasikendaraan,
-                    'tgl_registrasikendaraan'=> $data->tgl_registrasikendaraan,
+                    'tgl_registrasikendaraan'=> $data->tgl_registrasikendaraan ?? null,
                     'norangka'              => $data->norangka,
                     'merek'                 => $data->merek,
                     'tipe'                  => $data->tipe,
@@ -584,7 +584,7 @@ class VerifRepository
                 $uji->tglsertifikatreg      = $data->tglsertifikatreg;
                 $uji->nosuratkehilangan     = $data->nosuratkehilangan;
                 $uji->noregistrasikendaraan = $data->noregistrasikendaraan;
-                $uji->tgl_registrasikendaraan = $data->tgl_registrasikendaraan;
+                $uji->tgl_registrasikendaraan = $data->tgl_registrasikendaraan ?? null;
                 $uji->norangka              = $data->norangka;
                 $uji->merek                 = $data->merek;
                 $uji->tipe                  = $data->tipe;
