@@ -401,7 +401,6 @@ class VerifRepository
                 $kiri = null;
             }
             $alatuji_remparkirtotalgayapengereman = (int)$data->alatuji_gayapengeremanparkirkiri+(int)$data->alatuji_gayapengeremanparkirkanan;
-            dd($data);
             if (!$data->idx) {
                 $uji = Datapengujian::Create([
                     'statuspenerbitan'  => $kode,
@@ -717,6 +716,8 @@ class VerifRepository
             }
 
             if ($uji) {
+                dd($uji);
+
                 $statuslulusuji = LaikJalan::where('pendaftaran_id', $id)->first();
                 $statuslulusuji->statuslulusuji = '1';
                 $statuslulusuji->save();
