@@ -401,7 +401,7 @@ class VerifRepository
                 $kiri = null;
             }
             $alatuji_remparkirtotalgayapengereman = (int)$data->alatuji_gayapengeremanparkirkiri+(int)$data->alatuji_gayapengeremanparkirkanan;
-
+            dd($data);
             if (!$data->idx) {
                 $uji = Datapengujian::Create([
                     'statuspenerbitan'  => $kode,
@@ -912,7 +912,7 @@ class VerifRepository
             if ($update->statuslulusuji == '1') {
                 $this->setDatapengujian($update->pendaftaran_id, $request->jenis_cetak ?? 0, $request->status_cetak ?? 0);
             }
-            dd($update);
+            
             return $update;
         }
         return false;
