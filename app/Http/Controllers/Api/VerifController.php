@@ -89,7 +89,6 @@ class VerifController extends Controller
     public function store(VerifStoreRequest $request)
     {
         $user = auth()->user();
-        dd($user);
         $check = $this->verifService->checkid($request->pendaftaran_id);
         $status_check = false;
         if ($check->kodepenerbitans_id == 1) {
@@ -103,17 +102,17 @@ class VerifController extends Controller
             try {
                 $this->saveFoto($check['id'], $nouji);
             } catch (\Exception $e) {
-                Log::error(json_encode([
-                    'type' => 'error',
-                    'context' => 'DatakendaraanService::update',
-                    'message' => $e->getMessage(),
-                    'data' => $request->all(),
-                    'details' => [
-                        'line' => $e->getLine(),
-                        'file' => $e->getFile(),
-                        'trace' => $e->getTraceAsString(),
-                    ],
-                ]));
+                // Log::error(json_encode([
+                //     'type' => 'error',
+                //     'context' => 'DatakendaraanService::update',
+                //     'message' => $e->getMessage(),
+                //     'data' => $request->all(),
+                //     'details' => [
+                //         'line' => $e->getLine(),
+                //         'file' => $e->getFile(),
+                //         'trace' => $e->getTraceAsString(),
+                //     ],
+                // ]));
             }
         } else {
             $nouji = 'sukses';
