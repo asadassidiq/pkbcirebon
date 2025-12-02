@@ -138,7 +138,6 @@ class VerifController extends Controller
             // ]);
             $data = $this->verifService->update($request, $check->id);
             if ($data) {
-
                 $check = $this->verifService->checkid($request->pendaftaran_id);
 
                 if ($check->pos1 == 0) {
@@ -157,7 +156,7 @@ class VerifController extends Controller
                     $ps = 5;
                 }
                 $check->posverif      = $request->verif;
-                $check->user_posverif = $user['id'];
+                $check->user_posverif1 = $user['id'];
                 $check->posisi = $ps;
                 $check->save();
             }
