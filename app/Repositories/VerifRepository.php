@@ -575,6 +575,8 @@ class VerifRepository
                 }
             } else {
                 $uji = Datapengujian::where('idx', $data->idx)->first();
+                dd($uji);
+
                 $uji->statuspenerbitan  = $kode;
                 $uji->nouji             = $data->nouji;
                 $uji->nama              = $data->nama;
@@ -716,7 +718,6 @@ class VerifRepository
             }
 
             if ($uji) {
-                dd($uji);
 
                 $statuslulusuji = LaikJalan::where('pendaftaran_id', $id)->first();
                 $statuslulusuji->statuslulusuji = '1';
