@@ -138,7 +138,6 @@ class VerifController extends Controller
             // ]);
             $data = $this->verifService->update($request, $check->id);
             if ($data) {
-                dd($data);
 
                 $check = $this->verifService->checkid($request->pendaftaran_id);
 
