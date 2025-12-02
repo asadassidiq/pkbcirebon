@@ -114,7 +114,7 @@ export default {
       this.getAlasan();
       this.getCatatan(this.$route.params.id).then(() => {
             this.initEdit();
-        });
+      });
       this.$refs['my-modal'].show()
     },
     hideModal() {
@@ -201,7 +201,7 @@ export default {
         // tambahkan alasan baru
         this.catatan.alasan.push("Lainnya: " + this.inputLainnya)
         }
-    }
+    },
   },
   destroyed() {
     this.CLEAR_CATATAN();

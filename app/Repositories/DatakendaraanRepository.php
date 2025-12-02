@@ -560,7 +560,7 @@ class DatakendaraanRepository
     }
   }
 
-  public function updateData10()
+  public function updateData101()
   {
     $data = Datapengujian::orderBy('tgluji', 'asc')->get();
     foreach ($data as $kend) {
@@ -751,28 +751,219 @@ class DatakendaraanRepository
       }
     }
   }
+  public function updateData10()
+  {
+    $data = Datapengujian::orderBy('tgluji', 'asc')->get();
+    foreach ($data as $kend) {
+      $identitaskendaraan = array(
+        'uuid'  => (string) Str::uuid(),
+        'nouji' => $kend->nouji,
+        'noidentitaspemilik'    => $kend->noidentitaspemilik,
+        'nama'  => $kend->nama,
+        'alamat' => $kend->alamat,
+        'merek'  => $kend->merek,
+        // 'idmerek'  => $kend->vehicle_brand_id,
+        'tipe'   => $kend->tipe,
+        // 'idtipe' => $kend->vehicle_varian_type_id,
+        'varian' => $kend->varian,
+        // 'idvarian' => $kend->vehicle_varian_id,
+        'noregistrasikendaraan' => $kend->noregistrasikendaraan,
+        'nosertifikatreg' => $kend->nosertifikatreg,
+        'tglsertifikatreg' => $kend->tglsertifikatreg,
+        // 'tgl_registrasikendaraan' => $kend->tglterbitstnk,
+        'norangka' => $kend->norangka,
+        'nomesin' => $kend->nomesin,
+        'thpembuatan' => $kend->thpembuatan,
+        'bahanbakar' => $kend->bahanbakar,
+        'idbahanbakar' => $kend->fuel_id,
+        'isisilinder' => $kend->isisilinder,
+        'dayamotorpenggerak' => $kend->dayamotorpenggerak,
+        'jenis' => $kend->jenis,
+        // 'idjenis' => $kend->vehicle_type_id,
+        // 'subjenis' => $kend->sub_Varian_kendaraan,
+        // 'idsubjenis' => $kend->vehicle_sub_id,
+        // 'model' => $kend->jenis,
+        // 'peruntukan' => $kend->peruntukan,
+        // 'warna' => $kend->warna,
+        'statuskendaraan' => '0',
+        'idkepaladinas' => $kend->idkepaladinas,
+        'iddirektur'    => $kend->iddirektur,
+        'kodewilayah'   => $kend->kodewilayah,
+        'kodewilayahasal'   => $kend->kodewilayahasal,
+        'idkodewilayah'   => $kend->area_id,
+        'idkodewilayahasal'   => $kend->area_from_id,
+      );
+      $searchCriteria = [
+          'nouji' => $kend->nouji,
+      ];
+      $dataIden = Identitaskendaraan::updateOrCreate($searchCriteria, $identitaskendaraan);
+      if ($dataIden) {
+        $datakendaraan = array(
+          'identitaskendaraan_id'  => $dataIden->id,
+          'jbb' => $kend->jbb,
+          'jbkb' => $kend->jbkb,
+          'jbi' => $kend->jbi,
+          'jbki' => $kend->jbki,
+          'mst' => $kend->mst,
+          'konfigurasisumburoda' => $kend->konfigurasisumburoda,
+          'ukuranban' => $kend->ukuranban,
+          'panjangkendaraan' => $kend->panjangkendaraan,
+          'lebarkendaraan' => $kend->lebarkendaraan,
+          'tinggikendaraan' => $kend->tinggikendaraan,
+          'panjangbakatautangki' => $kend->panjangbakatautangki,
+          'lebarbakatautangki' => $kend->lebarbakatautangki,
+          'tinggibakatautangki' => $kend->tinggibakatautangki,
+          'julurdepan' => $kend->julurdepan,
+          'julurbelakang' => $kend->julurbelakang,
+          'groundclearance' => $kend->groundclearance,
+          // 'jumlah_sumbu' => $kend->jumlah_sumbu,
+          'jaraksumbu1_2' => $kend->jaraksumbu1_2,
+          'jaraksumbu2_3' => $kend->jaraksumbu2_3,
+          'jaraksumbu2_3' => $kend->jaraksumbu2_3,
+          'jaraksumbu3_4' => $kend->jaraksumbu3_4,
+          // 'jaraksumbu4_5' => $kend->jaraksumbu4_5,
+          // 'jaraksumbu5_6' => $kend->jaraksumbu5_6,
+          // 'jaraksumbu6_7' => $kend->jaraksumbu6_7,
+          // 'jaraksumbu7_8' => $kend->jaraksumbu7_8,
+          // 'jaraksumbu8_9' => $kend->jaraksumbu8_9,
+          // 'jaraksumbu9_10' => $kend->jaraksumbu9_10,
+          // 'jaraksumbu10_11' => $kend->jaraksumbu10_11,
+          // 'jaraksumbu11_12' => $kend->jaraksumbu11_12,
+          'q' => 0,
+          'a' => $kend->wheel_base,
+          'r' => 0,
+          'b' => 0,
+          'p' => 0,
+          'dayaangkutorang' => $kend->dayaangkutorang,
+          'dayaangkutbarang' => $kend->dayaangkutbarang,
+          'kelasjalanterendah' => $kend->kelasjalanterendah,
+          'idkelasjalanterendah' => $kend->kelasjalan_id,
+          'beratkosong' => $kend->beratkosong,
+          // 'beratsumbu1' => $kend->alatuji_beratsumbu1,
+          // 'beratsumbu2' => $kend->alatuji_beratsumbu2,
+          // 'beratsumbu3' => $kend->alatuji_beratsumbu3,
+          // 'beratsumbu4' => $kend->alatuji_beratsumbu4,
+          // 'beratsumbu5' => $kend->alatuji_beratsumbu5,
+          // 'beratsumbu6' => $kend->alatuji_beratsumbu6,
+          // 'beratsumbu7' => $kend->alatuji_beratsumbu7,
+          // 'beratsumbu8' => $kend->alatuji_beratsumbu8,
+          // 'beratsumbu9' => $kend->alatuji_beratsumbu9,
+          // 'beratsumbu10' => $kend->alatuji_beratsumbu10,
+          // 'beratsumbu11' => $kend->alatuji_beratsumbu11,
+          // 'beratsumbu12' => $kend->alatuji_beratsumbu12,
+          // 'volume' => $kend->volume,
+          // 'jenismuatan' => $kend->jenismuatan,
+          // 'bahan' => $kend->bahan,
+        );
+        $dataKendaraanSearchCriteria = [
+            'identitaskendaraan_id' => $dataIden->id,
+        ];
 
-    public function upLaikJalan()
-    {
-        // Implement the logic for updating the Laik Jalan status
-        $data = LaikJalan::all();
-        foreach ($data as $dt) {
-            $tgluji = $dt->tgluji;
-            if($tgluji && $tgluji != '0000-00-00') {
-                try {
-                  $tanggal_input = DateTime::createFromFormat('dmY', $tgluji);
-                  $masaberlakuuji = (clone $tanggal_input)->modify('+6 months');
-                  $masaberlakuuji = $masaberlakuuji->format('dmY');
-                } catch (Exception $e) {
-                    // Jika format tanggal tidak valid
-                    $masaberlakuuji = '';
-                }
+        $dataKend = Datakendaraan::updateOrCreate($dataKendaraanSearchCriteria, $datakendaraan);
+        $dateTimeObj = DateTime::createFromFormat('dmY', $kend->tgluji);
+        $dateTimeObj2 = DateTime::createFromFormat('dmY', $kend->masaberlakuuji);
+        $pendaftaran = array(
+          'uuid' => (string) Str::uuid(),
+          'identitaskendaraan_id' => $dataIden->id,
+          'idx'   => $kend->idx,
+          'kodepenerbitans_id'   => $kend->statuspenerbitan,
+          'tglpendaftaran'    => $dateTimeObj->format('Y-m-d'),
+          'nosuratkehilangan'  => $kend->nosuratkehilangan,
+          // 'namapemohon'   => $pend->namapemohon,
+          // 'alamatpemohon' => $pend->alamatpemohon,
+          // 'notelp'    => $pend->notelp,
+          // 'status'    => $pend->status,
+          'verif'     => '1',
+          'posverif'      => $kend->statuslulusuji,
+          'user_posverif' => $kend->idpetugasuji,
+        );
+        $dataPend = Pendaftaran::create($pendaftaran);
+        if($dataPend) {
+          $laik  = array(
+            'pendaftaran_id'    => $dataPend->id,
+            'alatuji_emisiasapbahanbakarsolar' => $kend->alatuji_emisiasapbahanbakarsolar,
+            'alatuji_emisicobahanbakarbensin'  => $kend->alatuji_emisicobahanbakarbensin,
+            'alatuji_emisicobahanbakarbensin'  => $kend->alatuji_emisicobahanbakarbensin,
+            'alatuji_remutamatotalgayapengereman'   => $kend->alatuji_remutamatotalgayapengereman,
+            // 'alatuji_remparkirtotalgayapengereman'   => $kend->alatuji_remparkirtotalgayapengereman,
+            'alatuji_remutamaselisihgayapengeremanrodakirikanan1'   => $kend->alatuji_remutamaselisihgayapengeremanrodakirikanan1,
+            'alatuji_remutamaselisihgayapengeremanrodakirikanan2'   => $kend->alatuji_remutamaselisihgayapengeremanrodakirikanan2,
+            'alatuji_remutamaselisihgayapengeremanrodakirikanan3'   => $kend->alatuji_remutamaselisihgayapengeremanrodakirikanan3,
+            'alatuji_remutamaselisihgayapengeremanrodakirikanan4'   => $kend->alatuji_remutamaselisihgayapengeremanrodakirikanan4,
+            'alatuji_remparkirtangan'   => $kend->alatuji_remparkirtangan,
+            'alatuji_remparkirkaki' => $kend->alatuji_remparkirkaki,
+            'alatuji_kincuprodadepan'   => $kend->alatuji_kincuprodadepan,
+            'alatuji_tingkatkebisingan' => $kend->alatuji_tingkatkebisingan,
+            'alatuji_lampuutamakekuatanpancarlampukanan'    => $kend->alatuji_lampuutamakekuatanpancarlampukanan,
+            'alatuji_lampuutamakekuatanpancarlampukiri' => $kend->alatuji_lampuutamakekuatanpancarlampukiri,
+            'alatuji_lampuutamapenyimpanganlampukanan'  => $kend->alatuji_lampuutamapenyimpanganlampukanan,
+            'alatuji_lampuutamapenyimpanganlampukiri'   => $kend->alatuji_lampuutamapenyimpanganlampukiri,
+            'alatuji_penunjukkecepatan' => $kend->alatuji_penunjukkecepatan,
+            'alatuji_kedalamanalurban' => $kend->alatuji_kedalamanalurban,
+            'tgluji'   => $kend->tgluji,
+            'masaberlakuuji' => $kend->masaberlakuuji,
+            'statuslulusuji'    => $kend->statuslulusuji,
+            'idpenguji' => $kend->idpetugasuji,
+          );  
+          $dataLaik = LaikJalan::create($laik);
+
+          $lastTaman = TamanKendaraan::orderBy('tanggal', 'DESC')->first();
+          $checkTaman = TamanKendaraan::where('tanggal', $dateTimeObj->format('Y-m-d'))->first();
+          if ($kend->statuspenerbitan == '1' || $kend->statuspenerbitan == '6') {
+            if ($checkTaman) {
+              $upTaman = $checkTaman;
+              $upTaman->total = (int)$checkTaman->total + 1;
+              $upTaman->masuk = (int)$checkTaman->masuk + 1;
+              $upTaman->save();
             } else {
-                $masaberlakuuji = '';
+              $inTaman = TamanKendaraan::Create([
+                'total' => (int)$lastTaman->total + 1,
+                'masuk' => 1,
+                'keluar' => 0,
+                'tanggal' => $dateTimeObj->format('Y-m-d'),
+              ]);
             }
-            $update = LaikJalan::where('id', $dt->id)->first();
-            $update->masaberlakuuji = $masaberlakuuji;
-            $update->save();
+          }
+          $now = date('Y-m-d');
+          if ($dateTimeObj2->format('Y-m-d') <= $now) {
+            $stskend = '0';
+          } elseif ($dateTimeObj2->format('Y-m-d') >= $now) {
+            $stskend = '1';
+          }
+          if ($kend->statuspenerbitan == '5') {
+            $stskend = '2';
+          }
+          $Iden = Identitaskendaraan::where('id', $dataIden->id)->first();
+          if ($Iden) {
+            $Iden->statuskendaraan = $stskend;
+            $Iden->save();
+          }
         }
+      }
     }
+  }
+
+  public function upLaikJalan()
+  {
+      // Implement the logic for updating the Laik Jalan status
+      $data = LaikJalan::all();
+      foreach ($data as $dt) {
+          $tgluji = $dt->tgluji;
+          if($tgluji && $tgluji != '0000-00-00') {
+              try {
+                $tanggal_input = DateTime::createFromFormat('dmY', $tgluji);
+                $masaberlakuuji = (clone $tanggal_input)->modify('+6 months');
+                $masaberlakuuji = $masaberlakuuji->format('dmY');
+              } catch (Exception $e) {
+                  // Jika format tanggal tidak valid
+                  $masaberlakuuji = '';
+              }
+          } else {
+              $masaberlakuuji = '';
+          }
+          $update = LaikJalan::where('id', $dt->id)->first();
+          $update->masaberlakuuji = $masaberlakuuji;
+          $update->save();
+      }
+  }
 }

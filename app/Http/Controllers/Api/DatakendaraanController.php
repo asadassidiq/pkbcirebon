@@ -86,6 +86,7 @@ class DatakendaraanController extends Controller
 
     public function updateData()
     {
+        ini_set('max_execution_time', 0);
         $data = $this->datakendaraanService->updateData();
         return $this->returnJson($data);
     }
