@@ -851,10 +851,10 @@ class VerifRepository
             if ($original) {
                 $copy = $original->replicate();
                 try {
-                    $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakdepan.jpg');
-                    $kanan    = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkanan.jpg');
-                    $belakang = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakbelakang.jpg');
-                    $kiri     = file_get_contents(public_path() . '/thumbnail_images/' . $data->nouji . '-tampakkiri.jpg');
+                    $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $copy->nouji . '-tampakdepan.jpg');
+                    $kanan    = file_get_contents(public_path() . '/thumbnail_images/' . $copy->nouji . '-tampakkanan.jpg');
+                    $belakang = file_get_contents(public_path() . '/thumbnail_images/' . $copy->nouji . '-tampakbelakang.jpg');
+                    $kiri     = file_get_contents(public_path() . '/thumbnail_images/' . $copy->nouji . '-tampakkiri.jpg');
                 } catch (\Exception $e) {
                     $depan = null;
                     $kanan = null;
