@@ -213,7 +213,7 @@
             <td style="width: 27%">
                 <p>Nama Pemilik Kendaraan</p>
                 <p>Alamat</p>
-                @if(strlen($alamat) > 60)
+                @if(!empty($alamat2))
                 <p style="visibility: hidden">-</p>
                 @endif
                 <p>Nomor Kendaraan</p>
@@ -228,7 +228,7 @@
             <td style="width: 5%">
                 <p>:</p>
                 <p>:</p>
-                @if(strlen($alamat) > 60)
+                @if(!empty($alamat2))
                 <p style="visibility: hidden">-</p>
                 @endif
                 <p>:</p>
@@ -243,7 +243,7 @@
             <td style="width: 68%">
                 <p>{{ $kendaraan->nama }}</p>
                 <p>{{ $alamat1 }}</p>
-                @if(strlen($alamat) > 60)
+                @if(!empty($alamat2))
                     <p>{{ $alamat2 }}</p>
                 @endif
                 <p>{{ $kendaraan->noregistrasikendaraan }}</p>
