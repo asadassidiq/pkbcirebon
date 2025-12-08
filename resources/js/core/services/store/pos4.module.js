@@ -294,10 +294,10 @@ export const mutations = {
       state.pendaftaran.pos4 = "0";
       state.laikjalan.status_remkiri = "0";
       state.laikjalan.status_remkanan = "0";
-    } else if (state.laikjalan.alatuji_remparkirtangan < 12 && state.identitaskendaraan.includes("BARANG")) {
+    } else if (state.laikjalan.alatuji_remparkirtangan < 12 && state.identitaskendaraan.jenis.includes("BARANG")) {
       state.pendaftaran.pos4 = "0";
       state.laikjalan.status_remparkir = 0;
-    } else if (state.laikjalan.alatuji_remparkirtangan < 12 && state.identitaskendaraan.includes("BUS")) {
+    } else if (state.laikjalan.alatuji_remparkirtangan < 12 && state.identitaskendaraan.jenis.includes("BUS")) {
       state.pendaftaran.pos4 = "0";
       state.laikjalan.status_remparkir = 0;
     } else if (state.laikjalan.alatuji_remparkirtangan < 16) {

@@ -182,7 +182,12 @@
         </tr>
     </table>
     @php
-        $alamat = $kendaraan->alamat;
+        if(count($kendaraan->kota)>0)
+        {
+            $alamat = $kendaraan->alamat.', '.$kendaraan->kelurahan.', '.$kendaraan->kecamatan.', '.$kendaraan->kota;
+        }else{
+            $alamat = $kendaraan->alamat;            
+        }
         $alamat1 = '';
         $alamat2 = '';
         $batas = 60;

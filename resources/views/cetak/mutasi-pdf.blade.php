@@ -167,7 +167,12 @@
         </tr>
     </table>
     @php
-        $alamat = $kendaraan->alamat;
+        if(count($kendaraan->kota)>0)
+        {
+            $alamat = $kendaraan->alamat.', '.$kendaraan->kelurahan.', '.$kendaraan->kecamatan.', '.$kendaraan->kota;
+        }else{
+            $alamat = $kendaraan->alamat;            
+        }
         $alamat1 = '';
         $alamat2 = '';
         $batas = 50;
@@ -257,26 +262,26 @@
                 <td style="width: 27%">
                     <p>Nama Pemilik Kendaraan</p>
                     <p>Alamat</p>
-                    <p>Nomor Kendaraan</p>
                     @if(strlen($alamat) > 50)
                     <p style="visibility: hidden">-</p>
                     @endif
+                    <p>Nomor Kendaraan</p>
                 </td>
                 <td style="width: 5%">
                     <p>:</p>
                     <p>:</p>
-                    <p>:</p>
                     @if(strlen($alamat) > 50)
                     <p style="visibility: hidden">-</p>
                     @endif
+                    <p>:</p>
                 </td>
                 <td style="width: 68%">
                     <p>{{ $kendaraan->nokendaraanbaru }}</p>
-                    <p>{{ $kendaraan->namapemilikbaru }}</p>
                     <p>{{ $alamat1 }}</p>
                     @if(strlen($alamat) > 50)
                     <p>{{ $alamat2 }}</p>
                     @endif
+                    <p>{{ $kendaraan->namapemilikbaru }}</p>
                 </td>
             </tr>
         </table>
