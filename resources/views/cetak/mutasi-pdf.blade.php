@@ -167,7 +167,7 @@
         </tr>
     </table>
     @php
-        if(count($kendaraan->kota)>0)
+        if (!empty($kendaraan->kota))
         {
             $alamat = $kendaraan->alamat.', '.$kendaraan->kelurahan.', '.$kendaraan->kecamatan.', '.$kendaraan->kota;
         }else{
