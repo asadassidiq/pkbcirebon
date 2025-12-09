@@ -823,6 +823,11 @@ class VerifRepository
                     $dataUp->idx= $copy->idx;
                     if($dataUp->save())
                     {    
+                        $checkPengujian = Datapengujian::where('nouji',$copy->nouji)->where('tgluji', $copy->tgluji)->where('statuspenerbitan','2')->first();
+                        if($checkPengujian)
+                        {
+                            $checkPengujian->delete();
+                        }
                         $copy2 = $copy->replicate();
                         $copy2->statuspenerbitan = '2';
                         $copy2->fotodepansmall    = $depan;
