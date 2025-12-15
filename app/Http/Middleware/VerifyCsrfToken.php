@@ -13,6 +13,7 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         'intervention_postimage',
+        'savecctvimage',
         'api/*',
     ];
 }
