@@ -95,7 +95,7 @@ class FotoController extends Controller
 
         // sanitize
         $safeNouji = $nouji;
-        $safeSide = preg_replace('/[^A-Za-z0-9_\-]/', '-', (string) $side);
+        $safeSide = $side;
 
         $dir = public_path('tmp_images');
         if (! file_exists($dir)) {
