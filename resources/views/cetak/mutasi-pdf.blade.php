@@ -178,17 +178,20 @@
         $batas = 50;
         if (strlen($alamat) <= $batas) {
             $alamat1 = $alamat;
-        }
-        // Cari posisi spasi terakhir sebelum batas
-        $posisiPecah = strrpos(substr($alamat, 0, $batas), ' ');
+        } else {
 
-        // Jika tidak ditemukan spasi, potong langsung di batas
-        if ($posisiPecah === false) {
-            $posisiPecah = $batas;
-        }
+            // Cari posisi spasi terakhir sebelum batas
+            $posisiPecah = strrpos(substr($alamat, 0, $batas), ' ');
 
-        $alamat1 = trim(substr($alamat, 0, $posisiPecah));
-        $alamat2 = trim(substr($alamat, $posisiPecah));
+            // Jika tidak ditemukan spasi → potong langsung di batas
+            if ($posisiPecah === false) {
+                $posisiPecah = $batas;
+            }
+
+            // Pecah alamat
+            $alamat1 = substr($alamat, 0, $posisiPecah);
+            $alamat2 = ltrim(substr($alamat, $posisiPecah)); // hilangkan spasi awal
+        }
     @endphp
     <div>
         <p><span style="margin-left: 20px">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor terkait permohonan Mutasi Uji
@@ -244,18 +247,21 @@
             $alamat2 = '';
             $batas = 50;
             if (strlen($alamat) <= $batas) {
-                $alamat1 = $alamat;
-            }
-            // Cari posisi spasi terakhir sebelum batas
-            $posisiPecah = strrpos(substr($alamat, 0, $batas), ' ');
+            $alamat1 = $alamat;
+            } else {
 
-            // Jika tidak ditemukan spasi, potong langsung di batas
-            if ($posisiPecah === false) {
-                $posisiPecah = $batas;
-            }
+                // Cari posisi spasi terakhir sebelum batas
+                $posisiPecah = strrpos(substr($alamat, 0, $batas), ' ');
 
-            $alamat1 = trim(substr($alamat, 0, $posisiPecah));
-            $alamat2 = trim(substr($alamat, $posisiPecah));
+                // Jika tidak ditemukan spasi → potong langsung di batas
+                if ($posisiPecah === false) {
+                    $posisiPecah = $batas;
+                }
+
+                // Pecah alamat
+                $alamat1 = substr($alamat, 0, $posisiPecah);
+                $alamat2 = ltrim(substr($alamat, $posisiPecah)); // hilangkan spasi awal
+            }
         @endphp
         <table style="width: 100%;margin-left:20px">
             <tr>
