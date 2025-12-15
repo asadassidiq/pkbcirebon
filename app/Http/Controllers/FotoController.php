@@ -95,7 +95,6 @@ class FotoController extends Controller
 
         // sanitize
         $safeNouji = $nouji;
-        dd( $safeNouji );
         $safeSide = $side;
 
         $dir = public_path('tmp_images');
