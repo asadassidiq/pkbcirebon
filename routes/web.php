@@ -68,6 +68,7 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Api'], function () {
 Route::group(['namespace' => 'App\\Http\\Controllers'], function () {
 	Route::get('upload/{id}/fotokendaraan/', 'FotoController@getImage')->name('get.image');
 	Route::POST('intervention_postimage', 'FotoController@postImage')->name('post.image');
+	Route::POST('savecctvimage', 'FotoController@saveCCTVImage')->name('post.cctv');
 	Route::get('getfoto', 'FotoController@getFoto')->name('get.foto');
 });
 

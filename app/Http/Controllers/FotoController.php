@@ -88,5 +88,37 @@ class FotoController extends Controller
     }
 
 
-    public function accFoto($id) {}
+    public function saveCCTVImage(Request $request)
+    {
+        $nouji = $request->input('nouji');
+        $side = $request->input('side') ?: 'unknown';
+
+        // sanitize
+        $safeNouji = $nouji ? preg_replace('/[^A-Za-z0-9_\-]/', '-', (string) $nouji) : null;
+        $safeSide = preg_replace('/[^A-Za-z0-9_\-]/', '-', (string) $side);
+
+        $dir = public_path('tmp_images');
+        if (! file_exists($dir)) {
+            mkdir($dir, 0755, true);
+        }
+
+        // if file attached, use it; otherwise try to fetch from provided URL
+        if ($request->hasFile('file') && $request->file('file')->isValid()) {
+            $uploaded = $request->file('file');
+            $orig = $uploaded->getClientOriginalName();
+            $ext = $uploaded->getClientOriginalExtension() ?: 'jpg';
+            $filename = $safeNouji ? "$safeNouji-tampak$safeSide.$ext" : ($orig ?: ('snapshot-' . time() . '.' . $ext));
+            $uploaded->move($dir, $filename);
+
+            return response()->json([
+                'saved' => true,
+                'filename' => $filename,
+                'url' => url('tmp_image/' . $filename),
+            ], 200);
+        }else{
+            return response()->json(['saved' => false, 'error' => 'No valid file uploaded'], 400);
+        }
+
+        return response()->json(['saved' => false, 'error' => 'No file or url provided'], 400);
+    }
 }
