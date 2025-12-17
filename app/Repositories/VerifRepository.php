@@ -425,7 +425,7 @@ class VerifRepository
                     'thpembuatan'           => $data->thpembuatan,
                     'bahanbakar'            => $data->bahanbakar,
                     'isisilinder'           => $data->isisilinder ?: 0,
-                    'dayamotorpenggerak'    => $data->dayamotorpenggerak ?: 0,
+                    'dayamotorpenggerak'    => ceil(floatval(str_replace(",", ".", $data->dayamotorpenggerak))) ?: 1,
                     'idkepaladinas'         => $idkepaladinas,
                     'iddirektur'            => $iddirektur,
                     'kodewilayah'           => $kodewilayah,
@@ -597,7 +597,7 @@ class VerifRepository
                 $uji->varian_kendaraan      = $data->varian;
                 $uji->sub_varian_kendaraan  = $data->tipe;
                 $uji->isisilinder           = $data->isisilinder ?: 0;
-                $uji->dayamotorpenggerak    = $data->dayamotorpenggerak ?: 0;
+                $uji->dayamotorpenggerak    = ceil(floatval(str_replace(",", ".", $data->dayamotorpenggerak))) ?: 1;
                 $uji->idkepaladinas         = $idkepaladinas;
                 $uji->iddirektur            = $iddirektur;
                 $uji->kodewilayah           = $kodewilayah;
