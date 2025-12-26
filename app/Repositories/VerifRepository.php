@@ -19,6 +19,8 @@ use App\Models\Identitaskendaraan;
 use App\Models\UserPKB;
 use Intervention\Image\Facades\Image;
 use DB;
+use DateTime;
+use DateInterval;
 
 class VerifRepository
 {
@@ -238,6 +240,8 @@ class VerifRepository
 
     public function setDatapengujian($id,$jenis_cetak,$status_cetak)
     {
+        $checkPengujian = true;
+        $tglpendaftaran = date("Y-m-d");
         $data = $this->getData($id);
         if ($data) {
             if ($data->kodepenerbitans_id== '7' || $data->kodepenerbitans_id== '3' || $data->kodepenerbitans_id== '4') {
@@ -265,6 +269,13 @@ class VerifRepository
             }else{
                 $tglsertifikatreg = date_create($data->tglsertifikatreg);
                 $tglsertifikatreg = date_format($tglsertifikatreg, "dmY");
+            }
+
+            $sixMonthsAgo = (new DateTime())->sub(new DateInterval('P6M'));
+
+            $tglPengujian = new DateTime($tglpendaftaran);
+            if($tglPengujian < $sixMonthsAgo){
+                $checkPengujian = false;
             }
 
             $masaberlakuuji = $data->masaberlakuuji;
@@ -752,6 +763,15 @@ class VerifRepository
                         $this->newData($id);
                     }catch(\Exception $e){
                     }
+                }elseif($kode == '3' || $kode == '4')
+                {
+                    if($checkPengujian == false){
+                        try{
+                            $this->double($id);
+                        }catch(\Exception $e){
+
+                        }
+                    }
                 }
             }
 
@@ -822,13 +842,13 @@ class VerifRepository
                     $dataUp = $this->model1->where('id',$id)->first();
                     $dataUp->idx= $copy->idx;
                     if($dataUp->save())
-                    {    
+                    {   
                         $checkPengujian = Datapengujian::where('nouji',$copy->nouji)->where('tgluji', $copy->tgluji)->where('statuspenerbitan','2')->first();
                         if($checkPengujian)
                         {
                             $checkPengujian->delete();
                         }
-                        $copy2 = $copy->replicate();
+                        $copy2 = $original->replicate();
                         $copy2->statuspenerbitan = '2';
                         $copy2->fotodepansmall    = $depan;
                         $copy2->fotokanansmall    = $kanan;
@@ -845,7 +865,7 @@ class VerifRepository
         }
         return false;
     }
-
+    
     public function newData($id)
     {
         $data = $this->model1->select('idx')->where('id',$id)->first();
@@ -877,13 +897,56 @@ class VerifRepository
                 if($copy->save())
                 {
                     $original->delete();
-                    
                     $dataUp = $this->model1->where('id',$id)->first();
                     $dataUp->idx= $copy->idx;
                     if($dataUp->save())
                     {    
                         return true;
                     }
+                }
+                return false;
+            }
+        }
+        return false;
+    }
+
+    public function double($id)
+    {
+        $data = $this->model1->select('idx')->where('id',$id)->first();
+        if($data)
+        {
+            $original = Datapengujian::where('idx',$data->idx)->first();
+
+            if ($original) {
+                $copy = $original->replicate();
+                try {
+                    $depan    = file_get_contents(public_path() . '/thumbnail_images/' . $copy->nouji . '-tampakdepan.jpg');
+                    $kanan    = file_get_contents(public_path() . '/thumbnail_images/' . $copy->nouji . '-tampakkanan.jpg');
+                    $belakang = file_get_contents(public_path() . '/thumbnail_images/' . $copy->nouji . '-tampakbelakang.jpg');
+                    $kiri     = file_get_contents(public_path() . '/thumbnail_images/' . $copy->nouji . '-tampakkiri.jpg');
+                } catch (\Exception $e) {
+                    $depan = null;
+                    $kanan = null;
+                    $belakang = null;
+                    $kiri = null;
+                }
+                $checkPengujian = Datapengujian::where('nouji',$copy->nouji)->where('tgluji', $copy->tgluji)->where('statuspenerbitan','2')->first();
+                if($checkPengujian)
+                {
+                    $checkPengujian->delete();
+                }
+                $copy->statuspenerbitan = '2';
+                $copy->fotodepansmall    = $depan;
+                $copy->fotokanansmall    = $kanan;
+                $copy->fotokirismall    = $kiri;
+                $copy->fotobelakangsmall    = $belakang;
+                $copy->nokendalikartu= "";
+                $copy->status_exam_id= "";
+                $copy->rfid= "";
+                $copy->perso= "";
+                if($copy->save())
+                {
+                    return true;
                 }
                 return false;
             }

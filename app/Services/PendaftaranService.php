@@ -87,6 +87,7 @@ class PendaftaranService
         $statusPengujian = true;
         $statusDatakendaraan = false;
         $statusPendaftaran = false;
+        $checkPengujian = true;
         $tglpendaftaran = date_create($pendaftaran['tglpendaftaran']);
         $tglpendaftaran = date_format($tglpendaftaran, "Y-m-d");
         $checkData = $this->repoIden->checkNouji($pendaftaran['nouji']);
@@ -141,7 +142,8 @@ class PendaftaranService
             $dataUUID = $this->repoIden->getUUID($pendaftaran['nouji']);
             $checkUji = $this->repoPengujian->checkPengujian($dataUUID->id);
             if($checkUji !== true){
-                return $this->error(false,$checkUji,'',422);
+                $checkPengujian = false;
+                // return $this->error(false,$checkUji,'',422);
             }
             $checkNorangka = $this->repoIden->checkNorangka($pendaftaran['nouji'],$pendaftaran['norangka']);
             if($checkNorangka === false){
@@ -187,9 +189,15 @@ class PendaftaranService
                 $dataP = $this->repoPendaftaran->updatePendaftaran($checkP->uuid, $pendaftaran);
             }else{
                 if ($pendaftaran['kodepenerbitans_id'] == '3' || $pendaftaran['kodepenerbitans_id'] == '4') {
-                    $pendaftaran['foto'] = '1';
-                    $pendaftaran['posisi'] = '5';
-                    $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
+                    if($checkPengujian){
+                        $pendaftaran['foto'] = '1';
+                        $pendaftaran['posisi'] = '5';
+                        $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
+                    }else{
+                        $pendaftaran['foto'] = '0';
+                        $pendaftaran['posisi'] = '1';
+                        $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
+                    }
                 }  elseif ($pendaftaran['kodepenerbitans_id'] == '9' || $pendaftaran['kodepenerbitans_id'] == '10') {
                     $pendaftaran['foto'] = null;
                     $pendaftaran['posisi'] = '0';
@@ -221,14 +229,18 @@ class PendaftaranService
             if($dataP){
                 $statusPendaftaran = true;
                 if ($pendaftaran['kodepenerbitans_id'] == '3') {
-                    $pengujian = $this->repoPengujian->setCopyPengujian($dataP['id']);
-                    if (!$pengujian) {
-                        $statusPengujian = false;
+                    if($checkPengujian){
+                        $pengujian = $this->repoPengujian->setCopyPengujian($dataP['id']);
+                        if (!$pengujian) {
+                            $statusPengujian = false;
+                        }
                     }
                 } elseif ($pendaftaran['kodepenerbitans_id'] == '4') {
-                    $pengujian = $this->repoPengujian->setCopyPengujian($dataP['id']);
-                    if (!$pengujian) {
-                        $statusPengujian = false;
+                    if($checkPengujian){
+                        $pengujian = $this->repoPengujian->setCopyPengujian($dataP['id']);
+                        if (!$pengujian) {
+                            $statusPengujian = false;
+                        }
                     }
                 }  elseif ($pendaftaran['kodepenerbitans_id'] == '7') {
                     $pengujian = $this->repoPengujian->setCopyPengujian($dataP['id']);

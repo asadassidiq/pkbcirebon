@@ -275,51 +275,48 @@ export const mutations = {
   },
   CHECK_HASILUJI(state) {
     if (
-      state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan1 > 8 ||
-      state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan2 > 8 ||
-      state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan3 > 8 ||
-      state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan4 > 8 ||
-      state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan5 > 8 ||
-      state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan6 > 8
-    ) {
-      state.pendaftaran.pos4 = "0";
-      state.laikjalan.status_remkiri = "0";
-      state.laikjalan.status_remkanan = "0";
-    } else if (
-      state.pengujian.effsumbu1 < 50 ||
-      state.pengujian.effsumbu1 > 100 ||
-      state.pengujian.effsumbu2 < 50 ||
-      state.pengujian.effsumbu2 > 100
-    ) {
-      state.pendaftaran.pos4 = "0";
-      state.laikjalan.status_remkiri = "0";
-      state.laikjalan.status_remkanan = "0";
-    } else if (state.laikjalan.alatuji_remparkirtangan < 12 && state.identitaskendaraan.jenis.includes("BARANG")) {
-      state.pendaftaran.pos4 = "0";
-      state.laikjalan.status_remparkir = 0;
-    } else if (state.laikjalan.alatuji_remparkirtangan < 12 && state.identitaskendaraan.jenis.includes("BUS")) {
-      state.pendaftaran.pos4 = "0";
-      state.laikjalan.status_remparkir = 0;
-    } else if (state.laikjalan.alatuji_remparkirtangan < 16) {
-      state.pendaftaran.pos4 = "0";
-      state.laikjalan.status_remparkir = 0;
-    } else if (state.pengujian.totalgayarem < 50) {
-      state.pendaftaran.pos4 = "0";
-      state.laikjalan.status_remkiri = "0";
-      state.laikjalan.status_remkanan = "0";
-    } else if (
-      state.laikjalan.alatuji_penunjukkecepatan < 36 ||
-      state.laikjalan.alatuji_penunjukkecepatan > 46
-    ) {
-      state.pendaftaran.pos4 = "0";
-      state.laikjalan.status_speedometer = "0";
-    } else {
-      state.pendaftaran.pos4 = "1";
-      state.laikjalan.status_remparkir = "1";
-      state.laikjalan.status_remkiri = "1";
-      state.laikjalan.status_remkanan = "1";
-      state.laikjalan.status_speedometer = "1";
-    }
+            state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan1 > 8 ||
+            state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan2 > 8 ||
+            state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan3 > 8 ||
+            state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan4 > 8 ||
+            state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan5 > 8 ||
+            state.laikjalan.alatuji_remutamaselisihgayapengeremanrodakirikanan6 > 8
+        ) {
+            state.laikjalan.status_remkiri = "0";
+            state.laikjalan.status_remkanan = "0";
+        } else if (
+            state.pengujian.effsumbu1 < 50 ||
+            state.pengujian.effsumbu1 > 100 ||
+            state.pengujian.effsumbu2 < 50 ||
+            state.pengujian.effsumbu2 > 100
+        ) {
+            state.laikjalan.status_remkiri = "0";
+            state.laikjalan.status_remkanan = "0";
+        } else if (state.pengujian.totalgayarem < 50) {
+            state.laikjalan.status_remkiri = "0";
+            state.laikjalan.status_remkanan = "0";
+        } else{
+            state.laikjalan.status_remkanan = "1";
+            state.laikjalan.status_remkiri = "1";
+        }  
+
+        const nilai = state.laikjalan.alatuji_remparkirtangan;
+        const jenis = state.identitaskendaraan.jenis;
+
+        if ((jenis.includes("BARANG") || jenis.includes("BUS")) && nilai < 12) {
+            state.laikjalan.status_remparkir = 0;
+        } else if (!(jenis.includes("BARANG") || jenis.includes("BUS")) && nilai < 16) {
+            state.laikjalan.status_remparkir = 0;
+        } else {
+            state.laikjalan.status_remparkir = 1;
+        }
+
+        if(state.laikjalan.status_remkiri == "0" || state.laikjalan.status_remkanan == "0" || state.laikjalan.status_remparkir == "0"){
+            state.pendaftaran.pos4 = "0";
+        }
+        else{
+            state.pendaftaran.pos4 = "1";
+        }
   },
   CLEAR_FORM(state) {
     state.laikjalan = {

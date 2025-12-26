@@ -50,54 +50,49 @@ class PengujianRepository
 
     public function checkPengujian($id)
     {
-        $identitaskendaraan_id = Pendaftaran::select('identitaskendaraan_id', 'tglpendaftaran')->whereNotIn('kodepenerbitans_id', ['3', '4'])->where('identitaskendaraan_id', $id)->orderBy('pendaftarans.id', 'DESC')->first();
+        $tglpendaftaran = Pendaftaran::select('identitaskendaraan_id','tglpendaftaran')->where('identitaskendaraan_id',$id)->orderBy('pendaftarans.id','DESC')->first();
+        $identitaskendaraan_id = Pendaftaran::select('identitaskendaraan_id','tglpendaftaran')->whereNotIn('kodepenerbitans_id',['3','4'])->where('identitaskendaraan_id',$id)->orderBy('pendaftarans.id','DESC')->first();
         // $dataPend = Pendaftaran::where('pendaftarans.id',$id)->first();
+        if(!$identitaskendaraan_id){
+            return 'Data uji terakhir tidak ditemukan atau sudah lebih dari 6 bulan, silahkan Uji Berkala!';
+        }
+        
+        if($tglpendaftaran){
+            $tglpendaftaran = $tglpendaftaran->tglpendaftaran;
+        }
+
         $tgl1 = date("Y-m-d", strtotime("-3 month", strtotime($identitaskendaraan_id->tglpendaftaran)));
         // $tgl2 = date("Y-m-d", strtotime("-1 day", strtotime($dataPend->tglpendaftaran)));
         $threeMonthsAgo = (new DateTime())->sub(new DateInterval('P3M'));
         $sixMonthsAgo = (new DateTime())->sub(new DateInterval('P6M'));
 
         $tgl2 = new DateTime($identitaskendaraan_id->tglpendaftaran);
-        
-        if ($tgl2 < $sixMonthsAgo) {
+        if($tgl2 < $sixMonthsAgo){
             return 'Data uji terakhir tidak ditemukan atau sudah lebih dari 6 bulan, silahkan Uji Berkala!';
-        } elseif ($tgl2 < $threeMonthsAgo) {
-            return 'Data uji terakhir sudah lebih dari 3 bulan, silahkan Uji Berkala!';
         }
+        // elseif($tgl2 < $threeMonthsAgo){
+        //     return 'Data uji terakhir sudah lebih dari 3 bulan, silahkan Uji Berkala!';
+        // }
 
-        if ($identitaskendaraan_id) {
+        if($identitaskendaraan_id){
             $identitaskendaraan_id = $identitaskendaraan_id->identitaskendaraan_id;
         }
-        $data = $this->model->join('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagianbawahkendaraan', 'bagianbawahkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagianbelakangkendaraan', 'bagianbelakangkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagiandalamkendaraan', 'bagiandalamkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagiandepankendaraan', 'bagiandepankendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagiankanankendaraan', 'bagiankanankendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagiankirikendaraan', 'bagiankirikendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('dimensikendaaraan', 'dimensikendaaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('identifikasikendaraan', 'identifikasikendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->where('identitaskendaraan_id', $identitaskendaraan_id)
-            ->whereBetween('pendaftarans.tglpendaftaran', [$tgl1, $tgl2])
-            ->orderBy('pendaftarans.tglpendaftaran', 'DESC')->first();
-        if ($data) {
+        $lastTgl = $sixMonthsAgo->format('Y-m-d');
+        $lastNow = (new DateTime())->format('Y-m-d');
+        $data = $this->model->join('laikjalan','laikjalan.pendaftaran_id','=','pendaftarans.id')
+                ->leftjoin('bagianbawahkendaraan','bagianbawahkendaraan.pendaftaran_id','=','pendaftarans.id')
+                ->leftjoin('bagianbelakangkendaraan','bagianbelakangkendaraan.pendaftaran_id','=','pendaftarans.id')
+                ->leftjoin('bagiandalamkendaraan','bagiandalamkendaraan.pendaftaran_id','=','pendaftarans.id')
+                ->leftjoin('bagiandepankendaraan','bagiandepankendaraan.pendaftaran_id','=','pendaftarans.id')
+                ->leftjoin('bagiankanankendaraan','bagiankanankendaraan.pendaftaran_id','=','pendaftarans.id')
+                ->leftjoin('bagiankirikendaraan','bagiankirikendaraan.pendaftaran_id','=','pendaftarans.id')
+                ->leftjoin('dimensikendaaraan','dimensikendaaraan.pendaftaran_id','=','pendaftarans.id')
+                ->leftjoin('identifikasikendaraan','identifikasikendaraan.pendaftaran_id','=','pendaftarans.id')
+                ->where('identitaskendaraan_id',$identitaskendaraan_id)
+                ->whereBetween('pendaftarans.tglpendaftaran', [$lastTgl, $lastNow])
+                ->orderBy('pendaftarans.tglpendaftaran','DESC')->first();
+        if($data){
             return true;
-        }
-        $tgl1 = date("Y-m-d", strtotime("-6 month", strtotime($identitaskendaraan_id->tglpendaftaran)));
-        $data = $this->model->join('laikjalan', 'laikjalan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagianbawahkendaraan', 'bagianbawahkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagianbelakangkendaraan', 'bagianbelakangkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagiandalamkendaraan', 'bagiandalamkendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagiandepankendaraan', 'bagiandepankendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagiankanankendaraan', 'bagiankanankendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('bagiankirikendaraan', 'bagiankirikendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('dimensikendaaraan', 'dimensikendaaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->leftjoin('identifikasikendaraan', 'identifikasikendaraan.pendaftaran_id', '=', 'pendaftarans.id')
-            ->where('identitaskendaraan_id', $identitaskendaraan_id)
-            ->whereBetween('pendaftarans.tglpendaftaran', [$tgl1, $tgl2])
-            ->orderBy('pendaftarans.id', 'DESC')->first();
-        if ($data) {
-            return 'Data uji terakhir sudah lebih dari 3 bulan, silahkan Uji Berkala!';
         }
         return 'Data uji terakhir tidak ditemukan atau sudah lebih dari 6 bulan, silahkan Uji Berkala!';
     }
