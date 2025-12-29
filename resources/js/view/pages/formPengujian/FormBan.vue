@@ -103,7 +103,7 @@ export default {
     }),
   },
   methods: {
-    ...mapMutations("pos1", ["CLEAR_FORM", "CLEAR_CATATAN", "SET_STATUS", "CHECK_HASILUJI"]),
+    ...mapMutations("pos1", ["CLEAR_FORM", "CLEAR_CATATAN", "SET_STATUS", "CHECK_HASILUJI","CHECK_HASILUJI"]),
     ...mapActions("pos1", ["submitCatatan", "getCatatan", "getAlasan"]),
     showModal(nama, hasil) {
       this.CLEAR_CATATAN();
@@ -152,7 +152,6 @@ export default {
     },
 
     bancheck() {
-      console.log(this.laikjalan.alatuji_kedalamanalurban)
       const alatuji_kedalamanalurban = parseFloat(this.laikjalan.alatuji_kedalamanalurban);
       if (!alatuji_kedalamanalurban) {
         this.laikjalan.status_alurban = '0';

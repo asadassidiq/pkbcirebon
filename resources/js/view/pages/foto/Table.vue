@@ -47,6 +47,9 @@
                   <a href="javascript:void(0)" @click="uploadfoto(pendaftaran.uuid)">
                     <i class="fas fa-camera-retro text-info"></i>
                   </a>
+                  <a href="javascript:void(0)" @click="uploadfotoCCTV(pendaftaran.uuid)">
+                    <i class="fas fa-camera-retro text-success"></i>
+                  </a>
                 </td>
               </tr>
             </tbody>
@@ -126,6 +129,9 @@ export default {
     },
     uploadfoto(id) {
       window.open('/upload/' + id + '/fotokendaraan', "_blank");
+    },
+    uploadfotoCCTV(id) {
+      window.open('/cctv/' + id + '/fotokendaraan', "_blank");
     },
   },
   components: {
