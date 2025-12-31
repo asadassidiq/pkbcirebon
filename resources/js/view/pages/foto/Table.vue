@@ -131,7 +131,7 @@ export default {
       window.open('/upload/' + id + '/fotokendaraan', "_blank");
     },
     uploadfotoCCTV(id) {
-      window.open('http://172.16.99.161/cctv/' + id + '/fotokendaraan', "_blank");
+      window.open('http://172.16.99.161/cctv/' + id, "_blank");
     },
   },
   components: {
