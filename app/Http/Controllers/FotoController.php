@@ -92,6 +92,7 @@ class FotoController extends Controller
     {
         $nouji = $request->input('nouji');
         $side = $request->input('side') ?: 'unknown';
+        $uuid = $request->input('uuid');
 
         // sanitize
         $safeNouji = $nouji;
@@ -109,6 +110,12 @@ class FotoController extends Controller
             $ext = $uploaded->getClientOriginalExtension() ?: 'jpg';
             $filename = $safeNouji ? "$safeNouji-tampak$safeSide.$ext" : ($orig ?: ('snapshot-' . time() . '.' . $ext));
             $uploaded->move($dir, $filename);
+
+            $dataUpdate = Pendaftaran::where('uuid', $uuid)->first();
+            if ($dataUpdate) {
+                $dataUpdate->foto = '1';
+                $dataUpdate->save();
+            }
 
             return response()->json([
                 'saved' => true,
