@@ -122,6 +122,9 @@ class apiBlueCore
         }else if(strpos($response, '502 Bad Gateway') !== false)
         {
             $response = '';
+        }else if(strpos($response, '<!DOCTYPE html>') !== false)
+        {
+            $response = '';
         }
 
         // Cek jika ada error dalam request

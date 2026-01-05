@@ -428,8 +428,7 @@
                       <p class="text-danger" v-if="errors.nosertifikatreg">{{ errors.nosertifikatreg[0] }}</p>
                     </div>
                   </div>
-                  <div class="col-sm-4"
-                    v-if="pendaftaran.kodepenerbitans_id < 12 || pendaftaran.kodepenerbitans_id > 12">
+                  <div class="col-sm-4">
                     <div class="form-group">
                       <label>Tanggal SRUT</label>
                       <b-input-group>
