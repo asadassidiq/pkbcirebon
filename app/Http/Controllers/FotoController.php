@@ -105,11 +105,31 @@ class FotoController extends Controller
 
         // if file attached, use it; otherwise try to fetch from provided URL
         if ($request->hasFile('file') && $request->file('file')->isValid()) {
+            // $uploaded = $request->file('file');
+            // $orig = $uploaded->getClientOriginalName();
+            // $ext = $uploaded->getClientOriginalExtension() ?: 'jpg';
+            // $filename = $safeNouji ? "$safeNouji-tampak$safeSide.$ext" : ($orig ?: ('snapshot-' . time() . '.' . $ext));
+            // $uploaded = $request->file('file');
             $uploaded = $request->file('file');
             $orig = $uploaded->getClientOriginalName();
             $ext = $uploaded->getClientOriginalExtension() ?: 'jpg';
-            $filename = $safeNouji ? "$safeNouji-tampak$safeSide.$ext" : ($orig ?: ('snapshot-' . time() . '.' . $ext));
-            $uploaded->move($dir, $filename);
+
+            $filename = $safeNouji
+                ? "$safeNouji-tampak$safeSide.$ext"
+                : ($orig ?: ('snapshot-' . time() . '.' . $ext));
+            
+            $folderPath = public_path('tmp_images');
+            
+            $filePath = $folderPath . '/' . $filename;
+            // Hapus file lama jika ada
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+            // gunakan Intervention Image
+            Image::make($uploaded)
+                ->fit(600, 600)
+                ->encode('jpg', 90)   // convert ke JPG + kompres
+                ->save($filePath);
 
             $dataUpdate = Pendaftaran::where('uuid', $uuid)->first();
             if ($dataUpdate) {
