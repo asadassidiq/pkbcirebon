@@ -229,7 +229,7 @@ class apiBlueCore
 
     public function getDataVTASRUT($search){
         // API URL
-        $base_url = 'https://api-gateway.hubdat.dephub.go.id/data-integration-service/vta/srut/find';
+        $base_url = 'https://api-gateway.hubdat.kemenhub.go.id/data-integration-service/vta/srut/find';
 
         // Parameter pencarian (misalnya, didapatkan dari input pengguna)
         $search_query = $search; // Bisa diubah atau diambil dari input form
