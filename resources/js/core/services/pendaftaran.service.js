@@ -78,11 +78,11 @@ export default {
     sendNU(id,nouji,search,keyword) {
         return ApiService.get(`/bluecore?p=insertexam&i=${id}&n=${nouji}&s=${search}&k=${keyword}`);
     },
-    checkUJI(nouji,search) {
-        return ApiService.get(`/bluecore?p=checkpengujiankeluar&n=${nouji}&s=${search}`);
-    },
     sendMU(id,nouji,search,keyword) {
         return ApiService.get(`/bluecore?p=insertexam&i=${id}&n=${nouji}&s=${search}&k=${keyword}`);
+    },
+    checkUJI(nouji,search) {
+        return ApiService.get(`/bluecore?p=checkpengujiankeluar&n=${nouji}&s=${search}`);
     },
     postPendaftaran(pendaftaran,perubahans) {
         return ApiService.post("/pendaftaran", {pendaftaran, perubahans});

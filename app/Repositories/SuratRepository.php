@@ -27,7 +27,7 @@ class SuratRepository
     public function getAll()
     {
         $data = $this->model
-            ->select('pendaftarans.noantrian','pendaftarans.uuid','kodepenerbitans.keterangan','identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan','persuratan.document_id','nosurat','status_cetak','posisi','posverif','approved')
+            ->select('pendaftarans.noantrian','pendaftarans.uuid','kodepenerbitans.keterangan','identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan','persuratan.kode','persuratan.tujuan','nosurat','status_cetak','posisi','posverif','approved')
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->join('kodepenerbitans','pendaftarans.kodepenerbitans_id','=','kodepenerbitans.id')
             ->join('perizinans','perizinans.pendaftaran_id','=','pendaftarans.id')
@@ -39,24 +39,24 @@ class SuratRepository
         $search = str_replace("/", "", request()->q);
         $status = request()->s;
         $kode = request()->j;
-        if($status != ''){
-            if($status == 1){
-                $data = $data->where(function ($query) use ($search) {
-                $query->where('pendaftarans.posverif2', null)
-                    ->orWhere('persuratan.status_cetak', null);
-                });
-            }
-            elseif($status == 2){
-                $data = $data->where(function ($query) use ($search) {
-                $query->where('pendaftarans.posverif2', 0);
-                });
-            }
-            elseif($status ==3){
-                $data = $data->where(function ($query) use ($search) {
-                $query->where('persuratan.status_cetak', 1);
-                });
-            }
-        }
+        // if($status != ''){
+        //     if($status == 1){
+        //         $data = $data->where(function ($query) use ($search) {
+        //         $query->where('pendaftarans.posverif2', null)
+        //             ->orWhere('persuratan.status_cetak', null);
+        //         });
+        //     }
+        //     elseif($status == 2){
+        //         $data = $data->where(function ($query) use ($search) {
+        //         $query->where('pendaftarans.posverif2', 0);
+        //         });
+        //     }
+        //     elseif($status ==3){
+        //         $data = $data->where(function ($query) use ($search) {
+        //         $query->where('persuratan.status_cetak', 1);
+        //         });
+        //     }
+        // }
         if($kode != ''){
             if($kode == '1'){
                 $data = $data->where(function ($query) use ($search) {

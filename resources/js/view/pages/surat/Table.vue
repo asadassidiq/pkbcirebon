@@ -64,7 +64,10 @@
                     <router-link :to="{ name: 'pendaftaran.edit', params: { id: pendaftaran.uuid } }">
                       <i class="fa fa-edit text-success"></i>
                     </router-link>
-                    <a href="javascript:void(0)" @click="sendPendaftaran(pendaftaran.uuid,pendaftaran.nouji)">
+                    <a v-if="pendaftaran.keterangan == 'Numpang Uji Keluar'" href="javascript:void(0)" @click="sendPendaftaran(pendaftaran.uuid,pendaftaran.nouji,'5',pendaftaran.kode)">
+                      <i class="fas fa-paper-plane text-danger"></i>
+                    </a>
+                    <a v-else-if="pendaftaran.keterangan == 'Mutasi Keluar'" href="javascript:void(0)" @click="sendPendaftaran(pendaftaran.uuid,pendaftaran.nouji,'6',pendaftaran.kode)">
                       <i class="fas fa-paper-plane text-danger"></i>
                     </a>
                     <a href="javascript:void(0)"@click="print(pendaftaran.uuid,pendaftaran.approved)">
@@ -160,7 +163,7 @@ export default {
   },
   methods: {
     ...mapActions("surat", ["getPendaftarans","sendDataPendaftaran","getTTE"]),
-    sendPendaftaran(id,nouji) {
+    sendPendaftaran(id,nouji,penerbitan,kode) {
       Swal.fire({
               title: "Kirim Pendaftaran?",
               text: "Anda yakin mengirim data ini!",
@@ -173,14 +176,11 @@ export default {
               if (result.isConfirmed) {
                   let payload = {
                       id: id,
-                      nouji: nouji
+                      nouji: nouji,
+                      penerbitan: penerbitan,
+                      kode: kode
                   };
                   this.sendDataPendaftaran(payload).then(() => {
-                      Swal.fire(
-                          "Sent!",
-                          "Pendaftaran sudah terkirim.",
-                          "success",
-                      );
                       this.getPendaftarans();
                   });
               }

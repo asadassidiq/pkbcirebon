@@ -67,19 +67,51 @@ export const actions = {
     },
     sendDataPendaftaran({ dispatch }, payload) {
         return new Promise((resolve, reject) => {
-            PendaftaranService.sendDataPendaftaran(payload.id,payload.nouji)
-                .then(response => {
-                    dispatch("getPendaftarans").then(() => resolve());
-                })
-                .catch(error => {
-                    if (error.response.status == 422) {
+            if(payload.penerbitan == '5'){
+                PendaftaranService.sendNU(payload.id,payload.nouji,payload.penerbitan,payload.kode)
+                    .then(response => {
+                        dispatch("getPendaftarans").then(() => resolve());
                         Swal.fire({
-                            icon: "error",
-                            title: "Oops...",
-                            text: error.response.data.messages,
+                            title: "Response Send Data",
+                            text: response.data.result.message,
+                            icon: "question"
                         });
-                    }
+                    })
+                    .catch(error => {
+                        if (error.response.status == 422) {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: error.response.data.messages,
+                            });
+                        }
+                    });
+            }else if(payload.penerbitan == '6'){
+                PendaftaranService.sendMU(payload.id,payload.nouji,payload.penerbitan,payload.kode)
+                    .then(response => {
+                        dispatch("getPendaftarans").then(() => resolve());
+                        Swal.fire({
+                            title: "Response Send Data",
+                            text: response.data.result.message,
+                            icon: "question"
+                        });
+                    })
+                    .catch(error => {
+                        if (error.response.status == 422) {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: error.response.data.messages,
+                            });
+                        }
+                    });
+            }else{
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Penerbitan tidak dikenali!",
                 });
+            }
         });
     },
     getTTE({ commit, state }, payload) {

@@ -14,5 +14,11 @@ export default {
     },
     sendDataPendaftaran(id,nouji,search,keyword){
         return ApiService.get(`/bluecore?p=insertexam&i=${id}&n=${nouji}&s=${search}&k=${keyword}`);
-    }
+    },
+    sendNU(id,nouji,search,keyword) {
+        return ApiService.get(`/bluecore?p=insertexam&i=${id}&n=${nouji}&s=${search}&k=${keyword}`);
+    },
+    sendMU(id,nouji,search,keyword) {
+        return ApiService.get(`/bluecore?p=insertexam&i=${id}&n=${nouji}&s=${search}&k=${keyword}`);
+    },
 };
