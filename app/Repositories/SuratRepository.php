@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Pendaftaran;
 use App\Models\Numpanguji;
 use App\Models\Persuratan;
+use App\Models\Kodewilayah;
 use App\Models\Logtte;
 use DB;
 use Illuminate\Support\Facades\Request;
@@ -245,6 +246,16 @@ class SuratRepository
             }
         }
         return false;
+    }
+
+    public function getKodeWilayah($tujuan)
+    {
+        $area = Kodewilayah::where('nama_wilayah','LIKE','%'.$tujuan.'%')->first();
+        if($area)
+        {
+            return $area->area_code;
+        }
+        return null;
     }
 
     public function callback($request,$id)

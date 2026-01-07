@@ -252,18 +252,18 @@ class PendaftaranService
                     $checkNu = $this->repoSurat->checkSurat($dataP['id']);
                     if($checkNu){
                         if($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
-                            $pendaftaran['kode'] = $pendaftaran['kodewilayahasal'];
+                            $pendaftaran['kode'] = $this->repoSurat->getKodeWilayah($pendaftaran['tujuan']);
                         }else{
-                            $pendaftaran['kode'] = $pendaftaran['kodewilayah'];
+                            $pendaftaran['kode'] = $this->repoSurat->getKodeWilayah($pendaftaran['tujuan']);
                         }
                         $this->repoSurat->updateSurat($dataP['id'],$pendaftaran);
                     }else{
                         if($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
                             $pendaftaran['pendaftaran_id'] = $dataP['id'];
-                            $pendaftaran['kode'] = $pendaftaran['kodewilayahasal'];
+                            $pendaftaran['kode'] = $this->repoSurat->getKodeWilayah($pendaftaran['tujuan']);
                         }else{
                             $pendaftaran['pendaftaran_id'] = $dataP['id'];
-                            $pendaftaran['kode'] = $pendaftaran['kodewilayah'];
+                            $pendaftaran['kode'] = $this->repoSurat->getKodeWilayah($pendaftaran['tujuan']);
                         }
                         $this->repoSurat->createSurat($pendaftaran);
                     }
@@ -332,18 +332,18 @@ class PendaftaranService
                 $checkNu = $this->repoSurat->checkSurat($dataP['id']);
                 if($checkNu){
                     if($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
-                        $pendaftaran['kode'] = $pendaftaran['kodewilayahasal'];
+                        $pendaftaran['kode'] = $this->repoSurat->getKodeWilayah($pendaftaran['tujuan']);
                     }else{
-                        $pendaftaran['kode'] = $pendaftaran['kodewilayah'];
+                        $pendaftaran['kode'] = $this->repoSurat->getKodeWilayah($pendaftaran['tujuan']);
                     }
                     $this->repoSurat->updateSurat($dataP['id'],$pendaftaran);
                 }else{
                     if($pendaftaran['kodepenerbitans_id'] == '5' || $pendaftaran['kodepenerbitans_id'] == '6'){
                         $pendaftaran['pendaftaran_id'] = $dataP['id'];
-                        $pendaftaran['kode'] = $pendaftaran['kodewilayahasal'];
+                        $pendaftaran['kode'] = $this->repoSurat->getKodeWilayah($pendaftaran['tujuan']);
                     }else{
                         $pendaftaran['pendaftaran_id'] = $dataP['id'];
-                        $pendaftaran['kode'] = $pendaftaran['kodewilayah'];
+                        $pendaftaran['kode'] = $this->repoSurat->getKodeWilayah($pendaftaran['tujuan']);
                     }
                     $this->repoSurat->createSurat($pendaftaran);
                 }
