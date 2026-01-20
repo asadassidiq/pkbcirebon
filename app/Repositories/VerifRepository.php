@@ -767,7 +767,7 @@ class VerifRepository
                 {
                     if($checkPengujian == false){
                         try{
-                            $this->double($id);
+                            // $this->double($id);
                         }catch(\Exception $e){
 
                         }

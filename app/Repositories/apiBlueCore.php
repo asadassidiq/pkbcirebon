@@ -67,6 +67,14 @@ class apiBlueCore
                     "keyword" => $keyword
                 ]
             ]);
+        }elseif($prefix == "lastexam"){
+            $data = json_encode([
+                "token" => $token,
+                "prefix" => $prefix,
+                "param" => [
+                    "nouji" => $nouji
+                ]
+            ]);
         }elseif($prefix == "insertexam"){
             $data = json_encode([
                 "token" => $token,

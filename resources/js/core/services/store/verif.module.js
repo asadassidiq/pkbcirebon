@@ -323,10 +323,29 @@ export const state = {
   pendaftaransLulusVerif2: [],
   pendaftaransTLulus: [],
   kuota: [],
+  kodewilayahs: [],
   catatanpos: [],
   posisi: "9",
   filter: {
     tgl: "",
+  },
+  responeBlue: {
+      status: "",
+      code: "",
+      message: "",
+      data: [],
+  },
+  dataBlue: {
+      nouji: "",
+      noregistrasikendaraan: "",
+      norangka: "",
+      nomesin: "",
+      tglujji: "",
+      tglcreated: "",
+      statuscetak: "",
+      wilayah: "",
+      wilayahasal: "",
+      penerbitanterakhir: "",
   },
   identitaskendaraan: {
     uuid: "",
@@ -430,6 +449,9 @@ export const mutations = {
   },
   ASSING_CATATANPOS(state, catatanpos) {
     state.catatanpos = catatanpos;
+  },
+  DATA_KODEWILAYAH(state, kodewilayahs) {
+      state.kodewilayahs = kodewilayahs;
   },
   SET_PAGE(state, payload) {
     state.page = payload;
@@ -731,6 +753,77 @@ export const mutations = {
           i +
         "%";
     }
+  },
+  ASSIGN_RESPONBLUE(state, payload) {
+      state.responeBlue = {
+      status: payload.status,
+      code: payload.code,
+      message: payload.message,
+      data: payload.data,
+      };
+  },
+  ASSIGN_FORMBULE(state, payload) {
+      state.dataBlue = {
+      nouji: payload.exam_code,
+      noregistrasikendaraan: payload.nonrkb,
+      norangka: payload.norangka,
+      nomesin: payload.nomesin,
+      tgluji: payload.tgluji,
+      tglcreated: payload.created_at,
+      statuscetak: "",
+      wilayah: "",
+      wilayahasal: "",
+      penerbitanterakhir: "",
+      };
+
+      if (payload.area_id !== null && payload.area_id !== undefined && payload.area_id !== "") {
+      var wilayah = state.kodewilayahs.find(function (item) {
+          return item.area_id === payload.area_id;
+      });
+      if (wilayah) {
+          state.dataBlue.wilayah = wilayah.area_name;
+      }
+      }
+      if (payload.area_from_id !== null && payload.area_from_id !== undefined && payload.area_from_id !== "") {
+      var wilayah = state.kodewilayahs.find(function (item) {
+          return item.area_id === payload.area_from_id;
+      });
+      if (wilayah) {
+          state.dataBlue.wilayahasal = wilayah.area_name;
+      }
+      }
+      if(payload.vehicle_type_id !== null && payload.vehicle_type_id  !== undefined && payload.vehicle_type_id  !== ""){
+      state.dataBlue.statuscetak = 'Fullcycle';
+      }else{
+      state.dataBlue.statuscetak = 'Non-Fullcycle';
+      }
+      if(payload.issuance_id !== null && payload.issuance_id  !== undefined && payload.issuance_id !== ""){
+      if(payload.issuance_id == 1){
+          state.dataBlue.penerbitanterakhir = 'Daftar Baru';
+      }else if(payload.issuance_id == 2){
+          state.dataBlue.penerbitanterakhir = 'Perpanjangan';
+      }else if(payload.issuance_id == 3){
+          state.dataBlue.penerbitanterakhir = 'Rusak';
+      }else if(payload.issuance_id == 4){
+          state.dataBlue.penerbitanterakhir = 'Hilang';
+      }else if(payload.issuance_id == 5 && state.dataBlue.statuscetak == 'Non-Fullcycle'){
+          state.dataBlue.penerbitanterakhir = 'Numpang Uji Masuk';
+      }else if(payload.issuance_id == 6 && state.dataBlue.statuscetak == 'Non-Fullcycle'){
+          state.dataBlue.penerbitanterakhir = 'Mutasi Masuk';
+      }else if(payload.issuance_id == 5 && state.dataBlue.statuscetak == 'Fullcycle'){
+          state.dataBlue.penerbitanterakhir = 'Numpang Uji Keluar';
+      }else if(payload.issuance_id == 6 && state.dataBlue.statuscetak == 'Fullcycle'){
+          state.dataBlue.penerbitanterakhir = 'Mutasi Keluar';
+      }else if(payload.issuance_id == 7 && state.dataBlue.statuscetak == 'Fullcycle'){
+          state.dataBlue.penerbitanterakhir = 'Numpang Uji Masuk';
+      }else if(payload.issuance_id == 8 && state.dataBlue.statuscetak == 'Fullcycle'){
+          state.dataBlue.penerbitanterakhir = 'Mutasi Masuk';
+      }else if(payload.issuance_id == 9 && state.dataBlue.statuscetak == 'Fullcycle'){
+          state.dataBlue.penerbitanterakhir = 'Rubah Bentuk';
+      }else{
+          state.dataBlue.penerbitanterakhir = '';
+      }
+      }
   },
   ASSIGN_FORM(state, payload) {
     state.identitaskendaraan = {
@@ -1277,6 +1370,63 @@ export const actions = {
         });
     });
   },
+  async getKodewilayahs({ commit, state }) {
+        return await VerifService.getKodewilayahs()
+        .then((response) => {
+            commit("DATA_KODEWILAYAH", response.data.result.data);
+        })
+        .catch((err) => console.log(err));
+    },
+    async checkNU({ commit, state }, payload) {
+        let kodepenerbitans_id = 5;
+        return await VerifService.checkUJI(state.identitaskendaraan.nouji, kodepenerbitans_id)
+        .then((response) => {
+            commit("ASSIGN_RESPONBLUE", response.data.result);
+            if (response.data.result.status) {
+            commit("ASSIGN_FORMBULE", response.data.result.data);
+            }else if(response.data.result == null){
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Data tidak ditemukan di sistem Blue / Sedang Gangguan!",
+            });
+            }
+        })
+        .catch((err) => console.log(err));
+    },
+    async checkMU({ commit, state }, payload) {
+        let kodepenerbitans_id = 6;
+        return await VerifService.checkUJI(state.identitaskendaraan.nouji, kodepenerbitans_id)
+        .then((response) => {
+            commit("ASSIGN_RESPONBLUE", response.data.result);
+            if (response.data.result.status) {
+            commit("ASSIGN_FORMBULE", response.data.result.data);
+            }else if(response.data.result == null){
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Data tidak ditemukan di sistem Blue / Sedang Gangguan!",
+            });
+            }
+        })
+        .catch((err) => console.log(err));
+    },
+    async checkLastExam({ commit, state }, payload) {
+    return await VerifService.checkLastExam(state.identitaskendaraan.nouji)
+        .then((response) => {
+        commit("ASSIGN_RESPONBLUE", response.data.result);
+        if (response.data.result.status) {
+            commit("ASSIGN_FORMBULE", response.data.result.data);
+        }else if(response.data.result == null){
+            Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Data tidak ditemukan di sistem Blue / Sedang Gangguan!",
+            });
+        }
+        })
+        .catch((err) => console.log(err));
+    },
 };
 export const getters = {
   getEventById: (state) => (id) => {

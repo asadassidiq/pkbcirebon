@@ -1254,84 +1254,133 @@ export const mutations = {
             }
         }
     },
+    
     ASSIGN_FORMVTA(state, payload) {
         state.pendaftaran.merek = payload.merk;
-        state.pendaftaran.norangka= payload.nomor_chasis;
-        state.pendaftaran.nomesin= payload.nomor_mesin;
-        if(payload.tahun_pembuatan !== null && payload.tahun_pembuatan  !== undefined && payload.tahun_pembuatan  !== ""){
-            state.pendaftaran.thpembuatan= payload.tahun_pembuatan.replace(/\./g, "");
+        state.pendaftaran.norangka = payload.nomor_chasis;
+        state.pendaftaran.nomesin = payload.nomor_mesin;
+        if ( payload.tahun_pembuatan !== null && payload.tahun_pembuatan !== undefined && payload.tahun_pembuatan !== "" ) {
+        state.pendaftaran.thpembuatan = payload.tahun_pembuatan.replace(
+            /\./g,
+            ""
+        );
         }
-        if(payload.isi_silinder !== null && payload.isi_silinder  !== undefined && payload.isi_silinder  !== ""){
-            state.pendaftaran.idbahanbakar= payload.bahan_bakar_id;
-            var foundFuel = state.fuels.find(function(item) {
-                return item.fuel_id === payload.bahan_bakar_id;
-            });
-            if (foundFuel) {
-                state.pendaftaran.bahanbakar= foundFuel.fuel_name;
+        if (payload.bahan_bakar_id !== null && payload.bahan_bakar_id !== undefined && payload.bahan_bakar_id !== "") {
+        state.pendaftaran.idbahanbakar = payload.bahan_bakar_id;
+        var foundFuel = state.fuels.find(function (item) {
+            return item.fuel_id === payload.bahan_bakar_id;
+        });
+        if (foundFuel) {
+            state.pendaftaran.bahanbakar = foundFuel.fuel_name;
+        }
+        }
+        if (payload.isi_silinder !== null && payload.isi_silinder !== undefined && payload.isi_silinder !== "") {
+        state.pendaftaran.isisilinder = payload.isi_silinder.replace(/\./g, "");
+        }
+        state.pendaftaran.dayamotorpenggerak = parseInt(payload.daya_motor);
+        if (payload.jbb !== null && payload.jbb !== undefined && payload.jbb !== "") {
+        state.pendaftaran.jbb = payload.jbb.replace(/\./g, "");
+        }
+        state.pendaftaran.nosertifikatreg = payload.srut_no;
+        state.pendaftaran.tglsertifikatreg = payload.srut_tanggal;
+        if (payload.jbkb !== null && payload.jbkb !== undefined && payload.jbkb !== "") {
+        state.pendaftaran.jbkb = payload.jbkb.replace(/\./g, "");
+        }
+        if (payload.jbi !== null && payload.jbi !== undefined && payload.jbi !== "") {
+        state.pendaftaran.jbi = payload.jbi.replace(/\./g, "");
+        }
+        if (payload.jbki !== null && payload.jbki !== undefined && payload.jbki !== "") {
+        state.pendaftaran.jbki = payload.jbki.replace(/\./g, "");
+        }
+        state.pendaftaran.ukuranban = payload.ukuran_ban_s1;
+        if (payload.panjang_total !== null && payload.panjang_total !== undefined && payload.panjang_total !== "") {
+        state.pendaftaran.panjangkendaraan = payload.panjang_total.replace(
+            /\./g,
+            ""
+        );
+        }
+        if (payload.lebar_total !== null && payload.lebar_total !== undefined && payload.lebar_total !== "") {
+        state.pendaftaran.lebarkendaraan = payload.lebar_total.replace(/\./g, "");
+        }
+        if (payload.tinggi_total !== null && payload.tinggi_total !== undefined && payload.tinggi_total !== "") {
+        state.pendaftaran.tinggikendaraan = payload.tinggi_total.replace(
+            /\./g,
+            ""
+        );
+        }
+        if (payload.dimensi_bak_tangki !== null && payload.dimensi_bak_tangki !== undefined && payload.dimensi_bak_tangki !== "") {
+        // var dimensions = payload.dimensi_bak_tangki.split(" X ");
+        const [panjang, lebar, tinggi] = payload.dimensi_bak_tangki
+        .split(/\s*x\s*/i)
+        .map(v => parseInt(v.replace(/\./g, ''), 10));
+        state.pendaftaran.panjangbakatautangki = panjang;
+        state.pendaftaran.lebarbakatautangki = lebar;
+        state.pendaftaran.tinggibakatautangki = tinggi;
+        }
+        if (payload.julur_depan !== null && payload.julur_depan !== undefined) {
+        state.pendaftaran.julurdepan = payload.julur_depan.replace(/\./g, "");
+        }
+        if (payload.julur_belakang !== null && payload.julur_belakang !== undefined) {
+        state.pendaftaran.julurbelakang = payload.julur_belakang.replace(
+            /\./g,
+            ""
+        );
+        }
+        if (payload.jarak_sumbu_12 !== null && payload.jarak_sumbu_12 !== undefined && payload.jarak_sumbu_12 !== "") {
+        state.pendaftaran.jaraksumbu1_2 = payload.jarak_sumbu_12.replace(
+            /\./g,
+            ""
+        );
+        }
+        if (payload.jarak_sumbu_23 !== null && payload.jarak_sumbu_23 !== undefined && payload.jarak_sumbu_23 !== "") {
+        state.pendaftaran.jaraksumbu2_3 = payload.jarak_sumbu_23.replace(
+            /\./g,
+            ""
+        );
+        }
+        if (payload.jarak_sumbu_34 !== null && payload.jarak_sumbu_34 !== undefined && payload.jarak_sumbu_34 !== "") {
+        state.pendaftaran.jaraksumbu3_4 = payload.jarak_sumbu_34.replace(
+            /\./g,
+            ""
+        );
+        }
+        if (payload.daya_angkut_orang !== null && payload.daya_angkut_orang !== undefined && payload.daya_angkut_orang !== "") {
+        state.pendaftaran.dayaangkutorang = payload.daya_angkut_orang;
+        }
+        if (payload.daya_angkut_barang !== null && payload.daya_angkut_barang !== undefined && payload.daya_angkut_barang !== "") {
+        state.pendaftaran.dayaangkutbarang = payload.daya_angkut_barang.replace(
+            /\./g,
+            ""
+        );
+        }
+        if (payload.berat_kosong_total !== null && payload.berat_kosong_total !== undefined && payload.berat_kosong_total !== "") {
+        state.pendaftaran.beratkosong = payload.berat_kosong_total.replace(
+            /\./g,
+            ""
+        );
+        }
+
+        state.pendaftaran.konfigurasisumburoda = payload.konfigurasi_sumbu;
+        if (payload.kelas_jalan !== null && payload.kelas_jalan !== undefined && payload.kelas_jalan !== "") {
+        var kelasName = payload.kelas_jalan;
+            if (kelasName.includes("III")) {
+                kelasName = "KELAS III";
+            }else if(kelasName.includes("II")){
+                kelasName = "KELAS II";
+            }else if(kelasName.includes("I")){
+                kelasName = "KELAS I";
+            }else{
+                kelasName = "";
             }
-        }
-        if(payload.isi_silinder !== null && payload.isi_silinder  !== undefined && payload.isi_silinder  !== ""){
-            state.pendaftaran.isisilinder= payload.isi_silinder.replace(/\./g, "");
-        }
-        state.pendaftaran.dayamotorpenggerak= parseInt(payload.daya_motor);
-        if(payload.jbb !== null && payload.jbb  !== undefined && payload.jbb  !== ""){
-            state.pendaftaran.jbb= payload.jbb.replace(/\./g, "");
-        }
-        state.pendaftaran.nosertifikatreg= payload.srut_no;
-        state.pendaftaran.tglsertifikatreg= payload.srut_tanggal;
-        if(payload.jbkb !== null && payload.jbkb  !== undefined && payload.jbkb  !== ""){
-            state.pendaftaran.jbkb= payload.jbkb.replace(/\./g, "");
-        }
-        if(payload.jbi !== null && payload.jbi  !== undefined && payload.jbi  !== ""){
-            state.pendaftaran.jbi= payload.jbi.replace(/\./g, "");
-        }
-        if(payload.jbki !== null && payload.jbki  !== undefined && payload.jbki  !== ""){
-            state.pendaftaran.jbki= payload.jbki.replace(/\./g, "");
-        }
-        state.pendaftaran.ukuranban= payload.ukuran_ban_s1;
-        if(payload.panjang_total !== null && payload.panjang_total  !== undefined && payload.panjang_total  !== ""){
-            state.pendaftaran.panjangkendaraan= payload.panjang_total.replace(/\./g, "");
-        }
-        if(payload.lebar_total !== null && payload.lebar_total  !== undefined && payload.lebar_total  !== ""){
-            state.pendaftaran.lebarkendaraan= payload.lebar_total.replace(/\./g, "");
-        }
-        if(payload.tinggi_total !== null && payload.tinggi_total  !== undefined && payload.tinggi_total  !== ""){
-            state.pendaftaran.tinggikendaraan= payload.tinggi_total.replace(/\./g, "");
-        }
-        if(payload.dimensi_bak_tangki !== null && payload.dimensi_bak_tangki  !== undefined && payload.dimensi_bak_tangki  !== ""){
-            var dimensions = payload.dimensi_bak_tangki.split(" X ");
-            var length = dimensions[0];
-            var width = dimensions[1];
-            var height = dimensions[2]; 
-            
-            state.pendaftaran.panjangbakatautangki= length;
-            state.pendaftaran.lebarbakatautangki= width;
-            state.pendaftaran.tinggibakatautangki= height;
-        }
-        if(payload.julur_depan !== null && payload.julur_depan  !== undefined && payload.julur_depan  !== ""){
-            state.pendaftaran.julurdepan= payload.julur_depan.replace(/\./g, "");
-        }
-        if(payload.julur_belakang !== null && payload.julur_belakang  !== undefined && payload.julur_belakang  !== ""){
-            state.pendaftaran.julurbelakang= payload.julur_belakang.replace(/\./g, "");
-        }
-        if(payload.jarak_sumbu_12 !== null && payload.jarak_sumbu_12  !== undefined && payload.jarak_sumbu_12  !== ""){
-            state.pendaftaran.jaraksumbu1_2= payload.jarak_sumbu_12.replace(/\./g, "");
-        }
-        if(payload.jarak_sumbu_23 !== null && payload.jarak_sumbu_23  !== undefined && payload.jarak_sumbu_23  !== ""){
-            state.pendaftaran.jaraksumbu2_3= payload.jarak_sumbu_23.replace(/\./g, "");
-        }
-        if(payload.jarak_sumbu_34 !== null && payload.jarak_sumbu_34  !== undefined && payload.jarak_sumbu_34  !== ""){
-            state.pendaftaran.jaraksumbu3_4= payload.jarak_sumbu_34.replace(/\./g, "");
-        }
-        if(payload.daya_angkut_orang !== null && payload.daya_angkut_orang  !== undefined && payload.daya_angkut_orang  !== ""){
-            state.pendaftaran.dayaangkutorang= payload.daya_angkut_orang;
-        }
-        if(payload.daya_angkut_barang !== null && payload.daya_angkut_barang  !== undefined && payload.daya_angkut_barang  !== ""){
-            state.pendaftaran.dayaangkutbarang= payload.daya_angkut_barang.replace(/\./g, "");
-        }
-        state.pendaftaran.idkelasjalan= payload.kelas_jalan_id;
-        if(payload.berat_kosong_total !== null && payload.berat_kosong_total  !== undefined && payload.berat_kosong_total  !== ""){
-            state.pendaftaran.beratkosong= payload.berat_kosong_total.replace(/\./g, "");
+
+            var data = state.kelasjalans.find(function(item) {
+                return (item.kelasjalan_name).toUpperCase() === (kelasName).toUpperCase();
+            });
+
+            if (data) {
+                state.pendaftaran.kelasjalanterendah= data.kelasjalan_name;
+                state.pendaftaran.idkelasjalanterendah= data.kelasjalan_id;
+            }
         }
     },
     CLEAR_FORM(state) {
@@ -1914,6 +1963,22 @@ export const actions = {
                 commit("ASSIGN_FORMBULE", response.data.result.data);
             }
         });
+    },
+    async checkLastExam({ commit, state }, payload) {
+    return await PendaftaranService.checkLastExam(state.identitaskendaraan.nouji)
+        .then((response) => {
+        commit("ASSIGN_RESPONBLUE", response.data.result);
+        if (response.data.result.status) {
+            commit("ASSIGN_FORMBULE", response.data.result.data);
+        }else if(response.data.result == null){
+            Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Data tidak ditemukan di sistem Blue / Sedang Gangguan!",
+            });
+        }
+        })
+        .catch((err) => console.log(err));
     },
 };
 export const getters = {

@@ -11,6 +11,7 @@ use App\Traits\apiJsonReturnTrait;
 use App\Traits\ApiException;
 use App\Services\FotoService;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Str;
 
 class FotoController extends Controller
 {
@@ -31,7 +32,7 @@ class FotoController extends Controller
         return view('foto', compact('kendaraan'));
     }
 
-    public function postImage(Request $request)
+    public function postImage1(Request $request)
     {
         $this->validate($request, [
             'image1' => 'nullable|image|mimes:jpeg,png,jpg',
@@ -87,6 +88,76 @@ class FotoController extends Controller
         return redirect()->back()->with('success', 'Upload foto berhasil.');
     }
 
+    public function postImage(Request $request)
+    {
+        $this->validate($request, [
+            'image1' => 'nullable|string',
+            'image2' => 'nullable|string',
+            'image3' => 'nullable|string',
+            'image4' => 'nullable|string',
+        ]);
+
+        $nouji = $request->nouji;
+        $pendaftaran_id = $request->pendaftaran_id;
+        $fotoUploaded = false;
+
+        $imageFields = [
+            'image1' => '-tampakdepan.jpg',
+            'image2' => '-tampakkanan.jpg',
+            'image3' => '-tampakbelakang.jpg',
+            'image4' => '-tampakkiri.jpg',
+        ];
+
+        $folderPath = public_path('tmp_images');
+        if (!file_exists($folderPath)) {
+            mkdir($folderPath, 0755, true);
+        }
+
+        foreach ($imageFields as $field => $suffix) {
+
+            if ($request->filled($field)) {
+
+                $base64 = $request->$field;
+
+                // pastikan format base64 image
+                if (!Str::startsWith($base64, 'data:image')) {
+                    continue;
+                }
+
+                // ambil data murni
+                [$meta, $content] = explode(',', $base64);
+                $imageData = base64_decode($content);
+
+                $filePath = $folderPath . '/' . $nouji . $suffix;
+
+                // hapus file lama
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+
+                // simpan via Intervention
+                Image::make($imageData)
+                    ->resize(600, 600, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->encode('jpg', 30)
+                    ->save($filePath);
+
+                $fotoUploaded = true;
+            }
+        }
+
+        if ($fotoUploaded && $pendaftaran_id) {
+            $pendaftarandata = Pendaftaran::where('uuid', $pendaftaran_id)->first();
+            if ($pendaftarandata) {
+                $pendaftarandata->foto = '1';
+                $pendaftarandata->save();
+            }
+        }
+
+        return redirect()->back()->with('success', 'Upload foto berhasil.');
+    }
 
     public function saveCCTVImage(Request $request)
     {

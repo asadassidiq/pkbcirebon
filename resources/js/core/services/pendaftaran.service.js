@@ -84,6 +84,9 @@ export default {
     checkUJI(nouji,search) {
         return ApiService.get(`/bluecore?p=checkpengujiankeluar&n=${nouji}&s=${search}`);
     },
+    checkLastExam(nouji) {
+        return ApiService.get(`/bluecore?p=lastexam&n=${nouji}`);
+    },
     postPendaftaran(pendaftaran,perubahans) {
         return ApiService.post("/pendaftaran", {pendaftaran, perubahans});
     },

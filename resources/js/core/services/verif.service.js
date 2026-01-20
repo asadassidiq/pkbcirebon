@@ -58,4 +58,13 @@ export default {
     getCatatanPos(id) {
         return ApiService.get(`/catatan/pos/${id}`);
     },
+    getKodewilayahs() {
+        return ApiService.get(`/bluecore?p=area`);
+    },
+    checkUJI(nouji,search) {
+        return ApiService.get(`/bluecore?p=checkpengujiankeluar&n=${nouji}&s=${search}`);
+    },
+    checkLastExam(nouji) {
+        return ApiService.get(`/bluecore?p=lastexam&n=${nouji}`);
+    },
 };

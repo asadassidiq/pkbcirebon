@@ -161,11 +161,11 @@
                     Kartu Normal
                     </label>
 
-                    <label class="radio radio-warning">
+                    <!-- <label class="radio radio-warning">
                     <input type="radio" v-model="pengujian.status_cetak" value="2" />
                     <span></span>
                     Perubahan Data
-                    </label>
+                    </label> -->
                 </div>
             </div>
             <div class="form-group">
@@ -191,6 +191,44 @@
                 <textarea class="form-control " v-model="pengujian.catatanverif" rows="3"></textarea>
             </div>
         </div>
+        <b-modal id="modalBlue" ref="modalBlue" class="modal" title="Cek Data Uji Terakhir di Pusat">
+            <div class="form-group">
+                <label for>No Uji</label>
+                <input type="text" class="form-control" v-model="dataBlue.nouji" disabled/>
+            </div>
+            <div class="form-group">
+                <label for>No kendaraan</label>
+                <input type="text" class="form-control" v-model="dataBlue.noregistrasikendaraan" disabled/>
+            </div>
+            <div class="form-group">
+                <label for>No Rangka</label>
+                <input type="text" class="form-control" v-model="dataBlue.norangka" disabled/>
+            </div>
+            <div class="form-group">
+                <label for>No Mesin</label>
+                <input type="text" class="form-control" v-model="dataBlue.nomesin" disabled/>
+            </div>
+            <div class="form-group">
+                <label for>Tujuan</label>
+                <input type="text" class="form-control" v-model="dataBlue.wilayah" disabled/>
+            </div>
+            <div class="form-group">
+                <label for>Daerah Asal</label>
+                <input type="text" class="form-control" v-model="dataBlue.wilayahasal" disabled/>
+            </div>
+            <div class="form-group">
+                <label for>Status Penerbitan</label>
+                <input type="text" class="form-control" v-model="dataBlue.statuscetak" disabled/>
+            </div>
+            <div class="form-group">
+                <label for>Penerbitan Terakhir</label>
+                <input type="text" class="form-control" v-model="dataBlue.tglujji" disabled/>
+            </div>
+            <div class="form-group">
+                <label for>Jenis Penerbitan Terakhir</label>
+                <input type="text" class="form-control" v-model="dataBlue.penerbitanterakhir" disabled/>
+            </div>
+        </b-modal>
     </div>
 </template>
 <style>
@@ -226,12 +264,14 @@ export default {
             identitaskendaraan: (state) => state.identitaskendaraan,
             kuotas: (state) => state.kuota,
             catatanpos: (state) => state.catatanpos,
+            dataBlue: (state) => state.dataBlue,
+            responeBlue: (state) => state.responeBlue,
         }),
         ...mapGetters(["currentUserPersonalInfo"]),
     },
     methods: {
         ...mapMutations("verif", ["CLEAR_FORM"]),
-        ...mapActions("verif", ["submitVerif", "getKuota", "getCatatanPos"]),
+        ...mapActions("verif", ["submitVerif", "getKuota", "getCatatanPos", "checkLastExam", "getKodewilayahs"]),
         submit() {
             this.submitVerif(this.$route.params.id).then(() => {
                 Swal.fire({
@@ -244,7 +284,9 @@ export default {
                 this.$router.push({ name: "verif.data" });
             });
         },
-
+        showModal() {
+            this.$refs['modalBlue'].show()
+        },
         printsktl(id) {
             if (this.sktl == 0) {
                 window.open(
@@ -258,6 +300,20 @@ export default {
                 );
             }
         },
+        getCheckUji() {
+            this.checkLastExam(this.identitaskendaraan.nouji).then(() => {
+                if (this.responeBlue.status) {
+                    this.showModal();
+                } else {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: this.responeBlue.message,
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+                }
+            });
+        }
     },
     destroyed() {
         this.CLEAR_FORM();
@@ -266,6 +322,7 @@ export default {
         this.CLEAR_FORM();
         this.getKuota();
         this.getCatatanPos(this.$route.params.id);
+        this.Kodewilayahs();
     },
     components: {
         datepicker,

@@ -819,50 +819,209 @@
     <b-modal id="modalRiwayat" ref="modalRiwayat" class="modal" title="Detail Riwayat">
 
     </b-modal>
-    <b-modal id="modalVTA" ref="modalVTA" class="modal" title="Cek Data">
-      <div class="form-group">
-        <label for>No SRUT</label>
-        <input type="text" class="form-control" v-model="datavta.nosertifikatreg" disabled />
-      </div>
-      <div class="form-group">
-        <label for>No SK Drijen</label>
-        <input type="text" class="form-control" v-model="datavta.noskdrijen" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Merek</label>
-        <input type="text" class="form-control" v-model="datavta.merek" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Tipe Varian</label>
-        <input type="text" class="form-control" v-model="datavta.tipe" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Jenis</label>
-        <input type="text" class="form-control" v-model="datavta.jenis" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Peruntukan</label>
-        <input type="text" class="form-control" v-model="datavta.peruntukan" disabled />
-      </div>
-      <div class="form-group">
-        <label for>No Rangka</label>
-        <input type="text" class="form-control" v-model="datavta.norangka" disabled />
-      </div>
-      <div class="form-group">
-        <label for>No Mesin</label>
-        <input type="text" class="form-control" v-model="datavta.nomesin" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Nama Perusahaan</label>
-        <input type="text" class="form-control" v-model="datavta.namaperusahaan" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Alamat Perusahaan</label>
-        <input type="text" class="form-control" v-model="datavta.alamatperusahaan" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Penanggung Jawab</label>
-        <input type="text" class="form-control" v-model="datavta.penanggungjawab" disabled />
+    <b-modal id="modalVTA" ref="modalVTA" class="modal" title="Cek Data VTA" @ok="resetCheck" @hidden="resetCheck" size="xl" dialog-class="modal-dialog-centered" content-class="w-100" style="max-width:1100px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>No SRUT</label>
+              <input type="text" class="form-control" v-model="datavta.nosertifikatreg" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>No SK Drijen</label>
+              <input type="text" class="form-control" v-model="datavta.noskdrijen" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Tlg SRUT</label>
+              <input type="text" class="form-control" v-model="datakendaraan.tglsertifikatreg" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Merek</label>
+              <input type="text" class="form-control" v-model="datavta.merek" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Tipe Varian</label>
+              <input type="text" class="form-control" v-model="datavta.tipe" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Jenis</label>
+              <input type="text" class="form-control" v-model="datavta.jenis" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Peruntukan</label>
+              <input type="text" class="form-control" v-model="datavta.peruntukan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>No Rangka</label>
+              <input type="text" class="form-control" v-model="datavta.norangka" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>No Mesin</label>
+              <input type="text" class="form-control" v-model="datavta.nomesin" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Nama Perusahaan</label>
+              <input type="text" class="form-control" v-model="datavta.namaperusahaan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Alamat Perusahaan</label>
+              <input type="text" class="form-control" v-model="datavta.alamatperusahaan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Penanggung Jawab</label>
+              <input type="text" class="form-control" v-model="datavta.penanggungjawab" disabled/>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Bahan Bakar</label>
+              <input type="text" class="form-control" v-model="datakendaraan.bahanbakar" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Isi Silinder</label>
+              <input type="text" class="form-control" v-model="datakendaraan.isisilinder" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Daya Motor Penggerak</label>
+              <input type="text" class="form-control" v-model="datakendaraan.dayamotorpenggerak" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>JBB</label>
+              <input type="text" class="form-control" v-model="datakendaraan.jbb" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>JBI</label>
+              <input type="text" class="form-control" v-model="datakendaraan.jbi" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>JBKI</label>
+              <input type="text" class="form-control" v-model="datakendaraan.jbki" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Panjang Kendaraan</label>
+              <input type="text" class="form-control" v-model="datakendaraan.panjangkendaraan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Lebar Kendaraan</label>
+              <input type="text" class="form-control" v-model="datakendaraan.lebarkendaraan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Tinggi Kendaraan</label>
+              <input type="text" class="form-control" v-model="datakendaraan.tinggikendaraan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Panjang Bak atau Tangki</label>
+              <input type="text" class="form-control" v-model="datakendaraan.panjangbakatautangki" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Lebar Bak atau Tangki</label>
+              <input type="text" class="form-control" v-model="datakendaraan.lebarbakatautangki" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Tinggi Bak atau Tangki</label>
+              <input type="text" class="form-control" v-model="datakendaraan.tinggibakatautangki" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Julur Depan</label>
+              <input type="text" class="form-control" v-model="datakendaraan.julurdepan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Julur Belakang</label>
+              <input type="text" class="form-control" v-model="datakendaraan.julurbelakang" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Jarak Sumbu 1-2</label>
+              <input type="text" class="form-control" v-model="datakendaraan.jaraksumbu1_2" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Jarak Sumbu 2-3</label>
+              <input type="text" class="form-control" v-model="datakendaraan.jaraksumbu2_3" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Jarak Sumbu 3-4</label>
+              <input type="text" class="form-control" v-model="datakendaraan.jaraksumbu3_4" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Daya Angkut Orang</label>
+              <input type="text" class="form-control" v-model="datakendaraan.dayaangkutorang" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Daya Angkut Barang</label>
+              <input type="text" class="form-control" v-model="datakendaraan.dayaangkutbarang" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Berat Kosong</label>
+              <input type="text" class="form-control" v-model="datakendaraan.beratkosong" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Kelas Jalan</label>
+              <input type="text" class="form-control" v-model="datakendaraan.kelasjalanterendah" disabled/>
+            </div>
+          </div>
+        </div>
       </div>
     </b-modal>
   </div>

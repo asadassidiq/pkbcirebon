@@ -384,12 +384,10 @@
                     </div>
                   </div>
 
-                  <div class="col-sm-12" v-if="
-                    pendaftaran.kodepenerbitans_id == '5' ||
-                    pendaftaran.kodepenerbitans_id == '6'
-                  ">
+                  <div class="col-sm-12"
+                    v-if="pendaftaran.kodepenerbitans_id == '3' || pendaftaran.kodepenerbitans_id == '5' || pendaftaran.kodepenerbitans_id == '6' || pendaftaran.kodepenerbitans_id == '9' || pendaftaran.kodepenerbitans_id == '10'">
                     <a href="javascript:void(0)" @click="getCheckUji"
-                      class="btn btn-sm btn-light-success font-weight-bold" style="width: 100%">
+                      class="btn btn-sm btn-light-success font-weight-bold" style="width: 100%;">
                       <i class="flaticon2-search"></i> Cek Data
                     </a>
                   </div>
@@ -1264,50 +1262,245 @@
       </div>
     </b-modal>
 
-    <b-modal id="modalVTA" ref="modalVTA" class="modal" title="Cek Data">
+    
+    <b-modal id="modalBlue" ref="modalBlue" class="modal" title="Cek Data">
       <div class="form-group">
-        <label for>No SRUT</label>
-        <input type="text" class="form-control" v-model="datavta.nosertifikatreg" disabled />
+        <label for>No Uji</label>
+        <input type="text" class="form-control" v-model="dataBlue.nouji" disabled/>
       </div>
       <div class="form-group">
-        <label for>No SK Drijen</label>
-        <input type="text" class="form-control" v-model="datavta.noskdrijen" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Merek</label>
-        <input type="text" class="form-control" v-model="datavta.merek" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Tipe Varian</label>
-        <input type="text" class="form-control" v-model="datavta.tipe" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Jenis</label>
-        <input type="text" class="form-control" v-model="datavta.jenis" disabled />
-      </div>
-      <div class="form-group">
-        <label for>Peruntukan</label>
-        <input type="text" class="form-control" v-model="datavta.peruntukan" disabled />
+        <label for>No kendaraan</label>
+        <input type="text" class="form-control" v-model="pendaftaran.noregistrasikendaraan" disabled/>
       </div>
       <div class="form-group">
         <label for>No Rangka</label>
-        <input type="text" class="form-control" v-model="datavta.norangka" disabled />
+        <input type="text" class="form-control" v-model="pendaftaran.norangka" disabled/>
       </div>
       <div class="form-group">
         <label for>No Mesin</label>
-        <input type="text" class="form-control" v-model="datavta.nomesin" disabled />
+        <input type="text" class="form-control" v-model="pendaftaran.nomesin" disabled/>
       </div>
       <div class="form-group">
-        <label for>Nama Perusahaan</label>
-        <input type="text" class="form-control" v-model="datavta.namaperusahaan" disabled />
+        <label for>Tujuan</label>
+        <input type="text" class="form-control" v-model="pendaftaran.wilayah" disabled/>
       </div>
       <div class="form-group">
-        <label for>Alamat Perusahaan</label>
-        <input type="text" class="form-control" v-model="datavta.alamatperusahaan" disabled />
+        <label for>Daerah Asal</label>
+        <input type="text" class="form-control" v-model="pendaftaran.wilayahasal" disabled/>
       </div>
       <div class="form-group">
-        <label for>Penanggung Jawab</label>
-        <input type="text" class="form-control" v-model="datavta.penanggungjawab" disabled />
+        <label for>Penerbitan Terakhir</label>
+        <input type="text" class="form-control" v-model="dataBlue.statuscetak" disabled/>
+      </div>
+      <div class="form-group">
+        <label for>Jenis Penerbitan Terakhir</label>
+        <input type="text" class="form-control" v-model="dataBlue.penerbitanterakhir" disabled/>
+      </div>
+    </b-modal>
+    
+    <b-modal id="modalVTA" ref="modalVTA" class="modal" title="Cek Data VTA" @ok="resetCheck" @hidden="resetCheck" size="xl" dialog-class="modal-dialog-centered" content-class="w-100" style="max-width:1100px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>No SRUT</label>
+              <input type="text" class="form-control" v-model="datavta.nosertifikatreg" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>No SK Drijen</label>
+              <input type="text" class="form-control" v-model="datavta.noskdrijen" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Tlg SRUT</label>
+              <input type="text" class="form-control" v-model="pendaftaran.tglsertifikatreg" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Merek</label>
+              <input type="text" class="form-control" v-model="datavta.merek" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Tipe Varian</label>
+              <input type="text" class="form-control" v-model="datavta.tipe" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Jenis</label>
+              <input type="text" class="form-control" v-model="datavta.jenis" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Peruntukan</label>
+              <input type="text" class="form-control" v-model="datavta.peruntukan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>No Rangka</label>
+              <input type="text" class="form-control" v-model="datavta.norangka" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>No Mesin</label>
+              <input type="text" class="form-control" v-model="datavta.nomesin" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Nama Perusahaan</label>
+              <input type="text" class="form-control" v-model="datavta.namaperusahaan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Alamat Perusahaan</label>
+              <input type="text" class="form-control" v-model="datavta.alamatperusahaan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Penanggung Jawab</label>
+              <input type="text" class="form-control" v-model="datavta.penanggungjawab" disabled/>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Bahan Bakar</label>
+              <input type="text" class="form-control" v-model="pendaftaran.bahanbakar" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Isi Silinder</label>
+              <input type="text" class="form-control" v-model="pendaftaran.isisilinder" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Daya Motor Penggerak</label>
+              <input type="text" class="form-control" v-model="pendaftaran.dayamotorpenggerak" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>JBB</label>
+              <input type="text" class="form-control" v-model="pendaftaran.jbb" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>JBI</label>
+              <input type="text" class="form-control" v-model="pendaftaran.jbi" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>JBKI</label>
+              <input type="text" class="form-control" v-model="pendaftaran.jbki" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Panjang Kendaraan</label>
+              <input type="text" class="form-control" v-model="pendaftaran.panjangkendaraan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Lebar Kendaraan</label>
+              <input type="text" class="form-control" v-model="pendaftaran.lebarkendaraan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Tinggi Kendaraan</label>
+              <input type="text" class="form-control" v-model="pendaftaran.tinggikendaraan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Panjang Bak atau Tangki</label>
+              <input type="text" class="form-control" v-model="pendaftaran.panjangbakatautangki" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Lebar Bak atau Tangki</label>
+              <input type="text" class="form-control" v-model="pendaftaran.lebarbakatautangki" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Tinggi Bak atau Tangki</label>
+              <input type="text" class="form-control" v-model="pendaftaran.tinggibakatautangki" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Julur Depan</label>
+              <input type="text" class="form-control" v-model="pendaftaran.julurdepan" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Julur Belakang</label>
+              <input type="text" class="form-control" v-model="pendaftaran.julurbelakang" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Jarak Sumbu 1-2</label>
+              <input type="text" class="form-control" v-model="pendaftaran.jaraksumbu1_2" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Jarak Sumbu 2-3</label>
+              <input type="text" class="form-control" v-model="pendaftaran.jaraksumbu2_3" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Jarak Sumbu 3-4</label>
+              <input type="text" class="form-control" v-model="pendaftaran.jaraksumbu3_4" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Daya Angkut Orang</label>
+              <input type="text" class="form-control" v-model="pendaftaran.dayaangkutorang" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Daya Angkut Barang</label>
+              <input type="text" class="form-control" v-model="pendaftaran.dayaangkutbarang" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Berat Kosong</label>
+              <input type="text" class="form-control" v-model="pendaftaran.beratkosong" disabled/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for>Kelas Jalan</label>
+              <input type="text" class="form-control" v-model="pendaftaran.kelasjalanterendah" disabled/>
+            </div>
+          </div>
+        </div>
       </div>
     </b-modal>
   </div>
@@ -1376,6 +1569,7 @@ export default {
   created() {
     this.CLEAR_FORM();
     this.getKodewilayahs();
+    this.getKotas();
     this.getMereks();
     this.getTipes();
     this.getVarians();
@@ -1383,7 +1577,6 @@ export default {
     this.getSubJenis();
     this.getJenisModel();
     this.getFuels();
-    this.getKotas();
     // this.getJeniskendaraan();
     this.getKelasJalans().then(() => {
       if (this.$route.name == "pendaftaran.edit") {
@@ -1417,6 +1610,7 @@ export default {
       "getVTA",
       "checkNU",
       "checkMU",
+      "checkLastExam",
       "setNoSurat",
       "getJenisModel",
     ]),
@@ -1611,6 +1805,9 @@ export default {
         this.pendaftaran[field] = "";
       }
     },
+    showModal() {
+      this.$refs['modalBlue'].show()
+    },
     showModalAlasan() {
       this.$refs["modalAlasan"].show();
     },
@@ -1633,12 +1830,6 @@ export default {
       } else {
         this.getVTA(dataSearch).then(() => {
           if (this.responeBlue.status) {
-            Swal.fire({
-              icon: "success",
-              title: "Berhasil",
-              showConfirmButton: false,
-              timer: 1500,
-            });
             this.showModalVTA();
           } else {
             Swal.fire({
@@ -1664,12 +1855,6 @@ export default {
         if (this.pendaftaran.kodepenerbitans_id == "6") {
           this.checkMU(this.pendaftaran.nouji).then(() => {
             if (this.responeBlue.status) {
-              Swal.fire({
-                icon: "success",
-                title: "Berhasil Data",
-                showConfirmButton: false,
-                timer: 1500,
-              });
               this.showModal();
             } else {
               if (this.responeBlue.message != "") {
@@ -1689,32 +1874,30 @@ export default {
               }
             }
           });
-        } else {
+        } else if (this.pendaftaran.kodepenerbitans_id == '5') {
           this.checkNU(this.pendaftaran.nouji).then(() => {
             if (this.responeBlue.status) {
-              Swal.fire({
-                icon: "success",
-                title: "Berhasil Data",
-                showConfirmButton: false,
-                timer: 1500,
-              });
               this.showModal();
             } else {
-              if (this.responeBlue.message != "") {
-                Swal.fire({
-                  icon: "warning",
-                  title: "Data tidak ditemukan",
-                  showConfirmButton: false,
-                  timer: 2000,
-                });
-              } else {
-                Swal.fire({
-                  icon: "warning",
-                  title: this.responeBlue.message,
-                  showConfirmButton: false,
-                  timer: 2000,
-                });
-              }
+              Swal.fire({
+                icon: 'warning',
+                title: this.responeBlue.message,
+                showConfirmButton: false,
+                timer: 2000
+              })
+            }
+          });
+        } else {
+          this.checkLastExam(this.pendaftaran.nouji).then(() => {
+            if (this.responeBlue.status) {
+              this.showModal();
+            } else {
+              Swal.fire({
+                icon: 'warning',
+                title: this.responeBlue.message,
+                showConfirmButton: false,
+                timer: 2000
+              })
             }
           });
         }
@@ -1790,6 +1973,7 @@ export default {
       notif: (state) => state.notif,
       responeBlue: (state) => state.responeBlue,
       datavta: (state) => state.datavta,
+      dataBlue: (state) => state.dataBlue,
     }),
     ...mapState("pendaftaran", {
       kodewilayahs: (state) => state.kodewilayahs,

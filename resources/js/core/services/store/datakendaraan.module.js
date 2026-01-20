@@ -817,20 +817,148 @@ export const mutations = {
       }
     }
   },
-  ASSIGN_FORMDATAVTA(state, payload) {
-    state.datavta = {
-      nosertifikatreg: payload.srut_no,
-      noskdrijen: payload.sut_no,
-      merek: payload.merk,
-      tipe: payload.kendaraan_tipe,
-      jenis: payload.jenis_kendaraan,
-      peruntukan: payload.peruntukan.toUpperCase(),
-      norangka: payload.nomor_chasis,
-      nomesin: payload.nomor_mesin,
-      namaperusahaan: payload.perusahaan_nama,
-      alamatperusahaan: payload.perusahaan_alamat,
-      penanggungjawab: payload.perusahaan_penanggungjawab,
-    };
+  ASSIGN_FORMDATAVTA(state, payload){
+      state.datavta = {
+          nosertifikatreg:payload.srut_no,
+          noskdrijen:payload.sut_no,
+          merek:payload.merk,
+          tipe:payload.kendaraan_tipe,
+          jenis:payload.jenis_kendaraan,
+          peruntukan:payload.peruntukan,
+          norangka:payload.nomor_chasis,
+          nomesin:payload.nomor_mesin,
+          namaperusahaan:payload.perusahaan_nama,
+          alamatperusahaan:payload.perusahaan_alamat,
+          penanggungjawab:payload.perusahaan_penanggungjawab,
+      }
+  },
+  ASSIGN_FORMVTA(state, payload) {
+      state.datakendaraan.merek = payload.merk;
+      state.datakendaraan.norangka = payload.nomor_chasis;
+      state.datakendaraan.nomesin = payload.nomor_mesin;
+      if ( payload.tahun_pembuatan !== null && payload.tahun_pembuatan !== undefined && payload.tahun_pembuatan !== "" ) {
+      state.datakendaraan.thpembuatan = payload.tahun_pembuatan.replace(
+          /\./g,
+          ""
+      );
+      }
+      if (payload.bahan_bakar_id !== null && payload.bahan_bakar_id !== undefined && payload.bahan_bakar_id !== "") {
+      state.datakendaraan.idbahanbakar = payload.bahan_bakar_id;
+      var foundFuel = state.fuels.find(function (item) {
+          return item.fuel_id === payload.bahan_bakar_id;
+      });
+      if (foundFuel) {
+          state.datakendaraan.bahanbakar = foundFuel.fuel_name;
+      }
+      }
+      if (payload.isi_silinder !== null && payload.isi_silinder !== undefined && payload.isi_silinder !== "") {
+      state.datakendaraan.isisilinder = payload.isi_silinder.replace(/\./g, "");
+      }
+      state.datakendaraan.dayamotorpenggerak = parseInt(payload.daya_motor);
+      if (payload.jbb !== null && payload.jbb !== undefined && payload.jbb !== "") {
+      state.datakendaraan.jbb = payload.jbb.replace(/\./g, "");
+      }
+      state.datakendaraan.nosertifikatreg = payload.srut_no;
+      state.datakendaraan.tglsertifikatreg = payload.srut_tanggal;
+      if (payload.jbkb !== null && payload.jbkb !== undefined && payload.jbkb !== "") {
+      state.datakendaraan.jbkb = payload.jbkb.replace(/\./g, "");
+      }
+      if (payload.jbi !== null && payload.jbi !== undefined && payload.jbi !== "") {
+      state.datakendaraan.jbi = payload.jbi.replace(/\./g, "");
+      }
+      if (payload.jbki !== null && payload.jbki !== undefined && payload.jbki !== "") {
+      state.datakendaraan.jbki = payload.jbki.replace(/\./g, "");
+      }
+      state.datakendaraan.ukuranban = payload.ukuran_ban_s1;
+      if (payload.panjang_total !== null && payload.panjang_total !== undefined && payload.panjang_total !== "") {
+      state.datakendaraan.panjangkendaraan = payload.panjang_total.replace(
+          /\./g,
+          ""
+      );
+      }
+      if (payload.lebar_total !== null && payload.lebar_total !== undefined && payload.lebar_total !== "") {
+      state.datakendaraan.lebarkendaraan = payload.lebar_total.replace(/\./g, "");
+      }
+      if (payload.tinggi_total !== null && payload.tinggi_total !== undefined && payload.tinggi_total !== "") {
+      state.datakendaraan.tinggikendaraan = payload.tinggi_total.replace(
+          /\./g,
+          ""
+      );
+      }
+      if (payload.dimensi_bak_tangki !== null && payload.dimensi_bak_tangki !== undefined && payload.dimensi_bak_tangki !== "") {
+      // var dimensions = payload.dimensi_bak_tangki.split(" X ");
+      const [panjang, lebar, tinggi] = payload.dimensi_bak_tangki
+      .split(/\s*x\s*/i)
+      .map(v => parseInt(v.replace(/\./g, ''), 10));
+      state.datakendaraan.panjangbakatautangki = panjang;
+      state.datakendaraan.lebarbakatautangki = lebar;
+      state.datakendaraan.tinggibakatautangki = tinggi;
+      }
+      if (payload.julur_depan !== null && payload.julur_depan !== undefined) {
+      state.datakendaraan.julurdepan = payload.julur_depan.replace(/\./g, "");
+      }
+      if (payload.julur_belakang !== null && payload.julur_belakang !== undefined) {
+      state.datakendaraan.julurbelakang = payload.julur_belakang.replace(
+          /\./g,
+          ""
+      );
+      }
+      if (payload.jarak_sumbu_12 !== null && payload.jarak_sumbu_12 !== undefined && payload.jarak_sumbu_12 !== "") {
+      state.datakendaraan.jaraksumbu1_2 = payload.jarak_sumbu_12.replace(
+          /\./g,
+          ""
+      );
+      }
+      if (payload.jarak_sumbu_23 !== null && payload.jarak_sumbu_23 !== undefined && payload.jarak_sumbu_23 !== "") {
+      state.datakendaraan.jaraksumbu2_3 = payload.jarak_sumbu_23.replace(
+          /\./g,
+          ""
+      );
+      }
+      if (payload.jarak_sumbu_34 !== null && payload.jarak_sumbu_34 !== undefined && payload.jarak_sumbu_34 !== "") {
+      state.datakendaraan.jaraksumbu3_4 = payload.jarak_sumbu_34.replace(
+          /\./g,
+          ""
+      );
+      }
+      if (payload.daya_angkut_orang !== null && payload.daya_angkut_orang !== undefined && payload.daya_angkut_orang !== "") {
+      state.datakendaraan.dayaangkutorang = payload.daya_angkut_orang;
+      }
+      if (payload.daya_angkut_barang !== null && payload.daya_angkut_barang !== undefined && payload.daya_angkut_barang !== "") {
+      state.datakendaraan.dayaangkutbarang = payload.daya_angkut_barang.replace(
+          /\./g,
+          ""
+      );
+      }
+      if (payload.berat_kosong_total !== null && payload.berat_kosong_total !== undefined && payload.berat_kosong_total !== "") {
+      state.datakendaraan.beratkosong = payload.berat_kosong_total.replace(
+          /\./g,
+          ""
+      );
+      }
+
+      state.datakendaraan.konfigurasisumburoda = payload.konfigurasi_sumbu;
+      if (payload.kelas_jalan !== null && payload.kelas_jalan !== undefined && payload.kelas_jalan !== "") {
+      var kelasName = payload.kelas_jalan;
+          if (kelasName.includes("III")) {
+              kelasName = "KELAS III";
+          }else if(kelasName.includes("II")){
+              kelasName = "KELAS II";
+          }else if(kelasName.includes("I")){
+              kelasName = "KELAS I";
+          }else{
+              kelasName = "";
+          }
+
+          var data = state.kelasjalans.find(function(item) {
+              return (item.kelasjalan_name).toUpperCase() === (kelasName).toUpperCase();
+          });
+
+          if (data) {
+              state.datakendaraan.kelasjalanterendah= data.kelasjalan_name;
+              state.datakendaraan.idkelasjalanterendah= data.kelasjalan_id;
+          }
+      }
   },
   CLEAR_FORM(state) {
     state.datakendaraan = {
@@ -1185,6 +1313,7 @@ export const actions = {
       commit("ASSIGN_RESPONVTA", response.data.result);
       if (response.data.result.error === false) {
         commit("ASSIGN_FORMDATAVTA", response.data.result.data);
+        commit("ASSIGN_FORMVTA", response.data.result.data);
       }
     });
   },
