@@ -251,6 +251,18 @@ export const state = {
         catatanrubahbentuk:"",
         bahan:"",
     },
+    dataBlue: {
+        nouji: "",
+        noregistrasikendaraan: "",
+        norangka: "",
+        nomesin: "",
+        tglujji: "",
+        tglcreated: "",
+        statuscetak: "",
+        wilayah: "",
+        wilayahasal: "",
+        penerbitanterakhir: "",
+    },
     datavta : {
         nosertifikatreg:"",
         noskdrijen:"",

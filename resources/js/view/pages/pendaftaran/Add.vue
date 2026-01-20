@@ -1144,7 +1144,6 @@
       </div>
     </b-modal>
 
-    
     <b-modal id="modalBlue" ref="modalBlue" class="modal" title="Cek Data">
       <div class="form-group">
         <label for>No Uji</label>
@@ -1618,7 +1617,6 @@ export default {
     },
     caridata() {
       this.getIdentitaskendaraanNouji().then(() => {
-        console.log(this.carinouji);
         if (this.carinouji == 1) {
           Swal.fire({
             icon: 'success',
