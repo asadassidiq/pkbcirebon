@@ -1336,8 +1336,9 @@ export const mutations = {
                 }
             }
         }
-        
+        console.log(payload.issuance_id);
         if(payload.issuance_id !== null && payload.issuance_id  !== undefined && payload.issuance_id !== ""){
+            console.log("Issuance ID:", payload.issuance_id);
             if(payload.issuance_id == 1){
                 state.dataBlue.penerbitanterakhir = 'Daftar Baru';
             }else if(payload.issuance_id == 2){
