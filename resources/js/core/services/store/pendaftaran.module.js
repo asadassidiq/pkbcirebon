@@ -1323,7 +1323,7 @@ export const mutations = {
         }
         }
         if (payload.kelasjalan_id !== null && payload.kelasjalan_id !== undefined && payload.kelasjalan_id !== "") {
-            var data = state.kelasjalan.find(function (item) {
+            var data = state.kelasjalans.find(function (item) {
                 return item.kelasjalan_id === payload.kelasjalan_id;
             });
             if (data) {
