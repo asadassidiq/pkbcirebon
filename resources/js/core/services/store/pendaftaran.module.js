@@ -1153,116 +1153,215 @@ export const mutations = {
                 bahan:state.pendaftaran.bahan,
         };
     },  
+    
     ASSIGN_FORMBULE(state, payload) {
-        state.pendaftaran.kodepenerbitans_id = payload.issuance_id,
-        state.pendaftaran.tglpendaftaran = payload.created_at,
-        state.pendaftaran.nouji= payload.exam_code;
-        state.pendaftaran.nama= payload.owner_name;
-        state.pendaftaran.alamat= payload.owner_address;
-        state.pendaftaran.noidentitaspemilik= payload.owner_nik;
-        state.pendaftaran.noregistrasikendaraan= payload.nonrkb;
-        state.pendaftaran.idmerek= payload.vehicle_brand_id;
-        state.pendaftaran.idtipe= payload.vehicle_varian_type_id;
-        state.pendaftaran.idvarian= payload.vehicle_varian_id;
-        state.pendaftaran.norangka= payload.norangka;
-        state.pendaftaran.nomesin= payload.nomesin;
-        state.pendaftaran.thpembuatan= payload.thpembuatan;
-        state.pendaftaran.idbahanbakar= payload.fuel_id;
-        state.pendaftaran.isisilinder= payload.isisilinder;
-        state.pendaftaran.dayamotorpenggerak= payload.dayamotorpenggerak;
-        state.pendaftaran.idjenis= payload.vehicle_type_id;
-        state.pendaftaran.idsubjenis= payload.vehicle_sub_id;
-        state.pendaftaran.jbb= payload.jbb;
+        state.dataBlue = {
+        nouji: payload.exam_code,
+        tgluji: payload.tgluji,
+        tglcreated: payload.created_at,
+        statuscetak: "",
+        penerbitanterakhir:"",
+        };
+        // state.pendaftaran.kodepenerbitans_id = payload.issuance_id,
+        // state.pendaftaran.tglpendaftaran = payload.created_at,
+        state.pendaftaran.nouji = payload.exam_code;
+        state.pendaftaran.nama = payload.owner_name;
+        state.pendaftaran.alamat = payload.owner_address;
+        state.pendaftaran.noidentitaspemilik = payload.owner_nik;
+        state.pendaftaran.noregistrasikendaraan = payload.nonrkb;
+        state.pendaftaran.idmerek = payload.vehicle_brand_id;
+        state.pendaftaran.idtipe = payload.vehicle_varian_type_id;
+        state.pendaftaran.idvarian = payload.vehicle_varian_id;
+        state.pendaftaran.norangka = payload.norangka;
+        state.pendaftaran.nomesin = payload.nomesin;
+        state.pendaftaran.thpembuatan = payload.thpembuatan;
+        state.pendaftaran.idbahanbakar = payload.fuel_id;
+        state.pendaftaran.isisilinder = payload.isisilinder;
+        state.pendaftaran.dayamotorpenggerak = payload.dayamotorpenggerak;
+        state.pendaftaran.idjenis = payload.vehicle_type_id;
+        state.pendaftaran.idsubjenis = payload.vehicle_sub_id;
+        state.pendaftaran.jbb = payload.jbb;
 
-        state.pendaftaran.nosertifikatreg= payload.certificate_number;
-        state.pendaftaran.tglsertifikatreg= payload.certificate_date;
-        state.pendaftaran.jbkb= payload.jbkb;
-        state.pendaftaran.jbi= payload.jbi;
-        state.pendaftaran.jbki= payload.jbki;
-        state.pendaftaran.mst= payload.mst;
-        state.pendaftaran.konfigurasisumburoda= payload.konfigurasisumburoda;
-        state.pendaftaran.ukuranban= payload.ukuranban;
-        state.pendaftaran.panjangkendaraan= payload.panjangkendaraan;
-        state.pendaftaran.lebarkendaraan= payload.lebarkendaraan;
-        state.pendaftaran.tinggikendaraan= payload.tinggikendaraa;
-        state.pendaftaran.panjangbakatautangki= payload.panjangbakatautangki;
-        state.pendaftaran.lebarbakatautangki= payload.lebarbakatautangki;
-        state.pendaftaran.tinggibakatautangki= payload.tinggibakatautangki;
-        state.pendaftaran.julurdepan= payload.julurdepan;
-        state.pendaftaran.julurbelakang= payload.julurbelakang;
-        state.pendaftaran.jaraksumbu1_2= payload.jaraksumbu1_2;
-        state.pendaftaran.jaraksumbu2_3= payload.jaraksumbu2_3;
-        state.pendaftaran.jaraksumbu3_4= payload.jaraksumbu3_4;
-        state.pendaftaran.dayaangkutorang= payload.dayaangkutorang;
-        state.pendaftaran.dayaangkutbarang= payload.dayaangkutbarang;
-        state.pendaftaran.idkelasjalan= payload.kelasjalan_id;
-        state.pendaftaran.beratkosong= payload.beratkosong;
-        if(payload.area_id !== null && payload.area_id  !== undefined && payload.area_id  !== ""){
-            var wilayah = state.kodewilayahs.find(function(item) {
-                return item.area_id === payload.area_id;
-            });
-            if (wilayah) {
-                state.pendaftaran.wilayah= wilayah.area_name;
-                state.pendaftaran.kodewilayah= wilayah.area_code;
-                state.pendaftaran.idkodewilayah= wilayah.area_id;
+        state.pendaftaran.nosertifikatreg = payload.certificate_number;
+        state.pendaftaran.tglsertifikatreg = payload.certificate_date;
+        state.pendaftaran.jbkb = payload.jbkb;
+        state.pendaftaran.jbi = payload.jbi;
+        state.pendaftaran.jbki = payload.jbki;
+        state.pendaftaran.mst = payload.mst;
+        state.pendaftaran.konfigurasisumburoda = payload.konfigurasisumburoda;
+        state.pendaftaran.ukuranban = payload.ukuranban;
+        state.pendaftaran.panjangkendaraan = payload.panjangkendaraan;
+        state.pendaftaran.lebarkendaraan = payload.lebarkendaraan;
+        state.pendaftaran.tinggikendaraan = payload.tinggikendaraa;
+        state.pendaftaran.panjangbakatautangki = payload.panjangbakatautangki;
+        state.pendaftaran.lebarbakatautangki = payload.lebarbakatautangki;
+        state.pendaftaran.tinggibakatautangki = payload.tinggibakatautangki;
+        state.pendaftaran.julurdepan = payload.julurdepan;
+        state.pendaftaran.julurbelakang = payload.julurbelakang;
+        state.pendaftaran.jaraksumbu1_2 = payload.jaraksumbu1_2;
+        state.pendaftaran.jaraksumbu2_3 = payload.jaraksumbu2_3;
+        state.pendaftaran.jaraksumbu3_4 = payload.jaraksumbu3_4;
+        state.pendaftaran.dayaangkutorang = payload.dayaangkutorang;
+        state.pendaftaran.dayaangkutbarang = payload.dayaangkutbarang;
+        state.pendaftaran.idkelasjalan = payload.kelasjalan_id;
+        state.pendaftaran.beratkosong = payload.beratkosong;
+
+        if (payload.area_id !== null && payload.area_id !== undefined && payload.area_id !== "") {
+        var wilayah = state.kodewilayahs.find(function (item) {
+            return item.area_id === payload.area_id;
+        });
+        if (wilayah) {
+            state.pendaftaran.wilayah = wilayah.area_name;
+            state.pendaftaran.kodewilayah = wilayah.area_code;
+            state.pendaftaran.idkodewilayah = wilayah.area_id;
+        }
+        }
+        if (payload.area_from_id !== null && payload.area_from_id !== undefined && payload.area_from_id !== "") {
+        var wilayah = state.kodewilayahs.find(function (item) {
+            return item.area_id === payload.area_from_id;
+        });
+        if (wilayah) {
+            state.pendaftaran.wilayahasal = wilayah.area_name;
+            state.pendaftaran.kodewilayahasal = wilayah.area_code;
+            state.pendaftaran.idkodewilayahasal = wilayah.area_id;
+        }
+        }
+        if (payload.vehicle_brand_id !== null && payload.vehicle_brand_id !== undefined && payload.vehicle_brand_id !== "") {
+        var data = state.mereks.find(function (item) {
+            return item.vehicle_brand_id === payload.vehicle_brand_id;
+        });
+        if (data) {
+            state.pendaftaran.merek = data.vehicle_brand_name;
+            state.pendaftaran.idmerek = data.vehicle_brand_id;
+        } else {
+                if(state.mereks.length > 0){
+                    state.pendaftaran.merek= "";
+                    state.pendaftaran.idmerek= "";
+                }
+        }
+        }
+        if (payload.vehicle_varian_type_id !== null && payload.vehicle_varian_type_id !== undefined && payload.vehicle_varian_type_id !== "") {
+        var data = state.tipes.find(function (item) {
+            return item.vehicle_varian_type_id === payload.vehicle_varian_type_id;
+        });
+        if (data) {
+            state.pendaftaran.tipe = data.vehicle_varian_type_name;
+            state.pendaftaran.idtipe = data.vehicle_varian_type_id;
+        } else {
+            if(state.tipes.length > 0){
+                state.pendaftaran.tipe= "";
+                state.pendaftaran.idtipe= "";
             }
         }
-        if(payload.area_from_id !== null && payload.area_from_id  !== undefined && payload.area_from_id  !== ""){
-            var wilayah = state.kodewilayahs.find(function(item) {
-                return item.area_id === payload.area_from_id;
-            });
-            if (wilayah) {
-                state.pendaftaran.wilayahasal= wilayah.area_name;
-                state.pendaftaran.kodewilayahasal= wilayah.area_code;
-                state.pendaftaran.idkodewilayahasal= wilayah.area_id;
+        }
+        if (payload.vehicle_varian_id !== null && payload.vehicle_varian_id !== undefined && payload.vehicle_varian_id !== "") {
+        var data = state.varians.find(function (item) {
+            return item.vehicle_varian_id === payload.vehicle_varian_id;
+        });
+        if (data) {
+            state.pendaftaran.varian = data.vehicle_varian_name;
+            state.pendaftaran.idvarian = data.vehicle_varian_id;
+        } else {
+            if(state.varians.length > 0){
+                state.pendaftaran.varian= "";
+                state.pendaftaran.idvarian= "";
             }
         }
-        if(payload.vehicle_brand_id !== null && payload.vehicle_brand_id  !== undefined && payload.vehicle_brand_id  !== ""){
-            var data = state.mereks.find(function(item) {
-                return item.vehicle_brand_id === payload.vehicle_brand_id;
-            });
-            if (data) {
-                state.pendaftaran.merek= data.vehicle_brand_name;
-                state.pendaftaran.idmerek= data.vehicle_brand_id;
-            }else{
-                state.pendaftaran.merek= "";
-                state.pendaftaran.idmerek= "";
-            }
         }
+        
         if(payload.vehicle_type_id !== null && payload.vehicle_type_id  !== undefined && payload.vehicle_type_id  !== ""){
-            var data = state.tipes.find(function(item) {
-                return item.vehicle_type_id === payload.vehicle_type_id;
+            var data = state.jenis.find(function(item) {
+                return (item.vehicle_type_id) === (payload.vehicle_type_id);
             });
             if (data) {
-                state.pendaftaran.tipe= data.vehicle_varian_type_name;
-                state.pendaftaran.idtipe= data.vehicle_varian_type_id;
+                state.pendaftaran.jenis= data.vehicle_type_name;
+                state.pendaftaran.idjenis= data.vehicle_type_id;
+                if(state.jenis.length > 0){
+                    const hasilFilter = state.subjenis.filter(f => [state.pendaftaran.idjenis].includes(f.vehicle_type_id));
+                    state.subjenis = hasilFilter;
+                }
             }else{
-                // state.pendaftaran.tipe= "";
-                // state.pendaftaran.idtipe= "";
+                state.pendaftaran.jenislama= payload.jenis;
+                if(state.jenis.length > 0){
+                    state.pendaftaran.jenis= "";
+                    state.pendaftaran.idjenis= "";
+                }
             }
+        state.dataBlue.statuscetak = 'Fullcycle';
+        }else{
+        state.dataBlue.statuscetak = 'Non-Fullcycle';
         }
-        if(payload.fuel_id !== null && payload.fuel_id  !== undefined && payload.fuel_id  !== ""){
-            var data = state.fuels.find(function(item) {
-                return item.fuel_id === payload.fuel_id;
+
+        if(payload.vehicle_sub_id !== null && payload.vehicle_sub_id  !== undefined && payload.vehicle_sub_id  !== ""){
+            var data = state.subjenis.find(function(item) {
+                return (item.vehicle_sub_id) === (payload.vehicle_sub_id);
             });
             if (data) {
-                state.pendaftaran.bahanbakar= data.fuel_name;
-                state.pendaftaran.idbahanbakar= data.fuel_id;
+                state.pendaftaran.subjenis= data.vehicle_sub_name;
+                state.pendaftaran.idsubjenis= data.vehicle_sub_id;
             }else{
-                state.pendaftaran.bahanbakar= "";
-                state.pendaftaran.idbahanbakar= "";
+                state.pendaftaran.jenislama= payload.jenis;
+                if(state.subjenis.length > 0){
+                    state.pendaftaran.subjenis= "";
+                    state.pendaftaran.idsubjenis= "";
+                }
             }
         }
-        if(payload.kelasjalan_id !== null && payload.kelasjalan_id  !== undefined && payload.kelasjalan_id  !== ""){
-            var data = state.kelasjalan.find(function(item) {
+
+        if (payload.fuel_id !== null && payload.fuel_id !== undefined && payload.fuel_id !== "" ) {
+        var data = state.fuels.find(function (item) {
+            return item.fuel_id === payload.fuel_id;
+        });
+        if (data) {
+            state.pendaftaran.bahanbakar = data.fuel_name;
+            state.pendaftaran.idbahanbakar = data.fuel_id;
+        } else {
+            if(state.bahanbakars.length > 0){
+            state.pendaftaran.bahanbakar = "";
+            state.pendaftaran.idbahanbakar = "";
+            }
+        }
+        }
+        if (payload.kelasjalan_id !== null && payload.kelasjalan_id !== undefined && payload.kelasjalan_id !== "") {
+            var data = state.kelasjalan.find(function (item) {
                 return item.kelasjalan_id === payload.kelasjalan_id;
             });
             if (data) {
-                state.pendaftaran.kelasjalanterendah= data.kelasjalan_name;
-                state.pendaftaran.idkelasjalan= data.kelasjalan_id;
+                state.pendaftaran.kelasjalanterendah = data.kelasjalan_name;
+                state.pendaftaran.idkelasjalan = data.kelasjalan_id;
+            } else {
+                if(state.kelasjalans.length > 0){
+                    state.pendaftaran.kelasjalanterendah= "";
+                    state.pendaftaran.idkelasjalanterendah= "";
+                }
+            }
+        }
+        
+        if(payload.issuance_id !== null && payload.issuance_id  !== undefined && payload.issuance_id !== ""){
+            if(payload.issuance_id == 1){
+                state.dataBlue.penerbitanterakhir = 'Daftar Baru';
+            }else if(payload.issuance_id == 2){
+                state.dataBlue.penerbitanterakhir = 'Perpanjangan';
+            }else if(payload.issuance_id == 3){
+                state.dataBlue.penerbitanterakhir = 'Rusak';
+            }else if(payload.issuance_id == 4){
+                state.dataBlue.penerbitanterakhir = 'Hilang';
+            }else if(payload.issuance_id == 5 && state.dataBlue.statuscetak == 'Non-Fullcycle'){
+                state.dataBlue.penerbitanterakhir = 'Numpang Uji Masuk';
+            }else if(payload.issuance_id == 6 && state.dataBlue.statuscetak == 'Non-Fullcycle'){
+                state.dataBlue.penerbitanterakhir = 'Mutasi Masuk';
+            }else if(payload.issuance_id == 5 && state.dataBlue.statuscetak == 'Fullcycle'){
+                state.dataBlue.penerbitanterakhir = 'Numpang Uji Keluar';
+            }else if(payload.issuance_id == 6 && state.dataBlue.statuscetak == 'Fullcycle'){
+                state.dataBlue.penerbitanterakhir = 'Mutasi Keluar';
+            }else if(payload.issuance_id == 7 && state.dataBlue.statuscetak == 'Fullcycle'){
+                state.dataBlue.penerbitanterakhir = 'Numpang Uji Masuk';
+            }else if(payload.issuance_id == 8 && state.dataBlue.statuscetak == 'Fullcycle'){
+                state.dataBlue.penerbitanterakhir = 'Mutasi Masuk';
+            }else if(payload.issuance_id == 9 && state.dataBlue.statuscetak == 'Fullcycle'){
+                state.dataBlue.penerbitanterakhir = 'Rubah Bentuk';
             }else{
-                state.pendaftaran.kelasjalanterendah= "";
-                state.pendaftaran.idkelasjalan= "";
+                state.dataBlue.penerbitanterakhir = '';
             }
         }
     },
