@@ -1526,7 +1526,6 @@ export default {
   data() {
     return {
       disabled1: 1,
-      showModal:false,
       disabled2: 1,
       isActive: true,
       statuschecking: true,
