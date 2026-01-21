@@ -1230,7 +1230,7 @@ export const mutations = {
             }
         }
         if(payload.vehicle_type_id !== null && payload.vehicle_type_id  !== undefined && payload.vehicle_type_id  !== ""){
-            var data = state.tipeBlue.find(function(item) {
+            var data = state.tipes.find(function(item) {
                 return item.vehicle_type_id === payload.vehicle_type_id;
             });
             if (data) {
