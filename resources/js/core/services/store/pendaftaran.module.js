@@ -1977,7 +1977,7 @@ export const actions = {
         });
     },
     async checkLastExam({ commit, state }, payload) {
-    return await PendaftaranService.checkLastExam(state.identitaskendaraan.nouji)
+    return await PendaftaranService.checkLastExam(state.pendaftaran.nouji)
         .then((response) => {
         commit("ASSIGN_RESPONBLUE", response.data.result);
         if (response.data.result.status) {
