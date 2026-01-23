@@ -384,8 +384,7 @@
                     </div>
                   </div>
 
-                  <div class="col-sm-12"
-                    v-if="pendaftaran.kodepenerbitans_id == '3' || pendaftaran.kodepenerbitans_id == '5' || pendaftaran.kodepenerbitans_id == '6' || pendaftaran.kodepenerbitans_id == '9' || pendaftaran.kodepenerbitans_id == '10'">
+                  <div class="col-sm-12">
                     <a href="javascript:void(0)" @click="getCheckUji"
                       class="btn btn-sm btn-light-success font-weight-bold" style="width: 100%;">
                       <i class="flaticon2-search"></i> Cek Data
