@@ -322,7 +322,7 @@ export default {
         this.CLEAR_FORM();
         this.getKuota();
         this.getCatatanPos(this.$route.params.id);
-        this.Kodewilayahs();
+        this.getKodewilayahs();
     },
     components: {
         datepicker,

@@ -280,7 +280,7 @@ class VerifRepository
 
             $masaberlakuuji = $data->masaberlakuuji;
 
-            if ($kode == '1' || $kode == '2') {
+            if ($kode == '1' || $kode == '2' || $kode == '8') {
                 $kodewilayahasal = env('APP_KODEWILAYAH');
                 $kodewilayah = env('APP_KODEWILAYAH');
             } elseif ($kode == '5') {

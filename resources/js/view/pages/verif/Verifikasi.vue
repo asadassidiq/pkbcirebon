@@ -178,9 +178,10 @@ export default {
         this.getIdentitaskendaraan(this.$route.params.id);
         this.editVerif2(this.$route.params.id);
         this.user = this.$store.state.profile.user_personal_info;
+        this.getKodewilayahs();
     },
     methods: {
-        ...mapActions("verif", ["getIdentitaskendaraan", "editVerif2","submitApprove","submitApproving"]),
+        ...mapActions("verif", ["getIdentitaskendaraan", "editVerif2","submitApprove","submitApproving","checkLastExam","getKodewilayahs"]),
         submit(){
             if(this.user.role == 'KEPALA'){
                 if(this.surat.passkey.length == 0){
@@ -223,6 +224,23 @@ export default {
         },
         togglePass() {
             this.showPass = !this.showPass;
+        },
+        showModal() {
+            this.$refs['modalBlue'].show()
+        },
+        getCheckUji() {
+            this.checkLastExam(this.identitaskendaraan.nouji).then(() => {
+                if (this.responeBlue.status) {
+                    this.showModal();
+                } else {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: this.responeBlue.message,
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+                }
+            });
         }
     },
     computed: {
@@ -230,6 +248,8 @@ export default {
         ...mapState({
             identitaskendaraan: state => state.verif.identitaskendaraan,
             surat: state => state.verif.surat,
+            dataBlue: state => state.verif.dataBlue,
+            responeBlue: state => state.verif.responeBlue,
         }),
     },
     components: {
