@@ -246,7 +246,9 @@ class VerifRepository
         if ($data) {
             if ($data->kodepenerbitans_id== '7' || $data->kodepenerbitans_id== '3' || $data->kodepenerbitans_id== '4') {
                 $kode = $this->model->select('kodepenerbitans_id','tglpendaftaran')->join('pendaftarans','laikjalan.pendaftaran_id','=','pendaftarans.id')->where('identitaskendaraan_id',$data->identitaskendaraan_id)->where('pendaftarans.kodepenerbitans_id','!=','7')->where('pendaftarans.kodepenerbitans_id','!=','3')->where('pendaftarans.kodepenerbitans_id','!=','4')->where('pendaftarans.kodepenerbitans_id','!=','9')->where('pendaftarans.kodepenerbitans_id','!=','10')->orderBy('pendaftarans.id','DESC')->limit(1)->first();
-                $tglpendaftaran = $kode->tglpendaftaran;
+                if($kode){
+                    $tglpendaftaran = $kode->tglpendaftaran;
+                }
                 if($data->kodepenerbitans_id== '3' || $data->kodepenerbitans_id== '4'){
                     $kode = $data->kodepenerbitans_id;
                 }else{

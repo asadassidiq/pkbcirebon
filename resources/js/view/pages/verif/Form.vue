@@ -284,9 +284,6 @@ export default {
                 this.$router.push({ name: "verif.data" });
             });
         },
-        showModal() {
-            this.$refs['modalBlue'].show()
-        },
         printsktl(id) {
             if (this.sktl == 0) {
                 window.open(
@@ -299,6 +296,9 @@ export default {
                     "_blank",
                 );
             }
+        },
+        showModal() {
+            this.$refs['modalBlue'].show()
         },
         getCheckUji() {
             this.checkLastExam(this.identitaskendaraan.nouji).then(() => {
