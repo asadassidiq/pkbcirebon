@@ -266,13 +266,6 @@ class VerifRepository
                 }
             }
 
-            if(is_null($data->tglsertifikatreg) || empty($data->tglsertifikatreg)){
-                $tglsertifikatreg = $tgluji;
-            }else{
-                $tglsertifikatreg = date_create($data->tglsertifikatreg);
-                $tglsertifikatreg = date_format($tglsertifikatreg, "dmY");
-            }
-
             $sixMonthsAgo = (new DateTime())->sub(new DateInterval('P6M'));
 
             $tglPengujian = new DateTime($tglpendaftaran);
@@ -341,10 +334,46 @@ class VerifRepository
             } else {
                 $iddirektur = $iddirektur->idx;
             }
-            if (is_null($data->nosertifikatreg) || empty($data->nosertifikatreg)) {
-                $nosrut = '0';
-            } else {
+            
+            if($data->thpembuatan < 2019)
+            {
+                if (is_null($data->nosertifikatreg) || empty($data->nosertifikatreg) || $data->nosertifikatreg == '-') {
+                    $nosrut = '0';
+                } else {
+                    $nosrut = $data->nosertifikatreg;
+                }
+
+                if (is_null($data->tglsertifikatreg) || empty($data->tglsertifikatreg) || $data->tglsertifikatreg == '0000-00-00' || !$this->isValidDate($data->tglsertifikatreg)) {
+                    $tglsrut = $data->thpembuatan.'-01-01';
+                } else {
+                    $tglsrut = $data->tglsertifikatreg;
+                }
+            }else{
                 $nosrut = $data->nosertifikatreg;
+                $tglsrut = $data->tglsertifikatreg;
+            }
+
+            if(is_null($data->tglsertifikatreg) || empty($data->tglsertifikatreg)){
+                $tglsrut = $tgluji;
+            }else{
+                $tglsertifikatreg = date_create($tglsrut);
+                $tglsrut = date_format($tglsertifikatreg, "dmY");
+            }
+
+            if($this->isValidDate($tglsrut)){
+                $tglsertifikatreg = date_create($tglsrut);
+                $tglsrut = date_format($tglsertifikatreg, "dmY");
+            }
+
+            $date = DateTime::createFromFormat('Y-m-d', $tglsrut);
+            $validYmd = $date && $date->format('Y-m-d') === $tglsrut;
+
+            if ($validYmd) {
+                $tglsrut = $date->format('dmY');
+            }
+
+            if($data->tgl_registrasikendaraan == '0000-00-00 00:00:00' || strpos($data->tgl_registrasikendaraan, '0000') !== false){
+                $data->tgl_registrasikendaraan = null;
             }
 
             if($data){
@@ -421,8 +450,8 @@ class VerifRepository
                     'nama'              => $data->nama,
                     'alamat'            => $alamatFull,
                     'noidentitaspemilik' => $data->noidentitaspemilik,
-                    'nosertifikatreg'   => $data->nosertifikatreg,
-                    'tglsertifikatreg'      => $tglsertifikatreg,
+                    'nosertifikatreg'   => $nosrut,
+                    'tglsertifikatreg'      => $tglsrut,
                     'nosuratkehilangan'     => $data->nosuratkehilangan,
                     'noregistrasikendaraan' => $data->noregistrasikendaraan,
                     'tgl_registrasikendaraan'=> $data->tgl_registrasikendaraan ?? null,
@@ -471,6 +500,7 @@ class VerifRepository
                     'jaraksumbu1_2'         => $data->jaraksumbu1_2 ?: 0,
                     'jaraksumbu2_3'         => $data->jaraksumbu2_3 ?: 0,
                     'jaraksumbu3_4'         => $data->jaraksumbu3_4 ?: 0,
+                    'jaraksumbu4_5'         => $data->jaraksumbu4_5 ?: 0,
                     'jaraksumbu5_6'         => $data->jaraksumbu5_6 ?: 0,
                     'jaraksumbu6_7'         => $data->jaraksumbu6_7 ?: 0,
                     'jaraksumbu7_8'         => $data->jaraksumbu7_8 ?: 0,
@@ -593,8 +623,8 @@ class VerifRepository
                 $uji->nama              = $data->nama;
                 $uji->alamat            = $alamatFull;
                 $uji->noidentitaspemilik = $data->noidentitaspemilik;
-                $uji->nosertifikatreg   = $data->nosertifikatreg;
-                $uji->tglsertifikatreg      = $data->tglsertifikatreg;
+                $uji->nosertifikatreg   = $nosrut;
+                $uji->tglsertifikatreg      = $tglsrut;
                 $uji->nosuratkehilangan     = $data->nosuratkehilangan;
                 $uji->noregistrasikendaraan = $data->noregistrasikendaraan;
                 $uji->tgl_registrasikendaraan = $data->tgl_registrasikendaraan ?? null;
@@ -624,8 +654,6 @@ class VerifRepository
                 $uji->vehicle_varian_id     = $data->idvarian;
                 $uji->fuel_id               = $data->idbahanbakar;
                 $uji->jbi                   = $data->jbi ?: 0;
-                $uji->nosertifikatreg       = $data->nosertifikatreg;
-                $uji->tglsertifikatreg      = $tglsertifikatreg;
                 $uji->jbkb                  = $data->jbkb ?: 0;
                 $uji->jbki                  = $data->jbki ?: 0;
                 $uji->mst                   = $data->mst ?: 0;
@@ -648,6 +676,7 @@ class VerifRepository
                 $uji->jaraksumbu5_6         = $data->jaraksumbu5_6 ?: 0;
                 $uji->jaraksumbu6_7         = $data->jaraksumbu6_7 ?: 0;
                 $uji->jaraksumbu7_8         = $data->jaraksumbu7_8 ?: 0;
+                $uji->jaraksumbu8_9         = $data->jaraksumbu8_9 ?: 0;
                 $uji->jaraksumbu9_10         = $data->jaraksumbu9_10 ?: 0;
                 $uji->jaraksumbu10_11         = $data->jaraksumbu10_11 ?: 0;
                 $uji->jaraksumbu11_12         = $data->jaraksumbu11_12 ?: 0;
@@ -1019,5 +1048,11 @@ class VerifRepository
         $delete = $this->model->where('uuid', $id);
         $delete->delete();
         return $delete;
+    }
+
+    function isValidDate($date, $format = 'Y-m-d')
+    {
+        $d = DateTime::createFromFormat($format, $date);
+        return $d && $d->format($format) === $date;
     }
 }
