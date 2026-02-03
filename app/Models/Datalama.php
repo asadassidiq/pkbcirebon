@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Datalama extends Model
 {
     use HasFactory;
-    protected $table = 'datalama';
+    protected $table = 'datapengujian';
+    protected $primaryKey = 'idx';
+    public $timestamps = false;
     protected $guarded = [];
     
 }

@@ -198,12 +198,12 @@ class PendaftaranService
                         $pendaftaran['posisi'] = '1';
                         $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
                     }
-                }  elseif ($pendaftaran['kodepenerbitans_id'] == '9' || $pendaftaran['kodepenerbitans_id'] == '10') {
+                } elseif ($pendaftaran['kodepenerbitans_id'] == '9' || $pendaftaran['kodepenerbitans_id'] == '10') {
                     $pendaftaran['foto'] = null;
                     $pendaftaran['posisi'] = '0';
                     $pendaftaran['approved'] = '0';
                     $pendaftaran['identitaskendaraan_id'] = $dataIden['id'];
-                }   elseif ($pendaftaran['kodepenerbitans_id'] == '8') {
+                } elseif ($pendaftaran['kodepenerbitans_id'] == '8') {
                     $pendaftaran['foto'] = 0;
                     $pendaftaran['posisi'] = '0';
                     $pendaftaran['approved'] = '0';

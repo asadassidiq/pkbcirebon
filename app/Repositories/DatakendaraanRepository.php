@@ -16,7 +16,7 @@ use App\Models\Bc_Tipe;
 use App\Models\Bahanbakar;
 use App\Models\Datapengujian;
 use App\Models\JenisModel;
-use App\Models\Pengujian;
+use App\Models\Datalama;
 use App\Models\TamanKendaraan;
 use App\Models\LaikJalan;
 use App\Models\Jenis;
@@ -463,98 +463,13 @@ class DatakendaraanRepository
 
   public function updateData()
   {
-    $pendaftaran = Pendaftaran::Join('pengujians', 'pengujians.pendaftaran_id', 'pendaftarans.id')->get();
-    foreach ($pendaftaran as $pend) {
-      $pendaftaran = array(
-        'uuid' => '',
-        'identitaskendaraan_id' => $pend->identitaskendaraan_id,
-        'idx'   => $pend->idx,
-        'kodepenerbitans_id'   => $pend->kodepenerbitans_id,
-        'tglpendaftaran'    => $pend->tglpendaftaran,
-        'tglbayar'  => $pend->tglbayar,
-        'namapemohon'   => $pend->namapemohon,
-        'alamatpemohon' => $pend->alamatpemohon,
-        'notelp'    => $pend->notelp,
-        'status'    => $pend->status,
-        'verif'     => '1',
-        'pos1'      => $pend->pos1,
-        'pos2'      => $pend->pos2,
-        'user_pos1' => $pend->petugaspos1,
-        'user_pos2' => $pend->petugaspos2,
-      );
-      $dataPend = Pendaftaran::create($pendaftaran);
-      if ($dataPend) {
-        if ($pend->masaberlakuuji) {
-          $masaberlakuuji = date_create($pend->masaberlakuuji);
-          $masaberlakuuji = date_format($masaberlakuuji, "dmY");
-        } else {
-          $masaberlakuuji = '';
-        }
-        $laik  = array(
-          'pendaftaran_id'    => $pend->pendaftaran_id,
-          'alatuji_emisiasapbahanbakarsolar' => $pend->alatuji_emisiasapbahanbakarsolar,
-          'alatuji_emisicobahanbakarbensin'  => $pend->alatuji_emisicobahanbakarbensin,
-          'alatuji_emisicobahanbakarbensin'  => $pend->alatuji_emisicobahanbakarbensin,
-          'alatuji_remutamatotalgayapengereman'   => $pend->alatuji_remutamatotalgayapengereman,
-          'alatuji_remutamaselisihgayapengeremanrodakirikanan1'   => $pend->alatuji_remutamaselisihgayapengeremanrodakirikanan1,
-          'alatuji_remutamaselisihgayapengeremanrodakirikanan2'   => $pend->alatuji_remutamaselisihgayapengeremanrodakirikanan2,
-          'alatuji_remutamaselisihgayapengeremanrodakirikanan3'   => $pend->alatuji_remutamaselisihgayapengeremanrodakirikanan3,
-          'alatuji_remutamaselisihgayapengeremanrodakirikanan4'   => $pend->alatuji_remutamaselisihgayapengeremanrodakirikanan4,
-          'alatuji_remparkirtangan'   => $pend->alatuji_remparkirtangan,
-          'alatuji_remparkirkaki' => $pend->alatuji_remparkirkaki,
-          'alatuji_kincuprodadepan'   => $pend->alatuji_kincuprodadepan,
-          'alatuji_tingkatkebisingan' => $pend->alatuji_tingkatkebisingan,
-          'alatuji_lampuutamakekuatanpancarlampukanan'    => $pend->alatuji_lampuutamakekuatanpancarlampukanan,
-          'alatuji_lampuutamakekuatanpancarlampukiri' => $pend->alatuji_lampuutamakekuatanpancarlampukiri,
-          'alatuji_lampuutamapenyimpanganlampukanan'  => $pend->alatuji_lampuutamapenyimpanganlampukanan,
-          'alatuji_lampuutamapenyimpanganlampukiri'   => $pend->alatuji_lampuutamapenyimpanganlampukiri,
-          'alatuji_penunjukkecepatan' => $pend->alatuji_penunjukkecepatan,
-          'alatuji_kedalamanalurban' => $pend->alatuji_kedalamanalurban,
-          'tgluji'   => $pend->tgluji,
-          'masaberlakuuji' => $masaberlakuuji,
-          'statuslulusuji'    => $pend->statuslulusuji,
-          'idpenguji' => $pend->idpenguji,
-          'gayaremkiri1' => $pend->gayaremkiris1,
-          'gayaremkiri2' => $pend->gayaremkiris2,
-          'gayaremkiri3' => $pend->gayaremkiris3,
-          'gayaremkiri4' => $pend->gayaremkiris4,
-          'gayaremkanan1' => $pend->gayaremkanans1,
-          'gayaremkanan2' => $pend->gayaremkanans2,
-          'gayaremkanan3' => $pend->gayaremkanans3,
-          'gayaremkanan4' => $pend->gayaremkanans4,
-        );
-        $dataLaik = LaikJalan::create($laik);
-
-        $lastTaman = TamanKendaraan::orderBy('tanggal', 'DESC')->first();
-        $checkTaman = TamanKendaraan::where('tanggal', $pend->tglpendaftaran)->first();
-        if ($pend->kodepenerbitans_id == '1' || $pend->kodepenerbitans_id == '6') {
-          if ($checkTaman) {
-            $upTaman = $checkTaman;
-            $upTaman->total = (int)$checkTaman->total + 1;
-            $upTaman->masuk = (int)$checkTaman->masuk + 1;
-            $upTaman->save();
-          } else {
-            $inTaman = TamanKendaraan::Create([
-              'total' => (int)$lastTaman->total + 1,
-              'masuk' => 1,
-              'keluar' => 0,
-              'tanggal' => $pend->tglpendaftaran,
-            ]);
-          }
-        }
-        $now = date('Y-m-d');
-        if ($pend->masaberlakuuji <= $now) {
-          $stskend = '0';
-        } elseif ($pend->masaberlakuuji >= $now) {
-          $stskend = '1';
-        }
-        if ($pend->kodepenerbitans_id == '5') {
-          $stskend = '2';
-        }
-        $Iden = Identitaskendaraan1::where('id', $pend->identitaskendaraan_id)->first();
-        if ($Iden) {
-          $Iden->statuskendaraan = $stskend;
-          $Iden->save();
+    $datalama = Datalama::all();
+    foreach ($datalama as $kend) {
+      $check = Identitaskendaraan::where('nouji', $kend->nouji)->first();
+      if ($check) {
+        if($check->idmerek == null || $check->idmerek == ''){
+          $check->mst = $kend->mst;
+          $check->save();
         }
       }
     }

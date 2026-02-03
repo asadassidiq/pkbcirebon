@@ -181,7 +181,7 @@ class DatakendaraanService
 
     public function updateData()
     {
-        return $this->repoDatakendaraan->updateData10();
+        return $this->repoDatakendaraan->updateData();
     }
 
     public function updateData2()
