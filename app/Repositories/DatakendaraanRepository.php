@@ -468,8 +468,11 @@ class DatakendaraanRepository
       $check = Identitaskendaraan::where('nouji', $kend->nouji)->first();
       if ($check) {
         // if($check->idmerek == null || $check->idmerek == ''){
-          $check->mst = $kend->mst;
-          $check->save();
+          $datakendaraan = Datakendaraan::where('identitaskendaraan_id', $check->id)->first();
+          if($datakendaraan){
+            $datakendaraan->mst = $kend->mst;
+            $datakendaraan->save();
+          }
         // }
       }
     }
