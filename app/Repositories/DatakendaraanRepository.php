@@ -467,10 +467,10 @@ class DatakendaraanRepository
     foreach ($datalama as $kend) {
       $check = Identitaskendaraan::where('nouji', $kend->nouji)->first();
       if ($check) {
-        if($check->idmerek == null || $check->idmerek == ''){
+        // if($check->idmerek == null || $check->idmerek == ''){
           $check->mst = $kend->mst;
           $check->save();
-        }
+        // }
       }
     }
   }
