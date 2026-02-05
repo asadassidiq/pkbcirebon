@@ -463,6 +463,7 @@ class DatakendaraanRepository
 
   public function updateData()
   {
+    $no = 0;
     $datalama = Datalama::all();
     foreach ($datalama as $kend) {
       $check = Identitaskendaraan::where('nouji', $kend->nouji)->first();
@@ -472,10 +473,12 @@ class DatakendaraanRepository
           if($datakendaraan){
             $datakendaraan->mst = $kend->mst;
             $datakendaraan->save();
+            $no++;
           }
         // }
       }
     }
+    return $no;
   }
 
   public function updateData101()
