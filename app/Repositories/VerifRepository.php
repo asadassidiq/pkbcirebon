@@ -442,6 +442,16 @@ class VerifRepository
                 $belakang = null;
                 $kiri = null;
             }
+
+            if (!empty($data->tgl_registrasikendaraan)) {
+                $tglstnk = date_create($data->tgl_registrasikendaraan);
+                $batas   = (new DateTime())->modify('-13 days');
+                if ($tglstnk < $batas) {
+                    if($kode == '1'){
+                        $kode = '2';
+                    }
+                }
+            }
             $alatuji_remparkirtotalgayapengereman = (int)$data->alatuji_gayapengeremanparkirkiri+(int)$data->alatuji_gayapengeremanparkirkanan;
             if (!$data->idx) {
                 $uji = Datapengujian::Create([
