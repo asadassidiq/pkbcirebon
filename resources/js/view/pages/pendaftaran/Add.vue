@@ -145,8 +145,8 @@
                     v-if="pendaftaran.kodepenerbitans_id == '9' || pendaftaran.kodepenerbitans_id == '10'">
                     <div class="form-group">
                       <label> Tujuan</label>
-                      <vSelect label="nama" :options="kotas" v-model="pendaftaran.tujuan" @input="setKotaTujuan">
-                      </vSelect>
+                      <vSelect label="area_name" ref="tujuan" :options="kodewilayahs"
+                        v-model="pendaftaran.tujuan" @input="setKotaTujuan"></vSelect>
                     </div>
                   </div>
                   <div class="col-sm-8" v-if="pendaftaran.kodepenerbitans_id == 9">
@@ -208,130 +208,6 @@
                       <label>Tanggal Terakhir Uji</label>
                       <b-form-datepicker id="tglterakhiruji" v-model="pendaftaran.tglterakhiruji" locale="id"
                         :disabled="true"></b-form-datepicker>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == '12'">
-                    <div class="form-group">
-                      <label> No Surat dari Pemohon</label>
-                      <div class="form-group">
-                        <input type="text" class="form-control  form-control-lg" v-model="pendaftaran.nosuratdari"
-                          placeholder="No Surat Dari" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id > 10">
-                    <div class="form-group">
-                      <label> No Uji</label>
-                      <input type="text" class="form-control  form-control-lg text-uppercase" name="nouji"
-                        placeholder="No Uji" @change="caridata()" v-model="pendaftaran.nouji"
-                        v-if="pendaftaran.kodepenerbitans_id == 12" />
-                      <input type="text" class="form-control  form-control-lg text-uppercase" name="nouji"
-                        placeholder="No Uji" v-else v-model="pendaftaran.nouji" />
-                      <p class="text-danger" v-if="errors.nouji">{{ errors.nouji[0] }}</p>
-                    </div>
-                  </div>
-                  <div class="col-sm-4"
-                    v-if="pendaftaran.kodepenerbitans_id == '12' || pendaftaran.kodepenerbitans_id == '11'">
-                    <div class="form-group">
-                      <label>No Kendaraan</label>
-                      <input type="text" class="form-control  form-control-lg text-uppercase"
-                        name="noregistrasikendaraan" placeholder=" No Kendaraan"
-                        v-model="pendaftaran.noregistrasikendaraan" />
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4"
-                    v-if="pendaftaran.kodepenerbitans_id == '11' || pendaftaran.kodepenerbitans_id == '12'">
-                    <div class="form-group">
-                      <label> Nama</label>
-                      <input type="text" class="form-control  form-control-lg" name="nama" placeholder="nama"
-                        v-model="pendaftaran.nama" />
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == '12'">
-                    <div class="form-group">
-                      <label> Alamat</label>
-                      <input type="text" class="form-control  form-control-lg" name="alamat" placeholder="alamat"
-                        v-model="pendaftaran.alamat" />
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == '12'">
-                    <div class="form-group">
-                      <label>No Mesin</label>
-                      <input type="text" class="form-control  form-control-lg" name="nomesin" placeholder="No Mesin"
-                        style="text-transform: uppercase;" v-model="pendaftaran.nomesin" />
-                    </div>
-                  </div>
-                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == '12'">
-                    <label>No Rangka</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control  form-control-lg" name="norangka"
-                        style="text-transform: uppercase;" ref="norangka" placeholder=" No Rangka"
-                        v-model="pendaftaran.norangka" />
-                      <span class="input-group-text" id="basic-addon2"><a href="javascript:void(0)"
-                          @click="getDataVTA(pendaftaran.norangka)"
-                          class="btn btn-sm btn-light-success font-weight-bold">
-                          <i class="flaticon2-search"></i> Cek Data
-                        </a></span>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == '11'">
-                    <div class="form-group">
-                      <label>Jenis <span class="text-danger" v-if="pendaftaran.jenislama">{{ pendaftaran.jenislama
-                          }}</span></label>
-                      <vSelect label="vehicle_type_name" ref="jenis" :options="jenis" v-model="pendaftaran.jenis"
-                        @input="setSubVehicle" :disabled="!jenis.length"></vSelect>
-                    </div>
-                  </div>
-                  <div class="col-sm-4" v-if="pendaftaran.kodepenerbitans_id == '11'">
-                    <div class="form-group">
-                      <label>Sub Jenis <span class="text-danger" v-if="pendaftaran.model">{{ pendaftaran.model
-                          }}</span></label>
-                      <vSelect label="vehicle_sub_name" ref="subjenis" :options="subjenis"
-                        v-model="pendaftaran.subjenis" @input="setSubVehicleid" :disabled="!subjenis.length"></vSelect>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4"
-                    v-if="pendaftaran.kodepenerbitans_id == '11' || pendaftaran.kodepenerbitans_id == '12'">
-                    <div class="form-group">
-                      <label>Merek<span class="text-danger" v-if="pendaftaran.mereklama">{{ pendaftaran.mereklama
-                          }}</span> </label>
-                      <vSelect label="vehicle_brand_name" ref="merek" :options="mereks" v-model="pendaftaran.merek"
-                        @input="setType" :disabled="!mereks.length"></vSelect>
-                    </div>
-                  </div>
-                  <div class="col-sm-4"
-                    v-if="pendaftaran.kodepenerbitans_id == '11' || pendaftaran.kodepenerbitans_id == '12'">
-                    <div class="form-group">
-                      <label>Tipe <span class="text-danger" v-if="pendaftaran.tipelama">{{ pendaftaran.tipelama
-                          }}</span></label>
-                      <vSelect label="vehicle_varian_type_name" ref="tipes" :options="tipes" v-model="pendaftaran.tipe"
-                        @input="setVarian" :disabled="!tipes.length"></vSelect>
-                    </div>
-                  </div>
-                  <div class="col-sm-4"
-                    v-if="pendaftaran.kodepenerbitans_id == '11' || pendaftaran.kodepenerbitans_id == '12'">
-                    <div class="form-group">
-                      <label> Kepada</label>
-                      <input type="text" class="form-control  form-control-lg" placeholder="Kepada"
-                        v-model="pendaftaran.kepada" />
-                      <p class="text-danger" v-if="errors.kepada">{{ errors.kepada[0] }}</p>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4"
-                    v-if="pendaftaran.kodepenerbitans_id == '12' || pendaftaran.kodepenerbitans_id == '11'">
-                    <div class="form-group">
-                      <label v-if="pendaftaran.kodepenerbitans_id == '11'">Tujuan Kab/Kota</label>
-                      <label v-else>Kab/Kota</label>
-                      <vSelect label="nama" :options="kotas" v-model="pendaftaran.tujuan" @input="setKotaTujuan">
-                      </vSelect>
                     </div>
                   </div>
 
@@ -1566,7 +1442,7 @@ export default {
       this.setNoSurat();
     },
     setKotaTujuan(value) {
-      this.pendaftaran.tujuan = value.nama
+      this.pendaftaran.tujuan = value.area_name
     },
     setKota(value) {
       this.pendaftaran.kota = value.nama
