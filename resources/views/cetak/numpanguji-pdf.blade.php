@@ -317,10 +317,6 @@
         </tr>
     </table>
 
-
-    <p><span style="margin-left: 20px">Sehubungan</span> dilakukan Mutasi Uji Kendaraan Bermotor 
-    ke Dinas Perhubungan {{ $kendaraan->tujuan }} dengan data kendaraan :</p>
-
     <p><span style="margin-left: 20px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
     menerima pelaksanaan uji berkala kendaraan bermotor dimaksud untuk 1 (satu) kali uji. Kemudian 
     hasil uji untuk dapat disampaikan kembali ke Dinas Perbungan {{ env('APP_KAB') }} {{ env('APP_WILAYAH') }} 
