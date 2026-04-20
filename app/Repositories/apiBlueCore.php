@@ -246,7 +246,11 @@ class apiBlueCore
         $url = $base_url . '?search=' . urlencode($search_query);
         $cookie_name = 'VTA-TOKEN';
         if (isset($_COOKIE[$cookie_name])) {
-            $token = $_COOKIE[$cookie_name];
+            // $token = $_COOKIE[$cookie_name];
+            $cookie_value = $this->getTokenVTASRUT();
+            setcookie($cookie_name, $cookie_value, time() + (332000), "/");
+            // Bearer Token
+            $token = $cookie_value;
         } else {
             $cookie_value = $this->getTokenVTASRUT();
             setcookie($cookie_name, $cookie_value, time() + (332000), "/");
@@ -291,7 +295,11 @@ class apiBlueCore
                 if($status == 401){
                     $cookie_name = 'VTA-TOKEN';
                     if (isset($_COOKIE[$cookie_name])) {
-                        $token = $_COOKIE[$cookie_name];
+                        // $token = $_COOKIE[$cookie_name];
+                        $cookie_value = $this->getTokenVTASRUT();
+                        setcookie($cookie_name, $cookie_value, time() + (332000), "/");
+                        // Bearer Token
+                        $token = $cookie_value; 
                     } else {
                         $cookie_value = $this->getTokenVTASRUT();
                         setcookie($cookie_name, $cookie_value, time() + (332000), "/");
@@ -325,10 +333,10 @@ class apiBlueCore
         $curl = curl_init();
         // Data yang akan dikirim dalam format JSON
             $data = json_encode([
-                "email" => "upt.pkbkotacirebon@gmail.com",
-                "password" => "7TUxgZJ#",
-                // "email" => "dishub@bantulkab.go.id",
-                // "password" => "28N81p5@Edu7",
+                // "email" => "upt.pkbkotacirebon@gmail.com",
+                // "password" => "7TUxgZJ#",
+                "email" => "dishub@bantulkab.go.id",
+                "password" => "28N81p5@Edu7",
             ]);
 
         // return $data;
@@ -337,7 +345,7 @@ class apiBlueCore
 
         // Set opsi cURL
         curl_setopt_array($curl, [
-            CURLOPT_URL => 'https://api-gateway.hubdat.dephub.go.id/dev/auth-service/auth/open/token',  // URL endpoint
+            CURLOPT_URL => 'https://api-gateway.hubdat.dephub.go.id/auth-service/auth/open/token',  // URL endpoint
             CURLOPT_RETURNTRANSFER => true,  // Agar hasil dikembalikan sebagai string, bukan langsung output
             CURLOPT_FOLLOWLOCATION => true,  // Ikuti redirect jika ada
             CURLOPT_HTTPHEADER => [
