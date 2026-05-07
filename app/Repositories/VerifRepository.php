@@ -279,7 +279,7 @@ class VerifRepository
                 $kodewilayahasal = env('APP_KODEWILAYAH');
                 $kodewilayah = env('APP_KODEWILAYAH');
             } elseif ($kode == '5') {
-                $daerah = Persuratan::select('tujuan')->where('pendaftaran_id', $id)->first();
+                $daerah = Persuratan::select('tujuan','kode')->where('pendaftaran_id', $id)->first();
                 if ($daerah) {
                     $kodewilayahasal = Kodewilayah::where('area_code',$daerah->kode)->first();
                     if($kodewilayahasal)
@@ -293,7 +293,7 @@ class VerifRepository
                 }
                 $kodewilayah = env('APP_KODEWILAYAH');
             } elseif ($kode == '6') {
-                $daerah = Persuratan::select('tujuan')->where('pendaftaran_id', $id)->first();
+                $daerah = Persuratan::select('tujuan','kode')->where('pendaftaran_id', $id)->first();
                 if ($daerah) {
                     $kodewilayahasal = Kodewilayah::where('area_code',$daerah->kode)->first();
                     if($kodewilayahasal)
