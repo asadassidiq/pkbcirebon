@@ -311,13 +311,11 @@ class VerifRepository
                 $kodewilayah = $data->kodewilayah;
             }
             
-            $idwilayahasal = Kodewilayah::select('area_id','area_name')->where('area_code', $kodewilayahasal)->first();
+            $idwilayahasal = Kodewilayah::select('area_id')->where('area_code', $kodewilayahasal)->first();
             if ($idwilayahasal) {
                 $idwilayahasal = $idwilayahasal->area_id;
-                $area_name = $idwilayahasal->area_name;
             } else {
                 $idwilayahasal = '59';
-                $area_name = '';
             }
 
             $idpetugas = $data->idpenguji;
@@ -658,7 +656,7 @@ class VerifRepository
                 $uji->kodewilayah           = $kodewilayah;
                 $uji->kodewilayahasal       = $kodewilayahasal;
                 $uji->area_from_id          = $idwilayahasal;
-                $uji->area_from_name        = $area_name;
+                $uji->area_from_name        = $kodewilayahasal;
                 $uji->vehicle_brand_id      = $data->idmerek;
                 $uji->vehicle_type_id       = $data->idjenis;
                 $uji->vehicle_sub_id        = $data->idsubjenis;
