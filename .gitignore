@@ -1,4 +1,8 @@
 /node_modules
+
+/public/normal_images
+/public/thumbnail_images
+/public/tmp_images
 /vendor
 /public
 
