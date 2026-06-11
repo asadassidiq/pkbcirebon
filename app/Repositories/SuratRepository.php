@@ -250,7 +250,7 @@ class SuratRepository
 
     public function getKodeWilayah($tujuan)
     {
-        $area = Kodewilayah::where('area_name','LIKE','%'.$tujuan.'%')->first();
+        $area = Kodewilayah::where('area_name',$tujuan)->first();
         if($area)
         {
             return $area->area_code;
