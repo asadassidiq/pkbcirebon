@@ -263,7 +263,7 @@
                 $alamat2 = ltrim(substr($alamat, $posisiPecah)); // hilangkan spasi awal
             }
         @endphp
-        <table style="width: 100%;margin-left:20px">
+        <table style="width: 100%;margin-left:20px;margin-top:-4px">
             <tr>
                 <td style="width: 27%">
                     <p>Nama Pemilik Kendaraan</p>
