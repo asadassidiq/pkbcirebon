@@ -292,7 +292,7 @@
             </tr>
         </table>
 
-        <p><span style="margin-left: 20px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
+        <p style="margin-top: -8px;"><span style="margin-left: 20px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
         menerima mutasi uji kendaraan bermotor sebagaimana dimaksud. Bersama ini terlampir berkas 
         kendaraan sebagai berikut :</p>
         <ol>
