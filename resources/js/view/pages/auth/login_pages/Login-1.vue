@@ -160,7 +160,6 @@ export default {
       state: "signin",
       loadingpage:false,
       showPassword: false,
-      siteKey:"6LcKZysrAAAAAM1wREmk-8xv88UIsNdclLnzd5zb",
       recaptchaSitekey:"",
       // siteKey:import.meta.env.RECAPTCHA_SITE_KEY,
       // Remove this dummy login info
