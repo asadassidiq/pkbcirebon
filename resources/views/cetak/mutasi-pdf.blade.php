@@ -193,7 +193,7 @@
             $alamat2 = ltrim(substr($alamat, $posisiPecah)); // hilangkan spasi awal
         }
     @endphp
-    <div style="margin-top:-20px">
+    <div style="margin-top:-15px">
         <p><span style="margin-left: 20px;">Berdasarkan</span> permohonan pemilik/kuasa kendaraan bermotor terkait permohonan Mutasi Uji
         Kendaraan Bermotor, Bersama ini kami sampaikan data kendaraan bermotor sebagai berikut : </p>
         <table style="width: 100%;margin-left:20px">
@@ -239,7 +239,7 @@
                 </td>
             </tr>
         </table>
-        <p><span style="margin-left: 20px">Untuk</span> dilakukan Mutasi Uji Kendaraan Bermotor 
+        <p style="margin-top: -15px;"><span style="margin-left: 20px">Untuk</span> dilakukan Mutasi Uji Kendaraan Bermotor 
         ke Dinas Perhubungan {{ $kendaraan->tujuan }} dengan data kendaraan :</p>
         @php
             $alamat = $kendaraan->alamatpemilikbaru;
