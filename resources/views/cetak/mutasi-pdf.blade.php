@@ -239,7 +239,7 @@
                 </td>
             </tr>
         </table>
-        <p style="margin-top: -8px;"><span style="margin-left: 20px">Untuk</span> dilakukan Mutasi Uji Kendaraan Bermotor 
+        <p style="margin-top: -5px;"><span style="margin-left: 20px">Untuk</span> dilakukan Mutasi Uji Kendaraan Bermotor 
         ke Dinas Perhubungan {{ $kendaraan->tujuan }} dengan data kendaraan :</p>
         @php
             $alamat = $kendaraan->alamatpemilikbaru;
@@ -292,7 +292,7 @@
             </tr>
         </table>
 
-        <p style="margin-top: -8px;"><span style="margin-left: 20px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
+        <p style="margin-top: -4px;"><span style="margin-left: 20px">Sehubungan</span> dengan hal diatas mohon kiranya untuk dapat 
         menerima mutasi uji kendaraan bermotor sebagaimana dimaksud. Bersama ini terlampir berkas 
         kendaraan sebagai berikut :</p>
         <ol>
