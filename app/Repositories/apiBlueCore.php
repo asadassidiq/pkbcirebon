@@ -34,6 +34,8 @@ class apiBlueCore
         
         // Data yang akan dikirim dalam format JSON
 
+        $time = 10;
+
         if($prefix == "varian"){
             $data = json_encode([
                 "token" => $token,
@@ -75,6 +77,7 @@ class apiBlueCore
                     "nouji" => $nouji
                 ]
             ]);
+            $time = 120;
         }elseif($prefix == "insertexam"){
             $data = json_encode([
                 "token" => $token,
@@ -85,6 +88,7 @@ class apiBlueCore
                     "area_code_tujuan" => $keyword
                 ]
             ]);
+            $time = 120;
         }elseif($prefix == "checkpengujiankeluar"){
             $data = json_encode([
                 "token" => $token,
@@ -94,6 +98,7 @@ class apiBlueCore
                     "statuspenerbitan" => (int)$search_by,
                 ]
             ]);
+            $time = 120;
         }else{
             $data = json_encode([
                 "token" => $token,
@@ -119,8 +124,8 @@ class apiBlueCore
             ],
             CURLOPT_POST => true,  // Gunakan metode POST
             CURLOPT_POSTFIELDS => $data,  // Data yang akan dikirim
-            CURLOPT_CONNECTTIMEOUT => 10, // timeout koneksi (detik)
-            CURLOPT_TIMEOUT => 10,        // timeout keseluruhan (detik)
+            CURLOPT_CONNECTTIMEOUT => $time, // timeout koneksi (detik)
+            CURLOPT_TIMEOUT => $time,        // timeout keseluruhan (detik)
         ]);
 
         // // Eksekusi request
