@@ -34,7 +34,7 @@ class apiBlueCore
         
         // Data yang akan dikirim dalam format JSON
 
-        $time = 10;
+        $time = 30;
 
         if($prefix == "varian"){
             $data = json_encode([
