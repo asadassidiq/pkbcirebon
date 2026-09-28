@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\IdentitasKendaraan;
+use App\Models\Identitaskendaraan;
 use Illuminate\Http\JsonResponse;
 
 class IntegrasiKendaraanController extends Controller
 {
     public function show(string $nouji): JsonResponse
     {
-        $kendaraan = IdentitasKendaraan::query()
+        $kendaraan = Identitaskendaraan::query()
             ->where('nouji', $nouji)
             ->first();
 
