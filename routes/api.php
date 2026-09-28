@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IntegrasiKendaraanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware([
+    'auth:sanctum',
+    'abilities:kendaraan:read',
+])->group(function () {
+
+    Route::get(
+        '/integrasi/kendaraan/{nouji}',
+        [IntegrasiKendaraanController::class, 'show']
+    );
+});
 
 Route::group(['namespace' => 'App\\Http\\Controllers\\Api'], function () {
     Route::post('/login', 'LoginController@index');
