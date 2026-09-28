@@ -64,7 +64,7 @@ class IntegrasiKendaraanController extends Controller
                         ->whereNotIn('kodepenerbitans_id', ['3', '4','9','10'])
                         ->orderBy('tglpendaftaran', 'desc')
                         ->first(); 
-                        
+
         if($masaBerlakuUji){
             date_default_timezone_set('Asia/Jakarta');
             $kendaraan->tglberlakuuji = date('d F Y',strtotime('+6 months', strtotime($masaBerlakuUji->tglpendaftaran)));
@@ -90,6 +90,7 @@ class IntegrasiKendaraanController extends Controller
     public function getKuota(Request $request): JsonResponse
     {
         $kuota = Kuota::query()
+                ->select('tanggal', 'kuotapagi', 'kuotasiang','tersediapagi','tersediasiang')
                 ->where('tanggal', '>=', date('Y-m-d'))
                 ->orderBy('tanggal', 'asc')
                 ->limit(7)
