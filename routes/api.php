@@ -29,11 +29,8 @@ Route::middleware([
     'auth:sanctum',
     'abilities:kendaraan:read',
 ])->group(function () {
-
-    Route::get(
-        '/integrasi/kendaraan/{nouji}',
-        [IntegrasiKendaraanController::class, 'show']
-    );
+    Route::get('/integrasi/kendaraan',[IntegrasiKendaraanController::class, 'show'] );
+    Route::get('/integrasi/kuota', [IntegrasiKendaraanController::class, 'getKuota']);
 });
 
 Route::group(['namespace' => 'App\\Http\\Controllers\\Api'], function () {
