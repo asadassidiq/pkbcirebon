@@ -19,4 +19,12 @@ class ApiClient extends Model
         'abilities' => 'array',
         'active' => 'boolean',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(
+            User::class,
+            'user_id'
+        );
+    }
 }

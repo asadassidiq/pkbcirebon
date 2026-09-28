@@ -74,13 +74,5 @@ class User extends Authenticatable
      */
     public function getJWTCustomClaims() {
         return [];
-    }    
-
-    public function user()
-    {
-        return $this->belongsTo(
-            User::class,
-            'user_id'
-        );
     }
 }
