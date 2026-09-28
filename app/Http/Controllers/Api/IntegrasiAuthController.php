@@ -16,12 +16,10 @@ class IntegrasiAuthController extends Controller
             'client_secret' => ['required', 'string'],
         ]);
 
-        $client = ApiClient::where(
-            'client_id',
-            $request->client_id
-        )
-        ->where('active', true)
-        ->first();
+        $client = ApiClient::with('user')
+            ->where('client_id', $request->client_id)
+            ->where('active', true)
+            ->first();
 
         if (!$client) {
             return response()->json([
