@@ -69,8 +69,8 @@ class IntegrasiKendaraanController extends Controller
             date_default_timezone_set('Asia/Jakarta');
             $tanggal = strtotime('+6 months', strtotime($masaBerlakuUji->tglpendaftaran));
             $kendaraan->tglberlakuuji = date('d', $tanggal) . ' ' .$this->MonthNameIndo((int) date('m', $tanggal)) . ' ' .date('Y', $tanggal);
-            if (strtotime($masaBerlakuUji->tglpendaftaran) < time()) {
-                $kendaraan->statuskendaraan = 'kadaluarsa';
+            if (strtotime($kendaraan->tglberlakuuji) < time()) {
+                $kendaraan->statuskendaraan = 'tidak aktif';
             }else{
                 $kendaraan->statuskendaraan = 'aktif';
             }
