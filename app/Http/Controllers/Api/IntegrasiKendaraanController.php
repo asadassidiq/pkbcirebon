@@ -68,6 +68,11 @@ class IntegrasiKendaraanController extends Controller
         if($masaBerlakuUji){
             date_default_timezone_set('Asia/Jakarta');
             $kendaraan->tglberlakuuji = date('d F Y',strtotime('+6 months', strtotime($masaBerlakuUji->tglpendaftaran)));
+            if (strtotime($kendaraan->tglberlakuuji) < time()) {
+                $kendaraan->statuskendaraan = 'kadaluarsa';
+            }else{
+                $kendaraan->statuskendaraan = 'aktif';
+            }
         }
 
         return response()->json([
@@ -82,7 +87,7 @@ class IntegrasiKendaraanController extends Controller
                 'model' => $kendaraan->model,
                 'peruntukan' => $kendaraan->peruntukan,
                 'masaberlakuuji' =>$kendaraan->tglberlakuuji,
-                // 'statuskendaraan' =>$kendaraan->statuskendaraan,
+                'statuskendaraan' =>$kendaraan->statuskendaraan,
             ],
         ]);
     }
