@@ -8,9 +8,55 @@ use App\Models\Pendaftaran;
 use App\Models\Kuota;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use App\Services\apiBlueCoreService;
 
 class IntegrasiKendaraanController extends Controller
 {
+
+    protected $apiBlueCoreService;
+
+    public function __construct(apiBlueCoreService $apiBlueCoreService)
+    {
+        $this->apiBlueCoreService = $apiBlueCoreService;
+    }
+
+    public function getDataUjiMasuk(Request $request): JsonResponse
+    {
+        $request->validate([
+            'nouji' => [
+                'required',
+                'string',
+            ],
+            'search_by' => [
+                'required',
+                'string',
+            ],
+        ]);
+
+        $nouji = strtoupper(
+            preg_replace(
+                '/[^A-Z0-9]/',
+                '',
+                $request->nouji
+            )
+        );
+
+        $search_by = strtoupper(
+            preg_replace(
+                '/[^A-Z0-9]/',
+                '',
+                $request->search_by
+            )
+        );
+
+        $data = $this->apiBlueCoreService->getDataUjiMasuk($nouji, $search_by);
+
+        return response()->json([
+            'success' => true,
+            'data' => $data,
+        ]);
+    }
+
     public function show(Request $request): JsonResponse
     {
         $request->validate([

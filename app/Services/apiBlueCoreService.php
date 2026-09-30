@@ -26,6 +26,13 @@ class apiBlueCoreService
         return $this->repoApi->getDataMaster($prefix,$id,$nouji,$search_by,$keyword);
     }
 
+    public function getDataUjiMasuk($nouji, $search_by){
+        $prefix = 'checkpengujiankeluar';
+        $id = '';
+        $keyword = '';
+        return $this->repoApi->getDataMaster($prefix,$id,$nouji,$search_by,$keyword);
+    }
+
     public function getDataVTASRUT(){
         $search = request()->s;
         if(substr($search, -1) == "/"){

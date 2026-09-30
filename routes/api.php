@@ -30,6 +30,7 @@ Route::middleware([
     'abilities:kendaraan:read',
 ])->group(function () {
     Route::get('/integrasi/kendaraan',[IntegrasiKendaraanController::class, 'show'] );
+    Route::get('/integrasi/data-uji-masuk', [IntegrasiKendaraanController::class, 'getDataUjiMasuk']);
     Route::get('/integrasi/kuota', [IntegrasiKendaraanController::class, 'getKuota']);
 });
 
