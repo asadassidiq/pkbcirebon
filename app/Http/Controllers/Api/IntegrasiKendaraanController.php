@@ -53,10 +53,22 @@ class IntegrasiKendaraanController extends Controller
             ->first();
 
         if (!$kendaraan) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Data kendaraan tidak ditemukan',
-            ], 404);
+            $kendaraan = Identitaskendaraan::query()
+                        ->where(
+                            'nouji',
+                            $noregistrasi
+                        )
+                        ->whereRaw(
+                            'RIGHT(norangka, 5) = ?',
+                            [$norangka]
+                        )
+                        ->first();
+                if(!$kendaraan) {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Data kendaraan tidak ditemukan',
+                    ], 404);
+                }
         }
 
         $masaBerlakuUji = Pendaftaran::query()
