@@ -100,6 +100,8 @@ class IntegrasiKendaraanController extends Controller
                 'tipe' => $kendaraan->tipe,
                 'jenis' => $kendaraan->jenis,
                 'model' => $kendaraan->model,
+                'norangka' => $kendaraan->norangka,
+                'nomesin' => $kendaraan->nomesin,
                 'peruntukan' => $kendaraan->peruntukan,
                 'masaberlakuuji' =>$kendaraan->tglberlakuuji,
                 'statuskendaraan' =>$kendaraan->statuskendaraan,
