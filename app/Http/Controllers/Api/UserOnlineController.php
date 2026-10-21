@@ -22,4 +22,22 @@ class UserOnlineController extends Controller
         $data = $this->service->getAll();
         return $this->returnJson($data);
     }
+
+    public function getDatakendaraanOnline(string $id)
+    {
+        $data = $this->service->getDatakendaraanOnline($id);
+        return $this->returnJson($data);
+    }
+
+    public function storeDatakendaraanOnline(Request $request)
+    {
+        $data = $this->service->storeDatakendaraanOnline($request->all());
+        return $this->returnJson($data);
+    }
+
+    public function updateDatakendaraanOnline(string $id, Request $request)
+    {
+        $data = $this->service->updateDatakendaraanOnline($id, $request->all());
+        return $this->returnJson($data);
+    }
 }

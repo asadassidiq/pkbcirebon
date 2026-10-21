@@ -1,1 +1,1 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{767:function(n,e,t){"use strict";t.r(e);var o={components:{}},u=t(8),s=Object(u.a)(o,(function(){return(0,this._self._c)("router-view")}),[],!1,null,null,null);e.default=s.exports}}]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{767:function(n,e,t){"use strict";t.r(e);var o={components:{}},u=t(7),s=Object(u.a)(o,(function(){return(0,this._self._c)("router-view")}),[],!1,null,null,null);e.default=s.exports}}]);

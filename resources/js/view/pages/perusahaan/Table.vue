@@ -61,7 +61,17 @@
                                 <td>{{ perusahaan.nama_badan_usaha }}</td>
                                 <td>{{ perusahaan.telepon }}</td>
                                 <td>{{ perusahaan.email }}</td>
-                                <td>1</td>
+                                <td>
+                                    {{ perusahaan.total_kendaraan }}
+                                    <router-link
+                                        :to="{
+                                            name: 'perusahaan.datakendaraan',
+                                            params: { id: perusahaan.uuid },
+                                        }"
+                                    >
+                                        <i class="fa fa-eye text-success"></i>
+                                    </router-link>
+                                </td>
                                 <td>
                                     <router-link
                                         :to="{
@@ -69,7 +79,7 @@
                                             params: { id: perusahaan.uuid },
                                         }"
                                     >
-                                        <i class="fa fa-edit text-success"></i>
+                                        <i class="fa fa-eye text-success"></i>
                                     </router-link>
                                     <a
                                         href="javascript:void(0)"

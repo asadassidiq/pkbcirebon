@@ -1,0 +1,165 @@
+<template>
+    <div class="card card-custom">
+        <div class="card-header">
+            <div class="card-title">
+                <span class="card-icon">
+                    <i class="flaticon2-truck text-primary"></i>
+                </span>
+                <h3 class="card-label">Data Kendaraan</h3>
+            </div>
+
+            <div class="card-toolbar">
+                <div class="row">
+                    <div class="col-10">
+                        <input
+                            class="form-control"
+                            type="text"
+                            placeholder="serach"
+                            v-model="search"
+                        />
+                    </div>
+                    <div class="col-1">
+                        <button
+                            type="button"
+                            class="btn btn-sm btn-icon btn-light-success mr-2"
+                            @click="openAddModal"
+                            title="Tambah data kendaraan"
+                        >
+                            <i class="flaticon2-add"></i>
+                        </button>
+                    </div>
+                    <div class="col-1">
+                        <a
+                            class="btn btn-sm btn-icon btn-light-info mr-2"
+                            @click.prevent="reload"
+                            title="reload data"
+                            ><i class="flaticon2-reload"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Content for data kendaraan goes here -->
+            table for displaying kendaraan data will go here.
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Plat Nomor</th>
+                        <th>Nomor Uji</th>
+                        <th>Modify</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(kendaraan, index) in kendaraanData" :key="kendaraan.id">
+                        <td>{{ index + 1 }}</td>
+                        <td>{{ kendaraan.plat_nomor }}</td>
+                        <td>{{ kendaraan.nomor_uji }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-icon btn-light-success" @click="editKendaraan(kendaraan.id)">
+                                <i class="fa fa-eye text-success"></i>
+                            </button>
+                            <button class="btn btn-sm btn-icon btn-light-danger" @click="deleteKendaraan(kendaraan.id)">
+                                <i class="fas fa-trash text-danger"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div
+            v-if="showAddModal"
+            class="modal d-block"
+            tabindex="-1"
+            role="dialog"
+            style="background: rgba(0,0,0,0.3);"
+        >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tambah Kendaraan</h5>
+                        <button type="button" class="close" @click="closeAddModal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Form tambah kendaraan bisa ditambahkan di sini.</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="noregistrasikendaraan">Plat Nomor</label>
+                                <input type="text" class="form-control" id="noregistrasikendaraan" v-model="newKendaraan.noregistrasikendaraan">
+                            </div>
+                            <div class="form-group">
+                                <label for="nouji">Nomor Uji</label>
+                                <input type="text" class="form-control" id="nouji" v-model="newKendaraan.nouji">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" @click="closeAddModal">Batal</button>
+                        <button type="button" class="btn btn-primary">Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import Swal from "sweetalert2";
+import { mapState, mapMutations, mapActions } from "vuex";
+export default {
+    data() {
+        return {
+            search: '',
+            showAddModal: false,
+        };
+    },
+    created() {
+        this.reload();
+    },
+    computed: {
+        ...mapState(["errors"]),
+        ...mapState("perusahaan", {
+            perusahaan: state => state.perusahaan,
+            newKendaraan: state => state.newKendaraan,
+        }),
+    },
+    methods: {
+        ...mapActions("perusahaan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline"]),
+        reload() {
+            this.getDatakendaraanOnline(this.route.params.id);
+        },
+        openAddModal() {
+            this.showAddModal = true;
+        },
+        closeAddModal() {
+            this.showAddModal = false;
+        },
+        submitKendaraan() {
+            this.storeDatakendaraanOnline().then(() => {
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil",
+                    text: "Data kendaraan berhasil disimpan",
+                });
+                this.closeAddModal();
+                this.reload();
+            });
+        },
+        updateKendaraan(id) {
+            this.updateDatakendaraanOnline(id).then(() => {
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil",
+                    text: "Data kendaraan berhasil diperbarui",
+                });
+                this.closeAddModal();
+                this.reload();
+            });
+        }
+    },
+};
+</script>

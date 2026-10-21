@@ -12,4 +12,13 @@ export default {
     updatePerusahaan(id, data) {
         return ApiService.put(`/perusahaan/${id}`, data);
     },
+    getDatakendaraanOnline(id) {
+        return ApiService.get(`/perusahaan/${id}`);
+    },
+    storeDatakendaraanOnline(data) {
+        return ApiService.post(`/perusahaan`, data);
+    },
+    updateDatakendaraanOnline(id, data) {
+        return ApiService.put(`/perusahaan/${id}`, data);
+    }
 };

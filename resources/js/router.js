@@ -496,6 +496,11 @@ export default new Router({
               name: "perusahaan.edit",
               component: () => import("@/view/pages/perusahaan/Edit.vue"),
             },
+            {
+              path: "datakendaraan/:id",
+              name: "perusahaan.datakendaraan",
+              component: () => import("@/view/pages/perusahaan/Datakendaraan.vue"),
+            },
           ]
         }
       ],

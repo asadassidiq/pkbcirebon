@@ -4,12 +4,25 @@ export const namespaced = true;
 
 export const state = {
     perusahaans: [],
+    kendaraans: [],
     perusahaansudah: [],
     perusahaan: {
-        pendaftaran_id:"",
-        namapenerima:"",
-        notelppenerima: "",
-        noidentitaspenerima: "",
+        uuid: "",
+        no_identitas:"",
+        name:"",
+        nama_badan_usaha:"",
+        email: "",
+        telepon: "",
+        provinsi: "",
+        kabupaten: "",
+        kecamatan: "",
+        kelurahan: "",
+        alamat: "",
+        file_formulir: ""
+    },
+    newKendaraan: {
+        noregistrasikendaraan: "",
+        nouji: ""
     },
     carinouji:"",
     page: 1
@@ -19,23 +32,54 @@ export const mutations = {
     ASSING_DATA(state, perusahaans) {
         state.perusahaans = perusahaans;
     },
+    ASSING_DATA_KENDARAAN(state, kendaraan) {
+        state.kendaraans = kendaraan;
+    },
     SET_PAGE(state, payload) {
         state.page = payload;
     },
     ASSIGN_FORM(state, payload) {
         state.perusahaan = {
-            pendaftaran_id:"",
-            namapenerima:payload.namapenerima ,
-            noidentitaspenerima: payload.noidentitaspenerima,
-            notelppenerima: payload.notelppenerima,
+            uuid: payload.uuid,
+            no_identitas:payload.no_identitas,
+            name:payload.name,
+            nama_badan_usaha:payload.nama_badan_usaha,
+            email: payload.email,
+            telepon: payload.telepon,
+            provinsi: payload.provinsi,
+            kabupaten: payload.kabupaten,
+            kecamatan: payload.kecamatan,
+            kelurahan: payload.kelurahan,
+            alamat: payload.alamat,
+            file_formulir: payload.file_formulir
+        };
+    },
+    ASSIGN_KENDARAAN_FORM(state, payload) {
+        state.newKendaraan = {
+            noregistrasikendaraan: payload.noregistrasikendaraan,
+            nouji: payload.nouji
+        };
+    },
+    CLEAR_KENDARAAN_FORM(state) {
+        state.newKendaraan = {
+            noregistrasikendaraan: "",
+            nouji: ""
         };
     },
     CLEAR_FORM(state) {
         state.perusahaan= {
-            pendaftaran_id:"",
-            namapenerima:"",
-            noidentitaspenerima:"",
-            notelppenerima: "",
+            uuid: "",
+            no_identitas:"",
+            name:"",
+            nama_badan_usaha:"",
+            email: "",
+            telepon: "",
+            provinsi: "",
+            kabupaten: "",
+            kecamatan: "",
+            kelurahan: "",
+            alamat: "",
+            file_formulir: ""
         };
     },
 };
@@ -59,6 +103,96 @@ export const actions = {
                             if (result.isConfirmed) {
                                 window.history.back();
                             };
+                        });
+                    }
+                });
+        });
+    },
+    getDatakendaraanOnline({ commit, state }, payload) {
+        return new Promise((resolve, reject) => {
+            PerusahaanService.getDatakendaraanOnline(payload)
+                .then(response => {
+                    commit("ASSING_DATA_KENDARAAN", response.data.result);
+                    resolve(response.data);
+                })
+                .catch(error => {
+                    if (error.response.status == 422) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: error.response.data.messages,
+                        });
+                    }else if (error == 'Error: [KTs] ApiService Error: Request failed with status code 403') {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: 'Akses ditolak. Anda tidak memiliki izin!!',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.history.back();
+                            };
+                        });
+                    }
+                });
+        });
+    },
+    editKendaraan({ commit, state }, payload) {
+        return new Promise((resolve, reject) => {
+            PerusahaanService.getKendaraan(payload)
+                .then(response => {
+                    commit("ASSIGN_KENDARAAN_FORM", response.data.result);
+                    resolve(response.data);
+                })
+                .catch(error => {
+                    if (error.response.status == 422) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: error.response.data.messages,
+                        });
+                    }else if (error == 'Error: [KTs] ApiService Error: Request failed with status code 403') {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: 'Akses ditolak. Anda tidak memiliki izin!!',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.history.back();
+                            };
+                        });
+                    }
+                });
+        });
+    }, 
+    updateDatakendaraanOnline({ state, commit }, id) {
+        return new Promise((resolve, reject) => {
+            PerusahaanService.updateDatakendaraanOnline(id, state.newKendaraan)
+                .then(response => {
+                    resolve(response.data);
+                })
+                .catch(error => {
+                    if (error.response.status == 422) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: error.response.data.messages,
+                        });
+                    }
+                });
+        });
+    },
+    storeDatakendaraanOnline({ state, commit }) {
+        return new Promise((resolve, reject) => {
+            PerusahaanService.storeDatakendaraanOnline(state.newKendaraan)
+                .then(response => {
+                    resolve(response.data);
+                })
+                .catch(error => {
+                    if (error.response.status == 422) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: error.response.data.messages,
                         });
                     }
                 });

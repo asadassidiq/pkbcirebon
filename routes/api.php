@@ -289,6 +289,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
         Route::group(['middleware' => ['role:admin|petugas'], 'prefix' => 'perusahaan'], function () {
             Route::get('/', 'UserOnlineController@index');
+            Route::get('/{id}', 'UserOnlineController@getDatakendaraanOnline');
+            Route::post('/', 'UserOnlineController@storeDatakendaraanOnline');
+            Route::put('/{id}', 'UserOnlineController@updateDatakendaraanOnline');
         });
     });
 });

@@ -18,4 +18,19 @@ class UserOnlineService
     {
         return $this->repository->getAll();
     }
+
+    public function getDatakendaraanOnline(string $id)
+    {
+        return $this->repository->getDatakendaraanOnline($id);
+    }
+
+    public function storeDatakendaraanOnline(array $data)
+    {
+        return $this->repository->storeDatakendaraanOnline($data);
+    }
+
+    public function updateDatakendaraanOnline(string $id, array $data)
+    {
+        return $this->repository->updateDatakendaraanOnline($id, $data);
+    }
 }
