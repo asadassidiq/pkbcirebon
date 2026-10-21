@@ -126,8 +126,8 @@ export default {
     created() {
         const id = this.$route && this.$route.params ? this.$route.params.id : null;
         if (id) {
-            console.log("ID:", id);
             this.getDatakendaraanOnline(id);
+            console.log(this.kendaraans);
         }
     },
     computed: {
