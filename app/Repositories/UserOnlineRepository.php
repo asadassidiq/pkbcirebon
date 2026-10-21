@@ -54,7 +54,14 @@ class UserOnlineRepository
 
     public function updateDatakendaraanOnline(string $id, array $data)
     {
-        return $this->model1->where('user_id', $id)->update($data);
+        $existingData = $this->model1->where('user_id', $id)->first();
+        if ($existingData) {
+            $existingData->noregistrasikendaraan = $data['noregistrasikendaraan'] ?? $existingData->noregistrasikendaraan;
+            $existingData->nouji = $data['nouji'] ?? $existingData->nouji;
+            // $existingData->status = $data['status'] ?? $existingData->status;
+            $existingData->save();
+        }
+        return null;
     }
 
 }
