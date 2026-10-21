@@ -59,7 +59,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(kendaraan, index) in perusahaan.kendaraans.data">
+                    <tr v-for="(kendaraan, index) in kendaraans.data">
                         <td>{{ index + 1 }}</td>
                         <td>{{ kendaraan.noregistrasikendaraan }}</td>
                         <td>{{ kendaraan.nouji }}</td>
@@ -81,12 +81,12 @@
                 <div class="overflow-auto">
                     <b-pagination
                         v-model="page"
-                        :total-rows="perusahaan.kendaraans.total"
-                        :per-page="perusahaan.kendaraans.per_page"
+                        :total-rows="kendaraans.total"
+                        :per-page="kendaraans.per_page"
                         aria-controls="perusahaans"
                         v-if="
-                            perusahaan.kendaraans.data &&
-                            perusahaan.kendaraans.data.length > 0
+                            kendaraans.data &&
+                            kendaraans.data.length > 0
                         "
                     ></b-pagination>
                 </div>
@@ -151,6 +151,7 @@ export default {
         ...mapState(["errors"]),
         ...mapState("perusahaan", {
             perusahaan: state => state.perusahaan,
+            kendaraans: state => state.kendaraans,
             newKendaraan: state => state.newKendaraan,
         }),
     },
