@@ -64,8 +64,8 @@
                         <td>{{ kendaraan.noregistrasikendaraan }}</td>
                         <td>{{ kendaraan.nouji }}</td>
                         <td>
-                            <button class="btn btn-sm btn-icon btn-light-success" @click="editKendaraan(kendaraan.id)">
-                                <i class="fa fa-eye text-success"></i>
+                            <button class="btn btn-sm btn-icon btn-light-success" @click="editKendaraan(kendaraan)">
+                                <i class="fa fa-edit text-success"></i>
                             </button>
                             <button class="btn btn-sm btn-icon btn-light-danger" @click="deleteKendaraan(kendaraan.id)">
                                 <i class="fas fa-trash text-danger"></i>
@@ -144,7 +144,6 @@ export default {
         const id = this.$route && this.$route.params ? this.$route.params.id : null;
         if (id) {
             this.getDatakendaraanOnline(id);
-            console.log(this.kendaraans);
         }
     },
     computed: {
@@ -192,6 +191,10 @@ export default {
                 this.closeAddModal();
                 this.reload();
             });
+        },
+        editKendaraan(kendaraan) {
+            this.$store.commit("perusahaan/ASSIGN_KENDARAAN_FORM", kendaraan);
+            this.openAddModal();
         }
     },
 };

@@ -34,7 +34,6 @@ export const mutations = {
     },
     ASSING_DATA_KENDARAAN(state, kendaraan) {
         state.kendaraans = kendaraan;
-        console.log(state.kendaraans);
     },
     SET_PAGE(state, payload) {
         state.page = payload;
