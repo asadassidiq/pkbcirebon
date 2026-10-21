@@ -76,6 +76,23 @@
             </table>
         </div>
 
+        <div class="card-footer">
+            <div class="pull-right">
+                <div class="overflow-auto">
+                    <b-pagination
+                        v-model="page"
+                        :total-rows="kendaraans.total"
+                        :per-page="kendaraans.per_page"
+                        aria-controls="perusahaans"
+                        v-if="
+                            kendaraans.data &&
+                            kendaraans.data.length > 0
+                        "
+                    ></b-pagination>
+                </div>
+            </div>
+        </div>
+
         <div
             v-if="showAddModal"
             class="modal d-block"
