@@ -69,7 +69,7 @@
                                             params: { id: perusahaan.uuid },
                                         }"
                                     >
-                                        <i class="fa fa-eye text-success"></i>
+                                        <i class="fa fa-edit text-success"></i>
                                     </router-link>
                                 </td>
                                 <td>

@@ -10,7 +10,7 @@
 
             <div class="card-toolbar">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-sm-9">
                         <input
                             class="form-control"
                             type="text"
@@ -18,7 +18,7 @@
                             v-model="search"
                         />
                     </div>
-                    <div class="col-1">
+                    <div class="col-sm-2">
                         <button
                             type="button"
                             class="btn btn-sm btn-icon btn-light-success mr-2"
@@ -27,21 +27,25 @@
                         >
                             <i class="flaticon2-add"></i>
                         </button>
-                    </div>
-                    <div class="col-1">
+
                         <a
                             class="btn btn-sm btn-icon btn-light-info mr-2"
                             @click.prevent="reload"
                             title="reload data"
                             ><i class="flaticon2-reload"></i>
                         </a>
+                        <router-link
+                            class="btn btn-sm btn-icon btn-light-primary"
+                            :to="{ name: 'perusahaan.data', params: { id: perusahaanId } }"
+                            title="Kembali ke data perusahaan"
+                        >
+                            <i class="flaticon2-back"></i>
+                        </router-link>
                     </div>
                 </div>
             </div>
         </div>
         <div class="card-body">
-            <!-- Content for data kendaraan goes here -->
-            table for displaying kendaraan data will go here.
             <table class="table">
                 <thead>
                     <tr>
@@ -85,7 +89,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Form tambah kendaraan bisa ditambahkan di sini.</p>
                         <form>
                             <div class="form-group">
                                 <label for="noregistrasikendaraan">Plat Nomor</label>
@@ -99,7 +102,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light" @click="closeAddModal">Batal</button>
-                        <button type="button" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-primary" @click="submitKendaraan">Simpan</button>
                     </div>
                 </div>
             </div>
