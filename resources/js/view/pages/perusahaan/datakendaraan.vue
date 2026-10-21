@@ -154,6 +154,7 @@ export default {
             this.showAddModal = false;
         },
         submitKendaraan() {
+            this.newKendaraan.uuid = this.$route && this.$route.params ? this.$route.params.id : null;
             this.storeDatakendaraanOnline().then(() => {
                 Swal.fire({
                     icon: "success",
@@ -165,6 +166,7 @@ export default {
             });
         },
         updateKendaraan(id) {
+            this.newKendaraan.uuid = this.$route && this.$route.params ? this.$route.params.id : null;
             this.updateDatakendaraanOnline(id).then(() => {
                 Swal.fire({
                     icon: "success",

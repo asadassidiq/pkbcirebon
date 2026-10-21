@@ -21,6 +21,7 @@ export const state = {
         file_formulir: ""
     },
     newKendaraan: {
+        uuid: "",
         noregistrasikendaraan: "",
         nouji: ""
     },
@@ -56,12 +57,14 @@ export const mutations = {
     },
     ASSIGN_KENDARAAN_FORM(state, payload) {
         state.newKendaraan = {
+            uuid: payload.uuid,
             noregistrasikendaraan: payload.noregistrasikendaraan,
             nouji: payload.nouji
         };
     },
     CLEAR_KENDARAAN_FORM(state) {
         state.newKendaraan = {
+            uuid: "",
             noregistrasikendaraan: "",
             nouji: ""
         };
