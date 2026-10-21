@@ -59,7 +59,7 @@
                                 <td>{{ index + 1 }}</td>
                                 <td>{{ perusahaan.name }}</td>
                                 <td>{{ perusahaan.nama_badan_usaha }}</td>
-                                <td>{{ perusahaan.notelp }}</td>
+                                <td>{{ perusahaan.telepon }}</td>
                                 <td>{{ perusahaan.email }}</td>
                                 <td>1</td>
                                 <td>
