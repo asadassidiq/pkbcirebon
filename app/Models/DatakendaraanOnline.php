@@ -9,6 +9,7 @@ class DatakendaraanOnline extends Model
     protected $table = 'datakendaraan_online';
 
     protected $fillable = [
+        'uuid',
         'noregistrasikendaraan',
         'nouji',
         'status'
