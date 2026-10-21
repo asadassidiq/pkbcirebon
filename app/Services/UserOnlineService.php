@@ -19,6 +19,11 @@ class UserOnlineService
         return $this->repository->getAll();
     }
 
+    public function getUserOnline(string $id)
+    {
+        return $this->repository->getUserOnline($id);
+    }
+
     public function getDatakendaraanOnline(string $id)
     {
         return $this->repository->getDatakendaraanOnline($id);

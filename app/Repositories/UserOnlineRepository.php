@@ -36,6 +36,11 @@ class UserOnlineRepository
         return $data->groupBy('users_pkb.id')->paginate(10);
     }
 
+    public function getUserOnline(string $id)
+    {
+        return $this->model->where('uuid', $id)->first();
+    }
+
     public function getDatakendaraanOnline(string $id)
     {
         $data = $this->model1->select('noregistrasikendaraan', 'nouji','status')->where('user_id', $id);

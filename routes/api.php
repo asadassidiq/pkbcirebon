@@ -292,6 +292,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::get('/{id}', 'UserOnlineController@getDatakendaraanOnline');
             Route::post('/', 'UserOnlineController@storeDatakendaraanOnline');
             Route::put('/{id}', 'UserOnlineController@updateDatakendaraanOnline');
+            Route::get('/user/{id}', 'UserOnlineController@getUserOnline');
         });
     });
 });

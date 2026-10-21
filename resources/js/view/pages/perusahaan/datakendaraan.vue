@@ -5,7 +5,7 @@
                 <span class="card-icon">
                     <i class="flaticon2-truck text-primary"></i>
                 </span>
-                <h3 class="card-label">Data Kendaraan {{ perusahaan.perusahaan.nama_badan_usaha }}</h3>
+                <h3 class="card-label">Data Kendaraan {{ perusahaan.nama_badan_usaha }}</h3>
             </div>
 
             <div class="card-toolbar">
@@ -145,6 +145,7 @@ export default {
         const id = this.$route && this.$route.params ? this.$route.params.id : null;
         if (id) {
             this.getDatakendaraanOnline(id);
+            this.editPerusahaan(id);
         }
     },
     computed: {
@@ -156,7 +157,7 @@ export default {
         }),
     },
     methods: {
-        ...mapActions("perusahaan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline"]),
+        ...mapActions("perusahaan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline","editPerusahaan"]),
         reload() {
             const id = this.$route && this.$route.params ? this.$route.params.id : null;
             if (id) {

@@ -23,6 +23,12 @@ class UserOnlineController extends Controller
         return $this->returnJson($data);
     }
 
+    public function getUserOnline(string $id)
+    {
+        $data = $this->service->getUserOnline($id);
+        return $this->returnJson($data);
+    }
+    
     public function getDatakendaraanOnline(string $id)
     {
         $data = $this->service->getDatakendaraanOnline($id);

@@ -7,7 +7,7 @@ export default {
         return ApiService.get(`/perusahaan?page=${page}&t=${tipe}&q=${search}`);
     },
     getPerusahaan(id) {
-        return ApiService.get(`/perusahaan/${id}`);
+        return ApiService.get(`/perusahaan/user/${id}`);
     },
     updatePerusahaan(id, data) {
         return ApiService.put(`/perusahaan/${id}`, data);
