@@ -8,12 +8,12 @@
    <meta name="app-url" content="{{ config('app.url') }}">
    <title>SIMPKB {{ env('APP_WILAYAH') }}</title>
    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-   <link href="{{ mix('css/app.css').'?r='.time() }}" type="text/css" rel="stylesheet"/>
+   <link href="{{ asset('css/app.css').'?r='.time() }}" type="text/css" rel="stylesheet"/>
    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
    <div id="app">
    </div>
-   <script src="{{ mix('js/app.js').'?r='.time() }}" type="text/javascript"></script>
+   <script src="{{ asset('js/app.js').'?r='.time() }}" type="text/javascript"></script>
 </body>
 </html>
