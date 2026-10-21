@@ -54,6 +54,8 @@ class UserOnlineRepository
 
     public function storeDatakendaraanOnline(array $data)
     {
+        $data['user_id'] = $data['uuid'] ?? null;
+        unset($data['uuid']);
         return $this->model1->create($data);
     }
 
