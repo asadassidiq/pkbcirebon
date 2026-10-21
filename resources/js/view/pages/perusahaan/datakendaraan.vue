@@ -134,7 +134,7 @@ export default {
     methods: {
         ...mapActions("perusahaan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline"]),
         reload() {
-            this.getDatakendaraanOnline(this.route.params.id);
+            this.getDatakendaraanOnline(this.$route.params.id);
         },
         openAddModal() {
             this.showAddModal = true;
