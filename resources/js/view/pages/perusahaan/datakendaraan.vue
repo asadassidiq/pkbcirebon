@@ -5,7 +5,7 @@
                 <span class="card-icon">
                     <i class="flaticon2-truck text-primary"></i>
                 </span>
-                <h3 class="card-label">Data Kendaraan</h3>
+                <h3 class="card-label">Data Kendaraan {{ perusahaan.perusahaan.nama_badan_usaha }}</h3>
             </div>
 
             <div class="card-toolbar">
