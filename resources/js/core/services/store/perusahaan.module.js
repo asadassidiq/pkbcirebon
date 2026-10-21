@@ -116,7 +116,6 @@ export const actions = {
             PerusahaanService.getDatakendaraanOnline(payload)
                 .then(response => {
                     commit("ASSING_DATA_KENDARAAN", response.data.result);
-                    console.log("Datakendaraan Online Response:", response.data.result);
                     resolve(response.data);
                 })
                 .catch(error => {

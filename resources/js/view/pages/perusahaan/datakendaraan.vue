@@ -59,7 +59,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(kendaraan, index) in kendaraans" :key="kendaraan.id">
+                    <tr v-for="(kendaraan, index) in kendaraans">
                         <td>{{ index + 1 }}</td>
                         <td>{{ kendaraan.noregistrasikendaraan }}</td>
                         <td>{{ kendaraan.nouji }}</td>

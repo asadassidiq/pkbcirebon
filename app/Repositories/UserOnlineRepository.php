@@ -38,7 +38,7 @@ class UserOnlineRepository
 
     public function getDatakendaraanOnline(string $id)
     {
-        $data = $this->model1->where('user_id', $id);
+        $data = $this->model1->select('noregistrasikendaraan', 'nouji','status')->where('user_id', $id);
         $search = str_replace("/", "", request()->q);
         if ($search != '') {
             $data = $data->where('noregistrasikendaraan', 'LIKE', '%' . $search . '%')
