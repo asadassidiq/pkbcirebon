@@ -8,9 +8,9 @@
                 <div class="panel-body">
                     <edit-form></edit-form>
                     <div class="form-group">
-                        <button class="btn btn-primary btn-sm" @click.prevent="submit">
-                            <i class="fa fa-save"></i> Update
-                        </button>
+                        <router-link :to="{ name: 'perusahaan.data' }" class="btn btn-secondary btn-sm">
+                            <i class="fa fa-arrow-left"></i> Kembali
+                        </router-link>
                     </div>
                 </div>
             </div>
