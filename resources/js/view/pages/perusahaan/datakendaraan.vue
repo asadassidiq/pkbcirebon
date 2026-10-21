@@ -18,19 +18,19 @@
                             v-model="search"
                         />
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-1 mr-2">
                         <button
                             type="button"
-                            class="btn btn-sm btn-icon btn-light-success mr-2"
+                            class="btn btn-sm btn-icon btn-light-success"
                             @click="openAddModal"
                             title="Tambah data kendaraan"
                         >
                             <i class="flaticon2-add"></i>
                         </button>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-1 mr-2">
                         <a
-                            class="btn btn-sm btn-icon btn-light-info mr-2"
+                            class="btn btn-sm btn-icon btn-light-info"
                             @click.prevent="reload"
                             title="reload data"
                             ><i class="flaticon2-reload"></i>
@@ -125,21 +125,10 @@ export default {
     },
     created() {
         const id = this.$route && this.$route.params ? this.$route.params.id : null;
-        console.log(id);
         if (id) {
+            console.log("ID:", id);
             this.getDatakendaraanOnline(id);
         }
-    },
-    watch: {
-        "$route.params": {
-            immediate: true,
-            handler(params) {
-                const id = params && params.id;
-                if (id) {
-                    this.getDatakendaraanOnline(id);
-                }
-            },
-        },
     },
     computed: {
         ...mapState(["errors"]),
