@@ -120,8 +120,15 @@ export default {
             showAddModal: false,
         };
     },
-    created() {
-        this.reload();
+    watch: {
+        "$route.params.id": {
+            immediate: true,
+            handler(id) {
+                if (id) {
+                    this.getDatakendaraanOnline(id);
+                }
+            },
+        },
     },
     computed: {
         ...mapState(["errors"]),
@@ -134,7 +141,10 @@ export default {
     methods: {
         ...mapActions("perusahaan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline"]),
         reload() {
-            this.getDatakendaraanOnline(this.$route.params.id);
+            const id = this.$route.params.id;
+            if (id) {
+                this.getDatakendaraanOnline(id);
+            }
         },
         openAddModal() {
             this.showAddModal = true;
