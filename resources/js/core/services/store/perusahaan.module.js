@@ -112,11 +112,11 @@ export const actions = {
         });
     },
     getDatakendaraanOnline({ commit, state }, payload) {
-        console.log("Fetching data for kendaraan with ID:", payload);
         return new Promise((resolve, reject) => {
             PerusahaanService.getDatakendaraanOnline(payload)
                 .then(response => {
                     commit("ASSING_DATA_KENDARAAN", response.data.result);
+                    console.log("Datakendaraan Online Response:", response.data.result);
                     resolve(response.data);
                 })
                 .catch(error => {

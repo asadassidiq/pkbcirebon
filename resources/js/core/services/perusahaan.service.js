@@ -13,7 +13,6 @@ export default {
         return ApiService.put(`/perusahaan/${id}`, data);
     },
     getDatakendaraanOnline(id) {
-        console.log("Fetching data for perusahaan ID:", id);
         return ApiService.get(`/perusahaan/${id}`);
     },
     storeDatakendaraanOnline(data) {
