@@ -42,6 +42,7 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
+                                <th>Nama Akun</th>
                                 <th>Nama Perusahaan</th>
                                 <th>No Telp</th>
                                 <th>Email</th>
@@ -56,7 +57,8 @@
                                 :key="perusahaan.id"
                             >
                                 <td>{{ index + 1 }}</td>
-                                <td>{{ perusahaan.keterangan }}</td>
+                                <td>{{ perusahaan.name }}</td>
+                                <td>{{ perusahaan.nama_badan_usaha }}</td>
                                 <td>{{ perusahaan.notelp }}</td>
                                 <td>{{ perusahaan.email }}</td>
                                 <td>1</td>
