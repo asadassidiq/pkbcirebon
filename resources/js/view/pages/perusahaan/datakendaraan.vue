@@ -10,7 +10,7 @@
 
             <div class="card-toolbar">
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                         <input
                             class="form-control"
                             type="text"
@@ -18,7 +18,7 @@
                             v-model="search"
                         />
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-1">
                         <button
                             type="button"
                             class="btn btn-sm btn-icon btn-light-success mr-2"
@@ -27,13 +27,16 @@
                         >
                             <i class="flaticon2-add"></i>
                         </button>
-
+                    </div>
+                    <div class="col-sm-1">
                         <a
                             class="btn btn-sm btn-icon btn-light-info mr-2"
                             @click.prevent="reload"
                             title="reload data"
                             ><i class="flaticon2-reload"></i>
                         </a>
+                    </div>
+                    <div class="col-sm-1">
                         <router-link
                             class="btn btn-sm btn-icon btn-light-primary"
                             :to="{ name: 'perusahaan.data', params: { id: perusahaanId } }"
@@ -58,8 +61,8 @@
                 <tbody>
                     <tr v-for="(kendaraan, index) in kendaraans" :key="kendaraan.id">
                         <td>{{ index + 1 }}</td>
-                        <td>{{ kendaraan.plat_nomor }}</td>
-                        <td>{{ kendaraan.nomor_uji }}</td>
+                        <td>{{ kendaraan.noregistrasikendaraan }}</td>
+                        <td>{{ kendaraan.nouji }}</td>
                         <td>
                             <button class="btn btn-sm btn-icon btn-light-success" @click="editKendaraan(kendaraan.id)">
                                 <i class="fa fa-eye text-success"></i>
@@ -119,6 +122,13 @@ export default {
             search: '',
             showAddModal: false,
         };
+    },
+    created() {
+        const id = this.$route && this.$route.params ? this.$route.params.id : null;
+        console.log(id);
+        if (id) {
+            this.getDatakendaraanOnline(id);
+        }
     },
     watch: {
         "$route.params": {
