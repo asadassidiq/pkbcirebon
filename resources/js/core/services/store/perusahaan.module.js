@@ -112,6 +112,7 @@ export const actions = {
         });
     },
     getDatakendaraanOnline({ commit, state }, payload) {
+        console.log("Fetching data for kendaraan with ID:", payload);
         return new Promise((resolve, reject) => {
             PerusahaanService.getDatakendaraanOnline(payload)
                 .then(response => {
