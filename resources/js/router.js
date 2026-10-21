@@ -482,6 +482,22 @@ export default new Router({
             },
           ],
         },
+        {
+          path: "/perusahaan",
+          component: () => import("@/view/pages/perusahaan/Index.vue"),
+          children: [
+            {
+              path: "",
+              name: "perusahaan.data",
+              component: () => import("@/view/pages/perusahaan/Table.vue"),
+            },
+            {
+              path: "edit/:id",
+              name: "perusahaan.edit",
+              component: () => import("@/view/pages/perusahaan/Edit.vue"),
+            },
+          ]
+        }
       ],
     },
     {
