@@ -1,0 +1,15 @@
+import ApiService from "./api.service.js";
+export default {
+    getPerusahaanPage(page = 1) {
+        return ApiService.get("/perusahaan?page=" + page);
+    },
+    getPerusahaans(page,tgl,search) {
+        return ApiService.get(`/perusahaan?page=${page}&t=${tgl}&q=${search}`);
+    },
+    getPerusahaan(id) {
+        return ApiService.get(`/perusahaan/${id}`);
+    },
+    updatePerusahaan(id, data) {
+        return ApiService.put(`/perusahaan/${id}`, data);
+    },
+};

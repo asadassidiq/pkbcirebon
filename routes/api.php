@@ -286,5 +286,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::put('/{id}/nosertifikat', 'DatapengujianController@nosertifikat');
             Route::delete('/{id}', 'DatapengujianController@delete');
         });
+
+        Route::group(['middleware' => ['role:admin|petugas'], 'prefix' => 'perusahaan'], function () {
+            Route::get('/', 'UserOnlineController@index');
+        });
     });
 });
