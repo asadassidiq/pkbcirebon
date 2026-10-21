@@ -62,7 +62,7 @@
                                 <td>{{ perusahaan.telepon }}</td>
                                 <td>{{ perusahaan.email }}</td>
                                 <td>
-                                    {{ perusahaan.total_kendaraan }}
+                                    {{ perusahaan.total_kendaraan ?? 0 }}
                                     <router-link
                                         :to="{
                                             name: 'perusahaan.datakendaraan',
