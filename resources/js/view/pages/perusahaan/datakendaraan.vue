@@ -22,7 +22,7 @@
                         <button
                             type="button"
                             class="btn btn-sm btn-icon btn-light-success"
-                            @click="openAddModal"
+                            @click="addKendaraan"
                             title="Tambah data kendaraan"
                         >
                             <i class="flaticon2-add"></i>
@@ -138,6 +138,7 @@ export default {
         return {
             search: '',
             showAddModal: false,
+            status: 'add',
         };
     },
     created() {
@@ -170,15 +171,27 @@ export default {
         },
         submitKendaraan() {
             this.newKendaraan.uuid = this.$route && this.$route.params ? this.$route.params.id : null;
-            this.storeDatakendaraanOnline().then(() => {
-                Swal.fire({
-                    icon: "success",
-                    title: "Berhasil",
-                    text: "Data kendaraan berhasil disimpan",
+            if (this.status === 'add') {
+                this.storeDatakendaraanOnline().then(() => {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Berhasil",
+                        text: "Data kendaraan berhasil disimpan",
+                    });
+                    this.closeAddModal();
+                    this.reload();
                 });
-                this.closeAddModal();
-                this.reload();
-            });
+            } else if (this.status === 'edit') {
+                this.updateKendaraan(this.newKendaraan.uuid).then(() => {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Berhasil",
+                        text: "Data kendaraan berhasil diperbarui",
+                    });
+                    this.closeAddModal();
+                    this.reload();
+                });
+            }
         },
         updateKendaraan(id) {
             this.newKendaraan.uuid = this.$route && this.$route.params ? this.$route.params.id : null;
@@ -192,8 +205,13 @@ export default {
                 this.reload();
             });
         },
+        addKendaraan() {
+            this.status = 'add';
+            this.openAddModal();
+        },
         editKendaraan(kendaraan) {
             this.$store.commit("perusahaan/ASSIGN_KENDARAAN_FORM", kendaraan);
+            this.status = 'edit';
             this.openAddModal();
         }
     },
