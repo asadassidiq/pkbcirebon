@@ -5,8 +5,8 @@
    */
 
 /*!
- * ApexCharts v3.44.0
- * (c) 2018-2023 ApexCharts
+ * ApexCharts v3.54.1
+ * (c) 2018-2024 ApexCharts
  * Released under the MIT License.
  */
 
@@ -37,7 +37,7 @@
  */
 
 /*!
- * Vue.js v2.7.15
+ * Vue.js v2.7.16
  * (c) 2014-2023 Evan You
  * Released under the MIT License.
  */
@@ -50,8 +50,8 @@
  */
 
 /*!
- * perfect-scrollbar v1.5.3
- * Copyright 2021 Hyunje Jun, MDBootstrap and Contributors
+ * perfect-scrollbar v1.5.6
+ * Copyright 2024 Hyunje Jun, MDBootstrap and Contributors
  * Licensed under MIT
  */
 
@@ -96,8 +96,6 @@ PERFORMANCE OF THIS SOFTWARE.
 /*! ../../../mixins/colorable */
 
 /*! ../../../mixins/localable */
-
-/*! ../../../mixins/mouse */
 
 /*! ../../../mixins/themeable */
 
@@ -178,8 +176,6 @@ PERFORMANCE OF THIS SOFTWARE.
 /*! ../../mixins/menuable */
 
 /*! ../../mixins/mobile */
-
-/*! ../../mixins/mouse */
 
 /*! ../../mixins/overlayable */
 
@@ -627,8 +623,6 @@ PERFORMANCE OF THIS SOFTWARE.
 
 /*! ./VItem */
 
-/*! ./VItem.sass */
-
 /*! ./VItemGroup */
 
 /*! ./VItemGroup.sass */
@@ -995,6 +989,8 @@ PERFORMANCE OF THIS SOFTWARE.
 
 /*! ./monthChange */
 
+/*! ./mouse */
+
 /*! ./mutate */
 
 /*! ./nl */
@@ -1359,15 +1355,15 @@ PERFORMANCE OF THIS SOFTWARE.
 
 /*! no static exports found */
 
-/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */
 
 /*! svg.draggable.js - v2.2.2 - 2019-01-08
-  * https://github.com/svgdotjs/svg.draggable.js
-  * Copyright (c) 2019 Wout Fierens; Licensed MIT */
+* https://github.com/svgdotjs/svg.draggable.js
+* Copyright (c) 2019 Wout Fierens; Licensed MIT */
 
 /*! svg.filter.js - v2.0.2 - 2016-02-24
-  * https://github.com/wout/svg.filter.js
-  * Copyright (c) 2016 Wout Fierens; Licensed MIT */
+* https://github.com/wout/svg.filter.js
+* Copyright (c) 2016 Wout Fierens; Licensed MIT */
 
 /*! vue */
 
@@ -1598,10 +1594,6 @@ PERFORMANCE OF THIS SOFTWARE.
 /*!*********************************!*\
   !*** ./src/directives/index.ts ***!
   \*********************************/
-
-/*!***********************************!*\
-  !*** ./src/mixins/mouse/index.ts ***!
-  \***********************************/
 
 /*!***********************************!*\
   !*** ./src/services/goto/util.ts ***!
@@ -2476,10 +2468,6 @@ PERFORMANCE OF THIS SOFTWARE.
   \**********************************************/
 
 /*!**********************************************!*\
-  !*** ./src/components/VItemGroup/VItem.sass ***!
-  \**********************************************/
-
-/*!**********************************************!*\
   !*** ./src/components/VList/VListGroup.sass ***!
   \**********************************************/
 
@@ -2753,6 +2741,10 @@ PERFORMANCE OF THIS SOFTWARE.
 
 /*!**************************************************!*\
   !*** ./src/components/VAppBar/VAppBarNavIcon.ts ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/components/VCalendar/mixins/mouse.ts ***!
   \**************************************************/
 
 /*!**************************************************!*\
