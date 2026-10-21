@@ -59,6 +59,7 @@
                                 <td>{{ perusahaan.keterangan }}</td>
                                 <td>{{ perusahaan.notelp }}</td>
                                 <td>{{ perusahaan.email }}</td>
+                                <td>1</td>
                                 <td>
                                     <router-link
                                         :to="{
@@ -110,20 +111,11 @@ import Swal from "sweetalert2";
 import { mapState,mapGetters,mapActions } from "vuex";
 export default {
     created() {
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, "0");
-        var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-        var yyyy = today.getFullYear();
-        today = yyyy + "-" + mm + "-" + dd;
-        this.tgl = today;
+        this.getPerusahaans(this.search);
     },
     data() {
         return {
-            // users: {}
             search: "",
-            tgl: "",
-            result: "",
-            error: "",
         };
     },
     mounted() {
@@ -151,20 +143,12 @@ export default {
         search() {
             this.getPerusahaans(this.search);
         },
-        tgl() {
-            this.$store.commit(
-                "perusahaan/SET_TGL",
-                this.customFormatter(this.tgl),
-            );
-            this.getPerusahaans(this.search);
-        },
     },
     methods: {
         ...mapActions("perusahaan", [
             "getPerusahaans",
             "removePerusahaan",
             "editPerusahaan",
-            "removePerusahaan",
         ]),
         deletePerusahaan(id) {
             Swal.fire({
@@ -188,12 +172,6 @@ export default {
                 }
             });
         },
-        print3(id) {
-            window.open("/cetak/" + id + "/skrd", "_blank");
-        },
-        customFormatter(today) {
-            return today;
-        },
         caridata() {
             this.editPerusahaan(this.perusahaan.perusahaan.id).then(() => {
                 this.$router.push({
@@ -204,9 +182,6 @@ export default {
         },
         print(id) {
             window.open("/cetak/" + id + "/permohonan", "_blank");
-        },
-        printFormulir(id) {
-            window.open("/cetak/" + id + "/formulir", "_blank");
         },
         reload() {
             this.getPerusahaans(this.search);

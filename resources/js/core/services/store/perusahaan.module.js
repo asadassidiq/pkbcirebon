@@ -44,7 +44,7 @@ export const actions = {
     getPerusahaans({ commit, state }, payload) {
         let search = typeof payload != "undefined" ? payload : "";
         return new Promise((resolve, reject) => {
-            PerusahaanService.getPerusahaans(state.page, search)
+            PerusahaanService.getPerusahaans(state.page, '2', search)
                 .then(response => {
                     commit("ASSING_DATA", response.data.result);
                     resolve(response.data);

@@ -3,8 +3,8 @@ export default {
     getPerusahaanPage(page = 1) {
         return ApiService.get("/perusahaan?page=" + page);
     },
-    getPerusahaans(page,tgl,search) {
-        return ApiService.get(`/perusahaan?page=${page}&t=${tgl}&q=${search}`);
+    getPerusahaans(page,tipe,search) {
+        return ApiService.get(`/perusahaan?page=${page}&t=${tipe}&q=${search}`);
     },
     getPerusahaan(id) {
         return ApiService.get(`/perusahaan/${id}`);
