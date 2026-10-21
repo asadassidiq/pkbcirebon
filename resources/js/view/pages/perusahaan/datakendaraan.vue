@@ -121,9 +121,10 @@ export default {
         };
     },
     watch: {
-        "$route.params.id": {
+        "$route.params": {
             immediate: true,
-            handler(id) {
+            handler(params) {
+                const id = params && params.id;
                 if (id) {
                     this.getDatakendaraanOnline(id);
                 }
@@ -141,7 +142,7 @@ export default {
     methods: {
         ...mapActions("perusahaan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline"]),
         reload() {
-            const id = this.$route.params.id;
+            const id = this.$route && this.$route.params ? this.$route.params.id : null;
             if (id) {
                 this.getDatakendaraanOnline(id);
             }
