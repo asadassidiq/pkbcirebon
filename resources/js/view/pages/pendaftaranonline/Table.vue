@@ -56,13 +56,12 @@
                         <tbody>
                             <tr v-for="pendaftaran, index in pendaftaranonline.pendaftaranonlines.data" :key="pendaftaran.uuid">
                                 <td>{{ index + 1 }}</td>
-                                <td>{{ pendaftaran.keterangan }}</td>
+                                <td>{{ pendaftaran.jenis_uji }}</td>
                                 <td>{{ pendaftaran.nouji }}</td>
                                 <td>{{ pendaftaran.noregistrasikendaraan }}</td>
-                                <td v-if="pendaftaran.status == '1'">terverifikasi</td>
-                                <td v-else>belum diverifikasi</td>
+                                <td>{{ pendaftaran.status }}</td>
                                 <td>
-                                    <router-link v-if="pendaftaran.status == '0'"
+                                    <router-link v-if="pendaftaran.status == 'terdaftar'"
                                         :to="{ name: 'pendaftaranonline.approving', params: { id: pendaftaran.uuid } }">
                                         <i class="far fa-check-square text-success"></i>
                                     </router-link>

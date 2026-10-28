@@ -28,7 +28,7 @@ class PendaftaranOnlineRepository
     {
 
         $data = $this->modelOnline
-            ->select('bookings.uuid','bookings.kode_booking','bookings.tanggal', 'bookings.nomor_uji', 'bookings.nomor_polisi','bookings.jenis_uji', 'bookings.status')
+            ->select('bookings.uuid','bookings.kode_booking','bookings.tanggal', 'bookings.nomor_uji as nouji', 'bookings.nomor_polisi as noregistrasikendaraan','bookings.jenis_uji', 'bookings.status')
             // ->join('kodepenerbitans', 'bookings.kodepenerbitans_id', '=', 'kodepenerbitans.id')
             ->where('bookings.tanggal', request()->t)
             ->orderBy('bookings.created_at', 'ASC');
