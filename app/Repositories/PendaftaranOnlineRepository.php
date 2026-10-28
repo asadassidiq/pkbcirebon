@@ -28,21 +28,21 @@ class PendaftaranOnlineRepository
     {
 
         $data = $this->modelOnline
-            ->select('pendaftaransonline.uuid', 'kodepenerbitans.keterangan', 'pendaftaransonline.nouji', 'pendaftaransonline.noregistrasikendaraan', 'pendaftaransonline.status')
-            ->join('kodepenerbitans', 'pendaftaransonline.kodepenerbitans_id', '=', 'kodepenerbitans.id')
-            ->where('pendaftaransonline.tglpendaftaran', request()->t)
-            ->orderBy('pendaftaransonline.id', 'ASC');
+            ->select('bookings.uuid','bookings.kode_booking','bookings.tanggal', 'bookings.nomor_uji', 'bookings.nomor_polisi','bookings.jenis_uji', 'bookings.status')
+            // ->join('kodepenerbitans', 'bookings.kodepenerbitans_id', '=', 'kodepenerbitans.id')
+            ->where('bookings.tanggal', request()->t)
+            ->orderBy('bookings.created_at', 'ASC');
         $search = str_replace("/", "", request()->q);
         $status = request()->s;
         if ($status != '') {
             $data = $data->where(function ($query) use ($status) {
-                $query->where('pendaftaransonline.status', $status);
+                $query->where('bookings.status', $status);
             });
         }
         if ($search != '') {
             $data = $data->where(function ($query) use ($search) {
-                $query->where('pendaftaransonline.noregistrasikendaraan', 'LIKE', '%' . $search . '%')
-                    ->orWhere('pendaftaransonline.nouji', 'LIKE', '%' . $search . '%');
+                $query->where('bookings.noregistrasikendaraan', 'LIKE', '%' . $search . '%')
+                    ->orWhere('bookings.nouji', 'LIKE', '%' . $search . '%');
             });
         }
         return $data->paginate(10);
@@ -50,7 +50,7 @@ class PendaftaranOnlineRepository
 
     public function getPendaftaranDetail($id)
     {
-        $data = $this->modelOnline->where('uuid', $id)->join('kodepenerbitans', 'pendaftaransonline.kodepenerbitans_id', '=', 'kodepenerbitans.id')->first();
+        $data = $this->modelOnline->where('uuid', $id)->join('kodepenerbitans', 'bookings.kodepenerbitans_id', '=', 'kodepenerbitans.id')->first();
         $arr = array(
             'kodepenerbitans_id' => $data->kodepenerbitans_id,
             'keterangan' => $data->keterangan,

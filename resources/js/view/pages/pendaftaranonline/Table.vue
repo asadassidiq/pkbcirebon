@@ -20,8 +20,8 @@
                 </div>
                 <div class="col-3">
                     <select class="form-control" v-model="status">
-                        <option value="1">Belum Verifikasi</option>
-                        <option value="2">Verifikasi</option>
+                        <option value="1">Hadir</option>
+                        <option value="2">Belum Hadir</option>
                         <option value="3">Semua</option>
                     </select>
                 </div>
@@ -49,7 +49,6 @@
                                 <th>Jenis Pelayanan</th>
                                 <th>No Uji</th>
                                 <th>No Kendaraan</th>
-                                <th>Waktu</th>
                                 <th>Status</th>
                                 <th>Modify</th>
                             </tr>
@@ -60,8 +59,6 @@
                                 <td>{{ pendaftaran.keterangan }}</td>
                                 <td>{{ pendaftaran.nouji }}</td>
                                 <td>{{ pendaftaran.noregistrasikendaraan }}</td>
-                                <td v-if="pendaftaran.waktu == '1'">Pagi</td>
-                                <td v-else>Siang</td>
                                 <td v-if="pendaftaran.status == '1'">terverifikasi</td>
                                 <td v-else>belum diverifikasi</td>
                                 <td>

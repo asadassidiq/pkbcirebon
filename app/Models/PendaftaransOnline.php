@@ -10,7 +10,7 @@ class PendaftaransOnline extends Model
 {
     use HasFactory;
 
-    protected $table = 'pendaftaransonline';
+    protected $table = 'bookings';
     protected $hidden = ['id'];
 
     protected static function boot()
@@ -33,17 +33,22 @@ class PendaftaransOnline extends Model
         });
     }
 
-    // protected $guarded = [];
+    protected $guarded = [];
     protected $fillable = [
         'uuid',
-        'nouji',
-        'noregistrasikendaraan',
-        'tglpendaftaran',
-        'kodepenerbitans_id',
+        'user_id',
+        'kode_booking',
+        'nomor_polisi',
+        'nomor_uji',
+        'merek_tipe',
+        'nama_pemilik',
+        'pemohon_nama',
+        'pemohon_telepon',
+        'jenis_uji',
+        'tanggal',
+        'sesi',
+        'nomor_antrian',
         'status',
-        'kodewilayahasal',
-        'namapemohon',
-        'notelp',
-        'waktu',
+        'catatan',
     ];
 }

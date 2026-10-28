@@ -17,381 +17,261 @@ use App\Models\Bc_Srut;
 
 class apiBlueCore
 {
-    public function getDataMaster($prefix,$id,$nouji,$search_by,$keyword){
-        // Inisialisasi sesi cURL
-        $curl = curl_init();
+    public function getDataMaster($prefix, $id, $nouji, $search_by, $keyword) {
+        $nouji = empty($nouji) ? null : $nouji;
+        $search_by = empty($search_by) ? null : $search_by;
+        $keyword = empty($keyword) ? null : $keyword;
         
-        if(empty($nouji) || is_null($nouji)){
-            $nouji = null;
-        };
-        if(empty($search_by) || is_null($search_by)){
-            $search_by = null;
-        };
-        if(empty($keyword) || is_null($keyword)){
-            $keyword = null;
-        };
         $token = "eyJpdiI6Ilc0MjZBdE83Nkg3SGhReEgxYVQxN3c9PSIsInZhbHVlIjoiYUQ5Z1RMbGtINkRBbTJDbU9xQUVWb25nQzFpUW1HS1paemQxUjNCTm1hQ2ppMmtjY2FQZDdCbkk4WTNvNzg4ditxT1BFV0Rma2JCUzdVL0RSRUNLTE5pNU1HTUZjSFl1cTJuSEVMamtQbVQvc1RTSHkwMytUT05STHdOTG80VlgiLCJtYWMiOiIxMWQ5ZjU2ZDFjNmNlZmM1Nzg2MjljZTM4ZjQ2NmJmNWIxYjI5NGJjNWRjMTNhOWI0NjJlNjlhYTU2NGQ5OTFlIn0=";
-        
-        // Data yang akan dikirim dalam format JSON
+        $time = 10;
 
-        $time = 30;
-
-        if($prefix == "varian"){
-            $data = json_encode([
-                "token" => $token,
-                "prefix" => $prefix,
-                "param" => [
-                    "vehicle_varian_type_id" => $id,
-                ]
-            ]);
-        }elseif($prefix == "variantype"){
-            $data = json_encode([
-                "token" => $token,
-                "prefix" => $prefix,
-                "param" => [
-                    "vehicle_brand_id" => $id,
-                ]
-            ]);
-        }elseif($prefix == "subvehicletype"){
-            $data = json_encode([
-                "token" => $token,
-                "prefix" => $prefix,
-                "param" => [
-                    "vehicle_type_id" => $id,
-                ]
-            ]);
-        }elseif($prefix == "area" && $keyword !== null){
-            $data = json_encode([
-                "token" => $token,
-                "prefix" => $prefix,
-                "param" => [
-                    "search_by" => 'code',
-                    "keyword" => $keyword
-                ]
-            ]);
-        }elseif($prefix == "lastexam"){
-            $data = json_encode([
-                "token" => $token,
-                "prefix" => $prefix,
-                "param" => [
-                    "nouji" => $nouji
-                ]
-            ]);
+        // Mapping payload JSON berdasarkan prefix
+        if ($prefix == "varian") {
+            $data = json_encode(["token" => $token, "prefix" => $prefix, "param" => ["vehicle_varian_type_id" => $id]]);
+        } elseif ($prefix == "variantype") {
+            $data = json_encode(["token" => $token, "prefix" => $prefix, "param" => ["vehicle_brand_id" => $id]]);
+        } elseif ($prefix == "subvehicletype") {
+            $data = json_encode(["token" => $token, "prefix" => $prefix, "param" => ["vehicle_type_id" => $id]]);
+        } elseif ($prefix == "area" && $keyword !== null) {
+            $data = json_encode(["token" => $token, "prefix" => $prefix, "param" => ["search_by" => 'code', "keyword" => $keyword]]);
+        } elseif ($prefix == "lastexam") {
+            $data = json_encode(["token" => $token, "prefix" => $prefix, "param" => ["nouji" => $nouji]]);
             $time = 120;
-        }elseif($prefix == "insertexam"){
-            $data = json_encode([
-                "token" => $token,
-                "prefix" => $prefix,
-                "param" => [
-                    "nouji" => $nouji,
-                    "status_penerbitan" => (int)$search_by,
-                    "area_code_tujuan" => $keyword
-                ]
-            ]);
+        } elseif ($prefix == "insertexam") {
+            $data = json_encode(["token" => $token, "prefix" => $prefix, "param" => ["nouji" => $nouji, "status_penerbitan" => (int)$search_by, "area_code_tujuan" => $keyword]]);
             $time = 120;
-        }elseif($prefix == "checkpengujiankeluar"){
-            $data = json_encode([
-                "token" => $token,
-                "prefix" => $prefix,
-                "param" => [
-                    "nouji" => $nouji,
-                    "statuspenerbitan" => (int)$search_by,
-                ]
-            ]);
+        } elseif ($prefix == "checkpengujiankeluar") {
+            $data = json_encode(["token" => $token, "prefix" => $prefix, "param" => ["nouji" => $nouji, "statuspenerbitan" => (int)$search_by]]);
             $time = 120;
-        }else{
-            $data = json_encode([
-                "token" => $token,
-                "prefix" => $prefix,
-                "param" => [
-                    "search_by" => $search_by,
-                    "keyword" => $keyword
-                ]
-            ]);
-        }
-
-        // return $data;
-        // die();
-
-
-        // Set opsi cURL
-        curl_setopt_array($curl, [
-            CURLOPT_URL => 'https://ujiberkala-middle.kemenhub.go.id/api/v1/global',  // URL endpoint
-            CURLOPT_RETURNTRANSFER => true,  // Agar hasil dikembalikan sebagai string, bukan langsung output
-            CURLOPT_FOLLOWLOCATION => true,  // Ikuti redirect jika ada
-            CURLOPT_HTTPHEADER => [
-                'Content-Type: application/json',  // Header untuk menunjukkan tipe konten
-            ],
-            CURLOPT_POST => true,  // Gunakan metode POST
-            CURLOPT_POSTFIELDS => $data,  // Data yang akan dikirim
-            CURLOPT_CONNECTTIMEOUT => $time, // timeout koneksi (detik)
-            CURLOPT_TIMEOUT => $time,        // timeout keseluruhan (detik)
-        ]);
-
-        // // Eksekusi request
-        $response = curl_exec($curl);
-        if ($response === false) {
-            $response = '';
-        }else if(strpos($response, '502 Bad Gateway') !== false)
-        {
-            $response = '';
-        }else if(strpos($response, '<!DOCTYPE html>') !== false)
-        {
-            $response = '';
-        }
-
-        // Cek jika ada error dalam request
-        if (curl_errno($curl)) {
-            // echo 'Error:' . curl_error($curl);
-            if(empty($response)){
-                if($prefix == "statuspenerbitan"){
-                    return $this->returnJson(Statuspenerbitan::all());
-                }elseif($prefix == "kelasjalan"){
-                    return $this->returnJson(Kelasjalan::all());
-                }elseif($prefix == "merk"){
-                    return $this->returnJson(Merek::all());
-                }elseif($prefix == "varian"){
-                    if(empty($id) || is_null($id)){
-                        return $this->returnJson(Varian::all());
-                    }else{
-                        return $this->returnJson(Varian::where('vehicle_varian_type_id',$id)->get());
-                    }
-                }elseif($prefix == "variantype"){
-                    if(empty($id) || is_null($id)){
-                        return $this->returnJson(Bc_Tipe::all());
-                    }else{
-                        return $this->returnJson(Bc_Tipe::where('vehicle_brand_id',$id)->get());
-                    }
-                }elseif($prefix == "subvehicletype"){
-                    if(empty($id) || is_null($id)){
-                        return $this->returnJson(Subjenis::all());
-                    }else{
-                        return $this->returnJson(Subjenis::where('vehicle_sub_type_id',$id)->get());
-                    }
-                }elseif($prefix == "vehicletype"){
-                    return $this->returnJson(Bc_Jenis::all());
-                }elseif($prefix == "area"){
-                    return $this->returnJson(Kodewilayah::all());
-                }elseif($prefix == "fuel"){
-                    return $this->returnJson(Bahanbakar::all());
-                }
-            }
         } else {
-            // Cek apakah response valid JSON
-            $responseArray = json_decode($response, true);
-            $json_response = json_decode($response);
-
-            if(empty($response)){
-                if($prefix == "statuspenerbitan"){
-                    return $this->returnJson(Statuspenerbitan::all());
-                }elseif($prefix == "kelasjalan"){
-                    return $this->returnJson(Kelasjalan::all());
-                }elseif($prefix == "merk"){
-                    return $this->returnJson(Merek::all());
-                }elseif($prefix == "varian"){
-                    if(empty($id) || is_null($id)){
-                        return $this->returnJson(Varian::all());
-                    }else{
-                        return $this->returnJson(Varian::where('vehicle_varian_type_id',$id)->get());
-                    }
-                }elseif($prefix == "variantype"){
-                    if(empty($id) || is_null($id)){
-                        return $this->returnJson(Bc_Tipe::all());
-                    }else{
-                        return $this->returnJson(Bc_Tipe::where('vehicle_brand_id',$id)->get());
-                    }
-                }elseif($prefix == "subvehicletype"){
-                    if(empty($id) || is_null($id)){
-                        return $this->returnJson(Subjenis::all());
-                    }else{
-                        return $this->returnJson(Subjenis::where('vehicle_sub_type_id',$id)->get());
-                    }
-                }elseif($prefix == "vehicletype"){
-                    return $this->returnJson(Bc_Jenis::all());
-                }elseif($prefix == "area"){
-                    return $this->returnJson(Kodewilayah::all());
-                }elseif($prefix == "fuel"){
-                    return $this->returnJson(Bahanbakar::all());
-                }
-            }
-
-            if (json_last_error() == JSON_ERROR_NONE) {
-                // Tampilkan respons dalam format "pretty" jika JSON valid
-                // echo "<pre>" . json_encode($json_response, JSON_PRETTY_PRINT) . "</pre>";
-                if($prefix == "insertexam"){
-                    $status = $responseArray['status'];
-                    if($status){
-                        $data = Pendaftaran::where('uuid',$id)->first();
-                        if($data){
-                            $datSurat = Persuratan::where('pendaftaran_id',$data->id)->first();
-                            $datSurat->status_cetak = '1';
-                            $datSurat->save();
-                        }
-                    }
-                }
-                return $json_response;
-            } else {
-                // Tampilkan respons asli jika bukan JSON
-                return $response;
-            }
+            $data = json_encode(["token" => $token, "prefix" => $prefix, "param" => ["search_by" => $search_by, "keyword" => $keyword]]);
         }
 
-        // Tutup sesi cURL
-        curl_close($curl);
-    }
-
-    public function getDataVTASRUT($search){
-        // API URL
-        $base_url = 'https://api-gateway.hubdat.kemenhub.go.id/data-integration-service/vta/srut/find';
-
-        // Parameter pencarian (misalnya, didapatkan dari input pengguna)
-        $search_query = $search; // Bisa diubah atau diambil dari input form
-
-        // Menambahkan parameter pencarian ke URL
-        $url = $base_url . '?search=' . urlencode($search_query);
-        $cookie_name = 'VTA-TOKEN';
-        if (isset($_COOKIE[$cookie_name])) {
-            // $token = $_COOKIE[$cookie_name];
-            $cookie_value = $this->getTokenVTASRUT();
-            setcookie($cookie_name, $cookie_value, time() + (332000), "/");
-            // Bearer Token
-            $token = $cookie_value;
-        } else {
-            $cookie_value = $this->getTokenVTASRUT();
-            setcookie($cookie_name, $cookie_value, time() + (332000), "/");
-            // Bearer Token
-            $token = $cookie_value;
-        }
-
-        // Inisialisasi cURL
-        $ch = curl_init();
-
-        // Mengatur URL dengan parameter pencarian
-        curl_setopt($ch, CURLOPT_URL, $url);
-
-        // Mengatur metode HTTP menjadi GET
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-
-        // Menambahkan header Authorization dengan Bearer token
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Authorization: Bearer ' . $token,
-            'Content-Type: application/json'
-        ));
-
-        // Mengembalikan respon sebagai string, tidak langsung menampilkannya
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        // Eksekusi permintaan
-        $response = curl_exec($ch);
-        // print_r($response);
-        // die();
-
-        // Mengecek apakah terjadi kesalahan
-        if (curl_errno($ch)) {
-            echo 'Error:' . curl_error($ch);
-        } else {
-            // Cek apakah response valid JSON
-            $responseArray = json_decode($response, true);
-            $json_response = json_decode($response);
-            if (json_last_error() == JSON_ERROR_NONE) {
-                // Tampilkan respons dalam format "pretty" jika JSON valid
-                // echo "<pre>" . json_encode($json_response, JSON_PRETTY_PRINT) . "</pre>";
-                $status = $responseArray['status_code'];
-                if($status == 401){
-                    $cookie_name = 'VTA-TOKEN';
-                    if (isset($_COOKIE[$cookie_name])) {
-                        // $token = $_COOKIE[$cookie_name];
-                        $cookie_value = $this->getTokenVTASRUT();
-                        setcookie($cookie_name, $cookie_value, time() + (332000), "/");
-                        // Bearer Token
-                        $token = $cookie_value; 
-                    } else {
-                        $cookie_value = $this->getTokenVTASRUT();
-                        setcookie($cookie_name, $cookie_value, time() + (332000), "/");
-                        // Bearer Token
-                        $token = $cookie_value;
-                    }
-                }
-                return $json_response;
-            } else {
-                // Tampilkan respons asli jika bukan JSON
-                return $response;
-            }
-        }
-
-        // Menutup resource cURL
-        curl_close($ch);
-    }
-
-    public function getTokenVTASRUT(){
-
-        $tokenLama = Bc_Srut::where('srut_id')->first();
-        if($tokenLama)
-        {
-            date_default_timezone_set('Asia/Jakarta');
-            $expired = $tokenLama->srut_expired;
-            if (time() > $expired) {
-                return $tokenLama->srut_token;
-            }
-        }
         // Inisialisasi sesi cURL
         $curl = curl_init();
-        // Data yang akan dikirim dalam format JSON
-            $data = json_encode([
-                // "email" => "upt.pkbkotacirebon@gmail.com",
-                // "password" => "7TUxgZJ#",
-                "email" => "dishub@bantulkab.go.id",
-                "password" => "28N81p5@Edu7",
-            ]);
-
-        // return $data;
-        // die();
-
-
-        // Set opsi cURL
+        
         curl_setopt_array($curl, [
-            CURLOPT_URL => 'https://api-gateway.hubdat.dephub.go.id/auth-service/auth/open/token',  // URL endpoint
-            CURLOPT_RETURNTRANSFER => true,  // Agar hasil dikembalikan sebagai string, bukan langsung output
-            CURLOPT_FOLLOWLOCATION => true,  // Ikuti redirect jika ada
+            CURLOPT_URL => 'https://ujiberkala-middle.kemenhub.go.id/api/v1/global',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            
+            // FIX UTAMA KECEPATAN: Memaksa IPv4 untuk menghindari delay DNS lookup domain Kemenhub
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+            
             CURLOPT_HTTPHEADER => [
-                'Content-Type: application/json',  // Header untuk menunjukkan tipe konten
+                'Content-Type: application/json',
             ],
-            CURLOPT_POST => true,  // Gunakan metode POST
-            CURLOPT_POSTFIELDS => $data  // Data yang akan dikirim
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $data,
+            CURLOPT_CONNECTTIMEOUT => $time,
+            CURLOPT_TIMEOUT => $time,
         ]);
 
         // Eksekusi request
         $response = curl_exec($curl);
+        $curl_error = curl_errno($curl);
         
+        // TUTUP SESI LANGSUNG: Mencegah resource leak / koneksi menggantung
+        curl_close($curl);
 
-        // Cek jika ada error dalam request
-        if (curl_errno($curl)) {
-            echo 'Error:' . curl_error($curl);
-        } else {
-            // Cek apakah response valid JSON
-            $responseArray = json_decode($response, true);
-            $json_response = json_decode($response);
-            if (json_last_error() == JSON_ERROR_NONE) {
-                // Tampilkan respons dalam format "pretty" jika JSON valid
-                // echo "<pre>" . json_encode($json_response, JSON_PRETTY_PRINT) . "</pre>";
-                $status = $responseArray['status_code'];
-                if($status == 200){
-                    $updateToken = Bc_Srut::where('srut_id','1')->first();
-                    if($updateToken){
-                        $updateToken->srut_token = $responseArray['data']['token'];
-                        $updateToken->srut_expired = $responseArray['data']['expired'];
-                        $updateToken->save();
+        // Fungsi helper untuk fallback lokal jika API Kemenhub timeout/error/down
+        $fallbackToLocal = function() use ($prefix, $id) {
+            if ($prefix == "statuspenerbitan") return $this->returnJson(Statuspenerbitan::all());
+            if ($prefix == "kelasjalan") return $this->returnJson(Kelasjalan::all());
+            if ($prefix == "merk") return $this->returnJson(Merek::all());
+            if ($prefix == "varian") return empty($id) ? $this->returnJson(Varian::all()) : $this->returnJson(Varian::where('vehicle_varian_type_id', $id)->get());
+            if ($prefix == "variantype") return empty($id) ? $this->returnJson(Bc_Tipe::all()) : $this->returnJson(Bc_Tipe::where('vehicle_brand_id', $id)->get());
+            if ($prefix == "subvehicletype") return empty($id) ? $this->returnJson(Subjenis::all()) : $this->returnJson(Subjenis::where('vehicle_sub_type_id', $id)->get());
+            if ($prefix == "vehicletype") return $this->returnJson(Bc_Jenis::all());
+            if ($prefix == "area") return $this->returnJson(Kodewilayah::all());
+            if ($prefix == "fuel") return $this->returnJson(Bahanbakar::all());
+            
+            return null;
+        };
+
+        // Cek kondisi error cURL / respons kosong / bad gateway / halaman error HTML
+        if ($curl_error || $response === false || strpos($response, '502 Bad Gateway') !== false || strpos($response, '<!DOCTYPE html>') !== false || empty($response)) {
+            return $fallbackToLocal();
+        }
+
+        $responseArray = json_decode($response, true);
+        $json_response = json_decode($response);
+
+        // Jika bukan format JSON yang valid, kembalikan respons mentah
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return $response;
+        }
+
+        // Penanganan khusus untuk checkpengujiankeluar
+        if ($prefix == "checkpengujiankeluar") {
+            return $json_response;
+        }
+
+        // Penanganan khusus untuk insertexam (Update status cetak persuratan)
+        if ($prefix == "insertexam") {
+            $status = $responseArray['status'] ?? false;
+            if ($status === true || $status === 'true' || $status === 'ok') {
+                $pendaftaran = Pendaftaran::where('uuid', $id)->first();
+                if ($pendaftaran) {
+                    $datSurat = Persuratan::where('pendaftaran_id', $pendaftaran->id)->first();
+                    if ($datSurat) {
+                        $datSurat->status_cetak = '1';
+                        $datSurat->save();
                     }
-                    return  $responseArray['data']['token'];
                 }
-            } else {
-                // Tampilkan respons asli jika bukan JSON
-                return $response;
             }
         }
 
-        // Tutup sesi cURL
+        return $json_response;
+    }
+
+    public function getDataVTASRUT($search) {
+        $base_url = 'https://api-gateway.hubdat.kemenhub.go.id/data-integration-service/vta/srut/find';
+        $url = $base_url . '?search=' . urlencode($search);
+        
+        // Ambil token (sudah otomatis divalidasi dan di-cache di database oleh getTokenVTASRUT)
+        $token = $this->getTokenVTASRUT();
+
+        // Helper cURL internal untuk mendukung proses retry jika 401
+        $executeVtaCurl = function($targetUrl, $authToken) {
+            $ch = curl_init();
+
+            curl_setopt_array($ch, [
+                CURLOPT_URL => $targetUrl,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_RETURNTRANSFER => true,
+                
+                // FIX UTAMA KECEPATAN: Paksa IPv4 untuk menghindari delay DNS/koneksi
+                CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+                CURLOPT_CONNECTTIMEOUT => 10,
+                CURLOPT_TIMEOUT => 15,
+                
+                CURLOPT_HTTPHEADER => [
+                    'Authorization: Bearer ' . $authToken,
+                    'Content-Type: application/json'
+                ]
+            ]);
+
+            $response = curl_exec($ch);
+            $err = curl_errno($ch);
+            $errMsg = curl_error($ch);
+            
+            // Tutup cURL langsung untuk mencegah resource leak
+            curl_close($ch);
+
+            if ($err) {
+                return ['error' => true, 'message' => $errMsg];
+            }
+
+            return ['error' => false, 'response' => $response];
+        };
+
+        // Eksekusi request pertama
+        $result = $executeVtaCurl($url, $token);
+        if ($result['error']) {
+            return 'Error:' . $result['message'];
+        }
+
+        $response = $result['response'];
+        $responseArray = json_decode($response, true);
+        $json_response = json_decode($response);
+
+        if (json_last_error() === JSON_ERROR_NONE && isset($responseArray['status_code'])) {
+            $status = $responseArray['status_code'];
+            
+            // Jika token Unauthorized / Expired (401), reset masa aktif token di DB, ambil baru, lalu retry sekali
+            if ($status == 401) {
+                $tokenLama = Bc_Srut::where('srut_id', '1')->first();
+                if ($tokenLama) {
+                    $tokenLama->srut_expired = 0; // Paksa anggap expired
+                    $tokenLama->save();
+                }
+                
+                $newToken = $this->getTokenVTASRUT();
+                $retryResult = $executeVtaCurl($url, $newToken);
+                
+                if (!$retryResult['error']) {
+                    return json_decode($retryResult['response']);
+                }
+            }
+            
+            return $json_response;
+        } else {
+            return $response;
+        }
+    }
+
+    public function getTokenVTASRUT() {
+        date_default_timezone_set('Asia/Jakarta');
+
+        // 1. Cek token yang tersimpan di database
+        $tokenLama = Bc_Srut::where('srut_id', '1')->first();
+        
+        if ($tokenLama && !empty($tokenLama->srut_token)) {
+            $expired = $tokenLama->srut_expired;
+            
+            // PERBAIKAN LOGIKA: Jika waktu sekarang MASIH DI BAWAH waktu expired (token masih aktif), gunakan token lama
+            if (time() < $expired) {
+                return $tokenLama->srut_token;
+            }
+        }
+
+        // 2. Jika token tidak ada atau sudah expired, ambil token baru via cURL
+        $curl = curl_init();
+        $data = json_encode([
+            "email" => "upubkbkotadumai@gmail.com",
+            "password" => "qv8HR4LS",
+        ]);
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => 'https://api-gateway.hubdat.kemenhub.go.id/auth-service/auth/open/token',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            
+            // FIX UTAMA KECEPATAN: Paksa IPv4
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_TIMEOUT => 15,
+            
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json',
+            ],
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $data
+        ]);
+
+        $response = curl_exec($curl);
+        $curl_error = curl_errno($curl);
+        $curl_error_msg = curl_error($curl);
+        
+        // Tutup sesi cURL langsung
         curl_close($curl);
+
+        if ($curl_error) {
+            return 'Error:' . $curl_error_msg;
+        }
+
+        $responseArray = json_decode($response, true);
+        $json_response = json_decode($response);
+
+        if (json_last_error() === JSON_ERROR_NONE && isset($responseArray['status_code'])) {
+            if ($responseArray['status_code'] == 200) {
+                $newToken = $responseArray['data']['token'] ?? null;
+                $newExpired = $responseArray['data']['expired'] ?? null;
+
+                if ($newToken) {
+                    // Simpan atau perbarui token ke database
+                    $updateToken = Bc_Srut::firstOrNew(['srut_id' => '1']);
+                    $updateToken->srut_token = $newToken;
+                    $updateToken->srut_expired = $newExpired;
+                    $updateToken->save();
+                }
+
+                return $newToken;
+            }
+        }
+
+        return $response;
     }
 
     public function returnJson($data)
