@@ -96,11 +96,11 @@
                         <div class="text-dark-75 font-weight-bolder font-size-sm mb-2">Jumlah Hadir / Belum Hadir</div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="text-white">Hadir</span>
-                            <span class="font-weight-bolder font-size-h4 text-success">{{ statusSummary.hadir }}</span>
+                            <span class="font-weight-bolder font-size-h4 text-black">{{ statusSummary.hadir }}</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-2">
                             <span class="text-white">Belum Hadir</span>
-                            <span class="font-weight-bolder font-size-h4 text-warning">{{ statusSummary.belumHadir }}</span>
+                            <span class="font-weight-bolder font-size-h4 text-black">{{ statusSummary.belumHadir }}</span>
                         </div>
                     </div>
                 </div>
@@ -112,11 +112,11 @@
                         <div class="text-dark-75 font-weight-bolder font-size-sm mb-2">Lulus / Tidak Lulus</div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="text-white">Lulus</span>
-                            <span class="font-weight-bolder font-size-h4 text-primary">{{ statusSummary.lulus }}</span>
+                            <span class="font-weight-bolder font-size-h4 text-black">{{ statusSummary.lulus }}</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-2">
                             <span class="text-white">Tidak Lulus</span>
-                            <span class="font-weight-bolder font-size-h4 text-danger">{{ statusSummary.tidakLulus }}</span>
+                            <span class="font-weight-bolder font-size-h4 text-black">{{ statusSummary.tidakLulus }}</span>
                         </div>
                     </div>
                 </div>
@@ -127,12 +127,12 @@
                     <div class="card-body py-4">
                         <div class="text-dark-75 font-weight-bolder font-size-sm mb-2">Cancel / Reschedule</div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="text-muted">Cancel</span>
-                            <span class="font-weight-bolder font-size-h4 text-danger">{{ statusSummary.cancel }}</span>
+                            <span class="text-white">Cancel</span>
+                            <span class="font-weight-bolder font-size-h4 text-black">{{ statusSummary.cancel }}</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-2">
-                            <span class="text-muted">Reschedule</span>
-                            <span class="font-weight-bolder font-size-h4 text-info">{{ statusSummary.reschedule }}</span>
+                            <span class="text-white">Reschedule</span>
+                            <span class="font-weight-bolder font-size-h4 text-black">{{ statusSummary.reschedule }}</span>
                         </div>
                     </div>
                 </div>
