@@ -58,7 +58,7 @@ class PendaftaranOnlineRepository
             return null;
         }
 
-        $noidentitaspemilik = $this->modelUserOnline->where('user_id', $data->user_id)->value('no_identitas') ?? '0000000000000000';
+        $noidentitaspemilik = $this->modelUserOnline->where('id', $data->user_id)->value('no_identitas') ?? '0000000000000000';
 
         $arr = array(
             // 'kodepenerbitans_id' => $data->kodepenerbitans_id,
