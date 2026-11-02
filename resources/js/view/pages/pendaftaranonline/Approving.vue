@@ -7,7 +7,7 @@
         </div>
         <b-collapse visible id="collapse-3">
             <div class="card-body">
-                <div class="row">
+                <div class="row compact-form-row">
                     <div class="col-sm-4">
                         <div class="form-group">
                         <label>Tanggal Pendaftaran</label>
@@ -103,7 +103,7 @@
                                 readonly v-model="pendaftaranonline.nomesin"/>
                         </div>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-12" v-if="pendaftaranonline.status_data == '2'">
                         <div class="form-group">
                             <label>Catatan</label>
                             <textarea class="form-control  form-control-lg" name="catatan"
@@ -230,3 +230,17 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.compact-form-row > [class*="col-"] {
+    margin-bottom: 0.45rem;
+}
+
+.compact-form-row .form-group {
+    margin-bottom: 0.4rem;
+}
+
+.compact-form-row label {
+    margin-bottom: 0.25rem;
+}
+</style>
