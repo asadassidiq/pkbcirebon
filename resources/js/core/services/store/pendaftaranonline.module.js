@@ -36,6 +36,7 @@ export const state = {
         tglsertifikatreg:"",
         tgl_registrasikendaraan:"",
         catatan:"",
+        status_data:"0",
     },
     uuid:"",
     page: 1
@@ -80,6 +81,7 @@ export const mutations = {
             tglsertifikatreg:payload.tglsertifikatreg,
             tgl_registrasikendaraan:payload.tgl_registrasikendaraan,
             catatan:payload.catatan,
+            status_data:payload.status_data
         };
     },
     ASSIGN_KUOTA(state, payload) {
@@ -122,6 +124,7 @@ export const mutations = {
             tglsertifikatreg:"",
             tgl_registrasikendaraan:"",
             catatan:"",
+            status_data:"",
         };
     },
     CLEAR_KUOTA(state) {
