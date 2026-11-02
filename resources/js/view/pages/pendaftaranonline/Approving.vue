@@ -11,7 +11,7 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                         <label>Tanggal Pendaftaran</label>
-                        <b-form-datepicker id="tglpendaftaranonline" v-model="approve.tglpendaftaran"
+                        <b-form-datepicker id="tglpendaftaranonline" v-model="pendaftaranonline.tglpendaftaran"
                             locale="id" :disabled="true"></b-form-datepicker>
                         </div>
                     </div>
@@ -19,23 +19,14 @@
                         <div class="form-group">
                             <label>Jenis Pelayanan</label>
                             <input type="text" class="form-control  form-control-lg" name="keterangan"
-                                readonly v-model="approve.keterangan" />
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                        <label>Waktu</label>
-                        <select class="form-control" v-model="approve.waktu" :disabled="true">
-                            <option value="1">Pagi</option>
-                            <option value="2">Siang</option>
-                        </select>
+                                readonly v-model="pendaftaranonline.keterangan" />
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label> No Uji</label>
                             <input type="text" class="form-control  form-control-lg" name="nouji"
-                                readonly placeholder="No Uji" v-model="approve.nouji" />
+                                readonly placeholder="No Uji" v-model="pendaftaranonline.nouji" />
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -43,7 +34,7 @@
                             <label>No Kendaraan</label>
                             <input type="text" class="form-control  form-control-lg" name="noregistrasikendaraan"
                                 readonly placeholder=" No Kendaraan"
-                                v-model="approve.noregistrasikendaraan" :disabled="true"/>
+                                v-model="pendaftaranonline.noregistrasikendaraan" :disabled="true"/>
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -51,23 +42,15 @@
                             <label>Nama Pemohon</label>
                             <input type="text" class="form-control  form-control-lg" name="namapemohon"
                                 readonly placeholder="Nama Pemohon"
-                                v-model="approve.namapemohon" :disabled="true"/>
+                                v-model="pendaftaranonline.namapemohon" :disabled="true"/>
                         </div>
                     </div>
-                    <div class="col-sm-4" v-if="approve.status_data == '1'">
+                    <div class="col-sm-4" v-if="pendaftaranonline.status_data == '1'">
                         <div class="form-group">
                             <label>Nama Pemilik</label>
                             <input type="text" class="form-control  form-control-lg" name="nama"
                                 readonly placeholder="Nama"
-                                v-model="approve.nama" :disabled="true"/>
-                        </div>
-                    </div>
-                    <div class="col-sm-4" v-if="approve.status_data == '1'">
-                        <div class="form-group">
-                            <label>Alamat</label>
-                            <input type="text" class="form-control  form-control-lg" name="alamat"
-                                readonly placeholder="Alamat"
-                                v-model="approve.alamat" :disabled="true"/>
+                                v-model="pendaftaranonline.nama" :disabled="true"/>
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -75,61 +58,62 @@
                             <label>No Telp</label>
                             <input type="text" class="form-control  form-control-lg" name="notelp"
                                 readonly placeholder="No Telp"
-                                v-model="approve.notelp" :disabled="true"/>
+                                v-model="pendaftaranonline.notelp" :disabled="true"/>
                         </div>
                     </div>
-                    <div class="col-sm-4" v-if="approve.status_data == '1'">
+                    <div class="col-sm-4" v-if="pendaftaranonline.status_data == '1'">
                         <div class="form-group">
                             <label>Merek</label>
                             <input type="text" class="form-control  form-control-lg" name="merek"
-                                readonly v-model="approve.merek"/>
+                                readonly v-model="pendaftaranonline.merek"/>
                         </div>
                     </div>
-                    <div class="col-sm-4" v-if="approve.status_data == '1'">
+                    <div class="col-sm-4" v-if="pendaftaranonline.status_data == '1'">
                         <div class="form-group">
                             <label>Tipe</label>
                             <input type="text" class="form-control  form-control-lg" name="tipe"
-                                readonly v-model="approve.tipe"/>
+                                readonly v-model="pendaftaranonline.tipe"/>
                         </div>
                     </div>
-                    <div class="col-sm-4" v-if="approve.status_data == '1'">
+                    <div class="col-sm-4" v-if="pendaftaranonline.status_data == '1'">
                         <div class="form-group">
                             <label>Jenis</label>
                             <input type="text" class="form-control  form-control-lg" name="jenis"
-                                readonly v-model="approve.jenis"/>
+                                readonly v-model="pendaftaranonline.jenis"/>
                         </div>
                     </div>
-                    <div class="col-sm-4" v-if="approve.status_data == '1'">
+                    <div class="col-sm-4" v-if="pendaftaranonline.status_data == '1'">
                         <div class="form-group">
                             <label>Model</label>
                             <input type="text" class="form-control  form-control-lg" name="subjenis"
-                                readonly v-model="approve.jenis"/>
+                                readonly v-model="pendaftaranonline.subjenis"/>
                         </div>
                     </div>
-                    <div class="col-sm-4" v-if="approve.status_data == '1'">
+                    <div class="col-sm-4" v-if="pendaftaranonline.status_data == '1'">
                         <div class="form-group">
                             <label>No Rangka</label>
                             <input type="text" class="form-control  form-control-lg" name="norangka"
-                                readonly v-model="approve.norangka"/>
+                                readonly v-model="pendaftaranonline.norangka"/>
                         </div>
                     </div>
-                    <div class="col-sm-4" v-if="approve.status_data == '1'">
+                    <div class="col-sm-4" v-if="pendaftaranonline.status_data == '1'">
                         <div class="form-group">
                             <label>No Mesin</label>
                             <input type="text" class="form-control  form-control-lg" name="nomesin"
-                                readonly v-model="approve.nomesin"/>
+                                readonly v-model="pendaftaranonline.nomesin"/>
                         </div>
                     </div>
-                    <div class="col-sm-4" v-if="approve.status_data == '1'">
+                    <div class="col-sm-4" v-if="pendaftaranonline.status_data == '1'">
                         <div class="form-group">
-                            <label>Tahun Pembuatan</label>
-                            <input type="text" class="form-control  form-control-lg" name="thpembuatan"
-                                readonly v-model="approve.thpembuatan"/>
+                            <label>Catatan</label>
+                            <textarea class="form-control  form-control-lg" name="catatan"
+                                readonly v-model="pendaftaranonline.catatan"></textarea>
                         </div>
                     </div>
                     <div class="col-sm-12 text-center">
-                        <h3 v-if="approve.status_data == '0'" class="text-danger">Data Kendaraan Belum terdata di Database</h3>
-                        <h3 v-if="approve.status_data == '1'" class="text-success">Data Kendaraan terdata di Database</h3>
+                        <h3 v-if="pendaftaranonline.status_data == '0'" class="text-danger">Data Kendaraan Belum terdata di Database</h3>
+                        <h3 v-else-if="pendaftaranonline.status_data == '2'" class="text-danger">Data Kendaraan tidak lengkap di Database</h3>
+                        <h3 v-else-if="pendaftaranonline.status_data == '1'" class="text-success">Data Kendaraan terdata di Database</h3>
                     </div>
                 </div>
             </div>
@@ -141,44 +125,44 @@
                     <div class=" col-4">
                         <div class="checkbox-list">
                             <label class="checkbox">
-                                <input type="checkbox" name="v_stnk" v-model="approve.v_stnk" :true-value="1" :false-value="0" :disabled="true"
+                                <input type="checkbox" name="v_stnk" v-model="pendaftaranonline.v_stnk" :true-value="1" :false-value="0" :disabled="true"
                                 />
                                 <span></span>
                                 STNK asli dan masih berlaku
                             </label>
                         </div>
                     </div>
-                    <div class="col-4" v-if="approve.keterangan == 'Numpang Uji Keluar' || approve.keterangan == 'Uji Berkala' || approve.keterangan == 'Rusak' || approve.keterangan == 'Mutasi Masuk'">
+                    <div class="col-4" v-if="pendaftaranonline.keterangan == 'Numpang Uji Keluar' || pendaftaranonline.keterangan == 'Uji Berkala' || pendaftaranonline.keterangan == 'Rusak' || pendaftaranonline.keterangan == 'Mutasi Masuk'">
                         <div class="checkbox-list">
                             <label class="checkbox">
-                                <input type="checkbox" name="v_smartcard" v-model="approve.v_smartcard" :true-value="1" :false-value="0"/>
+                                <input type="checkbox" name="v_smartcard" v-model="pendaftaranonline.v_smartcard" :true-value="1" :false-value="0"/>
                                 <span></span>
                                 Kartu Uji
                             </label>
                         </div>
                     </div>
-                    <div class="col-4" v-if="approve.keterangan == 'Uji Pertama'">
+                    <div class="col-4" v-if="pendaftaranonline.keterangan == 'Uji Pertama'">
                         <div class="checkbox-list">
                             <label class="checkbox">
-                                <input type="checkbox" name="v_srut" v-model="approve.v_srut" :true-value="1" :false-value="0"/>
+                                <input type="checkbox" name="v_srut" v-model="pendaftaranonline.v_srut" :true-value="1" :false-value="0"/>
                                 <span></span>
                                 SRUT
                             </label>
                         </div>
                     </div>
-                    <div class="col-4" v-if="approve.keterangan == 'Mutasi Masuk'">
+                    <div class="col-4" v-if="pendaftaranonline.keterangan == 'Mutasi Masuk'">
                         <div class="checkbox-list">
                             <label class="checkbox">
-                                <input type="checkbox" name="v_riwayat" v-model="approve.v_suratketerangan" :true-value="1" :false-value="0"/>
+                                <input type="checkbox" name="v_riwayat" v-model="pendaftaranonline.v_suratketerangan" :true-value="1" :false-value="0"/>
                                 <span></span>
                                 Surat keterangan / persetujuan mutasi dari daerah asal dan kelengkapannya
                             </label>
                         </div>
                     </div>
-                    <div class="col-4" v-if="approve.keterangan == 'Numpang Uji Masuk'">
+                    <div class="col-4" v-if="pendaftaranonline.keterangan == 'Numpang Uji Masuk'">
                         <div class="checkbox-list">
                             <label class="checkbox">
-                                <input type="checkbox" name="v_riwayat" v-model="approve.v_suratketerangan" :true-value="1" :false-value="0"/>
+                                <input type="checkbox" name="v_riwayat" v-model="pendaftaranonline.v_suratketerangan" :true-value="1" :false-value="0"/>
                                 <span></span>
                                 Surat keterangan / persetujuan Numpang uji dari daerah asal 
                             </label>
@@ -239,7 +223,6 @@ export default {
         ...mapState(["errors"]),
         ...mapState({
             pendaftaranonline: state => state.pendaftaranonline.pendaftaranonline,
-            approve: state => state.pendaftaranonline.approve,
             uuid: state => state.pendaftaranonline.uuid,
         }),
     },

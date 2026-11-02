@@ -9,19 +9,21 @@ use App\Models\Identitaskendaraan;
 use App\Models\Kuota;
 use App\Models\PendaftaransOnline;
 use App\Models\Persuratan;
+use App\Models\UserOnline;
 use DB;
 
 class PendaftaranOnlineRepository
 {
     use RepositoryTrait;
 
-    protected $model,$modelOnline,$modelPenyerahan,$modelIden;
+    protected $model,$modelOnline,$modelPenyerahan,$modelIden,$modelUserOnline;
 
-    public function __construct(Pendaftaran $model, PendaftaransOnline $modelOnline, Identitaskendaraan $modelIden)
+    public function __construct(Pendaftaran $model, PendaftaransOnline $modelOnline, Identitaskendaraan $modelIden, UserOnline $modelUserOnline)
     {
         $this->model = $model;
         $this->modelIden = $modelIden;
         $this->modelOnline = $modelOnline;
+        $this->modelUserOnline = $modelUserOnline;
     }
 
     public function getAll()
@@ -50,48 +52,66 @@ class PendaftaranOnlineRepository
 
     public function getPendaftaranDetail($id)
     {
-        $data = $this->modelOnline->where('uuid', $id)->join('kodepenerbitans', 'bookings.kodepenerbitans_id', '=', 'kodepenerbitans.id')->first();
+        $data = $this->modelOnline->where('uuid', $id)->first();
+
+        if(!$data){
+            return null;
+        }
+
+        $noidentitaspemilik = $this->modelUserOnline->where('user_id', $data->user_id)->value('no_identitas') ?? '0000000000000000';
+
         $arr = array(
-            'kodepenerbitans_id' => $data->kodepenerbitans_id,
-            'keterangan' => $data->keterangan,
-            'waktu' => $data->waktu,
-            'tglpendaftaran' => $data->tglpendaftaran,
-            'nouji' => $data->nouji,
-            'noregistrasikendaraan' => $data->noregistrasikendaraan,
-            'bahanbakar'    => '',
-            'nomesin'       => '',
-            'norangka'      => '',
-            'nama'          => '',
-            'alamat'        => '',
+            // 'kodepenerbitans_id' => $data->kodepenerbitans_id,
+            'uuid' => $data->uuid,
+            'kode_booking' => $data->kode_booking,
+            'keterangan' => $this->replaceJenisPenerbitan($data->jenis_uji),
+            'tglpendaftaran' => $data->tanggal,
+            'nouji' => $data->nomor_uji,
+            'noregistrasikendaraan' => $data->nomor_polisi,
+            'noidentitaspemilik' => $noidentitaspemilik,
+            'nama'    => $data->nama_pemilik,
+            'namapemohon'       => $data->pemohon_nama,
+            'notelp'      => $data->pemohon_telepon,
             'merek'         => '',
             'tipe'          => '',
             'jenis'         => '',
             'subjenis'      => '',
-            'thpembuatan'   => '',
+            'nomesin'       => '',
+            'norangka'      => '',
+            'nosertifikatreg' => '',
+            'tglsertifikatreg' => '',
+            'tgl_registrasikendaraan' => '',
             'status_data'   => '0',
+            'catatan'       => 'data belum lengkap',
         );
         if($data)
         {
-            $iden = $this->modelIden->where('nouji',$data->nouji)->first();
+            $iden = $this->modelIden->select('merek','tipe','jenis','subjenis','nomesin','norangka')->where('nouji',$data->nomor_uji)->first();
             if($iden){
+                $status_data = $this->checkStatusData($iden);
+                $catatan = $this->checkMessageData($iden);
                 $arr = array(
-                    'kodepenerbitans_id' => $data->kodepenerbitans_id,
-                    'keterangan' => $data->keterangan,
-                    'waktu' => $data->waktu,
-                    'tglpendaftaran' => $data->tglpendaftaran,
-                    'nouji' => $data->nouji,
-                    'noregistrasikendaraan' => $iden->noregistrasikendaraan,
-                    'bahanbakar'    => $iden->bahanbakar,
-                    'nomesin'       => $iden->nomesin,
-                    'norangka'      => $iden->norangka,
-                    'nama'          => $iden->nama,
-                    'alamat'        => $iden->alamat,
+                    'uuid' => $data->uuid,
+                    'kode_booking' => $data->kode_booking,
+                    'keterangan' => $this->replaceJenisPenerbitan($data->jenis_uji),
+                    'tglpendaftaran' => $data->tanggal,
+                    'nouji' => $data->nomor_uji,
+                    'noregistrasikendaraan' => $data->nomor_polisi,
+                    'noidentitaspemilik' => $noidentitaspemilik,
+                    'nama'    => $data->nama_pemilik,
+                    'namapemohon'       => $data->pemohon_nama,
+                    'notelp'      => $data->pemohon_telepon,
                     'merek'         => $iden->merek,
                     'tipe'          => $iden->tipe,
                     'jenis'         => $iden->jenis,
                     'subjenis'      => $iden->subjenis,
-                    'thpembuatan'   => $iden->thpembuatan,
-                    'status_data'   => '1',
+                    'nomesin'       => $iden->nomesin,
+                    'norangka'      => $iden->norangka,
+                    'nosertifikatreg' => $iden->nosertifikatreg ?? '',
+                    'tglsertifikatreg' => $iden->tglsertifikatreg ?? '',
+                    'tgl_registrasikendaraan' => $iden->tgl_registrasikendaraan ?? '',
+                    'status_data'   => $status_data,
+                    'catatan'       => $catatan,
                 );
                 return $arr;
             }
@@ -148,5 +168,58 @@ class PendaftaranOnlineRepository
         $delete = $this->modelOnline->where('id', $id);
         $delete->delete();
         return $delete;
+    }
+
+    private function checkStatusData($iden)
+    {
+        if($iden->merek == '' || $iden->idmerek == '' || $iden->tipe == '' || $iden->idtipe == '' || $iden->idvarian == '' || $iden->idjenis == '' || $iden->idsubjenis == '' || $iden->idbahanbakar == '' || $iden->jenis == '' || $iden->subjenis == '' || $iden->nomesin == '' || $iden->norangka == ''){
+            return '2';
+        }elseif($iden->merek == null || $iden->idmerek == null || $iden->tipe == null || $iden->idtipe == null || $iden->idvarian == null || $iden->idjenis == null || $iden->idsubjenis == null || $iden->idbahanbakar == null || $iden->jenis == null || $iden->subjenis == null || $iden->nomesin == null || $iden->norangka == null){
+            return '2';
+        }
+        return '1';
+    }
+
+    private function checkMessageData($data){
+        $message = '';
+        if($data->merek == '' || $data->idmerek == '')
+            $message .= 'Merek tidak boleh kosong. ';
+        if($data->tipe == '' || $data->idtipe == '')
+            $message .= 'Tipe tidak boleh kosong. ';
+        if($data->idvarian == '')
+            $message .= 'Varian tidak boleh kosong. ';
+        if($data->idjenis == '')
+            $message .= 'Jenis tidak boleh kosong. ';
+        if($data->idsubjenis == '')
+            $message .= 'Subjenis tidak boleh kosong. ';
+        if($data->idbahanbakar == '')
+            $message .= 'Bahan Bakar tidak boleh kosong. ';
+        if($data->jenis == '')
+            $message .= 'Jenis tidak boleh kosong. ';
+        if($data->subjenis == '')
+            $message .= 'Subjenis tidak boleh kosong. ';
+        if($data->nomesin == '')
+            $message .= 'Nomor Mesin tidak boleh kosong. ';
+        if($data->norangka == '')
+            $message .= 'Nomor Rangka tidak boleh kosong. ';
+
+        return $message;
+    }
+
+    private function replaceJenisPenerbitan($data)
+    {
+        if($data == 'uji_pertama')
+            return 'Uji Pertama';
+        if($data == 'uji_berkala')
+            return 'Uji Berkala';
+        if($data == 'numpang_uji_masuk')
+            return 'Numpang Uji Masuk';
+        if($data == 'numpang_uji_keluar')
+            return 'Numpang Uji Keluar';
+        if($data == 'mutasi_masuk')
+            return 'Mutasi Masuk';
+        if($data == 'mutasi_keluar')
+            return 'Mutasi Keluar';
+        return $data;
     }
 }

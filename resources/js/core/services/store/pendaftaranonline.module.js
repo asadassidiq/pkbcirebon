@@ -16,38 +16,26 @@ export const state = {
         tersediasiang:"",
     },
     pendaftaranonline: {
+        uuid:"",
         tglpendaftaran:"",
-        kodepenerbitans_id:"",
-        nouji:"",
-        noregistrasikendaraan:"",
-        waktu:"1",
-        namapemohon:"",
-        notelp:"",
-    },
-    approve:{
-        tglpendaftaran:"",
+        kode_booking:"",
         keterangan:"",
-        kodepenerbitans_id:"",
         nouji:"",
         noregistrasikendaraan:"",
-        waktu:"1",
         namapemohon:"",
         nama:"",
         notelp:"",
-        alamat:"",
         merek:"",
         tipe:"",
         jenis:"",
         subjenis:"",
-        bahanbakar:"",
         norangka:"",
         nomesin:"",
-        thpembuatan:"",
-        v_stnk:"0",
-        v_srut:"0",
-        v_smartcard:"0",
-        v_suratketerangan:"0",
-        status_data:"0",
+        noidentitaspemilik:"",
+        nosertifikatreg:"",
+        tglsertifikatreg:"",
+        tgl_registrasikendaraan:"",
+        catatan:"",
     },
     uuid:"",
     page: 1
@@ -72,40 +60,26 @@ export const mutations = {
     },
     ASSIGN_FORM(state, payload) {
         state.pendaftaranonline = {
+            uuid:payload.uuid,
             tglpendaftaran:payload.tglpendaftaran ,
-            kodepenerbitans_id:payload.kodepenerbitans_id ,
-            nouji:payload.nouji ,
+            kode_booking:payload.kode_booking,
+            keterangan:payload.keterangan,
+            nouji:payload.nouji,
             noregistrasikendaraan:payload.noregistrasikendaraan,
-            waktu:payload.waktu,
             namapemohon:payload.namapemohon,
-            notelp:payload.notelp,
-        };
-    },
-    ASSIGN_FORMAPPROVE(state, payload) {
-        state.approve = {
-            tglpendaftaran:payload.tglpendaftaran ,
-            kodepenerbitans_id:payload.kodepenerbitans_id,
-            keterangan:payload.keterangan ,
-            nouji:payload.nouji ,
-            noregistrasikendaraan:payload.noregistrasikendaraan,
-            waktu:payload.waktu,
-            namapemohon:payload.namapemohon,
-            notelp:payload.notelp,
             nama:payload.nama,
-            alamat:payload.alamat,
+            notelp:payload.notelp,
             merek:payload.merek,
             tipe:payload.tipe,
             jenis:payload.jenis,
             subjenis:payload.subjenis,
-            bahanbakar:payload.bahanbakar,
             norangka:payload.norangka,
             nomesin:payload.nomesin,
-            thpembuatan:payload.thpembuatan,
-            v_stnk:"1",
-            v_srut:"1",
-            v_smartcard:"1",
-            v_suratketerangan:"1",
-            status_data:payload.status_data,
+            noidentitaspemilik:payload.noidentitaspemilik,
+            nosertifikatreg:payload.nosertifikatreg,
+            tglsertifikatreg:payload.tglsertifikatreg,
+            tgl_registrasikendaraan:payload.tgl_registrasikendaraan,
+            catatan:payload.catatan,
         };
     },
     ASSIGN_KUOTA(state, payload) {
@@ -128,13 +102,26 @@ export const mutations = {
     },
     CLEAR_FORM(state) {
         state.pendaftaranonline= {
+            uuid:"",
             tglpendaftaran:"",
-            kodepenerbitans_id:"",
+            kode_booking:"",
+            keterangan:"",
             nouji:"",
             noregistrasikendaraan:"",
-            waktu:"1",
             namapemohon:"",
+            nama:"",
             notelp:"",
+            merek:"",
+            tipe:"",
+            jenis:"",
+            subjenis:"",
+            norangka:"",
+            nomesin:"",
+            noidentitaspemilik:"",
+            nosertifikatreg:"",
+            tglsertifikatreg:"",
+            tgl_registrasikendaraan:"",
+            catatan:"",
         };
     },
     CLEAR_KUOTA(state) {
@@ -200,7 +187,7 @@ export const actions = {
     },
     submitApprove({ dispatch, commit, state }) {
         return new Promise((resolve, reject) => {
-            PendaftaranOnlineService.postApprove(state.approve)
+            PendaftaranOnlineService.postApprove(state.pendaftaranonline)
                 .then(response => {
                     commit("ASSIGN_UUID", response.data.result);
                     resolve(response.data);
@@ -220,7 +207,7 @@ export const actions = {
         return new Promise((resolve, reject) => {
             PendaftaranOnlineService.getPendaftaranOnline(payload)
                 .then(response => {
-                    commit("ASSIGN_FORMAPPROVE", response.data.result);
+                    commit("ASSIGN_FORM", response.data.result);
                     resolve(response.data);
                     // console.log("run edit");
                 })
