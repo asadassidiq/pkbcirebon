@@ -86,7 +86,7 @@ class PendaftaranOnlineRepository
         );
         if($data)
         {
-            $iden = $this->modelIden->select('merek','tipe','jenis','subjenis','nomesin','norangka')->where('nouji',$data->nomor_uji)->first();
+            $iden = $this->modelIden->select('merek','tipe','jenis','subjenis','nomesin','norangka','idmerek','idtipe','idvarian','idjenis','idsubjenis','idbahanbakar')->where('nouji',$data->nomor_uji)->first();
             if($iden){
                 $status_data = $this->checkStatusData($iden);
                 $catatan = $this->checkMessageData($iden);
@@ -180,27 +180,27 @@ class PendaftaranOnlineRepository
         return '1';
     }
 
-    private function checkMessageData($data){
+    private function checkMessageData($iden){
         $message = '';
-        if($data->merek == '' || $data->idmerek == '')
+        if($iden->merek == '' || $iden->idmerek == '')
             $message .= 'Merek tidak boleh kosong. ';
-        if($data->tipe == '' || $data->idtipe == '')
+        if($iden->tipe == '' || $iden->idtipe == '')
             $message .= 'Tipe tidak boleh kosong. ';
-        if($data->idvarian == '')
+        if($iden->idvarian == '')
             $message .= 'Varian tidak boleh kosong. ';
-        if($data->idjenis == '')
+        if($iden->idjenis == '')
             $message .= 'Jenis tidak boleh kosong. ';
-        if($data->idsubjenis == '')
+        if($iden->idsubjenis == '')
             $message .= 'Subjenis tidak boleh kosong. ';
-        if($data->idbahanbakar == '')
+        if($iden->idbahanbakar == '')
             $message .= 'Bahan Bakar tidak boleh kosong. ';
-        if($data->jenis == '')
+        if($iden->jenis == '')
             $message .= 'Jenis tidak boleh kosong. ';
-        if($data->subjenis == '')
+        if($iden->subjenis == '')
             $message .= 'Subjenis tidak boleh kosong. ';
-        if($data->nomesin == '')
+        if($iden->nomesin == '')
             $message .= 'Nomor Mesin tidak boleh kosong. ';
-        if($data->norangka == '')
+        if($iden->norangka == '')
             $message .= 'Nomor Rangka tidak boleh kosong. ';
 
         return $message;

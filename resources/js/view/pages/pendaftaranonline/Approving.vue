@@ -103,7 +103,7 @@
                                 readonly v-model="pendaftaranonline.nomesin"/>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-12">
                         <div class="form-group">
                             <label>Catatan</label>
                             <textarea class="form-control  form-control-lg" name="catatan"
