@@ -170,7 +170,7 @@ class PendaftaranOnlineRepository
         $arrData = array(
             'uuid' => $re->uuid,
             'identitaskendaraan_id' => $identitaskendaraan_id,
-            'kodepenerbitans_id' => $this->returnKodePenerbitan($re->jenis_uji),
+            'kodepenerbitans_id' => $this->returnKodePenerbitan($re->keterangan),
             'tglpendaftaran' => $re->tglpendaftaran ?? '',
             'namapemohon' => $re->namapemohon ?? '',
             'notelp' => $re->notelp ?? '',
@@ -321,19 +321,19 @@ class PendaftaranOnlineRepository
         return $data;
     }
 
-    private function returnKodepenerbitan($data)
+    private function returnKodePenerbitan($data)
     {
-        if($data == 'uji_pertama')
+        if($data == 'Uji Pertama')
             return '1';
-        if($data == 'uji_berkala')
+        if($data == 'Uji Berkala')
             return '2';
-        if($data == 'numpang_uji_masuk')
+        if($data == 'Numpang Uji Masuk')
             return '5';
-        if($data == 'numpang_uji_keluar')
+        if($data == 'Numpang Uji Keluar')
             return '9';
-        if($data == 'mutasi_masuk')
+        if($data == 'Mutasi Masuk')
             return '6';
-        if($data == 'mutasi_keluar')
+        if($data == 'Mutasi Keluar')
             return '10';
         return '0';
     }
