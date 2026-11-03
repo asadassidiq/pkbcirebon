@@ -167,7 +167,6 @@ class PendaftaranOnlineRepository
         if($re->status_data == 1){
             $posisi = 1; 
         }
-        dd($re);
         $arrData = array(
             'uuid' => $re->uuid,
             'identitaskendaraan_id' => $identitaskendaraan_id,
@@ -181,6 +180,7 @@ class PendaftaranOnlineRepository
             'jenispendaftaran' => 'on',
             'noantrian' => $re->noantrian ?? '',
         );
+        dd($arrData);
 
         $createPendaftaran = $this->model->create($arrData);
         $updateBooking = $this->modelOnline->where('uuid', $re->uuid)->first();
