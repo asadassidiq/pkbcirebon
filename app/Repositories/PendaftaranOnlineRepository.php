@@ -89,7 +89,7 @@ class PendaftaranOnlineRepository
         );
         if($data)
         {
-            $iden = $this->modelIden->select('nama','merek','tipe','jenis','subjenis','nomesin','norangka','idmerek','idtipe','idvarian','idjenis','idsubjenis','idbahanbakar')->where('nouji',$data->nomor_uji)->first();
+            $iden = $this->modelIden->select('nama','merek','tipe','jenis','subjenis','nomesin','norangka','idmerek','idtipe','idvarian','idjenis','idsubjenis','idbahanbakar','thpembuatan','nosertifikatreg','tglsertifikatreg','tgl_registrasikendaraan')->where('nouji',$data->nomor_uji)->first();
             if($iden){
                 $status_data = $this->checkStatusData($iden);
                 $catatan = $this->checkMessageData($iden);
