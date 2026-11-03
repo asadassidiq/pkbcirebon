@@ -220,7 +220,7 @@
                     </div>
                     
                     <div class="col-12 text-right">
-                        <button class="btn btn-sm btn-light-warning mr-2" @click="goBack">Close</button>
+                        <button class="btn btn-sm btn-light-danger mr-2" @click="goBack">Close</button>
 
                         <button class="btn btn-primary btn-sm mr-2" @click.prevent="submit(1)" v-if="pendaftaranonline.status_data == 1">
                         <i class="fa fa-save"></i> Simpan
@@ -231,7 +231,7 @@
                         <button class="btn btn-warning btn-sm mr-2" @click.prevent="submit(2)">
                         <i class="fa fa-save"></i> Simpan dan Perubahan data
                         </button>
-                        <button class="btn btn-warning btn-sm mr-2" @click.prevent="$bvModal.show('reschedule')">
+                        <button class="btn btn-danger btn-sm mr-2" @click.prevent="$bvModal.show('reschedule')">
                         <i class="fa fa-calendar"></i> Reschedule
                         </button>
                         
@@ -319,14 +319,14 @@ export default {
 
 <style scoped>
 .compact-form-row > [class*="col-"] {
-    margin-bottom: 0.05rem;
+    margin-bottom: 0.025rem;
 }
 
 .compact-form-row .form-group {
-    margin-bottom: 0.05rem;
+    margin-bottom: 0.025rem;
 }
 
 .compact-form-row label {
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.05rem;
 }
 </style>

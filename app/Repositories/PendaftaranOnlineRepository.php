@@ -209,7 +209,7 @@ class PendaftaranOnlineRepository
 
     private function checkKuota($tgl)
     {
-        $count = $this->modelOnline->where('tglpendaftaran', $tgl)->count();
+        $count = $this->modelOnline->where('tanggal', $tgl)->count();
         return $count;
     }
 
