@@ -196,7 +196,7 @@ class PendaftaranOnlineRepository
         {
             $kuota = $this->checkKuota($request->tglpendaftaran);
             if($kuota < 3) { // Assuming the maximum quota is 10
-                $update->tglpendaftaran = $request->tglpendaftaran;
+                $update->tanggal = $request->tglpendaftaran;
                 $update->catatan = $request->catatan;
                 $update->save();
                 return 'Tanggal pendaftaran berhasil diubah';
