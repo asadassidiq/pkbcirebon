@@ -63,8 +63,7 @@ export const mutations = {
         state.statusProcess = payload;
     },
     ASSIGN_UUID(state, payload) {
-        console.log(payload);
-        state.uuid = payload;
+        state.pendaftaranonline.uuid = payload;
     },
     ASSIGN_FORM(state, payload) {
         state.pendaftaranonline = {
@@ -306,11 +305,7 @@ export const actions = {
             PendaftaranOnlineService.complateDataandApprove(state.pendaftaranonline)
                 .then(response => {
                     resolve(response.data);
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil',
-                        text: response.data
-                    });
+                    commit("ASSIGN_UUID", response.data);
                     commit("SET_STATUS_PROCESS", true);
                 })
                 .catch(error => {

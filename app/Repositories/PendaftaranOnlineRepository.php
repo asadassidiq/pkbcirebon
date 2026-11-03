@@ -184,13 +184,15 @@ class PendaftaranOnlineRepository
         $createPendaftaran = $this->model->create($arrData);
         $updateBooking = $this->modelOnline->where('uuid', $re->uuid)->first();
         if($updateBooking) {
+            $updateBooking->uuid = $createPendaftaran->uuid;
             $updateBooking->status = 'hadir';
             $updateBooking->nomor_antrian = $re->noantrian;
             $updateBooking->catatan = $re->catatan;
             $updateBooking->save();
+
         }
 
-        return true;
+        return $createPendaftaran->uuid;
     }
 
     public function reschedule($request)
