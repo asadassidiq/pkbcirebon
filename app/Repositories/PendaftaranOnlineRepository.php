@@ -11,6 +11,7 @@ use App\Models\Kuota;
 use App\Models\PendaftaransOnline;
 use App\Models\Persuratan;
 use App\Models\UserOnline;
+use App\Utils;
 use DB;
 
 class PendaftaranOnlineRepository
@@ -19,7 +20,7 @@ class PendaftaranOnlineRepository
 
     protected $model,$modelOnline,$modelPenyerahan,$modelIden,$modelUserOnline,$modelDataKendaraan;
 
-    public function __construct(Pendaftaran $model, PendaftaransOnline $modelOnline, Identitaskendaraan $modelIden, UserOnline $modelUserOnline, Datakendaraan $modelDataKendaraan)
+    public function __construct(Pendaftaran $model, PendaftaransOnline $modelOnline, Identitaskendaraan $modelIden, UserOnline $modelUserOnline, Datakendaraan $modelDataKendaraan,protected Utils $utils)
     {
         $this->model = $model;
         $this->modelIden = $modelIden;
@@ -142,6 +143,7 @@ class PendaftaranOnlineRepository
         $identitaskendaraan_id = $this->modelIden->where('nouji',$re->nouji)->first()->id;
         if(!$identitaskendaraan_id) {
             $createIden = $this->modelIden->create([
+                'uuid' => $this->utils->generateUUID(),
                 'nouji' => $re->nouji,
                 'merek' => $re->merek,
                 'tipe' => $re->tipe,
@@ -165,6 +167,7 @@ class PendaftaranOnlineRepository
         if($re->status_data == 1){
             $posisi = 1; 
         }
+        dd($re);
         $arrData = array(
             'uuid' => $re->uuid,
             'identitaskendaraan_id' => $identitaskendaraan_id,
