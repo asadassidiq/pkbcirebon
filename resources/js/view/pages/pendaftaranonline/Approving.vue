@@ -278,7 +278,7 @@ export default {
             if(status == 2 || status == 0){
                 this.complateDataandApprove().then(() => {
                     if(this.statusProcess)
-                        this.$router.push({ name: "pendaftaran.edit",params: { id: this.uuid } });
+                        this.$router.push({ name: "pendaftaran.edit",params: { id: this.pendaftaranonline.uuid } });
                 });
             }else if(status == 1){
                 this.complateDataandApprove().then(() => {
