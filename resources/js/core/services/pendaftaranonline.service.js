@@ -24,4 +24,10 @@ export default {
     checkKuota(tgl) {
         return ApiService.get(`/kuota/cekkuota1?t=${tgl}`);
     },
+    reschedulePendaftaranOnline(request) {
+        return ApiService.post("/pendaftaranonline/reschedule", request);
+    },
+    complateDataandApprove(request) {
+        return ApiService.post("/pendaftaranonline/complate", request);
+    },
 };

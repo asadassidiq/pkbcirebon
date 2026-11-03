@@ -44,6 +44,18 @@ class PendaftaranOnlineController
         return $this->returnJson($data);
     }
 
+    public function reschedule(Request $request)
+    {
+        $data = $this->pendaftaranOnlineService->reschedule($request);
+        return $data;
+    }
+
+    public function complateDataandApprove(Request $request)
+    {
+        $data = $this->pendaftaranOnlineService->complateDataandApprove($request);
+        return $data;
+    }
+
     // public function update(PendaftaranUpdateRequest $request, $id)
     // {
     //     $data = $this->pendaftaranOnlineService->update($request, $id);

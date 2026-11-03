@@ -81,6 +81,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::get('/', 'PendaftaranOnlineController@index');
             Route::get('/{id}', 'PendaftaranOnlineController@getPendaftaranDetail');
             Route::post('/approve', 'PendaftaranOnlineController@approve');
+            Route::post('/reschedule', 'PendaftaranOnlineController@reschedule');
+            Route::post('/complate', 'PendaftaranOnlineController@complateDataandApprove');
         });
 
         Route::group(['middleware' => ['role:admin|petugas'], 'prefix' => 'pendaftaran2'], function () {

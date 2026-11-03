@@ -55,6 +55,14 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
+                            <label>No Identitas Pemilik</label>
+                            <input type="text" class="form-control  form-control-lg" name="noidentitaspemilik"
+                                readonly placeholder="No Identitas Pemilik"
+                                v-model="pendaftaranonline.noidentitaspemilik" :disabled="true"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
                             <label>No Telp</label>
                             <input type="text" class="form-control  form-control-lg" name="notelp"
                                 readonly placeholder="No Telp"
@@ -103,11 +111,53 @@
                                 readonly v-model="pendaftaranonline.nomesin"/>
                         </div>
                     </div>
+                    <div class="col-sm-4" v-if="pendaftaranonline.status_data == '1'">
+                        <div class="form-group">
+                            <label>Tahun Pembuatan</label>
+                            <input type="text" class="form-control  form-control-lg" name="thpembuatan"
+                                readonly v-model="pendaftaranonline.thpembuatan"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" v-if="pendaftaranonline.thpembuatan > 2019">
+                        <div class="form-group">
+                            <label class="text-warning">No Sertifikat Registrasi</label>
+                            <input type="text" class="form-control  form-control-lg" name="nosertifikatreg"
+                                v-model="pendaftaranonline.nosertifikatreg"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" v-if="pendaftaranonline.thpembuatan > 2019">
+                        <div class="form-group">
+                            <label class="text-warning">Tgl Sertifikat Registrasi</label>
+                            <b-form-datepicker id="tglsertifikatreg" v-model="pendaftaranonline.tglsertifikatreg"
+                                locale="id"></b-form-datepicker>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="text-warning">Tgl STNK</label>
+                            <b-form-datepicker id="tgl_registrasikendaraan" v-model="pendaftaranonline.tgl_registrasikendaraan"
+                                locale="id"></b-form-datepicker>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" >
+                        <div class="form-group">
+                            <label class="text-warning">No Sertifikat Registrasi</label>
+                            <input type="number" min="0" max="999" class="form-control  form-control-lg" name="noantrian"
+                                v-model="pendaftaranonline.noantrian"/>
+                        </div>
+                    </div>
                     <div class="col-sm-12" v-if="pendaftaranonline.status_data == '2'">
                         <div class="form-group">
-                            <label>Catatan</label>
+                            <label class="text-warning">Catatan Pendaftaran</label>
                             <textarea class="form-control  form-control-lg" name="catatan"
-                                readonly v-model="pendaftaranonline.catatan"></textarea>
+                                v-model="pendaftaranonline.catatan"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-12" v-if="pendaftaranonline.status_data == '2'">
+                        <div class="form-group">
+                            <label>Catatan Sistem</label>
+                            <textarea class="form-control  form-control-lg" name="catatansistem"
+                                readonly v-model="pendaftaranonline.catatansistem"></textarea>
                         </div>
                     </div>
                     <div class="col-sm-12 text-center">
@@ -172,13 +222,34 @@
                     <div class="col-12 text-right">
                         <button class="btn btn-sm btn-light-warning mr-2" @click="goBack">Close</button>
 
-                        <button class="btn btn-primary btn-sm" @click.prevent="submit">
-                        <i class="fa fa-save"></i> Submit
+                        <button class="btn btn-primary btn-sm mr-2" @click.prevent="submit(1)" v-if="pendaftaranonline.status_data == 1">
+                        <i class="fa fa-save"></i> Simpan
                         </button>
+                        <button class="btn btn-warning btn-sm mr-2" @click.prevent="submit(0)" v-if="pendaftaranonline.status_data == 0 || pendaftaranonline.status_data == 2">
+                        <i class="fa fa-save"></i> Simpan dan Lengkapi data
+                        </button>
+                        <button class="btn btn-warning btn-sm mr-2" @click.prevent="submit(2)">
+                        <i class="fa fa-save"></i> Simpan dan Perubahan data
+                        </button>
+                        <button class="btn btn-warning btn-sm mr-2" @click.prevent="$bvModal.show('reschedule')">
+                        <i class="fa fa-calendar"></i> Reschedule
+                        </button>
+                        
                     </div>
                 </div>
             </div>
         </b-collapse>
+        <b-modal id="reschedule" title="Reschedule" @ok="submitReschedule">
+            <div class="form-group">
+                <label for="reschedule-date">Tanggal Pendaftaran Online akan diubah</label>
+                <b-form-datepicker id="tglpendaftaran" v-model="pendaftaranonline.tglpendaftaran"
+                locale="id"></b-form-datepicker>
+            </div>
+            <div>
+                <label for="catatan">Catatan Pendaftaran</label>
+                <textarea class="form-control" id="catatan" v-model="pendaftaranonline.catatan"></textarea>
+            </div>
+        </b-modal>
     </div>
 </template>
 
@@ -202,17 +273,31 @@ export default {
         this.editPendaftaranOnline(this.$route.params.id);
     },
     methods: {
-        ...mapActions("pendaftaranonline", ["editPendaftaranOnline","submitApprove"]),
-        submit(){
-            this.submitApprove().then(() => {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Saved',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    console.log(this.uuid);
-                    this.$router.push({ name: "pendaftaran.edit",params: { id: this.uuid } });
+        ...mapActions("pendaftaranonline", ["editPendaftaranOnline","submitApprove","reschedulePendaftaranOnline","complateDataandApprove"]),
+        submit(status){
+            if(status == 2 || status == 0){
+                this.complateDataandApprove().then(() => {
+                    if(this.statusProcess)
+                        this.$router.push({ name: "pendaftaran.edit",params: { id: this.uuid } });
+                });
+            }else if(status == 1){
+                this.complateDataandApprove().then(() => {
+                    if(this.statusProcess)
+                        this.$router.push({ name: "pendaftaranonline.data" });
+                });
+            }else {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'error',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        },
+        submitReschedule() {
+            this.reschedulePendaftaranOnline().then(() => {
+                if(this.statusProcess)
+                    this.$router.push({ name: "pendaftaranonline.data" });
             });
         },
         goBack() {
@@ -223,6 +308,7 @@ export default {
         ...mapState(["errors"]),
         ...mapState({
             pendaftaranonline: state => state.pendaftaranonline.pendaftaranonline,
+            statusProcess: state => state.pendaftaranonline.statusProcess,
             uuid: state => state.pendaftaranonline.uuid,
         }),
     },
@@ -233,14 +319,14 @@ export default {
 
 <style scoped>
 .compact-form-row > [class*="col-"] {
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.25rem;
 }
 
 .compact-form-row .form-group {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.25rem;
 }
 
 .compact-form-row label {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
 }
 </style>

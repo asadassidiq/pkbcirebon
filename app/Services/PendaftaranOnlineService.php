@@ -88,9 +88,14 @@ class PendaftaranOnlineService
         return $this->success(true,'Success Approve',$createPendaftaran->uuid,200);
     }
 
-    // public function update($request, $id)
-    // {
-    //     return $this->repoPendaftaranOnline->updatePendaftaranOnline($id, $request);
-    // }
+    public function complateDataandApprove($request)
+    {
+        return $this->repoPendaftaranOnline->complateDataandApprove($request);
+    }
+
+    public function reschedule($request)
+    {
+        return $this->repoPendaftaranOnline->reschedule($request);
+    }
 
 }

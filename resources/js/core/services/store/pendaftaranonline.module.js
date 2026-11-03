@@ -36,8 +36,12 @@ export const state = {
         tglsertifikatreg:"",
         tgl_registrasikendaraan:"",
         catatan:"",
+        catatansistem:"",
+        thpembuatan:"",
         status_data:"0",
+        noantrian:"",
     },
+    statusProcess:false,
     uuid:"",
     page: 1
 };
@@ -54,6 +58,9 @@ export const mutations = {
     },
     SET_STATUS(state, payload) {
         state.filter.status = payload;
+    },
+    SET_STATUS_PROCESS(state, payload) {
+        state.statusProcess = payload;
     },
     ASSIGN_UUID(state, payload) {
         console.log(payload);
@@ -80,7 +87,10 @@ export const mutations = {
             nosertifikatreg:payload.nosertifikatreg,
             tglsertifikatreg:payload.tglsertifikatreg,
             tgl_registrasikendaraan:payload.tgl_registrasikendaraan,
+            catatansistem:payload.catatansistem,
             catatan:payload.catatan,
+            thpembuatan:payload.thpembuatan,
+            noantrian:payload.noantrian,
             status_data:payload.status_data
         };
     },
@@ -124,6 +134,9 @@ export const mutations = {
             tglsertifikatreg:"",
             tgl_registrasikendaraan:"",
             catatan:"",
+            catatansistem:"",
+            thpembuatan:"",
+            noantrian:"",
             status_data:"",
         };
     },
@@ -267,6 +280,42 @@ export const actions = {
                 })
                 .catch(error => {
                     console.log(error.message);
+                });
+        });
+    },
+    reschedulePendaftaranOnline({ state, commit }) {
+        return new Promise((resolve, reject) => {
+            PendaftaranOnlineService.reschedulePendaftaranOnline(state.pendaftaranonline)
+                .then(response => {
+                    resolve(response.data);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        text: response.data
+                    });
+                    commit("SET_STATUS_PROCESS", true);
+                })
+                .catch(error => {
+                    console.log(error);
+                    commit("SET_STATUS_PROCESS", false);
+                });
+        });
+    },
+    complateDataandApprove({ state, commit }) {
+        return new Promise((resolve, reject) => {
+            PendaftaranOnlineService.complateDataandApprove(state.pendaftaranonline)
+                .then(response => {
+                    resolve(response.data);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        text: response.data
+                    });
+                    commit("SET_STATUS_PROCESS", true);
+                })
+                .catch(error => {
+                    console.log(error);
+                    commit("SET_STATUS_PROCESS", false);
                 });
         });
     },
