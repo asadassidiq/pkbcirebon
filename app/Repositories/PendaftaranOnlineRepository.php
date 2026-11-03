@@ -180,7 +180,6 @@ class PendaftaranOnlineRepository
             'jenispendaftaran' => 'on',
             'noantrian' => $re->noantrian ?? '',
         );
-        dd($arrData);
 
         $createPendaftaran = $this->model->create($arrData);
         $updateBooking = $this->modelOnline->where('uuid', $re->uuid)->first();
