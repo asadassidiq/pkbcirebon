@@ -141,12 +141,12 @@
                     </div>
                     <div class="col-sm-4" >
                         <div class="form-group">
-                            <label class="text-warning">No Sertifikat Registrasi</label>
+                            <label class="text-warning">No Antrian</label>
                             <input type="number" min="0" max="999" class="form-control  form-control-lg" name="noantrian"
                                 v-model="pendaftaranonline.noantrian"/>
                         </div>
                     </div>
-                    <div class="col-sm-12" v-if="pendaftaranonline.status_data == '2'">
+                    <div class="col-sm-12">
                         <div class="form-group">
                             <label class="text-warning">Catatan Pendaftaran</label>
                             <textarea class="form-control  form-control-lg" name="catatan"
@@ -319,14 +319,14 @@ export default {
 
 <style scoped>
 .compact-form-row > [class*="col-"] {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.05rem;
 }
 
 .compact-form-row .form-group {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.05rem;
 }
 
 .compact-form-row label {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 </style>
