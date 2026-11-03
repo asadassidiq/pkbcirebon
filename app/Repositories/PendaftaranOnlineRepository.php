@@ -86,6 +86,7 @@ class PendaftaranOnlineRepository
             'tgl_registrasikendaraan' => '',
             'status_data'   => '0',
             'catatansistem'       => 'data belum lengkap',
+            'catatan' => $data->catatan ?? '',
         );
         if($data)
         {
@@ -116,6 +117,7 @@ class PendaftaranOnlineRepository
                     'tgl_registrasikendaraan' => $iden->tgl_registrasikendaraan ?? '',
                     'status_data'   => $status_data,
                     'catatansistem'       => $catatan,
+                    'catatan' => $data->catatan ?? ''
                 );
                 return $arr;
             }
