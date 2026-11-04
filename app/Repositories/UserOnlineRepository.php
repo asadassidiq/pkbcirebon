@@ -43,13 +43,13 @@ class UserOnlineRepository
 
     public function getDatakendaraanOnline(string $id)
     {
-        $data = $this->model1->select('noregistrasikendaraan', 'nouji','status')->where('user_id', $id);
+        $data = $this->model1->select('datakendaraan_online.noregistrasikendaraan', 'datakendaraan_online.nouji','datakendaraan_online.status','identitaskendaraans.tglberlakuuji')->leftjoin('identitaskendaraans', 'identitaskendaraans.nouji', '=', 'datakendaraan_online.nouji')->where('user_id', $id);
         $search = str_replace("/", "", request()->q);
         if ($search != '') {
-            $data = $data->where('noregistrasikendaraan', 'LIKE', '%' . $search . '%')
-                        ->orWhere('nouji', 'LIKE', '%' . $search . '%');
+            $data = $data->where('datakendaraan_online.noregistrasikendaraan', 'LIKE', '%' . $search . '%')
+                        ->orWhere('datakendaraan_online.nouji', 'LIKE', '%' . $search . '%');
         }
-        return $data->paginate(10);
+        return $data->groupBy('datakendaraan_online.nouji')->paginate(10);
     }
 
     public function storeDatakendaraanOnline(array $data)
