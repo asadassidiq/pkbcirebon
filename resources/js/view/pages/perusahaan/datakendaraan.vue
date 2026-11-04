@@ -55,6 +55,7 @@
                         <th>No.</th>
                         <th>Plat Nomor</th>
                         <th>Nomor Uji</th>
+                        <th>Tanggal Berlaku Uji</th>
                         <th>Modify</th>
                     </tr>
                 </thead>
@@ -63,6 +64,7 @@
                         <td>{{ index + 1 }}</td>
                         <td>{{ kendaraan.noregistrasikendaraan }}</td>
                         <td>{{ kendaraan.nouji }}</td>
+                        <td>{{ kendaraan.tglberlakuuji ?? '-' }}</td>
                         <td>
                             <button class="btn btn-sm btn-icon btn-light-success" @click="editKendaraan(kendaraan)">
                                 <i class="fa fa-edit text-success"></i>
