@@ -106,6 +106,17 @@ export default new Router({
               name: "surat.data",
               component: () => import("@/view/pages/surat/Table.vue"),
             },
+            {
+              path: "add",
+              name: "surat.add",
+              component: () => import("@/view/pages/pendaftaran/Add.vue"),
+            },
+            {
+              path: "edit/:id",
+              name: "surat.edit",
+              component: () => import("@/view/pages/pendaftaran/Edit.vue"),
+            },
+
           ],
         },
         {

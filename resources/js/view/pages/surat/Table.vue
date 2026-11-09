@@ -29,7 +29,12 @@
           <input class="form-control" type="text" placeholder="serach" v-model="search" />
         </div>
         <div class="col-1">
-          <a class="btn btn-sm btn-icon btn-light-info mr-2" @click.prevent="reload" title="reload data"><i
+          <router-link
+              :to="{ name: 'surat.add' }"
+              class="btn btn-sm btn-icon btn-light-success mr-2"
+              ><i class="flaticon2-add"></i>
+          </router-link>
+          <a class="btn btn-sm btn-icon btn-light-info" @click.prevent="reload" title="reload data"><i
               class="flaticon2-reload"></i>
           </a>
         </div>
@@ -61,7 +66,7 @@
                 <td v-else>Menunggu</td>
                 <td>
                   <div>
-                    <router-link :to="{ name: 'pendaftaran.edit', params: { id: pendaftaran.uuid } }">
+                    <router-link :to="{ name: 'surat.edit', params: { id: pendaftaran.uuid } }">
                       <i class="fa fa-edit text-success"></i>
                     </router-link>
                     <a v-if="pendaftaran.keterangan == 'Numpang Uji Keluar'" href="javascript:void(0)" @click="sendPendaftaran(pendaftaran.uuid,pendaftaran.nouji,'5',pendaftaran.kode)">
