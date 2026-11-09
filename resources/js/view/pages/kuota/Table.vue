@@ -43,12 +43,12 @@
 									<button class="btn btn-success btn-sm" type="button" v-if="kuota.kuotapagi > 0">{{
 										kuota.kuotapagi }}</button>
 								</td>
-								<td class="text-center">
+								<!-- <td class="text-center">
 									<button class="btn btn-danger btn-sm" type="button" v-if="kuota.tersediapagi == '0'">{{
 										kuota.tersediapagi }}</button>
 									<button class="btn btn-success btn-sm" type="button" v-if="kuota.tersediapagi > 0">{{
 										kuota.tersediapagi }}</button>
-								</td>
+								</td> -->
 								<td>
 									<router-link :to="{ name: 'kuota.edit', params: { id: kuota.id } }">
 										<i class="fa fa-edit text-success"></i>
