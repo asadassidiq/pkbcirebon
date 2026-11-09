@@ -23,6 +23,7 @@ class KuotaRepository
     {
 
         $data = $this->model
+            ->where('kuota.tanggal','>=', date('Y-m-d'))
             ->orderBy('kuota.tanggal', 'ASC');
         $search = str_replace("/", "", request()->q);
 
