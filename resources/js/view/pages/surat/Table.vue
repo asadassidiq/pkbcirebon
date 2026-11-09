@@ -15,10 +15,10 @@
     </div>
     <div class="card-body">
       <div class="row">
-        <div class="col-4">
+        <div class="col-3">
           <b-form-datepicker id="example-datepicker" v-model="tgl" locale="id"></b-form-datepicker>
         </div>
-        <div class="col-4">
+        <div class="col-3">
           <select class="form-control" v-model="jenis">
             <option value="1">Numpang Uji Keluar</option>
             <option value="2">Mutasi Keluar</option>
@@ -28,7 +28,7 @@
         <div class="col-3">
           <input class="form-control" type="text" placeholder="serach" v-model="search" />
         </div>
-        <div class="col-1">
+        <div class="col-3">
           <router-link
               :to="{ name: 'surat.add' }"
               class="btn btn-sm btn-icon btn-light-success mr-2"
