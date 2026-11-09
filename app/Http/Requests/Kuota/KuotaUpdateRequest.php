@@ -26,9 +26,9 @@ class KuotaUpdateRequest extends FormRequest
         return [
             'tanggal'=>'required|date',
             'kuotapagi'=>'required|int',
-            'kuotasiang'=>'required|int',
-            'tersediapagi'=>'required|int',
-            'tersediasiang'=>'required|int',
+            // 'kuotasiang'=>'required|int',
+            // 'tersediapagi'=>'required|int',
+            // 'tersediasiang'=>'required|int',
         ];
     }
 }

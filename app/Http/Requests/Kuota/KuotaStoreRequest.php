@@ -26,8 +26,8 @@ class KuotaStoreRequest extends FormRequest
         return [
             'kuotapaginormal'=>'required|int',
             'kuotapagijumat'=>'required|int',
-            'kuotasiangnormal'=>'required|int',
-            'kuotasiangjumat'=>'required|int',
+            // 'kuotasiangnormal'=>'required|int',
+            // 'kuotasiangjumat'=>'required|int',
         ];
     }
 }
