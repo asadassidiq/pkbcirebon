@@ -10,7 +10,7 @@
 
             <div class="card-toolbar">
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                         <input
                             class="form-control"
                             type="text"
@@ -18,10 +18,10 @@
                             v-model="search"
                         />
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-4">
                         <button
                             type="button"
-                            class="btn btn-sm btn-icon btn-light-success"
+                            class="btn btn-sm btn-icon btn-light-success mr-1"
                             @click="addKendaraan"
                             title="Tambah data kendaraan"
                         >
@@ -33,8 +33,6 @@
                             title="reload data"
                             ><i class="flaticon2-reload"></i>
                         </a>
-                    </div>
-                    <div class="col-sm-1">
                         <router-link
                             class="btn btn-sm btn-icon btn-light-primary"
                             :to="{ name: 'perusahaan.data', params: { id: perusahaanId } }"

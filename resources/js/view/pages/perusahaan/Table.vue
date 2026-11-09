@@ -9,7 +9,7 @@
             </div>
             <div class="card-toolbar">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-9">
                         <input
                             class="form-control"
                             type="text"
@@ -17,16 +17,14 @@
                             v-model="search"
                         />
                     </div>
-                    <div class="col-1">
+                    <div class="col-3">
                         <router-link
                             :to="{ name: 'perusahaan.add' }"
-                            class="btn btn-sm btn-icon btn-light-success mr-2"
+                            class="btn btn-sm btn-icon btn-light-success mr-1"
                             ><i class="flaticon2-add"></i>
                         </router-link>
-                    </div>
-                    <div class="col-1">
                         <a
-                            class="btn btn-sm btn-icon btn-light-info mr-2"
+                            class="btn btn-sm btn-icon btn-light-info"
                             @click.prevent="reload"
                             title="reload data"
                             ><i class="flaticon2-reload"></i>
