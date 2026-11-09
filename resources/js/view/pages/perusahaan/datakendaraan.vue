@@ -10,7 +10,7 @@
 
             <div class="card-toolbar">
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="col-sm-9">
                         <input
                             class="form-control"
                             type="text"
@@ -18,7 +18,7 @@
                             v-model="search"
                         />
                     </div>
-                    <div class="col-sm-1 mr-2">
+                    <div class="col-sm-2">
                         <button
                             type="button"
                             class="btn btn-sm btn-icon btn-light-success"
@@ -27,10 +27,8 @@
                         >
                             <i class="flaticon2-add"></i>
                         </button>
-                    </div>
-                    <div class="col-sm-1 mr-2">
                         <a
-                            class="btn btn-sm btn-icon btn-light-info"
+                            class="btn btn-sm btn-icon btn-light-info  mr-1"
                             @click.prevent="reload"
                             title="reload data"
                             ><i class="flaticon2-reload"></i>

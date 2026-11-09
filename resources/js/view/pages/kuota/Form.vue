@@ -13,7 +13,7 @@
     </div>
     <div class="col-sm-6">
       <div class="form-group">
-        <label for>Kuota Pagi</label>
+        <label for>Kuota</label>
         <input
           type="number"
           min="0"
@@ -22,7 +22,7 @@
         />
       </div>
     </div>
-    <div class="col-sm-6">
+    <!-- <div class="col-sm-6">
       <div class="form-group">
         <label for>Kuota Siang</label>
         <input
@@ -32,11 +32,11 @@
           v-model="kuota.kuotasiang"
         />
       </div>
-    </div>
+    </div> -->
 
-    <div class="col-sm-6">
+    <!-- <div class="col-sm-6">
         <div class="form-group">
-          <label for>Tersedia Kuota Pagi</label>
+          <label for>Tersedia</label>
           <input
             type="number"
             min="0"
@@ -44,8 +44,8 @@
             v-model="kuota.tersediapagi"
           />
         </div>
-    </div>
-    <div class="col-sm-6">
+    </div> -->
+    <!-- <div class="col-sm-6">
         <div class="form-group">
           <label for>Tersedia Kuota Siang</label>
           <input
@@ -55,7 +55,7 @@
             v-model="kuota.tersediasiang"
           />
         </div>
-    </div>
+    </div> -->
 
   </div>
 </template>

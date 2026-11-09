@@ -28,8 +28,8 @@
 							<tr>
 								<th>No.</th>
 								<th>Tanggal</th>
-								<th class="text-center">Kuota Pagi-Siang</th>
-								<th class="text-center">Tersedia Pagi-Siang</th>
+								<th class="text-center">Kuota</th>
+								<!-- <th class="text-center">Tersedia</th> -->
 								<th class="text-center">Modify</th>
 							</tr>
 						</thead>
@@ -42,22 +42,12 @@
 										kuota.kuotapagi }}</button>
 									<button class="btn btn-success btn-sm" type="button" v-if="kuota.kuotapagi > 0">{{
 										kuota.kuotapagi }}</button>
-									-
-									<button class="btn btn-success btn-sm" type="button" v-if="kuota.kuotasiang > 0">{{
-										kuota.kuotasiang }}</button>
-									<button class="btn btn-danger btn-sm" type="button" v-if="kuota.kuotasiang == '0'">{{
-										kuota.kuotasiang }}</button>
 								</td>
 								<td class="text-center">
 									<button class="btn btn-danger btn-sm" type="button" v-if="kuota.tersediapagi == '0'">{{
 										kuota.tersediapagi }}</button>
 									<button class="btn btn-success btn-sm" type="button" v-if="kuota.tersediapagi > 0">{{
 										kuota.tersediapagi }}</button>
-									-
-									<button class="btn btn-danger btn-sm" type="button" v-if="kuota.tersediasiang == '0'">{{
-										kuota.tersediasiang }}</button>
-									<button class="btn btn-success btn-sm" type="button" v-if="kuota.tersediasiang > 0">{{
-										kuota.tersediasiang }}</button>
 								</td>
 								<td>
 									<router-link :to="{ name: 'kuota.edit', params: { id: kuota.id } }">

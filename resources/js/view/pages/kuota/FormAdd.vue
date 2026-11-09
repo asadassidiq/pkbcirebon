@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-        <label for>Kuota Hari Normal Pagi</label>
+        <label for>Kuota Hari Normal</label>
         <input
           type="number"
           min="0"
@@ -11,7 +11,7 @@
         />
       </div>
     </div>
-    <div class="col-sm-6">
+    <!-- <div class="col-sm-6">
       <div class="form-group">
         <label for>Kuota Hari Normal Siang</label>
         <input
@@ -21,10 +21,10 @@
           v-model="setkuota.kuotasiangnormal"
         />
       </div>
-    </div>
+    </div> -->
     <div class="col-sm-6">
       <div class="form-group">
-        <label for>Kuota Hari Jumat Pagi</label>
+        <label for>Kuota Hari Jumat</label>
         <input
           type="number"
           min="0"
@@ -33,7 +33,7 @@
         />
       </div>
     </div>
-    <div class="col-sm-6">
+    <!-- <div class="col-sm-6">
       <div class="form-group">
         <label for>Kuota Hari Jumat Siang</label>
         <input
@@ -43,7 +43,7 @@
           v-model="setkuota.kuotasiangjumat"
         />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
