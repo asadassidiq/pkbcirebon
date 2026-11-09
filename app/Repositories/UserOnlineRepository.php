@@ -23,7 +23,7 @@ class UserOnlineRepository
         } elseif($tipe == 2){
             $tipe = 'perusahaan';
         }
-        $data = $this->model->select('uuid','no_identitas', 'name', 'nama_badan_usaha', 'email', 'telepon','provinsi', 'kabupaten', 'kecamatan', 'kelurahan', 'alamat', DB::raw('SUM(datakendaraan_online.id) as total_kendaraan') );
+        $data = $this->model->select('uuid','no_identitas', 'name', 'nama_badan_usaha', 'email', 'telepon','provinsi', 'kabupaten', 'kecamatan', 'kelurahan', 'alamat', DB::raw('COUNT(datakendaraan_online.id) as total_kendaraan') );
         $data = $data->leftjoin('datakendaraan_online', 'users_pkb.uuid', '=', 'datakendaraan_online.user_id');
         $data = $data->where('users_pkb.tipe_akun', $tipe);
         $search = str_replace("/", "", request()->q);
@@ -33,7 +33,7 @@ class UserOnlineRepository
             $data = $data->orWhere('users_pkb.name', 'LIKE', '%' . $search . '%');
         }
 
-        return $data->groupBy('users_pkb.ida')->paginate(10);
+        return $data->groupBy('users_pkb.id')->paginate(10);
     }
 
     public function getUserOnline(string $id)
