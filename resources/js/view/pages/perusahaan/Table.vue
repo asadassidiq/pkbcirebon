@@ -18,11 +18,6 @@
                         />
                     </div>
                     <div class="col-5">
-                        <router-link
-                            :to="{ name: 'perusahaan.add' }"
-                            class="btn btn-sm btn-icon btn-light-success mr-1"
-                            ><i class="flaticon2-add"></i>
-                        </router-link>
                         <a
                             class="btn btn-sm btn-icon btn-light-info"
                             @click.prevent="reload"

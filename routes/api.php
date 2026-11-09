@@ -296,5 +296,13 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::put('/{id}', 'UserOnlineController@updateDatakendaraanOnline');
             Route::get('/user/{id}', 'UserOnlineController@getUserOnline');
         });
+
+        Route::group(['middleware' => ['role:admin|petugas'], 'prefix' => 'perseorangan'], function () {
+            Route::get('/', 'UserOnlineController@index');
+            Route::get('/{id}', 'UserOnlineController@getDatakendaraanOnline');
+            Route::post('/', 'UserOnlineController@storeDatakendaraanOnline');
+            Route::put('/{id}', 'UserOnlineController@updateDatakendaraanOnline');
+            Route::get('/user/{id}', 'UserOnlineController@getUserOnline');
+        });
     });
 });

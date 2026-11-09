@@ -28,6 +28,7 @@ import penyerahan from "./penyerahan.module";
 import approved from "./approved.module";
 import approvals from "./datakendaraan_approval.module";
 import perusahaan from "./perusahaan.module"; 
+import perseorangan from "./perseorangan.module";
 
 Vue.use(Vuex);
 
@@ -60,6 +61,7 @@ export default new Vuex.Store({
     tandatangan,
     approved,
     perusahaan,
+    perseorangan,
   },
   state: {
     errors: [],

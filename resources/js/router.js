@@ -513,6 +513,28 @@ export default new Router({
               component: () => import("@/view/pages/perusahaan/Datakendaraan.vue"),
             },
           ]
+        },
+        
+        {
+          path: "/perseorangan",
+          component: () => import("@/view/pages/perseorangan/Index.vue"),
+          children: [
+            {
+              path: "",
+              name: "perseorangan.data",
+              component: () => import("@/view/pages/perseorangan/Table.vue"),
+            },
+            {
+              path: "edit/:id",
+              name: "perseorangan.edit",
+              component: () => import("@/view/pages/perseorangan/Edit.vue"),
+            },
+            {
+              path: "datakendaraan/:id",
+              name: "perseorangan.datakendaraan",
+              component: () => import("@/view/pages/perseorangan/Datakendaraan.vue"),
+            },
+          ]
         }
       ],
     },
