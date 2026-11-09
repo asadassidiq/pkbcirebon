@@ -109,12 +109,12 @@ export default new Router({
             {
               path: "add",
               name: "surat.add",
-              component: () => import("@/view/pages/pendaftaran/Add.vue"),
+              component: () => import("@/view/pages/surat/Add.vue"),
             },
             {
               path: "edit/:id",
               name: "surat.edit",
-              component: () => import("@/view/pages/pendaftaran/Edit.vue"),
+              component: () => import("@/view/pages/surat/Edit.vue"),
             },
 
           ],
