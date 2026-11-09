@@ -55,9 +55,9 @@
                         <option value="3">Rusak</option>
                         <option value="4">Hilang</option>
                         <option value="5">Numpang Uji Masuk</option>
-                        <option value="9">Numpang Uji Keluar</option>
+                        <!-- <option value="9">Numpang Uji Keluar</option> -->
                         <option value="6">Mutasi Masuk</option>
-                        <option value="10">Mutasi Keluar</option>
+                        <!-- <option value="10">Mutasi Keluar</option> -->
                         <option value="7">Uji Ulang</option>
                         <option value="8">Rubah Bentuk</option>
                       </select>
