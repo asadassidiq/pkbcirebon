@@ -10,7 +10,7 @@
 
             <div class="card-toolbar">
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="col-sm-6">
                         <input
                             class="form-control"
                             type="text"
@@ -18,7 +18,7 @@
                             v-model="search"
                         />
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <button
                             type="button"
                             class="btn btn-sm btn-icon btn-light-success mr-1"
