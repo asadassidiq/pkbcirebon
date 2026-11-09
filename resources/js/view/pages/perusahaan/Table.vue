@@ -9,7 +9,7 @@
             </div>
             <div class="card-toolbar">
                 <div class="row">
-                    <div class="col-9">
+                    <div class="col-7">
                         <input
                             class="form-control"
                             type="text"
@@ -17,7 +17,7 @@
                             v-model="search"
                         />
                     </div>
-                    <div class="col-3">
+                    <div class="col-5">
                         <router-link
                             :to="{ name: 'perusahaan.add' }"
                             class="btn btn-sm btn-icon btn-light-success mr-1"
