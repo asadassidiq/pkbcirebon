@@ -33,7 +33,7 @@ class UserOnlineRepository
             $data = $data->orWhere('users_pkb.name', 'LIKE', '%' . $search . '%');
         }
 
-        return $data->groupBy('users_pkb.id')->paginate(10);
+        return $data->groupBy('users_pkb.ida')->paginate(10);
     }
 
     public function getUserOnline(string $id)
