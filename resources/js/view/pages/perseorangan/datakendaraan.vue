@@ -5,7 +5,7 @@
                 <span class="card-icon">
                     <i class="flaticon2-truck text-primary"></i>
                 </span>
-                <h3 class="card-label">Data Kendaraan - {{ perusahaan.name }}</h3>
+                <h3 class="card-label">Data Kendaraan - {{ perseorangan.name }}</h3>
             </div>
 
             <div class="card-toolbar">
@@ -35,8 +35,8 @@
                         </a>
                         <router-link
                             class="btn btn-sm btn-icon btn-light-primary"
-                            :to="{ name: 'perusahaan.data', params: { id: perusahaanId } }"
-                            title="Kembali ke data perusahaan"
+                            :to="{ name: 'perseorangan.data', params: { id: perseoranganId } }"
+                            title="Kembali ke data perseorangan"
                         >
                             <i class="flaticon2-back"></i>
                         </router-link>
@@ -81,7 +81,7 @@
                         v-model="page"
                         :total-rows="kendaraans.total"
                         :per-page="kendaraans.per_page"
-                        aria-controls="perusahaans"
+                        aria-controls="perseorangans"
                         v-if="
                             kendaraans.data &&
                             kendaraans.data.length > 0
@@ -148,14 +148,14 @@ export default {
     },
     computed: {
         ...mapState(["errors"]),
-        ...mapState("perusahaan", {
-            perusahaan: state => state.perusahaan,
+        ...mapState("perseorangan", {
+            perseorangan: state => state.perseorangan,
             kendaraans: state => state.kendaraans,
             newKendaraan: state => state.newKendaraan,
         }),
     },
     methods: {
-        ...mapActions("perusahaan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline","editPerusahaan"]),
+        ...mapActions("perseorangan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline","editPerusahaan"]),
         reload() {
             const id = this.$route && this.$route.params ? this.$route.params.id : null;
             if (id) {
@@ -209,7 +209,7 @@ export default {
             this.openAddModal();
         },
         editKendaraan(kendaraan) {
-            this.$store.commit("perusahaan/ASSIGN_KENDARAAN_FORM", kendaraan);
+            this.$store.commit("perseorangan/ASSIGN_KENDARAAN_FORM", kendaraan);
             this.status = 'edit';
             this.openAddModal();
         }
