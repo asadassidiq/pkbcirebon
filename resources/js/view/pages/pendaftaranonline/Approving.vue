@@ -19,12 +19,12 @@
                         <div class="form-group">
                             <label class="text-warning">Jenis Pelayanan</label>
                             <select class="form-control" v-model="pendaftaranonline.keterangan">
-                                <option selected="selected" value="1">Uji Pertama</option>
-                                <option value="2">Uji Berkala</option>
-                                <option value="5">Numpang Uji Masuk</option>
-                                <option value="9">Numpang Uji Keluar</option>
-                                <option value="6">Mutasi Masuk</option>
-                                <option value="10">Mutasi Keluar</option>
+                                <option selected="selected" value="Uji Pertama">Uji Pertama</option>
+                                <option value="Uji Berkala">Uji Berkala</option>
+                                <option value="Numpang Uji Masuk">Numpang Uji Masuk</option>
+                                <option value="Numpang Uji Keluar">Numpang Uji Keluar</option>
+                                <option value="Mutasi Masuk">Mutasi Masuk</option>
+                                <option value="Mutasi Keluar">Mutasi Keluar</option>
                             </select>
                         </div>
                     </div>
