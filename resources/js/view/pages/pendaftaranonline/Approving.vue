@@ -17,9 +17,15 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label>Jenis Pelayanan</label>
-                            <input type="text" class="form-control  form-control-lg" name="keterangan"
-                                readonly v-model="pendaftaranonline.keterangan" />
+                            <label class="text-warning">Jenis Pelayanan</label>
+                            <select class="form-control" v-model="pendaftaranonline.keterangan">
+                                <option selected="selected" value="1">Uji Pertama</option>
+                                <option value="2">Uji Berkala</option>
+                                <option value="5">Numpang Uji Masuk</option>
+                                <option value="9">Numpang Uji Keluar</option>
+                                <option value="6">Mutasi Masuk</option>
+                                <option value="10">Mutasi Keluar</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-sm-4">

@@ -16,6 +16,7 @@ use App\Models\DimensiKendaraan;
 use App\Models\IdentifikasiKendaraan;
 use App\Models\LaikJalan;
 use App\Models\Catatan;
+use App\Models\PendaftaransOnline;
 use DB;
 use DateTime;
 use DateInterval;
@@ -24,9 +25,9 @@ class PengujianRepository
 {
     use RepositoryTrait;
 
-    protected $model, $modelDatakendaraan, $modelDimensiKendaraan, $modelIdentifikasiKendaraan, $modelBagianDepanKendaraan, $modelBagianBawahKendaraan, $modelBagianKananKendaraan, $modelBagianBelakangKendaraan, $modelBagianKiriKendaraan, $modelBagianDalamKendaraan, $modelLaikJalan, $modelCatatan;
+    protected $model, $modelDatakendaraan, $modelDimensiKendaraan, $modelIdentifikasiKendaraan, $modelBagianDepanKendaraan, $modelBagianBawahKendaraan, $modelBagianKananKendaraan, $modelBagianBelakangKendaraan, $modelBagianKiriKendaraan, $modelBagianDalamKendaraan, $modelLaikJalan, $modelCatatan, $modelPendaftaransOnline;
 
-    public function __construct(Pendaftaran $model, Datakendaraan $modelDatakendaraan, IdentifikasiKendaraan $modelIdentifikasiKendaraan, DimensiKendaraan $modelDimensiKendaraan, BagianBawahKendaraan $modelBagianBawahKendaraan, BagianDepanKendaraan $modelBagianDepanKendaraan, BagianKananKendaraan $modelBagianKananKendaraan, BagianBelakangKendaraan $modelBagianBelakangKendaraan, BagianKiriKendaraan $modelBagianKiriKendaraan, BagianDalamKendaraan $modelBagianDalamKendaraan, LaikJalan $modelLaikJalan, Catatan $modelCatatan)
+    public function __construct(Pendaftaran $model, Datakendaraan $modelDatakendaraan, IdentifikasiKendaraan $modelIdentifikasiKendaraan, DimensiKendaraan $modelDimensiKendaraan, BagianBawahKendaraan $modelBagianBawahKendaraan, BagianDepanKendaraan $modelBagianDepanKendaraan, BagianKananKendaraan $modelBagianKananKendaraan, BagianBelakangKendaraan $modelBagianBelakangKendaraan, BagianKiriKendaraan $modelBagianKiriKendaraan, BagianDalamKendaraan $modelBagianDalamKendaraan, LaikJalan $modelLaikJalan, Catatan $modelCatatan, PendaftaransOnline $modelPendaftaransOnline)
     {
         $this->model = $model;
         $this->modelLaikJalan = $modelLaikJalan;
@@ -41,6 +42,7 @@ class PengujianRepository
         $this->modelLaikJalan = $modelLaikJalan;
         $this->modelBagianBawahKendaraan = $modelBagianBawahKendaraan;
         $this->modelCatatan = $modelCatatan;
+        $this->modelPendaftaransOnline = $modelPendaftaransOnline;
     }
 
     public function createPengujian($request)
@@ -767,9 +769,36 @@ class PengujianRepository
         // dd($request, $nmField, $data);
         // dd($request[$nmField]);
         $data->{$nmField}    = $request[$nmField];
-        $data->{$usrnmField} = $user['id'];
+        $data->{$usrnmField} = $user->id;
         $data->posisi        = $posisi;
         $data->save();
+        if ($data->save()) {
+            if($posisi >= 1 && $posisi <= 5) {
+                $po = $this->modelPendaftaransOnline->where('uuid', $data->uuid)->first();
+                if ($po) {
+                    $po->update(['status' => 'sedang_uji']);
+                    $po->save();
+                }
+            }elseif($data->posverif == 1) {
+                $po = $this->modelPendaftaransOnline->where('uuid', $data->uuid)->first();
+                if ($po) {
+                    $po->update(['status' => 'lulus']);
+                    $po->save();
+                }
+            }elseif($data->posverif == 0) {
+                $po = $this->modelPendaftaransOnline->where('uuid', $data->uuid)->first();
+                if ($po) {
+                    $po->update(['status' => 'tidak_lulus']);
+                    $po->save();
+                }
+            }elseif($data->posverif == null) {
+                $po = $this->modelPendaftaransOnline->where('uuid', $data->uuid)->first();
+                if ($po) {
+                    $po->update(['status' => 'menunggu']);
+                    $po->save();
+                }
+            }
+        }
     }
 
     public function updatePos($request, $id)
