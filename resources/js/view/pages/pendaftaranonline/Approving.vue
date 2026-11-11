@@ -281,14 +281,66 @@ export default {
     methods: {
         ...mapActions("pendaftaranonline", ["editPendaftaranOnline","submitApprove","reschedulePendaftaranOnline","complateDataandApprove"]),
         checkBerkas() {
-            if(!this.pendaftaranonline.v_stnk || !this.pendaftaranonline.v_smartcard || !this.pendaftaranonline.v_srut || !this.pendaftaranonline.v_suratketerangan) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Berkas belum lengkap',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                return false;
+            if(this.pendaftaranonline.keterangan == 'Uji Pertama'){
+                if(!this.pendaftaranonline.v_stnk || !this.pendaftaranonline.v_srut) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Berkas belum lengkap',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    return false;
+                }
+            }else if(this.pendaftaranonline.keterangan == 'Uji Berkala'){
+                if(!this.pendaftaranonline.v_stnk || !this.pendaftaranonline.v_smartcard) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Berkas belum lengkap',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    return false;
+                }
+            }else if(this.pendaftaranonline.keterangan == 'Numpang Uji Masuk'){
+                if(!this.pendaftaranonline.v_stnk || !this.pendaftaranonline.v_smartcard || !this.pendaftaranonline.v_suratketerangan) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Berkas belum lengkap',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    return false;
+                }
+            }else if(this.pendaftaranonline.keterangan == 'Mutasi Masuk'){
+                if(!this.pendaftaranonline.v_stnk || !this.pendaftaranonline.v_smartcard || !this.pendaftaranonline.v_suratketerangan) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Berkas belum lengkap',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    return false;
+                }
+            }else if(this.pendaftaranonline.keterangan == 'Numpang Uji Keluar'){
+                if(!this.pendaftaranonline.v_stnk || !this.pendaftaranonline.v_smartcard) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Berkas belum lengkap',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    return false;
+                }
+            }else if(this.pendaftaranonline.keterangan == 'Mutasi Keluar'){
+                if(!this.pendaftaranonline.v_stnk || !this.pendaftaranonline.v_smartcard) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Berkas belum lengkap',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    return false;
+                }
             }
             return true;
         },
