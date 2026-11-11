@@ -70,7 +70,7 @@
                                             href="javascript:void(0)"
                                             @click="print(pendaftaran.uuid)"
                                             title="Surat Permohonan"
-                                            v-if="pendaftaran.status != 'hadir'"
+                                            v-if="pendaftaran.status != 'terdaftar'"
                                         >
                                             <i class="fa fa-print text-info"></i>
                                         </a>
@@ -78,7 +78,7 @@
                                             href="javascript:void(0)"
                                             @click="printFormulir(pendaftaran.uuid)"
                                             title="Formulir Uji"
-                                            v-if="pendaftaran.status != 'hadir'"
+                                            v-if="pendaftaran.status != 'terdaftar'"
                                         >
                                             <i class="fa fa-print text-warning"></i>
                                         </a>
