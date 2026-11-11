@@ -259,7 +259,10 @@ export default {
             return today;
         },
         print(id) {
-            window.open('/cetak/' + id + '/pendaftaranonline', "_blank");
+            window.open("/cetak/" + id + "/permohonan", "_blank");
+        },
+        printFormulir(id) {
+            window.open("/cetak/" + id + "/formulir", "_blank");
         },
         reload() {
             this.getPendaftaranOnlines(this.search);
