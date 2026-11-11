@@ -129,7 +129,7 @@ class LoginController extends Controller
     $antrianDataSurat = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['9', '10'])->where('posisi', '6')->count();
     $antrianDataPenyerahan = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '7')->count();
     $antrianDataOnline = PendaftaransOnline::where('tanggal', date("Y/m/d"))->where('status', 'terdaftar')->count();
-    $antrianDataUserOnline = UserOnline::leftJoin('datakendaraan_online','user_onlines.uuid','=','datakendaraan_online.user_id')->where('tipe_akun', 'perusahaan')->groupBy('user_onlines.uuid')->havingRaw('COUNT(datakendaraan_online.user_id) = 0')->count();
+    $antrianDataUserOnline = UserOnline::leftJoin('datakendaraan_online','users_pkb.uuid','=','datakendaraan_online.user_id')->where('tipe_akun', 'perusahaan')->groupBy('users_pkb.uuid')->havingRaw('COUNT(datakendaraan_online.user_id) = 0')->count();
     $data  = [
       'approvals'   => $approvalsNotifications,
       'pos1'   => $antrianDataPos1,
