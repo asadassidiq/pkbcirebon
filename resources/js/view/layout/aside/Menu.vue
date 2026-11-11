@@ -594,7 +594,7 @@
       </li>
     </router-link>
 
-    <router-link to="/perusahaan" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.pf == true">
+    <router-link to="/perusahaan" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.role == 'ADMIN'">
       <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
         isActive && 'menu-item-active',
         isExactActive && 'menu-item-active'
@@ -610,7 +610,7 @@
         </a>
       </li>
     </router-link>
-    <router-link to="/perseorangan" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.pf == true">
+    <router-link to="/perseorangan" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.role == 'ADMIN'">
       <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
         isActive && 'menu-item-active',
         isExactActive && 'menu-item-active'
