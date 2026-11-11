@@ -184,7 +184,7 @@
                                 <input type="checkbox" name="v_stnk" v-model="pendaftaranonline.v_stnk" :true-value="1" :false-value="0" :disabled="true"
                                 />
                                 <span></span>
-                                STNK asli dan masih berlaku
+                                STNK asli yang masih berlaku
                             </label>
                         </div>
                     </div>
@@ -211,7 +211,7 @@
                             <label class="checkbox">
                                 <input type="checkbox" name="v_riwayat" v-model="pendaftaranonline.v_suratketerangan" :true-value="1" :false-value="0"/>
                                 <span></span>
-                                Surat keterangan / persetujuan mutasi dari daerah asal dan kelengkapannya
+                                Surat rekomendasi mutasi dari unit pengujian daerah asal
                             </label>
                         </div>
                     </div>
@@ -220,7 +220,7 @@
                             <label class="checkbox">
                                 <input type="checkbox" name="v_riwayat" v-model="pendaftaranonline.v_suratketerangan" :true-value="1" :false-value="0"/>
                                 <span></span>
-                                Surat keterangan / persetujuan Numpang uji dari daerah asal 
+                                Surat rekomendasi numpang uji dari unit pengujian daerah asal
                             </label>
                         </div>
                     </div>
@@ -280,7 +280,20 @@ export default {
     },
     methods: {
         ...mapActions("pendaftaranonline", ["editPendaftaranOnline","submitApprove","reschedulePendaftaranOnline","complateDataandApprove"]),
+        checkBerkas() {
+            if(!this.pendaftaranonline.v_stnk || !this.pendaftaranonline.v_smartcard || !this.pendaftaranonline.v_srut || !this.pendaftaranonline.v_suratketerangan) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Berkas belum lengkap',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                return false;
+            }
+            return true;
+        },
         submit(status){
+            if(!this.checkBerkas()) return;
             if(status == 2 || status == 0){
                 this.complateDataandApprove().then(() => {
                     if(this.statusProcess)

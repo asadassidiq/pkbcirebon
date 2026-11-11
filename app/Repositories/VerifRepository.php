@@ -3,22 +3,19 @@
 namespace App\Repositories;
 
 use App\Traits\RepositoryTrait;
-use Illuminate\Database\Eloquent\Model;
 use App\Models\LaikJalan;
 use App\Models\Pendaftaran;
 use App\Models\Datapengujian;
 use App\Models\Kepaladinas;
 use App\Models\Direktur;
-use App\Models\Penguji;
 use App\Models\Fotomentah;
 use App\Models\Catatan;
-use App\Models\Mutasi;
 use App\Models\Kodewilayah;
 use App\Models\Persuratan;
 use App\Models\Identitaskendaraan;
 use App\Models\UserPKB;
 use Intervention\Image\Facades\Image;
-use DB;
+// use DB;
 use DateTime;
 use DateInterval;
 
@@ -1032,7 +1029,7 @@ class VerifRepository
         $update = $this->model1->where('uuid', $id)->first();
         $update->posisi = '10';
         $update->posverif = $request->posverif;
-        $update->user_posverif = $user['id'];
+        $update->user_posverif = $user->id;
         $update->catatanverif = $request->catatanverif;
 
         if ($update->save()) {

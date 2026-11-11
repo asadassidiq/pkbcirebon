@@ -40,6 +40,10 @@ export const state = {
         thpembuatan:"",
         status_data:"0",
         noantrian:"",
+        v_stnk:0,
+        v_smartcard:0,
+        v_srut:0,
+        v_suratketerangan:0,
     },
     statusProcess:false,
     uuid:"",
@@ -90,7 +94,11 @@ export const mutations = {
             catatan:payload.catatan,
             thpembuatan:payload.thpembuatan,
             noantrian:payload.noantrian,
-            status_data:payload.status_data
+            status_data:payload.status_data,
+            v_stnk:payload.v_stnk,
+            v_smartcard:payload.v_smartcard,
+            v_srut:payload.v_srut,
+            v_suratketerangan:payload.v_suratketerangan
         };
     },
     ASSIGN_KUOTA(state, payload) {
@@ -137,6 +145,10 @@ export const mutations = {
             thpembuatan:"",
             noantrian:"",
             status_data:"",
+            v_stnk:0,
+            v_smartcard:0,
+            v_srut:0,
+            v_suratketerangan:0
         };
     },
     CLEAR_KUOTA(state) {
