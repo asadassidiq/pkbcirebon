@@ -181,8 +181,7 @@
                     <div class=" col-4">
                         <div class="checkbox-list">
                             <label class="checkbox">
-                                <input type="checkbox" name="v_stnk" v-model="pendaftaranonline.v_stnk" :true-value="1" :false-value="0" :disabled="true"
-                                />
+                                <input type="checkbox" name="v_stnk" v-model="pendaftaranonline.v_stnk" :true-value="1" :false-value="0"/>
                                 <span></span>
                                 STNK asli yang masih berlaku
                             </label>
