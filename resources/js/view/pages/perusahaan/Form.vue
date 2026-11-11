@@ -86,9 +86,9 @@ export default {
             perusahaan: state => state.perusahaan,
         }),
         formulirPreviewUrl() {
-            const path = (this.perusahaan.file_formulir || "").replace(/^\/+/, "");
+            const path = (this.perusahaan.uuid || "").replace(/^\/+/, "");
 
-            return `https://ekircirebon.hersadwitama.id/${path}`;
+            return `https://ekircirebon.hersadwitama.id/formulir-registrasi/shared/${path}`;
         },
     },
     methods: {
