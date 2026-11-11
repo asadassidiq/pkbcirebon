@@ -370,6 +370,12 @@ export default {
                     this.$router.push({ name: "pendaftaranonline.data" });
             });
         },
+        print(id) {
+            window.open("/cetak/" + id + "/permohonan", "_blank");
+        },
+        printFormulir(id) {
+            window.open("/cetak/" + id + "/formulir", "_blank");
+        },
         goBack() {
             this.$router.go(-1);
         },

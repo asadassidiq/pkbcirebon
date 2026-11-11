@@ -66,8 +66,21 @@
                                             :to="{ name: 'pendaftaranonline.approving', params: { id: pendaftaran.uuid } }">
                                             <i class="far fa-check-square text-success"></i>
                                         </router-link>
-                                        <a href="javascript:void(0)" @click="print(pendaftaran.uuid)">
+                                        <a
+                                            href="javascript:void(0)"
+                                            @click="print(pendaftaran.uuid)"
+                                            title="Surat Permohonan"
+                                            v-if="pendaftaran.status != 'hadir'"
+                                        >
                                             <i class="fa fa-print text-info"></i>
+                                        </a>
+                                        <a
+                                            href="javascript:void(0)"
+                                            @click="printFormulir(pendaftaran.uuid)"
+                                            title="Formulir Uji"
+                                            v-if="pendaftaran.status != 'hadir'"
+                                        >
+                                            <i class="fa fa-print text-warning"></i>
                                         </a>
                                     </td>
                                 </tr>
