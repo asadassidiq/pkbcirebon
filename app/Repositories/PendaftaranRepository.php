@@ -47,6 +47,7 @@ class PendaftaranRepository
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
             ->where('pendaftarans.verif', '1')
+            ->where('pendaftarans.jenispendaftaran', 'off')
             ->where('pendaftarans.tglpendaftaran', request()->t)
             ->orderBy('pendaftarans.noantrian', 'DESC');
         $search = str_replace("/", "", request()->q);

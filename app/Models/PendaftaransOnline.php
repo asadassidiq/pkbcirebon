@@ -36,6 +36,7 @@ class PendaftaransOnline extends Model
     protected $guarded = [];
     protected $fillable = [
         'uuid',
+        'pendaftaran_uuid',
         'user_id',
         'kode_booking',
         'nomor_polisi',
