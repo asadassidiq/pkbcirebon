@@ -57,7 +57,18 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for>File Formulir</label>
-                <input type="text" class="form-control" disabled v-model="perusahaan.file_formulir" />
+                <div>
+                    <a
+                        v-if="perusahaan.file_formulir"
+                        :href="formulirPreviewUrl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-sm btn-primary"
+                    >
+                        Preview Formulir
+                    </a>
+                    <input v-else type="text" class="form-control" disabled value="-" />
+                </div>
             </div>
         </div>
     </div>
@@ -74,6 +85,11 @@ export default {
         ...mapState("perusahaan", {
             perusahaan: state => state.perusahaan,
         }),
+        formulirPreviewUrl() {
+            const path = (this.perusahaan.file_formulir || "").replace(/^\/+/, "");
+
+            return `https://ekircirebon.hersadwitama.id/${path}`;
+        },
     },
     methods: {
         ...mapMutations("perusahaan", ["CLEAR_FORM"]),
