@@ -68,7 +68,7 @@
                                         </router-link>
                                         <a
                                             href="javascript:void(0)"
-                                            @click="print(pendaftaran.uuid)"
+                                            @click="print(pendaftaran.pendaftaran_uuid)"
                                             title="Surat Permohonan"
                                             v-if="pendaftaran.status != 'terdaftar'"
                                         >
@@ -76,7 +76,7 @@
                                         </a>
                                         <a
                                             href="javascript:void(0)"
-                                            @click="printFormulir(pendaftaran.uuid)"
+                                            @click="printFormulir(pendaftaran.pendaftaran_uuid)"
                                             title="Formulir Uji"
                                             v-if="pendaftaran.status != 'terdaftar'"
                                         >
