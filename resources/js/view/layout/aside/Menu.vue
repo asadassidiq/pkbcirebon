@@ -33,6 +33,23 @@
       </li>
     </router-link>
 
+    <router-link to="/pendaftaranonline" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.pf == true">
+      <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
+        isActive && 'menu-item-active',
+        isExactActive && 'menu-item-active'
+      ]">
+        <a :href="href" class="menu-link" @click="navigate">
+          <i class="menu-icon flaticon2-list"></i>
+          <span class="menu-text">Pendaftaran Online
+            <div class="blink" v-if="notif.online > 0">
+              <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{
+                notif.online }}</span></span>
+            </div>
+          </span>
+        </a>
+      </li>
+    </router-link>
+
     <!-- <router-link
       to="/pendaftaranonline"
       v-slot="{ href, navigate, isActive, isExactActive }"
@@ -573,6 +590,34 @@
         <a :href="href" class="menu-link" @click="navigate">
           <i class="menu-icon flaticon2-setup"></i>
           <span class="menu-text">Monitoring</span>
+        </a>
+      </li>
+    </router-link>
+
+    <router-link to="/perusahaan" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.pf == true">
+      <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
+        isActive && 'menu-item-active',
+        isExactActive && 'menu-item-active'
+      ]">
+        <a :href="href" class="menu-link" @click="navigate">
+          <i class="menu-icon flaticon-buildings"></i>
+          <span class="menu-text">Perusahaan
+            <div class="blink" v-if="notif.user_online > 0">
+              <span><span style="margin-left: 2px;" class="label label-sm label-rounded label-danger">{{
+                notif.user_online }}</span></span>
+            </div>
+          </span>
+        </a>
+      </li>
+    </router-link>
+    <router-link to="/perseorangan" v-slot="{ href, navigate, isActive, isExactActive }" v-if="user.pf == true">
+      <li aria-haspopup="true" data-menu-toggle="hover" class="menu-item" :class="[
+        isActive && 'menu-item-active',
+        isExactActive && 'menu-item-active'
+      ]">
+        <a :href="href" class="menu-link" @click="navigate">
+          <i class="menu-icon flaticon2-group"></i>
+          <span class="menu-text">Perseorangan</span>
         </a>
       </li>
     </router-link>

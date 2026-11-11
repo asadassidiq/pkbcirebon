@@ -30,6 +30,8 @@ const state = {
     surat: "0",
     approved:"0",
     penyerahan: "0",
+    online: "0",
+    user_online: "0",
   },
   user: {},
   isAuthenticated: !!JwtService.getToken(),

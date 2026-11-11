@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\UserPKB;
 use App\Models\Pendaftaran;
+use App\Models\PendaftaransOnline;
+use App\Models\UserOnline;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\DatakendaraanApprovalRequest;
@@ -126,6 +128,8 @@ class LoginController extends Controller
     $antrianDataCetak = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['1', '2', '3', '4', '5', '6', '7'])->where('posisi', '6')->count();
     $antrianDataSurat = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->whereIn('kodepenerbitans_id', ['9', '10'])->where('posisi', '6')->count();
     $antrianDataPenyerahan = Pendaftaran::where('tglpendaftaran', date("Y/m/d"))->where('posisi', '7')->count();
+    $antrianDataOnline = PendaftaransOnline::where('tglpendaftaran', date("Y/m/d"))->where('status', 'terdaftar')->count();
+    $antrianDataUserOnline = UserOnline::leftJoin('datakendaraan_online','user_onlines.uuid','=','datakendaraan_online.user_id')->where('tipe_akun', 'perusahaan')->groupBy('user_onlines.uuid')->havingRaw('COUNT(datakendaraan_online.user_id) = 0')->count();
     $data  = [
       'approvals'   => $approvalsNotifications,
       'pos1'   => $antrianDataPos1,
@@ -138,6 +142,8 @@ class LoginController extends Controller
       'cetak'  => $antrianDataCetak,
       'surat'  => $antrianDataSurat,
       'penyerahan'  => $antrianDataPenyerahan,
+      'online'  => $antrianDataOnline,
+      'user_online'  => $antrianDataUserOnline,
     ];
     return response()->json($data);
   }
