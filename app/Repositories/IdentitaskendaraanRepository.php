@@ -275,7 +275,6 @@ class IdentitaskendaraanRepository
             if (empty($kodepenerbitans_id)) {
                 $kodepenerbitans_id = '';
             }
-            // $data->jenispendaftaran = $kodepenerbitans_id;
             $data->tglbayar = $masaberlakuuji;
             $data->tgluji = $tgluji;
 

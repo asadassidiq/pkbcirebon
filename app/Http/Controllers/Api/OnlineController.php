@@ -32,7 +32,6 @@ class OnlineController extends Controller
     public function update(Request $request, $id)
     {
         $data = $this->pendaftaranService->update($request, $id);
-        // $data = $request->jenispendaftaran;
         return $this->returnJson($data, 'Pendaftaran Updated');
     }
 

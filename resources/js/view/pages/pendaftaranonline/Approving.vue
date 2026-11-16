@@ -233,7 +233,7 @@
                         <button class="btn btn-warning btn-sm mr-2" @click.prevent="submit(0)" v-if="pendaftaranonline.status_data == 0 || pendaftaranonline.status_data == 2">
                         <i class="fa fa-save"></i> Simpan dan Lengkapi data
                         </button>
-                        <button class="btn btn-warning btn-sm mr-2" @click.prevent="submit(2)">
+                        <button class="btn btn-warning btn-sm mr-2" @click.prevent="submit(2)" v-if="pendaftaranonline.status_data == 1 || pendaftaranonline.status_data == 2">
                         <i class="fa fa-save"></i> Simpan dan Perubahan data
                         </button>
                         <button class="btn btn-danger btn-sm mr-2" @click.prevent="$bvModal.show('reschedule')">
