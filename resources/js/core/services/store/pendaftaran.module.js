@@ -1876,6 +1876,7 @@ export const actions = {
                     state.pendaftaran.idkodewilayah= wilayah.area_id;
                 }
             }
+            state.pendaftaran.jenispendaftaran = 'off';
             PendaftaranService.postPendaftaran(state.pendaftaran, state.perubahans)
                 .then(response => {
                     // console.log(response);
