@@ -59,9 +59,9 @@ class UserOnlineRepository
         return $this->model1->create($data);
     }
 
-    public function deleteDatakendaraanOnline(string $id,string $user_id)
+    public function deleteDatakendaraanOnline(string $id)
     {
-        $existingData = $this->model1->where('user_id', $user_id)->where('id', $id)->first();
+        $existingData = $this->model1->where('id', $id)->first();
         if ($existingData) {
             $existingData->delete();
         }

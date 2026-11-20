@@ -47,9 +47,9 @@ class UserOnlineController extends Controller
         return $this->returnJson($data);
     }
 
-    public function deleteDatakendaraanOnline(string $id,string $user_id)
+    public function deleteDatakendaraanOnline(string $id)
     {
-        $data = $this->service->deleteDatakendaraanOnline($id, $user_id);
+        $data = $this->service->deleteDatakendaraanOnline($id);
         return $this->returnJson($data);
     }
 }
