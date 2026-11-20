@@ -65,7 +65,7 @@
                             <button class="btn btn-sm btn-icon btn-light-success" @click="editKendaraan(kendaraan)">
                                 <i class="fa fa-edit text-success"></i>
                             </button>
-                            <button class="btn btn-sm btn-icon btn-light-danger" @click="deleteKendaraan(kendaraan.id)">
+                            <button class="btn btn-sm btn-icon btn-light-danger" @click="deleteKendaraan(kendaraan.id, kendaraan.user_id)">
                                 <i class="fas fa-trash text-danger"></i>
                             </button>
                         </td>
@@ -155,7 +155,7 @@ export default {
         }),
     },
     methods: {
-        ...mapActions("perusahaan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline","editPerusahaan"]),
+        ...mapActions("perusahaan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline","editPerusahaan","deleteDatakendaraanOnline"]),
         reload() {
             const id = this.$route && this.$route.params ? this.$route.params.id : null;
             if (id) {
@@ -207,6 +207,16 @@ export default {
         addKendaraan() {
             this.status = 'add';
             this.openAddModal();
+        },
+        deleteKendaraan(id, user_id) {
+            this.deleteDatakendaraanOnline({ id, user_id }).then(() => {
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil",
+                    text: "Data kendaraan berhasil dihapus",
+                });
+                this.reload();
+            });
         },
         editKendaraan(kendaraan) {
             this.$store.commit("perusahaan/ASSIGN_KENDARAAN_FORM", kendaraan);

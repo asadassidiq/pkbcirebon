@@ -38,4 +38,9 @@ class UserOnlineService
     {
         return $this->repository->updateDatakendaraanOnline($id, $data);
     }
+
+    public function deleteDatakendaraanOnline(string $id,string $user_id)
+    {
+        return $this->repository->deleteDatakendaraanOnline($id, $user_id);
+    }
 }

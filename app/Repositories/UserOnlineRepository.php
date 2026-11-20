@@ -43,7 +43,7 @@ class UserOnlineRepository
 
     public function getDatakendaraanOnline(string $id)
     {
-        $data = $this->model1->select('datakendaraan_online.noregistrasikendaraan', 'datakendaraan_online.nouji','datakendaraan_online.status','identitaskendaraans.tglberlakuuji')->leftjoin('identitaskendaraans', 'identitaskendaraans.nouji', '=', 'datakendaraan_online.nouji')->where('user_id', $id);
+        $data = $this->model1->select('datakendaraan_online.id','datakendaraan_online.user_id','datakendaraan_online.noregistrasikendaraan', 'datakendaraan_online.nouji','datakendaraan_online.status','identitaskendaraans.tglberlakuuji')->leftjoin('identitaskendaraans', 'identitaskendaraans.nouji', '=', 'datakendaraan_online.nouji')->where('user_id', $id);
         $search = str_replace("/", "", request()->q);
         if ($search != '') {
             $data = $data->where('datakendaraan_online.noregistrasikendaraan', 'LIKE', '%' . $search . '%')
@@ -57,6 +57,15 @@ class UserOnlineRepository
         $data['user_id'] = $data['uuid'] ?? null;
         unset($data['uuid']);
         return $this->model1->create($data);
+    }
+
+    public function deleteDatakendaraanOnline(string $id,string $user_id)
+    {
+        $existingData = $this->model1->where('user_id', $user_id)->where('id', $id)->first();
+        if ($existingData) {
+            $existingData->delete();
+        }
+        return null;
     }
 
     public function updateDatakendaraanOnline(string $id, array $data)

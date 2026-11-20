@@ -74,16 +74,6 @@
                                     >
                                         <i class="fa fa-eye text-success"></i>
                                     </router-link>
-                                    <a
-                                        href="javascript:void(0)"
-                                        @click="
-                                            deletePerusahaan(perusahaan.uuid)
-                                        "
-                                        data-toggle="tooltip"
-                                        title="Hapus Perusahaan"
-                                    >
-                                        <i class="fas fa-trash text-danger"></i>
-                                    </a>
                                 </td>
                             </tr>
                         </tbody>

@@ -295,6 +295,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::post('/', 'UserOnlineController@storeDatakendaraanOnline');
             Route::put('/{id}', 'UserOnlineController@updateDatakendaraanOnline');
             Route::get('/user/{id}', 'UserOnlineController@getUserOnline');
+            Route::delete('/{id}/{user_id}', 'UserOnlineController@deleteDatakendaraanOnline');
         });
 
         Route::group(['middleware' => ['role:admin|petugas'], 'prefix' => 'perseorangan'], function () {
@@ -303,6 +304,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::post('/', 'UserOnlineController@storeDatakendaraanOnline');
             Route::put('/{id}', 'UserOnlineController@updateDatakendaraanOnline');
             Route::get('/user/{id}', 'UserOnlineController@getUserOnline');
+            Route::delete('/{id}/{user_id}', 'UserOnlineController@deleteDatakendaraanOnline');
         });
     });
 });

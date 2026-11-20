@@ -46,4 +46,10 @@ class UserOnlineController extends Controller
         $data = $this->service->updateDatakendaraanOnline($id, $request->all());
         return $this->returnJson($data);
     }
+
+    public function deleteDatakendaraanOnline(string $id,string $user_id)
+    {
+        $data = $this->service->deleteDatakendaraanOnline($id, $user_id);
+        return $this->returnJson($data);
+    }
 }

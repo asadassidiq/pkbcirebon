@@ -72,16 +72,6 @@
                                     >
                                         <i class="fa fa-eye text-success"></i>
                                     </router-link>
-                                    <a
-                                        href="javascript:void(0)"
-                                        @click="
-                                            deletePerseorangan(perseorangan.uuid)
-                                        "
-                                        data-toggle="tooltip"
-                                        title="Hapus Perseorangan"
-                                    >
-                                        <i class="fas fa-trash text-danger"></i>
-                                    </a>
                                 </td>
                             </tr>
                         </tbody>

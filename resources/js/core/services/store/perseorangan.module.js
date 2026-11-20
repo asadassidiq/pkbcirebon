@@ -244,6 +244,23 @@ export const actions = {
                 });
         });
     },
+    deleteDatakendaraanOnline({ state, commit }, { id, user_id }) {
+        return new Promise((resolve, reject) => {
+            PerseoranganService.deleteDatakendaraanOnline(id, user_id)
+                .then(response => {
+                    resolve(response.data);
+                })
+                .catch(error => {
+                    if (error.response.status == 422) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: error.response.data.messages,
+                        });
+                    }
+                });
+        });
+    },
 };
 export const getters = {
     getEventById: state => id => {

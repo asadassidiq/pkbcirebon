@@ -20,5 +20,8 @@ export default {
     },
     updateDatakendaraanOnline(id, data) {
         return ApiService.put(`/perseorangan/${id}`, data);
+    },
+    deleteDatakendaraanOnline(id, user_id) {
+        return ApiService.delete(`/perseorangan/${id}/${user_id}`);
     }
 };
