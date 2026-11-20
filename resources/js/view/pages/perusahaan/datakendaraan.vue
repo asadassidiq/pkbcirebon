@@ -65,7 +65,7 @@
                             <button class="btn btn-sm btn-icon btn-light-success" @click="editKendaraan(kendaraan)">
                                 <i class="fa fa-edit text-success"></i>
                             </button>
-                            <button class="btn btn-sm btn-icon btn-light-danger" @click="deleteKendaraan(kendaraan.id, kendaraan.user_id)">
+                            <button class="btn btn-sm btn-icon btn-light-danger" @click="deleteKendaraan(kendaraan.id)">
                                 <i class="fas fa-trash text-danger"></i>
                             </button>
                         </td>
@@ -208,8 +208,8 @@ export default {
             this.status = 'add';
             this.openAddModal();
         },
-        deleteKendaraan(id, user_id) {
-            this.deleteDatakendaraanOnline({ id, user_id }).then(() => {
+        deleteKendaraan(id) {
+            this.deleteDatakendaraanOnline({ id }).then(() => {
                 Swal.fire({
                     icon: "success",
                     title: "Berhasil",

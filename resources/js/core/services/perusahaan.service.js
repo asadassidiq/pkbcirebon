@@ -21,8 +21,8 @@ export default {
     updateDatakendaraanOnline(id, data) {
         return ApiService.put(`/perusahaan/${id}`, data);
     },
-    deleteDatakendaraanOnline(id, user_id) {
-        return ApiService.delete(`/perusahaan/${id}/${user_id}`);
+    deleteDatakendaraanOnline(id) {
+        return ApiService.delete(`/perusahaan/${id}`);
     }
     
 };

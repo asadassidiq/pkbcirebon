@@ -244,9 +244,9 @@ export const actions = {
                 });
         });
     },
-    deleteDatakendaraanOnline({ state, commit }, { id, user_id }) {
+    deleteDatakendaraanOnline({ state, commit }, { id }) {
         return new Promise((resolve, reject) => {
-            PerseoranganService.deleteDatakendaraanOnline(id, user_id)
+            PerseoranganService.deleteDatakendaraanOnline(id)
                 .then(response => {
                     resolve(response.data);
                 })
