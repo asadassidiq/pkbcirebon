@@ -38,7 +38,7 @@
                                 <th>Nama Akun</th>
                                 <th>No Telp</th>
                                 <th>Email</th>
-                                <th>Jumlah Kendaraan</th>
+                                <th>Cek Kendaraan</th>
                                 <th>Modify</th>
                             </tr>
                         </thead>
@@ -53,7 +53,7 @@
                                 <td>{{ perseorangan.telepon }}</td>
                                 <td>{{ perseorangan.email }}</td>
                                 <td>
-                                    {{ perseorangan.total_kendaraan ?? 0 }}
+                                    <!-- {{ perseorangan.total_kendaraan ?? 0 }} -->
                                     <router-link
                                         :to="{
                                             name: 'perseorangan.datakendaraan',
