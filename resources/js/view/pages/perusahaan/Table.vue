@@ -207,7 +207,7 @@ export default {
                 timeZone: "Asia/Jakarta",
             }).format(date);
 
-            return `${datePart} ${timePart} WIB`;
+            return `${datePart} ${timePart}`;
         },
     },
     components: {
