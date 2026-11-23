@@ -66,7 +66,7 @@
                                         <i class="fa fa-edit text-success"></i>
                                     </router-link>
                                 </td>
-                                <td>{{ perusahaan.created_at }}</td>
+                                <td>{{ formatCreatedAt(perusahaan.created_at) }}</td>
                                 <td>
                                     <router-link
                                         :to="{
@@ -182,6 +182,32 @@ export default {
         },
         reload() {
             this.getPerusahaans(this.search);
+        },
+        formatCreatedAt(value) {
+            if (!value) {
+                return "-";
+            }
+
+            const date = new Date(value);
+            if (Number.isNaN(date.getTime())) {
+                return value;
+            }
+
+            const datePart = new Intl.DateTimeFormat("id-ID", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+                timeZone: "Asia/Jakarta",
+            }).format(date);
+
+            const timePart = new Intl.DateTimeFormat("id-ID", {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+                timeZone: "Asia/Jakarta",
+            }).format(date);
+
+            return `${datePart} ${timePart} WIB`;
         },
     },
     components: {
