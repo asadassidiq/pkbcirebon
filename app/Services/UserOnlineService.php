@@ -35,15 +35,19 @@ class UserOnlineService
     {
         // return $this->error(false,'no rangka sudah dipakai kendaraan lain','',422);
         $data = $this->repository->storeDatakendaraanOnline($data);
-        if(is_array($data)) {
-            return $data;
+        if (is_string($data)) {
+            return $this->error(false, $data, '', 422);
         }
-        return $this->error(false, $data, '', 422);
+        return $this->returnJson($data);
     }
 
     public function updateDatakendaraanOnline(string $id, array $data)
     {
-        return $this->repository->updateDatakendaraanOnline($id, $data);
+        $data =  $this->repository->updateDatakendaraanOnline($id, $data);
+        if (is_string($data)) {
+            return $this->error(false, $data, '', 422);
+        }
+        return $this->returnJson($data);
     }
 
     public function deleteDatakendaraanOnline(string $id)
