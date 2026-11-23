@@ -49,7 +49,7 @@ class UserOnlineRepository
             $data = $data->where('datakendaraan_online.noregistrasikendaraan', 'LIKE', '%' . $search . '%')
                         ->orWhere('datakendaraan_online.nouji', 'LIKE', '%' . $search . '%');
         }
-        return $data->groupBy('datakendaraan_online.nouji')->paginate(10);
+        return $data->paginate(10);
     }
 
     public function storeDatakendaraanOnline(array $data)
