@@ -3,12 +3,14 @@
 namespace App\Services;
 
 use App\Repositories\UserOnlineRepository;
+use App\Traits\apiJsonReturnTrait;
 
 
 class UserOnlineService
 {
     protected $repository;
-
+    use apiJsonReturnTrait;
+    
     public function __construct(UserOnlineRepository $repository)
     {
         $this->repository = $repository;
@@ -31,7 +33,12 @@ class UserOnlineService
 
     public function storeDatakendaraanOnline(array $data)
     {
-        return $this->repository->storeDatakendaraanOnline($data);
+        // return $this->error(false,'no rangka sudah dipakai kendaraan lain','',422);
+        $data = $this->repository->storeDatakendaraanOnline($data);
+        if (is_string($data)) {
+            return $this->error(false, $data, '', 422);
+        }
+        return $data;
     }
 
     public function updateDatakendaraanOnline(string $id, array $data)

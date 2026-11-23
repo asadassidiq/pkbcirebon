@@ -155,6 +155,7 @@ export default {
         }),
     },
     methods: {
+        ...mapMutations("perseorangan", ["CLEAR_KENDARAAN_FORM"]),
         ...mapActions("perseorangan", ["getDatakendaraanOnline", "storeDatakendaraanOnline", "updateDatakendaraanOnline","editPerusahaan","deleteDatakendaraanOnline"]),
         reload() {
             const id = this.$route && this.$route.params ? this.$route.params.id : null;
@@ -216,6 +217,7 @@ export default {
         },
         addKendaraan() {
             this.status = 'add';
+            this.CLEAR_KENDARAAN_FORM();
             this.openAddModal();
         },
         editKendaraan(kendaraan) {
