@@ -56,9 +56,11 @@ class UserOnlineRepository
     {
         $data['user_id'] = $data['uuid'] ?? null;
         unset($data['uuid']);
-        $checkDoubleNouji = $this->model1->where('user_id', $data['user_id'])->where('nouji', $data['nouji'])->first();
-        if ($checkDoubleNouji) {
-            return 'Data dengan nomor uji tersebut sudah ada.';
+        if ($data['nouji'] != '-' && $data['nouji'] != '') {
+            $checkDoubleNouji = $this->model1->where('user_id', $data['user_id'])->where('nouji', $data['nouji'])->first();
+            if ($checkDoubleNouji) {
+                return 'Data dengan nomor uji tersebut sudah ada.';
+            }
         }
         $checkDoubleNoregistrasikendaraan = $this->model1->where('user_id', $data['user_id'])->where('noregistrasikendaraan', $data['noregistrasikendaraan'])->first();
         if ($checkDoubleNoregistrasikendaraan) {
