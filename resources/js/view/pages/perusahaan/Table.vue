@@ -40,6 +40,7 @@
                                 <th>No Telp</th>
                                 <th>Email</th>
                                 <th>Jumlah Kendaraan</th>
+                                <th>Di Buat</th>
                                 <th>Modify</th>
                             </tr>
                         </thead>
@@ -65,6 +66,7 @@
                                         <i class="fa fa-edit text-success"></i>
                                     </router-link>
                                 </td>
+                                <td>{{ perusahaan.created_at }}</td>
                                 <td>
                                     <router-link
                                         :to="{
