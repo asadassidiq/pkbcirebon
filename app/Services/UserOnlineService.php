@@ -35,10 +35,10 @@ class UserOnlineService
     {
         // return $this->error(false,'no rangka sudah dipakai kendaraan lain','',422);
         $data = $this->repository->storeDatakendaraanOnline($data);
-        if (is_string($data)) {
-            return $this->error(false, $data, '', 422);
+        if(is_array($data)) {
+            return $data;
         }
-        return $data;
+        return $this->error(false, $data, '', 422);
     }
 
     public function updateDatakendaraanOnline(string $id, array $data)
