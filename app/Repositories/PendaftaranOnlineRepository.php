@@ -140,7 +140,12 @@ class PendaftaranOnlineRepository
 
     private function createPendaftaran($re)
     {
-        $identitaskendaraan_id = $this->modelIden->where('nouji',$re->nouji)->first()->id;
+        $identitaskendaraan_id = $this->modelIden->where('nouji',$re->nouji)->first();
+        if($identitaskendaraan_id) {
+            $identitaskendaraan_id = $identitaskendaraan_id->id;
+        }else{
+            $identitaskendaraan_id = false;
+        }
         if(!$identitaskendaraan_id) {
             $createIden = $this->modelIden->create([
                 'uuid' => $this->utils->generateUUID(),
