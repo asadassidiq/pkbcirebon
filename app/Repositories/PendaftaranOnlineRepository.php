@@ -150,6 +150,7 @@ class PendaftaranOnlineRepository
             $createIden = $this->modelIden->create([
                 'uuid' => $this->utils->generateUUID(),
                 'nouji' => $re->nouji,
+                'noregistrasikendaraan' => $re->noregistrasikendaraan,
                 'merek' => $re->merek,
                 'tipe' => $re->tipe,
                 'jenis' => $re->jenis,

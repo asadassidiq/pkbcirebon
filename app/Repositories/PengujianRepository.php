@@ -439,8 +439,8 @@ class PengujianRepository
     {
         $ps = request()->ps;
         $status = request()->st;
+        $name = 'pos' . $ps;
         if ($status != '') {
-            $name = 'pos' . $ps;
             $data = $this->model
                 ->select('pendaftarans.noantrian', 'pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan')
                 ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
@@ -453,7 +453,9 @@ class PengujianRepository
                 ->select('pendaftarans.noantrian', 'pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan')
                 ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
                 ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
-                ->where('pendaftarans.posisi', $ps)
+                ->where('pendaftarans.posisi', '>=', 1)
+                ->where('pendaftarans.posisi', '<=', 4)
+                ->whereNull($name)
                 ->where('pendaftarans.tglpendaftaran', request()->t)
                 ->orderBy('pendaftarans.noantrian', 'DESC');
         }

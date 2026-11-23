@@ -40,7 +40,12 @@ class VerifRepository
             ->select('pendaftarans.noantrian', 'pendaftarans.uuid', 'kodepenerbitans.keterangan', 'identitaskendaraans.nouji', 'identitaskendaraans.noregistrasikendaraan')
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->join('kodepenerbitans', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitans.id')
-            ->where('pendaftarans.posisi', '5')
+            // ->where('pendaftarans.posisi', '5')
+            ->where('pendaftarans.pos1', '1')
+            ->where('pendaftarans.pos2', '1')
+            ->where('pendaftarans.pos3', '1')
+            ->where('pendaftarans.pos4', '1')
+            ->whereNull('pendaftarans.posverif')
             ->where('pendaftarans.tglpendaftaran', request()->t)
             ->orderBy('pendaftarans.noantrian', 'DESC');
         $search = str_replace("/", "", request()->q);
