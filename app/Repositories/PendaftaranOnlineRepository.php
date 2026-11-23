@@ -133,7 +133,7 @@ class PendaftaranOnlineRepository
         if($update)
         {
             $createPendaftaran = $this->createPendaftaran($request);
-            return true;
+            return $createPendaftaran;
         }
         return 'Data tidak ditemukan';
     }
