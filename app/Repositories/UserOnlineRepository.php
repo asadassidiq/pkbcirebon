@@ -83,12 +83,12 @@ class UserOnlineRepository
         $existingData = $this->model1->where('user_id', $id)->first();
         if ($existingData) {
             if ($data['nouji'] != '-' && $data['nouji'] != '') {
-                $checkDoubleNouji = $this->model1->where('user_id', $data['user_id'])->where('nouji', $data['nouji'])->first();
+                $checkDoubleNouji = $this->model1->where('user_id', $id)->where('nouji', $data['nouji'])->first();
                 if ($checkDoubleNouji) {
                     return 'Data dengan nomor uji tersebut sudah ada.';
                 }
             }
-            $checkDoubleNoregistrasikendaraan = $this->model1->where('user_id', $data['user_id'])->where('noregistrasikendaraan', $data['noregistrasikendaraan'])->first();
+            $checkDoubleNoregistrasikendaraan = $this->model1->where('user_id', $id)->where('noregistrasikendaraan', $data['noregistrasikendaraan'])->first();
             if ($checkDoubleNoregistrasikendaraan) {
                 return 'Data dengan nomor registrasi kendaraan tersebut sudah ada.';
             }
