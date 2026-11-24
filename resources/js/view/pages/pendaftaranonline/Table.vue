@@ -66,6 +66,14 @@
                                             :to="{ name: 'pendaftaranonline.approving', params: { id: pendaftaran.uuid } }">
                                             <i class="far fa-check-square text-success"></i>
                                         </router-link>
+                                        <router-link v-if="pendaftaran.status != 'terdaftar'"
+                                                :to="{
+                                                    name: 'pendaftaran.edit',
+                                                    params: { id: pendaftaran.pendaftaran_uuid },
+                                                }"
+                                            >
+                                                <i class="fa fa-edit text-success"></i>
+                                        </router-link>
                                         <a
                                             href="javascript:void(0)"
                                             @click="print(pendaftaran.pendaftaran_uuid)"
