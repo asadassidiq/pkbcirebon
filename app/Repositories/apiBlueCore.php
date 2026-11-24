@@ -23,7 +23,7 @@ class apiBlueCore
         $keyword = empty($keyword) ? null : $keyword;
         
         $token = "eyJpdiI6Ilc0MjZBdE83Nkg3SGhReEgxYVQxN3c9PSIsInZhbHVlIjoiYUQ5Z1RMbGtINkRBbTJDbU9xQUVWb25nQzFpUW1HS1paemQxUjNCTm1hQ2ppMmtjY2FQZDdCbkk4WTNvNzg4ditxT1BFV0Rma2JCUzdVL0RSRUNLTE5pNU1HTUZjSFl1cTJuSEVMamtQbVQvc1RTSHkwMytUT05STHdOTG80VlgiLCJtYWMiOiIxMWQ5ZjU2ZDFjNmNlZmM1Nzg2MjljZTM4ZjQ2NmJmNWIxYjI5NGJjNWRjMTNhOWI0NjJlNjlhYTU2NGQ5OTFlIn0=";
-        $time = 10;
+        $time = 30;
 
         // Mapping payload JSON berdasarkan prefix
         if ($prefix == "varian") {
